@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "academic_year": 2570,
-  "checked_at": "2026-08-23T23:05:39+07:00",
+  "checked_at": "2026-08-23T23:37:03+07:00",
   "status_policy": {
     "official": "ประกาศอยู่บนเว็บไซต์ทางการและอนุญาตให้บอทแสดงผล",
     "draft_waiting_official": "ข้อมูลเตรียมไว้จากหน้าเว็บที่ระบุว่ารอประกาศอย่างเป็นทางการ บอทต้องไม่แสดงผล"
@@ -1930,7 +1930,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf",
       "source_title": "ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการครอบคลุมรอบ 1-1 ถึง 1-5; CURRICULUM_ID 14142, PROJECT_ID 2409 เป็นรายการรอบ 1-1 ในระบบสมัคร"
     },
     {
@@ -1951,7 +1951,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_08_04-11-03-46_94eee.pdf",
       "source_title": "ประกาศโครงการเรียนดี 14 จังหวัดพลัส วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "รายการทางการในระบบรับสมัคร: CURRICULUM_ID 14157, PROJECT_ID 2410"
     },
     {
@@ -1972,7 +1972,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf",
       "source_title": "ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14171, PROJECT_ID 2411 เป็นรายการรอบ 1-1 ในระบบสมัคร"
     },
     {
@@ -1993,7 +1993,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf",
       "source_title": "ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14187, PROJECT_ID 2413 เป็นรายการรอบ 1-1 ในระบบสมัคร"
     },
     {
@@ -2014,7 +2014,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf",
       "source_title": "ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการระบุรอบ 1.2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5"
     },
     {
@@ -2035,7 +2035,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf",
       "source_title": "ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการระบุรอบ 1.3; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5"
     },
     {
@@ -2056,7 +2056,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf",
       "source_title": "ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการระบุรอบ 1.4; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5"
     },
     {
@@ -2077,7 +2077,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf",
       "source_title": "ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการระบุรอบ 1.5; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5"
     },
     {
@@ -2098,7 +2098,7 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf",
       "source_title": "ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2"
     },
     {
@@ -2119,8 +2119,155 @@
       "source_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf",
       "source_title": "ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70",
       "source_published_at": "2026-08-03",
-      "source_checked_at": "2026-08-23T17:12:50+07:00",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-good-student-1-1",
+      "group_code": "kmitl-science-cs-good-student",
+      "name": "โครงการเรียนดี 1.1",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-good-student-1-2",
+      "group_code": "kmitl-science-cs-good-student",
+      "name": "โครงการเรียนดี 1.2",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-science-talent-1-1",
+      "group_code": "kmitl-science-cs-science-talent",
+      "name": "โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.1",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-science-talent-1-2",
+      "group_code": "kmitl-science-cs-science-talent",
+      "name": "โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.2",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-staff-child-1-1",
+      "group_code": "kmitl-science-cs-staff-child",
+      "name": "โครงการบุตรบุคลากร สจล. 1.1",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-staff-child-1-2",
+      "group_code": "kmitl-science-cs-staff-child",
+      "name": "โครงการบุตรบุคลากร สจล. 1.2",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-science-cs-professional-developer-1-2",
+      "group_code": "kmitl-science-cs-professional-developer",
+      "name": "โครงการนักพัฒนามืออาชีพ 1.2",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 2,
+      "application_fee": 300,
+      "tuition_fee_per_semester": 19000,
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-08-23",
+      "source_checked_at": "2026-08-23T23:37:03+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
     }
   ],
   "project_programs": [
@@ -2693,6 +2840,48 @@
       "program_code": "kmitl-chumphon-computer-engineering",
       "slots_available": null,
       "program_notes": "ประกาศระบุ 15 คนรวมรอบ 1-1 และ 1-2 แต่ไม่แยกจำนวนเฉพาะรอบ 1-2"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "program_code": "kmitl-science-computer-science",
+      "slots_available": null,
+      "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
     }
   ],
   "criteria": [
@@ -7684,6 +7873,337 @@
       "criteria_summary": "GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 2.75; Portfolio เน้น STEM/วิศวกรรม/วิทยาศาสตร์ 50 + สัมภาษณ์ 50",
       "official_announcement_url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf",
       "program_code": "kmitl-chumphon-computer-engineering"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "min_gpax": 3.5,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 4 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {
+        "กลุ่มคณิตศาสตร์": 3.0,
+        "กลุ่มวิทยาศาสตร์": 3.0
+      },
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์"
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 60,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 15
+      },
+      "accepted_achievements": [],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 60%",
+        "ผลการเรียน 15%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 3.50 และ GPAX กลุ่มคณิตศาสตร์/วิทยาศาสตร์ อย่างละ 3.00; Portfolio 60% + สัมภาษณ์ 25% + ผลการเรียน 15%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "min_gpax": 3.5,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 5 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {
+        "กลุ่มคณิตศาสตร์": 3.0,
+        "กลุ่มวิทยาศาสตร์": 3.0
+      },
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์"
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 60,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 15
+      },
+      "accepted_achievements": [],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 60%",
+        "ผลการเรียน 15%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 3.50 และ GPAX กลุ่มคณิตศาสตร์/วิทยาศาสตร์ อย่างละ 3.00; Portfolio 60% + สัมภาษณ์ 25% + ผลการเรียน 15%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 4 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)"
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 75,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 0
+      },
+      "accepted_achievements": [
+        "ผ่านการคัดเลือกโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชนของ สวทช. หรือสมาคมวิทยาศาสตร์แห่งประเทศไทย",
+        "ผ่านการคัดเลือกการแข่งขันคณิตศาสตร์และวิทยาศาสตร์โอลิมปิกของ สสวท.",
+        "ผ่านการสอบและการอบรมโอลิมปิกวิชาการของ สอวน.",
+        "มีผลงานหรือรางวัลวิชาการด้านวิทยาศาสตร์-คณิตศาสตร์อย่างน้อย 1 รายการ; สำหรับวิทยาการคอมพิวเตอร์ต้องเป็นระดับจังหวัด ภูมิภาค ชาติ หรือนานาชาติ",
+        "ได้รับรางวัลหรือเกียรติบัตรจากงานที่คณะวิทยาศาสตร์ สจล. เป็นเจ้าภาพหรือเจ้าภาพร่วม ยกเว้น Esports",
+        "ได้รับรางวัลโครงการแข่งขันเพชรยอดมงกุฎ วิชาคณิตศาสตร์หรือวิทยาศาสตร์"
+      ],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 75%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 5 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)"
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 75,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 0
+      },
+      "accepted_achievements": [
+        "ผ่านการคัดเลือกโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชนของ สวทช. หรือสมาคมวิทยาศาสตร์แห่งประเทศไทย",
+        "ผ่านการคัดเลือกการแข่งขันคณิตศาสตร์และวิทยาศาสตร์โอลิมปิกของ สสวท.",
+        "ผ่านการสอบและการอบรมโอลิมปิกวิชาการของ สอวน.",
+        "มีผลงานหรือรางวัลวิชาการด้านวิทยาศาสตร์-คณิตศาสตร์อย่างน้อย 1 รายการ; สำหรับวิทยาการคอมพิวเตอร์ต้องเป็นระดับจังหวัด ภูมิภาค ชาติ หรือนานาชาติ",
+        "ได้รับรางวัลหรือเกียรติบัตรจากงานที่คณะวิทยาศาสตร์ สจล. เป็นเจ้าภาพหรือเจ้าภาพร่วม ยกเว้น Esports",
+        "ได้รับรางวัลโครงการแข่งขันเพชรยอดมงกุฎ วิชาคณิตศาสตร์หรือวิทยาศาสตร์"
+      ],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 75%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 4 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์",
+        "ต้องเป็นบุตรบุคลากร สจล."
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 75,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 0
+      },
+      "accepted_achievements": [],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร",
+        "สำเนาทะเบียนบ้านของผู้สมัคร",
+        "สำเนาบัตรข้าราชการหรือบัตรพนักงานของผู้ปกครอง"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 75%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 5 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์",
+        "ต้องเป็นบุตรบุคลากร สจล."
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 75,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 0
+      },
+      "accepted_achievements": [],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร",
+        "สำเนาทะเบียนบ้านของผู้สมัคร",
+        "สำเนาบัตรข้าราชการหรือบัตรพนักงานของผู้ปกครอง"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 75%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "วุฒิไทย-กำลังศึกษา": "อย่างน้อย 5 ภาคการศึกษา",
+        "วุฒิไทย-สำเร็จแล้ว": "6 ภาคการศึกษา",
+        "Grade 12 / Year 13 / GED": "ประกาศไม่กำหนดผลการเรียน"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา",
+        "รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้",
+        "ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)",
+        "ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ สจล."
+      ],
+      "portfolio_requirements": "คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น",
+      "portfolio_details": {
+        "portfolio_required": true,
+        "portfolio_weight_percent": 75,
+        "interview_weight_percent": 25,
+        "transcript_weight_percent": 0
+      },
+      "accepted_achievements": [],
+      "required_documents": [
+        "ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th",
+        "ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED",
+        "บัตรประจำตัวประชาชนของผู้สมัคร",
+        "เกียรติบัตรผ่านการอบรมโครงการนักพัฒนามืออาชีพ"
+      ],
+      "selection_methods": [
+        "สอบสัมภาษณ์ 25%",
+        "Portfolio 75%"
+      ],
+      "additional_requirements": {
+        "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
+        "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
+        "ระบบ Portfolio": "KMITL Student iFolio",
+        "ข่าวประกาศทางการ": "news_id 4640"
+      },
+      "criteria_summary": "เฉพาะผู้ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ สจล.; Portfolio 75% + สัมภาษณ์ 25%",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "program_code": "kmitl-science-computer-science"
     }
   ],
   "timeline": [
@@ -9129,6 +9649,454 @@
     },
     {
       "project_code": "kmitl-chumphon-cpe-potential-1-2",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-30",
+      "date_display": "1 ก.ย.–30 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-30",
+      "date_display": "1 ก.ย.–30 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-14",
+      "end_on": "2026-11-14",
+      "date_display": "14 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2026-11-27",
+      "end_on": "2026-11-27",
+      "date_display": "27 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-1",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-05",
+      "end_on": "2027-02-05",
+      "date_display": "5 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-13",
+      "end_on": "2027-02-13",
+      "date_display": "13 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-02-26",
+      "end_on": "2027-02-26",
+      "date_display": "26 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-good-student-1-2",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-30",
+      "date_display": "1 ก.ย.–30 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-30",
+      "date_display": "1 ก.ย.–30 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-14",
+      "end_on": "2026-11-14",
+      "date_display": "14 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2026-11-27",
+      "end_on": "2026-11-27",
+      "date_display": "27 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-1",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-05",
+      "end_on": "2027-02-05",
+      "date_display": "5 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-13",
+      "end_on": "2027-02-13",
+      "date_display": "13 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-02-26",
+      "end_on": "2027-02-26",
+      "date_display": "26 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-science-talent-1-2",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-30",
+      "date_display": "1 ก.ย.–30 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-30",
+      "date_display": "1 ก.ย.–30 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-14",
+      "end_on": "2026-11-14",
+      "date_display": "14 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2026-11-27",
+      "end_on": "2026-11-27",
+      "date_display": "27 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-1",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-05",
+      "end_on": "2027-02-05",
+      "date_display": "5 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-13",
+      "end_on": "2027-02-13",
+      "date_display": "13 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-02-26",
+      "end_on": "2027-02-26",
+      "date_display": "26 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-staff-child-1-2",
+      "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-25",
+      "end_on": "2027-03-31",
+      "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "สร้าง Portfolio ใน KMITL Student iFolio และสมัครทางอินเทอร์เน็ต",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "ชำระเงินค่าสมัคร",
+      "start_on": "2026-12-01",
+      "end_on": "2027-01-28",
+      "date_display": "1 ธ.ค. 2569–28 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-05",
+      "end_on": "2027-02-05",
+      "date_display": "5 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-13",
+      "end_on": "2027-02-13",
+      "date_display": "13 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "ประกาศผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-02-26",
+      "end_on": "2027-02-26",
+      "date_display": "26 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "ยืนยันสิทธิ์ Clearing House ผ่านระบบ ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษาและขั้นตอนชำระเงิน",
+      "start_on": "2027-03-19",
+      "end_on": "2027-03-19",
+      "date_display": "19 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-science-cs-professional-developer-1-2",
       "event_name": "ชำระเงินยืนยันสิทธิ์เข้าศึกษา",
       "start_on": "2027-03-25",
       "end_on": "2027-03-31",

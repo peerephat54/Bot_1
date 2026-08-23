@@ -194,7 +194,8 @@ def fetch_program_projects(program_code: str):
             "admission_projects!inner("
             "id,code,name,academic_year,tcas_round,round_label,round_variant,"
             "publication_status,selection_order_limit,application_fee,"
-            "tuition_fee_per_semester,source_url,source_checked_at,data_notes,"
+            "tuition_fee_per_semester,source_url,source_published_at,"
+            "source_checked_at,data_notes,"
             "admission_criteria("
             "faculty_id,criteria_summary,min_gpax,gpax_requirements,subject_gpax,"
             "min_english_score,standardized_scores,applicant_qualifications,"
@@ -494,8 +495,14 @@ def project_choice_description(project):
     criteria = project.get("selected_criteria") or {}
     parts = []
     min_gpax = criteria.get("min_gpax")
+    gpax_requirements = criteria.get("gpax_requirements") or {}
+    thai_gpax_only = (
+        isinstance(gpax_requirements, dict)
+        and "Grade 12 / Year 13 / GED" in gpax_requirements
+    )
     parts.append(
         f"GPAX ≥ {float(min_gpax):.2f}"
+        + (" (วุฒิไทย)" if thai_gpax_only else "")
         if min_gpax is not None
         else "GPAX ดูเกณฑ์รายประเภท"
     )
@@ -516,7 +523,17 @@ def build_project_embed(program, project):
     slots = project.get("slots_available")
     slots_text = f"{slots} คน" if slots is not None else "ประกาศไม่ได้ระบุ"
     min_gpax = criteria.get("min_gpax")
-    gpax_text = f"{float(min_gpax):.2f} ขึ้นไป" if min_gpax is not None else "ดูเงื่อนไขรายประเภทผู้สมัคร"
+    gpax_requirements = criteria.get("gpax_requirements") or {}
+    thai_gpax_only = (
+        isinstance(gpax_requirements, dict)
+        and "Grade 12 / Year 13 / GED" in gpax_requirements
+    )
+    gpax_text = (
+        f"{float(min_gpax):.2f} ขึ้นไป"
+        + (" (วุฒิไทย)" if thai_gpax_only else "")
+        if min_gpax is not None
+        else "ดูเงื่อนไขรายประเภทผู้สมัคร"
+    )
 
     score_parts = []
     english_scores = criteria.get("min_english_score") or {}
@@ -528,9 +545,9 @@ def build_project_embed(program, project):
     score_text = "\n\n".join(score_parts) or "ไม่มีคะแนนสอบเพิ่มเติมตามประกาศ"
 
     gpax_parts = []
-    gpax_requirements = format_key_values(criteria.get("gpax_requirements"), 450)
-    if gpax_requirements:
-        gpax_parts.append("**เงื่อนไข GPAX**\n" + gpax_requirements)
+    gpax_requirements_text = format_key_values(gpax_requirements, 450)
+    if gpax_requirements_text:
+        gpax_parts.append("**เงื่อนไข GPAX**\n" + gpax_requirements_text)
     subject_gpax = format_key_values(criteria.get("subject_gpax"), 450)
     if subject_gpax:
         gpax_parts.append("**GPAX/เกรดรายวิชา**\n" + subject_gpax)

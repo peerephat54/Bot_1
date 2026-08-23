@@ -1,6 +1,301 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 2 of 4; run parts in numeric order.
+-- Supabase SQL Editor part 2 of 5; run parts in numeric order.
 begin;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-staff-child-1-1', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.1', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-staff-child-1-2', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-professional-developer-1-2', 'kmitl-science-cs-professional-developer', 'โครงการนักพัฒนามืออาชีพ 1.2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ตารางกลางมหิดลระบุ 60 ที่นั่งรวมของหลักสูตร ICT ในรอบ 1/1 แต่ไม่แยกจำนวนระหว่างโครงการ ICT–Portfolio และ MU–Portfolio จึงไม่ใส่ตัวเลขซ้ำรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'mu-ict'
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ตารางกลางมหิดลระบุ 60 ที่นั่งรวมของหลักสูตร ICT ในรอบ 1/1 แต่ไม่แยกจำนวนระหว่างโครงการ ICT–Portfolio และ MU–Portfolio จึงไม่ใส่ตัวเลขซ้ำรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'mu-ict'
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'เปิดเฉพาะที่นั่งคงเหลือจากรอบ 1/1 ตามหมายเหตุ A ของตารางกลาง จึงไม่มีจำนวนคงที่'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'mu-ict'
+where p.code = 'muict-mu-portfolio-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 27, 'รหัสโครงการ 00410608108010'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cpe'
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 3, 'รหัสโครงการ 00410608108010'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cpe'
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 22, 'รหัสโครงการ 00410608108020'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cpe'
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 3, 'รหัสโครงการ 00410608108020'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cpe'
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, 'รหัสโครงการ 00410608108031'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cpe'
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 50, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-it'
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-dsba'
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-ait'
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-it'
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 2, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-dsba'
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 1, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-ait'
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, null
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-it'
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 1, 'โครงการนี้ไม่เปิดรับ DSBA'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-ait'
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 10, 'รับ ม.6 หรือ GED จำนวน 10 คน'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
+where p.code = 'kmutt-sit-active-recruitment-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
 
 insert into public.admission_project_programs (
     project_id, program_id, slots_available, program_notes
@@ -856,6 +1151,83 @@ select p.id, m.id, null, 'ประกาศระบุ 15 คนรวมร�
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-potential-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-good-student-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-good-student-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-science-talent-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-science-talent-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-staff-child-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-staff-child-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-professional-developer-1-2'
 on conflict (project_id, program_id) do update set
     slots_available = excluded.slots_available,
     program_notes = excluded.program_notes;
@@ -2625,72 +2997,6 @@ select
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'cmu-data-science'
 where p.code = 'cmu-00410508107040-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{"ภาษาอังกฤษ":3.0,"คณิตศาสตร์":3.25,"ฟิสิกส์":3.25}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25","สำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)","เป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย","เป็นผู้ที่ได้รับรางวัลชนะเลิศ รองชนะเลิศ หรือรองชนะเลิศอันดับสอง จากโครงการความร่วมมือสร้างสังคมแห่งการเรียนรู้นวัตกรรมด้านพลังงานและสิ่งแวดล้อม"]'::jsonb, 'Portfolio ไม่เกิน 15 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":15}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":80},{"name":"สัมภาษณ์","weight_percent":20}]'::jsonb, '{"official_project_code":"00410608108040","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410608108040\nคณะวิศวกรรมศาสตร์ สาขา วิศวกรรมคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการความร่วมมือสร้างสังคมแห่งการเรียนรู้นวัตกรรมด้านพลังงานและสิ่งแวดล้อม )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 23,000 บาท\nแนวทางการประกอบอาชีพ\nSoftware Engineer / Full Stack Developer, Computer Hardware Engineer, Data Analyst / Data Engineer / Database Administrator, Software Tester / Quality Assurance Engineer, Game Developer, รอบที่ 1 Portfolio แบบ 1.1: 3\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25\nสำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)\nเป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย\nเป็นผู้ที่ได้รับรางวัลชนะเลิศ รองชนะเลิศ หรือรองชนะเลิศอันดับสอง จากโครงการความร่วมมือสร้างสังคมแห่งการเรียนรู้นวัตกรรมด้านพลังงานและสิ่งแวดล้อม\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 15 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 80 และ การสัมภาษณ์ ร้อยละ 20\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nประวัติส่วนตัวของนักเรียน\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nเรียงความ ความยาวไม่เกิน 2 หน้า A4 จากหัวข้อที่กำหนดในเว็บไซต์ https://cmu.to/cpe-tcas-essay\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน (ปพ.1) ด้านหน้าและด้านหลัง\nหมวดที่ 4 : กิจกรรม/รางวัล\nสรุปผลงานในระดับมัธยมศึกษาที่แสดงถึงความรู้ ความสามารถและทักษะของผู้สมัคร สิ่งประดิษฐ์ที่เกี่ยวข้องกับสาขาวิชา การเข้าร่วมกิจกรรมต่าง ๆ ทั้งในและนอกหลักสูตร รวมถึงรางวัลที่ผู้สมัครได้รับตามที่โครงการกำหนด พร้อมอธิบายรายละเอียดประกอบ โดยนักเรียนสามารถใส่รูปภาพในแต่ละหน้าได้ไม่เกิน 6 รูป\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 15 หน้า; Portfolio 80% และสัมภาษณ์ 20%',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cpe'
-where p.code = 'cmu-00410608108040-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{"ภาษาอังกฤษ":3.0,"คณิตศาสตร์":3.25,"ฟิสิกส์":3.25}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25","มีผลคะแนนสอบภาษาอังกฤษตามเกณฑ์อย่างใดอย่างหนึ่ง ไม่น้อยกว่าคะแนนดังต่อไปนี้","IELTS 5.5","IELTS indicator 5.5","TOEFL PBT/ITP 500","TOEFL CBT 173","TOEFL iBT 46-59","TOEIC 650","SAT EBRW 430","CMU TEGS 60","CU-TEP 65","TU-GET PBT 500","TU-GET CBT 60","Duolingo (DET) 95","Oxford Test of English (OTE)/ OTE Advanced 111","PTE-Academic (overall) 40","เป็นผู้กำลังศึกษา หรือสำเร็จการศึกษาแล้ว ในหลักสูตรนานาชาติระดับเทียบเท่ามัธยมศึกษาตอนปลาย ในประเทศไทยหรือต่างประเทศ โดยใช้ภาษาอังกฤษสื่อสารเป็นหลักในหลักสูตร","ต้องแนบ Letters of recommendation ที่เขียนเป็นภาษาอังกฤษโดยอาจารย์ผู้สอน จำนวน 2 ท่าน","สำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)","เป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย","เป็นผู้สำเร็จการศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย","มีผลคะแนนสอบภาษาอังกฤษตามเกณฑ์อย่างใดอย่างหนึ่ง ไม่น้อยกว่าคะแนนดังต่อไปนี้","IELTS 5.5","IELTS indicator 5.5","TOEFL PBT/ITP 500","TOEFL CBT 173","TOEFL iBT 46-59","TOEIC 650","SAT EBRW 430","CMU TEGS 60","CU-TEP 65","TU-GET PBT 500","TU-GET CBT 60","Duolingo (DET) 95","Oxford Test of English (OTE)/ OTE Advanced 111","PTE-Academic (overall) 40","สำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)","เป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา","มีผลคะแนนสอบภาษาอังกฤษตามเกณฑ์อย่างใดอย่างหนึ่ง ไม่น้อยกว่าคะแนนดังต่อไปนี้","IELTS 5.5","IELTS indicator 5.5","TOEFL PBT/ITP 500","TOEFL CBT 173","TOEFL iBT 46-59","TOEIC 650","SAT EBRW 430","CMU TEGS 60","CU-TEP 65","TU-GET PBT 500","TU-GET CBT 60","Duolingo (DET) 95","Oxford Test of English (OTE)/ OTE Advanced 111","PTE-Academic (overall) 40","เป็นผู้ที่ได้รับรางวัล","เป็นผู้ที่ได้รับรางวัล (ระดับประเทศ) การแข่งขันโครงการพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย (NSC) หรือ","เป็นผู้ที่ได้รับรางวัล (ระดับประเทศ) การประกวดโครงงานของนักวิทยาศาสตร์รุ่นเยาว์ สาขาวิชาวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ (YDC.CS & YSC.EN) หรือโครงการอื่นที่เทียบเท่า หรือ","เป็นนักเรียนจากโครงการคอมพิวเตอร์โอลิมปิกที่ผ่านเข้าค่าย 2 จากศูนย์ สอวน. ทั่วประเทศ หรือ","เป็นผู้ที่ได้รับรางวัลจากการแข่งขันวิชาการในระดับเดียวกันตามดุลยพินิจของคณะกรรมการคัดเลือก โดยสามารถสอบถามข้อมูลการแข่งขันที่เทียบเท่า ทาง E-mail: cpe@eng.cmu.ac.th หรือทางโทรศัพท์ 053-942023"]'::jsonb, 'Portfolio ไม่เกิน 15 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":15}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":80},{"name":"สัมภาษณ์","weight_percent":20}]'::jsonb, '{"official_project_code":"00410666108010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410666108010\nคณะวิศวกรรมศาสตร์ สาขา ระบบสารสนเทศและความมั่นคงปลอดภัยไซเบอร์ (นานาชาติ ช่องทาง TCAS)\nหลักสูตร นานาชาติ รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการรับนักเรียนที่มีอัจฉริยภาพทางคอมพิวเตอร์ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 80,000 บาท\nแนวทางการประกอบอาชีพ\nInformation Systems Administrator, IT Consultant / IT Engineer, System Engineer / System Analyst, Network Engineer / Computer Network Architect, Cybersecurity Professionals, รอบที่ 1 Portfolio แบบ 1.1: 2\nแบบ 1.2: 1 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25\nมีผลคะแนนสอบภาษาอังกฤษตามเกณฑ์อย่างใดอย่างหนึ่ง ไม่น้อยกว่าคะแนนดังต่อไปนี้\nIELTS 5.5\nIELTS indicator 5.5\nTOEFL PBT/ITP 500\nTOEFL CBT 173\nTOEFL iBT 46-59\nTOEIC 650\nSAT EBRW 430\nCMU TEGS 60\nCU-TEP 65\nTU-GET PBT 500\nTU-GET CBT 60\nDuolingo (DET) 95\nOxford Test of English (OTE)/ OTE Advanced 111\nPTE-Academic (overall) 40\nสำหรับหลักสูตรนานาชาติ\nเป็นผู้กำลังศึกษา หรือสำเร็จการศึกษาแล้ว ในหลักสูตรนานาชาติระดับเทียบเท่ามัธยมศึกษาตอนปลาย ในประเทศไทยหรือต่างประเทศ โดยใช้ภาษาอังกฤษสื่อสารเป็นหลักในหลักสูตร\nต้องแนบ Letters of recommendation ที่เขียนเป็นภาษาอังกฤษโดยอาจารย์ผู้สอน จำนวน 2 ท่าน\nสำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)\nเป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย\nเป็นผู้สำเร็จการศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย\nมีผลคะแนนสอบภาษาอังกฤษตามเกณฑ์อย่างใดอย่างหนึ่ง ไม่น้อยกว่าคะแนนดังต่อไปนี้\nIELTS 5.5\nIELTS indicator 5.5\nTOEFL PBT/ITP 500\nTOEFL CBT 173\nTOEFL iBT 46-59\nTOEIC 650\nSAT EBRW 430\nCMU TEGS 60\nCU-TEP 65\nTU-GET PBT 500\nTU-GET CBT 60\nDuolingo (DET) 95\nOxford Test of English (OTE)/ OTE Advanced 111\nPTE-Academic (overall) 40\nสำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)\nเป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา\nมีผลคะแนนสอบภาษาอังกฤษตามเกณฑ์อย่างใดอย่างหนึ่ง ไม่น้อยกว่าคะแนนดังต่อไปนี้\nIELTS 5.5\nIELTS indicator 5.5\nTOEFL PBT/ITP 500\nTOEFL CBT 173\nTOEFL iBT 46-59\nTOEIC 650\nSAT EBRW 430\nCMU TEGS 60\nCU-TEP 65\nTU-GET PBT 500\nTU-GET CBT 60\nDuolingo (DET) 95\nOxford Test of English (OTE)/ OTE Advanced 111\nPTE-Academic (overall) 40\nเป็นผู้ที่ได้รับรางวัล\nเป็นผู้ที่ได้รับรางวัล (ระดับประเทศ) การแข่งขันโครงการพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย (NSC) หรือ\nเป็นผู้ที่ได้รับรางวัล (ระดับประเทศ) การประกวดโครงงานของนักวิทยาศาสตร์รุ่นเยาว์ สาขาวิชาวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ (YDC.CS & YSC.EN) หรือโครงการอื่นที่เทียบเท่า หรือ\nเป็นนักเรียนจากโครงการคอมพิวเตอร์โอลิมปิกที่ผ่านเข้าค่าย 2 จากศูนย์ สอวน. ทั่วประเทศ หรือ\nเป็นผู้ที่ได้รับรางวัลจากการแข่งขันวิชาการในระดับเดียวกันตามดุลยพินิจของคณะกรรมการคัดเลือก โดยสามารถสอบถามข้อมูลการแข่งขันที่เทียบเท่า ทาง E-mail: cpe@eng.cmu.ac.th หรือทางโทรศัพท์ 053-942023\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nหลักฐานผลคะแนนที่ใช้คัดเลือก\nหลักฐานการชำระเงิน\nอื่น ๆ\nกรณีนักเรียนเป็นผู้กำลังศึกษา หรือสำเร็จการศึกษาแล้ว ในหลักสูตรนานาชาติระดับเทียบเท่ามัธยมศึกษาตอนปลาย ในประเทศไทยหรือต่างประเทศ โดยใช้ภาษาอังกฤษสื่อสารเป็นหลักในหลักสูตร ต้องแนบเอกสารเพิ่มเติม ดังนี้\nLetters of recommendation ที่เขียนเป็นภาษาอังกฤษโดยอาจารย์ผู้สอน จำนวน 2 ท่าน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 15 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 80 และ การสัมภาษณ์ ร้อยละ 20\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nประวัติส่วนตัวของนักเรียน\nผลคะแนนสอบภาษาอังกฤษอย่างใดอย่างหนึ่ง ตามที่โครงการกำหนด\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nเรียงความ ความยาวไม่เกิน 2 หน้า A4 จากหัวข้อที่กำหนดในเว็บไซต์ https://cmu.to/isne-tcas-essay\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน (ปพ.1) ด้านหน้าและด้านหลัง\nกรณีนักเรียนเป็นผู้กำลังศึกษา หรือสำเร็จการศึกษาแล้ว ในหลักสูตรนานาชาติระดับเทียบเท่ามัธยมศึกษาตอนปลาย ในประเทศไทยหรือต่างประเทศ โดยใช้ภาษาอังกฤษสื่อสารเป็นหลักในหลักสูตร ต้องแนบเอกสารเพิ่มเติม ดังนี้\nLetters of recommendation ที่เขียนเป็นภาษาอังกฤษโดยอาจารย์ผู้สอน จำนวน 2 ท่าน\nหลักฐานผลคะแนนสอบภาษาอังกฤษอย่างใดอย่างหนึ่ง ตามที่โครงการกำหนด\nหมวดที่ 4 : กิจกรรม/รางวัล\nสรุปผลงานในระดับมัธยมศึกษาที่แสดงถึงความรู้ ความสามารถและทักษะของผู้สมัคร สิ่งประดิษฐ์ที่เกี่ยวข้องกับสาขาวิชา การเข้าร่วมกิจกรรมต่าง ๆ ทั้งในและนอกหลักสูตร รวมถึงรางวัลที่ผู้สมัครได้รับตามที่โครงการกำหนด พร้อมอธิบายรายละเอียดประกอบ โดยนักเรียนสามารถใส่รูปภาพในแต่ละหน้าได้ไม่เกิน 6 รูป\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nคุณสมบัติเพิ่มเติมแบบ 1.2\nเกณฑ์ขั้นต่ำ\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์ ไม่น้อยกว่า 40 คะแนน\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTPAT 3 ความถนัดทางวิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์ (รหัสวิชา 30) T-SCORE ไม่น้อยกว่า 45\nสัดส่วนที่ใช้ในการคัดเลือก\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์ ค่าน้ำหนักร้อยละ 76\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) ค่าน้ำหนักร้อยละ 4\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) ค่าน้ำหนักร้อยละ 4\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) ค่าน้ำหนักร้อยละ 4\nTPAT 3 ความถนัดทางวิทยาศาสตร์ เทคโนโลยี วิศวกรรมศาสตร์ (รหัสวิชา 30) ค่าน้ำหนักร้อยละ 12\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 15 หน้า; Portfolio 80% และสัมภาษณ์ 20%',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cyber'
-where p.code = 'cmu-00410666108010-1-1'
 on conflict (project_id, faculty_id) do update set
         min_gpax = excluded.min_gpax,
         gpax_requirements = excluded.gpax_requirements,
