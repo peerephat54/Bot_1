@@ -1,0 +1,334 @@
+{
+  "academic_year": 2570,
+  "checked_at": "2026-08-23T23:05:39+07:00",
+  "policy": {
+    "primary_source_required": true,
+    "official_domain_required_for_visible_records": true,
+    "conflict_rule": "ใช้ประกาศเฉพาะคณะ/โครงการก่อนปฏิทินกลาง และใช้กำหนดที่เร็วกว่าเมื่อเส้นตายขัดกัน",
+    "secondary_sources": "ใช้เพื่อค้นหาเบาะแสเท่านั้น ห้ามสร้างแถว official"
+  },
+  "sources": [
+    {
+      "url": "https://www.admissionpremium.com/content/8429",
+      "publisher": "AdmissionPremium",
+      "classification": "excluded_secondary_wrong_year",
+      "academic_year": 2569,
+      "decision": "ไม่ใช้: เป็นเว็บไซต์สรุปภายนอกและหัวข้อระบุ TCAS69"
+    },
+    {
+      "url": "https://admission.ku.ac.th/media/announcements/2025/10/15/69_TCAS1_White_Elephant_1.1.pdf",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "excluded_primary_wrong_year",
+      "academic_year": 2569,
+      "decision": "ไม่ใช้ใน TCAS70: เป็นประกาศทางการแต่หน้าปกระบุปีการศึกษา 2569"
+    },
+    {
+      "url": "https://tcas.mahidol.ac.th/",
+      "publisher": "มหาวิทยาลัยมหิดล",
+      "classification": "used_primary_index",
+      "academic_year": 2570,
+      "decision": "ใช้ค้นประกาศ ปฏิทิน และตารางจำนวนรับฉบับล่าสุด"
+    },
+    {
+      "url": "https://tcas.mahidol.ac.th/announce/AdmissionCalendar_Round1-3.pdf",
+      "publisher": "มหาวิทยาลัยมหิดล",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้เติมกำหนดการกลางของรอบ 1/1 และ 1/2; เส้นตายเฉพาะคณะ ICT มีลำดับก่อน"
+    },
+    {
+      "url": "https://tcas.mahidol.ac.th/qualified/Portfolio.pdf",
+      "publisher": "มหาวิทยาลัยมหิดล",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันว่า ICT มี 60 ที่นั่งรวมรอบ 1/1 และรอบ 1/2 เปิดเฉพาะที่นั่งคงเหลือ; ไม่กระจาย 60 ซ้ำให้หลายโครงการ"
+    },
+    {
+      "url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
+      "publisher": "มหาวิทยาลัยเชียงใหม่",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันและนำเข้ารายการสายคอมทั้งหมดที่พบในระบบ TCAS70 พร้อมเกณฑ์เต็มรายรหัสโครงการและแบบ 1.1/1.2"
+    },
+    {
+      "url": "https://www.canva.com/design/DAHSpMWNHFk/jobsG6yCRrxj8bccoXpXRQ/edit",
+      "publisher": "Canva design",
+      "classification": "excluded_secondary_editable",
+      "academic_year": null,
+      "decision": "ไม่ใช้: เป็นไฟล์ออกแบบที่แก้ไขได้ ไม่ใช่ประกาศของมหาวิทยาลัย"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "used_primary_index",
+      "academic_year": 2570,
+      "decision": "ใช้ค้นหน้าโครงการทางการและเอกสารแนบ"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า Active Recruitment คณะเทคโนโลยีสารสนเทศ ครั้งที่ 1 พร้อม 3 หลักสูตร เกณฑ์รายหลักสูตร และกำหนดการ"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า Active Recruitment คณะเทคโนโลยีสารสนเทศ ครั้งที่ 3 ซึ่งประกาศเกณฑ์แล้วแต่ยังไม่เปิดระบบสมัคร"
+    },
+    {
+      "url": "https://www.canva.com/design/DAHSpFHhOR8/2xHBc9Pb6oQZKQB4nmAYkQ/edit",
+      "publisher": "Canva design",
+      "classification": "excluded_secondary_editable",
+      "academic_year": null,
+      "decision": "ไม่ใช้: เป็นไฟล์ออกแบบที่แก้ไขได้และข้อความวันรับสมัครแบบ 'ของทุกปี' ไม่ใช่กำหนดการ TCAS70 ทางการ"
+    },
+    {
+      "url": "https://www.eg.mahidol.ac.th/egmu/admission/tcas-admission.html",
+      "publisher": "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยมหิดล",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ TCAS 1/1 จำนวน 10 คน พร้อมเกณฑ์ GPAX/Portfolio และใช้ปฏิทินกลาง MU-TCAS70"
+    },
+    {
+      "url": "https://misreg.csc.ku.ac.th/admission/?page_id=63",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์จากประกาศ TCAS70 รอบ 1 ทางการ"
+    },
+    {
+      "url": "https://admissions.siit.tu.ac.th/admission_box/outstanding-student-program-osp/",
+      "publisher": "SIIT มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า OSP ปี 2027 สำหรับกลุ่มวิศวกรรมคอมพิวเตอร์/วิศวกรรมดิจิทัล โดยระบุขั้น Inter Portfolio 1 ตามประกาศ"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects/b82694a9-f0a6-4a3a-b18f-0de4f1e8bbfc",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า Active Recruitment เฉพาะหลักสูตรสายคอม/IT/เกมที่มีเกณฑ์ครบ"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects/fe4b52a7-d942-4807-9b59-1527675dad89",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการคัดเลือกตรงประเภทเรียนดี แยกเกณฑ์รายหลักสูตร"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects/b44debb2-6551-4eca-9e65-8ed7a7a3a179",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า International Admission ครั้งที่ 1 เฉพาะ CPE, CS และ Game Design"
+    },
+    {
+      "url": "https://join.kmutt.ac.th/projects/c02bf829-5c3c-408d-8bd9-515baebb80dd",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า SIT Active Recruitment ครั้งที่ 2 พร้อมจำนวนรับและเกณฑ์ CS/DSI/IT"
+    },
+    {
+      "url": "https://www.cp.eng.chula.ac.th/cp-tcas1",
+      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "excluded_primary_wrong_year",
+      "academic_year": 2569,
+      "decision": "ยังไม่ใช้: หน้าทางการที่พบเป็นเกณฑ์ TCAS1 ปีการศึกษา 2569 ไม่ใช่ TCAS70"
+    },
+    {
+      "url": "https://admission.ku.ac.th/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "excluded_primary_wrong_year",
+      "academic_year": 2569,
+      "decision": "ยังไม่ใช้ข้อมูลส่วนกลาง: หน้า KU-TCAS ที่ตรวจยังเป็นปีการศึกษา 2569; ใช้เฉพาะประกาศ TCAS70 ของวิทยาเขตสกลนคร"
+    },
+    {
+      "url": "https://admission.kmutnb.ac.th/apply/round/1",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "excluded_primary_not_announced",
+      "academic_year": 2570,
+      "decision": "หน้าประกาศรอบ 1 TCAS70 ที่ตรวจยังไม่มีโครงการของ 5 หลักสูตรสายคอม/IT ที่เลือก จึงเพิ่มเฉพาะหลักสูตรและไม่สร้างเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.tuadmissions.in.th/admissions",
+      "publisher": "มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "excluded_primary_wrong_year",
+      "academic_year": 2569,
+      "decision": "ยังไม่ใช้หลักสูตรส่วนกลาง: เกณฑ์รอบ 1 ที่หน้า TU Admissions แสดงยังเป็นปี 2569; ใช้เฉพาะ SIIT OSP 2027 ที่ประกาศแล้ว"
+    },
+    {
+      "url": "https://admission.reg.kmitl.ac.th/",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "used_primary_index",
+      "academic_year": 2570,
+      "decision": "ใช้ดัชนีประกาศรับสมัครทางการยืนยัน 5 โครงการต้นทางสายคอม TCAS70; คงไว้ 4 โครงการตามขอบเขตที่ผู้ใช้เลือก คิดเป็น 10 แบบรับสมัคร"
+    },
+    {
+      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4637_2026_08_14-10-07-35_bf889.pdf",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "excluded_user_scope",
+      "academic_year": 2570,
+      "decision": "เป็นประกาศทางการ แต่ผู้ใช้ขอไม่รวมสาขาเทคโนโลยีคอมพิวเตอร์ของคณะครุศาสตร์ฯ ในชุดข้อมูลสาย IT ของบอท"
+    },
+    {
+      "url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ Portfolio รอบ 1-1 ถึง 1-5 พร้อมกำหนดการรายรอบ; ไม่กระจายจำนวนรับรวม 40 คนเป็นจำนวนต่อรอบ"
+    },
+    {
+      "url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_08_04-11-03-46_94eee.pdf",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ โครงการเรียนดี 14 จังหวัดพลัส รอบ 1-1 จำนวน 5 คน"
+    },
+    {
+      "url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ โครงการสถานศึกษาเครือข่าย รอบ 1-1 และ 1-2; เก็บเงื่อนไขเสนอชื่อและไม่กระจายจำนวนรับรวม 15 คนเป็นจำนวนต่อรอบ"
+    },
+    {
+      "url": "https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี รอบ 1-1 และ 1-2; ไม่กระจายจำนวนรับรวม 15 คนเป็นจำนวนต่อรอบ"
+    },
+    {
+      "url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "publisher": "คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "excluded_primary_not_announced",
+      "academic_year": 2570,
+      "decision": "หน้า TCAS70 แสดงเกณฑ์เตรียมไว้แต่หัวข้อยังระบุ 'รอประกาศอย่างเป็นทางการ'; เก็บ 3 โครงการเป็น draft และไม่ให้บอทแสดง"
+    },
+    {
+      "url": "https://www.science.kmitl.ac.th/curriculums/bachelor/computer-science-2569",
+      "publisher": "คณะวิทยาศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตรวิทยาการคอมพิวเตอร์ พ.ศ. 2569 จำนวน 130 หน่วยกิตในรายการหลักสูตร แต่ไม่เพิ่มโครงการหรือเกณฑ์ TCAS70 จนกว่าจะมีประกาศรับสมัครทางการ"
+    },
+    {
+      "url": "https://admission.chula.ac.th/admission_c1.php",
+      "publisher": "สำนักบริหารวิชาการ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "excluded_primary_not_announced",
+      "academic_year": 2570,
+      "decision": "หน้า TCAS70 หลักสูตรปกติระบุว่าไม่พบประกาศรับสมัคร จึงไม่สร้างโครงการ เกณฑ์ จำนวนรับ หรือกำหนดการ"
+    },
+    {
+      "url": "https://admission.chula.ac.th/admission_c2.php",
+      "publisher": "สำนักบริหารวิชาการ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "excluded_primary_not_announced",
+      "academic_year": 2570,
+      "decision": "หน้า TCAS70 หลักสูตรนานาชาติระบุว่าไม่พบประกาศรับสมัคร จึงไม่สร้างโครงการ เกณฑ์ จำนวนรับ หรือกำหนดการ"
+    },
+    {
+      "url": "https://www.reg.chula.ac.th/admissions/thai/bprograms/",
+      "publisher": "สำนักทะเบียน จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันรายการหลักสูตรระดับปริญญาบัณฑิตในขอบเขตสายคอม ข้อมูล AI และเทคโนโลยีเท่านั้น"
+    },
+    {
+      "url": "https://www.cp.eng.chula.ac.th/future/bachelor",
+      "publisher": "ภาควิชาวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตรวิศวกรรมคอมพิวเตอร์ 138 หน่วยกิต ระยะเวลา 4 ปี แต่ยังไม่เพิ่มโครงการ TCAS70"
+    },
+    {
+      "url": "https://www.cp.eng.chula.ac.th/cedt",
+      "publisher": "ภาควิชาวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตร CEDT 124 หน่วยกิต ระยะเวลา 3 ปีครึ่ง แต่ยังไม่เพิ่มโครงการ TCAS70"
+    },
+    {
+      "url": "https://www.math.sc.chula.ac.th/th/program/undergraduate/computer-science/",
+      "publisher": "ภาควิชาคณิตศาสตร์และวิทยาการคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตรวิทยาการคอมพิวเตอร์ 136 หน่วยกิต ระยะเวลา 4 ปี แต่ยังไม่เพิ่มโครงการ TCAS70"
+    },
+    {
+      "url": "https://www.ise.eng.chula.ac.th/academics",
+      "publisher": "International School of Engineering จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันกลุ่มหลักสูตรนานาชาติ ICE, Robotics AI และ Semiconductor Engineering"
+    },
+    {
+      "url": "https://www.ise.eng.chula.ac.th/academics/ice/info",
+      "publisher": "International School of Engineering จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตร ICE เป็นรายการหลักสูตรเท่านั้น และรอประกาศรับสมัคร TCAS70"
+    },
+    {
+      "url": "https://www.ise.eng.chula.ac.th/academics/robotics-ai/info",
+      "publisher": "International School of Engineering จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตร Robotics and AI Engineering เป็นรายการหลักสูตรเท่านั้น และรอประกาศรับสมัคร TCAS70"
+    },
+    {
+      "url": "https://www.ise.eng.chula.ac.th/academics/semi/info",
+      "publisher": "International School of Engineering จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตร Semiconductor Engineering เป็นรายการหลักสูตรเท่านั้น และรอประกาศรับสมัคร TCAS70"
+    },
+    {
+      "url": "https://stat.cbs.chula.ac.th/index.php/th/our-programs/bachelor/2564",
+      "publisher": "ภาควิชาสถิติ คณะพาณิชยศาสตร์และการบัญชี จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มสถิติและวิทยาการข้อมูลกับเทคโนโลยีสารสนเทศเพื่อธุรกิจ หลักสูตรละ 133 หน่วยกิต โดยไม่สร้างเกณฑ์รับสมัครที่ยังไม่ประกาศ"
+    },
+    {
+      "url": "https://bba.acc.chula.ac.th/files/MIS_EN.pdf",
+      "publisher": "คณะพาณิชยศาสตร์และการบัญชี จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มระบบสารสนเทศทางการจัดการ 136 หน่วยกิตเป็นรายการหลักสูตร และรอประกาศรับสมัคร TCAS70"
+    },
+    {
+      "url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-engineering/department-of-electrical-and-computer-engineering.aspx?lang=th",
+      "publisher": "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มวิศวกรรมคอมพิวเตอร์ หลักสูตร 4 ปี 134 หน่วยกิตเป็นรายการหลักสูตร และรอประกาศ TCAS70"
+    },
+    {
+      "url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-applied-science/department-of-computer-and-information-science.aspx",
+      "publisher": "คณะวิทยาศาสตร์ประยุกต์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มวิทยาการคอมพิวเตอร์เป็นรายการหลักสูตร และรอประกาศ TCAS70"
+    },
+    {
+      "url": "https://www.itd.kmutnb.ac.th/bachelor.php",
+      "publisher": "คณะเทคโนโลยีสารสนเทศและนวัตกรรมดิจิทัล มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มวิทยาการสารสนเทศเพื่อเศรษฐกิจดิจิทัล หลักสูตรนานาชาติ 4 ปี 129 หน่วยกิต และรอประกาศ TCAS70"
+    },
+    {
+      "url": "https://www.fitm.kmutnb.ac.th/IT.html",
+      "publisher": "คณะเทคโนโลยีและการจัดการอุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มเทคโนโลยีสารสนเทศและวิศวกรรมสารสนเทศและเครือข่าย หลักสูตร 4 ปี พ.ศ. 2567; หน้าเดียวกันระบุหน่วยกิตสองค่าขัดกันจึงไม่บันทึกตัวเลขจนกว่ามีเอกสารหลักสูตรที่ชัดเจน"
+    }
+  ]
+}
