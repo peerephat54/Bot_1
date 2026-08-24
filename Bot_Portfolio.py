@@ -1621,7 +1621,8 @@ class ProjectDetailView(OwnedView):
 async def hello(interaction: discord.Interaction):
     await interaction.response.send_message(
         f"สวัสดีครับคุณ {interaction.user.name}! "
-        "ยินดีต้อนรับสู่บอทเช็กเกณฑ์รอบพอร์ต TCAS 🎓"
+        "ยินดีต้อนรับสู่บอทเช็กเกณฑ์รอบพอร์ต TCAS 🎓",
+        ephemeral=True,
     )
 
 
@@ -1633,7 +1634,7 @@ async def hello(interaction: discord.Interaction):
 @app_commands.describe(university="พิมพ์ชื่อหรือตัวย่อ แล้วเลือกมหาวิทยาลัย")
 @app_commands.choices(university=UNIVERSITY_SLASH_CHOICES)
 async def tcas_search(interaction: discord.Interaction, university: str):
-    await interaction.response.defer(thinking=True)
+    await interaction.response.defer(thinking=True, ephemeral=True)
     logger.info(
         "tcas_search interactive menu started user=%s university=%s",
         interaction.user.id,
