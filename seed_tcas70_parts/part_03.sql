@@ -10,6 +10,303 @@ insert into public.admission_criteria (
     official_announcement_url, updated_at
 )
 select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410507107020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107020\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการสนับสนุนการจัดตั้งห้องเรียนวิทยาศาสตร์ในโรงเรียนฯ (วมว.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 2\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cs'
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410507107030","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107030\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการรับนักเรียนจากค่ายโอลิมปิกวิชาการ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 4\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cs'
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410507107040","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107040\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการพัฒนาอัจฉริยภาพสำหรับเด็กและเยาวชน (ร่วมกับ สวทช.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cs'
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410507107050","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107050\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการรับผู้มีความสามารถพิเศษทางวิทยาศาสตร์และเทคโนโลยี )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 10\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-cs'
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","รับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า","เป็นผู้มีร่างกายแข็งแรงและไม่เป็นโรคหรือภาวะอันเป็นอุปสรรคในการศึกษา","เป็นผู้มีความบกพร่องอย่างใดอย่างหนึ่ง ดังต่อไปนี้","เป็นผู้บกพร่องทางการได้ยิน (หูตึงใช้เครื่องช่วยฟัง)","เป็นผู้บกพร่องทางการเห็น (สายตาเลือนรางสามารถอ่านหนังสือได้ด้วยตนเองในระยะ 30 เซนติเมตร)","เป็นผู้บกพร่องทางร่างกาย หรือการเคลื่อนไหว แต่สามารถช่วยเหลือตัวเองได้","เป็นผู้พิการที่มีบัตรประจำตัวผู้พิการตามกฎหมายว่าด้วยการส่งเสริมและพัฒนาคุณภาพชีวิตผู้พิการ","ผลการตัดสินของคณะกรรมการทุกขั้นตอนถือเป็นที่สิ้นสุด"]'::jsonb, 'Portfolio ไม่เกิน 15 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":15}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":50},{"name":"สัมภาษณ์","weight_percent":50}]'::jsonb, '{"official_project_code":"00410508106011","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508106011\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนพิการ\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nรับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า\nเป็นผู้มีร่างกายแข็งแรงและไม่เป็นโรคหรือภาวะอันเป็นอุปสรรคในการศึกษา\nเป็นผู้มีความบกพร่องอย่างใดอย่างหนึ่ง ดังต่อไปนี้\nเป็นผู้บกพร่องทางการได้ยิน (หูตึงใช้เครื่องช่วยฟัง)\nเป็นผู้บกพร่องทางการเห็น (สายตาเลือนรางสามารถอ่านหนังสือได้ด้วยตนเองในระยะ 30 เซนติเมตร)\nเป็นผู้บกพร่องทางร่างกาย หรือการเคลื่อนไหว แต่สามารถช่วยเหลือตัวเองได้\nเป็นผู้พิการที่มีบัตรประจำตัวผู้พิการตามกฎหมายว่าด้วยการส่งเสริมและพัฒนาคุณภาพชีวิตผู้พิการ\nผลการตัดสินของคณะกรรมการทุกขั้นตอนถือเป็นที่สิ้นสุด\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nสำเนาบัตรประจำตัวผู้พิการ\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 15 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 50 และ การสัมภาษณ์ ร้อยละ 50\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลพื้นฐาน ข้อมูลส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nไม่มี\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nสำเนาบัตรประจำตัวผู้พิการ\nหมวดที่ 4 : กิจกรรม/รางวัล\nเกียรติบัตร (Certificate) รางวัล หรือ กิจกรรมเข้าร่วม\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 15 หน้า; Portfolio 50% และสัมภาษณ์ 50%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-data-science'
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410508107010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107010\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการรับนักเรียนจากค่ายโอลิมปิกวิชาการ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-data-science'
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410508107020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107020\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการพัฒนาอัจฉริยภาพสำหรับเด็กและเยาวชน (ร่วมกับ สวทช.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-data-science'
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410508107030","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107030\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการสนับสนุนการจัดตั้งห้องเรียนวิทยาศาสตร์ในโรงเรียนฯ (วมว.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-data-science'
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00410508107040","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107040\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการสานฝันปั้นนักวิทยาศาสตร์ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 5\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-data-science'
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
     p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{"ภาษาอังกฤษ":3.0,"คณิตศาสตร์":3.25,"ฟิสิกส์":3.25}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ภาษาอังกฤษ ไม่น้อยกว่า 3.00","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) คณิตศาสตร์ ไม่น้อยกว่า 3.25","เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมวิชาในชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ฟิสิกส์ ไม่น้อยกว่า 3.25","สำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)","เป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย","เป็นผู้ที่ได้รับรางวัลชนะเลิศ รองชนะเลิศ หรือรองชนะเลิศอันดับสอง จากโครงการความร่วมมือสร้างสังคมแห่งการเรียนรู้นวัตกรรมด้านพลังงานและสิ่งแวดล้อม"]'::jsonb, 'Portfolio ไม่เกิน 15 หน้า ตามโครงสร้างที่ประกาศ',
     '{"max_pages":15}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
@@ -744,105 +1041,6 @@ select
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'cmu-software-engineering'
 where p.code = 'cmu-00412171108020-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6","เป็นผู้กำลังศึกษาอยู่ Grade 12 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","เป็นผู้สำเร็จการศึกษาใน Grade 12 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","เป็นผู้กำลังศึกษาอยู่ Year 13 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","เป็นผู้สำเร็จการศึกษาใน Year 13 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","สำหรับหลักสูตรอาชีวศึกษา","เป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3","เป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ","คุณสมบัติเฉพาะ","มีผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย","มีผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)","มีผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)","กรณีผ่านการคัดเลือก ผู้ยืนยันสิทธิ์รอบที่ 1 ที่ผ่านการคัดเลือกด้วยคุณสมบัติและเกณฑ์ปกติแล้ว แต่มีผลคะแนนในส่วนของภาษาอังกฤษประกอบการคัดเลือกที่ผ่านมาตามรายละเอียดดังนี้","ผลสอบคะแนน TOEIC น้อยกว่าหรือเท่ากับ 599 คะแนน หรือ","ผลสอบ IELTS น้อยกว่าหรือเท่ากับ 4.5 หรือ","ผลสอบคะแนน TOEFL (iBT) น้อยกว่าหรือเท่ากับ 60 คะแนน หรือ","ผลสอบคะแนน TOEFL (CBT) น้อยกว่าหรือเท่ากับ 179 คะแนน หรือ","ผลสอบคะแนน TOEFL (ITP/PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ","ผลสอบคะแนน New SAT (เฉพาะวิชาภาษาอังกฤษ Reading & Writing) น้อยกว่าหรือเท่ากับ 319 คะแนน หรือ","ผลสอบ A-Level วิชาภาษาอังกฤษ น้อยกว่าหรือเท่ากับ 59 หรือ","ผลสอบคะแนน CMU TEGS น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน CU-TEP น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน TU-GET (PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ","ผลสอบคะแนน TU-GET (CBT) น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน Duolingo (DET) น้อยกว่าหรือเท่ากับ 84 คะแนน หรือ","ไม่มีผลสอบคะแนนภาษาอังกฤษตามดังกล่าว","ผู้ยืนยันสิทธิ์ในรอบที่ 1 ที่ผ่านการคัดเลือกด้วยผลคะแนนตามที่ระบุในข้างต้นนี้ ต้องลงทะเบียนคอร์สเรียนปรับพื้นฐานภาษาอังกฤษ Pre-sessional English สามารถดูรายละเอียดเพิ่มเติมเกี่ยวกับคอร์สเรียน Pre-sessional English ได้ใน www.icdi.cmu.ac.th"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":50},{"name":"สัมภาษณ์","weight_percent":50}]'::jsonb, '{"official_project_code":"00412401101010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412401101010\nวิทยาลัยนานาชาตินวัตกรรมดิจิทัล สาขา นวัตกรรมดิจิทัล (นานาชาติ ช่องทาง TCAS)\nหลักสูตร นานาชาติ รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับด้วยแฟ้มสะสมผลงาน\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 55,000 บาท\nเอกสารประกอบคำอธิบายสาขา\nBachelor of Science in Digital Innovation\nแนวทางการประกอบอาชีพ\nผู้ประกอบการธุรกิจสตาร์ทอัพ (Entrepreneur/Startup Founder), นวัตกรด้านเทคโนโลยีดิจิทัล (Work as an innovator/ technocrat in digital technologies), ผู้ทำงานในรูปแบบดิจิทัลโนแมด (Work as digital workforce/ digital nomad in private or public sectors), นักวิเคราะห์ธุรกิจ (Business Analyst), ผู้จัดการนวัตกรรมดิจิทัล (Innovation Manager), รอบที่ 1 Portfolio แบบ 1.1: 35\nแบบ 1.2: 1 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6\nสำหรับหลักสูตรนานาชาติ\nเป็นผู้กำลังศึกษาอยู่ Grade 12 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nเป็นผู้สำเร็จการศึกษาใน Grade 12 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nเป็นผู้กำลังศึกษาอยู่ Year 13 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nเป็นผู้สำเร็จการศึกษาใน Year 13 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nสำหรับหลักสูตรอาชีวศึกษา\nเป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3\nเป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ\nคุณสมบัติเฉพาะ\nมีผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย\nมีผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)\nมีผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)\nกรณีผ่านการคัดเลือก ผู้ยืนยันสิทธิ์รอบที่ 1 ที่ผ่านการคัดเลือกด้วยคุณสมบัติและเกณฑ์ปกติแล้ว แต่มีผลคะแนนในส่วนของภาษาอังกฤษประกอบการคัดเลือกที่ผ่านมาตามรายละเอียดดังนี้\nผลสอบคะแนน TOEIC น้อยกว่าหรือเท่ากับ 599 คะแนน หรือ\nผลสอบ IELTS น้อยกว่าหรือเท่ากับ 4.5 หรือ\nผลสอบคะแนน TOEFL (iBT) น้อยกว่าหรือเท่ากับ 60 คะแนน หรือ\nผลสอบคะแนน TOEFL (CBT) น้อยกว่าหรือเท่ากับ 179 คะแนน หรือ\nผลสอบคะแนน TOEFL (ITP/PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ\nผลสอบคะแนน New SAT (เฉพาะวิชาภาษาอังกฤษ Reading & Writing) น้อยกว่าหรือเท่ากับ 319 คะแนน หรือ\nผลสอบ A-Level วิชาภาษาอังกฤษ น้อยกว่าหรือเท่ากับ 59 หรือ\nผลสอบคะแนน CMU TEGS น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน CU-TEP น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน TU-GET (PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ\nผลสอบคะแนน TU-GET (CBT) น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน Duolingo (DET) น้อยกว่าหรือเท่ากับ 84 คะแนน หรือ\nไม่มีผลสอบคะแนนภาษาอังกฤษตามดังกล่าว\nผู้ยืนยันสิทธิ์ในรอบที่ 1 ที่ผ่านการคัดเลือกด้วยผลคะแนนตามที่ระบุในข้างต้นนี้ ต้องลงทะเบียนคอร์สเรียนปรับพื้นฐานภาษาอังกฤษ Pre-sessional English สามารถดูรายละเอียดเพิ่มเติมเกี่ยวกับคอร์สเรียน Pre-sessional English ได้ใน www.icdi.cmu.ac.th\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nอื่น ๆ\nแฟ้มสะสมผลงานจะต้องเป็นภาษาอังกฤษเท่านั้น\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 50 และ การสัมภาษณ์ ร้อยละ 50\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลพื้นฐานส่วนตัว (Resume) หรือประวัติของผู้สมัคร เป็นภาษาอังกฤษเท่านั้น\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nบทความ (Statement of purpose) แสดงความสนใจการเข้าศึกษาต่อในหลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชานวัตกรรมดิจิทัล ประกอบการสมัครเข้าศึกษาในอนาคต และต้องเป็นภาษาอังกฤษเท่านั้น\nจำนวนตัวอักษรไม่ต่ำกว่า 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบรับรองผลการศึกษาระดับมัธยมศึกษาตอนปลาย หรือเทียบเท่า\nหมวดที่ 4 : กิจกรรม/รางวัล\nแฟ้มสะสมผลงานจะต้องเป็นภาษาอังกฤษทั้งหมด\nผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย\nผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)\nผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nใบสมัคร\nบัตรประจำตัวประชาชน\nสำเนาใบแสดงผลการเรียน\nแฟ้มสะสมผลงาน (Portfolio)\nอื่น ๆ\nการสอบสัมภาษณ์ในหลักสูตรนวัตกรรมดิจิทัล สอบสัมภาษณ์ผ่านช่องทางออนไลน์เท่านั้น\nคุณสมบัติเพิ่มเติมแบบ 1.2\nเกณฑ์ขั้นต่ำ\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) T-SCORE ไม่น้อยกว่า 40\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) T-SCORE ไม่น้อยกว่า 40\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) T-SCORE ไม่น้อยกว่า 45\nสัดส่วนที่ใช้ในการคัดเลือก\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์ ค่าน้ำหนักร้อยละ 25\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) ค่าน้ำหนักร้อยละ 25\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) ค่าน้ำหนักร้อยละ 25\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) ค่าน้ำหนักร้อยละ 25\n0"}'::jsonb, 'Portfolio ไม่เกิน 10 หน้า; Portfolio 50% และสัมภาษณ์ 50%',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-digital-innovation'
-where p.code = 'cmu-00412401101010-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6","เป็นผู้กำลังศึกษาอยู่ Grade 12 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","เป็นผู้สำเร็จการศึกษาใน Grade 12 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","เป็นผู้กำลังศึกษาอยู่ Year 13 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","เป็นผู้สำเร็จการศึกษาใน Year 13 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด","สำหรับหลักสูตรอาชีวศึกษา","เป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3","เป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ","คุณสมบัติเฉพาะ","มีผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย","มีผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)","มีผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)","กรณีผ่านการคัดเลือก ผู้ยืนยันสิทธิ์รอบที่ 1 ที่ผ่านการคัดเลือกด้วยคุณสมบัติและเกณฑ์ปกติแล้ว แต่มีผลคะแนนในส่วนของภาษาอังกฤษประกอบการคัดเลือกที่ผ่านมาตามรายละเอียดดังนี้","ผลสอบคะแนน TOEIC น้อยกว่าหรือเท่ากับ 599 คะแนน หรือ","ผลสอบ IELTS น้อยกว่าหรือเท่ากับ 4.5 หรือ","ผลสอบคะแนน TOEFL (iBT) น้อยกว่าหรือเท่ากับ 60 คะแนน หรือ","ผลสอบคะแนน TOEFL (CBT) น้อยกว่าหรือเท่ากับ 179 คะแนน หรือ","ผลสอบคะแนน TOEFL (ITP/PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ","ผลสอบคะแนน New SAT (เฉพาะวิชาภาษาอังกฤษ Reading & Writing) น้อยกว่าหรือเท่ากับ 319 คะแนน หรือ","ผลสอบ A-Level วิชาภาษาอังกฤษ น้อยกว่าหรือเท่ากับ 59 หรือ","ผลสอบคะแนน CMU TEGS น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน CU-TEP น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน TU-GET (PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ","ผลสอบคะแนน TU-GET (CBT) น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน Duolingo (DET) น้อยกว่าหรือเท่ากับ 84 คะแนน หรือ","ไม่มีผลสอบคะแนนภาษาอังกฤษตามดังกล่าว","ผู้ยืนยันสิทธิ์ในรอบที่ 1 ที่ผ่านการคัดเลือกด้วยผลคะแนนตามที่ระบุในข้างต้นนี้ ต้องลงทะเบียนคอร์สเรียนปรับพื้นฐานภาษาอังกฤษ Pre-sessional English สามารถดูรายละเอียดเพิ่มเติมเกี่ยวกับคอร์สเรียน Pre-sessional English ได้ใน www.icdi.cmu.ac.th"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":50},{"name":"สัมภาษณ์","weight_percent":50},"TGAT/TPAT ตามเกณฑ์แบบ 1.2"]'::jsonb, '{"official_project_code":"00412401101010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412401101010\nวิทยาลัยนานาชาตินวัตกรรมดิจิทัล สาขา นวัตกรรมดิจิทัล (นานาชาติ ช่องทาง TCAS)\nหลักสูตร นานาชาติ รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับด้วยแฟ้มสะสมผลงาน\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 55,000 บาท\nเอกสารประกอบคำอธิบายสาขา\nBachelor of Science in Digital Innovation\nแนวทางการประกอบอาชีพ\nผู้ประกอบการธุรกิจสตาร์ทอัพ (Entrepreneur/Startup Founder), นวัตกรด้านเทคโนโลยีดิจิทัล (Work as an innovator/ technocrat in digital technologies), ผู้ทำงานในรูปแบบดิจิทัลโนแมด (Work as digital workforce/ digital nomad in private or public sectors), นักวิเคราะห์ธุรกิจ (Business Analyst), ผู้จัดการนวัตกรรมดิจิทัล (Innovation Manager), รอบที่ 1 Portfolio แบบ 1.1: 35\nแบบ 1.2: 1 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6\nสำหรับหลักสูตรนานาชาติ\nเป็นผู้กำลังศึกษาอยู่ Grade 12 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nเป็นผู้สำเร็จการศึกษาใน Grade 12 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nเป็นผู้กำลังศึกษาอยู่ Year 13 ในหลักสูตรนานาชาติและจะมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nเป็นผู้สำเร็จการศึกษาใน Year 13 ในหลักสูตรนานาชาติและมีผลสอบมาตรฐานจากโรงเรียนในสังกัด\nสำหรับหลักสูตรอาชีวศึกษา\nเป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3\nเป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ\nคุณสมบัติเฉพาะ\nมีผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย\nมีผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)\nมีผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)\nกรณีผ่านการคัดเลือก ผู้ยืนยันสิทธิ์รอบที่ 1 ที่ผ่านการคัดเลือกด้วยคุณสมบัติและเกณฑ์ปกติแล้ว แต่มีผลคะแนนในส่วนของภาษาอังกฤษประกอบการคัดเลือกที่ผ่านมาตามรายละเอียดดังนี้\nผลสอบคะแนน TOEIC น้อยกว่าหรือเท่ากับ 599 คะแนน หรือ\nผลสอบ IELTS น้อยกว่าหรือเท่ากับ 4.5 หรือ\nผลสอบคะแนน TOEFL (iBT) น้อยกว่าหรือเท่ากับ 60 คะแนน หรือ\nผลสอบคะแนน TOEFL (CBT) น้อยกว่าหรือเท่ากับ 179 คะแนน หรือ\nผลสอบคะแนน TOEFL (ITP/PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ\nผลสอบคะแนน New SAT (เฉพาะวิชาภาษาอังกฤษ Reading & Writing) น้อยกว่าหรือเท่ากับ 319 คะแนน หรือ\nผลสอบ A-Level วิชาภาษาอังกฤษ น้อยกว่าหรือเท่ากับ 59 หรือ\nผลสอบคะแนน CMU TEGS น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน CU-TEP น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน TU-GET (PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ\nผลสอบคะแนน TU-GET (CBT) น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน Duolingo (DET) น้อยกว่าหรือเท่ากับ 84 คะแนน หรือ\nไม่มีผลสอบคะแนนภาษาอังกฤษตามดังกล่าว\nผู้ยืนยันสิทธิ์ในรอบที่ 1 ที่ผ่านการคัดเลือกด้วยผลคะแนนตามที่ระบุในข้างต้นนี้ ต้องลงทะเบียนคอร์สเรียนปรับพื้นฐานภาษาอังกฤษ Pre-sessional English สามารถดูรายละเอียดเพิ่มเติมเกี่ยวกับคอร์สเรียน Pre-sessional English ได้ใน www.icdi.cmu.ac.th\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nอื่น ๆ\nแฟ้มสะสมผลงานจะต้องเป็นภาษาอังกฤษเท่านั้น\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 50 และ การสัมภาษณ์ ร้อยละ 50\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลพื้นฐานส่วนตัว (Resume) หรือประวัติของผู้สมัคร เป็นภาษาอังกฤษเท่านั้น\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nบทความ (Statement of purpose) แสดงความสนใจการเข้าศึกษาต่อในหลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชานวัตกรรมดิจิทัล ประกอบการสมัครเข้าศึกษาในอนาคต และต้องเป็นภาษาอังกฤษเท่านั้น\nจำนวนตัวอักษรไม่ต่ำกว่า 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบรับรองผลการศึกษาระดับมัธยมศึกษาตอนปลาย หรือเทียบเท่า\nหมวดที่ 4 : กิจกรรม/รางวัล\nแฟ้มสะสมผลงานจะต้องเป็นภาษาอังกฤษทั้งหมด\nผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย\nผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)\nผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nใบสมัคร\nบัตรประจำตัวประชาชน\nสำเนาใบแสดงผลการเรียน\nแฟ้มสะสมผลงาน (Portfolio)\nอื่น ๆ\nการสอบสัมภาษณ์ในหลักสูตรนวัตกรรมดิจิทัล สอบสัมภาษณ์ผ่านช่องทางออนไลน์เท่านั้น\nคุณสมบัติเพิ่มเติมแบบ 1.2\nเกณฑ์ขั้นต่ำ\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) T-SCORE ไม่น้อยกว่า 40\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) T-SCORE ไม่น้อยกว่า 40\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) T-SCORE ไม่น้อยกว่า 45\nสัดส่วนที่ใช้ในการคัดเลือก\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์ ค่าน้ำหนักร้อยละ 25\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) ค่าน้ำหนักร้อยละ 25\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) ค่าน้ำหนักร้อยละ 25\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) ค่าน้ำหนักร้อยละ 25\n0","variant_1_2_requirements":"เกณฑ์ขั้นต่ำ\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) T-SCORE ไม่น้อยกว่า 40\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) T-SCORE ไม่น้อยกว่า 40\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) T-SCORE ไม่น้อยกว่า 45\nสัดส่วนที่ใช้ในการคัดเลือก\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์ ค่าน้ำหนักร้อยละ 25\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) ค่าน้ำหนักร้อยละ 25\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) ค่าน้ำหนักร้อยละ 25\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) ค่าน้ำหนักร้อยละ 25\n0"}'::jsonb, 'Portfolio ไม่เกิน 10 หน้า; Portfolio 50% และสัมภาษณ์ 50%; แบบ 1.2 มีเกณฑ์ TGAT/TPAT เพิ่มตามประกาศ',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-digital-innovation'
-where p.code = 'cmu-00412401101010-1-2'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้สำเร็จการศึกษาและมีผลการศึกษามาตรฐานในระบบการศึกษาอังกฤษอย่างใดอย่างหนึ่ง โดยเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลาย ในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา ของที่ประชุมอธิการบดีแห่งประเทศไทย","เป็นผู้สำเร็จการศึกษาเทียบเท่าวุฒิการศึกษาชั้นมัธยมศึกษาตอนปลายปีที่ 6 ในหลักสูตรนานาชาติ International Baccalaureate (IB) และมีผลสอบมาตรฐานจากโรงเรียนในสังกัด โดยเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลาย ในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา ของที่ประชุมอธิการบดีแห่งประเทศไทย","เป็นผู้สำเร็จการศึกษาเทียบเท่าวุฒิการศึกษาชั้นมัธยมศึกษาตอนปลายปีที่ 6 ในหลักสูตรนานาชาติ New Zealand National Certificate of Educational Achievement (NCEA) และมีผลสอบมาตรฐานจากโรงเรียนในสังกัด โดยเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลาย ในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา ของที่ประชุมอธิการบดีแห่งประเทศไทย","สำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)","เป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษาของที่ประชุมอธิการบดีแห่งประเทศไทย","ต้องเป็นผู้สำเร็จการศึกษาในวุฒิ GED เรียบร้อยแล้ว","คุณสมบัติเฉพาะ","มีผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย","มีผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)","มีผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)","กรณีผ่านการคัดเลือก ผู้ยืนยันสิทธิ์รอบที่ 1 ที่ผ่านการคัดเลือกด้วยคุณสมบัติและเกณฑ์ปกติแล้ว แต่มีผลคะแนนในส่วนของภาษาอังกฤษประกอบการคัดเลือกที่ผ่านมาตามรายละเอียดดังนี้","ผลสอบคะแนน TOEIC น้อยกว่าหรือเท่ากับ 599 คะแนน หรือ","ผลสอบ IELTS น้อยกว่าหรือเท่ากับ 4.5 หรือ","ผลสอบคะแนน TOEFL (iBT) น้อยกว่าหรือเท่ากับ 60 คะแนน หรือ","ผลสอบคะแนน TOEFL (CBT) น้อยกว่าหรือเท่ากับ 179 คะแนน หรือ","ผลสอบคะแนน TOEFL (ITP/PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ","ผลสอบคะแนน New SAT (เฉพาะวิชาภาษาอังกฤษ Reading & Writing) น้อยกว่าหรือเท่ากับ 319 คะแนน หรือ","ผลสอบ A-Level วิชาภาษาอังกฤษ น้อยกว่าหรือเท่ากับ 59 หรือ","ผลสอบคะแนน CMU TEGS น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน CU-TEP น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน TU-GET (PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ","ผลสอบคะแนน TU-GET (CBT) น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ","ผลสอบคะแนน Duolingo (DET) น้อยกว่าหรือเท่ากับ 84 คะแนน หรือ","ไม่มีผลสอบคะแนนภาษาอังกฤษตามดังกล่าว","ผู้ยืนยันสิทธิ์ในรอบที่ 1 ที่ผ่านการคัดเลือกด้วยผลคะแนนตามที่ระบุในข้างต้นนี้ ต้องลงทะเบียนคอร์สเรียนปรับพื้นฐานภาษาอังกฤษ Pre-sessional English สามารถดูรายละเอียดเพิ่มเติมเกี่ยวกับคอร์สเรียน Pre-sessional English ได้ใน www.icdi.cmu.ac.th"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":50},{"name":"สัมภาษณ์","weight_percent":50}]'::jsonb, '{"official_project_code":"00412401101020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412401101020\nวิทยาลัยนานาชาตินวัตกรรมดิจิทัล สาขา นวัตกรรมดิจิทัล (นานาชาติ ช่องทาง TCAS)\nหลักสูตร นานาชาติ รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับด้วยแฟ้มสะสมผลงาน\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 55,000 บาท\nเอกสารประกอบคำอธิบายสาขา\nBachelor of Science in Digital Innovation\nแนวทางการประกอบอาชีพ\nผู้ประกอบการธุรกิจสตาร์ทอัพ (Entrepreneur/Startup Founder), นวัตกรด้านเทคโนโลยีดิจิทัล (Work as an innovator/ technocrat in digital technologies), ผู้ทำงานในรูปแบบดิจิทัลโนแมด (Work as digital workforce/ digital nomad in private or public sectors), นักวิเคราะห์ธุรกิจ (Business Analyst), ผู้จัดการนวัตกรรมดิจิทัล (Innovation Manager), รอบที่ 1 Portfolio แบบ 1.1: 4\nแบบ 1.2: 1 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรนานาชาติ\nเป็นผู้สำเร็จการศึกษาและมีผลการศึกษามาตรฐานในระบบการศึกษาอังกฤษอย่างใดอย่างหนึ่ง โดยเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลาย ในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา ของที่ประชุมอธิการบดีแห่งประเทศไทย\nเป็นผู้สำเร็จการศึกษาเทียบเท่าวุฒิการศึกษาชั้นมัธยมศึกษาตอนปลายปีที่ 6 ในหลักสูตรนานาชาติ International Baccalaureate (IB) และมีผลสอบมาตรฐานจากโรงเรียนในสังกัด โดยเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลาย ในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา ของที่ประชุมอธิการบดีแห่งประเทศไทย\nเป็นผู้สำเร็จการศึกษาเทียบเท่าวุฒิการศึกษาชั้นมัธยมศึกษาตอนปลายปีที่ 6 ในหลักสูตรนานาชาติ New Zealand National Certificate of Educational Achievement (NCEA) และมีผลสอบมาตรฐานจากโรงเรียนในสังกัด โดยเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลาย ในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา ของที่ประชุมอธิการบดีแห่งประเทศไทย\nสำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)\nเป็นไปตามประกาศเรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษาของที่ประชุมอธิการบดีแห่งประเทศไทย\nต้องเป็นผู้สำเร็จการศึกษาในวุฒิ GED เรียบร้อยแล้ว\nคุณสมบัติเฉพาะ\nมีผลงาน รางวัล หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย\nมีผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)\nมีผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)\nกรณีผ่านการคัดเลือก ผู้ยืนยันสิทธิ์รอบที่ 1 ที่ผ่านการคัดเลือกด้วยคุณสมบัติและเกณฑ์ปกติแล้ว แต่มีผลคะแนนในส่วนของภาษาอังกฤษประกอบการคัดเลือกที่ผ่านมาตามรายละเอียดดังนี้\nผลสอบคะแนน TOEIC น้อยกว่าหรือเท่ากับ 599 คะแนน หรือ\nผลสอบ IELTS น้อยกว่าหรือเท่ากับ 4.5 หรือ\nผลสอบคะแนน TOEFL (iBT) น้อยกว่าหรือเท่ากับ 60 คะแนน หรือ\nผลสอบคะแนน TOEFL (CBT) น้อยกว่าหรือเท่ากับ 179 คะแนน หรือ\nผลสอบคะแนน TOEFL (ITP/PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ\nผลสอบคะแนน New SAT (เฉพาะวิชาภาษาอังกฤษ Reading & Writing) น้อยกว่าหรือเท่ากับ 319 คะแนน หรือ\nผลสอบ A-Level วิชาภาษาอังกฤษ น้อยกว่าหรือเท่ากับ 59 หรือ\nผลสอบคะแนน CMU TEGS น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน CU-TEP น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน TU-GET (PBT) น้อยกว่าหรือเท่ากับ 499 คะแนน หรือ\nผลสอบคะแนน TU-GET (CBT) น้อยกว่าหรือเท่ากับ 59 คะแนน หรือ\nผลสอบคะแนน Duolingo (DET) น้อยกว่าหรือเท่ากับ 84 คะแนน หรือ\nไม่มีผลสอบคะแนนภาษาอังกฤษตามดังกล่าว\nผู้ยืนยันสิทธิ์ในรอบที่ 1 ที่ผ่านการคัดเลือกด้วยผลคะแนนตามที่ระบุในข้างต้นนี้ ต้องลงทะเบียนคอร์สเรียนปรับพื้นฐานภาษาอังกฤษ Pre-sessional English สามารถดูรายละเอียดเพิ่มเติมเกี่ยวกับคอร์สเรียน Pre-sessional English ได้ใน www.icdi.cmu.ac.th\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nอื่น ๆ\nแฟ้มสะสมผลงานจะต้องเป็นภาษาอังกฤษเท่านั้น\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 50 และ การสัมภาษณ์ ร้อยละ 50\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลพื้นฐานส่วนตัว (Resume) หรือประวัติของผู้สมัคร เป็นภาษาอังกฤษเท่านั้น\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nบทความ (Statement of purpose) แสดงความสนใจการเข้าศึกษาต่อในหลักสูตรวิทยาศาสตรบัณฑิต สาขาวิชานวัตกรรมดิจิทัล ประกอบการสมัครเข้าศึกษาในอนาคต และต้องเป็นภาษาอังกฤษเท่านั้น\nจำนวนตัวอักษรไม่ต่ำกว่า 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบรับรองผลการศึกษาระดับมัธยมศึกษาตอนปลาย หรือเทียบเท่า\nหมวดที่ 4 : กิจกรรม/รางวัล\nแฟ้มสะสมผลงานจะต้องเป็นภาษาอังกฤษทั้งหมด\nผลงาน รางวัล การอบรม หรือกิจกรรมเชิงวิชาการ หรือด้านอื่น ๆ ที่เกี่ยวข้องที่ผู้สมัครเคยได้รับ หรือมีประสบการณ์ในด้านธุรกิจออนไลน์ สตาร์ทอัพ หรือโครงการอื่น ๆ ที่เกี่ยวข้องระดับมัธยมศึกษาตอนปลาย\nผลสอบมาตรฐานภาษาอังกฤษ (อาทิ CMU TEGS, TOEIC, IELTS หรือ TOEFL เป็นต้น) หรือ ผลสอบมาตรฐานภาษาจีน (อาทิ HSK เป็นต้น) (ถ้ามี)\nผลการเรียนอักษรลำดับขั้น C ขึ้นไป ของกระบวนวิชาในหลักสูตร Advanced Placement Program (AP) หรือ ผลการเรียนจากวิทยาลัยการศึกษาตลอดชีวิต มหาวิทยาลัยเชียงใหม่ (LE) (ถ้ามี)\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nใบสมัคร\nบัตรประจำตัวประชาชน\nสำเนาใบแสดงผลการเรียน\nแฟ้มสะสมผลงาน (Portfolio)\nอื่น ๆ\nการสอบสัมภาษณ์ในหลักสูตรนวัตกรรมดิจิทัล สอบสัมภาษณ์ผ่านช่องทางออนไลน์เท่านั้น\nคุณสมบัติเพิ่มเติมแบบ 1.2\nเกณฑ์ขั้นต่ำ\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) T-SCORE ไม่น้อยกว่า 40\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) T-SCORE ไม่น้อยกว่า 40\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) T-SCORE ไม่น้อยกว่า 45\nสัดส่วนที่ใช้ในการคัดเลือก\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์\nแฟ้มสะสมผลงาน (Portfolio) และการสัมภาษณ์ ค่าน้ำหนักร้อยละ 25\nกลุ่มวิชา TGAT/TPAT (Adj. T-SCORE)\nTGAT 1 การสื่อสารภาษาอังกฤษ (รหัสวิชา 91) ค่าน้ำหนักร้อยละ 25\nTGAT 2 การคิดอย่างมีเหตุผล (รหัสวิชา 92) ค่าน้ำหนักร้อยละ 25\nTGAT 3 สมรรถนะการทำงาน (รหัสวิชา 93) ค่าน้ำหนักร้อยละ 25\n0"}'::jsonb, 'Portfolio ไม่เกิน 10 หน้า; Portfolio 50% และสัมภาษณ์ 50%',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-digital-innovation'
-where p.code = 'cmu-00412401101020-1-1'
 on conflict (project_id, faculty_id) do update set
         min_gpax = excluded.min_gpax,
         gpax_requirements = excluded.gpax_requirements,

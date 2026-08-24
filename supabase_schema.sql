@@ -26,6 +26,7 @@ create table if not exists public.faculties_and_majors (
     curriculum_year integer check (curriculum_year is null or curriculum_year >= 2500),
     duration_years decimal(3,1) check (duration_years is null or duration_years > 0),
     official_program_url text,
+    admission_previews jsonb not null default '[]'::jsonb,
     data_status varchar(30) not null default 'unverified'
         check (data_status in ('official', 'unverified', 'deprecated')),
     created_at timestamptz not null default now(),
@@ -39,6 +40,7 @@ alter table public.faculties_and_majors add column if not exists curriculum_cred
 alter table public.faculties_and_majors add column if not exists curriculum_year integer;
 alter table public.faculties_and_majors add column if not exists duration_years decimal(3,1);
 alter table public.faculties_and_majors add column if not exists official_program_url text;
+alter table public.faculties_and_majors add column if not exists admission_previews jsonb not null default '[]'::jsonb;
 alter table public.faculties_and_majors add column if not exists data_status varchar(30) not null default 'unverified';
 alter table public.faculties_and_majors add column if not exists updated_at timestamptz not null default now();
 

@@ -10,6 +10,582 @@ insert into public.admission_projects (
     data_notes, updated_at
 )
 select
+    u.id, 'cmu-00412401108030-1-1', 'cmu-00412401108030', 'โครงการรับนักเรียนที่มีความเป็นเลิศด้านการสื่อสารในช่องทางดิจิทัล (Digital Influencer)', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
+    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401108030; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'cmu-00412401108040-1-1', 'cmu-00412401108040', 'โครงการรับนักเรียนที่มีผลการเรียนดีและเป็นทายาทของครอบครัวผู้ประกอบการทุกประเภท', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
+    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401108040; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-portfolio-1-1', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-1 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 ถึง 1-5; CURRICULUM_ID 14142, PROJECT_ID 2409 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-good-student-14plus-1-1', 'kmitl-chumphon-cpe-good-student-14plus', 'โครงการเรียนดี 14 จังหวัดพลัส 1-1 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_08_04-11-03-46_94eee.pdf', 'ประกาศโครงการเรียนดี 14 จังหวัดพลัส วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'รายการทางการในระบบรับสมัคร: CURRICULUM_ID 14157, PROJECT_ID 2410', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-network-1-1', 'kmitl-chumphon-cpe-network', 'โครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร 1-1', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf', 'ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14171, PROJECT_ID 2411 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-potential-1-1', 'kmitl-chumphon-cpe-potential', 'โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี 1-1', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14187, PROJECT_ID 2413 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-portfolio-1-2', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-2 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-portfolio-1-3', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-3 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
+    '1 Portfolio', '1.3', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.3; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-portfolio-1-4', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-4 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
+    '1 Portfolio', '1.4', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.4; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-portfolio-1-5', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-5 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
+    '1 Portfolio', '1.5', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.5; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-network-1-2', 'kmitl-chumphon-cpe-network', 'โครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร 1-2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf', 'ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-chumphon-cpe-potential-1-2', 'kmitl-chumphon-cpe-potential', 'โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี 1-2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, null, 300,
+    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-good-student-1-1', 'kmitl-science-cs-good-student', 'โครงการเรียนดี 1.1', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-good-student-1-2', 'kmitl-science-cs-good-student', 'โครงการเรียนดี 1.2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-science-talent-1-1', 'kmitl-science-cs-science-talent', 'โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.1', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmitl-science-cs-science-talent-1-2', 'kmitl-science-cs-science-talent', 'โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, 2, 300,
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
+    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+from public.universities u
+where u.short_name = 'KMITL'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
     u.id, 'kmitl-science-cs-staff-child-1-1', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
@@ -2700,303 +3276,6 @@ select
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'cmu-cs'
 where p.code = 'cmu-00410507107010-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410507107020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107020\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการสนับสนุนการจัดตั้งห้องเรียนวิทยาศาสตร์ในโรงเรียนฯ (วมว.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 2\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cs'
-where p.code = 'cmu-00410507107020-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410507107030","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107030\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการรับนักเรียนจากค่ายโอลิมปิกวิชาการ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 4\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cs'
-where p.code = 'cmu-00410507107030-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410507107040","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107040\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการพัฒนาอัจฉริยภาพสำหรับเด็กและเยาวชน (ร่วมกับ สวทช.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cs'
-where p.code = 'cmu-00410507107040-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410507107050","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410507107050\nคณะวิทยาศาสตร์ สาขา วิทยาการคอมพิวเตอร์\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการรับผู้มีความสามารถพิเศษทางวิทยาศาสตร์และเทคโนโลยี )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาระบบคอมพิวเตอร์, นักวิชาการคอมพิวเตอร์, นักวิเคราะห์และออกแบบระบบ, โปรแกรมเมอร์, ผู้ดูแลระบบเครือข่าย,ระบบฐานข้อมูล,พัฒนาซอฟต์แวร์,พัฒนาและดูแลเว็บไซต์, รอบที่ 1 Portfolio แบบ 1.1: 10\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cs'
-where p.code = 'cmu-00410507107050-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","รับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า","เป็นผู้มีร่างกายแข็งแรงและไม่เป็นโรคหรือภาวะอันเป็นอุปสรรคในการศึกษา","เป็นผู้มีความบกพร่องอย่างใดอย่างหนึ่ง ดังต่อไปนี้","เป็นผู้บกพร่องทางการได้ยิน (หูตึงใช้เครื่องช่วยฟัง)","เป็นผู้บกพร่องทางการเห็น (สายตาเลือนรางสามารถอ่านหนังสือได้ด้วยตนเองในระยะ 30 เซนติเมตร)","เป็นผู้บกพร่องทางร่างกาย หรือการเคลื่อนไหว แต่สามารถช่วยเหลือตัวเองได้","เป็นผู้พิการที่มีบัตรประจำตัวผู้พิการตามกฎหมายว่าด้วยการส่งเสริมและพัฒนาคุณภาพชีวิตผู้พิการ","ผลการตัดสินของคณะกรรมการทุกขั้นตอนถือเป็นที่สิ้นสุด"]'::jsonb, 'Portfolio ไม่เกิน 15 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":15}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":50},{"name":"สัมภาษณ์","weight_percent":50}]'::jsonb, '{"official_project_code":"00410508106011","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508106011\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนพิการ\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nรับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า\nเป็นผู้มีร่างกายแข็งแรงและไม่เป็นโรคหรือภาวะอันเป็นอุปสรรคในการศึกษา\nเป็นผู้มีความบกพร่องอย่างใดอย่างหนึ่ง ดังต่อไปนี้\nเป็นผู้บกพร่องทางการได้ยิน (หูตึงใช้เครื่องช่วยฟัง)\nเป็นผู้บกพร่องทางการเห็น (สายตาเลือนรางสามารถอ่านหนังสือได้ด้วยตนเองในระยะ 30 เซนติเมตร)\nเป็นผู้บกพร่องทางร่างกาย หรือการเคลื่อนไหว แต่สามารถช่วยเหลือตัวเองได้\nเป็นผู้พิการที่มีบัตรประจำตัวผู้พิการตามกฎหมายว่าด้วยการส่งเสริมและพัฒนาคุณภาพชีวิตผู้พิการ\nผลการตัดสินของคณะกรรมการทุกขั้นตอนถือเป็นที่สิ้นสุด\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nสำเนาบัตรประจำตัวผู้พิการ\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 15 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 50 และ การสัมภาษณ์ ร้อยละ 50\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลพื้นฐาน ข้อมูลส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nไม่มี\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nสำเนาบัตรประจำตัวผู้พิการ\nหมวดที่ 4 : กิจกรรม/รางวัล\nเกียรติบัตร (Certificate) รางวัล หรือ กิจกรรมเข้าร่วม\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 15 หน้า; Portfolio 50% และสัมภาษณ์ 50%',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-data-science'
-where p.code = 'cmu-00410508106011-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410508107010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107010\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการรับนักเรียนจากค่ายโอลิมปิกวิชาการ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-data-science'
-where p.code = 'cmu-00410508107010-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410508107020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107020\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการพัฒนาอัจฉริยภาพสำหรับเด็กและเยาวชน (ร่วมกับ สวทช.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-data-science'
-where p.code = 'cmu-00410508107020-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410508107030","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107030\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการสนับสนุนการจัดตั้งห้องเรียนวิทยาศาสตร์ในโรงเรียนฯ (วมว.) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 1\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-data-science'
-where p.code = 'cmu-00410508107030-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
-    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[]'::jsonb, '{"official_project_code":"00410508107040","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00410508107040\nคณะวิทยาศาสตร์ สาขา วิทยาการข้อมูล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการสานฝันปั้นนักวิทยาศาสตร์ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 18,000 บาท\nแนวทางการประกอบอาชีพ\nนักวิทยาศาสตร์ข้อมูล, วิศวกรข้อมูล, นักวิเคราะห์และวางแผน, ผู้ประกอบการอิสระด้านเทคโนโลยีสารสนเทศ, ผู้บริหารด้านเทคโนโลยีสารสนเทศ, รอบที่ 1 Portfolio แบบ 1.1: 5\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://tcas.science.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-data-science'
-where p.code = 'cmu-00410508107040-1-1'
 on conflict (project_id, faculty_id) do update set
         min_gpax = excluded.min_gpax,
         gpax_requirements = excluded.gpax_requirements,

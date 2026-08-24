@@ -1,10 +1,11 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "academic_year": 2570,
-  "checked_at": "2026-08-23T23:37:03+07:00",
+  "checked_at": "2026-08-24T18:45:00+07:00",
   "status_policy": {
     "official": "ประกาศอยู่บนเว็บไซต์ทางการและอนุญาตให้บอทแสดงผล",
-    "draft_waiting_official": "ข้อมูลเตรียมไว้จากหน้าเว็บที่ระบุว่ารอประกาศอย่างเป็นทางการ บอทต้องไม่แสดงผล"
+    "draft_waiting_official": "ข้อมูลเตรียมไว้จากหน้าเว็บที่ระบุว่ารอประกาศอย่างเป็นทางการ บอทต้องไม่แสดงผล",
+    "unconfirmed_reference": "ข้อมูลจากหน้าเตรียมประกาศหรือประกาศปีก่อน แสดงได้เฉพาะเมื่อมีป้ายเตือนและปีต้นทาง"
   },
   "universities": [
     {
@@ -60,7 +61,45 @@
       "curriculum_year": 2565,
       "duration_years": 4,
       "official_program_url": "https://www.it.kmitl.ac.th/en/programs/it-program-2565",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 50,
+          "status": "unconfirmed",
+          "note": "พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "note": "ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "note": "ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
     },
     {
       "university_short_name": "KMITL",
@@ -73,7 +112,36 @@
       "curriculum_year": 2565,
       "duration_years": 4,
       "official_program_url": "https://www.it.kmitl.ac.th/en/programs/datasci-program-2565",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "note": "พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 2,
+          "status": "unconfirmed",
+          "note": "ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
     },
     {
       "university_short_name": "KMITL",
@@ -86,7 +154,45 @@
       "curriculum_year": 2566,
       "duration_years": 4,
       "official_program_url": "https://www.it.kmitl.ac.th/en/programs/ait-program",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "note": "พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 1,
+          "status": "unconfirmed",
+          "note": "ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ",
+          "reference_academic_year": 2570,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 1,
+          "status": "unconfirmed",
+          "note": "หน้าเตรียมข้อมูลระบุว่าโครงการนี้ไม่เปิดรับ DSBA",
+          "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
+        },
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
     },
     {
       "university_short_name": "KMITL",
@@ -99,7 +205,18 @@
       "curriculum_year": 2565,
       "duration_years": 4,
       "official_program_url": "https://www.it.kmitl.ac.th/en/programs/bit-program-2565",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
     },
     {
       "university_short_name": "MU",
@@ -437,7 +554,27 @@
       "curriculum_year": 2566,
       "duration_years": 4,
       "official_program_url": "https://www.cp.eng.chula.ac.th/future/bachelor",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "TCAS1: Portfolio CP",
+          "reference_academic_year": 2569,
+          "round_label": "TCAS รอบ 1",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70",
+          "source_url": "https://www.cp.eng.chula.ac.th/cp-tcas1"
+        },
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -450,7 +587,27 @@
       "curriculum_year": 2566,
       "duration_years": 3.5,
       "official_program_url": "https://www.cp.eng.chula.ac.th/cedt",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "TCAS1: Portfolio CEDT",
+          "reference_academic_year": 2569,
+          "round_label": "TCAS รอบ 1",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70",
+          "source_url": "https://www.cp.eng.chula.ac.th/cedt-tcas1"
+        },
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -463,7 +620,18 @@
       "curriculum_year": null,
       "duration_years": null,
       "official_program_url": "https://www.ise.eng.chula.ac.th/academics/ice/info",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -476,7 +644,18 @@
       "curriculum_year": null,
       "duration_years": null,
       "official_program_url": "https://www.ise.eng.chula.ac.th/academics/robotics-ai/info",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -489,7 +668,18 @@
       "curriculum_year": null,
       "duration_years": null,
       "official_program_url": "https://www.ise.eng.chula.ac.th/academics/semi/info",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -502,7 +692,18 @@
       "curriculum_year": 2566,
       "duration_years": 4,
       "official_program_url": "https://www.math.sc.chula.ac.th/th/program/undergraduate/computer-science/",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -515,7 +716,18 @@
       "curriculum_year": null,
       "duration_years": null,
       "official_program_url": "https://bba.acc.chula.ac.th/files/MIS_EN.pdf",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -528,7 +740,18 @@
       "curriculum_year": 2564,
       "duration_years": null,
       "official_program_url": "https://stat.cbs.chula.ac.th/index.php/th/our-programs/bachelor/2564",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "CU",
@@ -541,7 +764,18 @@
       "curriculum_year": 2564,
       "duration_years": null,
       "official_program_url": "https://stat.cbs.chula.ac.th/index.php/th/our-programs/bachelor/2564",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้าประกาศรับสมัคร TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
+          "source_url": "https://admission.chula.ac.th/admission_c1.php"
+        }
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -554,7 +788,18 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-engineering/department-of-electrical-and-computer-engineering.aspx?lang=th",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
+          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
+        }
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -567,7 +812,18 @@
       "curriculum_year": null,
       "duration_years": null,
       "official_program_url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-applied-science/department-of-computer-and-information-science.aspx",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
+          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
+        }
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -580,7 +836,18 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://www.itd.kmutnb.ac.th/bachelor.php",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
+          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
+        }
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -593,7 +860,18 @@
       "curriculum_year": 2567,
       "duration_years": 4,
       "official_program_url": "https://www.fitm.kmutnb.ac.th/IT.html",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
+          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
+        }
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -606,7 +884,327 @@
       "curriculum_year": 2567,
       "duration_years": 4,
       "official_program_url": "https://www.fitm.kmutnb.ac.th/IT.html",
-      "data_status": "official"
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
+          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-engineering-computer-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมคอมพิวเตอร์",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://www.ce.kmitl.ac.th/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-engineering-software-international",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมซอฟต์แวร์ (หลักสูตรนานาชาติ)",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "อังกฤษ",
+      "curriculum_credits": null,
+      "curriculum_year": 2567,
+      "duration_years": 4,
+      "official_program_url": "https://office.kmitl.ac.th/oaq/curriculum/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-engineering-computer-innovation-international",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมนวัตกรรมคอมพิวเตอร์ (หลักสูตรนานาชาติ)",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "อังกฤษ",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://office.kmitl.ac.th/oaq/curriculum/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-engineering-information-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมสารสนเทศ",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://office.kmitl.ac.th/oaq/curriculum/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "kmitl-engineering-robotics-ai-international",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมหุ่นยนต์และปัญญาประดิษฐ์ (หลักสูตรนานาชาติ)",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "อังกฤษ",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://office.kmitl.ac.th/oaq/curriculum/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-computer-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์ วิทยาเขตบางเขน",
+      "major_name": "วิศวกรรมคอมพิวเตอร์",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://cpe.ku.ac.th/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "โครงการช้างเผือก",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 20,
+          "status": "unconfirmed",
+          "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
+          "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/08/69_TCAS1_White_Elephant_1.1.pdf"
+        },
+        {
+          "title": "โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
+          "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"
+        },
+        {
+          "title": "หน้ารับสมัคร KU-TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
+          "source_url": "https://admission.ku.ac.th/kuadm/"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-software-knowledge-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์ วิทยาเขตบางเขน",
+      "major_name": "วิศวกรรมซอฟต์แวร์และความรู้ (หลักสูตรนานาชาติ)",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "อังกฤษ",
+      "curriculum_credits": null,
+      "curriculum_year": 2565,
+      "duration_years": 4,
+      "official_program_url": "https://cpe.ku.ac.th/index.php/ske-course-2565/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio 1.2",
+          "slots_available": 15,
+          "status": "unconfirmed",
+          "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
+          "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf"
+        },
+        {
+          "title": "หน้ารับสมัคร KU-TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
+          "source_url": "https://admission.ku.ac.th/kuadm/"
+        }
+      ]
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-computer-science",
+      "faculty_name": "คณะวิทยาศาสตร์ วิทยาเขตบางเขน",
+      "major_name": "วิทยาการคอมพิวเตอร์",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": 128,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://sci.ku.ac.th/web2024/program/b-s-computer-science/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio 1.1",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
+          "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"
+        },
+        {
+          "title": "หน้ารับสมัคร KU-TCAS70",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
+          "source_url": "https://admission.ku.ac.th/kuadm/"
+        }
+      ]
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-engineering-computer-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมคอมพิวเตอร์",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": 2566,
+      "duration_years": 4,
+      "official_program_url": "https://engr.tu.ac.th/bachelor",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "รอบที่ 1 Portfolio คณะวิศวกรรมศาสตร์",
+          "reference_academic_year": 2568,
+          "round_label": "Portfolio",
+          "slots_available": 10,
+          "status": "unconfirmed",
+          "note": "หน้าอ้างอิงยังเป็น TCAS68 (GPAX 3.00) ใช้ดูรูปแบบเก่าเท่านั้น ไม่ใช่เกณฑ์ TCAS70",
+          "source_url": "https://engr.tu.ac.th/admission/bachelor"
+        },
+        {
+          "title": "หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
+          "source_url": "https://www.tuadmissions.in.th/"
+        }
+      ]
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-engineering-software-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์",
+      "major_name": "วิศวกรรมซอฟต์แวร์",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://engr.tu.ac.th/bachelor",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
+          "source_url": "https://www.tuadmissions.in.th/"
+        }
+      ]
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-science-computer-science",
+      "faculty_name": "คณะวิทยาศาสตร์และเทคโนโลยี",
+      "major_name": "วิทยาการคอมพิวเตอร์ (คอมพิวเตอร์และวิทยาการสารสนเทศ)",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://cs.sci.tu.ac.th/comsci-cis-th-2/",
+      "data_status": "official",
+      "admission_previews": [
+        {
+          "title": "หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์",
+          "reference_academic_year": 2570,
+          "round_label": "สถานะล่าสุด",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
+          "source_url": "https://www.tuadmissions.in.th/"
+        }
+      ]
     }
   ],
   "projects": [

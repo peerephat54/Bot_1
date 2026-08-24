@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-08-23T23:37:03+07:00",
+  "checked_at": "2026-08-24T18:45:00+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -136,10 +136,10 @@
     },
     {
       "url": "https://www.cp.eng.chula.ac.th/cp-tcas1",
-      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
-      "classification": "excluded_primary_wrong_year",
+      "publisher": "ภาควิชาวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "reference_unconfirmed_prior_year",
       "academic_year": 2569,
-      "decision": "ยังไม่ใช้: หน้าทางการที่พบเป็นเกณฑ์ TCAS1 ปีการศึกษา 2569 ไม่ใช่ TCAS70"
+      "decision": "แสดงชื่อโครงการวิศวกรรมคอมพิวเตอร์ปี 2569 เป็นแนวทางย้อนหลัง พร้อมป้ายไม่ยืนยันสำหรับ TCAS70"
     },
     {
       "url": "https://admission.ku.ac.th/",
@@ -336,6 +336,62 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าวิทยาการคอมพิวเตอร์ 7 โครงการย่อยใน Portfolio 1-1 และ 1-2 พร้อม GPAX น้ำหนักคัดเลือก กำหนดการ ค่าใช้จ่าย และหมายเหตุจำนวนรับรวมรอบละ 25 คน โดยไม่แต่งจำนวนรายโครงการ"
+    },
+    {
+      "url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "reference_unconfirmed_current",
+      "academic_year": 2570,
+      "decision": "ใช้แสดงว่าหลักสูตรสายคอมใดปรากฏในหน้ารับสมัคร TCAS70 แต่ไม่สร้างเกณฑ์จนกว่าจะมีประกาศเฉพาะโครงการ"
+    },
+    {
+      "url": "https://office.kmitl.ac.th/oaq/curriculum/",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตรสายคอมของคณะวิศวกรรมศาสตร์ที่เปิดสอนจริง โดยเว้นเกณฑ์รับสมัครที่ยังไม่ประกาศ"
+    },
+    {
+      "url": "https://www.cp.eng.chula.ac.th/cedt-tcas1",
+      "publisher": "ภาควิชาวิศวกรรมคอมพิวเตอร์ จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "แสดงชื่อ TCAS1 Portfolio CEDT ปี 2569 เป็นแนวทางย้อนหลัง พร้อมป้ายไม่ยืนยันสำหรับ TCAS70"
+    },
+    {
+      "url": "https://admission.ku.ac.th/media/announcements/2025/10/08/69_TCAS1_White_Elephant_1.1.pdf",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "ใช้แสดงโครงการช้างเผือกของวิศวกรรมคอมพิวเตอร์ปี 2569 เป็นข้อมูลอ้างอิง ไม่ใช้เป็นเกณฑ์ TCAS70"
+    },
+    {
+      "url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "ใช้แสดงโครงการเรียนล่วงหน้าของวิศวกรรมคอมพิวเตอร์และวิทยาการคอมพิวเตอร์ปี 2569 เป็นข้อมูลอ้างอิง"
+    },
+    {
+      "url": "https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "ใช้แสดงรอบหลักสูตรนานาชาติของวิศวกรรมซอฟต์แวร์และความรู้ปี 2569 เป็นข้อมูลอ้างอิง"
+    },
+    {
+      "url": "https://engr.tu.ac.th/admission/bachelor",
+      "publisher": "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2568,
+      "decision": "ใช้แสดงรูปแบบ Portfolio วิศวกรรมคอมพิวเตอร์ปี 2568 พร้อมเตือนว่าไม่ใช่เกณฑ์ TCAS70"
+    },
+    {
+      "url": "https://cs.sci.tu.ac.th/comsci-cis-th-2/",
+      "publisher": "คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เพิ่มหลักสูตรวิทยาการคอมพิวเตอร์เป็นรายการหลักสูตรที่เปิดสอนจริง โดยยังไม่สร้างเกณฑ์ TCAS70"
     }
   ]
 }

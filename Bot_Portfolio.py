@@ -45,29 +45,6 @@ if not supabase_url or not supabase_key:
 database: Client = create_client(supabase_url, supabase_key)
 intents = discord.Intents.default()
 
-# These official curricula stay discoverable while their TCAS70 project
-# announcements are still waiting for official publication. Hidden draft
-# admission criteria remain inaccessible.
-CATALOG_PROGRAM_CODES = {
-    "kmitl-it",
-    "kmitl-dsba",
-    "kmitl-ait",
-    "kmitl-science-computer-science",
-    "cu-engineering-computer-engineering",
-    "cu-engineering-cedt",
-    "cu-engineering-ice",
-    "cu-engineering-robotics-ai",
-    "cu-engineering-semiconductor",
-    "cu-science-computer-science",
-    "cu-cbs-management-information-systems",
-    "cu-cbs-statistics-data-science",
-    "cu-cbs-information-technology-business",
-    "kmutnb-engineering-computer-engineering",
-    "kmutnb-science-computer-science",
-    "kmutnb-itd-informatics-digital-economy",
-    "kmutnb-fitm-information-technology",
-    "kmutnb-fitm-information-network-engineering",
-}
 NAVIGATION_CACHE_TTL_SECONDS = 300
 
 # Discord autocomplete must answer within roughly three seconds. University
@@ -176,6 +153,7 @@ def fetch_program_projects(program_code: str):
         .select(
             "id,code,faculty_name,major_name,academic_year,program_type,language,"
             "curriculum_credits,curriculum_year,duration_years,official_program_url,"
+            "admission_previews,"
             "universities(name,short_name,logo_url)"
         )
         .eq("code", program_code)
@@ -235,7 +213,7 @@ def fetch_program_projects(program_code: str):
 
 
 def fetch_navigation_programs():
-    """Return official-project programs plus selected official curricula."""
+    """Return every official technology curriculum in the TCAS70 dataset."""
     response = (
         database.table("admission_project_programs")
         .select(
@@ -266,6 +244,8 @@ def fetch_navigation_programs():
             "university_name": university.get("name") or "ไม่ระบุมหาวิทยาลัย",
             "has_official_projects": has_official_projects
             or bool(existing and existing.get("has_official_projects")),
+            "has_admission_previews": bool(program.get("admission_previews"))
+            or bool(existing and existing.get("has_admission_previews")),
         }
 
     for row in response.data or []:
@@ -275,12 +255,11 @@ def fetch_navigation_programs():
     catalog_response = (
         database.table("faculties_and_majors")
         .select(
-            "code,faculty_name,major_name,"
+            "code,faculty_name,major_name,admission_previews,"
             "universities!inner(name,short_name)"
         )
         .eq("academic_year", 2570)
         .eq("data_status", "official")
-        .in_("code", sorted(CATALOG_PROGRAM_CODES))
         .execute()
     )
     for program in catalog_response.data or []:
@@ -471,8 +450,28 @@ def trim_embed_to_limit(embed, limit=5900):
     return embed
 
 
+def format_admission_previews(previews):
+    """Format references without presenting them as confirmed TCAS70 facts."""
+    blocks = []
+    for preview in previews or []:
+        year = preview.get("reference_academic_year") or "ไม่ระบุ"
+        round_label = preview.get("round_label") or "ไม่ระบุรอบ"
+        slots = preview.get("slots_available")
+        slots_text = f" • จำนวนปีอ้างอิง {slots} คน" if slots is not None else ""
+        title = str(preview.get("title") or "ข้อมูลที่พบ")
+        source_url = preview.get("source_url")
+        title_text = f"[{title}]({source_url})" if source_url else title
+        note = preview.get("note") or "ยังรอประกาศรับสมัครฉบับทางการ"
+        blocks.append(
+            f"**{title_text}**\n"
+            f"ปีอ้างอิง {year} • {round_label}{slots_text}\n"
+            f"⚠️ {note}"
+        )
+    return shorten("\n\n".join(blocks), 1024) if blocks else None
+
+
 def build_program_profile_embed(program):
-    """Show useful official curriculum data while TCAS70 is still pending."""
+    """Show curriculum and clearly labelled unconfirmed admission references."""
     university = first_relation(program.get("universities"))
     duration = program.get("duration_years")
     duration_text = (
@@ -489,13 +488,19 @@ def build_program_profile_embed(program):
         else "ไม่ได้ระบุในหน้าหลักสูตร"
     )
 
+    previews = program.get("admission_previews") or []
+    status_text = (
+        f"⚠️ พบข้อมูลอ้างอิง {len(previews)} รายการ แต่ยังไม่ยืนยันเป็นเกณฑ์ TCAS70"
+        if previews
+        else "⏳ ยังไม่มีประกาศโครงการรับสมัคร TCAS70 ที่บอทยืนยันได้"
+    )
     embed = discord.Embed(
         title=shorten(program.get("major_name") or program.get("faculty_name"), 256),
         url=program.get("official_program_url") or None,
         description=(
             f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}**\n"
             f"{program.get('faculty_name', 'ไม่ระบุคณะ')}\n\n"
-            "⏳ ยังไม่มีประกาศโครงการรับสมัคร TCAS70 ที่บอทยืนยันได้"
+            f"{status_text}"
         ),
         color=discord.Color.orange(),
     )
@@ -518,11 +523,21 @@ def build_program_profile_embed(program):
     embed.add_field(
         name="🛡️ สถานะข้อมูล",
         value=(
-            "ยืนยันว่าหลักสูตรเปิดสอนจากเว็บไซต์ทางการแล้ว แต่ยังไม่แสดง "
+            "ยืนยันเฉพาะข้อมูลหลักสูตรจากเว็บไซต์ทางการ ส่วนชื่อโครงการ "
+            "จำนวนรับ และเกณฑ์ด้านล่างเป็นข้อมูลอ้างอิงที่ยังไม่ยืนยันสำหรับ TCAS70"
+            if previews
+            else "ยืนยันว่าหลักสูตรเปิดสอนจากเว็บไซต์ทางการแล้ว แต่ยังไม่แสดง "
             "GPAX จำนวนรับ Portfolio หรือกำหนดการจนกว่าจะมีประกาศ TCAS70"
         ),
         inline=False,
     )
+    preview_text = format_admission_previews(previews)
+    if preview_text:
+        embed.add_field(
+            name="🔎 โครงการ/ข้อมูลที่พบ (ยังไม่ยืนยัน)",
+            value=preview_text,
+            inline=False,
+        )
     if program.get("official_program_url"):
         embed.add_field(
             name="🔗 ข้อมูลหลักสูตรทางการ",
@@ -531,7 +546,9 @@ def build_program_profile_embed(program):
         )
     if university.get("logo_url"):
         embed.set_thumbnail(url=university["logo_url"])
-    embed.set_footer(text="ไม่ใช้เกณฑ์หรือจำนวนรับจากปีเก่ามาแทน TCAS70")
+    embed.set_footer(
+        text="ข้อมูลอ้างอิงไม่ใช่เกณฑ์ TCAS70 • โปรดตรวจประกาศทางการก่อนสมัคร"
+    )
     return trim_embed_to_limit(embed)
 
 
@@ -927,12 +944,18 @@ def program_menu_content(
     announced_count = sum(
         1 for program in matching if program.get("has_official_projects")
     )
+    preview_count = sum(
+        1
+        for program in matching
+        if not program.get("has_official_projects")
+        and program.get("has_admission_previews")
+    )
     return (
         "🎓 **ค้นหาเกณฑ์ TCAS70 รอบ Portfolio**\n"
         f"📍 {selection_path(university_short_name, faculty_name)}\n\n"
         f"**3/4 เลือกสาขา** • มี {len(matching)} สาขา "
-        f"(มีประกาศแล้ว {announced_count})\n"
-        "✅ ดูเกณฑ์ได้  •  ⏳ มีหลักสูตรแต่ยังรอประกาศ"
+        f"(ประกาศแล้ว {announced_count} • มีข้อมูลรอยืนยัน {preview_count})\n"
+        "✅ ดูเกณฑ์ได้  •  ⚠️ มีข้อมูลอ้างอิง  •  ⏳ ยังไม่พบประกาศ"
     )
 
 
@@ -970,18 +993,33 @@ def project_detail_content(
 
 
 def pending_program_content(
-    university_short_name, faculty_name, program_name, program_url
+    university_short_name,
+    faculty_name,
+    program_name,
+    program_url,
+    preview_count=0,
 ):
     curriculum_link = (
         f"\n📚 [เปิดข้อมูลหลักสูตรทางการ]({program_url})"
         if program_url
         else ""
     )
-    return (
-        "⏳ **ยังไม่มีประกาศรับสมัคร TCAS70**\n"
-        f"📍 {selection_path(university_short_name, faculty_name, program_name)}\n\n"
-        "หลักสูตรนี้เปิดสอนจริง แต่ยังไม่มีประกาศโครงการ เกณฑ์ หรือจำนวนรับ "
+    status = (
+        f"⚠️ **พบข้อมูลอ้างอิง {preview_count} รายการ แต่ยังไม่ยืนยัน TCAS70**"
+        if preview_count
+        else "⏳ **ยังไม่มีประกาศรับสมัคร TCAS70**"
+    )
+    explanation = (
+        "บอทแสดงรายการที่พบไว้ในการ์ดด้านล่าง พร้อมปีอ้างอิงและต้นทาง "
+        "แต่ยังไม่นับเป็นเกณฑ์หรือจำนวนรับ TCAS70"
+        if preview_count
+        else "หลักสูตรนี้เปิดสอนจริง แต่ยังไม่มีประกาศโครงการ เกณฑ์ หรือจำนวนรับ "
         "จึงยังไม่แสดงข้อมูลที่คาดเดาไว้"
+    )
+    return (
+        f"{status}\n"
+        f"📍 {selection_path(university_short_name, faculty_name, program_name)}\n\n"
+        f"{explanation}"
         f"{curriculum_link}\n\n"
         "เลือกสาขาอื่นจากเมนูเดิมด้านล่างได้เลย"
     )
@@ -1223,14 +1261,18 @@ class ProgramSelect(discord.ui.Select):
                 value=program["code"],
                 description=shorten(
                     "เปิดดูเกณฑ์และโครงการได้"
-                    if program.get("has_official_projects", True)
-                    else "มีหลักสูตร • รอประกาศ TCAS70",
+                    if program.get("has_official_projects")
+                    else (
+                        "มีข้อมูลอ้างอิง • ยังไม่ยืนยัน TCAS70"
+                        if program.get("has_admission_previews")
+                        else "มีหลักสูตร • รอประกาศ TCAS70"
+                    ),
                     100,
                 ),
                 emoji=(
                     "✅"
-                    if program.get("has_official_projects", True)
-                    else "⏳"
+                    if program.get("has_official_projects")
+                    else ("⚠️" if program.get("has_admission_previews") else "⏳")
                 ),
             )
             for program in programs
@@ -1260,6 +1302,7 @@ class ProgramSelect(discord.ui.Select):
                         parent.faculty_name,
                         program_name,
                         program_url,
+                        len((program_data or {}).get("admission_previews") or []),
                     ),
                     embeds=(
                         [build_program_profile_embed(program_data)]

@@ -31,6 +31,8 @@ ALLOWED_SOURCE_CLASSIFICATIONS = {
     "imported_primary_supporting",
     "verified_existing_primary",
     "imported_primary",
+    "reference_unconfirmed_current",
+    "reference_unconfirmed_prior_year",
 }
 
 OFFICIAL_HOSTS = {
@@ -39,12 +41,28 @@ OFFICIAL_HOSTS = {
         "admission.reg.kmitl.ac.th",
         "reg.kmitl.ac.th",
         "www.reg.kmitl.ac.th",
+        "www1.reg.kmitl.ac.th",
+        "office.kmitl.ac.th",
+        "www.ce.kmitl.ac.th",
     },
     "KMUTT": {"join.kmutt.ac.th"},
     "MU": {"www.ict.mahidol.ac.th", "www.eg.mahidol.ac.th"},
     "CMU": {"admission.reg.cmu.ac.th"},
-    "KU": {"misreg.csc.ku.ac.th"},
-    "TU": {"admissions.siit.tu.ac.th"},
+    "KU": {
+        "misreg.csc.ku.ac.th",
+        "admission.ku.ac.th",
+        "www.admission.ku.ac.th",
+        "cpe.ku.ac.th",
+        "sci.ku.ac.th",
+        "www.sci.ku.ac.th",
+    },
+    "TU": {
+        "admissions.siit.tu.ac.th",
+        "engr.tu.ac.th",
+        "cs.sci.tu.ac.th",
+        "tuadmissions.in.th",
+        "www.tuadmissions.in.th",
+    },
     "CU": {
         "admission.chula.ac.th",
         "www.reg.chula.ac.th",
@@ -122,6 +140,33 @@ def validate(data):
     for program in programs:
         if program.get("university_short_name") not in university_codes:
             errors.append(f"unknown university for program {program.get('code')}")
+        university = program.get("university_short_name")
+        for preview in program.get("admission_previews") or []:
+            preview_title = preview.get("title")
+            if preview.get("status") != "unconfirmed":
+                errors.append(
+                    f"invalid preview status for {program.get('code')}: "
+                    f"{preview.get('status')}"
+                )
+            reference_year = preview.get("reference_academic_year")
+            if not isinstance(reference_year, int) or reference_year > data.get(
+                "academic_year", 0
+            ):
+                errors.append(
+                    f"invalid preview year for {program.get('code')}: "
+                    f"{reference_year}"
+                )
+            source_url = preview.get("source_url")
+            source_host = urlparse(source_url or "").hostname
+            if source_host not in OFFICIAL_HOSTS.get(university, set()):
+                errors.append(
+                    f"unapproved preview source for {program.get('code')}: "
+                    f"{source_host}"
+                )
+            if not preview_title or not preview.get("note"):
+                errors.append(
+                    f"incomplete admission preview for {program.get('code')}"
+                )
 
     variants = []
     for project in projects:
@@ -237,6 +282,9 @@ def validate(data):
         "project_program_links": len(links),
         "criteria": len(criteria),
         "timeline_events": len(timeline),
+        "admission_previews": sum(
+            len(item.get("admission_previews") or []) for item in programs
+        ),
     }
     return errors, counts
 
@@ -261,6 +309,7 @@ def validate_source_audit(audit):
         if (
             item.get("academic_year") not in {None, audit.get("academic_year")}
             and not classification.startswith("excluded_")
+            and not classification.startswith("reference_")
         ):
             errors.append(f"wrong-year source is not excluded: {url}")
 
