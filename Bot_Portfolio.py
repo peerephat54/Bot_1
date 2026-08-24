@@ -357,6 +357,50 @@ def format_timeline(events):
     return "\n".join(lines)
 
 
+def format_timeline_summary(events, max_events=4):
+    """Pick the milestones students need first instead of showing every date."""
+    if not events:
+        return "ยังไม่ประกาศกำหนดการ"
+
+    sorted_events = sorted(
+        events, key=lambda event: event.get("start_on") or "9999-12-31"
+    )
+    milestone_checks = [
+        lambda name: (
+            ("รับสมัคร" in name or "สมัครทาง" in name or "สร้าง Portfolio" in name)
+            and "ชำระ" not in name
+        ),
+        lambda name: "สอบสัมภาษณ์" in name,
+        lambda name: "ผู้ผ่านการคัดเลือก" in name,
+        lambda name: "ยืนยันสิทธิ์" in name,
+    ]
+    selected = []
+    selected_ids = set()
+    for check in milestone_checks:
+        match = next(
+            (
+                event
+                for event in sorted_events
+                if id(event) not in selected_ids
+                and check(str(event.get("event_name") or ""))
+            ),
+            None,
+        )
+        if match:
+            selected.append(match)
+            selected_ids.add(id(match))
+
+    for event in sorted_events:
+        if len(selected) >= max_events:
+            break
+        if id(event) not in selected_ids:
+            selected.append(event)
+            selected_ids.add(id(event))
+
+    selected.sort(key=lambda event: event.get("start_on") or "9999-12-31")
+    return format_timeline(selected[:max_events])
+
+
 def format_bullets(values, limit=600):
     if not values:
         return None
@@ -510,76 +554,275 @@ def project_choice_description(project):
     parts.append(f"รับ {slots} คน" if slots is not None else "จำนวนรับดูหมายเหตุ")
     methods = criteria.get("selection_methods") or []
     if methods:
-        parts.append(str(methods[0]))
+        highlighted_method = next(
+            (
+                method
+                for method in methods
+                if "portfolio" in str(method).lower()
+            ),
+            methods[0],
+        )
+        parts.append(str(highlighted_method))
     return shorten(" • ".join(parts), 100)
 
 
-def build_project_embed(program, project):
+def project_header_description(program, project, section_label):
     university = first_relation(program.get("universities"))
-    criteria = project.get("selected_criteria") or {}
-    timeline = project.get("admission_timeline") or []
     program_name = program.get("major_name") or program.get("faculty_name")
+    tags = [
+        "TCAS70",
+        f"Portfolio {project.get('round_variant') or project.get('round_label')}",
+    ]
+    if program.get("language"):
+        tags.append(f"ภาษา {program['language']}")
+    tag_text = " • ".join(f"`{tag}`" for tag in tags)
+    return (
+        f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}**\n"
+        f"{program.get('faculty_name', 'ไม่ระบุคณะ')}\n"
+        f"**{program_name}**\n\n"
+        f"{tag_text}\n"
+        f"**{section_label}**"
+    )
 
-    slots = project.get("slots_available")
-    slots_text = f"{slots} คน" if slots is not None else "ประกาศไม่ได้ระบุ"
+
+def build_project_shell(program, project, section_label, color):
+    university = first_relation(program.get("universities"))
+    embed = discord.Embed(
+        title=shorten(project.get("name"), 256),
+        url=project.get("source_url") or None,
+        description=project_header_description(
+            program, project, section_label
+        ),
+        color=discord.Color(color),
+    )
+    if university.get("logo_url"):
+        embed.set_thumbnail(url=university["logo_url"])
+    return embed
+
+
+def project_gpax_text(criteria):
     min_gpax = criteria.get("min_gpax")
     gpax_requirements = criteria.get("gpax_requirements") or {}
     thai_gpax_only = (
         isinstance(gpax_requirements, dict)
         and "Grade 12 / Year 13 / GED" in gpax_requirements
     )
-    gpax_text = (
-        f"{float(min_gpax):.2f} ขึ้นไป"
-        + (" (วุฒิไทย)" if thai_gpax_only else "")
-        if min_gpax is not None
-        else "ดูเงื่อนไขรายประเภทผู้สมัคร"
+    if min_gpax is None:
+        return "ดูตามประเภทผู้สมัคร"
+    return f"{float(min_gpax):.2f} ขึ้นไป" + (
+        "\nเฉพาะวุฒิไทย" if thai_gpax_only else ""
     )
 
-    score_parts = []
-    english_scores = criteria.get("min_english_score") or {}
-    standard_scores = criteria.get("standardized_scores") or {}
-    if english_scores:
-        score_parts.append("คะแนนภาษาอังกฤษ\n" + format_json_scores(english_scores))
-    if standard_scores:
-        score_parts.append("คะแนนมาตรฐาน\n" + format_json_scores(standard_scores))
-    score_text = "\n\n".join(score_parts) or "ไม่มีคะแนนสอบเพิ่มเติมตามประกาศ"
+
+def build_project_embed(program, project):
+    """Compact first page; longer information lives behind detail buttons."""
+    criteria = project.get("selected_criteria") or {}
+    timeline = project.get("admission_timeline") or []
+    slots = project.get("slots_available")
+    slots_text = f"{slots} คน" if slots is not None else "ดูหมายเหตุด้านล่าง"
+    tuition = project.get("tuition_fee_per_semester")
+    cost_text = (
+        f"สมัคร {format_money(project.get('application_fee'))}\n"
+        + (
+            f"เรียน {format_money(tuition)}/ภาค"
+            if tuition is not None
+            else "ค่าเรียนยังไม่ระบุ"
+        )
+    )
+
+    embed = build_project_shell(
+        program, project, "📌 สรุปที่ต้องรู้ก่อนสมัคร", 0x2ECC71
+    )
+    embed.add_field(name="👥 จำนวนรับ", value=slots_text, inline=True)
+    embed.add_field(
+        name="📊 GPAX ขั้นต่ำ", value=project_gpax_text(criteria), inline=True
+    )
+    embed.add_field(name="💸 ค่าใช้จ่าย", value=cost_text, inline=True)
+
+    summary = criteria.get("criteria_summary")
+    if summary:
+        embed.add_field(
+            name="✅ เช็กคุณสมบัติเบื้องต้น",
+            value=shorten(summary, 420),
+            inline=False,
+        )
+
+    methods = format_bullets(criteria.get("selection_methods"), 320)
+    if methods:
+        embed.add_field(
+            name="🧮 ใช้อะไรคัดเลือก", value=methods, inline=False
+        )
+
+    embed.add_field(
+        name="🗓️ วันสำคัญ",
+        value=shorten(format_timeline_summary(timeline), 500),
+        inline=False,
+    )
+
+    notes = []
+    if project.get("program_notes"):
+        notes.append(str(project["program_notes"]))
+    if project.get("selection_order_limit") is not None:
+        notes.append(
+            f"เลือกอันดับสาขาได้ไม่เกิน {project['selection_order_limit']} อันดับ"
+        )
+    if notes:
+        embed.add_field(
+            name="ℹ️ หมายเหตุ",
+            value=shorten("\n".join(f"• {note}" for note in notes), 420),
+            inline=False,
+        )
+
+    embed.set_footer(
+        text=(
+            "กดปุ่มด้านล่างเพื่อดู คุณสมบัติ • Portfolio/เอกสาร • กำหนดการทั้งหมด"
+        )
+    )
+    return trim_embed_to_limit(embed)
+
+
+def build_project_criteria_embed(program, project):
+    criteria = project.get("selected_criteria") or {}
+    embed = build_project_shell(
+        program, project, "✅ คุณสมบัติและคะแนนคัดเลือก", 0x3498DB
+    )
+
+    summary = criteria.get("criteria_summary")
+    if summary:
+        embed.add_field(
+            name="📌 เกณฑ์หลัก", value=shorten(summary, 600), inline=False
+        )
+
+    qualifications = format_bullets(
+        criteria.get("applicant_qualifications"), 900
+    )
+    if qualifications:
+        embed.add_field(
+            name="🙋 ใครสมัครได้บ้าง", value=qualifications, inline=False
+        )
 
     gpax_parts = []
-    gpax_requirements_text = format_key_values(gpax_requirements, 450)
-    if gpax_requirements_text:
-        gpax_parts.append("**เงื่อนไข GPAX**\n" + gpax_requirements_text)
-    subject_gpax = format_key_values(criteria.get("subject_gpax"), 450)
+    gpax_requirements = format_key_values(
+        criteria.get("gpax_requirements"), 500
+    )
+    if gpax_requirements:
+        gpax_parts.append(gpax_requirements)
+    subject_gpax = format_key_values(criteria.get("subject_gpax"), 500)
     if subject_gpax:
-        gpax_parts.append("**GPAX/เกรดรายวิชา**\n" + subject_gpax)
-    gpax_details_text = "\n\n".join(gpax_parts)
+        gpax_parts.append("**เกรดรายกลุ่มวิชา**\n" + subject_gpax)
+    if gpax_parts:
+        embed.add_field(
+            name="📈 รายละเอียดผลการเรียน",
+            value=shorten("\n\n".join(gpax_parts), 900),
+            inline=False,
+        )
 
-    portfolio_parts = []
+    scores = []
+    if criteria.get("min_english_score"):
+        scores.append(
+            "**ภาษาอังกฤษ**\n"
+            + format_json_scores(criteria["min_english_score"])
+        )
+    if criteria.get("standardized_scores"):
+        scores.append(
+            "**คะแนนมาตรฐาน**\n"
+            + format_json_scores(criteria["standardized_scores"])
+        )
+    if scores:
+        embed.add_field(
+            name="📊 คะแนนสอบที่ใช้",
+            value=shorten("\n\n".join(scores), 850),
+            inline=False,
+        )
+
+    methods = format_bullets(criteria.get("selection_methods"), 700)
+    if methods:
+        embed.add_field(
+            name="🧮 วิธีและสัดส่วนคัดเลือก", value=methods, inline=False
+        )
+
+    additional = format_bullets(
+        criteria.get("additional_requirements"), 750
+    )
+    if additional:
+        embed.add_field(
+            name="⚠️ เงื่อนไขเพิ่มเติม", value=additional, inline=False
+        )
+
+    embed.set_footer(text="ตรวจคุณสมบัติของตนเองกับประกาศทางการก่อนสมัครทุกครั้ง")
+    return trim_embed_to_limit(embed)
+
+
+def build_project_portfolio_embed(program, project):
+    criteria = project.get("selected_criteria") or {}
+    embed = build_project_shell(
+        program, project, "📁 Portfolio ผลงาน และเอกสาร", 0x9B59B6
+    )
+
     portfolio_requirements = criteria.get("portfolio_requirements")
     if portfolio_requirements:
-        portfolio_parts.append(str(portfolio_requirements))
-    portfolio_details = format_key_values(criteria.get("portfolio_details"), 500)
-    if portfolio_details:
-        portfolio_parts.append(portfolio_details)
-    achievements = format_bullets(criteria.get("accepted_achievements"), 450)
-    if achievements:
-        portfolio_parts.append("**ผลงาน/รางวัลที่รับพิจารณา**\n" + achievements)
-    portfolio_text = "\n\n".join(portfolio_parts) or "ประกาศไม่ได้ระบุ Portfolio"
+        embed.add_field(
+            name="📂 รูปแบบ Portfolio",
+            value=shorten(portfolio_requirements, 850),
+            inline=False,
+        )
 
-    embed = discord.Embed(
-        title=shorten(project.get("name"), 256),
-        url=project.get("source_url") or None,
-        description=(
-            f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}**\n"
-            f"{program.get('faculty_name', 'ไม่ระบุคณะ')}\n"
-            f"{program_name}\n"
-            f"รอบ {project.get('round_label')} • แบบ {project.get('round_variant')}"
-        ),
-        color=discord.Color.green(),
+    portfolio_details = format_key_values(
+        criteria.get("portfolio_details"), 750
     )
-    embed.add_field(name="👥 จำนวนรับสาขานี้", value=slots_text, inline=True)
-    embed.add_field(name="📊 GPAX ขั้นต่ำ", value=gpax_text, inline=True)
+    if portfolio_details:
+        embed.add_field(
+            name="⚖️ รายละเอียดและน้ำหนัก",
+            value=portfolio_details,
+            inline=False,
+        )
+
+    achievements = format_bullets(
+        criteria.get("accepted_achievements"), 900
+    )
+    if achievements:
+        embed.add_field(
+            name="🏆 ผลงานที่ใช้ยื่นได้", value=achievements, inline=False
+        )
+
+    documents = format_bullets(criteria.get("required_documents"), 900)
+    if documents:
+        embed.add_field(
+            name="📄 เอกสารที่ต้องเตรียม", value=documents, inline=False
+        )
+
+    if not any(
+        (
+            portfolio_requirements,
+            portfolio_details,
+            achievements,
+            documents,
+        )
+    ):
+        embed.add_field(
+            name="ℹ️ ข้อมูลในประกาศ",
+            value="ประกาศไม่ได้แจกแจง Portfolio หรือเอกสารเพิ่มเติม",
+            inline=False,
+        )
+
+    embed.set_footer(text="ใช้ปุ่ม เปิดประกาศทางการ เมื่อต้องการอ่านรายละเอียดฉบับเต็ม")
+    return trim_embed_to_limit(embed)
+
+
+def build_project_timeline_embed(program, project):
+    timeline = project.get("admission_timeline") or []
+    embed = build_project_shell(
+        program, project, "🗓️ กำหนดการและประกาศต้นทาง", 0xF1C40F
+    )
     embed.add_field(
-        name="💳 ค่าสมัคร", value=format_money(project.get("application_fee")), inline=True
+        name="🗓️ กำหนดการทั้งหมด",
+        value=shorten(format_timeline(timeline), 1000),
+        inline=False,
+    )
+    embed.add_field(
+        name="💳 ค่าสมัคร",
+        value=format_money(project.get("application_fee")),
+        inline=True,
     )
     embed.add_field(
         name="💰 ค่าเล่าเรียน/ภาค",
@@ -587,77 +830,35 @@ def build_project_embed(program, project):
         inline=True,
     )
     embed.add_field(
-        name="🔢 จำกัดอันดับ",
+        name="🔢 จำนวนอันดับ",
         value=(
-            f"เลือกได้ไม่เกิน {project['selection_order_limit']} อันดับ"
+            f"สูงสุด {project['selection_order_limit']} อันดับ"
             if project.get("selection_order_limit") is not None
             else "ประกาศไม่ได้ระบุ"
         ),
         inline=True,
     )
-    embed.add_field(
-        name="🌐 ภาษา", value=display_value(program.get("language")), inline=True
-    )
+
     if project.get("program_notes"):
         embed.add_field(
             name="ℹ️ หมายเหตุจำนวนรับ",
-            value=shorten(project["program_notes"], 350),
+            value=shorten(project["program_notes"], 650),
             inline=False,
         )
-    embed.add_field(
-        name="✅ เกณฑ์สำคัญ",
-        value=shorten(criteria.get("criteria_summary"), 600),
-        inline=False,
-    )
-    qualifications = format_bullets(criteria.get("applicant_qualifications"), 500)
-    if qualifications:
-        embed.add_field(
-            name="🙋 คุณสมบัติผู้สมัคร", value=qualifications, inline=False
-        )
-    if gpax_details_text:
-        embed.add_field(
-            name="📈 รายละเอียดผลการเรียน",
-            value=shorten(gpax_details_text, 600),
-            inline=False,
-        )
-    embed.add_field(
-        name="🧮 คะแนนเพิ่มเติม", value=shorten(score_text, 550), inline=False
-    )
-    methods = format_bullets(criteria.get("selection_methods"), 450)
-    if methods:
-        embed.add_field(name="📝 วิธีคัดเลือก", value=methods, inline=False)
-    embed.add_field(
-        name="📂 Portfolio และผลงาน", value=shorten(portfolio_text, 750), inline=False
-    )
-    documents = format_bullets(criteria.get("required_documents"), 500)
-    if documents:
-        embed.add_field(name="📄 เอกสารที่ใช้", value=documents, inline=False)
-    additional = format_bullets(criteria.get("additional_requirements"), 450)
-    if additional:
-        embed.add_field(
-            name="⚠️ เงื่อนไขเพิ่มเติม", value=additional, inline=False
-        )
-    embed.add_field(
-        name="🗓️ กำหนดการ",
-        value=shorten(format_timeline(timeline), 750),
-        inline=False,
-    )
+
     source_details = []
     if project.get("source_published_at"):
         source_details.append(f"เผยแพร่: {project['source_published_at']}")
     if project.get("source_checked_at"):
         source_details.append(f"ตรวจล่าสุด: {project['source_checked_at']}")
-    source_details.append(project.get("source_url", "ไม่ระบุ"))
+    if project.get("source_url"):
+        source_details.append(f"[เปิดประกาศฉบับเต็ม]({project['source_url']})")
     embed.add_field(
-        name="🔗 ประกาศต้นทาง",
-        value=shorten("\n".join(source_details), 500),
+        name="🔗 แหล่งข้อมูลทางการ",
+        value=shorten("\n".join(source_details) or "ไม่ระบุ", 600),
         inline=False,
     )
-    if university.get("logo_url"):
-        embed.set_thumbnail(url=university["logo_url"])
-    embed.set_footer(
-        text="สถานะ official • แสดงจากประกาศทางการที่ตรวจแหล่งต้นทางแล้ว"
-    )
+    embed.set_footer(text="สถานะ official • ตรวจจากประกาศต้นทางแล้ว")
     return trim_embed_to_limit(embed)
 
 
@@ -745,6 +946,26 @@ def project_menu_content(
         f"📍 {selection_path(university_short_name, faculty_name, major_name)}\n\n"
         f"**4/4 เลือกโครงการรับสมัคร** • มี {len(projects)} โครงการ\n"
         "ใต้ชื่อโครงการมี GPAX จำนวนรับ และวิธีคัดเลือกแบบย่อ"
+    )
+
+
+def project_detail_content(
+    university_short_name,
+    faculty_name,
+    program_data,
+    section="summary",
+):
+    section_labels = {
+        "summary": "สรุปโครงการ",
+        "criteria": "คุณสมบัติและคะแนน",
+        "portfolio": "Portfolio และเอกสาร",
+        "timeline": "กำหนดการทั้งหมด",
+    }
+    major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
+    section_label = section_labels.get(section, section_labels["summary"])
+    return (
+        f"📍 {selection_path(university_short_name, faculty_name, major_name)}\n"
+        f"**{section_label}** • กดปุ่มด้านล่างเพื่อเปลี่ยนหมวดข้อมูล"
     )
 
 
@@ -1181,10 +1402,10 @@ class ProjectSelect(discord.ui.Select):
         logger.info("interactive project selected code=%s", project_code)
         embed = build_project_embed(parent.program_data, project)
         await interaction.response.edit_message(
-            content=(
-                "✅ **รายละเอียดโครงการที่เลือก**\n"
-                f"📍 {selection_path(parent.university_short_name, parent.faculty_name, parent.program_data.get('major_name'))}\n"
-                "ตรวจเงื่อนไขด้านล่าง แล้วเปิดประกาศทางการเพื่อยืนยันก่อนสมัคร"
+            content=project_detail_content(
+                parent.university_short_name,
+                parent.faculty_name,
+                parent.program_data,
             ),
             embeds=[embed],
             view=ProjectDetailView(
@@ -1284,6 +1505,7 @@ class ProjectDetailView(OwnedView):
         faculty_name,
         program_data,
         project,
+        section="summary",
     ):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
@@ -1291,6 +1513,23 @@ class ProjectDetailView(OwnedView):
         self.faculty_name = faculty_name
         self.program_data = program_data
         self.project = project
+        self.section = section
+
+        section_buttons = {
+            "summary": self.show_summary,
+            "criteria": self.show_criteria,
+            "portfolio": self.show_portfolio,
+            "timeline": self.show_timeline,
+        }
+        for section_name, button in section_buttons.items():
+            is_active = section_name == section
+            button.disabled = is_active
+            button.style = (
+                discord.ButtonStyle.primary
+                if is_active
+                else discord.ButtonStyle.secondary
+            )
+
         source_url = project.get("source_url")
         if source_url:
             self.add_item(
@@ -1298,10 +1537,65 @@ class ProjectDetailView(OwnedView):
                     label="📄 เปิดประกาศทางการ",
                     style=discord.ButtonStyle.link,
                     url=source_url,
-                    row=0,
+                    row=1,
                 )
             )
         self.add_item(HomeButton())
+
+    async def show_section(self, interaction, section):
+        builders = {
+            "summary": build_project_embed,
+            "criteria": build_project_criteria_embed,
+            "portfolio": build_project_portfolio_embed,
+            "timeline": build_project_timeline_embed,
+        }
+        embed = builders[section](self.program_data, self.project)
+        await interaction.response.edit_message(
+            content=project_detail_content(
+                self.university_short_name,
+                self.faculty_name,
+                self.program_data,
+                section,
+            ),
+            embeds=[embed],
+            view=ProjectDetailView(
+                self.owner_id,
+                self.navigation_programs,
+                self.university_short_name,
+                self.faculty_name,
+                self.program_data,
+                self.project,
+                section,
+            ),
+        )
+
+    @discord.ui.button(
+        label="📌 สรุป", style=discord.ButtonStyle.secondary, row=0
+    )
+    async def show_summary(self, interaction, button):
+        del button
+        await self.show_section(interaction, "summary")
+
+    @discord.ui.button(
+        label="✅ คุณสมบัติ", style=discord.ButtonStyle.secondary, row=0
+    )
+    async def show_criteria(self, interaction, button):
+        del button
+        await self.show_section(interaction, "criteria")
+
+    @discord.ui.button(
+        label="📁 Portfolio", style=discord.ButtonStyle.secondary, row=0
+    )
+    async def show_portfolio(self, interaction, button):
+        del button
+        await self.show_section(interaction, "portfolio")
+
+    @discord.ui.button(
+        label="🗓️ กำหนดการ", style=discord.ButtonStyle.secondary, row=0
+    )
+    async def show_timeline(self, interaction, button):
+        del button
+        await self.show_section(interaction, "timeline")
 
     @discord.ui.button(label="← โครงการอื่น", style=discord.ButtonStyle.secondary, row=1)
     async def back_to_projects(self, interaction, button):
