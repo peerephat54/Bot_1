@@ -10,9 +10,22 @@ create table if not exists public.universities (
     created_at timestamptz not null default now()
 );
 
+create table if not exists public.university_campuses (
+    id uuid primary key default gen_random_uuid(),
+    university_id uuid not null references public.universities(id) on delete cascade,
+    code varchar(50) not null,
+    name varchar(255) not null,
+    is_main boolean not null default false,
+    official_url text,
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now(),
+    unique (university_id, code)
+);
+
 create table if not exists public.faculties_and_majors (
     id uuid primary key default gen_random_uuid(),
     university_id uuid not null references public.universities(id) on delete cascade,
+    campus_id uuid references public.university_campuses(id) on delete restrict,
     code varchar(80) not null unique,
     faculty_name varchar(255) not null,
     major_name varchar(255),
@@ -34,6 +47,8 @@ create table if not exists public.faculties_and_majors (
 );
 
 -- Upgrade an existing installation without deleting user data.
+alter table public.faculties_and_majors add column if not exists campus_id uuid
+    references public.university_campuses(id) on delete restrict;
 alter table public.faculties_and_majors add column if not exists program_type varchar(80);
 alter table public.faculties_and_majors add column if not exists language varchar(120);
 alter table public.faculties_and_majors add column if not exists curriculum_credits integer;
@@ -236,6 +251,10 @@ end $$;
 
 create index if not exists idx_faculties_university
     on public.faculties_and_majors(university_id);
+create index if not exists idx_university_campuses_university
+    on public.university_campuses(university_id);
+create index if not exists idx_faculties_campus
+    on public.faculties_and_majors(campus_id);
 create index if not exists idx_projects_university_year
     on public.admission_projects(university_id, academic_year, tcas_round);
 create index if not exists idx_projects_status
@@ -250,6 +269,7 @@ create index if not exists idx_timeline_end_on
 -- Public clients may read only verified, visible admission data. Draft rows can
 -- be safely prepared by an administrator but cannot leak through the anon key.
 alter table public.universities enable row level security;
+alter table public.university_campuses enable row level security;
 alter table public.faculties_and_majors enable row level security;
 alter table public.admission_projects enable row level security;
 alter table public.admission_project_programs enable row level security;
@@ -260,6 +280,10 @@ alter table public.deadline_subscriptions enable row level security;
 drop policy if exists "Public read universities" on public.universities;
 create policy "Public read universities"
     on public.universities for select to anon, authenticated using (true);
+
+drop policy if exists "Public read university campuses" on public.university_campuses;
+create policy "Public read university campuses"
+    on public.university_campuses for select to anon, authenticated using (true);
 
 drop policy if exists "Public read faculties" on public.faculties_and_majors;
 create policy "Public read faculties"

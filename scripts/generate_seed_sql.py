@@ -47,8 +47,30 @@ on conflict (name) do update set
             )
         )
 
+    campus_columns = ["name", "is_main", "official_url", "updated_at"]
+    for item in data["campuses"]:
+        statements.append(
+            """
+insert into public.university_campuses (
+    university_id, code, name, is_main, official_url, updated_at
+)
+select u.id, {code}, {name}, {is_main}, {official_url}, now()
+from public.universities u
+where u.short_name = {university_short_name}
+on conflict (university_id, code) do update set
+        {updates};""".format(
+                code=sql_value(item["code"]),
+                name=sql_value(item["name"]),
+                is_main=sql_value(item["is_main"]),
+                official_url=sql_value(item.get("official_url")),
+                university_short_name=sql_value(item["university_short_name"]),
+                updates=upsert_assignments(campus_columns),
+            )
+        )
+
     program_columns = [
         "university_id",
+        "campus_id",
         "faculty_name",
         "major_name",
         "tcas_round",
@@ -66,19 +88,22 @@ on conflict (name) do update set
     for item in data["programs"]:
         statements.append(
             """\ninsert into public.faculties_and_majors (
-    university_id, code, faculty_name, major_name, tcas_round, academic_year,
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
     program_type, language, curriculum_credits, curriculum_year, duration_years,
     official_program_url, admission_previews, data_status, updated_at
 )
 select
-    u.id, {code}, {faculty_name}, {major_name}, 1, {academic_year},
+    u.id, campus.id, {code}, {faculty_name}, {major_name}, 1, {academic_year},
     {program_type}, {language}, {curriculum_credits}, {curriculum_year},
     {duration_years}, {official_program_url}, {admission_previews}, {data_status}, now()
 from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = {campus_code}
 where u.short_name = {university_short_name}
 on conflict (code) do update set
         {updates};""".format(
                 code=sql_value(item["code"]),
+                campus_code=sql_value(item["campus_code"]),
                 faculty_name=sql_value(item["faculty_name"]),
                 major_name=sql_value(item.get("major_name")),
                 academic_year=data["academic_year"],

@@ -154,7 +154,8 @@ def fetch_program_projects(program_code: str):
             "id,code,faculty_name,major_name,academic_year,program_type,language,"
             "curriculum_credits,curriculum_year,duration_years,official_program_url,"
             "admission_previews,"
-            "universities(name,short_name,logo_url)"
+            "universities(name,short_name,logo_url),"
+            "university_campuses(code,name,is_main,official_url)"
         )
         .eq("code", program_code)
         .eq("data_status", "official")
@@ -218,7 +219,8 @@ def fetch_navigation_programs():
         database.table("admission_project_programs")
         .select(
             "faculties_and_majors!inner("
-            "code,faculty_name,major_name,"
+            "code,faculty_name,major_name,admission_previews,"
+            "university_campuses(code,name,is_main),"
             "universities!inner(name,short_name)),"
             "admission_projects!inner(academic_year,publication_status,is_visible)"
         )
@@ -235,6 +237,7 @@ def fetch_navigation_programs():
         if not code:
             return
         university = first_relation(program.get("universities"))
+        campus = first_relation(program.get("university_campuses"))
         existing = programs.get(code)
         programs[code] = {
             "code": code,
@@ -242,6 +245,9 @@ def fetch_navigation_programs():
             "major_name": program.get("major_name") or program.get("faculty_name"),
             "university_short_name": university.get("short_name") or "มหาวิทยาลัย",
             "university_name": university.get("name") or "ไม่ระบุมหาวิทยาลัย",
+            "campus_code": campus.get("code") or "main",
+            "campus_name": campus.get("name") or "วิทยาเขตหลัก",
+            "is_main_campus": bool(campus.get("is_main")),
             "has_official_projects": has_official_projects
             or bool(existing and existing.get("has_official_projects")),
             "has_admission_previews": bool(program.get("admission_previews"))
@@ -256,6 +262,7 @@ def fetch_navigation_programs():
         database.table("faculties_and_majors")
         .select(
             "code,faculty_name,major_name,admission_previews,"
+            "university_campuses(code,name,is_main),"
             "universities!inner(name,short_name)"
         )
         .eq("academic_year", 2570)
@@ -473,6 +480,7 @@ def format_admission_previews(previews):
 def build_program_profile_embed(program):
     """Show curriculum and clearly labelled unconfirmed admission references."""
     university = first_relation(program.get("universities"))
+    campus = first_relation(program.get("university_campuses"))
     duration = program.get("duration_years")
     duration_text = (
         f"{float(duration):g} ปี" if duration is not None else "ไม่ได้ระบุในหน้าหลักสูตร"
@@ -499,6 +507,7 @@ def build_program_profile_embed(program):
         url=program.get("official_program_url") or None,
         description=(
             f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}**\n"
+            f"🏫 {campus.get('name', 'วิทยาเขตหลัก')}\n"
             f"{program.get('faculty_name', 'ไม่ระบุคณะ')}\n\n"
             f"{status_text}"
         ),
@@ -585,6 +594,7 @@ def project_choice_description(project):
 
 def project_header_description(program, project, section_label):
     university = first_relation(program.get("universities"))
+    campus = first_relation(program.get("university_campuses"))
     program_name = program.get("major_name") or program.get("faculty_name")
     tags = [
         "TCAS70",
@@ -595,6 +605,7 @@ def project_header_description(program, project, section_label):
     tag_text = " • ".join(f"`{tag}`" for tag in tags)
     return (
         f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}**\n"
+        f"🏫 {campus.get('name', 'วิทยาเขตหลัก')}\n"
         f"{program.get('faculty_name', 'ไม่ระบุคณะ')}\n"
         f"**{program_name}**\n\n"
         f"{tag_text}\n"
@@ -894,8 +905,51 @@ def university_name_for(navigation_programs, university_short_name):
     )
 
 
-def selection_path(university_short_name, faculty_name=None, major_name=None):
+def campuses_for_university(navigation_programs, university_short_name):
+    campuses = {}
+    for program in navigation_programs:
+        if program["university_short_name"] != university_short_name:
+            continue
+        code = program["campus_code"]
+        campus = campuses.setdefault(
+            code,
+            {
+                "code": code,
+                "name": program["campus_name"],
+                "is_main": program.get("is_main_campus", False),
+                "program_count": 0,
+                "faculties": set(),
+            },
+        )
+        campus["program_count"] += 1
+        campus["faculties"].add(program["faculty_name"])
+    return sorted(
+        campuses.values(),
+        key=lambda item: (not item["is_main"], item["name"].casefold()),
+    )
+
+
+def campus_name_for(navigation_programs, university_short_name, campus_code):
+    return next(
+        (
+            program["campus_name"]
+            for program in navigation_programs
+            if program["university_short_name"] == university_short_name
+            and program["campus_code"] == campus_code
+        ),
+        "วิทยาเขตหลัก",
+    )
+
+
+def selection_path(
+    university_short_name,
+    faculty_name=None,
+    major_name=None,
+    campus_name=None,
+):
     parts = [university_short_name]
+    if campus_name:
+        parts.append(campus_name)
     if faculty_name:
         parts.append(faculty_name)
     if major_name:
@@ -909,12 +963,26 @@ def university_menu_content(navigation_programs):
     )
     return (
         "🎓 **ค้นหาเกณฑ์ TCAS70 รอบ Portfolio**\n"
-        "เลือกตามลำดับ: **มหาวิทยาลัย → คณะ → สาขา → โครงการ**\n\n"
-        f"**1/4 เลือกมหาวิทยาลัย** • มี {university_count} แห่ง"
+        "เลือกตามลำดับ: **มหาวิทยาลัย → วิทยาเขต → คณะ → สาขา → โครงการ**\n"
+        "มหาวิทยาลัยที่มีวิทยาเขตเดียวจะข้ามขั้นให้อัตโนมัติ\n\n"
+        f"**1/5 เลือกมหาวิทยาลัย** • มี {university_count} แห่ง"
     )
 
 
-def faculty_menu_content(navigation_programs, university_short_name):
+def campus_menu_content(navigation_programs, university_short_name):
+    university_name = university_name_for(navigation_programs, university_short_name)
+    campuses = campuses_for_university(navigation_programs, university_short_name)
+    return (
+        "🎓 **ค้นหาเกณฑ์ TCAS70 รอบ Portfolio**\n"
+        f"📍 **{university_name}**\n\n"
+        f"**2/5 เลือกวิทยาเขต/พื้นที่การศึกษา** • มี {len(campuses)} แห่ง\n"
+        "⭐ คือวิทยาเขตหลัก • จำนวนคณะและสาขาแสดงใต้ตัวเลือก"
+    )
+
+
+def faculty_menu_content(
+    navigation_programs, university_short_name, campus_code
+):
     university_name = university_name_for(
         navigation_programs, university_short_name
     )
@@ -922,25 +990,42 @@ def faculty_menu_content(navigation_programs, university_short_name):
         program
         for program in navigation_programs
         if program["university_short_name"] == university_short_name
+        and program["campus_code"] == campus_code
     ]
+    campus_name = campus_name_for(
+        navigation_programs, university_short_name, campus_code
+    )
+    has_multiple_campuses = len(
+        campuses_for_university(navigation_programs, university_short_name)
+    ) > 1
+    step = "3/5" if has_multiple_campuses else "2/4"
     faculty_count = len({program["faculty_name"] for program in matching})
     return (
         "🎓 **ค้นหาเกณฑ์ TCAS70 รอบ Portfolio**\n"
-        f"📍 **{university_name}**\n\n"
-        f"**2/4 เลือกคณะ** • มี {faculty_count} คณะ\n"
+        f"📍 **{university_name}**\n"
+        f"🏫 {campus_name}\n\n"
+        f"**{step} เลือกคณะ** • มี {faculty_count} คณะ\n"
         "✅ มีประกาศแล้ว  •  ⏳ รอประกาศ TCAS70"
     )
 
 
 def program_menu_content(
-    navigation_programs, university_short_name, faculty_name
+    navigation_programs, university_short_name, campus_code, faculty_name
 ):
     matching = [
         program
         for program in navigation_programs
         if program["university_short_name"] == university_short_name
+        and program["campus_code"] == campus_code
         and program["faculty_name"] == faculty_name
     ]
+    campus_name = campus_name_for(
+        navigation_programs, university_short_name, campus_code
+    )
+    has_multiple_campuses = len(
+        campuses_for_university(navigation_programs, university_short_name)
+    ) > 1
+    step = "4/5" if has_multiple_campuses else "3/4"
     announced_count = sum(
         1 for program in matching if program.get("has_official_projects")
     )
@@ -952,22 +1037,22 @@ def program_menu_content(
     )
     return (
         "🎓 **ค้นหาเกณฑ์ TCAS70 รอบ Portfolio**\n"
-        f"📍 {selection_path(university_short_name, faculty_name)}\n\n"
-        f"**3/4 เลือกสาขา** • มี {len(matching)} สาขา "
+        f"📍 {selection_path(university_short_name, faculty_name, campus_name=campus_name)}\n\n"
+        f"**{step} เลือกสาขา** • มี {len(matching)} สาขา "
         f"(ประกาศแล้ว {announced_count} • มีข้อมูลรอยืนยัน {preview_count})\n"
         "✅ ดูเกณฑ์ได้  •  ⚠️ มีข้อมูลอ้างอิง  •  ⏳ ยังไม่พบประกาศ"
     )
 
 
 def project_menu_content(
-    university_short_name, faculty_name, program_data
+    university_short_name, faculty_name, program_data, campus_name=None
 ):
     major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
     projects = program_data.get("projects") or []
     return (
         "🎓 **ค้นหาเกณฑ์ TCAS70 รอบ Portfolio**\n"
-        f"📍 {selection_path(university_short_name, faculty_name, major_name)}\n\n"
-        f"**4/4 เลือกโครงการรับสมัคร** • มี {len(projects)} โครงการ\n"
+        f"📍 {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n\n"
+        f"**ขั้นสุดท้าย เลือกโครงการรับสมัคร** • มี {len(projects)} โครงการ\n"
         "ใต้ชื่อโครงการมี GPAX จำนวนรับ และวิธีคัดเลือกแบบย่อ"
     )
 
@@ -977,6 +1062,7 @@ def project_detail_content(
     faculty_name,
     program_data,
     section="summary",
+    campus_name=None,
 ):
     section_labels = {
         "summary": "สรุปโครงการ",
@@ -987,7 +1073,7 @@ def project_detail_content(
     major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
     section_label = section_labels.get(section, section_labels["summary"])
     return (
-        f"📍 {selection_path(university_short_name, faculty_name, major_name)}\n"
+        f"📍 {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n"
         f"**{section_label}** • กดปุ่มด้านล่างเพื่อเปลี่ยนหมวดข้อมูล"
     )
 
@@ -998,6 +1084,7 @@ def pending_program_content(
     program_name,
     program_url,
     preview_count=0,
+    campus_name=None,
 ):
     curriculum_link = (
         f"\n📚 [เปิดข้อมูลหลักสูตรทางการ]({program_url})"
@@ -1018,7 +1105,7 @@ def pending_program_content(
     )
     return (
         f"{status}\n"
-        f"📍 {selection_path(university_short_name, faculty_name, program_name)}\n\n"
+        f"📍 {selection_path(university_short_name, faculty_name, program_name, campus_name)}\n\n"
         f"{explanation}"
         f"{curriculum_link}\n\n"
         "เลือกสาขาอื่นจากเมนูเดิมด้านล่างได้เลย"
@@ -1112,15 +1199,33 @@ class UniversitySelect(discord.ui.Select):
     async def callback(self, interaction: discord.Interaction):
         parent = self.view
         university_short_name = self.values[0]
+        campuses = campuses_for_university(
+            parent.navigation_programs, university_short_name
+        )
+        if len(campuses) > 1:
+            await interaction.response.edit_message(
+                content=campus_menu_content(
+                    parent.navigation_programs, university_short_name
+                ),
+                embeds=[],
+                view=CampusView(
+                    parent.owner_id,
+                    parent.navigation_programs,
+                    university_short_name,
+                ),
+            )
+            return
+        campus_code = campuses[0]["code"]
         await interaction.response.edit_message(
             content=faculty_menu_content(
-                parent.navigation_programs, university_short_name
+                parent.navigation_programs, university_short_name, campus_code
             ),
             embeds=[],
             view=FacultyView(
                 parent.owner_id,
                 parent.navigation_programs,
                 university_short_name,
+                campus_code,
             ),
         )
 
@@ -1132,8 +1237,72 @@ class UniversityView(OwnedView):
         self.add_item(UniversitySelect(navigation_programs))
 
 
+class CampusSelect(discord.ui.Select):
+    def __init__(self, campuses):
+        self.campuses = campuses
+        options = [
+            discord.SelectOption(
+                label=shorten(campus["name"], 100),
+                value=campus["code"],
+                description=shorten(
+                    f"{len(campus['faculties'])} คณะ • {campus['program_count']} สาขา",
+                    100,
+                ),
+                emoji="⭐" if campus["is_main"] else "🏫",
+            )
+            for campus in campuses
+        ]
+        super().__init__(
+            placeholder="2. เลือกวิทยาเขต/พื้นที่การศึกษา",
+            min_values=1,
+            max_values=1,
+            options=options,
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        campus_code = self.values[0]
+        await interaction.response.edit_message(
+            content=faculty_menu_content(
+                parent.navigation_programs,
+                parent.university_short_name,
+                campus_code,
+            ),
+            embeds=[],
+            view=FacultyView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.university_short_name,
+                campus_code,
+            ),
+        )
+
+
+class CampusView(OwnedView):
+    def __init__(self, owner_id, navigation_programs, university_short_name):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.university_short_name = university_short_name
+        self.add_item(
+            CampusSelect(
+                campuses_for_university(navigation_programs, university_short_name)
+            )
+        )
+
+    @discord.ui.button(
+        label="← มหาวิทยาลัย", style=discord.ButtonStyle.secondary, row=1
+    )
+    async def back_to_universities(self, interaction, button):
+        del button
+        await interaction.response.edit_message(
+            content=university_menu_content(self.navigation_programs),
+            embeds=[],
+            view=UniversityView(self.owner_id, self.navigation_programs),
+        )
+
+
 class FacultySelect(discord.ui.Select):
-    def __init__(self, faculties):
+    def __init__(self, faculties, step_number=2):
         self.faculties = faculties
         options = []
         for index, faculty in enumerate(faculties):
@@ -1154,7 +1323,7 @@ class FacultySelect(discord.ui.Select):
                 )
             )
         super().__init__(
-            placeholder="2. เลือกคณะ",
+            placeholder=f"{step_number}. เลือกคณะ",
             min_values=1,
             max_values=1,
             options=options,
@@ -1167,6 +1336,7 @@ class FacultySelect(discord.ui.Select):
             content=program_menu_content(
                 parent.navigation_programs,
                 parent.university_short_name,
+                parent.campus_code,
                 faculty_name,
             ),
             embeds=[],
@@ -1174,6 +1344,7 @@ class FacultySelect(discord.ui.Select):
                 parent.owner_id,
                 parent.navigation_programs,
                 parent.university_short_name,
+                parent.campus_code,
                 faculty_name,
             ),
         )
@@ -1181,14 +1352,22 @@ class FacultySelect(discord.ui.Select):
 
 class FacultyView(OwnedView):
     def __init__(
-        self, owner_id, navigation_programs, university_short_name, page=0
+        self,
+        owner_id,
+        navigation_programs,
+        university_short_name,
+        campus_code,
+        page=0,
     ):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.university_short_name = university_short_name
+        self.campus_code = campus_code
         grouped = {}
         for program in navigation_programs:
             if program["university_short_name"] != university_short_name:
+                continue
+            if program["campus_code"] != campus_code:
                 continue
             faculty_name = program["faculty_name"]
             faculty = grouped.setdefault(
@@ -1207,11 +1386,20 @@ class FacultyView(OwnedView):
             grouped.values(), key=lambda item: item["name"].casefold()
         )
         self.page = page
+        if len(campuses_for_university(navigation_programs, university_short_name)) > 1:
+            self.back_to_universities.label = "← วิทยาเขต"
         self.total_pages = max(
             1, (len(self.faculties) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE
         )
         start = page * SELECT_PAGE_SIZE
-        self.add_item(FacultySelect(self.faculties[start : start + SELECT_PAGE_SIZE]))
+        faculty_step = 3 if len(
+            campuses_for_university(navigation_programs, university_short_name)
+        ) > 1 else 2
+        self.add_item(
+            FacultySelect(
+                self.faculties[start : start + SELECT_PAGE_SIZE], faculty_step
+            )
+        )
         if self.total_pages == 1:
             self.remove_item(self.previous_page)
             self.remove_item(self.next_page)
@@ -1222,11 +1410,27 @@ class FacultyView(OwnedView):
     @discord.ui.button(label="← มหาวิทยาลัย", style=discord.ButtonStyle.secondary, row=1)
     async def back_to_universities(self, interaction, button):
         del button
-        await interaction.response.edit_message(
-            content=university_menu_content(self.navigation_programs),
-            embeds=[],
-            view=UniversityView(self.owner_id, self.navigation_programs),
+        campuses = campuses_for_university(
+            self.navigation_programs, self.university_short_name
         )
+        if len(campuses) > 1:
+            await interaction.response.edit_message(
+                content=campus_menu_content(
+                    self.navigation_programs, self.university_short_name
+                ),
+                embeds=[],
+                view=CampusView(
+                    self.owner_id,
+                    self.navigation_programs,
+                    self.university_short_name,
+                ),
+            )
+        else:
+            await interaction.response.edit_message(
+                content=university_menu_content(self.navigation_programs),
+                embeds=[],
+                view=UniversityView(self.owner_id, self.navigation_programs),
+            )
 
     @discord.ui.button(label="◀ ก่อนหน้า", style=discord.ButtonStyle.secondary, row=1)
     async def previous_page(self, interaction, button):
@@ -1236,6 +1440,7 @@ class FacultyView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.page - 1,
             )
         )
@@ -1248,13 +1453,14 @@ class FacultyView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.page + 1,
             )
         )
 
 
 class ProgramSelect(discord.ui.Select):
-    def __init__(self, programs):
+    def __init__(self, programs, step_number=3):
         options = [
             discord.SelectOption(
                 label=shorten(program["major_name"], 100),
@@ -1278,7 +1484,7 @@ class ProgramSelect(discord.ui.Select):
             for program in programs
         ]
         super().__init__(
-            placeholder="3. เลือกสาขา",
+            placeholder=f"{step_number}. เลือกสาขา",
             min_values=1,
             max_values=1,
             options=options,
@@ -1303,6 +1509,7 @@ class ProgramSelect(discord.ui.Select):
                         program_name,
                         program_url,
                         len((program_data or {}).get("admission_previews") or []),
+                        parent.campus_name,
                     ),
                     embeds=(
                         [build_program_profile_embed(program_data)]
@@ -1317,12 +1524,14 @@ class ProgramSelect(discord.ui.Select):
                     parent.university_short_name,
                     parent.faculty_name,
                     program_data,
+                    parent.campus_name,
                 ),
                 embeds=[],
                 view=ProjectView(
                     parent.owner_id,
                     parent.navigation_programs,
                     parent.university_short_name,
+                    parent.campus_code,
                     parent.faculty_name,
                     program_data,
                 ),
@@ -1342,17 +1551,23 @@ class ProgramView(OwnedView):
         owner_id,
         navigation_programs,
         university_short_name,
+        campus_code,
         faculty_name,
         page=0,
     ):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.university_short_name = university_short_name
+        self.campus_code = campus_code
+        self.campus_name = campus_name_for(
+            navigation_programs, university_short_name, campus_code
+        )
         self.faculty_name = faculty_name
         self.programs = [
             program
             for program in navigation_programs
             if program["university_short_name"] == university_short_name
+            and program["campus_code"] == campus_code
             and program["faculty_name"] == faculty_name
         ]
         self.page = page
@@ -1360,7 +1575,14 @@ class ProgramView(OwnedView):
             1, (len(self.programs) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE
         )
         start = page * SELECT_PAGE_SIZE
-        self.add_item(ProgramSelect(self.programs[start : start + SELECT_PAGE_SIZE]))
+        program_step = 4 if len(
+            campuses_for_university(navigation_programs, university_short_name)
+        ) > 1 else 3
+        self.add_item(
+            ProgramSelect(
+                self.programs[start : start + SELECT_PAGE_SIZE], program_step
+            )
+        )
         self.add_item(HomeButton())
         if self.total_pages == 1:
             self.remove_item(self.previous_page)
@@ -1374,13 +1596,16 @@ class ProgramView(OwnedView):
         del button
         await interaction.response.edit_message(
             content=faculty_menu_content(
-                self.navigation_programs, self.university_short_name
+                self.navigation_programs,
+                self.university_short_name,
+                self.campus_code,
             ),
             embeds=[],
             view=FacultyView(
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
             ),
         )
 
@@ -1392,6 +1617,7 @@ class ProgramView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
                 self.page - 1,
             )
@@ -1405,6 +1631,7 @@ class ProgramView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
                 self.page + 1,
             )
@@ -1412,7 +1639,7 @@ class ProgramView(OwnedView):
 
 
 class ProjectSelect(discord.ui.Select):
-    def __init__(self, projects):
+    def __init__(self, projects, step_number=4):
         options = []
         for project in projects:
             variant = project.get("round_variant")
@@ -1428,7 +1655,7 @@ class ProjectSelect(discord.ui.Select):
                 )
             )
         super().__init__(
-            placeholder="4. เลือกโครงการรับสมัคร",
+            placeholder=f"{step_number}. เลือกโครงการรับสมัคร",
             min_values=1,
             max_values=1,
             options=options,
@@ -1449,12 +1676,14 @@ class ProjectSelect(discord.ui.Select):
                 parent.university_short_name,
                 parent.faculty_name,
                 parent.program_data,
+                campus_name=parent.campus_name,
             ),
             embeds=[embed],
             view=ProjectDetailView(
                 parent.owner_id,
                 parent.navigation_programs,
                 parent.university_short_name,
+                parent.campus_code,
                 parent.faculty_name,
                 parent.program_data,
                 project,
@@ -1468,6 +1697,7 @@ class ProjectView(OwnedView):
         owner_id,
         navigation_programs,
         university_short_name,
+        campus_code,
         faculty_name,
         program_data,
         page=0,
@@ -1475,6 +1705,10 @@ class ProjectView(OwnedView):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.university_short_name = university_short_name
+        self.campus_code = campus_code
+        self.campus_name = campus_name_for(
+            navigation_programs, university_short_name, campus_code
+        )
         self.faculty_name = faculty_name
         self.program_data = program_data
         self.page = page
@@ -1483,7 +1717,14 @@ class ProjectView(OwnedView):
             1, (len(projects) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE
         )
         start = page * SELECT_PAGE_SIZE
-        self.add_item(ProjectSelect(projects[start : start + SELECT_PAGE_SIZE]))
+        project_step = 5 if len(
+            campuses_for_university(navigation_programs, university_short_name)
+        ) > 1 else 4
+        self.add_item(
+            ProjectSelect(
+                projects[start : start + SELECT_PAGE_SIZE], project_step
+            )
+        )
         self.add_item(HomeButton())
         if self.total_pages == 1:
             self.remove_item(self.previous_page)
@@ -1499,6 +1740,7 @@ class ProjectView(OwnedView):
             content=program_menu_content(
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
             ),
             embeds=[],
@@ -1506,6 +1748,7 @@ class ProjectView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
             ),
         )
@@ -1518,6 +1761,7 @@ class ProjectView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
                 self.program_data,
                 self.page - 1,
@@ -1532,6 +1776,7 @@ class ProjectView(OwnedView):
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
                 self.program_data,
                 self.page + 1,
@@ -1545,6 +1790,7 @@ class ProjectDetailView(OwnedView):
         owner_id,
         navigation_programs,
         university_short_name,
+        campus_code,
         faculty_name,
         program_data,
         project,
@@ -1553,6 +1799,10 @@ class ProjectDetailView(OwnedView):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.university_short_name = university_short_name
+        self.campus_code = campus_code
+        self.campus_name = campus_name_for(
+            navigation_programs, university_short_name, campus_code
+        )
         self.faculty_name = faculty_name
         self.program_data = program_data
         self.project = project
@@ -1599,12 +1849,14 @@ class ProjectDetailView(OwnedView):
                 self.faculty_name,
                 self.program_data,
                 section,
+                self.campus_name,
             ),
             embeds=[embed],
             view=ProjectDetailView(
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
                 self.program_data,
                 self.project,
@@ -1648,12 +1900,14 @@ class ProjectDetailView(OwnedView):
                 self.university_short_name,
                 self.faculty_name,
                 self.program_data,
+                self.campus_name,
             ),
             embeds=[],
             view=ProjectView(
                 self.owner_id,
                 self.navigation_programs,
                 self.university_short_name,
+                self.campus_code,
                 self.faculty_name,
                 self.program_data,
             ),
@@ -1671,7 +1925,7 @@ async def hello(interaction: discord.Interaction):
 
 @bot.tree.command(
     name="tcas_search",
-    description="เลือกมหาวิทยาลัย แล้วค้นหาคณะ สาขา และโครงการ Portfolio",
+    description="เลือกมหาวิทยาลัย วิทยาเขต คณะ สาขา และโครงการ Portfolio",
 )
 @app_commands.rename(university="มหาวิทยาลัย")
 @app_commands.describe(university="พิมพ์ชื่อหรือตัวย่อ แล้วเลือกมหาวิทยาลัย")
@@ -1714,17 +1968,34 @@ async def tcas_search(interaction: discord.Interaction, university: str):
             )
             return
 
+        campuses = campuses_for_university(
+            navigation_programs, selected_university
+        )
+        if len(campuses) > 1:
+            content = campus_menu_content(
+                navigation_programs, selected_university
+            )
+            view = CampusView(
+                interaction.user.id,
+                navigation_programs,
+                selected_university,
+            )
+        else:
+            campus_code = campuses[0]["code"]
+            content = faculty_menu_content(
+                navigation_programs, selected_university, campus_code
+            )
+            view = FacultyView(
+                interaction.user.id,
+                navigation_programs,
+                selected_university,
+                campus_code,
+            )
         await asyncio.wait_for(
             interaction.edit_original_response(
-                content=faculty_menu_content(
-                    navigation_programs, selected_university
-                ),
+                content=content,
                 embeds=[],
-                view=FacultyView(
-                    interaction.user.id,
-                    navigation_programs,
-                    selected_university,
-                ),
+                view=view,
             ),
             timeout=15,
         )

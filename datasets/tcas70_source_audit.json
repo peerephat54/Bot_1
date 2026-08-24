@@ -392,6 +392,83 @@
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
       "decision": "เพิ่มหลักสูตรวิทยาการคอมพิวเตอร์เป็นรายการหลักสูตรที่เปิดสอนจริง โดยยังไม่สร้างเกณฑ์ TCAS70"
+    },
+    {
+      "url": "https://www.cmu.ac.th/th/campus",
+      "publisher": "CMU",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.chula.ac.th/contact/",
+      "publisher": "CU",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.kmitl.ac.th/contact",
+      "publisher": "KMITL",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.kmitl-chumphon.kmitl.ac.th/contact-us/",
+      "publisher": "KMITL",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.kmutnb.ac.th/About-(1)/Contact-Directions/Contact.aspx",
+      "publisher": "KMUTNB",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.kmutnb.ac.th/faculty-and-agencies/prachin-campus/faculty-of-Industrial-technology-and-management.aspx",
+      "publisher": "KMUTNB",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.kmutt.ac.th/about-kmutt/campus/",
+      "publisher": "KMUTT",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.kmutt.ac.th/about-kmutt/contact-us/",
+      "publisher": "KMUTT",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://ku.ac.th/th/campus-information",
+      "publisher": "KU",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.mahidol.ac.th/campus/",
+      "publisher": "MU",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://engr.tu.ac.th/contact-us",
+      "publisher": "TU",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
     }
   ]
 }

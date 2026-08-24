@@ -103,6 +103,7 @@ def duplicate_values(items):
 def validate(data):
     errors = []
     universities = data.get("universities", [])
+    campuses = data.get("campuses", [])
     programs = data.get("programs", [])
     projects = data.get("projects", [])
     links = data.get("project_programs", [])
@@ -110,6 +111,24 @@ def validate(data):
     timeline = data.get("timeline", [])
 
     university_codes = {item.get("short_name") for item in universities}
+    campus_keys = set()
+    main_campuses = {}
+    for campus in campuses:
+        key = (campus.get("university_short_name"), campus.get("code"))
+        if key in campus_keys:
+            errors.append(f"duplicate campus: {key}")
+        campus_keys.add(key)
+        if campus.get("university_short_name") not in university_codes:
+            errors.append(f"unknown university for campus {key}")
+        if not campus.get("name") or not campus.get("official_url"):
+            errors.append(f"incomplete campus: {key}")
+        if campus.get("is_main"):
+            main_campuses.setdefault(campus.get("university_short_name"), []).append(
+                campus.get("code")
+            )
+    for university_code in university_codes:
+        if len(main_campuses.get(university_code, [])) != 1:
+            errors.append(f"university must have one main campus: {university_code}")
     program_codes = {item.get("code") for item in programs}
     project_codes = {item.get("code") for item in projects}
 
@@ -140,6 +159,14 @@ def validate(data):
     for program in programs:
         if program.get("university_short_name") not in university_codes:
             errors.append(f"unknown university for program {program.get('code')}")
+        campus_key = (
+            program.get("university_short_name"),
+            program.get("campus_code"),
+        )
+        if campus_key not in campus_keys:
+            errors.append(
+                f"unknown campus for program {program.get('code')}: {campus_key}"
+            )
         university = program.get("university_short_name")
         for preview in program.get("admission_previews") or []:
             preview_title = preview.get("title")
@@ -269,6 +296,7 @@ def validate(data):
 
     counts = {
         "universities": len(universities),
+        "campuses": len(campuses),
         "programs": len(programs),
         "projects": len(projects),
         "official_projects": sum(

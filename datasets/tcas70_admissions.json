@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "academic_year": 2570,
   "checked_at": "2026-08-24T18:45:00+07:00",
   "status_policy": {
@@ -99,7 +99,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -141,7 +142,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -192,7 +194,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -216,7 +219,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "MU",
@@ -229,7 +233,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://www.ict.mahidol.ac.th/th/programs/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "salaya"
     },
     {
       "university_short_name": "CMU",
@@ -242,7 +247,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "KMUTT",
@@ -255,7 +261,8 @@
       "curriculum_year": 2566,
       "duration_years": 4,
       "official_program_url": "https://www.sit.kmutt.ac.th/bsc/bsc-cs-2/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangmod"
     },
     {
       "university_short_name": "KMUTT",
@@ -268,7 +275,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://www.sit.kmutt.ac.th/en/bsc/bsc-dsi-2/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangmod"
     },
     {
       "university_short_name": "KMUTT",
@@ -281,7 +289,8 @@
       "curriculum_year": 2567,
       "duration_years": 4,
       "official_program_url": "https://www.sit.kmutt.ac.th/bsc/bsc-it-2/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangmod"
     },
     {
       "university_short_name": "MU",
@@ -294,7 +303,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://www.eg.mahidol.ac.th/egmu/admission/tcas-admission.html",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "salaya"
     },
     {
       "university_short_name": "KU",
@@ -307,7 +317,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://misreg.csc.ku.ac.th/admission/?page_id=63",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "sakon-nakhon"
     },
     {
       "university_short_name": "KU",
@@ -320,7 +331,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://misreg.csc.ku.ac.th/admission/?page_id=63",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "sakon-nakhon"
     },
     {
       "university_short_name": "TU",
@@ -333,7 +345,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admissions.siit.tu.ac.th/undergraduate/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "rangsit"
     },
     {
       "university_short_name": "TU",
@@ -346,7 +359,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admissions.siit.tu.ac.th/undergraduate/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "rangsit"
     },
     {
       "university_short_name": "KMUTT",
@@ -359,7 +373,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://join.kmutt.ac.th/projects",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangmod"
     },
     {
       "university_short_name": "KMUTT",
@@ -372,7 +387,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://join.kmutt.ac.th/projects",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangmod"
     },
     {
       "university_short_name": "KMUTT",
@@ -385,7 +401,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://join.kmutt.ac.th/projects",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangkhuntien"
     },
     {
       "university_short_name": "KMUTT",
@@ -398,7 +415,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://join.kmutt.ac.th/projects",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "bangkhuntien"
     },
     {
       "university_short_name": "KMUTT",
@@ -411,7 +429,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://join.kmutt.ac.th/projects",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "ratchaburi"
     },
     {
       "university_short_name": "CMU",
@@ -424,7 +443,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -437,7 +457,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -450,7 +471,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -463,7 +485,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -476,7 +499,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -489,7 +513,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -502,7 +527,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "CMU",
@@ -515,7 +541,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "main"
     },
     {
       "university_short_name": "KMITL",
@@ -528,7 +555,8 @@
       "curriculum_year": null,
       "duration_years": 4,
       "official_program_url": "https://admission.reg.kmitl.ac.th/",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "chumphon"
     },
     {
       "university_short_name": "KMITL",
@@ -541,7 +569,8 @@
       "curriculum_year": 2569,
       "duration_years": null,
       "official_program_url": "https://www.science.kmitl.ac.th/curriculums/bachelor/computer-science-2569",
-      "data_status": "official"
+      "data_status": "official",
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "CU",
@@ -574,7 +603,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -607,7 +637,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -631,7 +662,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -655,7 +687,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -679,7 +712,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -703,7 +737,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -727,7 +762,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -751,7 +787,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "CU",
@@ -775,7 +812,8 @@
           "note": "หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้",
           "source_url": "https://admission.chula.ac.th/admission_c1.php"
         }
-      ]
+      ],
+      "campus_code": "pathum-wan"
     },
     {
       "university_short_name": "KMUTNB",
@@ -799,7 +837,8 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ]
+      ],
+      "campus_code": "bangkok"
     },
     {
       "university_short_name": "KMUTNB",
@@ -823,7 +862,8 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ]
+      ],
+      "campus_code": "bangkok"
     },
     {
       "university_short_name": "KMUTNB",
@@ -847,7 +887,8 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ]
+      ],
+      "campus_code": "bangkok"
     },
     {
       "university_short_name": "KMUTNB",
@@ -871,7 +912,8 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ]
+      ],
+      "campus_code": "prachinburi"
     },
     {
       "university_short_name": "KMUTNB",
@@ -895,7 +937,8 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ]
+      ],
+      "campus_code": "prachinburi"
     },
     {
       "university_short_name": "KMITL",
@@ -919,7 +962,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -943,7 +987,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -967,7 +1012,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -991,7 +1037,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KMITL",
@@ -1015,7 +1062,8 @@
           "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
-      ]
+      ],
+      "campus_code": "ladkrabang"
     },
     {
       "university_short_name": "KU",
@@ -1057,7 +1105,8 @@
           "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
           "source_url": "https://admission.ku.ac.th/kuadm/"
         }
-      ]
+      ],
+      "campus_code": "bangkhen"
     },
     {
       "university_short_name": "KU",
@@ -1090,7 +1139,8 @@
           "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
           "source_url": "https://admission.ku.ac.th/kuadm/"
         }
-      ]
+      ],
+      "campus_code": "bangkhen"
     },
     {
       "university_short_name": "KU",
@@ -1123,7 +1173,8 @@
           "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
           "source_url": "https://admission.ku.ac.th/kuadm/"
         }
-      ]
+      ],
+      "campus_code": "bangkhen"
     },
     {
       "university_short_name": "TU",
@@ -1156,7 +1207,8 @@
           "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
           "source_url": "https://www.tuadmissions.in.th/"
         }
-      ]
+      ],
+      "campus_code": "rangsit"
     },
     {
       "university_short_name": "TU",
@@ -1180,7 +1232,8 @@
           "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
           "source_url": "https://www.tuadmissions.in.th/"
         }
-      ]
+      ],
+      "campus_code": "rangsit"
     },
     {
       "university_short_name": "TU",
@@ -1204,7 +1257,8 @@
           "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
           "source_url": "https://www.tuadmissions.in.th/"
         }
-      ]
+      ],
+      "campus_code": "rangsit"
     }
   ],
   "projects": [
@@ -10700,6 +10754,99 @@
       "end_on": "2027-03-31",
       "date_display": "25–31 มี.ค. 2570",
       "date_status": "confirmed"
+    }
+  ],
+  "campuses": [
+    {
+      "university_short_name": "CMU",
+      "code": "main",
+      "name": "วิทยาเขตหลัก",
+      "is_main": true,
+      "official_url": "https://www.cmu.ac.th/th/campus"
+    },
+    {
+      "university_short_name": "CU",
+      "code": "pathum-wan",
+      "name": "พื้นที่การศึกษาปทุมวัน",
+      "is_main": true,
+      "official_url": "https://www.chula.ac.th/contact/"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "ladkrabang",
+      "name": "วิทยาเขตลาดกระบัง",
+      "is_main": true,
+      "official_url": "https://www.kmitl.ac.th/contact"
+    },
+    {
+      "university_short_name": "KMITL",
+      "code": "chumphon",
+      "name": "วิทยาเขตชุมพรเขตรอุดมศักดิ์",
+      "is_main": false,
+      "official_url": "https://www.kmitl-chumphon.kmitl.ac.th/contact-us/"
+    },
+    {
+      "university_short_name": "KMUTNB",
+      "code": "bangkok",
+      "name": "วิทยาเขตกรุงเทพมหานคร",
+      "is_main": true,
+      "official_url": "https://www.kmutnb.ac.th/About-(1)/Contact-Directions/Contact.aspx"
+    },
+    {
+      "university_short_name": "KMUTNB",
+      "code": "prachinburi",
+      "name": "วิทยาเขตปราจีนบุรี",
+      "is_main": false,
+      "official_url": "https://www.kmutnb.ac.th/faculty-and-agencies/prachin-campus/faculty-of-Industrial-technology-and-management.aspx"
+    },
+    {
+      "university_short_name": "KMUTT",
+      "code": "bangmod",
+      "name": "พื้นที่การศึกษาบางมด",
+      "is_main": true,
+      "official_url": "https://www.kmutt.ac.th/about-kmutt/campus/"
+    },
+    {
+      "university_short_name": "KMUTT",
+      "code": "bangkhuntien",
+      "name": "พื้นที่การศึกษาบางขุนเทียน",
+      "is_main": false,
+      "official_url": "https://www.kmutt.ac.th/about-kmutt/contact-us/"
+    },
+    {
+      "university_short_name": "KMUTT",
+      "code": "ratchaburi",
+      "name": "พื้นที่การศึกษาราชบุรี",
+      "is_main": false,
+      "official_url": "https://www.kmutt.ac.th/about-kmutt/contact-us/"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "bangkhen",
+      "name": "วิทยาเขตบางเขน",
+      "is_main": true,
+      "official_url": "https://ku.ac.th/th/campus-information"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "sakon-nakhon",
+      "name": "วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร",
+      "is_main": false,
+      "official_url": "https://ku.ac.th/th/campus-information"
+    },
+    {
+      "university_short_name": "MU",
+      "code": "salaya",
+      "name": "วิทยาเขตศาลายา",
+      "is_main": true,
+      "official_url": "https://www.mahidol.ac.th/campus/"
+    },
+    {
+      "university_short_name": "TU",
+      "code": "rangsit",
+      "name": "ศูนย์รังสิต",
+      "is_main": true,
+      "official_url": "https://engr.tu.ac.th/contact-us"
     }
   ]
 }
