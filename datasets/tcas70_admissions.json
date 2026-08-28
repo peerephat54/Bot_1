@@ -1,7 +1,151 @@
 {
   "schema_version": 5,
   "academic_year": 2570,
-  "checked_at": "2026-08-24T18:45:00+07:00",
+  "university_admission_calendars": [
+    {
+      "code": "cu-portfolio-2570",
+      "university_short_name": "CU",
+      "campus_codes": [
+        "pathum-wan"
+      ],
+      "program_codes": [
+        "cu-engineering-computer-engineering",
+        "cu-engineering-cedt",
+        "cu-science-computer-science",
+        "cu-cbs-management-information-systems",
+        "cu-cbs-statistics-data-science",
+        "cu-cbs-information-technology-business"
+      ],
+      "title": "ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ",
+      "academic_year": 2570,
+      "source_url": "https://admission.chula.ac.th/tcas.php",
+      "evidence_url": "https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png",
+      "source_checked_at": "2026-08-28",
+      "scope_note": "ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา",
+      "rounds": [
+        {
+          "label": "Portfolio กลุ่ม 1",
+          "application_start_on": "2026-11-03",
+          "application_end_on": "2026-11-12",
+          "result_announcement_on": "2027-03-10",
+          "date_status": "confirmed"
+        },
+        {
+          "label": "Portfolio กลุ่ม 2",
+          "application_start_on": "2026-11-26",
+          "application_end_on": "2026-12-01",
+          "result_announcement_on": "2027-03-10",
+          "date_status": "confirmed"
+        }
+      ],
+      "interview_eligible_on": "2027-01-11",
+      "interview_on": "2027-01-15",
+      "interview_passed_on": "2027-01-28",
+      "confirmation_start_on": "2027-03-10",
+      "confirmation_end_on": "2027-03-11"
+    },
+    {
+      "code": "ku-bangkhen-portfolio-2570",
+      "university_short_name": "KU",
+      "campus_codes": [
+        "bangkhen"
+      ],
+      "title": "ปฏิทิน มก. • บางเขน",
+      "academic_year": 2570,
+      "source_url": "https://admission.ku.ac.th/",
+      "source_checked_at": "2026-08-28",
+      "scope_note": "ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์",
+      "rounds": [
+        {
+          "label": "Portfolio 1.1",
+          "application_start_on": "2026-09-18",
+          "application_end_on": "2026-10-14",
+          "result_announcement_on": null,
+          "date_status": "confirmed",
+          "interview_eligible_on": "2026-11-03",
+          "interview_on": "2026-11-09",
+          "interview_passed_on": "2026-11-16"
+        },
+        {
+          "label": "Portfolio 1.2",
+          "application_start_on": "2027-01-04",
+          "application_end_on": "2027-02-04",
+          "result_announcement_on": null,
+          "date_status": "confirmed",
+          "interview_eligible_on": "2027-03-02",
+          "interview_on": "2027-03-04",
+          "interview_passed_on": "2027-03-05"
+        }
+      ]
+    },
+    {
+      "code": "ku-sakon-portfolio-2570",
+      "university_short_name": "KU",
+      "campus_codes": [
+        "sakon-nakhon"
+      ],
+      "title": "ปฏิทิน มก. • สกลนคร",
+      "academic_year": 2570,
+      "source_url": "https://admission.ku.ac.th/",
+      "source_checked_at": "2026-08-28",
+      "scope_note": "ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน",
+      "rounds": [
+        {
+          "label": "Portfolio",
+          "application_start_on": "2026-08-24",
+          "application_end_on": "2027-02-19",
+          "result_announcement_on": null,
+          "date_status": "confirmed",
+          "result_note": "หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"
+        }
+      ]
+    },
+    {
+      "code": "kmutnb-portfolio-2570",
+      "university_short_name": "KMUTNB",
+      "campus_codes": [],
+      "title": "ปฏิทินกลาง มจพ.",
+      "academic_year": 2570,
+      "source_url": "https://www.admission.kmutnb.ac.th/news/1394",
+      "evidence_url": "https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg",
+      "source_checked_at": "2026-08-28",
+      "scope_note": "คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ",
+      "rounds": [
+        {
+          "label": "Portfolio/โควตา ครั้ง 1",
+          "application_start_on": "2026-09-01",
+          "application_end_on": "2026-11-10",
+          "result_announcement_on": null,
+          "date_status": "confirmed"
+        },
+        {
+          "label": "Portfolio/โควตา ครั้ง 2",
+          "application_start_on": "2026-11-24",
+          "application_end_on": "2027-01-05",
+          "result_announcement_on": null,
+          "date_status": "confirmed"
+        },
+        {
+          "label": "นวัตกรรม/สิ่งประดิษฐ์",
+          "application_start_on": "2026-10-01",
+          "application_end_on": "2027-01-11",
+          "result_announcement_on": null,
+          "date_status": "confirmed"
+        },
+        {
+          "label": "หุ่นยนต์",
+          "application_start_on": "2026-10-01",
+          "application_end_on": "2027-01-11",
+          "result_announcement_on": null,
+          "date_status": "confirmed"
+        }
+      ],
+      "confirmation_start_on": "2027-03-10",
+      "confirmation_end_on": "2027-03-11"
+    }
+  ],
+  "checked_at": "2026-08-28",
+  "runtime_local_project_codes": ["tu-direct-cpe-2570","tu-direct-software-2570","tu-direct-cs-2570","tu-posn-2570","tu-ipst-2570"],
   "status_policy": {
     "official": "ประกาศอยู่บนเว็บไซต์ทางการและอนุญาตให้บอทแสดงผล",
     "draft_waiting_official": "ข้อมูลเตรียมไว้จากหน้าเว็บที่ระบุว่ารอประกาศอย่างเป็นทางการ บอทต้องไม่แสดงผล",
@@ -91,13 +235,56 @@
           "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
         },
         {
-          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
+          "title": "โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 115,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
-          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 3.00",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10",
+          "qualification_summary": "ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 20,
+          "status": "unconfirmed",
+          "min_gpax": 2.75,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 2.75",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15",
+          "qualification_summary": "ต้องมีผลงานคอมพิวเตอร์/IT เช่น รางวัล ผลงานใช้งานจริง NSC YSC สิทธิบัตร หรือ Super AI Engineer ตามประกาศ",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถทางด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 5,
+          "status": "unconfirmed",
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 3.00",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT2 30 + TPAT3 30 + Portfolio 20 + สัมภาษณ์ 20",
+          "qualification_summary": "มีผลงานวิชาการ/คอมพิวเตอร์ และคะแนนภาษาอังกฤษที่ยังไม่หมดอายุตามประกาศ",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf",
+          "english_score_summary": "IELTS 6.0 / TOEFL iBT 78 / TOEFL PBT 598 / TOEIC 825"
         }
       ],
       "campus_code": "ladkrabang"
@@ -134,13 +321,38 @@
           "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
         },
         {
-          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
+          "title": "โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 20,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
-          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 3.00",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10",
+          "qualification_summary": "ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 10,
+          "status": "unconfirmed",
+          "min_gpax": 2.75,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 2.75",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15",
+          "qualification_summary": "ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"
         }
       ],
       "campus_code": "ladkrabang"
@@ -186,13 +398,38 @@
           "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"
         },
         {
-          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
+          "title": "โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 20,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
-          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 3.00",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10",
+          "qualification_summary": "ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"
+        },
+        {
+          "title": "โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 10,
+          "status": "unconfirmed",
+          "min_gpax": 2.75,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 2.75",
+          "tuition_fee_per_semester": 32000,
+          "application_fee": 300,
+          "selection_summary": "TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15",
+          "qualification_summary": "ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด",
+          "portfolio_summary": "ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ",
+          "application_period": "1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"
         }
       ],
       "campus_code": "ladkrabang"
@@ -216,7 +453,7 @@
           "round_label": "สถานะล่าสุด",
           "slots_available": null,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "note": "พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น '-' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
       ],
@@ -589,10 +826,17 @@
           "title": "TCAS1: Portfolio CP",
           "reference_academic_year": 2569,
           "round_label": "TCAS รอบ 1",
-          "slots_available": null,
+          "slots_available": 65,
           "status": "unconfirmed",
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ม.4-ม.6 รวม 5 ภาค ไม่น้อยกว่า 3.00",
+          "application_fee": 0,
+          "selection_summary": "Portfolio ด้านวิชาการ/วิศวกรรม 100 คะแนน ต้องได้อย่างน้อย 70; สัมภาษณ์ 100 คะแนน ต้องได้อย่างน้อย 70",
+          "qualification_summary": "ม.6 ปีการศึกษา 2568 และมีผลงานวิชาการระดับชาติ/นานาชาติตามรายการในประกาศ",
+          "portfolio_summary": "ไฟล์ PDF เนื้อหาไม่เกิน 10 หน้า เน้นผลงานคณิตศาสตร์ วิทยาศาสตร์ ฟิสิกส์ เคมี วิศวกรรมคอมพิวเตอร์ หรือวิศวกรรม",
+          "application_period": "3-17 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70",
-          "source_url": "https://www.cp.eng.chula.ac.th/cp-tcas1"
+          "source_url": "https://admission.chula.ac.th/upload/adm_announce/file_235_2_4922.pdf"
         },
         {
           "title": "หน้าประกาศรับสมัคร TCAS70",
@@ -623,10 +867,17 @@
           "title": "TCAS1: Portfolio CEDT",
           "reference_academic_year": 2569,
           "round_label": "TCAS รอบ 1",
-          "slots_available": null,
+          "slots_available": 220,
           "status": "unconfirmed",
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ม.6 หรือ ปวช. รวม 5 ภาค ไม่น้อยกว่า 3.00",
+          "application_fee": 0,
+          "selection_summary": "Portfolio ผลงานวิชาการ/วิศวกรรมคอมพิวเตอร์ 100 คะแนน ต้องได้อย่างน้อย 70; สัมภาษณ์ 100 คะแนน ต้องได้อย่างน้อย 70",
+          "qualification_summary": "ม.6 หรือ ปวช.3 ปีการศึกษา 2568 และมีผลงานคอมพิวเตอร์/วิชาการตามรายการในประกาศ",
+          "portfolio_summary": "ไฟล์ PDF เนื้อหาไม่เกิน 10 หน้า มีประวัติ เหตุผลที่เลือกสาขา ผลงานเด่น และกิจกรรม",
+          "application_period": "3-17 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70",
-          "source_url": "https://www.cp.eng.chula.ac.th/cedt-tcas1"
+          "source_url": "https://admission.chula.ac.th/upload/adm_announce/file_238_1_5249.pdf"
         },
         {
           "title": "หน้าประกาศรับสมัคร TCAS70",
@@ -728,6 +979,18 @@
       "official_program_url": "https://www.math.sc.chula.ac.th/th/program/undergraduate/computer-science/",
       "data_status": "official",
       "admission_previews": [
+        {
+          "title": "โครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชน",
+          "reference_academic_year": 2569,
+          "round_label": "TCAS รอบ 1 Portfolio",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "selection_summary": "Portfolio ด้านคณิตศาสตร์/วิทยาศาสตร์หรือผลงานระดับชาติ-นานาชาติ 100 คะแนน ต้องได้อย่างน้อย 70 คะแนน แล้วสอบสัมภาษณ์",
+          "qualification_summary": "ผู้ได้รับคัดเลือกในโครงการพัฒนาอัจฉริยภาพฯ ของ สวทช. ผู้ผ่านโครงงานวิทยาศาสตร์ระดับชาติ หรือผู้แทนประเทศไทย IYPT ตามประกาศ",
+          "portfolio_summary": "แฟ้มผลงานกิจกรรมด้านคณิตศาสตร์และวิทยาศาสตร์ หรือผลงานวิทยาศาสตร์ระดับชาติ/นานาชาติ",
+          "note": "ประกาศรับรวม 25 คนสำหรับ 16 สาขาและเลือกสาขาในวันสัมภาษณ์ จึงไม่ระบุจำนวนรับเฉพาะวิทยาการคอมพิวเตอร์ และห้ามใช้แทน TCAS70",
+          "source_url": "https://admission.chula.ac.th/upload/adm_announce/file_245_1_2310.pdf"
+        },
         {
           "title": "หน้าประกาศรับสมัคร TCAS70",
           "reference_academic_year": 2570,
@@ -904,6 +1167,20 @@
       "data_status": "official",
       "admission_previews": [
         {
+          "title": "รอบ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio รอบ 2",
+          "slots_available": 40,
+          "status": "unconfirmed",
+          "tuition_fee_per_semester": 19000,
+          "selection_summary": "พิจารณา Portfolio และสอบสัมภาษณ์ออนไลน์ โดยไม่มีการสอบข้อเขียน",
+          "qualification_summary": "หลักสูตร 4 ปี รับผู้จบหรือกำลังเรียน ม.6 และ ปวช. ในสาขาที่เกี่ยวข้อง ตามคุณวุฒิที่มหาวิทยาลัยกำหนด",
+          "portfolio_summary": "ส่งแฟ้มสะสมผลงานเป็น PDF ตามรูปแบบในประกาศ พร้อมหลักฐานการศึกษาและบัตรประจำตัว",
+          "application_period": "24 พ.ย. 2568 - 10 ม.ค. 2569 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ของวิทยาเขตปราจีนบุรี ใช้ดูแนวทางและงบประมาณเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70",
+          "source_url": "https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf"
+        },
+        {
           "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
           "reference_academic_year": 2570,
           "round_label": "สถานะล่าสุด",
@@ -928,6 +1205,20 @@
       "official_program_url": "https://www.fitm.kmutnb.ac.th/IT.html",
       "data_status": "official",
       "admission_previews": [
+        {
+          "title": "รอบ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio รอบ 2",
+          "slots_available": 40,
+          "status": "unconfirmed",
+          "tuition_fee_per_semester": 25000,
+          "selection_summary": "พิจารณา Portfolio และสอบสัมภาษณ์ออนไลน์ โดยไม่มีการสอบข้อเขียน",
+          "qualification_summary": "หลักสูตร 4 ปี รับผู้จบหรือกำลังเรียน ม.6 และ ปวช. ในสาขาที่เกี่ยวข้อง ตามคุณวุฒิที่มหาวิทยาลัยกำหนด",
+          "portfolio_summary": "ส่งแฟ้มสะสมผลงานเป็น PDF ตามรูปแบบในประกาศ พร้อมหลักฐานการศึกษาและบัตรประจำตัว",
+          "application_period": "24 พ.ย. 2568 - 10 ม.ค. 2569 (กำหนดการของ TCAS69)",
+          "note": "เป็นประกาศ TCAS69 ของวิทยาเขตปราจีนบุรี ใช้ดูแนวทางและงบประมาณเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70",
+          "source_url": "https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf"
+        },
         {
           "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
           "reference_academic_year": 2570,
@@ -954,13 +1245,24 @@
       "data_status": "official",
       "admission_previews": [
         {
-          "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
+          "title": "สถานะ TCAS70 รอบ 1 ของวิศวกรรมคอมพิวเตอร์",
           "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
+          "round_label": "Portfolio",
           "slots_available": null,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "note": "มีชื่อหลักสูตรในหน้ารอบ 1 แล้ว แต่วันปิดรับสมัครยังเป็น '-' และยังไม่พบประกาศคณะวิศวกรรมศาสตร์ฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
+        },
+        {
+          "title": "ประกาศคณะวิศวกรรมศาสตร์ TCAS69 (ใช้เป็นข้อมูลอ้างอิง)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 40,
+          "status": "unconfirmed",
+          "tuition_fee_per_semester": 25000,
+          "selection_summary": "Portfolio/ผลงาน และบางโครงการใช้ TGAT กับ TPAT3 ก่อนสัมภาษณ์",
+          "note": "ปี 2569 เปิด 5 โครงการ รับวิศวกรรมคอมพิวเตอร์ 40 คน ข้อมูลนี้ใช้ดูแนวทางเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"
         }
       ],
       "campus_code": "ladkrabang"
@@ -979,12 +1281,48 @@
       "data_status": "official",
       "admission_previews": [
         {
+          "title": "คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมซอฟต์แวร์นานาชาติ",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 10,
+          "status": "unconfirmed",
+          "tuition_fee_per_semester": 90000,
+          "application_fee": 300,
+          "selection_summary": "เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์",
+          "portfolio_summary": "สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน",
+          "application_period": "ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"
+        },
+        {
+          "title": "Direct Admission ปี 2568 (ใช้เป็นข้อมูลอ้างอิง)",
+          "reference_academic_year": 2568,
+          "round_label": "Direct Admission",
+          "slots_available": 50,
+          "status": "unconfirmed",
+          "gpax_summary": "ไม่กำหนด GPAX รวม; GPA คณิตศาสตร์ 3.00 เป็นหนึ่งในทางเลือกของเกณฑ์คณิตศาสตร์",
+          "application_fee": 1000,
+          "selection_summary": "ผลการเรียน/คะแนนมาตรฐาน เอกสารประกอบ และสัมภาษณ์",
+          "note": "เป็น Direct Admission ปี 2568 ไม่ใช่เกณฑ์ TCAS70 และรูปแบบรอบอาจเปลี่ยนได้",
+          "source_url": "https://www.eng.kmitl.ac.th/direct-admission/"
+        },
+        {
+          "title": "ประกาศค่าธรรมเนียมปีการศึกษา 2569",
+          "reference_academic_year": 2569,
+          "round_label": "ข้อมูลค่าเล่าเรียน",
+          "slots_available": null,
+          "status": "unconfirmed",
+          "tuition_fee_per_semester": 90000,
+          "note": "เป็นอัตราค่าธรรมเนียมปี 2569 ใช้อ้างอิงงบประมาณเท่านั้น ต้องตรวจอัตราปีเข้าเรียนอีกครั้ง",
+          "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4381_2026_03_18-09-14-13_b207a.pdf"
+        },
+        {
           "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
           "reference_academic_year": 2570,
           "round_label": "สถานะล่าสุด",
           "slots_available": null,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "note": "พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น '-' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
       ],
@@ -1009,7 +1347,7 @@
           "round_label": "สถานะล่าสุด",
           "slots_available": null,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "note": "พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น '-' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
       ],
@@ -1034,7 +1372,7 @@
           "round_label": "สถานะล่าสุด",
           "slots_available": null,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "note": "พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น '-' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
       ],
@@ -1054,12 +1392,26 @@
       "data_status": "official",
       "admission_previews": [
         {
+          "title": "คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมหุ่นยนต์และ AI นานาชาติ",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 10,
+          "status": "unconfirmed",
+          "tuition_fee_per_semester": 105000,
+          "application_fee": 300,
+          "selection_summary": "เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์",
+          "portfolio_summary": "สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน",
+          "application_period": "ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70",
+          "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"
+        },
+        {
           "title": "หน้ารับสมัคร TCAS70 รอบ Portfolio",
           "reference_academic_year": 2570,
           "round_label": "สถานะล่าสุด",
           "slots_available": null,
           "status": "unconfirmed",
-          "note": "พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้",
+          "note": "พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น '-' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้",
           "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"
         }
       ],
@@ -1084,6 +1436,13 @@
           "round_label": "Portfolio 1.1",
           "slots_available": 20,
           "status": "unconfirmed",
+          "min_gpax": 2.5,
+          "gpax_summary": "GPAX ไม่น้อยกว่า 2.50",
+          "application_fee": 200,
+          "selection_summary": "ประวัติผลงาน/ประกาศนียบัตร 50% + สัมภาษณ์ 50%",
+          "qualification_summary": "ม.6/เทียบเท่า มีหน่วยกิตวิทยาศาสตร์ 22 คณิตศาสตร์ 12 ภาษาต่างประเทศ 9 และมีผลงานคอมพิวเตอร์ชัดเจน",
+          "portfolio_summary": "ผลงานพัฒนาโปรแกรม ซอฟต์แวร์ ฮาร์ดแวร์ หรือนวัตกรรม; หากเป็นการแข่งขันต้องระดับประเทศหรือนานาชาติ",
+          "application_period": "15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/08/69_TCAS1_White_Elephant_1.1.pdf"
         },
@@ -1093,6 +1452,10 @@
           "round_label": "Portfolio 1.1",
           "slots_available": 5,
           "status": "unconfirmed",
+          "application_fee": 0,
+          "selection_summary": "ใช้ผลรายวิชาโครงการเรียนล่วงหน้า โดยเลือก 2 จาก 3 วิชาและมีค่าเฉลี่ยอย่างน้อย B+ ตามตารางประกาศ",
+          "qualification_summary": "ต้องเป็นผู้ผ่านรายวิชาโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์ตามชุดวิชาที่กำหนด",
+          "application_period": "15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"
         },
@@ -1127,6 +1490,13 @@
           "round_label": "Portfolio 1.2",
           "slots_available": 15,
           "status": "unconfirmed",
+          "min_gpax": 2.5,
+          "gpax_summary": "GPAX 5 ภาค ไม่น้อยกว่า 2.50 หรือเทียบเท่า",
+          "application_fee": 200,
+          "selection_summary": "Portfolio + คะแนน/ความสามารถภาษาอังกฤษ + สัมภาษณ์ภาษาอังกฤษ",
+          "english_score_summary": "SAT Math 600 และ SAT รวม 1,000 พร้อม TOEFL iBT 61 / IELTS 5.5 / Duolingo 95 / TGAT1 60 หรือใช้เกณฑ์ผลการเรียนตามประกาศ",
+          "portfolio_summary": "Portfolio ไม่เกิน 10 หน้า A4 ไม่รวมปก คำนำ และสารบัญ",
+          "application_period": "19 ธ.ค. 2568 - 15 ม.ค. 2569 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf"
         },
@@ -1161,6 +1531,10 @@
           "round_label": "Portfolio 1.1",
           "slots_available": 5,
           "status": "unconfirmed",
+          "application_fee": 0,
+          "selection_summary": "ใช้ผลรายวิชาโครงการเรียนล่วงหน้า โดยคณิตศาสตร์หรือแนวคิดการโปรแกรมเบื้องต้นต้องได้อย่างน้อย B ตามตารางประกาศ",
+          "qualification_summary": "ต้องเป็นผู้ผ่านรายวิชาโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์ตามชุดวิชาที่กำหนด",
+          "application_period": "15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"
         },
@@ -1190,22 +1564,35 @@
       "data_status": "official",
       "admission_previews": [
         {
+          "title": "โครงการรับตรง คณะวิศวกรรมศาสตร์",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 20,
+          "status": "unconfirmed",
+          "min_gpax": 2.75,
+          "gpax_summary": "GPAX ขั้นต่ำ 2.75",
+          "application_fee": 200,
+          "selection_summary": "TPAT3 40% + Portfolio 40% + สัมภาษณ์ 20%",
+          "qualification_summary": "ม.6/เทียบเท่า รวมผู้เทียบวุฒิต่างประเทศหรือหลักสูตรนานาชาติ ตามรายละเอียดในประกาศ",
+          "portfolio_summary": "PDF ไม่เกิน 10 หน้า ไม่รวมปก เน้นผลงานวิชาการ วิทยาศาสตร์ คณิตศาสตร์ เทคโนโลยี และวิศวกรรมศาสตร์",
+          "application_period": "15 ต.ค. - 17 พ.ย. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นเกณฑ์และจำนวนรับ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันการสมัคร TCAS70",
+          "source_url": "https://www.tuadmissions.in.th/img/2025111008462947.pdf"
+        },
+        {
           "title": "รอบที่ 1 Portfolio คณะวิศวกรรมศาสตร์",
           "reference_academic_year": 2568,
           "round_label": "Portfolio",
           "slots_available": 10,
           "status": "unconfirmed",
-          "note": "หน้าอ้างอิงยังเป็น TCAS68 (GPAX 3.00) ใช้ดูรูปแบบเก่าเท่านั้น ไม่ใช่เกณฑ์ TCAS70",
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ขั้นต่ำ 3.00",
+          "selection_summary": "TPAT3 40% + Portfolio 40% + สัมภาษณ์ 20%",
+          "qualification_summary": "ม.6/เทียบเท่า มีหน่วยกิตวิทยาศาสตร์อย่างน้อย 22 และคณิตศาสตร์อย่างน้อย 12",
+          "portfolio_summary": "ไฟล์ PDF ไม่เกิน 10 หน้า เน้นวิทยาศาสตร์ คณิตศาสตร์ เทคโนโลยี วิศวกรรม และผลงาน/รางวัลที่เกี่ยวข้อง",
+          "application_period": "5-26 พ.ย. 2567 (กำหนดการของ TCAS68)",
+          "note": "หน้าอ้างอิงยังเป็น TCAS68 ใช้ดูรูปแบบเก่าเท่านั้น ไม่ใช่เกณฑ์ TCAS70",
           "source_url": "https://engr.tu.ac.th/admission/bachelor"
-        },
-        {
-          "title": "หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
-          "status": "unconfirmed",
-          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
-          "source_url": "https://www.tuadmissions.in.th/"
         }
       ],
       "campus_code": "rangsit"
@@ -1224,13 +1611,20 @@
       "data_status": "official",
       "admission_previews": [
         {
-          "title": "หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
+          "title": "โครงการรับตรง วิศวกรรมซอฟต์แวร์ (โครงการพิเศษ)",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 35,
           "status": "unconfirmed",
-          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
-          "source_url": "https://www.tuadmissions.in.th/"
+          "min_gpax": 2.75,
+          "gpax_summary": "GPAX ขั้นต่ำ 2.75",
+          "application_fee": 200,
+          "selection_summary": "Portfolio 40% + TPAT3 40% + สัมภาษณ์ 20%",
+          "qualification_summary": "ม.6, ปวช.ช่างอุตสาหกรรม, กศน. หรือเทียบวุฒิต่างประเทศ/หลักสูตรนานาชาติ ตามประกาศ",
+          "portfolio_summary": "PDF ไม่เกิน 10 หน้า ไม่รวมปก มีประวัติ/การศึกษา Statement of Purpose ผลงานวิชาการและกิจกรรม",
+          "application_period": "15 ต.ค. - 17 พ.ย. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นเกณฑ์และจำนวนรับ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันการสมัคร TCAS70",
+          "source_url": "https://www.tuadmissions.in.th/img/2025111008462947.pdf"
         }
       ],
       "campus_code": "rangsit"
@@ -1249,19 +1643,136 @@
       "data_status": "official",
       "admission_previews": [
         {
-          "title": "หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
+          "title": "โครงการรับตรง วิทยาการคอมพิวเตอร์",
+          "reference_academic_year": 2569,
+          "round_label": "Portfolio",
+          "slots_available": 20,
           "status": "unconfirmed",
-          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ",
-          "source_url": "https://www.tuadmissions.in.th/"
+          "min_gpax": 3.0,
+          "gpax_summary": "GPAX ขั้นต่ำ 3.00",
+          "application_fee": 200,
+          "selection_summary": "Portfolio 50% + TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%",
+          "qualification_summary": "ม.6 มีหน่วยกิตวิทยาศาสตร์อย่างน้อย 22 และคณิตศาสตร์อย่างน้อย 12",
+          "portfolio_summary": "PDF ไม่เกิน 10 หน้า ไม่รวมปก มี Statement of Purpose และผลงานนวัตกรรม/กิจกรรม/รางวัลที่เกี่ยวข้อง",
+          "application_period": "15 ต.ค. - 17 พ.ย. 2568 (กำหนดการของ TCAS69)",
+          "note": "เป็นเกณฑ์และจำนวนรับ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันการสมัคร TCAS70",
+          "source_url": "https://www.tuadmissions.in.th/img/2025111008462947.pdf"
         }
       ],
       "campus_code": "rangsit"
     }
   ],
   "projects": [
+    {
+      "university_short_name": "TU",
+      "code": "tu-direct-cpe-2570",
+      "group_code": "tu-direct-cpe",
+      "name": "รับตรง Portfolio — วิศวกรรมคอมพิวเตอร์",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "Portfolio",
+      "round_variant": "1",
+      "application_type": "portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": 200,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://www.tuadmissions.in.th/",
+      "source_url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf",
+      "source_title": "ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570",
+      "source_published_at": "2026-08-28",
+      "source_checked_at": "2026-08-28",
+      "data_notes": "ประกาศแล้ว เปิดระบบ 14 ก.ย. 2569; ค่าสมัคร 200 บาทต่อสาขา ไม่รวมค่าธรรมเนียมธนาคาร"
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-direct-software-2570",
+      "group_code": "tu-direct-software",
+      "name": "รับตรง Portfolio — วิศวกรรมซอฟต์แวร์ (โครงการพิเศษ)",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "Portfolio",
+      "round_variant": "1",
+      "application_type": "portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": 200,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://www.tuadmissions.in.th/",
+      "source_url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf",
+      "source_title": "ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570",
+      "source_published_at": "2026-08-28",
+      "source_checked_at": "2026-08-28",
+      "data_notes": "ประกาศแล้ว เปิดระบบ 14 ก.ย. 2569; ค่าสมัคร 200 บาทต่อสาขา ไม่รวมค่าธรรมเนียมธนาคาร"
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-direct-cs-2570",
+      "group_code": "tu-direct-cs",
+      "name": "รับตรง Portfolio — วิทยาการคอมพิวเตอร์ (ภาคปกติ)",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "Portfolio",
+      "round_variant": "1",
+      "application_type": "portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": 200,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://www.tuadmissions.in.th/",
+      "source_url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf",
+      "source_title": "ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570",
+      "source_published_at": "2026-08-28",
+      "source_checked_at": "2026-08-28",
+      "data_notes": "ประกาศแล้ว เปิดระบบ 14 ก.ย. 2569; ค่าสมัคร 200 บาทต่อสาขา ไม่รวมค่าธรรมเนียมธนาคาร"
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-posn-2570",
+      "group_code": "tu-posn",
+      "name": "ผู้มีความสามารถดีเด่นด้านวิชาการ — สอวน. ค่าย 2",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "Portfolio",
+      "round_variant": "1",
+      "application_type": "portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 1,
+      "application_fee": 200,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://www.tuadmissions.in.th/",
+      "source_url": "https://www.tuadmissions.in.th/img/2026082706504458.pdf",
+      "source_title": "ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570",
+      "source_published_at": "2026-08-27",
+      "source_checked_at": "2026-08-28",
+      "data_notes": "โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2"
+    },
+    {
+      "university_short_name": "TU",
+      "code": "tu-ipst-2570",
+      "group_code": "tu-ipst",
+      "name": "ผู้มีความสามารถดีเด่นด้านวิชาการ — สสวท.",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "Portfolio",
+      "round_variant": "1",
+      "application_type": "portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": 1,
+      "application_fee": 200,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://www.tuadmissions.in.th/",
+      "source_url": "https://www.tuadmissions.in.th/img/2026082706504458.pdf",
+      "source_title": "ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570",
+      "source_published_at": "2026-08-27",
+      "source_checked_at": "2026-08-28",
+      "data_notes": "โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2"
+    },
     {
       "university_short_name": "MU",
       "code": "muict-ict-portfolio",
@@ -2924,6 +3435,42 @@
   ],
   "project_programs": [
     {
+      "project_code": "tu-direct-cpe-2570",
+      "program_code": "tu-engineering-computer-engineering",
+      "slots_available": 20,
+      "program_notes": "ศูนย์รังสิต รหัส 10050210300501A"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "program_code": "tu-engineering-software-engineering",
+      "slots_available": 35,
+      "program_notes": "ศูนย์รังสิต โครงการพิเศษ รหัส 10050210301001B"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "program_code": "tu-science-computer-science",
+      "slots_available": 20,
+      "program_notes": "ภาคปกติ รหัส 10050209220201A เท่านั้น; 20 ที่นั่งภาคพิเศษเป็นคนละรายการ ไม่รวมในจำนวนนี้; หลักสูตรอยู่ระหว่างปรับปรุง"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "program_code": "tu-science-computer-science",
+      "slots_available": null,
+      "program_notes": "คณะวิทยาศาสตร์ฯ รับรวมหลายสาขา 30 คน โดยวิทยาการคอมพิวเตอร์รับไม่เกิน 15 คน ไม่ใช่รับสาขานี้ 30 คน"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "program_code": "tu-science-computer-science",
+      "slots_available": null,
+      "program_notes": "คณะวิทยาศาสตร์ฯ รับรวมหลายสาขา 7 คน ไม่ได้จัดสรรเฉพาะวิทยาการคอมพิวเตอร์"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "program_code": "tu-engineering-computer-engineering",
+      "slots_available": null,
+      "program_notes": "คณะวิศวกรรมศาสตร์รับรวม 6 สาขา 4 คน ไม่ใช่โควตาวิศวกรรมคอมพิวเตอร์ 4 คน"
+    },
+    {
       "project_code": "muict-ict-portfolio",
       "program_code": "mu-ict",
       "slots_available": null,
@@ -3537,6 +4084,288 @@
     }
   ],
   "criteria": [
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "program_code": "tu-engineering-computer-engineering",
+      "min_gpax": 3,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {
+        "TPAT3": {"ค่าน้ำหนัก": "40% (ไม่ใช่คะแนนขั้นต่ำ)"}
+      },
+      "applicant_qualifications": [
+        "กำลังเรียนหรือจบ ม.6 หรือวุฒิเทียบต่างประเทศ/หลักสูตรนานาชาติตามประกาศ; ตารางไม่รับ ปวช. และ กศน.",
+        "ไม่กำหนดหน่วยกิตกลุ่มสาระขั้นต่ำ"
+      ],
+      "portfolio_requirements": [
+        "ประวัติส่วนตัว/การศึกษา และ Statement of Purpose",
+        "หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง",
+        "ถ้ายื่นรางวัลวิชาการ ต้องอธิบายบทบาท หน้าที่ และสัดส่วนที่ทำ"
+      ],
+      "portfolio_details": {
+        "max_pages": 10,
+        "max_file_mb": 20,
+        "รูปแบบ": "PDF รวม 1 ไฟล์",
+        "การนับหน้า": "ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"
+      },
+      "accepted_achievements": [
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"
+      ],
+      "required_documents": [
+        "ปพ.1/ระเบียนผลการเรียน",
+        "TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose",
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง",
+        "คะแนนภาษาอังกฤษ (ถ้ามี)"
+      ],
+      "selection_methods": [
+        "Portfolio 40%",
+        "TPAT3 40%",
+        "สัมภาษณ์ 20%"
+      ],
+      "additional_requirements": [
+        "มีเงื่อนไขด้านการมองเห็น การได้ยิน และความพิการทางร่างกายขั้นรุนแรงที่เป็นอุปสรรคต่อการศึกษา ให้คณะพิจารณาตามประกาศ"
+      ],
+      "criteria_summary": "GPAX อย่างน้อย 3.00; Portfolio 40%; TPAT3 40%; สัมภาษณ์ 20%; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร",
+      "official_announcement_url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf#page=71"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "program_code": "tu-engineering-software-engineering",
+      "min_gpax": 2.75,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {
+        "TPAT3": {"ค่าน้ำหนัก": "40% (ไม่ใช่คะแนนขั้นต่ำ)"}
+      },
+      "applicant_qualifications": [
+        "กำลังเรียนหรือจบ ม.6, ปวช. ช่างอุตสาหกรรม, กศน. หรือวุฒิเทียบต่างประเทศ/หลักสูตรนานาชาติตามประกาศ",
+        "ไม่กำหนดหน่วยกิตกลุ่มสาระขั้นต่ำ"
+      ],
+      "portfolio_requirements": [
+        "ประวัติส่วนตัว/การศึกษา และ Statement of Purpose",
+        "ตารางสรุปผลงาน/รางวัลวิชาการและกิจกรรม พร้อมหลักฐานและคำอธิบาย (แนบลิงก์เพิ่มได้)",
+        "ไม่มีคำถามเพิ่มเติม"
+      ],
+      "portfolio_details": {
+        "max_pages": 10,
+        "max_file_mb": 20,
+        "รูปแบบ": "PDF รวม 1 ไฟล์",
+        "การนับหน้า": "ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"
+      },
+      "accepted_achievements": [
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"
+      ],
+      "required_documents": [
+        "ปพ.1/ระเบียนผลการเรียน",
+        "TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose",
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง",
+        "คะแนนภาษาอังกฤษ (ถ้ามี)"
+      ],
+      "selection_methods": [
+        "Portfolio 40%",
+        "TPAT3 40%",
+        "สัมภาษณ์ 20%"
+      ],
+      "additional_requirements": [
+        "มีเงื่อนไขด้านการมองเห็น การได้ยิน และความพิการทางร่างกายขั้นรุนแรงที่เป็นอุปสรรคต่อการศึกษา ให้คณะพิจารณาตามประกาศ"
+      ],
+      "criteria_summary": "GPAX อย่างน้อย 2.75; Portfolio 40%; TPAT3 40%; สัมภาษณ์ 20%; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร",
+      "official_announcement_url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf#page=73"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "program_code": "tu-science-computer-science",
+      "min_gpax": 3,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {
+        "TGAT1": {"ค่าน้ำหนัก": "15%"},
+        "TGAT2": {"ค่าน้ำหนัก": "15%"},
+        "TGAT3": {"ค่าน้ำหนัก": "5%"},
+        "TPAT3": {"ค่าน้ำหนัก": "15%"}
+      },
+      "applicant_qualifications": [
+        "กำลังเรียนหรือจบ ม.6; ตารางไม่รับ ปวช., กศน. และวุฒิเทียบต่างประเทศ/นานาชาติ",
+        "หน่วยกิตข้อ 2.1: วิทยาศาสตร์ 22 และคณิตศาสตร์ 12; ข้อ 2.2: คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 — ไม่ระบุว่าเลือกข้อใดข้อหนึ่ง จึงต้องสอบถามคณะก่อนสรุปสิทธิ์"
+      ],
+      "portfolio_requirements": [
+        "ประวัติส่วนตัว/การศึกษา และ Statement of Purpose",
+        "หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง",
+        "ตอบวิชาในวิทยาการคอมพิวเตอร์ที่สนใจพร้อมเหตุผล ไม่เกิน 200 ตัวอักษร"
+      ],
+      "portfolio_details": {
+        "max_pages": 10,
+        "max_file_mb": 20,
+        "รูปแบบ": "PDF รวม 1 ไฟล์",
+        "การนับหน้า": "ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"
+      },
+      "accepted_achievements": [
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"
+      ],
+      "required_documents": [
+        "ปพ.1/ระเบียนผลการเรียน หน้า–หลังพร้อมตราโรงเรียน",
+        "TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose",
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง",
+        "คะแนนภาษาอังกฤษ (ถ้ามี)"
+      ],
+      "selection_methods": [
+        "Portfolio 50%",
+        "TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%",
+        "ต้องผ่านสัมภาษณ์"
+      ],
+      "additional_requirements": [
+        "ตรวจหน่วยกิตกับคณะก่อนยืนยันสิทธิ์สมัคร; หลักสูตรอยู่ระหว่างปรับปรุง"
+      ],
+      "criteria_summary": "GPAX อย่างน้อย 3.00; Portfolio 50%; TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%; ต้องผ่านสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร",
+      "official_announcement_url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf#page=61"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "program_code": "tu-science-computer-science",
+      "min_gpax": 3,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {
+        "คณิตศาสตร์": 3,
+        "วิทยาศาสตร์": 3
+      },
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังเรียน ม.6 สายสามัญ",
+        "ผ่าน สอวน. ค่าย 2 ใน 1 ใน 8 วิชาตามประกาศ",
+        "วิทยาศาสตร์อย่างน้อย 22 หน่วยกิต และคณิตศาสตร์อย่างน้อย 12 หน่วยกิต"
+      ],
+      "portfolio_requirements": [
+        "ประวัติส่วนตัว/การศึกษา และ Statement of Purpose",
+        "หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง",
+        "แนบหนังสือรับรองค่าย/โอลิมปิกตามกลุ่มที่สมัคร"
+      ],
+      "portfolio_details": {
+        "max_pages": 10,
+        "max_file_mb": 20,
+        "รูปแบบ": "PDF รวม 1 ไฟล์",
+        "การนับหน้า": "ไม่รวมปกหน้า–หลัง และไม่ต้องมีคำนำ/สารบัญ"
+      },
+      "accepted_achievements": [
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"
+      ],
+      "required_documents": [
+        "ปพ.1/ระเบียนผลการเรียน ม.4–6 รวม 5 ภาค พร้อมตราโรงเรียน",
+        "TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose",
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง",
+        "หนังสือรับรองผ่าน สอวน. ค่าย 2",
+        "ใบรับรองแพทย์ (ถ้ามี)"
+      ],
+      "selection_methods": [
+        "พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก",
+        "สอบสัมภาษณ์"
+      ],
+      "additional_requirements": [
+        "เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา; ตรวจข้อห้ามสมัครซ้ำโครงการในประกาศหน้า 2"
+      ],
+      "criteria_summary": "GPAX อย่างน้อย 3.00; พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก; สอบสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร",
+      "official_announcement_url": "https://www.tuadmissions.in.th/img/2026082706504458.pdf#page=8"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "program_code": "tu-science-computer-science",
+      "min_gpax": 3,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {
+        "คณิตศาสตร์": 3,
+        "วิทยาศาสตร์": 3
+      },
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังเรียน ม.6 สายสามัญ",
+        "ได้รับคัดเลือกจากมูลนิธิ สอวน. เพื่ออบรมคัดเลือกครั้งที่ 1 ของโครงการโอลิมปิก สสวท.",
+        "วิทยาศาสตร์อย่างน้อย 22 หน่วยกิต และคณิตศาสตร์อย่างน้อย 12 หน่วยกิต"
+      ],
+      "portfolio_requirements": [
+        "ประวัติส่วนตัว/การศึกษา และ Statement of Purpose",
+        "หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง",
+        "แนบหนังสือรับรองค่าย/โอลิมปิกตามกลุ่มที่สมัคร"
+      ],
+      "portfolio_details": {
+        "max_pages": 10,
+        "max_file_mb": 20,
+        "รูปแบบ": "PDF รวม 1 ไฟล์",
+        "การนับหน้า": "ไม่รวมปกหน้า–หลัง และไม่ต้องมีคำนำ/สารบัญ"
+      },
+      "accepted_achievements": [
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"
+      ],
+      "required_documents": [
+        "ปพ.1/ระเบียนผลการเรียน ม.4–6 รวม 5 ภาค พร้อมตราโรงเรียน",
+        "TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose",
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง",
+        "หนังสือรับรองการคัดเลือกเข้าค่าย สสวท. ครั้งที่ 1",
+        "ใบรับรองแพทย์ (ถ้ามี)"
+      ],
+      "selection_methods": [
+        "พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก",
+        "สอบสัมภาษณ์"
+      ],
+      "additional_requirements": [
+        "เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา; ตรวจข้อห้ามสมัครซ้ำโครงการในประกาศหน้า 2"
+      ],
+      "criteria_summary": "GPAX อย่างน้อย 3.00; พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก; สอบสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร",
+      "official_announcement_url": "https://www.tuadmissions.in.th/img/2026082706504458.pdf#page=14"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "program_code": "tu-engineering-computer-engineering",
+      "min_gpax": 3,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังเรียน ม.6 สายสามัญ",
+        "ได้รับคัดเลือกจากมูลนิธิ สอวน. เพื่ออบรมคัดเลือกครั้งที่ 1 ของโครงการโอลิมปิก สสวท.",
+        "วิทยาศาสตร์อย่างน้อย 22 หน่วยกิต และคณิตศาสตร์อย่างน้อย 12 หน่วยกิต"
+      ],
+      "portfolio_requirements": [
+        "ประวัติส่วนตัว/การศึกษา และ Statement of Purpose",
+        "หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง",
+        "แนบหนังสือรับรองค่าย/โอลิมปิกตามกลุ่มที่สมัคร"
+      ],
+      "portfolio_details": {
+        "max_pages": 10,
+        "max_file_mb": 20,
+        "รูปแบบ": "PDF รวม 1 ไฟล์",
+        "การนับหน้า": "ไม่รวมปกหน้า–หลัง และไม่ต้องมีคำนำ/สารบัญ"
+      },
+      "accepted_achievements": [
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"
+      ],
+      "required_documents": [
+        "ปพ.1/ระเบียนผลการเรียน ม.4–6 รวม 5 ภาค พร้อมตราโรงเรียน",
+        "TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose",
+        "หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง",
+        "หนังสือรับรองการคัดเลือกเข้าค่าย สสวท. ครั้งที่ 1",
+        "ใบรับรองแพทย์ (ถ้ามี)"
+      ],
+      "selection_methods": [
+        "พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก",
+        "สอบสัมภาษณ์"
+      ],
+      "additional_requirements": [
+        "เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา; ตรวจข้อห้ามสมัครซ้ำโครงการในประกาศหน้า 2"
+      ],
+      "criteria_summary": "GPAX อย่างน้อย 3.00; พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก; สอบสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร",
+      "official_announcement_url": "https://www.tuadmissions.in.th/img/2026082706504458.pdf#page=16"
+    },
     {
       "project_code": "muict-ict-portfolio",
       "min_gpax": 2.5,
@@ -8859,6 +9688,326 @@
     }
   ],
   "timeline": [
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-16",
+      "date_display": "14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "ชำระค่าสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-17",
+      "date_display": "วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "ยื่นหรือแก้ไขเอกสาร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-22",
+      "date_display": "ภายใน 22 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-03-04",
+      "end_on": null,
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-03-07",
+      "end_on": null,
+      "date_display": "รายงานตัว 08.30 น. ศูนย์รังสิต",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือก",
+      "start_on": "2027-03-10",
+      "end_on": null,
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "ยืนยันสิทธิ์ผ่าน myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10 มี.ค. 2570 – 11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cpe-2570",
+      "event_name": "ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-22",
+      "end_on": null,
+      "date_display": "22 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-16",
+      "date_display": "14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "ชำระค่าสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-17",
+      "date_display": "วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "ยื่นหรือแก้ไขเอกสาร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-22",
+      "date_display": "ภายใน 22 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-03-04",
+      "end_on": null,
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-03-07",
+      "end_on": null,
+      "date_display": "รายงานตัว 08.30 น. ศูนย์รังสิต",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือก",
+      "start_on": "2027-03-10",
+      "end_on": null,
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "ยืนยันสิทธิ์ผ่าน myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10 มี.ค. 2570 – 11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-software-2570",
+      "event_name": "ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-22",
+      "end_on": null,
+      "date_display": "22 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-16",
+      "date_display": "14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "ชำระค่าสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-17",
+      "date_display": "วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "ยื่นหรือแก้ไขเอกสาร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-22",
+      "date_display": "ภายใน 22 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-03-04",
+      "end_on": null,
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-03-06",
+      "end_on": null,
+      "date_display": "ออนไลน์ 09.00–12.00 น.; รายงานตัว 08.30 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือก",
+      "start_on": "2027-03-10",
+      "end_on": null,
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "ยืนยันสิทธิ์ผ่าน myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10 มี.ค. 2570 – 11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-direct-cs-2570",
+      "event_name": "ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-22",
+      "end_on": null,
+      "date_display": "22 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-16",
+      "date_display": "14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "ชำระค่าสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-17",
+      "date_display": "วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "ยื่นหรือแก้ไขเอกสาร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-22",
+      "date_display": "14 ก.ย. – 22 ธ.ค. 2569; ไม่ระบุเวลาปิดในประกาศนี้",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-03",
+      "end_on": null,
+      "date_display": "3 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-05",
+      "end_on": "2027-02-07",
+      "date_display": "5–7 ก.พ. 2570; วันและวิธีสอบรายคณะจะแจ้งภายหลัง",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือก",
+      "start_on": "2027-03-10",
+      "end_on": null,
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "ยืนยันสิทธิ์ผ่าน myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10 มี.ค. 2570 – 11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-posn-2570",
+      "event_name": "ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-22",
+      "end_on": null,
+      "date_display": "22 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-16",
+      "date_display": "14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "ชำระค่าสมัคร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-17",
+      "date_display": "วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "ยื่นหรือแก้ไขเอกสาร",
+      "start_on": "2026-09-14",
+      "end_on": "2026-12-22",
+      "date_display": "14 ก.ย. – 22 ธ.ค. 2569; ไม่ระบุเวลาปิดในประกาศนี้",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-03",
+      "end_on": null,
+      "date_display": "3 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-05",
+      "end_on": "2027-02-07",
+      "date_display": "5–7 ก.พ. 2570; วันและวิธีสอบรายคณะจะแจ้งภายหลัง",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือก",
+      "start_on": "2027-03-10",
+      "end_on": null,
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "ยืนยันสิทธิ์ผ่าน myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10 มี.ค. 2570 – 11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "tu-ipst-2570",
+      "event_name": "ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา",
+      "start_on": "2027-03-22",
+      "end_on": null,
+      "date_display": "22 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
     {
       "project_code": "kmitl-it-ability-1-1",
       "event_name": "รับสมัครและสร้าง iFolio",

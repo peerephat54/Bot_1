@@ -38,6 +38,8 @@ ALLOWED_SOURCE_CLASSIFICATIONS = {
 OFFICIAL_HOSTS = {
     "KMITL": {
         "www.it.kmitl.ac.th",
+        "www3.it.kmitl.ac.th",
+        "www.eng.kmitl.ac.th",
         "admission.reg.kmitl.ac.th",
         "reg.kmitl.ac.th",
         "www.reg.kmitl.ac.th",
@@ -109,6 +111,7 @@ def validate(data):
     links = data.get("project_programs", [])
     criteria = data.get("criteria", [])
     timeline = data.get("timeline", [])
+    local_codes = data.get("runtime_local_project_codes", [])
 
     university_codes = {item.get("short_name") for item in universities}
     campus_keys = set()
@@ -131,6 +134,46 @@ def validate(data):
             errors.append(f"university must have one main campus: {university_code}")
     program_codes = {item.get("code") for item in programs}
     project_codes = {item.get("code") for item in projects}
+    if duplicate_values(local_codes):
+        errors.append("duplicate local runtime project code")
+    for code in local_codes:
+        project = next((p for p in projects if p.get("code") == code), {})
+        if project.get("publication_status") != "official" or not project.get("is_visible"):
+            errors.append(f"local runtime project must be visible and official: {code}")
+        if not project.get("source_checked_at"):
+            errors.append(f"local runtime project missing source check date: {code}")
+
+    calendars = data.get("university_admission_calendars", [])
+    if duplicate_values([c.get("code") for c in calendars]):
+        errors.append("duplicate university calendar")
+    for calendar in calendars:
+        code, university = calendar.get("code"), calendar.get("university_short_name")
+        if university not in university_codes or calendar.get("academic_year") != data.get("academic_year"):
+            errors.append(f"invalid university/year for calendar: {code}")
+        if urlparse(calendar.get("source_url", "")).hostname not in OFFICIAL_HOSTS.get(university, set()):
+            errors.append(f"unapproved calendar source: {code}")
+        if not calendar.get("scope_note") or not calendar.get("source_checked_at"):
+            errors.append(f"calendar missing scope/check date: {code}")
+        for campus in calendar.get("campus_codes", []):
+            if (university, campus) not in campus_keys:
+                errors.append(f"unknown calendar campus: {code}/{campus}")
+        for program_code in calendar.get("program_codes", []):
+            program = next((p for p in programs if p.get("code") == program_code), {})
+            if program.get("university_short_name") != university:
+                errors.append(f"calendar program outside university: {code}/{program_code}")
+        if not calendar.get("rounds"):
+            errors.append(f"empty calendar: {code}")
+        for period in calendar.get("rounds", []):
+            try:
+                start = date.fromisoformat(period["application_start_on"])
+                end = date.fromisoformat(period["application_end_on"])
+                if start > end or period.get("date_status") != "confirmed":
+                    errors.append(f"invalid calendar period: {code}")
+                for key, value in period.items():
+                    if key.endswith("_on") and value:
+                        date.fromisoformat(value)
+            except (ValueError, TypeError, KeyError):
+                errors.append(f"invalid calendar date: {code}")
 
     for label, values in (
         ("university short_name", [item.get("short_name") for item in universities]),
@@ -310,6 +353,8 @@ def validate(data):
         "project_program_links": len(links),
         "criteria": len(criteria),
         "timeline_events": len(timeline),
+        "university_calendars": len(calendars),
+        "local_runtime_projects": len(local_codes),
         "admission_previews": sum(
             len(item.get("admission_previews") or []) for item in programs
         ),

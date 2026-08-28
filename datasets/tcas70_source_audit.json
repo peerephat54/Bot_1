@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-08-24T18:45:00+07:00",
+  "checked_at": "2026-08-28",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -8,6 +8,62 @@
     "secondary_sources": "ใช้เพื่อค้นหาเบาะแสเท่านั้น ห้ามสร้างแถว official"
   },
   "sources": [
+    {
+      "url": "https://www.tuadmissions.in.th/img/2026082807385532.pdf",
+      "publisher": "มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "เพิ่มรับตรง CPE/Software/CS ภาคปกติจากหน้า PDF 5–8, 61–62, 71–74; ไม่รวมที่นั่ง CS ภาคพิเศษ"
+    },
+    {
+      "url": "https://www.tuadmissions.in.th/img/2026082706504458.pdf",
+      "publisher": "มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "เพิ่ม สอวน. สำหรับ CS และ สสวท. สำหรับ CS/CPE; โควตาคณะรวมเก็บ null รายสาขา; SIIT เป็นรับรวม/เลือกสาขาภายหลัง ยังไม่เพิ่มในการอัปเดตนี้"
+    },
+    {
+      "url": "https://admission.chula.ac.th/tcas.php",
+      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "เพิ่มปฏิทินกลางหลักสูตรปกติ ฉบับแก้ไข 28 ส.ค. 2569 ไม่ผูกกลุ่ม 1/2 ให้สาขาโดยไม่มีประกาศ"
+    },
+    {
+      "url": "https://admission.chula.ac.th/news_detail.php?n=15",
+      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "ข่าว 27 ส.ค. 2569 ระบุจะอัปเดตประกาศรับสมัครภายใน ต.ค. 2569"
+    },
+    {
+      "url": "https://www.admission.kmutnb.ac.th/news/1394",
+      "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "อ่านภาพ Timeline2570_1.jpg ยืนยันปี 2570; วันที่ข่าวเก่า 6 ส.ค. 2568 ไม่ใช้เป็นวันที่เผยแพร่ภาพ; วันรายคณะอาจต่างกัน"
+    },
+    {
+      "url": "https://www.kmitl.ac.th/article/tcas70",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "ข่าว 24 ส.ค. แจ้งทยอยเปิดตั้งแต่ 17 ส.ค. ไม่ใช่วันเปิดทุกสาขา และแนะนำ iFolio"
+    },
+    {
+      "url": "https://www.science.kmitl.ac.th/news/aqzob8e6nesq30jjne92fs6t",
+      "publisher": "คณะวิทยาศาสตร์ สจล.",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "ข่าว 25 ส.ค. สนับสนุนกำหนด Portfolio 1-1/1-2 ที่มีใน dataset แล้ว ไม่เพิ่มโครงการซ้ำ"
+    },
     {
       "url": "https://www.admissionpremium.com/content/8429",
       "publisher": "AdmissionPremium",
@@ -144,9 +200,10 @@
     {
       "url": "https://admission.ku.ac.th/",
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
-      "classification": "excluded_primary_wrong_year",
-      "academic_year": 2569,
-      "decision": "ยังไม่ใช้ข้อมูลส่วนกลาง: หน้า KU-TCAS ที่ตรวจยังเป็นปีการศึกษา 2569; ใช้เฉพาะประกาศ TCAS70 ของวิทยาเขตสกลนคร"
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-28",
+      "decision": "หน้าเปลี่ยนเป็น KU-TCAS70 แล้ว เพิ่มปฏิทินบางเขนและสกลนครแยกกัน ไม่ยืนยันเกณฑ์รายสาขาจากปฏิทินกลาง"
     },
     {
       "url": "https://admission.kmutnb.ac.th/apply/round/1",
@@ -363,28 +420,28 @@
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "reference_unconfirmed_prior_year",
       "academic_year": 2569,
-      "decision": "ใช้แสดงโครงการช้างเผือกของวิศวกรรมคอมพิวเตอร์ปี 2569 เป็นข้อมูลอ้างอิง ไม่ใช้เป็นเกณฑ์ TCAS70"
+      "decision": "ใช้แสดงโครงการช้างเผือกวิศวกรรมคอมพิวเตอร์ปี 2569 พร้อมจำนวนรับ GPAX หน่วยกิต ผลงาน สัดส่วนคัดเลือก ค่าสมัคร และช่วงสมัครเป็นข้อมูลอ้างอิง ไม่ใช้เป็นเกณฑ์ TCAS70"
     },
     {
       "url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf",
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "reference_unconfirmed_prior_year",
       "academic_year": 2569,
-      "decision": "ใช้แสดงโครงการเรียนล่วงหน้าของวิศวกรรมคอมพิวเตอร์และวิทยาการคอมพิวเตอร์ปี 2569 เป็นข้อมูลอ้างอิง"
+      "decision": "ใช้แสดงโครงการเรียนล่วงหน้าของวิศวกรรมคอมพิวเตอร์และวิทยาการคอมพิวเตอร์ปี 2569 พร้อมจำนวนรับ ผลรายวิชาที่ใช้คัดเลือก ค่าสมัคร และช่วงสมัครเป็นข้อมูลอ้างอิง"
     },
     {
       "url": "https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf",
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "reference_unconfirmed_prior_year",
       "academic_year": 2569,
-      "decision": "ใช้แสดงรอบหลักสูตรนานาชาติของวิศวกรรมซอฟต์แวร์และความรู้ปี 2569 เป็นข้อมูลอ้างอิง"
+      "decision": "ใช้แสดงรอบหลักสูตรนานาชาติของวิศวกรรมซอฟต์แวร์และความรู้ปี 2569 พร้อม GPAX คะแนนภาษาอังกฤษ Portfolio สัมภาษณ์ ค่าสมัคร และช่วงสมัครเป็นข้อมูลอ้างอิง"
     },
     {
       "url": "https://engr.tu.ac.th/admission/bachelor",
       "publisher": "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยธรรมศาสตร์",
       "classification": "reference_unconfirmed_prior_year",
       "academic_year": 2568,
-      "decision": "ใช้แสดงรูปแบบ Portfolio วิศวกรรมคอมพิวเตอร์ปี 2568 พร้อมเตือนว่าไม่ใช่เกณฑ์ TCAS70"
+      "decision": "ใช้แสดงวิศวกรรมคอมพิวเตอร์ Portfolio ปี 2568 พร้อมจำนวนรับ GPAX หน่วยกิต สัดส่วน TPAT3/Portfolio/สัมภาษณ์ รูปแบบแฟ้ม และช่วงสมัคร โดยเตือนว่าไม่ใช่เกณฑ์ TCAS70"
     },
     {
       "url": "https://cs.sci.tu.ac.th/comsci-cis-th-2/",
@@ -469,6 +526,83 @@
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
       "decision": "ใช้ยืนยันชื่อวิทยาเขต/พื้นที่การศึกษาสำหรับเมนูนำทาง ไม่ใช้เป็นเกณฑ์รับสมัคร"
+    },
+    {
+      "url": "https://www.it.kmitl.ac.th/en/programs",
+      "publisher": "คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "excluded_user_scope",
+      "academic_year": 2570,
+      "decision": "เว็บคณะยืนยันหลักสูตรปริญญาตรี 4 หลักสูตร แต่เมนูบอทแสดงเฉพาะ IT, DSBA และ AIT ตามขอบเขตผู้ใช้; เก็บ BIT ไว้ในฐานข้อมูลแต่ไม่แสดงในเมนู"
+    },
+    {
+      "url": "https://www3.it.kmitl.ac.th/th/admission/bachelor/portfolio",
+      "publisher": "คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เก็บจำนวนรับ GPAX ค่าเรียน ค่าสมัคร และวิธีคัดเลือก TCAS69 ของ IT, DSBA และ AIT เพื่อแสดงเป็นข้อมูลปีก่อนเมื่อ TCAS70 ยังไม่ประกาศ โดยติดป้ายห้ามใช้ยืนยันการสมัคร"
+    },
+    {
+      "url": "https://www.eng.kmitl.ac.th/direct-admission/",
+      "publisher": "คณะวิศวกรรมศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2568,
+      "decision": "เก็บจำนวนรับและรูปแบบเกณฑ์ Direct Admission เดิมของวิศวกรรมซอฟต์แวร์นานาชาติเป็นข้อมูลอ้างอิง ไม่ใช้แทน TCAS70"
+    },
+    {
+      "url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4381_2026_03_18-09-14-13_b207a.pdf",
+      "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เก็บค่าเล่าเรียนวิศวกรรมซอฟต์แวร์นานาชาติปี 2569 เป็นข้อมูลอ้างอิงงบประมาณ พร้อมกำกับให้ตรวจอัตราปีเข้าเรียนอีกครั้ง"
+    },
+    {
+      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf",
+      "publisher": "คณะวิศวกรรมศาสตร์ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เก็บจำนวนรับ 40 คน ค่าเรียน 25,000 บาทต่อภาค และภาพรวมการคัดเลือกของวิศวกรรมคอมพิวเตอร์ TCAS69 เป็นข้อมูลอ้างอิงระหว่างรอประกาศ TCAS70 โดยไม่ใช้ยืนยันการสมัคร"
+    },
+    {
+      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf",
+      "publisher": "คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เพิ่มข้อมูลรายโครงการ TCAS69 แยกตามสาขา ได้แก่ จำนวนรับ GPAX คะแนน TGAT/TPAT3 Portfolio สัมภาษณ์ ค่าสมัคร เอกสารผลงาน และกำหนดการ โดยแสดงปีต้นทางและไม่ใช้แทน TCAS70"
+    },
+    {
+      "url": "https://admission.chula.ac.th/upload/adm_announce/file_235_2_4922.pdf",
+      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เพิ่ม CP TCAS69 จำนวนรับ 65 คน GPAX 3.00 เงื่อนไขผลงาน Portfolio สัมภาษณ์ และกำหนดการ เป็นข้อมูลอ้างอิงที่ไม่ใช้แทน TCAS70"
+    },
+    {
+      "url": "https://admission.chula.ac.th/upload/adm_announce/file_238_1_5249.pdf",
+      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เพิ่ม CEDT TCAS69 จำนวนรับ 220 คน GPAX 3.00 เงื่อนไขผลงาน Portfolio สัมภาษณ์ และกำหนดการ เป็นข้อมูลอ้างอิงที่ไม่ใช้แทน TCAS70"
+    },
+    {
+      "url": "https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf",
+      "publisher": "คณะเทคโนโลยีและการจัดการอุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เพิ่ม IT และ INE วิทยาเขตปราจีนบุรี TCAS69 สาขาละ 40 คน พร้อมค่าเรียน คุณวุฒิ วิธีคัดเลือก Portfolio/สัมภาษณ์ และช่วงสมัคร เป็นข้อมูลอ้างอิงที่ไม่ใช้แทน TCAS70"
+    },
+    {
+      "url": "https://admission.chula.ac.th/upload/adm_announce/file_245_1_2310.pdf",
+      "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เพิ่มโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับวิทยาการคอมพิวเตอร์ TCAS69 พร้อมเงื่อนไขผู้สมัคร Portfolio และคะแนนขั้นต่ำ โดยเว้นจำนวนรับรายสาขาเพราะประกาศระบุ 25 คนรวม 16 สาขา"
+    },
+    {
+      "url": "https://www.tuadmissions.in.th/img/2025111008462947.pdf",
+      "publisher": "มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "reference_unconfirmed_prior_year",
+      "academic_year": 2569,
+      "decision": "เพิ่มวิศวกรรมคอมพิวเตอร์ วิศวกรรมซอฟต์แวร์ และวิทยาการคอมพิวเตอร์ TCAS69 พร้อมจำนวนรับ GPAX สัดส่วนคะแนน Portfolio ค่าสมัคร และช่วงสมัคร เป็นข้อมูลอ้างอิงที่ไม่ใช้แทน TCAS70"
     }
   ]
 }
