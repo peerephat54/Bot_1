@@ -1,0 +1,20 @@
+FROM python:3.12-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+COPY requirements.txt ./
+RUN python -m pip install --upgrade pip \
+    && python -m pip install -r requirements.txt
+
+RUN addgroup --system bot \
+    && adduser --system --ingroup bot bot
+
+COPY --chown=bot:bot . .
+
+USER bot
+
+CMD ["python", "-u", "Bot_Portfolio.py"]
