@@ -20,6 +20,8 @@ CAMPUSES = [
     {"university_short_name": "KU", "code": "bangkhen", "name": "วิทยาเขตบางเขน", "is_main": True, "official_url": "https://ku.ac.th/th/campus-information"},
     {"university_short_name": "KU", "code": "sakon-nakhon", "name": "วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร", "is_main": False, "official_url": "https://ku.ac.th/th/campus-information"},
     {"university_short_name": "MU", "code": "salaya", "name": "วิทยาเขตศาลายา", "is_main": True, "official_url": "https://www.mahidol.ac.th/campus/"},
+    {"university_short_name": "SWU", "code": "prasan-mit", "name": "ประสานมิตร", "is_main": True, "official_url": "https://admission.swu.ac.th/admissions2/"},
+    {"university_short_name": "SWU", "code": "ongkharak", "name": "องครักษ์", "is_main": False, "official_url": "https://admission.swu.ac.th/admissions2/"},
     {"university_short_name": "TU", "code": "rangsit", "name": "ศูนย์รังสิต", "is_main": True, "official_url": "https://engr.tu.ac.th/contact-us"},
 ]
 
@@ -39,6 +41,8 @@ def campus_code_for(program):
         return "bangmod"
     if university == "KU":
         return "bangkhen" if code.startswith("ku-bangkhen-") else "sakon-nakhon"
+    if university == "SWU":
+        return "ongkharak" if code.startswith(("swu-ece-", "swu-engineering-")) else "prasan-mit"
     return {
         "CMU": "main",
         "CU": "pathum-wan",

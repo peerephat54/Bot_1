@@ -89,6 +89,7 @@ OFFICIAL_HOSTS = {
         "fitm.kmutnb.ac.th",
         "www.fitm.kmutnb.ac.th",
     },
+    "SWU": {"admission.swu.ac.th"},
 }
 
 

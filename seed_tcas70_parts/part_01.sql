@@ -1,5 +1,5 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 1 of 5; run parts in numeric order.
+-- Supabase SQL Editor part 1 of 7; run parts in numeric order.
 begin;
 
 insert into public.universities (name, short_name, logo_url)
@@ -46,6 +46,12 @@ on conflict (name) do update set
 
 insert into public.universities (name, short_name, logo_url)
 values ('มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ', 'KMUTNB', null)
+on conflict (name) do update set
+    short_name = excluded.short_name,
+    logo_url = excluded.logo_url;
+
+insert into public.universities (name, short_name, logo_url)
+values ('มหาวิทยาลัยศรีนครินทรวิโรฒ', 'SWU', null)
 on conflict (name) do update set
     short_name = excluded.short_name,
     logo_url = excluded.logo_url;
@@ -188,6 +194,30 @@ insert into public.university_campuses (
 select u.id, 'salaya', 'วิทยาเขตศาลายา', true, 'https://www.mahidol.ac.th/campus/', now()
 from public.universities u
 where u.short_name = 'MU'
+on conflict (university_id, code) do update set
+        name = excluded.name,
+        is_main = excluded.is_main,
+        official_url = excluded.official_url,
+        updated_at = excluded.updated_at;
+
+insert into public.university_campuses (
+    university_id, code, name, is_main, official_url, updated_at
+)
+select u.id, 'prasan-mit', 'ประสานมิตร', true, 'https://admission.swu.ac.th/admissions2/', now()
+from public.universities u
+where u.short_name = 'SWU'
+on conflict (university_id, code) do update set
+        name = excluded.name,
+        is_main = excluded.is_main,
+        official_url = excluded.official_url,
+        updated_at = excluded.updated_at;
+
+insert into public.university_campuses (
+    university_id, code, name, is_main, official_url, updated_at
+)
+select u.id, 'ongkharak', 'องครักษ์', false, 'https://admission.swu.ac.th/admissions2/', now()
+from public.universities u
+where u.short_name = 'SWU'
 on conflict (university_id, code) do update set
         name = excluded.name,
         is_main = excluded.is_main,
@@ -1856,6 +1886,606 @@ on conflict (code) do update set
         data_status = excluded.data_status,
         updated_at = excluded.updated_at;
 
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-ece-environmental-technology', 'คณะวัฒนธรรมสิ่งแวดล้อมและการท่องเที่ยวเชิงนิเวศ', 'เทคโนโลยีสิ่งแวดล้อมและทรัพยากร', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-ece-climate-environment', 'คณะวัฒนธรรมสิ่งแวดล้อมและการท่องเที่ยวเชิงนิเวศ', 'วิทยาการการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-science-mathematics', 'คณะวิทยาศาสตร์', 'คณิตศาสตร์', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'prasan-mit'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-science-statistics', 'คณะวิทยาศาสตร์', 'สถิติ', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'prasan-mit'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-science-chemistry', 'คณะวิทยาศาสตร์', 'เคมี', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'prasan-mit'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-science-microbiology', 'คณะวิทยาศาสตร์', 'จุลชีววิทยา', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'prasan-mit'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-science-biology', 'คณะวิทยาศาสตร์', 'ชีววิทยา', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'prasan-mit'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-science-materials', 'คณะวิทยาศาสตร์', 'วัสดุศาสตร์', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'prasan-mit'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-chemical', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมเคมี', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-mechanical', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมเครื่องกล', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-civil', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมโยธา', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-industrial', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมอุตสาหการ', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-biomedical', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมชีวการแพทย์', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-computer', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมคอมพิวเตอร์', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-electrical-power', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมไฟฟ้า - วิชาเอกวิศวกรรมไฟฟ้ากำลัง', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-telecom-it', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมไฟฟ้า - วิชาเอกวิศวกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-logistics-bilingual', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมโลจิสติกส์ (หลักสูตร 2 ภาษา)', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทยและอังกฤษ', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-environmental', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมสิ่งแวดล้อม', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-petroleum-renewable', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมปิโตรเลียมและพลังงานหมุนเวียน (หลักสูตรนานาชาติ)', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'swu-engineering-cybersecurity', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมด้านความปลอดภัยไซเบอร์ (หลักสูตรนานาชาติ)', 1, 2570,
+    'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, null,
+    4, 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'ongkharak'
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
 insert into public.admission_projects (
     university_id, code, group_code, name, academic_year, tcas_round,
     round_label, round_variant, application_type, publication_status, is_visible,
@@ -2877,546 +3507,6 @@ select
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
     '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410507107040-1-1', 'cmu-00410507107040', 'โครงการพัฒนาอัจฉริยภาพสำหรับเด็กและเยาวชน (ร่วมกับ สวทช.)', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107040; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410507107050-1-1', 'cmu-00410507107050', 'โครงการรับผู้มีความสามารถพิเศษทางวิทยาศาสตร์และเทคโนโลยี', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107050; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410508106011-1-1', 'cmu-00410508106011', 'การรับนักเรียนพิการ', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508106011; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410508107010-1-1', 'cmu-00410508107010', 'โครงการรับนักเรียนจากค่ายโอลิมปิกวิชาการ', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107010; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410508107020-1-1', 'cmu-00410508107020', 'โครงการพัฒนาอัจฉริยภาพสำหรับเด็กและเยาวชน (ร่วมกับ สวทช.)', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107020; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410508107030-1-1', 'cmu-00410508107030', 'โครงการสนับสนุนการจัดตั้งห้องเรียนวิทยาศาสตร์ในโรงเรียนฯ (วมว.)', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410508107040-1-1', 'cmu-00410508107040', 'โครงการสานฝันปั้นนักวิทยาศาสตร์', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107040; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410608108040-1-1', 'cmu-00410608108040', 'โครงการความร่วมมือสร้างสังคมแห่งการเรียนรู้นวัตกรรมด้านพลังงานและสิ่งแวดล้อม', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410608108040; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108010-1-1', 'cmu-00410666108010', 'โครงการรับนักเรียนที่มีอัจฉริยภาพทางคอมพิวเตอร์', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108010; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108010-1-2', 'cmu-00410666108010', 'โครงการรับนักเรียนที่มีอัจฉริยภาพทางคอมพิวเตอร์', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108010; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108020-1-1', 'cmu-00410666108020', 'โครงการรับนักเรียนผู้มีความสามารถทางภาษาอังกฤษ', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108020; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108020-1-2', 'cmu-00410666108020', 'โครงการรับนักเรียนผู้มีความสามารถทางภาษาอังกฤษ', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108020; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108030-1-1', 'cmu-00410666108030', 'โครงการรับนักเรียนผู้มีผลการเรียนดีเด่น', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108030; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108030-1-2', 'cmu-00410666108030', 'โครงการรับนักเรียนผู้มีผลการเรียนดีเด่น', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108030; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-00410666108041-1-1', 'cmu-00410666108041', 'โครงการ Women in Engineering', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108041; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set

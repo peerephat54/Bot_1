@@ -160,7 +160,7 @@ PROGRAM_CODE_NAVIGATION_ORDER = {
 }
 
 # Discord autocomplete must answer within roughly three seconds. University
-# names change rarely and there are only eight in the current verified scope,
+# names change rarely and the verified scope is intentionally kept explicit,
 # so use native command choices that Discord can render immediately. Faculty,
 # program, and project data continue to load from Supabase after selection.
 UNIVERSITY_SLASH_CHOICES = [
@@ -183,6 +183,7 @@ UNIVERSITY_SLASH_CHOICES = [
     app_commands.Choice(name="MU — มหาวิทยาลัยมหิดล", value="MU"),
     app_commands.Choice(name="CMU — มหาวิทยาลัยเชียงใหม่", value="CMU"),
     app_commands.Choice(name="TU — มหาวิทยาลัยธรรมศาสตร์", value="TU"),
+    app_commands.Choice(name="SWU — มหาวิทยาลัยศรีนครินทรวิโรฒ", value="SWU"),
 ]
 
 
@@ -275,7 +276,30 @@ def fetch_program_projects(program_code: str):
         .execute()
     )
     if not program_response.data:
-        return None
+        # A newly imported university may be available from the audited local
+        # fallback before its delta seed has been run in Supabase. Keep the
+        # direct University -> Campus -> Faculty -> Major flow usable in that
+        # state instead of showing a misleading "not found" message.
+        local_items = [
+            item
+            for item in fetch_local_project_additions()
+            if item["program"].get("code") == program_code
+        ]
+        if not local_items:
+            return None
+        program = local_items[0]["program"]
+        program["admission_previews"] = merge_admission_previews(
+            program.get("admission_previews"),
+            LOCAL_PREVIEW_CATALOG.get(program_code),
+        )
+        program["projects"] = [item["project"] for item in local_items]
+        program["projects"].sort(
+            key=lambda item: (
+                str(item.get("round_variant") or ""),
+                str(item.get("name") or ""),
+            )
+        )
+        return program
 
     program = program_response.data[0]
     program["admission_previews"] = merge_admission_previews(

@@ -644,6 +644,46 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าเทคโนโลยีสารสนเทศ 15 คนและวิศวกรรมสารสนเทศและเครือข่าย 5 คน พร้อมกำหนดการและค่าเทอมรายหลักสูตร"
+    },
+    {
+      "url": "https://admission.swu.ac.th/admissions2/",
+      "publisher": "ส่วนส่งเสริมและบริการการศึกษา มหาวิทยาลัยศรีนครินทรวิโรฒ",
+      "classification": "used_primary_index",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "decision": "ใช้เป็นดัชนีข่าวและช่องทางสมัครทางการของ มศว.; ตรวจพบประกาศ TCAS70 รอบ 1 Portfolio"
+    },
+    {
+      "url": "https://admission.swu.ac.th/admissions2/news_content.php?nid=1200",
+      "publisher": "ส่วนส่งเสริมและบริการการศึกษา มหาวิทยาลัยศรีนครินทรวิโรฒ",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "decision": "ยืนยันรอบ 1.1 สมัคร 18 ส.ค. - 16 ก.ย. 2569, รอบ 1.2 สมัคร 1 - 16 ธ.ค. 2569, ค่าสมัคร 600 บาท และโครงการที่เปิดรับ"
+    },
+    {
+      "url": "https://admission.swu.ac.th/admissions2/news_content.php?nid=1177",
+      "publisher": "ส่วนส่งเสริมและบริการการศึกษา มหาวิทยาลัยศรีนครินทรวิโรฒ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "decision": "ใช้ตรวจรายการหลักสูตร/สาขา/วิชาเอกที่เปิดรับใน TCAS รอบ 1 - 3 ประกอบกับรายละเอียดแนบท้ายฉบับรับสมัคร"
+    },
+    {
+      "url": "https://admission.swu.ac.th/admissions2/news_content.php?nid=1196",
+      "publisher": "ส่วนส่งเสริมและบริการการศึกษา มหาวิทยาลัยศรีนครินทรวิโรฒ",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "decision": "ใช้ยืนยันแนวทางการจัดทำและส่ง TCASFolio รอบ 1 Portfolio"
+    },
+    {
+      "url": "https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf",
+      "publisher": "มหาวิทยาลัยศรีนครินทรวิโรฒ",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "decision": "นำเข้าเกณฑ์รายสาขา จำนวนรับ GPAX หน่วยกิต/คะแนนเฉลี่ย รูปแบบผลงาน เอกสาร และกำหนดการจากรายละเอียดแนบท้ายหน้า 12 - 179"
     }
   ]
 }

@@ -6,7 +6,7 @@ from unittest.mock import MagicMock, patch
 
 from local_admissions import calendar_fields, local_candidates
 from scripts.validate_dataset import validate
-from screening import screening_entries
+from screening import screening_entries, study_field
 from test_grade_screening import NAVIGATION
 from test_pending_program_cards import DATA, PROGRAMS, app, card_text
 
@@ -94,6 +94,60 @@ class LocalUpdateTests(unittest.TestCase):
                 and 'ยังไม่พบ' in preview.get('note', '')
                 for preview in previews
             ))
+
+    def test_swu_tcas70_is_current_local_and_campus_aware(self):
+        rows = [
+            row for row in local_candidates(DATA)
+            if row['project']['university_short_name'] == 'SWU'
+        ]
+        self.assertEqual(len(rows), 32)
+        self.assertEqual(
+            len({row['program']['code'] for row in rows}),
+            20,
+        )
+        self.assertEqual(
+            {row['program']['campus_code'] for row in rows},
+            {'prasan-mit', 'ongkharak'},
+        )
+
+        telecom = next(
+            row for row in rows
+            if row['program']['code'] == 'swu-engineering-telecom-it'
+        )
+        self.assertEqual(telecom['project']['round_variant'], '1.2')
+        self.assertEqual(telecom['project']['slots_available'], 12)
+        self.assertEqual(telecom['project']['selected_criteria']['min_gpax'], 3.0)
+        self.assertEqual(
+            telecom['project']['selected_criteria']['additional_requirements']['ค่าสมัคร'],
+            '600 บาท',
+        )
+        telecom_text = card_text(app.build_project_embed(telecom['program'], telecom['project']))
+        for fact in ('1 ธ.ค. 2569', '16 ธ.ค. 2569', '23 ก.พ. 2570', '600 บาท'):
+            self.assertIn(fact, telecom_text)
+
+        self.assertEqual(
+            study_field(next(p for p in PROGRAMS.values() if p['code'] == 'swu-ece-environmental-technology')),
+            'science',
+        )
+        self.assertEqual(
+            study_field(telecom['program']),
+            'engineering',
+        )
+        swu_programs = [p for p in PROGRAMS.values() if p['university_short_name'] == 'SWU']
+        self.assertFalse(any('วิทยาการคอมพิวเตอร์' in p['major_name'] for p in swu_programs))
+
+    def test_direct_swu_detail_works_before_supabase_delta_seed(self):
+        swu_rows = [
+            row for row in local_candidates(DATA)
+            if row['program']['code'] == 'swu-engineering-computer'
+        ]
+        database = MagicMock()
+        database.table.return_value.select.return_value.eq.return_value.eq.return_value.limit.return_value.execute.return_value = SimpleNamespace(data=[])
+        with patch.object(app, 'database', database), patch.object(app, 'fetch_local_project_additions', return_value=swu_rows):
+            program = app.fetch_program_projects('swu-engineering-computer')
+        self.assertEqual(program['university_short_name'], 'SWU')
+        self.assertEqual(len(program['projects']), 1)
+        self.assertEqual(program['projects'][0]['round_variant'], '1.2')
 
     def test_calendars_do_not_leak_campus_or_international_scope(self):
         bang = next(p for p in PROGRAMS.values() if p['university_short_name']=='KU' and p['campus_code']=='bangkhen')

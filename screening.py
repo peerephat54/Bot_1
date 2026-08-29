@@ -27,6 +27,19 @@ def study_field(program):
         return "science"
     if "วิศวกรรม" in major:
         return "engineering"
+    if any(
+        word in major
+        for word in (
+            "สิ่งแวดล้อม",
+            "เคมี",
+            "จุลชีววิทยา",
+            "ชีววิทยา",
+            "วัสดุศาสตร์",
+            "คณิตศาสตร์",
+            "สถิติ",
+        )
+    ):
+        return "science"
     if any(word in major for word in ("สารสนเทศ", "ดิจิทัล", "เทคโนโลยีมีเดีย", "เกม")):
         return "it"
     if any(word in major for word in ("วิทยาการคอมพิวเตอร์", "วิทยาการข้อมูล", "สถิติ")):
