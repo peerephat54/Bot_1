@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-08-28",
+  "checked_at": "2026-08-29T12:00:00+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -199,18 +199,17 @@
     },
     {
       "url": "https://admission.ku.ac.th/",
-      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
-      "classification": "imported_primary_supporting",
+      "publisher": "สำนักบริหารการศึกษา มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "used_primary_index",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-28",
-      "decision": "หน้าเปลี่ยนเป็น KU-TCAS70 แล้ว เพิ่มปฏิทินบางเขนและสกลนครแยกกัน ไม่ยืนยันเกณฑ์รายสาขาจากปฏิทินกลาง"
+      "decision": "ยืนยันปฏิทิน Portfolio บางเขน รอบ 1.1 และ 1.2 และลิงก์ไปยังเกณฑ์รายโครงการ"
     },
     {
       "url": "https://admission.kmutnb.ac.th/apply/round/1",
       "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
-      "classification": "excluded_primary_not_announced",
+      "classification": "used_primary_index",
       "academic_year": 2570,
-      "decision": "หน้าประกาศรอบ 1 TCAS70 ที่ตรวจยังไม่มีโครงการของ 5 หลักสูตรสายคอม/IT ที่เลือก จึงเพิ่มเฉพาะหลักสูตรและไม่สร้างเกณฑ์รับสมัคร"
+      "decision": "หน้ารอบ 1 มีประกาศใหม่ของคณะวิทยาศาสตร์ประยุกต์และคณะเทคโนโลยีและการจัดการอุตสาหกรรม จึงนำเข้าจาก PDF เฉพาะโครงการที่ตรงขอบเขต"
     },
     {
       "url": "https://www.tuadmissions.in.th/admissions",
@@ -364,28 +363,28 @@
       "publisher": "คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "decision": "เพิ่มวิศวกรรมคอมพิวเตอร์ หลักสูตร 4 ปี 134 หน่วยกิตเป็นรายการหลักสูตร และรอประกาศ TCAS70"
+      "decision": "ยืนยันหลักสูตรวิศวกรรมคอมพิวเตอร์ แต่ยังไม่พบโครงการ TCAS70 เฉพาะหลักสูตรนี้ในประกาศที่ตรวจ"
     },
     {
       "url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-applied-science/department-of-computer-and-information-science.aspx",
       "publisher": "คณะวิทยาศาสตร์ประยุกต์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "decision": "เพิ่มวิทยาการคอมพิวเตอร์เป็นรายการหลักสูตร และรอประกาศ TCAS70"
+      "decision": "ยืนยันหน่วยงานหลักสูตร และแยกหลักสูตรสองภาษาที่ประกาศรับออกจากหลักสูตรภาษาไทยเดิม"
     },
     {
       "url": "https://www.itd.kmutnb.ac.th/bachelor.php",
       "publisher": "คณะเทคโนโลยีสารสนเทศและนวัตกรรมดิจิทัล มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "decision": "เพิ่มวิทยาการสารสนเทศเพื่อเศรษฐกิจดิจิทัล หลักสูตรนานาชาติ 4 ปี 129 หน่วยกิต และรอประกาศ TCAS70"
+      "decision": "ยืนยันหลักสูตรวิทยาการสารสนเทศเพื่อเศรษฐกิจดิจิทัล และยังไม่สร้างเกณฑ์ที่ไม่พบในประกาศรอบ 1"
     },
     {
       "url": "https://www.fitm.kmutnb.ac.th/IT.html",
       "publisher": "คณะเทคโนโลยีและการจัดการอุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "decision": "เพิ่มเทคโนโลยีสารสนเทศและวิศวกรรมสารสนเทศและเครือข่าย หลักสูตร 4 ปี พ.ศ. 2567; หน้าเดียวกันระบุหน่วยกิตสองค่าขัดกันจึงไม่บันทึกตัวเลขจนกว่ามีเอกสารหลักสูตรที่ชัดเจน"
+      "decision": "ยืนยันรายการหลักสูตร IT และวิศวกรรมสารสนเทศและเครือข่าย; เกณฑ์รับสมัครใช้ PDF TCAS70 โดยตรง"
     },
     {
       "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
@@ -603,6 +602,48 @@
       "classification": "reference_unconfirmed_prior_year",
       "academic_year": 2569,
       "decision": "เพิ่มวิศวกรรมคอมพิวเตอร์ วิศวกรรมซอฟต์แวร์ และวิทยาการคอมพิวเตอร์ TCAS69 พร้อมจำนวนรับ GPAX สัดส่วนคะแนน Portfolio ค่าสมัคร และช่วงสมัคร เป็นข้อมูลอ้างอิงที่ไม่ใช้แทน TCAS70"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/1/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าช้างเผือก 1.1 ของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับและเกณฑ์รายสาขา"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/2/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการเรียนล่วงหน้าของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/3/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าหลักสูตรวิศวกรรมซอฟต์แวร์และความรู้ รอบ 1.1 พร้อมทางเลือกคะแนนและสัดส่วนคัดเลือก"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/103/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าหลักสูตรวิศวกรรมซอฟต์แวร์และความรู้ รอบ 1.2 พร้อมทางเลือก TGAT1"
+    },
+    {
+      "url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf",
+      "publisher": "คณะวิทยาศาสตร์ประยุกต์ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าวิทยาการคอมพิวเตอร์หลักสูตรสองภาษา รหัส 04111 จำนวน 10 คน GPAX 3.50 พร้อมกำหนดการและค่าเทอม"
+    },
+    {
+      "url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf",
+      "publisher": "คณะเทคโนโลยีและการจัดการอุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าเทคโนโลยีสารสนเทศ 15 คนและวิศวกรรมสารสนเทศและเครือข่าย 5 คน พร้อมกำหนดการและค่าเทอมรายหลักสูตร"
     }
   ]
 }

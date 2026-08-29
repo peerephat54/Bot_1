@@ -214,7 +214,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-it', 'คณะเทคโนโลยีสารสนเทศ', 'เทคโนโลยีสารสนเทศ', 1, 2570,
     'ปริญญาตรี', 'ไทยและอังกฤษ', 129, 2565,
-    4, 'https://www.it.kmitl.ac.th/en/programs/it-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":50,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/it-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":50,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":115,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT เช่น รางวัล ผลงานใช้งานจริง NSC YSC สิทธิบัตร หรือ Super AI Engineer ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":5,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT2 30 + TPAT3 30 + Portfolio 20 + สัมภาษณ์ 20","qualification_summary":"มีผลงานวิชาการ/คอมพิวเตอร์ และคะแนนภาษาอังกฤษที่ยังไม่หมดอายุตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf","english_score_summary":"IELTS 6.0 / TOEFL iBT 78 / TOEFL PBT 598 / TOEIC 825"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -244,7 +244,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-dsba', 'คณะเทคโนโลยีสารสนเทศ', 'วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ', 1, 2570,
     'ปริญญาตรี', 'ไทยและอังกฤษ', 132, 2565,
-    4, 'https://www.it.kmitl.ac.th/en/programs/datasci-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":2,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/datasci-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":2,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -274,7 +274,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-ait', 'คณะเทคโนโลยีสารสนเทศ', 'เทคโนโลยีปัญญาประดิษฐ์', 1, 2570,
     'ปริญญาตรี', 'ไทยและอังกฤษ', 120, 2566,
-    4, 'https://www.it.kmitl.ac.th/en/programs/ait-program', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"หน้าเตรียมข้อมูลระบุว่าโครงการนี้ไม่เปิดรับ DSBA","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/ait-program', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"หน้าเตรียมข้อมูลระบุว่าโครงการนี้ไม่เปิดรับ DSBA","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -304,7 +304,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-bit', 'คณะเทคโนโลยีสารสนเทศ', 'เทคโนโลยีสารสนเทศทางธุรกิจ (หลักสูตรนานาชาติ)', 1, 2570,
     'ปริญญาตรี', 'อังกฤษ', 126, 2565,
-    4, 'https://www.it.kmitl.ac.th/en/programs/bit-program-2565', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/bit-program-2565', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1084,7 +1084,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'cu-engineering-computer-engineering', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมคอมพิวเตอร์', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', 138, 2566,
-    4, 'https://www.cp.eng.chula.ac.th/future/bachelor', '[{"title":"TCAS1: Portfolio CP","reference_academic_year":2569,"round_label":"TCAS รอบ 1","slots_available":null,"status":"unconfirmed","note":"เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70","source_url":"https://www.cp.eng.chula.ac.th/cp-tcas1"},{"title":"หน้าประกาศรับสมัคร TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้","source_url":"https://admission.chula.ac.th/admission_c1.php"}]'::jsonb, 'official', now()
+    4, 'https://www.cp.eng.chula.ac.th/future/bachelor', '[{"title":"TCAS1: Portfolio CP","reference_academic_year":2569,"round_label":"TCAS รอบ 1","slots_available":65,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ม.4-ม.6 รวม 5 ภาค ไม่น้อยกว่า 3.00","application_fee":0,"selection_summary":"Portfolio ด้านวิชาการ/วิศวกรรม 100 คะแนน ต้องได้อย่างน้อย 70; สัมภาษณ์ 100 คะแนน ต้องได้อย่างน้อย 70","qualification_summary":"ม.6 ปีการศึกษา 2568 และมีผลงานวิชาการระดับชาติ/นานาชาติตามรายการในประกาศ","portfolio_summary":"ไฟล์ PDF เนื้อหาไม่เกิน 10 หน้า เน้นผลงานคณิตศาสตร์ วิทยาศาสตร์ ฟิสิกส์ เคมี วิศวกรรมคอมพิวเตอร์ หรือวิศวกรรม","application_period":"3-17 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70","source_url":"https://admission.chula.ac.th/upload/adm_announce/file_235_2_4922.pdf"},{"title":"หน้าประกาศรับสมัคร TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้","source_url":"https://admission.chula.ac.th/admission_c1.php"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'pathum-wan'
@@ -1114,7 +1114,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'cu-engineering-cedt', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมคอมพิวเตอร์และเทคโนโลยีดิจิทัล (CEDT)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', 124, 2566,
-    3.5, 'https://www.cp.eng.chula.ac.th/cedt', '[{"title":"TCAS1: Portfolio CEDT","reference_academic_year":2569,"round_label":"TCAS รอบ 1","slots_available":null,"status":"unconfirmed","note":"เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70","source_url":"https://www.cp.eng.chula.ac.th/cedt-tcas1"},{"title":"หน้าประกาศรับสมัคร TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้","source_url":"https://admission.chula.ac.th/admission_c1.php"}]'::jsonb, 'official', now()
+    3.5, 'https://www.cp.eng.chula.ac.th/cedt', '[{"title":"TCAS1: Portfolio CEDT","reference_academic_year":2569,"round_label":"TCAS รอบ 1","slots_available":220,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ม.6 หรือ ปวช. รวม 5 ภาค ไม่น้อยกว่า 3.00","application_fee":0,"selection_summary":"Portfolio ผลงานวิชาการ/วิศวกรรมคอมพิวเตอร์ 100 คะแนน ต้องได้อย่างน้อย 70; สัมภาษณ์ 100 คะแนน ต้องได้อย่างน้อย 70","qualification_summary":"ม.6 หรือ ปวช.3 ปีการศึกษา 2568 และมีผลงานคอมพิวเตอร์/วิชาการตามรายการในประกาศ","portfolio_summary":"ไฟล์ PDF เนื้อหาไม่เกิน 10 หน้า มีประวัติ เหตุผลที่เลือกสาขา ผลงานเด่น และกิจกรรม","application_period":"3-17 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นรูปแบบรับสมัครปี 2569 ใช้ดูแนวทางเท่านั้น ยังไม่ยืนยันว่าจะเปิดเหมือนเดิมใน TCAS70","source_url":"https://admission.chula.ac.th/upload/adm_announce/file_238_1_5249.pdf"},{"title":"หน้าประกาศรับสมัคร TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้","source_url":"https://admission.chula.ac.th/admission_c1.php"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'pathum-wan'
@@ -1234,7 +1234,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'cu-science-computer-science', 'คณะวิทยาศาสตร์', 'วิทยาการคอมพิวเตอร์', 1, 2570,
     'วิทยาศาสตรบัณฑิต', 'ไทย', 136, 2566,
-    4, 'https://www.math.sc.chula.ac.th/th/program/undergraduate/computer-science/', '[{"title":"หน้าประกาศรับสมัคร TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้","source_url":"https://admission.chula.ac.th/admission_c1.php"}]'::jsonb, 'official', now()
+    4, 'https://www.math.sc.chula.ac.th/th/program/undergraduate/computer-science/', '[{"title":"โครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชน","reference_academic_year":2569,"round_label":"TCAS รอบ 1 Portfolio","slots_available":null,"status":"unconfirmed","selection_summary":"Portfolio ด้านคณิตศาสตร์/วิทยาศาสตร์หรือผลงานระดับชาติ-นานาชาติ 100 คะแนน ต้องได้อย่างน้อย 70 คะแนน แล้วสอบสัมภาษณ์","qualification_summary":"ผู้ได้รับคัดเลือกในโครงการพัฒนาอัจฉริยภาพฯ ของ สวทช. ผู้ผ่านโครงงานวิทยาศาสตร์ระดับชาติ หรือผู้แทนประเทศไทย IYPT ตามประกาศ","portfolio_summary":"แฟ้มผลงานกิจกรรมด้านคณิตศาสตร์และวิทยาศาสตร์ หรือผลงานวิทยาศาสตร์ระดับชาติ/นานาชาติ","note":"ประกาศรับรวม 25 คนสำหรับ 16 สาขาและเลือกสาขาในวันสัมภาษณ์ จึงไม่ระบุจำนวนรับเฉพาะวิทยาการคอมพิวเตอร์ และห้ามใช้แทน TCAS70","source_url":"https://admission.chula.ac.th/upload/adm_announce/file_245_1_2310.pdf"},{"title":"หน้าประกาศรับสมัคร TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"หน้าทางการยังแสดงว่าไม่พบประกาศรับสมัครสำหรับหลักสูตรนี้","source_url":"https://admission.chula.ac.th/admission_c1.php"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'pathum-wan'
@@ -1444,7 +1444,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmutnb-fitm-information-technology', 'คณะเทคโนโลยีและการจัดการอุตสาหกรรม (วิทยาเขตปราจีนบุรี)', 'เทคโนโลยีสารสนเทศ', 1, 2570,
     'วิทยาศาสตรบัณฑิต', 'ไทย', null, 2567,
-    4, 'https://www.fitm.kmutnb.ac.th/IT.html', '[{"title":"หน้ารับสมัครรอบ 1 ปีการศึกษา 2570","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ","source_url":"https://admission.kmutnb.ac.th/apply/round/1"}]'::jsonb, 'official', now()
+    4, 'https://www.fitm.kmutnb.ac.th/IT.html', '[{"title":"รอบ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม","reference_academic_year":2569,"round_label":"Portfolio รอบ 2","slots_available":40,"status":"unconfirmed","tuition_fee_per_semester":19000,"selection_summary":"พิจารณา Portfolio และสอบสัมภาษณ์ออนไลน์ โดยไม่มีการสอบข้อเขียน","qualification_summary":"หลักสูตร 4 ปี รับผู้จบหรือกำลังเรียน ม.6 และ ปวช. ในสาขาที่เกี่ยวข้อง ตามคุณวุฒิที่มหาวิทยาลัยกำหนด","portfolio_summary":"ส่งแฟ้มสะสมผลงานเป็น PDF ตามรูปแบบในประกาศ พร้อมหลักฐานการศึกษาและบัตรประจำตัว","application_period":"24 พ.ย. 2568 - 10 ม.ค. 2569 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ของวิทยาเขตปราจีนบุรี ใช้ดูแนวทางและงบประมาณเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70","source_url":"https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'prachinburi'
@@ -1474,7 +1474,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmutnb-fitm-information-network-engineering', 'คณะเทคโนโลยีและการจัดการอุตสาหกรรม (วิทยาเขตปราจีนบุรี)', 'วิศวกรรมสารสนเทศและเครือข่าย (เสริมทักษะภาษาอังกฤษ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย (เสริมทักษะภาษาอังกฤษ)', null, 2567,
-    4, 'https://www.fitm.kmutnb.ac.th/IT.html', '[{"title":"หน้ารับสมัครรอบ 1 ปีการศึกษา 2570","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ","source_url":"https://admission.kmutnb.ac.th/apply/round/1"}]'::jsonb, 'official', now()
+    4, 'https://www.fitm.kmutnb.ac.th/IT.html', '[{"title":"รอบ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม","reference_academic_year":2569,"round_label":"Portfolio รอบ 2","slots_available":40,"status":"unconfirmed","tuition_fee_per_semester":25000,"selection_summary":"พิจารณา Portfolio และสอบสัมภาษณ์ออนไลน์ โดยไม่มีการสอบข้อเขียน","qualification_summary":"หลักสูตร 4 ปี รับผู้จบหรือกำลังเรียน ม.6 และ ปวช. ในสาขาที่เกี่ยวข้อง ตามคุณวุฒิที่มหาวิทยาลัยกำหนด","portfolio_summary":"ส่งแฟ้มสะสมผลงานเป็น PDF ตามรูปแบบในประกาศ พร้อมหลักฐานการศึกษาและบัตรประจำตัว","application_period":"24 พ.ย. 2568 - 10 ม.ค. 2569 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ของวิทยาเขตปราจีนบุรี ใช้ดูแนวทางและงบประมาณเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70","source_url":"https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'prachinburi'
@@ -1504,7 +1504,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-computer-engineering', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมคอมพิวเตอร์', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
-    4, 'https://www.ce.kmitl.ac.th/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://www.ce.kmitl.ac.th/', '[{"title":"สถานะ TCAS70 รอบ 1 ของวิศวกรรมคอมพิวเตอร์","reference_academic_year":2570,"round_label":"Portfolio","slots_available":null,"status":"unconfirmed","note":"มีชื่อหลักสูตรในหน้ารอบ 1 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะวิศวกรรมศาสตร์ฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"},{"title":"ประกาศคณะวิศวกรรมศาสตร์ TCAS69 (ใช้เป็นข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":40,"status":"unconfirmed","tuition_fee_per_semester":25000,"selection_summary":"Portfolio/ผลงาน และบางโครงการใช้ TGAT กับ TPAT3 ก่อนสัมภาษณ์","note":"ปี 2569 เปิด 5 โครงการ รับวิศวกรรมคอมพิวเตอร์ 40 คน ข้อมูลนี้ใช้ดูแนวทางเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1534,7 +1534,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-software-international', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมซอฟต์แวร์ (หลักสูตรนานาชาติ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, 2567,
-    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมซอฟต์แวร์นานาชาติ","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","tuition_fee_per_semester":90000,"application_fee":300,"selection_summary":"เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์","portfolio_summary":"สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน","application_period":"ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"},{"title":"Direct Admission ปี 2568 (ใช้เป็นข้อมูลอ้างอิง)","reference_academic_year":2568,"round_label":"Direct Admission","slots_available":50,"status":"unconfirmed","gpax_summary":"ไม่กำหนด GPAX รวม; GPA คณิตศาสตร์ 3.00 เป็นหนึ่งในทางเลือกของเกณฑ์คณิตศาสตร์","application_fee":1000,"selection_summary":"ผลการเรียน/คะแนนมาตรฐาน เอกสารประกอบ และสัมภาษณ์","note":"เป็น Direct Admission ปี 2568 ไม่ใช่เกณฑ์ TCAS70 และรูปแบบรอบอาจเปลี่ยนได้","source_url":"https://www.eng.kmitl.ac.th/direct-admission/"},{"title":"ประกาศค่าธรรมเนียมปีการศึกษา 2569","reference_academic_year":2569,"round_label":"ข้อมูลค่าเล่าเรียน","slots_available":null,"status":"unconfirmed","tuition_fee_per_semester":90000,"note":"เป็นอัตราค่าธรรมเนียมปี 2569 ใช้อ้างอิงงบประมาณเท่านั้น ต้องตรวจอัตราปีเข้าเรียนอีกครั้ง","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4381_2026_03_18-09-14-13_b207a.pdf"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1564,7 +1564,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-computer-innovation-international', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมนวัตกรรมคอมพิวเตอร์ (หลักสูตรนานาชาติ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, null,
-    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1594,7 +1594,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-information-engineering', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมสารสนเทศ', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
-    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1624,7 +1624,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-robotics-ai-international', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมหุ่นยนต์และปัญญาประดิษฐ์ (หลักสูตรนานาชาติ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, null,
-    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบหลักสูตรในหน้ารับสมัคร แต่ยังไม่พบประกาศโครงการเฉพาะสาขาที่บอทยืนยันได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมหุ่นยนต์และ AI นานาชาติ","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","tuition_fee_per_semester":105000,"application_fee":300,"selection_summary":"เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์","portfolio_summary":"สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน","application_period":"ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1654,7 +1654,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'ku-bangkhen-computer-engineering', 'คณะวิศวกรรมศาสตร์ วิทยาเขตบางเขน', 'วิศวกรรมคอมพิวเตอร์', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
-    4, 'https://cpe.ku.ac.th/', '[{"title":"โครงการช้างเผือก","reference_academic_year":2569,"round_label":"Portfolio 1.1","slots_available":20,"status":"unconfirmed","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/08/69_TCAS1_White_Elephant_1.1.pdf"},{"title":"โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์","reference_academic_year":2569,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"},{"title":"หน้ารับสมัคร KU-TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น","source_url":"https://admission.ku.ac.th/kuadm/"}]'::jsonb, 'official', now()
+    4, 'https://cpe.ku.ac.th/', '[{"title":"โครงการช้างเผือก","reference_academic_year":2569,"round_label":"Portfolio 1.1","slots_available":20,"status":"unconfirmed","min_gpax":2.5,"gpax_summary":"GPAX ไม่น้อยกว่า 2.50","application_fee":200,"selection_summary":"ประวัติผลงาน/ประกาศนียบัตร 50% + สัมภาษณ์ 50%","qualification_summary":"ม.6/เทียบเท่า มีหน่วยกิตวิทยาศาสตร์ 22 คณิตศาสตร์ 12 ภาษาต่างประเทศ 9 และมีผลงานคอมพิวเตอร์ชัดเจน","portfolio_summary":"ผลงานพัฒนาโปรแกรม ซอฟต์แวร์ ฮาร์ดแวร์ หรือนวัตกรรม; หากเป็นการแข่งขันต้องระดับประเทศหรือนานาชาติ","application_period":"15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/08/69_TCAS1_White_Elephant_1.1.pdf"},{"title":"โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์","reference_academic_year":2569,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","application_fee":0,"selection_summary":"ใช้ผลรายวิชาโครงการเรียนล่วงหน้า โดยเลือก 2 จาก 3 วิชาและมีค่าเฉลี่ยอย่างน้อย B+ ตามตารางประกาศ","qualification_summary":"ต้องเป็นผู้ผ่านรายวิชาโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์ตามชุดวิชาที่กำหนด","application_period":"15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'bangkhen'
@@ -1684,7 +1684,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'ku-bangkhen-software-knowledge-engineering', 'คณะวิศวกรรมศาสตร์ วิทยาเขตบางเขน', 'วิศวกรรมซอฟต์แวร์และความรู้ (หลักสูตรนานาชาติ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, 2565,
-    4, 'https://cpe.ku.ac.th/index.php/ske-course-2565/', '[{"title":"โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ","reference_academic_year":2569,"round_label":"Portfolio 1.2","slots_available":15,"status":"unconfirmed","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf"},{"title":"หน้ารับสมัคร KU-TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น","source_url":"https://admission.ku.ac.th/kuadm/"}]'::jsonb, 'official', now()
+    4, 'https://cpe.ku.ac.th/index.php/ske-course-2565/', '[{"title":"โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ","reference_academic_year":2569,"round_label":"Portfolio 1.2","slots_available":15,"status":"unconfirmed","min_gpax":2.5,"gpax_summary":"GPAX 5 ภาค ไม่น้อยกว่า 2.50 หรือเทียบเท่า","application_fee":200,"selection_summary":"Portfolio + คะแนน/ความสามารถภาษาอังกฤษ + สัมภาษณ์ภาษาอังกฤษ","english_score_summary":"SAT Math 600 และ SAT รวม 1,000 พร้อม TOEFL iBT 61 / IELTS 5.5 / Duolingo 95 / TGAT1 60 หรือใช้เกณฑ์ผลการเรียนตามประกาศ","portfolio_summary":"Portfolio ไม่เกิน 10 หน้า A4 ไม่รวมปก คำนำ และสารบัญ","application_period":"19 ธ.ค. 2568 - 15 ม.ค. 2569 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'bangkhen'
@@ -1714,7 +1714,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'ku-bangkhen-computer-science', 'คณะวิทยาศาสตร์ วิทยาเขตบางเขน', 'วิทยาการคอมพิวเตอร์', 1, 2570,
     'วิทยาศาสตรบัณฑิต', 'ไทย', 128, null,
-    4, 'https://sci.ku.ac.th/web2024/program/b-s-computer-science/', '[{"title":"โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์","reference_academic_year":2569,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"},{"title":"หน้ารับสมัคร KU-TCAS70","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น","source_url":"https://admission.ku.ac.th/kuadm/"}]'::jsonb, 'official', now()
+    4, 'https://sci.ku.ac.th/web2024/program/b-s-computer-science/', '[{"title":"โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์","reference_academic_year":2569,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","application_fee":0,"selection_summary":"ใช้ผลรายวิชาโครงการเรียนล่วงหน้า โดยคณิตศาสตร์หรือแนวคิดการโปรแกรมเบื้องต้นต้องได้อย่างน้อย B ตามตารางประกาศ","qualification_summary":"ต้องเป็นผู้ผ่านรายวิชาโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์ตามชุดวิชาที่กำหนด","application_period":"15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70","source_url":"https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'bangkhen'
@@ -1744,7 +1744,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'tu-engineering-computer-engineering', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมคอมพิวเตอร์', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, 2566,
-    4, 'https://engr.tu.ac.th/bachelor', '[{"title":"รอบที่ 1 Portfolio คณะวิศวกรรมศาสตร์","reference_academic_year":2568,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","note":"หน้าอ้างอิงยังเป็น TCAS68 (GPAX 3.00) ใช้ดูรูปแบบเก่าเท่านั้น ไม่ใช่เกณฑ์ TCAS70","source_url":"https://engr.tu.ac.th/admission/bachelor"},{"title":"หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ","source_url":"https://www.tuadmissions.in.th/"}]'::jsonb, 'official', now()
+    4, 'https://engr.tu.ac.th/bachelor', '[{"title":"โครงการรับตรง คณะวิศวกรรมศาสตร์","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ขั้นต่ำ 2.75","application_fee":200,"selection_summary":"TPAT3 40% + Portfolio 40% + สัมภาษณ์ 20%","qualification_summary":"ม.6/เทียบเท่า รวมผู้เทียบวุฒิต่างประเทศหรือหลักสูตรนานาชาติ ตามรายละเอียดในประกาศ","portfolio_summary":"PDF ไม่เกิน 10 หน้า ไม่รวมปก เน้นผลงานวิชาการ วิทยาศาสตร์ คณิตศาสตร์ เทคโนโลยี และวิศวกรรมศาสตร์","application_period":"15 ต.ค. - 17 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นเกณฑ์และจำนวนรับ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันการสมัคร TCAS70","source_url":"https://www.tuadmissions.in.th/img/2025111008462947.pdf"},{"title":"รอบที่ 1 Portfolio คณะวิศวกรรมศาสตร์","reference_academic_year":2568,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ขั้นต่ำ 3.00","selection_summary":"TPAT3 40% + Portfolio 40% + สัมภาษณ์ 20%","qualification_summary":"ม.6/เทียบเท่า มีหน่วยกิตวิทยาศาสตร์อย่างน้อย 22 และคณิตศาสตร์อย่างน้อย 12","portfolio_summary":"ไฟล์ PDF ไม่เกิน 10 หน้า เน้นวิทยาศาสตร์ คณิตศาสตร์ เทคโนโลยี วิศวกรรม และผลงาน/รางวัลที่เกี่ยวข้อง","application_period":"5-26 พ.ย. 2567 (กำหนดการของ TCAS68)","note":"หน้าอ้างอิงยังเป็น TCAS68 ใช้ดูรูปแบบเก่าเท่านั้น ไม่ใช่เกณฑ์ TCAS70","source_url":"https://engr.tu.ac.th/admission/bachelor"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'rangsit'
@@ -1774,7 +1774,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'tu-engineering-software-engineering', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมซอฟต์แวร์', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
-    4, 'https://engr.tu.ac.th/bachelor', '[{"title":"หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ","source_url":"https://www.tuadmissions.in.th/"}]'::jsonb, 'official', now()
+    4, 'https://engr.tu.ac.th/bachelor', '[{"title":"โครงการรับตรง วิศวกรรมซอฟต์แวร์ (โครงการพิเศษ)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":35,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ขั้นต่ำ 2.75","application_fee":200,"selection_summary":"Portfolio 40% + TPAT3 40% + สัมภาษณ์ 20%","qualification_summary":"ม.6, ปวช.ช่างอุตสาหกรรม, กศน. หรือเทียบวุฒิต่างประเทศ/หลักสูตรนานาชาติ ตามประกาศ","portfolio_summary":"PDF ไม่เกิน 10 หน้า ไม่รวมปก มีประวัติ/การศึกษา Statement of Purpose ผลงานวิชาการและกิจกรรม","application_period":"15 ต.ค. - 17 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นเกณฑ์และจำนวนรับ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันการสมัคร TCAS70","source_url":"https://www.tuadmissions.in.th/img/2025111008462947.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'rangsit'
@@ -1804,7 +1804,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'tu-science-computer-science', 'คณะวิทยาศาสตร์และเทคโนโลยี', 'วิทยาการคอมพิวเตอร์ (คอมพิวเตอร์และวิทยาการสารสนเทศ)', 1, 2570,
     'วิทยาศาสตรบัณฑิต', 'ไทย', null, null,
-    4, 'https://cs.sci.tu.ac.th/comsci-cis-th-2/', '[{"title":"หน้ารับสมัครมหาวิทยาลัยธรรมศาสตร์","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้จากหน้าทางการ","source_url":"https://www.tuadmissions.in.th/"}]'::jsonb, 'official', now()
+    4, 'https://cs.sci.tu.ac.th/comsci-cis-th-2/', '[{"title":"โครงการรับตรง วิทยาการคอมพิวเตอร์","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ขั้นต่ำ 3.00","application_fee":200,"selection_summary":"Portfolio 50% + TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%","qualification_summary":"ม.6 มีหน่วยกิตวิทยาศาสตร์อย่างน้อย 22 และคณิตศาสตร์อย่างน้อย 12","portfolio_summary":"PDF ไม่เกิน 10 หน้า ไม่รวมปก มี Statement of Purpose และผลงานนวัตกรรม/กิจกรรม/รางวัลที่เกี่ยวข้อง","application_period":"15 ต.ค. - 17 พ.ย. 2568 (กำหนดการของ TCAS69)","note":"เป็นเกณฑ์และจำนวนรับ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันการสมัคร TCAS70","source_url":"https://www.tuadmissions.in.th/img/2025111008462947.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'rangsit'
@@ -1824,6 +1824,216 @@ on conflict (code) do update set
         official_program_url = excluded.official_program_url,
         admission_previews = excluded.admission_previews,
         data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.faculties_and_majors (
+    university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
+    program_type, language, curriculum_credits, curriculum_year, duration_years,
+    official_program_url, admission_previews, data_status, updated_at
+)
+select
+    u.id, campus.id, 'kmutnb-science-computer-science-bilingual', 'คณะวิทยาศาสตร์ประยุกต์', 'วิทยาการคอมพิวเตอร์ (หลักสูตรสองภาษา)', 1, 2570,
+    'วิทยาศาสตรบัณฑิต', 'ไทยและอังกฤษ', null, null,
+    4, 'https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-applied-science/department-of-computer-and-information-science.aspx', '[]'::jsonb, 'official', now()
+from public.universities u
+join public.university_campuses campus
+  on campus.university_id = u.id and campus.code = 'bangkok'
+where u.short_name = 'KMUTNB'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        campus_id = excluded.campus_id,
+        faculty_name = excluded.faculty_name,
+        major_name = excluded.major_name,
+        tcas_round = excluded.tcas_round,
+        academic_year = excluded.academic_year,
+        program_type = excluded.program_type,
+        language = excluded.language,
+        curriculum_credits = excluded.curriculum_credits,
+        curriculum_year = excluded.curriculum_year,
+        duration_years = excluded.duration_years,
+        official_program_url = excluded.official_program_url,
+        admission_previews = excluded.admission_previews,
+        data_status = excluded.data_status,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'tu-direct-cpe-2570', 'tu-direct-cpe', 'รับตรง Portfolio — วิศวกรรมคอมพิวเตอร์', 2570, 1,
+    'Portfolio', '1', 'portfolio', 'official',
+    true, null, 200,
+    null, 'https://www.tuadmissions.in.th/img/2026082807385532.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570',
+    '2026-08-28', '2026-08-28', 'ประกาศแล้ว เปิดระบบ 14 ก.ย. 2569; ค่าสมัคร 200 บาทต่อสาขา ไม่รวมค่าธรรมเนียมธนาคาร', now()
+from public.universities u
+where u.short_name = 'TU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'tu-direct-software-2570', 'tu-direct-software', 'รับตรง Portfolio — วิศวกรรมซอฟต์แวร์ (โครงการพิเศษ)', 2570, 1,
+    'Portfolio', '1', 'portfolio', 'official',
+    true, null, 200,
+    null, 'https://www.tuadmissions.in.th/img/2026082807385532.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570',
+    '2026-08-28', '2026-08-28', 'ประกาศแล้ว เปิดระบบ 14 ก.ย. 2569; ค่าสมัคร 200 บาทต่อสาขา ไม่รวมค่าธรรมเนียมธนาคาร', now()
+from public.universities u
+where u.short_name = 'TU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'tu-direct-cs-2570', 'tu-direct-cs', 'รับตรง Portfolio — วิทยาการคอมพิวเตอร์ (ภาคปกติ)', 2570, 1,
+    'Portfolio', '1', 'portfolio', 'official',
+    true, null, 200,
+    null, 'https://www.tuadmissions.in.th/img/2026082807385532.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570',
+    '2026-08-28', '2026-08-28', 'ประกาศแล้ว เปิดระบบ 14 ก.ย. 2569; ค่าสมัคร 200 บาทต่อสาขา ไม่รวมค่าธรรมเนียมธนาคาร', now()
+from public.universities u
+where u.short_name = 'TU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'tu-posn-2570', 'tu-posn', 'ผู้มีความสามารถดีเด่นด้านวิชาการ — สอวน. ค่าย 2', 2570, 1,
+    'Portfolio', '1', 'portfolio', 'official',
+    true, 1, 200,
+    null, 'https://www.tuadmissions.in.th/img/2026082706504458.pdf', 'ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570',
+    '2026-08-27', '2026-08-28', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
+from public.universities u
+where u.short_name = 'TU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'tu-ipst-2570', 'tu-ipst', 'ผู้มีความสามารถดีเด่นด้านวิชาการ — สสวท.', 2570, 1,
+    'Portfolio', '1', 'portfolio', 'official',
+    true, 1, 200,
+    null, 'https://www.tuadmissions.in.th/img/2026082706504458.pdf', 'ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570',
+    '2026-08-27', '2026-08-28', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
+from public.universities u
+where u.short_name = 'TU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
         updated_at = excluded.updated_at;
 
 insert into public.admission_projects (
@@ -4670,6 +4880,288 @@ on conflict (code) do update set
         data_notes = excluded.data_notes,
         updated_at = excluded.updated_at;
 
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'ku-bangkhen-white-elephant-1-1', 'ku-bangkhen-white-elephant', 'โครงการช้างเผือก', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.ku.ac.th/majors/project/1/', 'เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70',
+    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'ku-bangkhen-advanced-placement-1-1', 'ku-bangkhen-advanced-placement', 'โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.ku.ac.th/majors/project/2/', 'เกณฑ์โครงการเรียนล่วงหน้า KU-TCAS70',
+    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'ku-bangkhen-international-1-1', 'ku-bangkhen-international', 'โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.ku.ac.th/majors/project/3/', 'เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.1 KU-TCAS70',
+    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'ku-bangkhen-international-1-2', 'ku-bangkhen-international', 'โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.ku.ac.th/majors/project/103/', 'เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.2 KU-TCAS70',
+    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmutnb-appsci-portfolio-m6-1', 'kmutnb-appsci-portfolio-m6', 'โควตา Portfolio (ม.6) คณะวิทยาศาสตร์ประยุกต์', 2570, 1,
+    '1 Portfolio', '1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf', 'ประกาศโควตา Portfolio (ม.6) คณะวิทยาศาสตร์ประยุกต์ ปีการศึกษา 2570',
+    '2026-08-27', '2026-08-29T12:00:00+07:00', 'นำเข้าเฉพาะวิทยาการคอมพิวเตอร์หลักสูตรสองภาษา รหัส 04111; ประกาศระบุค่าเทอม 45,000 บาทต่อภาค', now()
+from public.universities u
+where u.short_name = 'KMUTNB'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmutnb-fitm-portfolio-1', 'kmutnb-fitm-portfolio', 'โครงการ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม', 2570, 1,
+    '1 Portfolio', '1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf', 'ประกาศ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม ปีการศึกษา 2570',
+    null, '2026-08-29T12:00:00+07:00', 'ไม่มีสอบข้อเขียน ใช้ Portfolio และสัมภาษณ์ออนไลน์; ค่าเทอมแตกต่างรายหลักสูตรจึงแสดงในหมายเหตุรายสาขา', now()
+from public.universities u
+where u.short_name = 'KMUTNB'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 20, 'ศูนย์รังสิต รหัส 10050210300501A'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-engineering-computer-engineering'
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 35, 'ศูนย์รังสิต โครงการพิเศษ รหัส 10050210301001B'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-engineering-software-engineering'
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 20, 'ภาคปกติ รหัส 10050209220201A เท่านั้น; 20 ที่นั่งภาคพิเศษเป็นคนละรายการ ไม่รวมในจำนวนนี้; หลักสูตรอยู่ระหว่างปรับปรุง'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'คณะวิทยาศาสตร์ฯ รับรวมหลายสาขา 30 คน โดยวิทยาการคอมพิวเตอร์รับไม่เกิน 15 คน ไม่ใช่รับสาขานี้ 30 คน'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
+where p.code = 'tu-posn-2570'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'คณะวิทยาศาสตร์ฯ รับรวมหลายสาขา 7 คน ไม่ได้จัดสรรเฉพาะวิทยาการคอมพิวเตอร์'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, null, 'คณะวิศวกรรมศาสตร์รับรวม 6 สาขา 4 คน ไม่ใช่โควตาวิศวกรรมคอมพิวเตอร์ 4 คน'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-engineering-computer-engineering'
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
 insert into public.admission_project_programs (
     project_id, program_id, slots_available, program_notes
 )
@@ -5791,6 +6283,303 @@ where p.code = 'kmitl-science-cs-professional-developer-1-2'
 on conflict (project_id, program_id) do update set
     slots_available = excluded.slots_available,
     program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 16, 'รับ 16 คน; GPAX 4 ภาคเรียนอย่างน้อย 2.75'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-science'
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 20, 'รับ 20 คน; GPAX อย่างน้อย 2.50 และต้องมีผลงานด้านคอมพิวเตอร์ชัดเจน'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-engineering'
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, 'รับ 5 คน เฉพาะผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-science'
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, 'รับ 5 คน เฉพาะผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-engineering'
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 15, 'รับ 15 คน; ใช้ GPAX 4 ภาคเรียน'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-software-knowledge-engineering'
+where p.code = 'ku-bangkhen-international-1-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 15, 'รับ 15 คน; ใช้ GPAX 5 ภาคเรียนและเพิ่ม TGAT1 เป็นทางเลือกภาษาอังกฤษ'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-software-knowledge-engineering'
+where p.code = 'ku-bangkhen-international-1-2'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 10, 'รหัส 04111 รับ 10 คน; GPAX ≥ 3.50; ค่าเทอม 45,000 บาท/ภาค'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutnb-science-computer-science-bilingual'
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 15, 'รหัส 06101 รับ 15 คน; ภาคแรก 21,700 บาท ภาคต่อไป 19,000 บาท'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutnb-fitm-information-technology'
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_project_programs (
+    project_id, program_id, slots_available, program_notes
+)
+select p.id, m.id, 5, 'รหัส 06105 รับ 5 คน; ภาคแรก 27,700 บาท ภาคต่อไป 25,000 บาท'
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutnb-fitm-information-network-engineering'
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, program_id) do update set
+    slots_available = excluded.slots_available,
+    program_notes = excluded.program_notes;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{"TPAT3":{"ค่าน้ำหนัก":"40% (ไม่ใช่คะแนนขั้นต่ำ)"}}'::jsonb, '["กำลังเรียนหรือจบ ม.6 หรือวุฒิเทียบต่างประเทศ/หลักสูตรนานาชาติตามประกาศ; ตารางไม่รับ ปวช. และ กศน.","ไม่กำหนดหน่วยกิตกลุ่มสาระขั้นต่ำ"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''ถ้ายื่นรางวัลวิชาการ ต้องอธิบายบทบาท หน้าที่ และสัดส่วนที่ทำ'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","คะแนนภาษาอังกฤษ (ถ้ามี)"]'::jsonb,
+    '["Portfolio 40%","TPAT3 40%","สัมภาษณ์ 20%"]'::jsonb, '["มีเงื่อนไขด้านการมองเห็น การได้ยิน และความพิการทางร่างกายขั้นรุนแรงที่เป็นอุปสรรคต่อการศึกษา ให้คณะพิจารณาตามประกาศ"]'::jsonb, 'GPAX อย่างน้อย 3.00; Portfolio 40%; TPAT3 40%; สัมภาษณ์ 20%; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026082807385532.pdf#page=71', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-engineering-computer-engineering'
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{"TPAT3":{"ค่าน้ำหนัก":"40% (ไม่ใช่คะแนนขั้นต่ำ)"}}'::jsonb, '["กำลังเรียนหรือจบ ม.6, ปวช. ช่างอุตสาหกรรม, กศน. หรือวุฒิเทียบต่างประเทศ/หลักสูตรนานาชาติตามประกาศ","ไม่กำหนดหน่วยกิตกลุ่มสาระขั้นต่ำ"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''ตารางสรุปผลงาน/รางวัลวิชาการและกิจกรรม พร้อมหลักฐานและคำอธิบาย (แนบลิงก์เพิ่มได้)'', ''ไม่มีคำถามเพิ่มเติม'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","คะแนนภาษาอังกฤษ (ถ้ามี)"]'::jsonb,
+    '["Portfolio 40%","TPAT3 40%","สัมภาษณ์ 20%"]'::jsonb, '["มีเงื่อนไขด้านการมองเห็น การได้ยิน และความพิการทางร่างกายขั้นรุนแรงที่เป็นอุปสรรคต่อการศึกษา ให้คณะพิจารณาตามประกาศ"]'::jsonb, 'GPAX อย่างน้อย 2.75; Portfolio 40%; TPAT3 40%; สัมภาษณ์ 20%; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026082807385532.pdf#page=73', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-engineering-software-engineering'
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{"TGAT1":{"ค่าน้ำหนัก":"15%"},"TGAT2":{"ค่าน้ำหนัก":"15%"},"TGAT3":{"ค่าน้ำหนัก":"5%"},"TPAT3":{"ค่าน้ำหนัก":"15%"}}'::jsonb, '["กำลังเรียนหรือจบ ม.6; ตารางไม่รับ ปวช., กศน. และวุฒิเทียบต่างประเทศ/นานาชาติ","หน่วยกิตข้อ 2.1: วิทยาศาสตร์ 22 และคณิตศาสตร์ 12; ข้อ 2.2: คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 — ไม่ระบุว่าเลือกข้อใดข้อหนึ่ง จึงต้องสอบถามคณะก่อนสรุปสิทธิ์"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''ตอบวิชาในวิทยาการคอมพิวเตอร์ที่สนใจพร้อมเหตุผล ไม่เกิน 200 ตัวอักษร'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน หน้า–หลังพร้อมตราโรงเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","คะแนนภาษาอังกฤษ (ถ้ามี)"]'::jsonb,
+    '["Portfolio 50%","TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%","ต้องผ่านสัมภาษณ์"]'::jsonb, '["ตรวจหน่วยกิตกับคณะก่อนยืนยันสิทธิ์สมัคร; หลักสูตรอยู่ระหว่างปรับปรุง"]'::jsonb, 'GPAX อย่างน้อย 3.00; Portfolio 50%; TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%; ต้องผ่านสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026082807385532.pdf#page=61', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{"semesters":5}'::jsonb, '{"คณิตศาสตร์":3,"วิทยาศาสตร์":3}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังเรียน ม.6 สายสามัญ","ผ่าน สอวน. ค่าย 2 ใน 1 ใน 8 วิชาตามประกาศ","วิทยาศาสตร์อย่างน้อย 22 หน่วยกิต และคณิตศาสตร์อย่างน้อย 12 หน่วยกิต"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''แนบหนังสือรับรองค่าย/โอลิมปิกตามกลุ่มที่สมัคร'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่รวมปกหน้า–หลัง และไม่ต้องมีคำนำ/สารบัญ"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน ม.4–6 รวม 5 ภาค พร้อมตราโรงเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","หนังสือรับรองผ่าน สอวน. ค่าย 2","ใบรับรองแพทย์ (ถ้ามี)"]'::jsonb,
+    '["พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก","สอบสัมภาษณ์"]'::jsonb, '["เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา; ตรวจข้อห้ามสมัครซ้ำโครงการในประกาศหน้า 2"]'::jsonb, 'GPAX อย่างน้อย 3.00; พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก; สอบสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026082706504458.pdf#page=8', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
+where p.code = 'tu-posn-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{"semesters":5}'::jsonb, '{"คณิตศาสตร์":3,"วิทยาศาสตร์":3}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังเรียน ม.6 สายสามัญ","ได้รับคัดเลือกจากมูลนิธิ สอวน. เพื่ออบรมคัดเลือกครั้งที่ 1 ของโครงการโอลิมปิก สสวท.","วิทยาศาสตร์อย่างน้อย 22 หน่วยกิต และคณิตศาสตร์อย่างน้อย 12 หน่วยกิต"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''แนบหนังสือรับรองค่าย/โอลิมปิกตามกลุ่มที่สมัคร'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่รวมปกหน้า–หลัง และไม่ต้องมีคำนำ/สารบัญ"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน ม.4–6 รวม 5 ภาค พร้อมตราโรงเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","หนังสือรับรองการคัดเลือกเข้าค่าย สสวท. ครั้งที่ 1","ใบรับรองแพทย์ (ถ้ามี)"]'::jsonb,
+    '["พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก","สอบสัมภาษณ์"]'::jsonb, '["เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา; ตรวจข้อห้ามสมัครซ้ำโครงการในประกาศหน้า 2"]'::jsonb, 'GPAX อย่างน้อย 3.00; พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก; สอบสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026082706504458.pdf#page=14', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{"semesters":5}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังเรียน ม.6 สายสามัญ","ได้รับคัดเลือกจากมูลนิธิ สอวน. เพื่ออบรมคัดเลือกครั้งที่ 1 ของโครงการโอลิมปิก สสวท.","วิทยาศาสตร์อย่างน้อย 22 หน่วยกิต และคณิตศาสตร์อย่างน้อย 12 หน่วยกิต"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''แนบหนังสือรับรองค่าย/โอลิมปิกตามกลุ่มที่สมัคร'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่รวมปกหน้า–หลัง และไม่ต้องมีคำนำ/สารบัญ"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน ม.4–6 รวม 5 ภาค พร้อมตราโรงเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","หนังสือรับรองการคัดเลือกเข้าค่าย สสวท. ครั้งที่ 1","ใบรับรองแพทย์ (ถ้ามี)"]'::jsonb,
+    '["พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก","สอบสัมภาษณ์"]'::jsonb, '["เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา; ตรวจข้อห้ามสมัครซ้ำโครงการในประกาศหน้า 2"]'::jsonb, 'GPAX อย่างน้อย 3.00; พิจารณา Portfolio และคุณสมบัติค่าย/โอลิมปิก; สอบสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026082706504458.pdf#page=16', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-engineering-computer-engineering'
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
 
 insert into public.admission_criteria (
     project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
@@ -9158,6 +9947,823 @@ on conflict (project_id, faculty_id) do update set
         official_announcement_url = excluded.official_announcement_url,
         updated_at = excluded.updated_at;
 
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"semesters":4}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569","มีผลงานเขียนโปรแกรมเข้าประกวดหรือได้รับรางวัล","ผู้สมัครต้องเป็นผู้ดำเนินงานหลักในผลงานอย่างน้อย 40%"]'::jsonb, 'แสดงผลงานเขียนโปรแกรมที่เข้าประกวดหรือได้รับรางวัล และทำวิดีโอไม่เกิน 2 นาที นำเสนอผลงานที่ได้รับรางวัลดีที่สุดไม่เกิน 3 รายการ พร้อมอธิบายการออกแบบ การพัฒนา source code สำคัญ และรางวัล; หากใช้ AI ต้องระบุส่วนที่ใช้',
+    '{"video_max_minutes":2,"max_featured_awarded_projects":3,"minimum_primary_contribution_percent":40,"ai_usage_disclosure_required":true}'::jsonb, '[]'::jsonb, '["ผลการเรียน 4 ภาคเรียน","หลักฐานผลงาน/รางวัล","วิดีโอผลงาน"]'::jsonb,
+    '[{"name":"โครงงาน/ผลงาน","weight_percent":80},{"name":"สัมภาษณ์","weight_percent":20}]'::jsonb, '{"interview_required":true}'::jsonb, 'GPAX 4 ภาคเรียน ≥ 2.75; มีผลงานเขียนโปรแกรมที่ประกวดหรือได้รางวัล; ผลงาน 80% และสัมภาษณ์ 20%',
+    'https://admission.ku.ac.th/majors/project/1/', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-science'
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.5, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือเทียบเท่า","หน่วยกิตวิทยาศาสตร์อย่างน้อย 22 คณิตศาสตร์ 12 และภาษาต่างประเทศ 9","มีผลงานด้านคอมพิวเตอร์ชัดเจน เช่น โปรแกรม ซอฟต์แวร์ ฮาร์ดแวร์ หรือนวัตกรรม","หากเป็นผลงานจากการแข่งขัน ต้องเป็นระดับประเทศหรือนานาชาติ"]'::jsonb, 'ประวัติผลงานและประกาศนียบัตรด้านคอมพิวเตอร์ เช่น โปรแกรม โครงงานนวัตกรรม ซอฟต์แวร์ หรือฮาร์ดแวร์',
+    '{}'::jsonb, '[]'::jsonb, '["ผลการเรียน","Portfolio","ประกาศนียบัตรหรือหลักฐานผลงาน"]'::jsonb,
+    '[{"name":"ประวัติผลงานและประกาศนียบัตร","weight_percent":50},{"name":"สัมภาษณ์","weight_percent":50}]'::jsonb, '{"minimum_subject_credits":{"วิทยาศาสตร์":22,"คณิตศาสตร์":12,"ภาษาต่างประเทศ":9},"interview_required":true}'::jsonb, 'GPAX ≥ 2.50; วิทยาศาสตร์ 22 คณิตศาสตร์ 12 ภาษาต่างประเทศ 9 หน่วยกิต; ผลงาน/ประกาศนียบัตร 50% และสัมภาษณ์ 50%',
+    'https://admission.ku.ac.th/majors/project/1/', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-engineering'
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569","เข้าร่วมโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์"]'::jsonb, null,
+    '{}'::jsonb, '[]'::jsonb, '[]'::jsonb,
+    '["ผลรายวิชาโครงการเรียนล่วงหน้า","สัมภาษณ์"]'::jsonb, '{"advanced_placement_courses":["คณิตศาสตร์","แนวคิดการโปรแกรมเบื้องต้น"],"choose_courses":1,"minimum_grade":"B","interview_required":true}'::jsonb, 'ผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.; เลือกคณิตศาสตร์หรือแนวคิดการโปรแกรมเบื้องต้น 1 วิชา ได้อย่างน้อย B และสอบสัมภาษณ์',
+    'https://admission.ku.ac.th/majors/project/2/', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-science'
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569","เข้าร่วมโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์"]'::jsonb, null,
+    '{}'::jsonb, '[]'::jsonb, '[]'::jsonb,
+    '["ผลรายวิชาโครงการเรียนล่วงหน้า","สัมภาษณ์"]'::jsonb, '{"advanced_placement_courses":["คณิตศาสตร์","ฟิสิกส์","คอมพิวเตอร์และการโปรแกรม","การเขียนแบบวิศวกรรม"],"choose_courses":2,"minimum_average_grade":"B+","course_01204111_selection_only":true,"interview_required":true}'::jsonb, 'ผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.; เลือก 2 วิชาจากคณิตศาสตร์ ฟิสิกส์ คอมพิวเตอร์และการโปรแกรม หรือเขียนแบบวิศวกรรม เฉลี่ยอย่างน้อย B+ และสัมภาษณ์',
+    'https://admission.ku.ac.th/majors/project/2/', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-engineering'
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.5, '{"semesters":4}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["ม.6/เทียบเท่า หรือมัธยมปลายจากต่างประเทศ","GED ตั้งแต่ พ.ค. 2560 ต้องผ่าน 4 วิชา วิชาละอย่างน้อย 145"]'::jsonb, 'ควรมีผลงานตรงกับสาขาที่สมัคร เช่น ผลงานด้าน Programming สำหรับสาขาซอฟต์แวร์',
+    '{}'::jsonb, '[]'::jsonb, '["ผลการเรียน 4 ภาคเรียน","Portfolio","ผลคะแนนมาตรฐาน หรือผลการเรียนรายวิชาที่ใช้เป็นทางเลือก","หลักฐานวุฒิ/การศึกษา หรือ GED (ถ้ามี)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":25},{"name":"ภาษาอังกฤษ","weight_percent":25},{"name":"สัมภาษณ์ภาษาอังกฤษ","weight_percent":50}]'::jsonb, '{"qualification_paths":[{"path":"คะแนนมาตรฐาน","sat_math_min":600,"sat_total_min":1000,"english_score_one_of":["TOEFL iBT ≥ 61","IELTS ≥ 5.5","Duolingo ≥ 95"]},{"path":"ผลการเรียนรายวิชา","subjects":["ภาษาอังกฤษ","ฟิสิกส์","คณิตศาสตร์"],"minimum_each":2.5}],"interview_language":"อังกฤษ","interview_breakdown":{"คำถามวิชาการ/ภาษาอังกฤษ":50,"ทัศนคติและความเหมาะสม":50}}'::jsonb, 'GPAX 4 ภาคเรียน ≥ 2.50; เลือกใช้ SAT Math ≥ 600 และ SAT รวม ≥ 1,000 พร้อมคะแนนภาษาอังกฤษ (TOEFL iBT ≥ 61 / IELTS ≥ 5.5 / Duolingo ≥ 95) หรือ GPA อังกฤษ ฟิสิกส์ และคณิตศาสตร์แต่ละวิชา ≥ 2.50; Portfolio 25% ภาษาอังกฤษ 25% สัมภาษณ์ 50%',
+    'https://admission.ku.ac.th/majors/project/3/', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-software-knowledge-engineering'
+where p.code = 'ku-bangkhen-international-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.5, '{"semesters":5}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["ม.6/เทียบเท่า หรือมัธยมปลายจากต่างประเทศ","GED ตั้งแต่ พ.ค. 2560 ต้องผ่าน 4 วิชา วิชาละอย่างน้อย 145"]'::jsonb, 'ควรมีผลงานตรงกับสาขาที่สมัคร เช่น ผลงานด้าน Programming สำหรับสาขาซอฟต์แวร์',
+    '{}'::jsonb, '[]'::jsonb, '["ผลการเรียน 5 ภาคเรียน","Portfolio","ผลคะแนนมาตรฐาน หรือผลการเรียนรายวิชาที่ใช้เป็นทางเลือก","หลักฐานวุฒิ/การศึกษา หรือ GED (ถ้ามี)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":25},{"name":"ภาษาอังกฤษ","weight_percent":25},{"name":"สัมภาษณ์ภาษาอังกฤษ","weight_percent":50}]'::jsonb, '{"qualification_paths":[{"path":"คะแนนมาตรฐาน","sat_math_min":600,"sat_total_min":1000,"english_score_one_of":["TOEFL iBT ≥ 61","IELTS ≥ 5.5","Duolingo ≥ 95","TGAT1 ≥ 60"]},{"path":"ผลการเรียนรายวิชา","subjects":["ภาษาอังกฤษ","ฟิสิกส์","คณิตศาสตร์"],"minimum_each":2.5}],"interview_language":"อังกฤษ","interview_breakdown":{"คำถามวิชาการ/ภาษาอังกฤษ":50,"ทัศนคติและความเหมาะสม":50}}'::jsonb, 'GPAX 5 ภาคเรียน ≥ 2.50; เลือกใช้ SAT Math ≥ 600 และ SAT รวม ≥ 1,000 พร้อมคะแนนภาษาอังกฤษ (TOEFL iBT ≥ 61 / IELTS ≥ 5.5 / Duolingo ≥ 95 / TGAT1 ≥ 60) หรือ GPA อังกฤษ ฟิสิกส์ และคณิตศาสตร์แต่ละวิชา ≥ 2.50; Portfolio 25% ภาษาอังกฤษ 25% สัมภาษณ์ 50%',
+    'https://admission.ku.ac.th/majors/project/103/', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'ku-bangkhen-software-knowledge-engineering'
+where p.code = 'ku-bangkhen-international-1-2'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3.5, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษา ม.6 และจะสำเร็จการศึกษาในปีการศึกษา 2569","ต้องอยู่ในแผนการเรียนที่ประกาศอนุญาตสำหรับรหัส 04111"]'::jsonb, 'ยื่นแฟ้มสะสมผลงานตามระบบรับสมัครของมหาวิทยาลัย',
+    '{}'::jsonb, '[]'::jsonb, '["ผลการเรียน","Portfolio","เอกสารตามระบบรับสมัคร"]'::jsonb,
+    '["ผลการเรียน","Portfolio","สัมภาษณ์"]'::jsonb, '{"program_code_in_announcement":"04111","interview_required":true,"tuition_first_and_later_terms":45000,"selection_limit_within_project":1}'::jsonb, 'กำลังศึกษา ม.6 ตามแผนการเรียนที่ประกาศอนุญาต; GPAX ≥ 3.50; คัดเลือกจากผลการเรียน Portfolio และสัมภาษณ์; ค่าเทอม 45,000 บาท/ภาค',
+    'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutnb-science-computer-science-bilingual'
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช. ในสาขาที่เกี่ยวข้องตามคุณวุฒิที่มหาวิทยาลัยกำหนด"]'::jsonb, 'ส่ง Portfolio เป็น PDF ตามระบบรับสมัคร; ประกาศที่ตรวจไม่กำหนดจำนวนหน้าหรือรูปแบบเฉพาะ',
+    '{}'::jsonb, '[]'::jsonb, '["Portfolio PDF","ระเบียนผลการเรียน","บัตรประจำตัว","เอกสารตามระบบรับสมัคร"]'::jsonb,
+    '["Portfolio","สัมภาษณ์ออนไลน์"]'::jsonb, '{"program_code_in_announcement":"06101","written_exam_required":false,"interview_mode":"ออนไลน์","tuition_first_term":21700,"tuition_later_terms":19000}'::jsonb, 'รับ ม.6 หรือ ปวช. ที่คุณวุฒิตรงตามประกาศ; ไม่มีเกณฑ์ GPAX ขั้นต่ำในประกาศที่ตรวจ; พิจารณา Portfolio และสัมภาษณ์ออนไลน์; ภาคแรก 21,700 บาท ภาคต่อไป 19,000 บาท',
+    'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutnb-fitm-information-technology'
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช. ในสาขาที่เกี่ยวข้องตามคุณวุฒิที่มหาวิทยาลัยกำหนด"]'::jsonb, 'ส่ง Portfolio เป็น PDF ตามระบบรับสมัคร; ประกาศที่ตรวจไม่กำหนดจำนวนหน้าหรือรูปแบบเฉพาะ',
+    '{}'::jsonb, '[]'::jsonb, '["Portfolio PDF","ระเบียนผลการเรียน","บัตรประจำตัว","เอกสารตามระบบรับสมัคร"]'::jsonb,
+    '["Portfolio","สัมภาษณ์ออนไลน์"]'::jsonb, '{"program_code_in_announcement":"06105","written_exam_required":false,"interview_mode":"ออนไลน์","tuition_first_term":27700,"tuition_later_terms":25000}'::jsonb, 'รับ ม.6 หรือ ปวช. ที่คุณวุฒิตรงตามประกาศ; ไม่มีเกณฑ์ GPAX ขั้นต่ำในประกาศที่ตรวจ; พิจารณา Portfolio และสัมภาษณ์ออนไลน์; ภาคแรก 27,700 บาท ภาคต่อไป 25,000 บาท',
+    'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutnb-fitm-information-network-engineering'
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-14', '2026-12-16', '14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระค่าสมัคร', '2026-09-14', '2026-12-17', 'วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยื่นหรือแก้ไขเอกสาร', '2026-09-14', '2026-12-22', 'ภายใน 22 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2027-03-04', null, '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-03-07', null, 'รายงานตัว 08.30 น. ศูนย์รังสิต', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือก', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ผ่าน myTCAS', '2027-03-10', '2027-03-11', '10 มี.ค. 2570 – 11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cpe-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-14', '2026-12-16', '14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระค่าสมัคร', '2026-09-14', '2026-12-17', 'วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยื่นหรือแก้ไขเอกสาร', '2026-09-14', '2026-12-22', 'ภายใน 22 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2027-03-04', null, '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-03-07', null, 'รายงานตัว 08.30 น. ศูนย์รังสิต', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือก', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ผ่าน myTCAS', '2027-03-10', '2027-03-11', '10 มี.ค. 2570 – 11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-software-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-14', '2026-12-16', '14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระค่าสมัคร', '2026-09-14', '2026-12-17', 'วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยื่นหรือแก้ไขเอกสาร', '2026-09-14', '2026-12-22', 'ภายใน 22 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2027-03-04', null, '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-03-06', null, 'ออนไลน์ 09.00–12.00 น.; รายงานตัว 08.30 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือก', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ผ่าน myTCAS', '2027-03-10', '2027-03-11', '10 มี.ค. 2570 – 11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-direct-cs-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-14', '2026-12-16', '14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระค่าสมัคร', '2026-09-14', '2026-12-17', 'วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยื่นหรือแก้ไขเอกสาร', '2026-09-14', '2026-12-22', '14 ก.ย. – 22 ธ.ค. 2569; ไม่ระบุเวลาปิดในประกาศนี้', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2027-02-03', null, '3 ก.พ. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-02-05', '2027-02-07', '5–7 ก.พ. 2570; วันและวิธีสอบรายคณะจะแจ้งภายหลัง', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือก', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ผ่าน myTCAS', '2027-03-10', '2027-03-11', '10 มี.ค. 2570 – 11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-posn-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-14', '2026-12-16', '14 ก.ย. 2569 เวลา 09.00 น. – 16 ธ.ค. 2569 เวลา 15.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระค่าสมัคร', '2026-09-14', '2026-12-17', 'วันสุดท้าย 17 ธ.ค. 2569 เวลา 22.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยื่นหรือแก้ไขเอกสาร', '2026-09-14', '2026-12-22', '14 ก.ย. – 22 ธ.ค. 2569; ไม่ระบุเวลาปิดในประกาศนี้', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2027-02-03', null, '3 ก.พ. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-02-05', '2027-02-07', '5–7 ก.พ. 2570; วันและวิธีสอบรายคณะจะแจ้งภายหลัง', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือก', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ผ่าน myTCAS', '2027-03-10', '2027-03-11', '10 มี.ค. 2570 – 11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
@@ -12232,6 +13838,370 @@ insert into public.admission_timeline (
 select p.id, 'ชำระเงินยืนยันสิทธิ์เข้าศึกษา', '2027-03-25', '2027-03-31', '25–31 มี.ค. 2570', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-science-cs-professional-developer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-18', '2026-10-14', '18 ก.ย.–14 ต.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-11-03', '2026-11-03', '3 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-11-09', '2026-11-09', '9 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลสอบสัมภาษณ์', '2026-11-16', '2026-11-16', '16 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-white-elephant-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-18', '2026-10-14', '18 ก.ย.–14 ต.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-11-03', '2026-11-03', '3 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-11-09', '2026-11-09', '9 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลสอบสัมภาษณ์', '2026-11-16', '2026-11-16', '16 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-advanced-placement-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-18', '2026-10-14', '18 ก.ย.–14 ต.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-11-03', '2026-11-03', '3 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-11-09', '2026-11-09', '9 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลสอบสัมภาษณ์', '2026-11-16', '2026-11-16', '16 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2027-01-04', '2027-02-04', '4 ม.ค.–4 ก.พ. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2027-03-02', '2027-03-02', '2 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลสอบสัมภาษณ์', '2027-03-05', '2027-03-05', '5 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'ku-bangkhen-international-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-01', '2026-10-31', '1 ก.ย.–31 ต.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-11-19', '2026-11-19', '19 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-11-28', '2026-11-28', '28 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลสอบคัดเลือก', '2026-12-08', '2026-12-08', '8 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ Clearing House', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-appsci-portfolio-m6-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-09-01', '2026-11-10', '1 ก.ย.–10 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-11-19', '2026-11-19', '19 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ส่งเอกสารให้ครบ', '2026-11-19', '2026-11-25', 'ภายใน 25 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์ออนไลน์', '2026-11-28', '2026-11-28', '28 พ.ย. 2569 เวลา 09.00–12.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลสอบคัดเลือก', '2026-12-08', '2026-12-08', '8 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ Clearing House', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินยืนยันเข้าศึกษา (หลักสูตร 4 ปี)', '2027-03-16', '2027-03-22', '16–22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmutnb-fitm-portfolio-1'
 on conflict (project_id, event_name) do update set
     start_on = excluded.start_on,
     end_on = excluded.end_on,

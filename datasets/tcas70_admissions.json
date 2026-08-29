@@ -53,7 +53,7 @@
       "title": "ปฏิทิน มก. • บางเขน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-29",
       "scope_note": "ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์",
       "rounds": [
         {
@@ -144,8 +144,20 @@
       "confirmation_end_on": "2027-03-11"
     }
   ],
-  "checked_at": "2026-08-28",
-  "runtime_local_project_codes": ["tu-direct-cpe-2570","tu-direct-software-2570","tu-direct-cs-2570","tu-posn-2570","tu-ipst-2570"],
+  "checked_at": "2026-08-29T12:00:00+07:00",
+  "runtime_local_project_codes": [
+    "tu-direct-cpe-2570",
+    "tu-direct-software-2570",
+    "tu-direct-cs-2570",
+    "tu-posn-2570",
+    "tu-ipst-2570",
+    "ku-bangkhen-white-elephant-1-1",
+    "ku-bangkhen-advanced-placement-1-1",
+    "ku-bangkhen-international-1-1",
+    "ku-bangkhen-international-1-2",
+    "kmutnb-appsci-portfolio-m6-1",
+    "kmutnb-fitm-portfolio-1"
+  ],
   "status_policy": {
     "official": "ประกาศอยู่บนเว็บไซต์ทางการและอนุญาตให้บอทแสดงผล",
     "draft_waiting_official": "ข้อมูลเตรียมไว้จากหน้าเว็บที่ระบุว่ารอประกาศอย่างเป็นทางการ บอทต้องไม่แสดงผล",
@@ -1090,6 +1102,7 @@
       "duration_years": 4,
       "official_program_url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-engineering/department-of-electrical-and-computer-engineering.aspx?lang=th",
       "data_status": "official",
+      "campus_code": "bangkok",
       "admission_previews": [
         {
           "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
@@ -1100,8 +1113,7 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ],
-      "campus_code": "bangkok"
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -1115,6 +1127,7 @@
       "duration_years": null,
       "official_program_url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-applied-science/department-of-computer-and-information-science.aspx",
       "data_status": "official",
+      "campus_code": "bangkok",
       "admission_previews": [
         {
           "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
@@ -1125,8 +1138,7 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ],
-      "campus_code": "bangkok"
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -1140,6 +1152,7 @@
       "duration_years": 4,
       "official_program_url": "https://www.itd.kmutnb.ac.th/bachelor.php",
       "data_status": "official",
+      "campus_code": "bangkok",
       "admission_previews": [
         {
           "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
@@ -1150,8 +1163,7 @@
           "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
           "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ],
-      "campus_code": "bangkok"
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -1165,6 +1177,7 @@
       "duration_years": 4,
       "official_program_url": "https://www.fitm.kmutnb.ac.th/IT.html",
       "data_status": "official",
+      "campus_code": "prachinburi",
       "admission_previews": [
         {
           "title": "รอบ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม",
@@ -1179,18 +1192,8 @@
           "application_period": "24 พ.ย. 2568 - 10 ม.ค. 2569 (กำหนดการของ TCAS69)",
           "note": "เป็นประกาศ TCAS69 ของวิทยาเขตปราจีนบุรี ใช้ดูแนวทางและงบประมาณเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70",
           "source_url": "https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf"
-        },
-        {
-          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
-          "status": "unconfirmed",
-          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
-          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ],
-      "campus_code": "prachinburi"
+      ]
     },
     {
       "university_short_name": "KMUTNB",
@@ -1204,6 +1207,7 @@
       "duration_years": 4,
       "official_program_url": "https://www.fitm.kmutnb.ac.th/IT.html",
       "data_status": "official",
+      "campus_code": "prachinburi",
       "admission_previews": [
         {
           "title": "รอบ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม",
@@ -1218,18 +1222,8 @@
           "application_period": "24 พ.ย. 2568 - 10 ม.ค. 2569 (กำหนดการของ TCAS69)",
           "note": "เป็นประกาศ TCAS69 ของวิทยาเขตปราจีนบุรี ใช้ดูแนวทางและงบประมาณเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70",
           "source_url": "https://www.admission.kmutnb.ac.th/sites/default/files/2025-10/FITM-Portfolio2.pdf"
-        },
-        {
-          "title": "หน้ารับสมัครรอบ 1 ปีการศึกษา 2570",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
-          "status": "unconfirmed",
-          "note": "ยังไม่พบโครงการ TCAS70 ที่ระบุหลักสูตรนี้ในหน้าทางการ",
-          "source_url": "https://admission.kmutnb.ac.th/apply/round/1"
         }
-      ],
-      "campus_code": "prachinburi"
+      ]
     },
     {
       "university_short_name": "KMITL",
@@ -1458,15 +1452,6 @@
           "application_period": "15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"
-        },
-        {
-          "title": "หน้ารับสมัคร KU-TCAS70",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
-          "status": "unconfirmed",
-          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
-          "source_url": "https://admission.ku.ac.th/kuadm/"
         }
       ],
       "campus_code": "bangkhen"
@@ -1499,15 +1484,6 @@
           "application_period": "19 ธ.ค. 2568 - 15 ม.ค. 2569 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/15/69-TCAS1-International_Program_1.2.pdf"
-        },
-        {
-          "title": "หน้ารับสมัคร KU-TCAS70",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
-          "status": "unconfirmed",
-          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
-          "source_url": "https://admission.ku.ac.th/kuadm/"
         }
       ],
       "campus_code": "bangkhen"
@@ -1537,15 +1513,6 @@
           "application_period": "15 ต.ค. - 13 พ.ย. 2568 (กำหนดการของ TCAS69)",
           "note": "เป็นจำนวนรับของ TCAS69 ยังห้ามใช้แทนจำนวนรับ TCAS70",
           "source_url": "https://admission.ku.ac.th/media/announcements/2025/10/29/69_TCAS1_AP_1.1_edit_29102025.pdf"
-        },
-        {
-          "title": "หน้ารับสมัคร KU-TCAS70",
-          "reference_academic_year": 2570,
-          "round_label": "สถานะล่าสุด",
-          "slots_available": null,
-          "status": "unconfirmed",
-          "note": "ยังไม่พบประกาศ TCAS70 ของหลักสูตรนี้ จึงแสดงข้อมูลปีเก่าแยกเป็นข้อมูลอ้างอิงเท่านั้น",
-          "source_url": "https://admission.ku.ac.th/kuadm/"
         }
       ],
       "campus_code": "bangkhen"
@@ -1660,6 +1627,20 @@
         }
       ],
       "campus_code": "rangsit"
+    },
+    {
+      "university_short_name": "KMUTNB",
+      "code": "kmutnb-science-computer-science-bilingual",
+      "faculty_name": "คณะวิทยาศาสตร์ประยุกต์",
+      "major_name": "วิทยาการคอมพิวเตอร์ (หลักสูตรสองภาษา)",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทยและอังกฤษ",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://www.kmutnb.ac.th/faculty-and-agencies/bangkok/faculty-of-applied-science/department-of-computer-and-information-science.aspx",
+      "data_status": "official",
+      "campus_code": "bangkok"
     }
   ],
   "projects": [
@@ -3431,6 +3412,138 @@
       "source_published_at": "2026-08-23",
       "source_checked_at": "2026-08-23T23:37:03+07:00",
       "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-white-elephant-1-1",
+      "group_code": "ku-bangkhen-white-elephant",
+      "name": "โครงการช้างเผือก",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/1/",
+      "source_title": "เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-advanced-placement-1-1",
+      "group_code": "ku-bangkhen-advanced-placement",
+      "name": "โครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/2/",
+      "source_title": "เกณฑ์โครงการเรียนล่วงหน้า KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-international-1-1",
+      "group_code": "ku-bangkhen-international",
+      "name": "โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/3/",
+      "source_title": "เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-international-1-2",
+      "group_code": "ku-bangkhen-international",
+      "name": "โครงการหลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/103/",
+      "source_title": "เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.2 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KMUTNB",
+      "code": "kmutnb-appsci-portfolio-m6-1",
+      "group_code": "kmutnb-appsci-portfolio-m6",
+      "name": "โควตา Portfolio (ม.6) คณะวิทยาศาสตร์ประยุกต์",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://stdadmis2.kmutnb.ac.th/ApplyStart",
+      "source_url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf",
+      "source_title": "ประกาศโควตา Portfolio (ม.6) คณะวิทยาศาสตร์ประยุกต์ ปีการศึกษา 2570",
+      "source_published_at": "2026-08-27",
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "data_notes": "นำเข้าเฉพาะวิทยาการคอมพิวเตอร์หลักสูตรสองภาษา รหัส 04111; ประกาศระบุค่าเทอม 45,000 บาทต่อภาค"
+    },
+    {
+      "university_short_name": "KMUTNB",
+      "code": "kmutnb-fitm-portfolio-1",
+      "group_code": "kmutnb-fitm-portfolio",
+      "name": "โครงการ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://stdadmis2.kmutnb.ac.th/ApplyStart",
+      "source_url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf",
+      "source_title": "ประกาศ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม ปีการศึกษา 2570",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "data_notes": "ไม่มีสอบข้อเขียน ใช้ Portfolio และสัมภาษณ์ออนไลน์; ค่าเทอมแตกต่างรายหลักสูตรจึงแสดงในหมายเหตุรายสาขา"
     }
   ],
   "project_programs": [
@@ -4081,6 +4194,60 @@
       "program_code": "kmitl-science-computer-science",
       "slots_available": null,
       "program_notes": "ประกาศระบุวิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ โดยไม่แยกจำนวนรายโครงการ"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "slots_available": 16,
+      "program_notes": "รับ 16 คน; GPAX 4 ภาคเรียนอย่างน้อย 2.75"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "slots_available": 20,
+      "program_notes": "รับ 20 คน; GPAX อย่างน้อย 2.50 และต้องมีผลงานด้านคอมพิวเตอร์ชัดเจน"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "slots_available": 5,
+      "program_notes": "รับ 5 คน เฉพาะผู้เข้าร่วมโครงการเรียนล่วงหน้า มก."
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "slots_available": 5,
+      "program_notes": "รับ 5 คน เฉพาะผู้เข้าร่วมโครงการเรียนล่วงหน้า มก."
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-1",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "slots_available": 15,
+      "program_notes": "รับ 15 คน; ใช้ GPAX 4 ภาคเรียน"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-2",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "slots_available": 15,
+      "program_notes": "รับ 15 คน; ใช้ GPAX 5 ภาคเรียนและเพิ่ม TGAT1 เป็นทางเลือกภาษาอังกฤษ"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "program_code": "kmutnb-science-computer-science-bilingual",
+      "slots_available": 10,
+      "program_notes": "รหัส 04111 รับ 10 คน; GPAX ≥ 3.50; ค่าเทอม 45,000 บาท/ภาค"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "program_code": "kmutnb-fitm-information-technology",
+      "slots_available": 15,
+      "program_notes": "รหัส 06101 รับ 15 คน; ภาคแรก 21,700 บาท ภาคต่อไป 19,000 บาท"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "program_code": "kmutnb-fitm-information-network-engineering",
+      "slots_available": 5,
+      "program_notes": "รหัส 06105 รับ 5 คน; ภาคแรก 27,700 บาท ภาคต่อไป 25,000 บาท"
     }
   ],
   "criteria": [
@@ -4092,7 +4259,9 @@
       "subject_gpax": {},
       "min_english_score": {},
       "standardized_scores": {
-        "TPAT3": {"ค่าน้ำหนัก": "40% (ไม่ใช่คะแนนขั้นต่ำ)"}
+        "TPAT3": {
+          "ค่าน้ำหนัก": "40% (ไม่ใช่คะแนนขั้นต่ำ)"
+        }
       },
       "applicant_qualifications": [
         "กำลังเรียนหรือจบ ม.6 หรือวุฒิเทียบต่างประเทศ/หลักสูตรนานาชาติตามประกาศ; ตารางไม่รับ ปวช. และ กศน.",
@@ -4137,7 +4306,9 @@
       "subject_gpax": {},
       "min_english_score": {},
       "standardized_scores": {
-        "TPAT3": {"ค่าน้ำหนัก": "40% (ไม่ใช่คะแนนขั้นต่ำ)"}
+        "TPAT3": {
+          "ค่าน้ำหนัก": "40% (ไม่ใช่คะแนนขั้นต่ำ)"
+        }
       },
       "applicant_qualifications": [
         "กำลังเรียนหรือจบ ม.6, ปวช. ช่างอุตสาหกรรม, กศน. หรือวุฒิเทียบต่างประเทศ/หลักสูตรนานาชาติตามประกาศ",
@@ -4182,10 +4353,18 @@
       "subject_gpax": {},
       "min_english_score": {},
       "standardized_scores": {
-        "TGAT1": {"ค่าน้ำหนัก": "15%"},
-        "TGAT2": {"ค่าน้ำหนัก": "15%"},
-        "TGAT3": {"ค่าน้ำหนัก": "5%"},
-        "TPAT3": {"ค่าน้ำหนัก": "15%"}
+        "TGAT1": {
+          "ค่าน้ำหนัก": "15%"
+        },
+        "TGAT2": {
+          "ค่าน้ำหนัก": "15%"
+        },
+        "TGAT3": {
+          "ค่าน้ำหนัก": "5%"
+        },
+        "TPAT3": {
+          "ค่าน้ำหนัก": "15%"
+        }
       },
       "applicant_qualifications": [
         "กำลังเรียนหรือจบ ม.6; ตารางไม่รับ ปวช., กศน. และวุฒิเทียบต่างประเทศ/นานาชาติ",
@@ -9685,6 +9864,399 @@
       "criteria_summary": "เฉพาะผู้ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ สจล.; Portfolio 75% + สัมภาษณ์ 25%",
       "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
       "program_code": "kmitl-science-computer-science"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569",
+        "มีผลงานเขียนโปรแกรมเข้าประกวดหรือได้รับรางวัล",
+        "ผู้สมัครต้องเป็นผู้ดำเนินงานหลักในผลงานอย่างน้อย 40%"
+      ],
+      "portfolio_requirements": "แสดงผลงานเขียนโปรแกรมที่เข้าประกวดหรือได้รับรางวัล และทำวิดีโอไม่เกิน 2 นาที นำเสนอผลงานที่ได้รับรางวัลดีที่สุดไม่เกิน 3 รายการ พร้อมอธิบายการออกแบบ การพัฒนา source code สำคัญ และรางวัล; หากใช้ AI ต้องระบุส่วนที่ใช้",
+      "portfolio_details": {
+        "video_max_minutes": 2,
+        "max_featured_awarded_projects": 3,
+        "minimum_primary_contribution_percent": 40,
+        "ai_usage_disclosure_required": true
+      },
+      "accepted_achievements": [],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "หลักฐานผลงาน/รางวัล",
+        "วิดีโอผลงาน"
+      ],
+      "selection_methods": [
+        {
+          "name": "โครงงาน/ผลงาน",
+          "weight_percent": 80
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 20
+        }
+      ],
+      "additional_requirements": {
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX 4 ภาคเรียน ≥ 2.75; มีผลงานเขียนโปรแกรมที่ประกวดหรือได้รางวัล; ผลงาน 80% และสัมภาษณ์ 20%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/1/"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "min_gpax": 2.5,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษาหรือสำเร็จ ม.6 หรือเทียบเท่า",
+        "หน่วยกิตวิทยาศาสตร์อย่างน้อย 22 คณิตศาสตร์ 12 และภาษาต่างประเทศ 9",
+        "มีผลงานด้านคอมพิวเตอร์ชัดเจน เช่น โปรแกรม ซอฟต์แวร์ ฮาร์ดแวร์ หรือนวัตกรรม",
+        "หากเป็นผลงานจากการแข่งขัน ต้องเป็นระดับประเทศหรือนานาชาติ"
+      ],
+      "portfolio_requirements": "ประวัติผลงานและประกาศนียบัตรด้านคอมพิวเตอร์ เช่น โปรแกรม โครงงานนวัตกรรม ซอฟต์แวร์ หรือฮาร์ดแวร์",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "ประกาศนียบัตรหรือหลักฐานผลงาน"
+      ],
+      "selection_methods": [
+        {
+          "name": "ประวัติผลงานและประกาศนียบัตร",
+          "weight_percent": 50
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 50
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "วิทยาศาสตร์": 22,
+          "คณิตศาสตร์": 12,
+          "ภาษาต่างประเทศ": 9
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 2.50; วิทยาศาสตร์ 22 คณิตศาสตร์ 12 ภาษาต่างประเทศ 9 หน่วยกิต; ผลงาน/ประกาศนียบัตร 50% และสัมภาษณ์ 50%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/1/"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569",
+        "เข้าร่วมโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์"
+      ],
+      "portfolio_requirements": null,
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [],
+      "selection_methods": [
+        "ผลรายวิชาโครงการเรียนล่วงหน้า",
+        "สัมภาษณ์"
+      ],
+      "additional_requirements": {
+        "advanced_placement_courses": [
+          "คณิตศาสตร์",
+          "แนวคิดการโปรแกรมเบื้องต้น"
+        ],
+        "choose_courses": 1,
+        "minimum_grade": "B",
+        "interview_required": true
+      },
+      "criteria_summary": "ผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.; เลือกคณิตศาสตร์หรือแนวคิดการโปรแกรมเบื้องต้น 1 วิชา ได้อย่างน้อย B และสอบสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/2/"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569",
+        "เข้าร่วมโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์"
+      ],
+      "portfolio_requirements": null,
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [],
+      "selection_methods": [
+        "ผลรายวิชาโครงการเรียนล่วงหน้า",
+        "สัมภาษณ์"
+      ],
+      "additional_requirements": {
+        "advanced_placement_courses": [
+          "คณิตศาสตร์",
+          "ฟิสิกส์",
+          "คอมพิวเตอร์และการโปรแกรม",
+          "การเขียนแบบวิศวกรรม"
+        ],
+        "choose_courses": 2,
+        "minimum_average_grade": "B+",
+        "course_01204111_selection_only": true,
+        "interview_required": true
+      },
+      "criteria_summary": "ผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.; เลือก 2 วิชาจากคณิตศาสตร์ ฟิสิกส์ คอมพิวเตอร์และการโปรแกรม หรือเขียนแบบวิศวกรรม เฉลี่ยอย่างน้อย B+ และสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/2/"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-1",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "min_gpax": 2.5,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6/เทียบเท่า หรือมัธยมปลายจากต่างประเทศ",
+        "GED ตั้งแต่ พ.ค. 2560 ต้องผ่าน 4 วิชา วิชาละอย่างน้อย 145"
+      ],
+      "portfolio_requirements": "ควรมีผลงานตรงกับสาขาที่สมัคร เช่น ผลงานด้าน Programming สำหรับสาขาซอฟต์แวร์",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "Portfolio",
+        "ผลคะแนนมาตรฐาน หรือผลการเรียนรายวิชาที่ใช้เป็นทางเลือก",
+        "หลักฐานวุฒิ/การศึกษา หรือ GED (ถ้ามี)"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 25
+        },
+        {
+          "name": "ภาษาอังกฤษ",
+          "weight_percent": 25
+        },
+        {
+          "name": "สัมภาษณ์ภาษาอังกฤษ",
+          "weight_percent": 50
+        }
+      ],
+      "additional_requirements": {
+        "qualification_paths": [
+          {
+            "path": "คะแนนมาตรฐาน",
+            "sat_math_min": 600,
+            "sat_total_min": 1000,
+            "english_score_one_of": [
+              "TOEFL iBT ≥ 61",
+              "IELTS ≥ 5.5",
+              "Duolingo ≥ 95"
+            ]
+          },
+          {
+            "path": "ผลการเรียนรายวิชา",
+            "subjects": [
+              "ภาษาอังกฤษ",
+              "ฟิสิกส์",
+              "คณิตศาสตร์"
+            ],
+            "minimum_each": 2.5
+          }
+        ],
+        "interview_language": "อังกฤษ",
+        "interview_breakdown": {
+          "คำถามวิชาการ/ภาษาอังกฤษ": 50,
+          "ทัศนคติและความเหมาะสม": 50
+        }
+      },
+      "criteria_summary": "GPAX 4 ภาคเรียน ≥ 2.50; เลือกใช้ SAT Math ≥ 600 และ SAT รวม ≥ 1,000 พร้อมคะแนนภาษาอังกฤษ (TOEFL iBT ≥ 61 / IELTS ≥ 5.5 / Duolingo ≥ 95) หรือ GPA อังกฤษ ฟิสิกส์ และคณิตศาสตร์แต่ละวิชา ≥ 2.50; Portfolio 25% ภาษาอังกฤษ 25% สัมภาษณ์ 50%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/3/"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-2",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "min_gpax": 2.5,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6/เทียบเท่า หรือมัธยมปลายจากต่างประเทศ",
+        "GED ตั้งแต่ พ.ค. 2560 ต้องผ่าน 4 วิชา วิชาละอย่างน้อย 145"
+      ],
+      "portfolio_requirements": "ควรมีผลงานตรงกับสาขาที่สมัคร เช่น ผลงานด้าน Programming สำหรับสาขาซอฟต์แวร์",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ผลการเรียน 5 ภาคเรียน",
+        "Portfolio",
+        "ผลคะแนนมาตรฐาน หรือผลการเรียนรายวิชาที่ใช้เป็นทางเลือก",
+        "หลักฐานวุฒิ/การศึกษา หรือ GED (ถ้ามี)"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 25
+        },
+        {
+          "name": "ภาษาอังกฤษ",
+          "weight_percent": 25
+        },
+        {
+          "name": "สัมภาษณ์ภาษาอังกฤษ",
+          "weight_percent": 50
+        }
+      ],
+      "additional_requirements": {
+        "qualification_paths": [
+          {
+            "path": "คะแนนมาตรฐาน",
+            "sat_math_min": 600,
+            "sat_total_min": 1000,
+            "english_score_one_of": [
+              "TOEFL iBT ≥ 61",
+              "IELTS ≥ 5.5",
+              "Duolingo ≥ 95",
+              "TGAT1 ≥ 60"
+            ]
+          },
+          {
+            "path": "ผลการเรียนรายวิชา",
+            "subjects": [
+              "ภาษาอังกฤษ",
+              "ฟิสิกส์",
+              "คณิตศาสตร์"
+            ],
+            "minimum_each": 2.5
+          }
+        ],
+        "interview_language": "อังกฤษ",
+        "interview_breakdown": {
+          "คำถามวิชาการ/ภาษาอังกฤษ": 50,
+          "ทัศนคติและความเหมาะสม": 50
+        }
+      },
+      "criteria_summary": "GPAX 5 ภาคเรียน ≥ 2.50; เลือกใช้ SAT Math ≥ 600 และ SAT รวม ≥ 1,000 พร้อมคะแนนภาษาอังกฤษ (TOEFL iBT ≥ 61 / IELTS ≥ 5.5 / Duolingo ≥ 95 / TGAT1 ≥ 60) หรือ GPA อังกฤษ ฟิสิกส์ และคณิตศาสตร์แต่ละวิชา ≥ 2.50; Portfolio 25% ภาษาอังกฤษ 25% สัมภาษณ์ 50%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/103/"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "program_code": "kmutnb-science-computer-science-bilingual",
+      "min_gpax": 3.5,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 และจะสำเร็จการศึกษาในปีการศึกษา 2569",
+        "ต้องอยู่ในแผนการเรียนที่ประกาศอนุญาตสำหรับรหัส 04111"
+      ],
+      "portfolio_requirements": "ยื่นแฟ้มสะสมผลงานตามระบบรับสมัครของมหาวิทยาลัย",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "เอกสารตามระบบรับสมัคร"
+      ],
+      "selection_methods": [
+        "ผลการเรียน",
+        "Portfolio",
+        "สัมภาษณ์"
+      ],
+      "additional_requirements": {
+        "program_code_in_announcement": "04111",
+        "interview_required": true,
+        "tuition_first_and_later_terms": 45000,
+        "selection_limit_within_project": 1
+      },
+      "criteria_summary": "กำลังศึกษา ม.6 ตามแผนการเรียนที่ประกาศอนุญาต; GPAX ≥ 3.50; คัดเลือกจากผลการเรียน Portfolio และสัมภาษณ์; ค่าเทอม 45,000 บาท/ภาค",
+      "official_announcement_url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "program_code": "kmutnb-fitm-information-technology",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช. ในสาขาที่เกี่ยวข้องตามคุณวุฒิที่มหาวิทยาลัยกำหนด"
+      ],
+      "portfolio_requirements": "ส่ง Portfolio เป็น PDF ตามระบบรับสมัคร; ประกาศที่ตรวจไม่กำหนดจำนวนหน้าหรือรูปแบบเฉพาะ",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "Portfolio PDF",
+        "ระเบียนผลการเรียน",
+        "บัตรประจำตัว",
+        "เอกสารตามระบบรับสมัคร"
+      ],
+      "selection_methods": [
+        "Portfolio",
+        "สัมภาษณ์ออนไลน์"
+      ],
+      "additional_requirements": {
+        "program_code_in_announcement": "06101",
+        "written_exam_required": false,
+        "interview_mode": "ออนไลน์",
+        "tuition_first_term": 21700,
+        "tuition_later_terms": 19000
+      },
+      "criteria_summary": "รับ ม.6 หรือ ปวช. ที่คุณวุฒิตรงตามประกาศ; ไม่มีเกณฑ์ GPAX ขั้นต่ำในประกาศที่ตรวจ; พิจารณา Portfolio และสัมภาษณ์ออนไลน์; ภาคแรก 21,700 บาท ภาคต่อไป 19,000 บาท",
+      "official_announcement_url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "program_code": "kmutnb-fitm-information-network-engineering",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช. ในสาขาที่เกี่ยวข้องตามคุณวุฒิที่มหาวิทยาลัยกำหนด"
+      ],
+      "portfolio_requirements": "ส่ง Portfolio เป็น PDF ตามระบบรับสมัคร; ประกาศที่ตรวจไม่กำหนดจำนวนหน้าหรือรูปแบบเฉพาะ",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "Portfolio PDF",
+        "ระเบียนผลการเรียน",
+        "บัตรประจำตัว",
+        "เอกสารตามระบบรับสมัคร"
+      ],
+      "selection_methods": [
+        "Portfolio",
+        "สัมภาษณ์ออนไลน์"
+      ],
+      "additional_requirements": {
+        "program_code_in_announcement": "06105",
+        "written_exam_required": false,
+        "interview_mode": "ออนไลน์",
+        "tuition_first_term": 27700,
+        "tuition_later_terms": 25000
+      },
+      "criteria_summary": "รับ ม.6 หรือ ปวช. ที่คุณวุฒิตรงตามประกาศ; ไม่มีเกณฑ์ GPAX ขั้นต่ำในประกาศที่ตรวจ; พิจารณา Portfolio และสัมภาษณ์ออนไลน์; ภาคแรก 27,700 บาท ภาคต่อไป 25,000 บาท",
+      "official_announcement_url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf"
     }
   ],
   "timeline": [
@@ -11902,6 +12474,230 @@
       "start_on": "2027-03-25",
       "end_on": "2027-03-31",
       "date_display": "25–31 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-advanced-placement-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-2",
+      "event_name": "รับสมัคร",
+      "start_on": "2027-01-04",
+      "end_on": "2027-02-04",
+      "date_display": "4 ม.ค.–4 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-03-02",
+      "end_on": "2027-03-02",
+      "date_display": "2 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-international-1-2",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2027-03-05",
+      "end_on": "2027-03-05",
+      "date_display": "5 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-01",
+      "end_on": "2026-10-31",
+      "date_display": "1 ก.ย.–31 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-19",
+      "end_on": "2026-11-19",
+      "date_display": "19 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-28",
+      "end_on": "2026-11-28",
+      "date_display": "28 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "event_name": "ประกาศผลสอบคัดเลือก",
+      "start_on": "2026-12-08",
+      "end_on": "2026-12-08",
+      "date_display": "8 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-appsci-portfolio-m6-1",
+      "event_name": "ยืนยันสิทธิ์ Clearing House",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-01",
+      "end_on": "2026-11-10",
+      "date_display": "1 ก.ย.–10 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-19",
+      "end_on": "2026-11-19",
+      "date_display": "19 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "ส่งเอกสารให้ครบ",
+      "start_on": "2026-11-19",
+      "end_on": "2026-11-25",
+      "date_display": "ภายใน 25 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "สอบสัมภาษณ์ออนไลน์",
+      "start_on": "2026-11-28",
+      "end_on": "2026-11-28",
+      "date_display": "28 พ.ย. 2569 เวลา 09.00–12.00 น.",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "ประกาศผลสอบคัดเลือก",
+      "start_on": "2026-12-08",
+      "end_on": "2026-12-08",
+      "date_display": "8 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "ยืนยันสิทธิ์ Clearing House",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmutnb-fitm-portfolio-1",
+      "event_name": "ชำระเงินยืนยันเข้าศึกษา (หลักสูตร 4 ปี)",
+      "start_on": "2027-03-16",
+      "end_on": "2027-03-22",
+      "date_display": "16–22 มี.ค. 2570",
       "date_status": "confirmed"
     }
   ],

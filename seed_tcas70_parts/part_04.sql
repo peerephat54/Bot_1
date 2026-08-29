@@ -10,6 +10,336 @@ insert into public.admission_criteria (
     official_announcement_url, updated_at
 )
 select
+    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00","รับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า","รับเฉพาะแผนการเรียนศิลปศาสตร์หรือเทียบเท่า เฉพาะศิลป์-คำนวณ","รับแผนการเรียนอย่างใดอย่างหนึ่ง","สำหรับหลักสูตรอาชีวศึกษา","สาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง","เป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3 มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (5 เทอม) ไม่น้อยกว่า 3.00","สาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง","เป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (6 เทอม) ไม่น้อยกว่า 3.00"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":30},{"name":"สัมภาษณ์","weight_percent":70}]'::jsonb, '{"official_project_code":"00412102103010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412102103010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา การจัดการสมัยใหม่และเทคโนโลยีสารสนเทศ\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่มีผลการเรียนดี\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nผู้ดูแลระบบฐานข้อมูลธุรกิจ (Database Business Administrator), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), นักพัฒนาโปรแกรมประยุกต์เว็บไซต์ (Web Application Developer), นักพัฒนาระบบอัตโนมัติ (RPA Developer), นักวิเคราะห์ธุรกิจ (Business Analyst), รอบที่ 1 Portfolio แบบ 1.1: 20\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00\nรับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า\nรับเฉพาะแผนการเรียนศิลปศาสตร์หรือเทียบเท่า เฉพาะศิลป์-คำนวณ\nรับแผนการเรียนอย่างใดอย่างหนึ่ง\nสำหรับหลักสูตรอาชีวศึกษา\nสาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง\nเป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3 มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (5 เทอม) ไม่น้อยกว่า 3.00\nสาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง\nเป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (6 เทอม) ไม่น้อยกว่า 3.00\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 30 และ การสัมภาษณ์ ร้อยละ 70\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nการบริหารธุรกิจและปัญญาประดิษฐ์ ไม่เกิน 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการประยุกต์ใช้เทคโนโลยีสารสนเทศ เช่น การประยุกต์ใช้ AI ผลงาน Infographic การทำ Website Application การเขียนโปรแกรม การทำสื่อ Multimedia ฯลฯ ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nผู้เข้ารับการสัมภาษณ์ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็มหรือตัวอย่างโปรแกรม ของตนเองทางด้านที่เกี่ยวข้องกับการประยุกต์ใช้เทคโนโลยีสารสนเทศ เช่น การประยุกต์ใช้ AI ผลงาน Infographic การทำ Website Application การเขียนโปรแกรม การทำสื่อ Multimedia ฯลฯ เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 10 หน้า; Portfolio 30% และสัมภาษณ์ 70%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-modern-it'
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.25, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.25","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.25","เป็นผู้มีประสบการณ์ธุรกิจออนไลน์ หรือ นำเสนอสินค้าบนแพลตฟอร์มออนไลน์ ไม่ต่ำกว่า 2 ปี","เป็นผู้มีแพลตฟอร์ม E-commerce (Shopee, Lazada, TikTok Shop ฯลฯ)"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":30},{"name":"สัมภาษณ์","weight_percent":70}]'::jsonb, '{"official_project_code":"00412102108010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412102108010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา การจัดการสมัยใหม่และเทคโนโลยีสารสนเทศ\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการส่งเสริมนักเรียนผู้ประกอบการร้านค้าออนไลน์ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nผู้ดูแลระบบฐานข้อมูลธุรกิจ (Database Business Administrator), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), นักพัฒนาโปรแกรมประยุกต์เว็บไซต์ (Web Application Developer), นักพัฒนาระบบอัตโนมัติ (RPA Developer), นักวิเคราะห์ธุรกิจ (Business Analyst), รอบที่ 1 Portfolio แบบ 1.1: 5\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.25\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.25\nเป็นผู้มีประสบการณ์ธุรกิจออนไลน์ หรือ นำเสนอสินค้าบนแพลตฟอร์มออนไลน์ ไม่ต่ำกว่า 2 ปี\nเป็นผู้มีแพลตฟอร์ม E-commerce (Shopee, Lazada, TikTok Shop ฯลฯ)\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 30 และ การสัมภาษณ์ ร้อยละ 70\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nการบริหารธุรกิจและปัญญาประดิษฐ์ ไม่เกิน 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nระบุข้อมูลธุรกิจออนไลน์หรือผลิตภัณฑ์ที่ดำเนินการ พร้อมรายละเอียดด้านการตลาด ยอดขาย รายได้ และช่องทางการจัดจำหน่ายหรือการขายที่ใช้ในปัจจุบัน และอื่น ๆ ที่เกี่ยวข้อง\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nผู้เข้ารับการสัมภาษณ์ต้องเตรียมความพร้อม เพื่อแสดงข้อมูลธุรกิจออนไลน์หรือผลิตภัณฑ์ที่ดำเนินการ พร้อมรายละเอียดด้านการตลาด ยอดขาย รายได้ และช่องทางการจัดจำหน่ายหรือการขายที่ใช้ในปัจจุบัน และอื่น ๆ ที่เกี่ยวข้อง\n0"}'::jsonb, 'GPAX ≥ 2.25; Portfolio ไม่เกิน 10 หน้า; Portfolio 30% และสัมภาษณ์ 70%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-modern-it'
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.25, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.25","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.25","เป็นผู้ผลิตสื่อออนไลน์ที่มีช่องทางเผยแพร่ผลงานบนแพลตฟอร์ม YouTube, Facebook, TikTok หรือ Instagram โดยมียอดผู้ติดตามรวมทุกแพลตฟอร์มไม่น้อยกว่า 50,000 คน และมียอดการมีส่วนร่วมในรูปแบบการกดถูกใจ (Like) รวมย้อนหลัง 1 ปี ไม่น้อยกว่า 50,000 ครั้ง"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":30},{"name":"สัมภาษณ์","weight_percent":70}]'::jsonb, '{"official_project_code":"00412102108020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412102108020\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา การจัดการสมัยใหม่และเทคโนโลยีสารสนเทศ\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการส่งเสริมนักเรียนผู้มีอิทธิพลทาง Social Media )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nผู้ดูแลระบบฐานข้อมูลธุรกิจ (Database Business Administrator), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), นักพัฒนาโปรแกรมประยุกต์เว็บไซต์ (Web Application Developer), นักพัฒนาระบบอัตโนมัติ (RPA Developer), นักวิเคราะห์ธุรกิจ (Business Analyst), รอบที่ 1 Portfolio แบบ 1.1: 5\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.25\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.25\nเป็นผู้ผลิตสื่อออนไลน์ที่มีช่องทางเผยแพร่ผลงานบนแพลตฟอร์ม YouTube, Facebook, TikTok หรือ Instagram โดยมียอดผู้ติดตามรวมทุกแพลตฟอร์มไม่น้อยกว่า 50,000 คน และมียอดการมีส่วนร่วมในรูปแบบการกดถูกใจ (Like) รวมย้อนหลัง 1 ปี ไม่น้อยกว่า 50,000 ครั้ง\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 30 และ การสัมภาษณ์ ร้อยละ 70\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nการบริหารธุรกิจและปัญญาประดิษฐ์ ไม่เกิน 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nแนบผลงานที่โดดเด่นในฐานะ Influencer หรือ Content Creator โดยเคยสร้างคอนเทนต์ที่มียอดการเข้าถึงหรือการมีส่วนร่วม และเป็นที่รู้จัก และมีผลงานการสร้างสรรค์และเผยแพร่คอนเทนต์อย่างต่อเนื่อง โดยมีความเคลื่อนไหวบนแพลตฟอร์มออนไลน์อย่างสม่ำเสมอ\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nแสดงผลงานที่โดดเด่นในฐานะ Influencer หรือ Content Creator โดยเคยสร้างคอนเทนต์ที่มียอดการเข้าถึงหรือการมีส่วนร่วม และเป็นที่รู้จัก และมีผลงานการสร้างสรรค์และเผยแพร่คอนเทนต์อย่างต่อเนื่อง โดยมีความเคลื่อนไหวบนแพลตฟอร์มออนไลน์อย่างสม่ำเสมอ\n0"}'::jsonb, 'GPAX ≥ 2.25; Portfolio ไม่เกิน 10 หน้า; Portfolio 30% และสัมภาษณ์ 70%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-modern-it'
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษาผ่านหลักสูตร Gifted School ของวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่ (ต้องมีใบรับรองผลการเรียน)"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":30},{"name":"สัมภาษณ์","weight_percent":70}]'::jsonb, '{"official_project_code":"00412102108030","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412102108030\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา การจัดการสมัยใหม่และเทคโนโลยีสารสนเทศ\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการรับนักเรียนผู้ที่มีความสามารถพิเศษฯ (Gifted IT) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nผู้ดูแลระบบฐานข้อมูลธุรกิจ (Database Business Administrator), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), นักพัฒนาโปรแกรมประยุกต์เว็บไซต์ (Web Application Developer), นักพัฒนาระบบอัตโนมัติ (RPA Developer), นักวิเคราะห์ธุรกิจ (Business Analyst), รอบที่ 1 Portfolio แบบ 1.1: 15\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษาผ่านหลักสูตร Gifted School ของวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่ (ต้องมีใบรับรองผลการเรียน)\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nหนังสือรับรอง (ไม่มีแบบฟอร์ม)\nหนังสือรับรองการเรียนจากโครงการ Gifted School ที่ออกโดยวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 30 และ การสัมภาษณ์ ร้อยละ 70\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nการบริหารธุรกิจและปัญญาประดิษฐ์ ไม่เกิน 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการประยุกต์ใช้เทคโนโลยีสารสนเทศ เช่น การประยุกต์ใช้ AI ผลงาน Infographic การทำ Website Application การเขียนโปรแกรม การทำสื่อ Multimedia ฯลฯ ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nผู้เข้ารับการสัมภาษณ์ ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็ม หรือ ตัวอย่างโปรแกรมของตนเองทางด้านที่เกี่ยวข้องกับการประยุกต์ใช้เทคโนโลยีสารสนเทศ เช่น การประยุกต์ใช้ AI ผลงาน Infographic การทำ Website Application การเขียนโปรแกรม การทำสื่อ Multimedia ฯลฯ เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 2.75; Portfolio ไม่เกิน 10 หน้า; Portfolio 30% และสัมภาษณ์ 70%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-modern-it'
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00","ผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"official_project_code":"00412104103010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412104103010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา ดิจิทัลเกม\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่มีผลการเรียนดี\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 38,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาเกม (Game Developer), นักออกแบบเกม (Game Designer), ผู้จัดการโครงการเกม (Game Project Manager), นักทดสอบและวิเคราะห์เกม (Game Tester and Analyser), นักออกแบบกราฟิกสำหรับเกม (Graphic Game Designer), รอบที่ 1 Portfolio แบบ 1.1: 15\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00\nผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 60 และ การสัมภาษณ์ ร้อยละ 40\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nความสามารถพิเศษ ความสนใจทางด้านการพัฒนาเกม และเป้าหมายในการประกอบอาชีพในอนาคต\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nแนบเว็บไซต์นำเสนอผลงาน ในรูปแบบ ลิงก์ URL แบบย่อ ที่บรรจุการนำเสนอข้อมูลผลงานของนักเรียน โดยประกอบไปด้วย ตัวอย่างผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nผู้สมัครควรทำให้ลิงก์หรือ QR Code สามารถเข้าถึงได้โดยง่าย และเปิดการมองเห็นแบบสาธารณะ\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nผลงานหรือสิ่งประดิษฐ์\nผู้เข้ารับการสัมภาษณ์ ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็ม หรือ ตัวอย่าง หรือ โปรแกรม ของผู้สมัคร ทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ฯลฯ ที่เกี่ยวข้องกับการพัฒนาเกม เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 10 หน้า; Portfolio 60% และสัมภาษณ์ 40%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-digital-game'
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75","สำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)","เป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา","เป็นผู้ที่ได้รับรางวัลการแข่งขันทางด้านเทคโนโลยีสารสนเทศ ที่เกี่ยวข้องกับการพัฒนาเกม ในระดับภาค หรือ ระดับประเทศ หรือ ระดับนานาชาติ ใน 3 อันดับ ได้แก่ รางวัลชนะเลิศ หรือ รางวัลรองชนะเลิศ อันดับ 1 หรือรางวัลรองชนะเลิศ อันดับ 2 ในระดับชั้นมัธยมศึกษาตอนปลายเท่านั้น","ผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"official_project_code":"00412104108010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412104108010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา ดิจิทัลเกม\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการส่งเสริมนักเรียนผู้มีความสามารถพิเศษฯ ในการประกวดแข่งขัน )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 38,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาเกม (Game Developer), นักออกแบบเกม (Game Designer), ผู้จัดการโครงการเกม (Game Project Manager), นักทดสอบและวิเคราะห์เกม (Game Tester and Analyser), นักออกแบบกราฟิกสำหรับเกม (Graphic Game Designer), รอบที่ 1 Portfolio แบบ 1.1: 2\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75\nสำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)\nเป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา\nเป็นผู้ที่ได้รับรางวัลการแข่งขันทางด้านเทคโนโลยีสารสนเทศ ที่เกี่ยวข้องกับการพัฒนาเกม ในระดับภาค หรือ ระดับประเทศ หรือ ระดับนานาชาติ ใน 3 อันดับ ได้แก่ รางวัลชนะเลิศ หรือ รางวัลรองชนะเลิศ อันดับ 1 หรือรางวัลรองชนะเลิศ อันดับ 2 ในระดับชั้นมัธยมศึกษาตอนปลายเท่านั้น\nผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nอื่น ๆ\nหลักฐาน หรือ ประกาศนียบัตรในการเข้าร่วมการแข่งขัน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 60 และ การสัมภาษณ์ ร้อยละ 40\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nความสามารถพิเศษ ความสนใจทางด้านการพัฒนาเกม และเป้าหมายในการประกอบอาชีพในอนาคต\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐาน หรือ ประกาศนียบัตรในการเข้าร่วมการแข่งขัน\nหมวดที่ 4 : กิจกรรม/รางวัล\nแนบเว็บไซต์นำเสนอผลงาน ในรูปแบบ ลิงก์ URL แบบย่อ ที่บรรจุการนำเสนอข้อมูลผลงานของนักเรียน โดยประกอบไปด้วย ตัวอย่างผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nผู้สมัครควรทำให้ลิงก์หรือ QR Code สามารถเข้าถึงได้โดยง่าย และเปิดการมองเห็นแบบสาธารณะ\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nผลงานหรือสิ่งประดิษฐ์\nผู้เข้ารับการสัมภาษณ์ ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็ม หรือ ตัวอย่าง หรือ โปรแกรม ของผู้สมัคร ทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ฯลฯ ที่เกี่ยวข้องกับการพัฒนาเกม เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 2.75; Portfolio ไม่เกิน 10 หน้า; Portfolio 60% และสัมภาษณ์ 40%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-digital-game'
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75","สำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)","เป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา","เป็นผู้สำเร็จการศึกษาผ่านหลักสูตร Gifted School ของวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่ (ต้องมีใบรับรองผลการเรียน)"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"official_project_code":"00412104108020","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412104108020\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา ดิจิทัลเกม\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการรับนักเรียนผู้ที่มีความสามารถพิเศษฯ (Gifted IT) )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 38,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาเกม (Game Developer), นักออกแบบเกม (Game Designer), ผู้จัดการโครงการเกม (Game Project Manager), นักทดสอบและวิเคราะห์เกม (Game Tester and Analyser), นักออกแบบกราฟิกสำหรับเกม (Graphic Game Designer), รอบที่ 1 Portfolio แบบ 1.1: 8\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75\nสำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)\nเป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา\nเป็นผู้สำเร็จการศึกษาผ่านหลักสูตร Gifted School ของวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่ (ต้องมีใบรับรองผลการเรียน)\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nหนังสือรับรอง (ไม่มีแบบฟอร์ม)\nหนังสือรับรองการเรียนจากโครงการ Gifted School ของวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 60 และ การสัมภาษณ์ ร้อยละ 40\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nความสามารถพิเศษ ความสนใจทางด้านการพัฒนาเกม และเป้าหมายในการประกอบอาชีพในอนาคต\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหนังสือรับรองการเรียนจากโครงการ Gifted School ที่ออกโดยวิทยาลัยศิลปะ สื่อ และเทคโนโลยี มหาวิทยาลัยเชียงใหม่\nหมวดที่ 4 : กิจกรรม/รางวัล\nแนบเว็บไซต์นำเสนอผลงาน ในรูปแบบ ลิงก์ URL แบบย่อ ที่บรรจุการนำเสนอข้อมูลผลงานของนักเรียน โดยประกอบไปด้วย ตัวอย่างผลงานของผู้สมัครทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ที่เกี่ยวข้องกับการพัฒนาเกม โดยผู้สมัครจะต้องระบุ Software ที่ใช้สร้างสรรค์ผลงานในการพัฒนาเกม อาทิ Unity Unreal Construct 3 ฯลฯ และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nผู้สมัครควรทำให้ลิงก์หรือ QR Code สามารถเข้าถึงได้โดยง่าย และเปิดการมองเห็นแบบสาธารณะ\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nผลงานหรือสิ่งประดิษฐ์\nผู้เข้ารับการสัมภาษณ์ ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็ม หรือ ตัวอย่าง หรือ โปรแกรม ของผู้สมัคร ทางด้านการพัฒนาเกมอื่น ๆ เช่น ผลงาน 2D 3D งาน Sketch Design ฯลฯ ที่เกี่ยวข้องกับการพัฒนาเกม เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 2.75; Portfolio ไม่เกิน 10 หน้า; Portfolio 60% และสัมภาษณ์ 40%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-digital-game'
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, null, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '[]'::jsonb, 'Portfolio ตามรายละเอียดในประกาศทางการของ มช.',
+    '{}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[]'::jsonb, '{"official_project_code":"00412105107010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412105107010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา บูรณาการอุตสาหกรรมดิจิทัล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่ดำเนินการโดยคณะ (โครงการความร่วมมือกับอุตสาหกรรมดิจิทัล )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาแอปพลิเคชันบนมือถือ (Mobile Developer), นักพัฒนาระบบ (Front-end/Back-end Developer), นักทดสอบระบบ (Quality Assurance), นักควบคุมแผนงาน (Product Owner), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), รอบที่ 1 Portfolio แบบ 1.1: 25\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nสำหรับหลักสูตรนานาชาติ\nสำหรับหลักสูตรอาชีวศึกษา\nสำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)\nสำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)\nเป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา\nการรับนักเรียนที่ดำเนินการโดยคณะ\nเป็นผู้มีคุณสมบัติตามประกาศของคณะ ดูรายละเอียดเพิ่มเติมได้ที่เว็บไซต์ของคณะ\nhttps://www.camt.cmu.ac.th/\n0"}'::jsonb, 'ใช้คุณสมบัติและผลงานตามประกาศทางการของ มช.',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-digital-industry'
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้ที่กำลังศึกษาอยู่ Grade 12 (ในระบบอเมริกัน, US) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอเมริกัน และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Grade 12 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้สำเร็จการศึกษา Grade 12 (ในระบบอเมริกัน, US) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอเมริกัน และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Grade 12 (6 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้ที่กำลังศึกษาอยู่ Year 13 (ในระบบอังกฤษ, UK) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอังกฤษ และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Year 13 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้สำเร็จการศึกษา Year 13 (ในระบบอังกฤษ, UK) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอังกฤษ และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Year 13 (6 เทอม) ไม่น้อยกว่า 2.75","สำหรับหลักสูตรอาชีวศึกษา","เป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 3 ในสาขาช่างอุตสาหกรรมฐานวิทยาศาสตร์, เตรียมวิศวกรรมศาสตร์, ช่างอิเล็กทรอนิกส์, ช่างคอมพิวเตอร์, ช่างเทคนิคคอมพิวเตอร์, ช่างเมคคาทรอนิกส์และหุ่นยนต์ หรือสาขาอื่นที่เกี่ยวข้องกับเทคโนโลยีดิจิทัลและวิศวกรรม โดยอยู่ในดุลยพินิจของคณะกรรมการรับเข้าศึกษา มีผลการเรียนเฉลี่ยสะสมระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 1-3 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 3 ในสาขาช่างอุตสาหกรรมฐานวิทยาศาสตร์, เตรียมวิศวกรรมศาสตร์, ช่างอิเล็กทรอนิกส์, ช่างคอมพิวเตอร์, ช่างเทคนิคคอมพิวเตอร์, ช่างเมคคาทรอนิกส์และหุ่นยนต์ หรือสาขาอื่นที่เกี่ยวข้องกับเทคโนโลยีดิจิทัลและวิศวกรรม โดยอยู่ในดุลยพินิจของคณะกรรมการรับเข้าศึกษา มีผลการเรียนเฉลี่ยสะสมระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 1-3 (6 เทอม) ไม่น้อยกว่า 2.75","สำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)","เป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย มีผลการเรียนเฉลี่ยสะสมเทียบเท่าชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75","เป็นผู้สำเร็จการศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย มีผลการเรียนเฉลี่ยสะสมเทียบเท่าชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75","สำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)","เป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา","ผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการพัฒนาซอฟต์แวร์หรือการพัฒนานวัตกรรมดิจิทัล เช่น Web Application, Mobile Application ฯลฯ โดยสามารถจัดส่งในรูปแบบของวิดีโอสาธิตการทำงานของผลงาน ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงาน เพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"official_project_code":"00412105108010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412105108010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา บูรณาการอุตสาหกรรมดิจิทัล\nหลักสูตร ไทย รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ โครงการพิเศษอื่นๆ (โครงการผู้พัฒนานวัตกรรมดิจิทัลสร้างสรรค์ )\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nนักพัฒนาแอปพลิเคชันบนมือถือ (Mobile Developer), นักพัฒนาระบบ (Front-end/Back-end Developer), นักทดสอบระบบ (Quality Assurance), นักควบคุมแผนงาน (Product Owner), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), รอบที่ 1 Portfolio แบบ 1.1: 25\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75\nสำหรับหลักสูตรนานาชาติ\nเป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้ที่กำลังศึกษาอยู่ Grade 12 (ในระบบอเมริกัน, US) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอเมริกัน และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Grade 12 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้สำเร็จการศึกษา Grade 12 (ในระบบอเมริกัน, US) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอเมริกัน และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Grade 12 (6 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้ที่กำลังศึกษาอยู่ Year 13 (ในระบบอังกฤษ, UK) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอังกฤษ และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Year 13 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้มีคุณสมบัติตามประกาศกระทรวงศึกษาธิการ เรื่อง การเทียบความรู้วุฒิต่างประเทศ โดยเป็นผู้สำเร็จการศึกษา Year 13 (ในระบบอังกฤษ, UK) ในหลักสูตรนานาชาติ ที่ใช้หลักสูตรตามระบบการศึกษาของอังกฤษ และได้รับการรับรองจากกระทรวงศึกษาธิการ มีผลการเรียนเฉลี่ยสะสม Year 13 (6 เทอม) ไม่น้อยกว่า 2.75\nสำหรับหลักสูตรอาชีวศึกษา\nเป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 3 ในสาขาช่างอุตสาหกรรมฐานวิทยาศาสตร์, เตรียมวิศวกรรมศาสตร์, ช่างอิเล็กทรอนิกส์, ช่างคอมพิวเตอร์, ช่างเทคนิคคอมพิวเตอร์, ช่างเมคคาทรอนิกส์และหุ่นยนต์ หรือสาขาอื่นที่เกี่ยวข้องกับเทคโนโลยีดิจิทัลและวิศวกรรม โดยอยู่ในดุลยพินิจของคณะกรรมการรับเข้าศึกษา มีผลการเรียนเฉลี่ยสะสมระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 1-3 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 3 ในสาขาช่างอุตสาหกรรมฐานวิทยาศาสตร์, เตรียมวิศวกรรมศาสตร์, ช่างอิเล็กทรอนิกส์, ช่างคอมพิวเตอร์, ช่างเทคนิคคอมพิวเตอร์, ช่างเมคคาทรอนิกส์และหุ่นยนต์ หรือสาขาอื่นที่เกี่ยวข้องกับเทคโนโลยีดิจิทัลและวิศวกรรม โดยอยู่ในดุลยพินิจของคณะกรรมการรับเข้าศึกษา มีผลการเรียนเฉลี่ยสะสมระดับประกาศนียบัตรวิชาชีพ (ปวช.) ชั้นปีที่ 1-3 (6 เทอม) ไม่น้อยกว่า 2.75\nสำหรับหลักสูตรการศึกษาตามอัธยาศัย (กศน.)\nเป็นผู้กำลังศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย มีผลการเรียนเฉลี่ยสะสมเทียบเท่าชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.75\nเป็นผู้สำเร็จการศึกษานอกระบบ/อัธยาศัย ระดับมัธยมศึกษาตอนปลาย มีผลการเรียนเฉลี่ยสะสมเทียบเท่าชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.75\nสำหรับหลักสูตรเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลาง (เช่น GED)\nเป็นไปตามประกาศสมาคมที่ประชุมอธิการบดีฯ เรื่อง เกณฑ์การเทียบวุฒิการศึกษาเท่ากับชั้นมัธยมศึกษาตอนปลายในระบบการคัดเลือกกลางบุคคลเข้าศึกษาในสถาบันอุดมศึกษา\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการพัฒนาซอฟต์แวร์หรือการพัฒนานวัตกรรมดิจิทัล เช่น Web Application, Mobile Application ฯลฯ โดยสามารถจัดส่งในรูปแบบของวิดีโอสาธิตการทำงานของผลงาน ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงาน เพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 60 และ การสัมภาษณ์ ร้อยละ 40\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nแนะนำตัวเองพร้อมประสบการณ์ที่เกี่ยวข้องกับการพัฒนานวัตกรรมดิจิทัลสร้างสรรค์\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (แนบเอกสารอย่างชัดเจนและครบถ้วน) หรือใบรับรองผลการศึกษา\nหมวดที่ 4 : กิจกรรม/รางวัล\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการพัฒนาซอฟต์แวร์หรือการพัฒนานวัตกรรมดิจิทัล เช่น Web Application, Mobile Application ฯลฯ โดยสามารถจัดส่งในรูปแบบของวิดีโอสาธิตการทำงานของผลงาน ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nผู้สมัครควรทำให้ลิงก์หรือ QR Code สามารถเข้าถึงได้โดยง่าย และเปิดการมองเห็นแบบสาธารณะ\nหมวดที่่ 5 : ข้อคำถาม\nคำถามข้อที่ 1 ทำไมถึงอยากเรียนสาขาวิชาบูรณาการอุตสาหกรรมดิจิทัล คำตอบไม่เกิน 1,000 ตัวอักษร\nคำถามข้อที่ 2 หากไปเที่ยวต่างประเทศ จะไปคนเดียวหรือไปกับใคร และเพราะเหตุใด คำตอบไม่เกิน 1,000 ตัวอักษร\nคำถามข้อที่ 3 อนาคตอยากทำงานอะไร คำตอบไม่เกิน 1,000 ตัวอักษร\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nผู้เข้ารับการสัมภาษณ์ ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็ม หรือ ตัวอย่าง หรือ โปรแกรมของตนเองทางด้านที่เกี่ยวข้องกับการพัฒนาวิศวกรรมซอฟต์แวร์ เช่น Website Application, Mobile Application ฯลฯ เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 2.75; Portfolio ไม่เกิน 10 หน้า; Portfolio 60% และสัมภาษณ์ 40%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-digital-industry'
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3.25, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.25","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.25","รับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า","ผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการพัฒนาวิศวกรรมซอฟต์แวร์ เช่น Website Application, Mobile Application ฯลฯ โดยสามารถจัดส่งในรูปแบบของวิดีโอสาธิตการทำงานของผลงาน ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
+    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":70},{"name":"สัมภาษณ์","weight_percent":30}]'::jsonb, '{"official_project_code":"00412171103011","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412171103011\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา วิศวกรรมซอฟต์แวร์ (นานาชาติ ช่องทาง TCAS)\nหลักสูตร นานาชาติ รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่มีผลการเรียนดี\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 40,000 บาท\nแนวทางการประกอบอาชีพ\nEnterprise Full-Stack Developer, Software Tester & Quality Assurance Specialist, DevOps & DevSecOps Engineer, UX/UI Designer, AI/ML & Generative AI Software Engineer, รอบที่ 1 Portfolio แบบ 1.1: 5\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.25\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.25\nรับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการพัฒนาวิศวกรรมซอฟต์แวร์ เช่น Website Application, Mobile Application ฯลฯ โดยสามารถจัดส่งในรูปแบบของวิดีโอสาธิตการทำงานของผลงาน ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 70 และ การสัมภาษณ์ ร้อยละ 30\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nการพัฒนาซอฟต์แวร์กับเทคโนโลยีปัญญาประดิษฐ์\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการพัฒนาวิศวกรรมซอฟต์แวร์ เช่น Web Application, Mobile Application ฯลฯ โดยสามารถจัดส่งในรูปแบบของ วิดีโอสาธิตการทำงานของผลงาน ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงาน เพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nผู้สมัครควรทำให้ลิงก์หรือ QR Code สามารถเข้าถึงได้โดยง่าย และเปิดการมองเห็นแบบสาธารณะ\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nผู้เข้ารับการสัมภาษณ์ ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็ม หรือ ตัวอย่าง หรือ โปรแกรม ของตนเองทางด้านที่เกี่ยวข้องกับการพัฒนาวิศวกรรมซอฟต์แวร์ เช่น Website Application, Mobile Application ฯลฯ เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 3.25; Portfolio ไม่เกิน 10 หน้า; Portfolio 70% และสัมภาษณ์ 30%',
+    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'cmu-software-engineering'
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
     p.id, m.id, 2.5, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 2.50","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 2.50","รับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า","เป็นผู้ที่ได้รับรางวัลการแข่งขันทางด้านเทคโนโลยีสารสนเทศ ระดับภาค หรือ ระดับประเทศ หรือ ระดับนานาชาติ ใน 3 อันดับ ได้แก่ รางวัลชนะเลิศ หรือ รางวัลรองชนะเลิศ อันดับ 1 หรือรางวัลรองชนะเลิศ อันดับ 2 เช่น โครงการแข่งขันพัฒนาโปรแกรมคอมพิวเตอร์แห่งประเทศไทย (NSC) โครงการประกวดโครงงานของนักวิทยาศาสตร์รุ่นเยาว์ สาขาวิทยาการคอมพิวเตอร์และวิศวกรรมศาสตร์ (YSC.CS & YSC.EN) โครงการประกวดแข่งขันที่จัดขึ้นโดยวิทยาลัยศิลปะ สื่อ และเทคโนโลยี และโครงการอื่น ๆ ที่เกี่ยวข้องทางด้านเทคโนโลยีสารสนเทศ ในระดับชั้นมัธยมศึกษาตอนปลายเท่านั้น"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
     '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
@@ -760,1268 +1090,5 @@ on conflict (project_id, faculty_id) do update set
         criteria_summary = excluded.criteria_summary,
         official_announcement_url = excluded.official_announcement_url,
         updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 2.75, '{"วุฒิไทย-กำลังศึกษา":"อย่างน้อย 5 ภาคการศึกษา","วุฒิไทย-สำเร็จแล้ว":"6 ภาคการศึกษา","Grade 12 / Year 13 / GED":"ประกาศไม่กำหนดผลการเรียน"}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)"]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
-    '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '["ผ่านการคัดเลือกโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชนของ สวทช. หรือสมาคมวิทยาศาสตร์แห่งประเทศไทย","ผ่านการคัดเลือกการแข่งขันคณิตศาสตร์และวิทยาศาสตร์โอลิมปิกของ สสวท.","ผ่านการสอบและการอบรมโอลิมปิกวิชาการของ สอวน.","มีผลงานหรือรางวัลวิชาการด้านวิทยาศาสตร์-คณิตศาสตร์อย่างน้อย 1 รายการ; สำหรับวิทยาการคอมพิวเตอร์ต้องเป็นระดับจังหวัด ภูมิภาค ชาติ หรือนานาชาติ","ได้รับรางวัลหรือเกียรติบัตรจากงานที่คณะวิทยาศาสตร์ สจล. เป็นเจ้าภาพหรือเจ้าภาพร่วม ยกเว้น Esports","ได้รับรางวัลโครงการแข่งขันเพชรยอดมงกุฎ วิชาคณิตศาสตร์หรือวิทยาศาสตร์"]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร"]'::jsonb,
-    '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4640"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
-where p.code = 'kmitl-science-cs-science-talent-1-2'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 2.75, '{"วุฒิไทย-กำลังศึกษา":"อย่างน้อย 4 ภาคการศึกษา","วุฒิไทย-สำเร็จแล้ว":"6 ภาคการศึกษา","Grade 12 / Year 13 / GED":"ประกาศไม่กำหนดผลการเรียน"}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์","ต้องเป็นบุตรบุคลากร สจล."]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
-    '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร","สำเนาทะเบียนบ้านของผู้สมัคร","สำเนาบัตรข้าราชการหรือบัตรพนักงานของผู้ปกครอง"]'::jsonb,
-    '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4640"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
-where p.code = 'kmitl-science-cs-staff-child-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 2.75, '{"วุฒิไทย-กำลังศึกษา":"อย่างน้อย 5 ภาคการศึกษา","วุฒิไทย-สำเร็จแล้ว":"6 ภาคการศึกษา","Grade 12 / Year 13 / GED":"ประกาศไม่กำหนดผลการเรียน"}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์","ต้องเป็นบุตรบุคลากร สจล."]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
-    '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร","สำเนาทะเบียนบ้านของผู้สมัคร","สำเนาบัตรข้าราชการหรือบัตรพนักงานของผู้ปกครอง"]'::jsonb,
-    '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4640"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
-where p.code = 'kmitl-science-cs-staff-child-1-2'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, null, '{"วุฒิไทย-กำลังศึกษา":"อย่างน้อย 5 ภาคการศึกษา","วุฒิไทย-สำเร็จแล้ว":"6 ภาคการศึกษา","Grade 12 / Year 13 / GED":"ประกาศไม่กำหนดผลการเรียน"}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)","ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ สจล."]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
-    '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร","เกียรติบัตรผ่านการอบรมโครงการนักพัฒนามืออาชีพ"]'::jsonb,
-    '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4640"}'::jsonb, 'เฉพาะผู้ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ สจล.; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
-where p.code = 'kmitl-science-cs-professional-developer-1-2'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
-from public.admission_projects p
-where p.code = 'kmitl-it-ability-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
-from public.admission_projects p
-where p.code = 'kmitl-it-ability-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
-from public.admission_projects p
-where p.code = 'kmitl-academic-it-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
-from public.admission_projects p
-where p.code = 'kmitl-academic-it-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
-from public.admission_projects p
-where p.code = 'kmitl-english-it-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
-from public.admission_projects p
-where p.code = 'kmitl-english-it-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-08-03', '2026-08-31', '3–31 ส.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-09-08', '2026-09-08', '8 ก.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2026-09-19', '2026-09-19', '19 ก.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ผ่านการคัดเลือก', '2026-09-22', '2026-09-22', '22 ก.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ MU-TCAS', '2026-11-11', '2026-11-12', '11 พ.ย. เวลา 8.00 น.–12 พ.ย. 2569 ไม่เกิน 12.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ยืนยันสิทธิ์ MU-TCAS', '2026-11-24', '2026-11-24', '24 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS70', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สละสิทธิ์ TCAS70', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570 เวลา 8.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่าธรรมเนียมการศึกษา', '2027-03-20', '2027-03-22', '20–22 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-08-17', '2026-09-10', '17 ส.ค.–10 ก.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-10-29', '2026-10-29', '29 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ทดสอบระบบออนไลน์ (ถ้ามี)', '2026-10-31', '2026-10-31', '31 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2026-11-01', '2026-11-01', '1 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ผ่านการคัดเลือก', '2026-11-11', '2026-11-11', '11 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ MU-TCAS', '2026-11-11', '2026-11-12', '11 พ.ย. เวลา 8.00 น.–12 พ.ย. 2569 ไม่เกิน 12.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ช่วงติดต่อกลุ่มสำรอง', '2026-11-12', '2026-11-13', '12 พ.ย. เวลา 12.01 น.–13 พ.ย. 2569 เวลา 16.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ยืนยันสิทธิ์ MU-TCAS', '2026-11-24', '2026-11-24', '24 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS70', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สละสิทธิ์ TCAS70', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570 เวลา 8.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่าธรรมเนียมการศึกษา', '2027-03-20', '2027-03-22', '20–22 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-12-15', '2027-01-10', '15 ธ.ค. 2569–10 ม.ค. 2570 (เส้นตายเฉพาะคณะ ICT)', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2027-02-04', '2027-02-04', '4 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2027-02-05', '2027-02-05', '5 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ผ่านการคัดเลือก', '2027-03-06', '2027-03-06', '6 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ MU-TCAS', '2027-03-07', '2027-03-07', '7 มี.ค. 2570 เวลา 8.00–12.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ช่วงติดต่อกลุ่มสำรอง', '2027-03-07', '2027-03-07', '7 มี.ค. 2570 เวลา 12.01–14.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ยืนยันสิทธิ์ MU-TCAS', '2027-03-08', '2027-03-08', '8 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS70', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สละสิทธิ์ TCAS70', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570 เวลา 8.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่าธรรมเนียมการศึกษา', '2027-03-20', '2027-03-22', '20–22 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-08-17', '2026-09-28', '17 ส.ค.–28 ก.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สอบคัดเลือก', '2026-10-12', '2026-10-12', '12 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์/ทดสอบทักษะ', '2026-10-16', '2026-10-16', '16 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลการคัดเลือก', '2026-10-19', '2026-10-19', '19 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันเลือกสาขาในระบบ KMUTT', '2027-02-11', '2027-02-11', '11 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศอันดับสำรอง', '2027-02-12', '2027-02-12', '12 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่าสมัคร/ค่าสอบคัดเลือก 350 บาท', '2027-02-15', '2027-02-19', '15–19 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-16', '2027-03-16', '16 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่ายืนยันสิทธิ์เข้าศึกษา', '2027-03-16', '2027-04-01', '16 มี.ค.–1 เม.ย. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ตรวจสอบรหัสนักศึกษา', '2027-04-12', '2027-04-12', '12 เม.ย. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ส่งสัญญายืนยันการเข้าศึกษา', '2027-04-12', '2027-04-30', '12–30 เม.ย. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-12-09', '2027-01-18', '9 ธ.ค. 2569–18 ม.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สอบคัดเลือก', '2027-02-01', '2027-02-01', '1 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์/ทดสอบทักษะ', '2027-02-06', '2027-02-06', '6 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลการคัดเลือก', '2027-02-08', '2027-02-08', '8 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันเลือกสาขาในระบบ KMUTT', '2027-02-11', '2027-02-11', '11 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศอันดับสำรอง', '2027-02-12', '2027-02-12', '12 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่าสมัคร/ค่าสอบคัดเลือก 350 บาท', '2027-02-15', '2027-02-19', '15–19 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-16', '2027-03-16', '16 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่ายืนยันสิทธิ์เข้าศึกษา', '2027-03-16', '2027-04-01', '16 มี.ค.–1 เม.ย. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ตรวจสอบรหัสนักศึกษา', '2027-04-12', '2027-04-12', '12 เม.ย. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ส่งสัญญายืนยันการเข้าศึกษา', '2027-04-12', '2027-04-30', '12–30 เม.ย. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-08-17', '2026-09-10', '17 ส.ค.–10 ก.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-10-29', '2026-10-29', '29 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ทดสอบระบบออนไลน์ (ถ้ามี)', '2026-10-31', '2026-10-31', '31 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2026-11-01', '2026-11-01', '1 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ผ่านการคัดเลือก', '2026-11-11', '2026-11-11', '11 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ MU-TCAS', '2026-11-11', '2026-11-12', '11 พ.ย. เวลา 8.00 น.–12 พ.ย. 2569 ไม่เกิน 12.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ช่วงติดต่อกลุ่มสำรอง', '2026-11-12', '2026-11-13', '12 พ.ย. เวลา 12.01 น.–13 พ.ย. 2569 เวลา 16.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ยืนยันสิทธิ์ MU-TCAS', '2026-11-24', '2026-11-24', '24 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS70', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สละสิทธิ์ TCAS70', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570 เวลา 8.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ชำระค่าธรรมเนียมการศึกษา', '2027-03-20', '2027-03-22', '20–22 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัครและชำระเงิน', '2026-08-24', '2027-02-19', '24 ส.ค. 2569–19 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้ผ่านการคัดเลือกแบบรายวัน', '2026-08-25', '2027-02-22', 'เวลา 15.00 น. ของวันทำการถัดจากการชำระเงิน/ส่ง Portfolio; วันหยุดประกาศวันทำการถัดไป', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ส่งเอกสารสำหรับผู้ผ่านการคัดเลือก', '2026-09-02', '2027-03-05', '2 ก.ย. 2569–5 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันเข้าศึกษากับวิทยาเขต', '2026-08-25', '2027-03-05', '25 ส.ค. 2569–5 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ TCAS70', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์รายงานตัว', '2027-03-16', '2027-03-16', '16 มี.ค. 2570 เวลา 10.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร OSP', '2026-07-15', '2026-09-15', '15 ก.ค.–15 ก.ย. 2569 (ไม่มีค่าใช้จ่าย)', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์สอบ', '2026-09-24', '2026-09-24', '24 ก.ย. 2569 หลังเที่ยง', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบข้อเขียนศูนย์ภูมิภาค', '2026-10-03', '2026-10-03', '3 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบข้อเขียนศูนย์รังสิต', '2026-10-10', '2026-10-10', '10 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลข้อเขียน', '2026-10-20', '2026-10-20', '20 ต.ค. 2569 หลังเที่ยง', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สัมภาษณ์ผู้มีสิทธิ์รับทุน', '2026-10-24', '2026-10-24', '24 ต.ค. 2569 เวลา 8.30–12.00 น.', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
 
 commit;

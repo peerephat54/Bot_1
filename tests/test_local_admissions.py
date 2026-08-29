@@ -15,7 +15,12 @@ class LocalUpdateTests(unittest.TestCase):
     def test_allowlist_only_and_remote_precedence(self):
         original = deepcopy(DATA)
         rows = local_candidates(DATA)
-        self.assertEqual(len(rows), 6)
+        expected_rows = sum(
+            1
+            for link in DATA['project_programs']
+            if link['project_code'] in DATA['runtime_local_project_codes']
+        )
+        self.assertEqual(len(rows), expected_rows)
         self.assertEqual({r['project']['code'] for r in rows}, set(DATA['runtime_local_project_codes']))
         self.assertEqual(local_candidates(DATA, DATA['runtime_local_project_codes']), [])
         rows[0]['project']['selected_criteria']['min_gpax'] = 0
@@ -28,7 +33,10 @@ class LocalUpdateTests(unittest.TestCase):
             self.assertTrue(validate(data)[0])
 
     def test_tu_thresholds_dates_and_shared_slots(self):
-        rows = local_candidates(DATA)
+        rows = [
+            row for row in local_candidates(DATA)
+            if row['project']['university_short_name'] == 'TU'
+        ]
         for row in rows:
             p = row['project']
             source = p['selected_criteria']
@@ -43,6 +51,49 @@ class LocalUpdateTests(unittest.TestCase):
         current = [e for e in entries if e['kind'] == 'current']
         self.assertEqual([e['project']['code'] for e in current], ['tu-direct-software-2570'])
         self.assertEqual(current[0]['assessment']['status'], 'meets')
+
+    def test_ku_and_kmutnb_current_projects_are_locally_available(self):
+        rows = local_candidates(DATA)
+        by_pair = {
+            (row['project']['code'], row['program']['code']): row
+            for row in rows
+        }
+        self.assertEqual(
+            by_pair[
+                ('ku-bangkhen-white-elephant-1-1', 'ku-bangkhen-computer-science')
+            ]['project']['slots_available'],
+            16,
+        )
+        self.assertEqual(
+            by_pair[
+                ('kmutnb-appsci-portfolio-m6-1',
+                 'kmutnb-science-computer-science-bilingual')
+            ]['project']['selected_criteria']['min_gpax'],
+            3.5,
+        )
+        self.assertEqual(
+            by_pair[
+                ('kmutnb-fitm-portfolio-1',
+                 'kmutnb-fitm-information-technology')
+            ]['project']['slots_available'],
+            15,
+        )
+        for program_code in (
+            'ku-bangkhen-computer-science',
+            'ku-bangkhen-computer-engineering',
+            'ku-bangkhen-software-knowledge-engineering',
+            'kmutnb-fitm-information-technology',
+            'kmutnb-fitm-information-network-engineering',
+        ):
+            previews = next(
+                program for program in DATA['programs']
+                if program['code'] == program_code
+            ).get('admission_previews') or []
+            self.assertFalse(any(
+                preview.get('reference_academic_year') == 2570
+                and 'ยังไม่พบ' in preview.get('note', '')
+                for preview in previews
+            ))
 
     def test_calendars_do_not_leak_campus_or_international_scope(self):
         bang = next(p for p in PROGRAMS.values() if p['university_short_name']=='KU' and p['campus_code']=='bangkhen')
