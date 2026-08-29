@@ -9887,7 +9887,10 @@
         "minimum_primary_contribution_percent": 40,
         "ai_usage_disclosure_required": true
       },
-      "accepted_achievements": [],
+      "accepted_achievements": [
+        "ผลงานเขียนโปรแกรมที่เข้าประกวด",
+        "ผลงานเขียนโปรแกรมที่ได้รับรางวัล"
+      ],
       "required_documents": [
         "ผลการเรียน 4 ภาคเรียน",
         "หลักฐานผลงาน/รางวัล",
@@ -9925,7 +9928,12 @@
       ],
       "portfolio_requirements": "ประวัติผลงานและประกาศนียบัตรด้านคอมพิวเตอร์ เช่น โปรแกรม โครงงานนวัตกรรม ซอฟต์แวร์ หรือฮาร์ดแวร์",
       "portfolio_details": {},
-      "accepted_achievements": [],
+      "accepted_achievements": [
+        "โปรแกรมหรือซอฟต์แวร์",
+        "โครงงานนวัตกรรมด้านคอมพิวเตอร์",
+        "ผลงานฮาร์ดแวร์",
+        "ผลงานจากการแข่งขันระดับประเทศหรือนานาชาติ"
+      ],
       "required_documents": [
         "ผลการเรียน",
         "Portfolio",

@@ -601,14 +601,98 @@ def format_timeline_summary(events, max_events=4):
     return format_timeline(selected[:max_events])
 
 
+HUMAN_LABELS = {
+    "name": "หัวข้อ",
+    "weight_percent": "สัดส่วน",
+    "semesters": "จำนวนภาคเรียน",
+    "studying_semesters": "ผู้กำลังเรียน: จำนวนภาคเรียน",
+    "graduated_semesters": "ผู้จบแล้ว: จำนวนภาคเรียน",
+    "graduated": "ผู้จบแล้ว",
+    "minimum_subject_credits": "หน่วยกิตขั้นต่ำรายกลุ่มวิชา",
+    "interview_required": "มีสอบสัมภาษณ์",
+    "written_exam_required": "มีสอบข้อเขียน",
+    "program_code_in_announcement": "รหัสในประกาศ",
+    "selection_limit_within_project": "เลือกได้สูงสุด",
+    "advanced_placement_courses": "รายวิชาโครงการเรียนล่วงหน้า",
+    "choose_courses": "จำนวนวิชาที่ต้องเลือก",
+    "minimum_grade": "เกรดขั้นต่ำ",
+    "minimum_average_grade": "เกรดเฉลี่ยขั้นต่ำ",
+    "interview_language": "ภาษาสัมภาษณ์",
+    "interview_breakdown": "สัดส่วนสัมภาษณ์",
+    "qualification_paths": "ทางเลือกคุณสมบัติ",
+    "path": "ทางเลือก",
+    "sat_math_min": "SAT Math ขั้นต่ำ",
+    "sat_total_min": "SAT รวมขั้นต่ำ",
+    "english_score_one_of": "คะแนนภาษาอังกฤษอย่างใดอย่างหนึ่ง",
+    "subjects": "รายวิชา",
+    "minimum_each": "ขั้นต่ำต่อวิชา",
+    "course_01204111_selection_only": "ใช้คัดเลือกเฉพาะรหัส 01204111",
+    "tuition_first_and_later_terms": "ค่าเทอมภาคแรกและภาคถัดไป",
+    "tuition_first_term": "ค่าเทอมภาคแรก",
+    "tuition_later_terms": "ค่าเทอมภาคถัดไป",
+    "video_max_minutes": "ความยาววิดีโอสูงสุด (นาที)",
+    "max_featured_awarded_projects": "จำนวนผลงานรางวัลที่นำเสนอได้สูงสุด",
+    "minimum_primary_contribution_percent": "สัดส่วนผลงานที่ทำหลักขั้นต่ำ",
+    "ai_usage_disclosure_required": "ต้องระบุการใช้ AI",
+}
+
+
+def human_label(key):
+    """Turn dataset keys into labels that are readable in Discord cards."""
+    key = str(key)
+    if key in HUMAN_LABELS:
+        return HUMAN_LABELS[key]
+    return key.replace("_", " ").strip().capitalize()
+
+
+def format_human_inline(value):
+    """Render nested JSON values without exposing Python/JSON notation."""
+    if value in (None, "", [], {}):
+        return ""
+    if isinstance(value, bool):
+        return "ใช่" if value else "ไม่"
+    if isinstance(value, dict):
+        simple_pairs = all(
+            not isinstance(item, (dict, list, tuple))
+            and str(key) not in HUMAN_LABELS
+            and "_" not in str(key)
+            for key, item in value.items()
+        )
+        if simple_pairs:
+            return "; ".join(
+                f"{key} {format_human_inline(item)}"
+                for key, item in value.items()
+                if format_human_inline(item)
+            )
+        parts = []
+        for key, item in value.items():
+            detail = format_human_inline(item)
+            if detail:
+                parts.append(f"{human_label(key)}: {detail}")
+        return "; ".join(parts)
+    if isinstance(value, (list, tuple)):
+        return "; ".join(
+            format_human_inline(item) for item in value if format_human_inline(item)
+        )
+    return str(value)
+
+
 def format_bullets(values, limit=600):
     if not values:
         return None
     if isinstance(values, dict):
-        values = [f"{key}: {value}" for key, value in values.items()]
-    elif not isinstance(values, list):
+        values = [
+            f"{human_label(key)}: {format_human_inline(item)}"
+            for key, item in values.items()
+            if format_human_inline(item)
+        ]
+    elif not isinstance(values, (list, tuple)):
         values = [values]
-    text = "\n".join(f"• {item}" for item in values if item)
+    text = "\n".join(
+        f"• {format_human_inline(item)}"
+        for item in values
+        if format_human_inline(item)
+    )
     return shorten(text, limit) if text else None
 
 
@@ -620,19 +704,34 @@ def format_key_values(value, limit=600):
 
     lines = []
     for key, item in value.items():
-        if isinstance(item, dict):
-            detail = ", ".join(
-                f"{child_key}: {child_value}"
-                for child_key, child_value in item.items()
-                if child_value not in (None, "", [], {})
-            )
-        elif isinstance(item, list):
-            detail = "; ".join(str(child) for child in item if child)
-        else:
-            detail = str(item)
+        detail = format_human_inline(item)
         if detail:
-            lines.append(f"• {key}: {detail}")
+            lines.append(f"• {human_label(key)}: {detail}")
     return shorten("\n".join(lines), limit) if lines else None
+
+
+def format_selection_method(method):
+    """Make weighted selection methods read like normal Thai text."""
+    if not isinstance(method, dict):
+        return format_human_inline(method)
+    name = method.get("name") or method.get("method")
+    weight = method.get("weight_percent")
+    if name and weight is not None:
+        weight_text = str(weight)
+        if not weight_text.endswith("%"):
+            weight_text += "%"
+        return f"{name} — {weight_text}"
+    return format_human_inline(method)
+
+
+def format_selection_methods(methods, limit=700):
+    if not methods:
+        return None
+    if not isinstance(methods, (list, tuple)):
+        methods = [methods]
+    return format_bullets(
+        [format_selection_method(method) for method in methods], limit
+    )
 
 
 def format_money(value):
@@ -1115,15 +1214,17 @@ def project_choice_description(project):
     parts.append(f"รับ {slots} คน" if slots is not None else "จำนวนรับดูหมายเหตุ")
     methods = criteria.get("selection_methods") or []
     if methods:
+        method_texts = [format_selection_method(method) for method in methods]
         highlighted_method = next(
             (
-                method
-                for method in methods
-                if "portfolio" in str(method).lower()
+                method_text
+                for method_text in method_texts
+                if "portfolio" in method_text.lower()
+                or "ผลงาน" in method_text
             ),
-            methods[0],
+            method_texts[0],
         )
-        parts.append(str(highlighted_method))
+        parts.append(highlighted_method)
     return shorten(" • ".join(parts), 100)
 
 
@@ -1266,7 +1367,7 @@ def build_project_criteria_embed(program, project):
             inline=False,
         )
 
-    methods = format_bullets(criteria.get("selection_methods"), 700)
+    methods = format_selection_methods(criteria.get("selection_methods"), 700)
     if methods:
         embed.add_field(
             name="วิธีและสัดส่วนคัดเลือก", value=methods, inline=False
@@ -1277,7 +1378,7 @@ def build_project_criteria_embed(program, project):
     )
     if additional:
         embed.add_field(
-            name="⚠️ เงื่อนไขเพิ่มเติม", value=additional, inline=False
+            name="เงื่อนไขเพิ่มเติม", value=additional, inline=False
         )
 
     embed.set_footer(
@@ -1313,12 +1414,19 @@ def build_project_portfolio_embed(program, project):
             inline=False,
         )
 
-    achievements = format_bullets(
-        criteria.get("accepted_achievements"), 900
-    )
+    achievements = format_bullets(criteria.get("accepted_achievements"), 900)
     if achievements:
         embed.add_field(
-            name="ผลงานที่ใช้ยื่นได้", value=achievements, inline=False
+            name="ผลงานที่ส่งได้ในรอบนี้", value=achievements, inline=False
+        )
+    elif portfolio_requirements:
+        embed.add_field(
+            name="ผลงานที่ส่งได้ในรอบนี้",
+            value=(
+                "ประกาศที่ตรวจยังไม่ได้แจกแจงประเภทผลงานเป็นรายการเพิ่มเติม\n"
+                "ให้ยึดรูปแบบ Portfolio ด้านบนและรายละเอียดในประกาศต้นทาง"
+            ),
+            inline=False,
         )
 
     documents = format_bullets(criteria.get("required_documents"), 900)
@@ -1336,7 +1444,7 @@ def build_project_portfolio_embed(program, project):
         )
     ):
         embed.add_field(
-            name="ℹ️ ข้อมูลในประกาศ",
+            name="ข้อมูลในประกาศ",
             value="ประกาศไม่ได้แจกแจง Portfolio หรือเอกสารเพิ่มเติม",
             inline=False,
         )

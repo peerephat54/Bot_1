@@ -8,6 +8,10 @@ LABELS = {
     "language": "ภาษา", "video_max_minutes": "ความยาววิดีโอสูงสุด (นาที)",
     "studying_semesters": "กำลังเรียน: จำนวนภาคเรียน", "graduated_semesters": "จบแล้ว: จำนวนภาคเรียน",
     "semesters": "จำนวนภาคเรียน", "graduated": "ผู้จบแล้ว",
+    "name": "หัวข้อ", "method": "วิธีคัดเลือก", "weight_percent": "สัดส่วน",
+    "minimum_subject_credits": "หน่วยกิตขั้นต่ำรายกลุ่มวิชา",
+    "interview_required": "มีสอบสัมภาษณ์", "written_exam_required": "มีสอบข้อเขียน",
+    "program_code_in_announcement": "รหัสในประกาศ", "selection_limit_within_project": "เลือกได้สูงสุด",
 }
 
 
@@ -89,9 +93,9 @@ def application_question_fields(project=None, preview=None, detail_hint="ปุ�
         portfolio += "\n**รูปแบบไฟล์ / จำนวนหน้า:** " + excerpt(criteria["portfolio_details"], 230)
     achievements = criteria.get("accepted_achievements") or preview.get("accepted_achievements")
     if achievements:
-        portfolio += "\n**ผลงานที่ใช้ยื่นได้:** " + excerpt(achievements, 220)
+        portfolio += "\n**ผลงานที่ส่งได้ในรอบนี้:** " + excerpt(achievements, 220)
     elif criteria.get("portfolio_requirements") or preview.get("portfolio_summary"):
-        portfolio += "\n**ประเภทผลงาน:** ยึดเงื่อนไขพอร์ตด้านบนและรายการในประกาศ"
+        portfolio += "\n**ผลงานที่ส่งได้ในรอบนี้:** ประกาศที่ตรวจยังไม่ได้แจกแจงประเภทผลงานเพิ่มเติม ให้ยึดเงื่อนไขพอร์ตด้านบนและรายการในประกาศ"
     else:
         portfolio += "\nยังสรุปไม่ได้ว่าต้องมีผลงานหรือรางวัลระดับใด"
     fields.append(("พอร์ตต้องมีอะไรบ้าง?", portfolio))

@@ -6,6 +6,24 @@ from test_grade_screening import CANDIDATES, app, card_text, results
 
 
 class ApplicationCardTests(unittest.TestCase):
+    def test_structured_criteria_are_written_as_readable_text(self):
+        methods = app.format_selection_methods([
+            {"name": "ประวัติผลงานและประกาศนียบัตร", "weight_percent": 50},
+            {"name": "สัมภาษณ์", "weight_percent": 50},
+        ])
+        additional = app.format_bullets({
+            "minimum_subject_credits": {
+                "วิทยาศาสตร์": 22,
+                "คณิตศาสตร์": 12,
+                "ภาษาต่างประเทศ": 9,
+            },
+            "interview_required": True,
+        })
+        self.assertIn("ประวัติผลงานและประกาศนียบัตร — 50%", methods)
+        self.assertIn("วิทยาศาสตร์ 22", additional)
+        self.assertIn("มีสอบสัมภาษณ์: ใช่", additional)
+        self.assertNotIn("{", methods + additional)
+
     def test_summary_answers_common_application_questions(self):
         candidate = next(c for c in CANDIDATES if c["project"]["code"] == "muict-ict-portfolio")
         card = app.build_project_embed(candidate["program"], candidate["project"])
