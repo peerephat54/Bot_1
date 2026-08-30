@@ -53,7 +53,7 @@
       "title": "ปฏิทิน มก. • บางเขน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-08-29",
+      "source_checked_at": "2026-08-30",
       "scope_note": "ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์",
       "rounds": [
         {
@@ -198,9 +198,68 @@
           "interview_on": "2027-02-13"
         }
       ]
+    },
+    {
+      "code": "ku-kamphaeng-saen-portfolio-2570",
+      "university_short_name": "KU",
+      "campus_codes": [
+        "kamphaeng-saen"
+      ],
+      "title": "ปฏิทิน มก. • กำแพงแสน",
+      "academic_year": 2570,
+      "source_url": "https://admission.ku.ac.th/",
+      "source_checked_at": "2026-08-30",
+      "scope_note": "ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา",
+      "rounds": [
+        {
+          "label": "Portfolio 1.1",
+          "application_start_on": "2026-10-01",
+          "application_end_on": "2026-11-05",
+          "result_announcement_on": null,
+          "date_status": "confirmed",
+          "interview_eligible_on": "2026-11-16",
+          "interview_on": "2026-11-20",
+          "interview_passed_on": "2026-11-24"
+        },
+        {
+          "label": "Portfolio 1.2",
+          "application_start_on": "2026-12-01",
+          "application_end_on": "2027-02-10",
+          "result_announcement_on": null,
+          "date_status": "confirmed",
+          "interview_eligible_on": "2027-02-22",
+          "interview_on": "2027-02-25",
+          "interview_end_on": "2027-02-26",
+          "interview_passed_on": "2027-03-02"
+        }
+      ]
+    },
+    {
+      "code": "ku-sriracha-portfolio-2570",
+      "university_short_name": "KU",
+      "campus_codes": [
+        "sriracha"
+      ],
+      "title": "ปฏิทิน มก. • ศรีราชา",
+      "academic_year": 2570,
+      "source_url": "https://admission.ku.ac.th/",
+      "source_checked_at": "2026-08-30",
+      "scope_note": "ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ",
+      "rounds": [
+        {
+          "label": "Portfolio 1.1",
+          "application_start_on": "2026-08-25",
+          "application_end_on": "2026-11-15",
+          "result_announcement_on": null,
+          "date_status": "confirmed",
+          "interview_eligible_on": "2026-12-04",
+          "interview_on": "2026-12-13",
+          "interview_passed_on": "2026-12-18"
+        }
+      ]
     }
   ],
-  "checked_at": "2026-08-29T12:00:00+07:00",
+  "checked_at": "2026-08-30T12:00:00+07:00",
   "runtime_local_project_codes": [
     "tu-direct-cpe-2570",
     "tu-direct-software-2570",
@@ -244,7 +303,20 @@
     "swu-engineering-logistics-bilingual-good-student-1-2",
     "swu-engineering-environmental-good-student-1-2",
     "swu-engineering-petroleum-renewable-special-talent-1-2",
-    "swu-engineering-cybersecurity-special-talent-1-2"
+    "swu-engineering-cybersecurity-special-talent-1-2",
+    "ku-bangkhen-sports-1-1",
+    "ku-bangkhen-psw-1-1",
+    "ku-bangkhen-olympic-1-1",
+    "ku-bangkhen-olympic-1-2",
+    "ku-kps-advanced-placement-1-1",
+    "ku-kps-portfolio-1-1",
+    "ku-kps-portfolio-1-2",
+    "ku-sriracha-morals-1-1",
+    "ku-sriracha-youth-leader-1-1",
+    "ku-sriracha-expansion-1-1",
+    "ku-sriracha-expansion-1-2",
+    "ku-bangkhen-culture-soft-power-1-1",
+    "ku-bangkhen-science-network-1-1"
   ],
   "status_policy": {
     "official": "ประกาศอยู่บนเว็บไซต์ทางการและอนุญาตให้บอทแสดงผล",
@@ -2014,6 +2086,141 @@
       "official_program_url": "https://admission.swu.ac.th/admissions2/news_content.php?nid=1200",
       "data_status": "official",
       "campus_code": "ongkharak"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-computer-science-special",
+      "faculty_name": "คณะวิทยาศาสตร์ วิทยาเขตบางเขน",
+      "major_name": "วิทยาการคอมพิวเตอร์ (ภาคพิเศษ)",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admission.ku.ac.th/majors/project/1/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "bangkhen"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-computer-engineering",
+      "faculty_name": "คณะวิศวกรรมศาสตร์ วิทยาเขตกำแพงแสน",
+      "major_name": "วิศวกรรมคอมพิวเตอร์",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admission.ku.ac.th/majors/project/10/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "kamphaeng-saen"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-information-technology",
+      "faculty_name": "คณะศิลปศาสตร์และวิทยาศาสตร์ วิทยาเขตกำแพงแสน",
+      "major_name": "เทคโนโลยีสารสนเทศ",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admission.ku.ac.th/majors/project/10/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "kamphaeng-saen"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-information-technology-special",
+      "faculty_name": "คณะศิลปศาสตร์และวิทยาศาสตร์ วิทยาเขตกำแพงแสน",
+      "major_name": "เทคโนโลยีสารสนเทศ (ภาคพิเศษ)",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admission.ku.ac.th/majors/project/10/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "kamphaeng-saen"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-computer-science",
+      "faculty_name": "คณะศิลปศาสตร์และวิทยาศาสตร์ วิทยาเขตกำแพงแสน",
+      "major_name": "วิทยาการคอมพิวเตอร์",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admission.ku.ac.th/majors/project/10/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "kamphaeng-saen"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-computer-science-special",
+      "faculty_name": "คณะศิลปศาสตร์และวิทยาศาสตร์ วิทยาเขตกำแพงแสน",
+      "major_name": "วิทยาการคอมพิวเตอร์ (ภาคพิเศษ)",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admission.ku.ac.th/majors/project/10/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "kamphaeng-saen"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-computer-engineering-information-science",
+      "faculty_name": "คณะวิศวกรรมศาสตร์ วิทยาเขตศรีราชา",
+      "major_name": "วิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์",
+      "program_type": "วิศวกรรมศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admissions.src.ku.ac.th/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "sriracha"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-computer-science",
+      "faculty_name": "คณะวิทยาศาสตร์ วิทยาเขตศรีราชา",
+      "major_name": "วิทยาการคอมพิวเตอร์",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admissions.src.ku.ac.th/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "sriracha"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-computer-science-special",
+      "faculty_name": "คณะวิทยาศาสตร์ วิทยาเขตศรีราชา",
+      "major_name": "วิทยาการคอมพิวเตอร์ (ภาคพิเศษ)",
+      "program_type": "วิทยาศาสตรบัณฑิต",
+      "language": "ไทย",
+      "curriculum_credits": null,
+      "curriculum_year": null,
+      "duration_years": 4,
+      "official_program_url": "https://admissions.src.ku.ac.th/",
+      "data_status": "official",
+      "admission_previews": [],
+      "campus_code": "sriracha"
     }
   ],
   "projects": [
@@ -3805,7 +4012,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/1/",
       "source_title": "เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {
@@ -3827,7 +4034,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/2/",
       "source_title": "เกณฑ์โครงการเรียนล่วงหน้า KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {
@@ -3849,7 +4056,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/3/",
       "source_title": "เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.1 KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {
@@ -3871,7 +4078,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/103/",
       "source_title": "เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.2 KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-29T12:00:00+07:00",
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {
@@ -4589,6 +4796,292 @@
       "source_published_at": "2026-08-07",
       "source_checked_at": "2026-08-29T12:00:00+07:00",
       "data_notes": "ประกาศทางการ มศว. TCAS70 หน้า 178; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-sports-1-1",
+      "group_code": "ku-bangkhen-sports",
+      "name": "โครงการรับนักกีฬาดีเด่น",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/4/",
+      "source_title": "เกณฑ์โครงการรับนักกีฬาดีเด่น รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-psw-1-1",
+      "group_code": "ku-bangkhen-psw",
+      "name": "โครงการ พสวท. และผู้มีความสามารถพิเศษทางวิทยาศาสตร์",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/8/",
+      "source_title": "เกณฑ์โครงการ พสวท. รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารวม KU-TCAS70 ระบุสาขาและเงื่อนไขหลัก แต่จำนวนรับของวิทยาการคอมพิวเตอร์ เป็นจำนวนรวมกับเงื่อนไขอื่น จึงไม่แสดงเป็นจำนวนรับเฉพาะโครงการนี้"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-olympic-1-1",
+      "group_code": "ku-bangkhen-olympic",
+      "name": "โครงการโอลิมปิกวิชาการ รอบ 1.1",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/9/",
+      "source_title": "เกณฑ์โครงการโอลิมปิกวิชาการ รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-olympic-1-2",
+      "group_code": "ku-bangkhen-olympic",
+      "name": "โครงการโอลิมปิกวิชาการ รอบ 1.2",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/109/",
+      "source_title": "เกณฑ์โครงการโอลิมปิกวิชาการ รอบ 1.2 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารวม KU-TCAS70 ระบุสาขาและจำนวนรับแล้ว; เกณฑ์ของบางสาขา ต้องตรวจเอกสาร/ประกาศย่อยก่อนสมัคร"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-advanced-placement-1-1",
+      "group_code": "ku-kps-advanced-placement",
+      "name": "โครงการเรียนล่วงหน้า วิทยาเขตกำแพงแสน",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/2/",
+      "source_title": "เกณฑ์โครงการเรียนล่วงหน้า วิทยาเขตกำแพงแสน KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-portfolio-1-1",
+      "group_code": "ku-kps-portfolio",
+      "name": "โครงการ Portfolio วิทยาเขตกำแพงแสน",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.kps.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/10/",
+      "source_title": "เกณฑ์โครงการ Portfolio วิทยาเขตกำแพงแสน รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-kps-portfolio-1-2",
+      "group_code": "ku-kps-portfolio",
+      "name": "โครงการ Portfolio วิทยาเขตกำแพงแสน",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.kps.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/110/",
+      "source_title": "เกณฑ์โครงการ Portfolio วิทยาเขตกำแพงแสน รอบ 1.2 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-morals-1-1",
+      "group_code": "ku-sriracha-morals",
+      "name": "โครงการส่งเสริมคุณธรรมและจริยธรรม",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admissions.src.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/5/",
+      "source_title": "เกณฑ์โครงการส่งเสริมคุณธรรมและจริยธรรม วิทยาเขตศรีราชา KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารวม KU-TCAS70 ยืนยันชื่อสาขาและจำนวนรับ; รายละเอียดเกณฑ์รายสาขา อยู่ในระบบรับสมัครวิทยาเขตศรีราชาและต้องตรวจซ้ำก่อนสมัคร"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-youth-leader-1-1",
+      "group_code": "ku-sriracha-youth-leader",
+      "name": "โครงการผู้นำเยาวชน",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admissions.src.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/6/",
+      "source_title": "เกณฑ์โครงการผู้นำเยาวชน วิทยาเขตศรีราชา KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารวม KU-TCAS70 ยืนยันชื่อสาขาและจำนวนรับ; รายละเอียดเกณฑ์รายสาขา อยู่ในระบบรับสมัครวิทยาเขตศรีราชาและต้องตรวจซ้ำก่อนสมัคร"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-expansion-1-1",
+      "group_code": "ku-sriracha-expansion",
+      "name": "โครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admissions.src.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/107/",
+      "source_title": "เกณฑ์โครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-sriracha-expansion-1-2",
+      "group_code": "ku-sriracha-expansion",
+      "name": "โครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.2",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admissions.src.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/207/",
+      "source_title": "เกณฑ์โครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา รอบ 1.2 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารวม KU-TCAS70 ระบุสาขาแล้ว แต่ปฏิทินรอบ 1.2 ของวิทยาเขตศรีราชา ยังรอประกาศ จึงยังไม่แสดงวันสมัครเป็นวันที่ยืนยัน"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-culture-soft-power-1-1",
+      "group_code": "ku-bangkhen-culture-soft-power",
+      "name": "โควตาศิลปวัฒนธรรมและซอฟต์พาวเวอร์",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/18/",
+      "source_title": "เกณฑ์โควตาศิลปวัฒนธรรมและซอฟต์พาวเวอร์ รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารวม KU-TCAS70 ระบุวิศวกรรมคอมพิวเตอร์และจำนวนรับ 2 คน; รายละเอียดการทดสอบและสัมภาษณ์ยังควรตรวจประกาศต้นทางก่อนสมัคร"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "ku-bangkhen-science-network-1-1",
+      "group_code": "ku-bangkhen-science-network",
+      "name": "โครงการพัฒนาเครือข่ายองค์กรแห่งการเรียนรู้ด้านวิทยาศาสตร์สู่การต่อยอดระดับสากล",
+      "academic_year": 2570,
+      "tcas_round": 1,
+      "round_label": "1 Portfolio",
+      "round_variant": "1.1",
+      "application_type": "Portfolio",
+      "publication_status": "official",
+      "is_visible": true,
+      "selection_order_limit": null,
+      "application_fee": null,
+      "tuition_fee_per_semester": null,
+      "application_url": "https://admission.ku.ac.th/",
+      "source_url": "https://admission.ku.ac.th/majors/project/32/",
+      "source_title": "เกณฑ์โครงการพัฒนาเครือข่ายองค์กรแห่งการเรียนรู้ด้านวิทยาศาสตร์ รอบ 1.1 KU-TCAS70",
+      "source_published_at": null,
+      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "data_notes": "หน้ารายโครงการระบุวิทยาการคอมพิวเตอร์ภาคปกติและภาคพิเศษ แต่จำนวนรับเป็นยอดรวม และไม่ได้แจกแจงเกณฑ์เฉพาะสาขาคอมพิวเตอร์ จึงต้องตรวจประกาศต้นทางก่อนสมัคร"
     }
   ],
   "project_programs": [
@@ -5485,6 +5978,174 @@
       "program_code": "swu-engineering-cybersecurity",
       "slots_available": 6,
       "program_notes": "จำนวนรับตามตารางประกาศ มศว. TCAS70 หน้า 12: 6 คน"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "program_code": "ku-bangkhen-computer-science-special",
+      "slots_available": 22,
+      "program_notes": "รับ 22 คน; มีทั้งเส้นทางผู้มีผลงานและผู้ไม่มีผลงานตามเกณฑ์หน้าโครงการ"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "slots_available": 2,
+      "program_notes": "รับ 2 คน; นักกีฬาระดับชาติหรือเยาวชนทีมชาติ"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "slots_available": 1,
+      "program_notes": "รับ 1 คน; นักกีฬาระดับชาติหรือเยาวชนทีมชาติ"
+    },
+    {
+      "project_code": "ku-bangkhen-psw-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "slots_available": null,
+      "program_notes": "จำนวนรับรวมกับเงื่อนไขอื่นตามที่หน้าโครงการระบุ"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "slots_available": 2,
+      "program_notes": "รับ 2 คน; ต้องมีประสบการณ์ค่าย สอวน. อย่างน้อย 2 ค่าย"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "slots_available": 2,
+      "program_notes": "รับ 2 คน; ใช้คุณสมบัติตามเส้นทาง สสวท."
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "slots_available": 10,
+      "program_notes": "รับรวม 10 คน แบ่งเป็น สอวน. 5 คน และ สสวท. 5 คน"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "slots_available": 2,
+      "program_notes": "หน้าโครงการระบุ 2 คน แต่รายละเอียดเกณฑ์รายสาขายังต้องตรวจประกาศย่อยก่อนสมัคร"
+    },
+    {
+      "project_code": "ku-kps-advanced-placement-1-1",
+      "program_code": "ku-kps-computer-engineering",
+      "slots_available": 2,
+      "program_notes": "รับ 2 คน; ผู้เข้าร่วมโครงการเรียนล่วงหน้า และต้องผ่านวิชาตามเกณฑ์กำแพงแสน"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-computer-engineering",
+      "slots_available": 20,
+      "program_notes": "รับ 20 คน; แผนวิทยาศาสตร์-คณิตศาสตร์และมีผลงานคอมพิวเตอร์"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-information-technology",
+      "slots_available": 30,
+      "program_notes": "รับ 30 คน; รับ ม.6 หรือ ปวช. ตามเงื่อนไขสาขา"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-information-technology-special",
+      "slots_available": 70,
+      "program_notes": "รับ 70 คน; รับ ม.6 หรือ ปวช. ตามเงื่อนไขสาขาภาคพิเศษ"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-computer-science",
+      "slots_available": 30,
+      "program_notes": "รับ 30 คน; รับตามแผนการเรียนและคุณสมบัติของสาขา"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-computer-science-special",
+      "slots_available": 40,
+      "program_notes": "รับ 40 คน; รับ ม.6 หรือ ปวช. ตามเงื่อนไขสาขาภาคพิเศษ"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-2",
+      "program_code": "ku-kps-computer-engineering",
+      "slots_available": 1,
+      "program_notes": "รับ 1 คน; แผนวิทยาศาสตร์-คณิตศาสตร์และมีผลงานคอมพิวเตอร์"
+    },
+    {
+      "project_code": "ku-sriracha-morals-1-1",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "slots_available": 1,
+      "program_notes": "รับ 1 คน; รายละเอียดคุณสมบัติรายสาขาให้ตรวจในระบบรับสมัครศรีราชา"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "slots_available": 1,
+      "program_notes": "รับ 1 คน; รายละเอียดคุณสมบัติรายสาขาให้ตรวจในระบบรับสมัครศรีราชา"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "program_code": "ku-sriracha-computer-science-special",
+      "slots_available": 3,
+      "program_notes": "รับ 3 คน; รายละเอียดคุณสมบัติรายสาขาให้ตรวจในระบบรับสมัครศรีราชา"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "program_code": "ku-sriracha-computer-science",
+      "slots_available": 2,
+      "program_notes": "รับ 2 คน; รายละเอียดคุณสมบัติรายสาขาให้ตรวจในระบบรับสมัครศรีราชา"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "slots_available": 20,
+      "program_notes": "รับรวม 20 คน แบ่งตามคุณสมบัติ ม.6 และ ปวช."
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "program_code": "ku-sriracha-computer-science",
+      "slots_available": 10,
+      "program_notes": "รับ 10 คน; ใช้เกณฑ์ Portfolio, GPAX และสัมภาษณ์ตามหน้าโครงการ"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "program_code": "ku-sriracha-computer-science-special",
+      "slots_available": 25,
+      "program_notes": "รับ 25 คน; ใช้เกณฑ์ Portfolio, GPAX และสัมภาษณ์ตามหน้าโครงการ"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-2",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "slots_available": 20,
+      "program_notes": "รับรวม 20 คน แบ่งตามคุณสมบัติ ม.6 และ ปวช.; วันสมัครรอประกาศ"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-2",
+      "program_code": "ku-sriracha-computer-science",
+      "slots_available": 10,
+      "program_notes": "รับ 10 คน; วันสมัครรอประกาศจากวิทยาเขตศรีราชา"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-2",
+      "program_code": "ku-sriracha-computer-science-special",
+      "slots_available": 10,
+      "program_notes": "รับ 10 คน; วันสมัครรอประกาศจากวิทยาเขตศรีราชา"
+    },
+    {
+      "project_code": "ku-bangkhen-culture-soft-power-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "slots_available": 2,
+      "program_notes": "รับ 2 คน; โควตาศิลปวัฒนธรรม/ซอฟต์พาวเวอร์ และต้องตรวจรายละเอียดการทดสอบจากประกาศ"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "slots_available": null,
+      "program_notes": "จำนวนรับรวมกับเงื่อนไขอื่นตามหน้าโครงการ ไม่ใช่จำนวนรับเฉพาะวิทยาการคอมพิวเตอร์"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "program_code": "ku-bangkhen-computer-science-special",
+      "slots_available": null,
+      "program_notes": "จำนวนรับรวมกับเงื่อนไขอื่นตามหน้าโครงการ ไม่ใช่จำนวนรับเฉพาะวิทยาการคอมพิวเตอร์ภาคพิเศษ"
     }
   ],
   "criteria": [
@@ -13135,6 +13796,1174 @@
       },
       "criteria_summary": "GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; คะแนนเฉลี่ยกลุ่มสาระอย่างน้อย 2.50; มีคะแนนภาษาอังกฤษตามประกาศ; ส่ง TCASFolio ไม่เกิน 10 หน้า",
       "official_announcement_url": "https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "ผ่านค่าย สอวน. อย่างน้อย 2 ค่าย ตามสาขา/หลักฐานที่ประกาศกำหนด"
+      ],
+      "portfolio_requirements": "Portfolio ด้านวิชาการหรือกิจกรรม ไม่เกิน 10 หน้า",
+      "portfolio_details": {
+        "max_pages": 10
+      },
+      "accepted_achievements": [
+        "หลักฐานผ่านค่าย สอวน. อย่างน้อย 2 ค่าย",
+        "ผลงานวิชาการหรือกิจกรรม"
+      ],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "หลักฐานค่าย สอวน.",
+        "Portfolio ไม่เกิน 10 หน้า"
+      ],
+      "selection_methods": [
+        "สัมภาษณ์"
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 12
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX 4 ภาคเรียน ≥ 3.00; ผ่านค่าย สอวน. อย่างน้อย 2 ค่าย; ต้องมีคณิตศาสตร์อย่างน้อย 12 หน่วยกิต และสอบสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/9/"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "ผ่านค่าย/การคัดเลือก สสวท. อย่างน้อย 3 ค่าย ตามรายละเอียดหน้าโครงการ"
+      ],
+      "portfolio_requirements": "Portfolio ด้านวิชาการหรือกิจกรรม ไม่เกิน 10 หน้า",
+      "portfolio_details": {
+        "max_pages": 10
+      },
+      "accepted_achievements": [
+        "หลักฐานค่าย/การคัดเลือก สสวท.",
+        "ผลงานวิชาการหรือกิจกรรม"
+      ],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "หลักฐานค่าย สสวท.",
+        "Portfolio ไม่เกิน 10 หน้า"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 50
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 50
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "วิทยาศาสตร์": 22,
+          "คณิตศาสตร์": 12,
+          "ภาษาต่างประเทศ": 9
+        },
+        "ipst_camp_min": 3,
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX 4 ภาคเรียน ≥ 3.00; วิทยาศาสตร์ 22 คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 หน่วยกิต; ผ่านค่าย สสวท. อย่างน้อย 3 ค่าย; Portfolio 50% และสัมภาษณ์ 50%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/9/"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "min_gpax": 2.5,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "เลือกเส้นทาง สอวน. หรือ สสวท. ตามจำนวนที่โครงการแบ่งไว้"
+      ],
+      "portfolio_requirements": "Portfolio ด้านวิชาการหรือกิจกรรม ไม่เกิน 10 หน้า",
+      "portfolio_details": {
+        "max_pages": 10
+      },
+      "accepted_achievements": [
+        "ผ่านค่าย สอวน. อย่างน้อย 2 ค่าย",
+        "ผ่านค่าย/การคัดเลือก สสวท. ระดับประเทศ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "หลักฐานค่าย/การคัดเลือก",
+        "Portfolio ไม่เกิน 10 หน้า"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 50
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 50
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "วิทยาศาสตร์": 22,
+          "คณิตศาสตร์": 12,
+          "ภาษาต่างประเทศ": 9
+        },
+        "seat_tracks": [
+          "สอวน. 5 คน",
+          "สสวท. 5 คน"
+        ],
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 2.50; วิทยาศาสตร์ 22 คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 หน่วยกิต; รับรวม 10 คน แบ่ง สอวน. 5 และ สสวท. 5; Portfolio 50% และสัมภาษณ์ 50%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/109/"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "program_code": "ku-bangkhen-software-knowledge-engineering",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ระบุว่ามีสาขานี้ในโครงการแล้ว แต่ไม่ได้แสดงรายละเอียด Portfolio และคุณสมบัติรายสาขาครบในหน้าที่ตรวจได้",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจประกาศ/เอกสารย่อยของโครงการก่อนสมัคร"
+      ],
+      "selection_methods": [
+        "ตรวจตามประกาศรายสาขา"
+      ],
+      "additional_requirements": {
+        "detail_status": "หน้ารวมระบุจำนวนรับ 2 คน แต่ไม่แสดงรายละเอียดเกณฑ์ของวิศวกรรมซอฟต์แวร์และความรู้ครบ"
+      },
+      "criteria_summary": "พบชื่อโครงการและสาขาจากหน้ารวม KU-TCAS70 แล้ว แต่เกณฑ์รายสาขายังไม่ครบ จึงไม่สรุป GPAX หรือสัดส่วนคะแนนแทนประกาศ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/109/"
+    },
+    {
+      "project_code": "ku-kps-advanced-placement-1-1",
+      "program_code": "ku-kps-computer-engineering",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "เข้าร่วมโครงการเรียนล่วงหน้าของมหาวิทยาลัยเกษตรศาสตร์"
+      ],
+      "portfolio_requirements": null,
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "หลักฐานเข้าร่วมโครงการเรียนล่วงหน้า",
+        "ผลรายวิชาที่ใช้สมัคร"
+      ],
+      "selection_methods": [
+        "ผลรายวิชาโครงการเรียนล่วงหน้า",
+        "สัมภาษณ์"
+      ],
+      "additional_requirements": {
+        "advanced_placement_courses": [
+          "คณิตศาสตร์",
+          "ฟิสิกส์",
+          "คอมพิวเตอร์และการโปรแกรม",
+          "การเขียนแบบวิศวกรรม"
+        ],
+        "choose_courses": 2,
+        "minimum_grade": "C",
+        "interview_required": true
+      },
+      "criteria_summary": "ผู้เข้าร่วมโครงการเรียนล่วงหน้า มก.; ใช้ผลรายวิชาตามชุดวิชาที่กำหนด และต้องมีเกรดอย่างน้อย C ในวิชาที่เลือก พร้อมสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/2/"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-computer-engineering",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "studying_semesters": "4 หรือ 5",
+        "graduated_semesters": 6
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6 หรือเทียบเท่า",
+        "แผนการเรียนวิทยาศาสตร์-คณิตศาสตร์",
+        "กำลังศึกษาอย่างน้อยตามจำนวนภาคเรียนที่ประกาศกำหนด หรือผู้จบแล้วใช้ผลการเรียน 6 ภาคเรียน",
+        "มีผลงาน โครงงาน การแข่งขัน หรือประกาศนียบัตรด้านคอมพิวเตอร์"
+      ],
+      "portfolio_requirements": "Portfolio ควรแสดงประวัติ เหตุผลที่เลือกสาขา กิจกรรม/ผลงานคอมพิวเตอร์ และแผนการเรียนตามหัวข้อที่วิทยาเขตกำแพงแสนกำหนด",
+      "portfolio_details": {
+        "portfolio_weight_percent": 70,
+        "profile_weight_percent": 10,
+        "reason_and_goal_weight_percent": 20,
+        "activities_weight_percent": 40,
+        "academic_plan_weight_percent": 30
+      },
+      "accepted_achievements": [
+        "โครงงานด้านคอมพิวเตอร์",
+        "ผลงานจากการแข่งขัน",
+        "ประกาศนียบัตรด้านคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานผลงาน/ประกาศนียบัตร"
+      ],
+      "selection_methods": [
+        "ประเมิน Portfolio 70% (ประวัติ 10% + เหตุผล 20% + กิจกรรม 40%)",
+        "ประเมินผลการเรียน/แผนการเรียน 30%",
+        "มีสอบสัมภาษณ์ (หน้าโครงการระบุสัดส่วนขั้นสัมภาษณ์ 100%)"
+      ],
+      "additional_requirements": {
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.00; แผนวิทยาศาสตร์-คณิตศาสตร์; ใช้ผลการเรียน 4 หรือ 5 หรือผู้จบแล้ว 6 ภาคเรียน; ต้องมีผลงานคอมพิวเตอร์; Portfolio 70% และมีสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/10/"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-information-technology",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "semesters": "4 หรือ 5"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6 แผนวิทยาศาสตร์และคณิตศาสตร์ หรือแผนวิทยาศาสตร์ หรือแผนคณิตศาสตร์",
+        "หรือ ปวช. สาขาที่เกี่ยวข้องกับคอมพิวเตอร์ตามประกาศ"
+      ],
+      "portfolio_requirements": "Portfolio กิจกรรม/โครงงานด้านเทคโนโลยีสารสนเทศ พร้อมเหตุผลที่เลือกสาขาและเป้าหมายการเรียน",
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "กิจกรรมด้านเทคโนโลยีสารสนเทศ",
+        "โครงงานด้านเทคโนโลยีสารสนเทศ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/โครงงานที่เกี่ยวข้อง"
+      ],
+      "selection_methods": [],
+      "additional_requirements": {
+        "qualification_paths": [
+          {
+            "qualification": "ม.6",
+            "min_gpax": 2.25
+          },
+          {
+            "qualification": "ปวช. ที่เกี่ยวข้อง",
+            "min_gpax": 2.5,
+            "computer_credits_min": 18
+          }
+        ]
+      },
+      "criteria_summary": "ม.6 GPAX ≥ 2.25 หรือ ปวช. GPAX ≥ 2.50 และผู้สมัคร ปวช. ต้องมีหน่วยกิตคอมพิวเตอร์อย่างน้อย 18; ส่ง Portfolio ที่เกี่ยวข้อง",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/10/"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-information-technology-special",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "semesters": "4 หรือ 5"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6 แผนวิทยาศาสตร์และคณิตศาสตร์ หรือแผนวิทยาศาสตร์ หรือแผนคณิตศาสตร์",
+        "หรือ ปวช. สาขาที่เกี่ยวข้องกับคอมพิวเตอร์ตามประกาศ"
+      ],
+      "portfolio_requirements": "Portfolio กิจกรรม/โครงงานด้านเทคโนโลยีสารสนเทศ พร้อมเหตุผลที่เลือกสาขาและเป้าหมายการเรียน",
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "กิจกรรมด้านเทคโนโลยีสารสนเทศ",
+        "โครงงานด้านเทคโนโลยีสารสนเทศ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/โครงงานที่เกี่ยวข้อง"
+      ],
+      "selection_methods": [],
+      "additional_requirements": {
+        "qualification_paths": [
+          {
+            "qualification": "ม.6",
+            "min_gpax": 2.0
+          },
+          {
+            "qualification": "ปวช. ที่เกี่ยวข้อง",
+            "min_gpax": 2.25,
+            "computer_credits_min": 18
+          }
+        ]
+      },
+      "criteria_summary": "ม.6 GPAX ≥ 2.00 หรือ ปวช. GPAX ≥ 2.25 และผู้สมัคร ปวช. ต้องมีหน่วยกิตคอมพิวเตอร์อย่างน้อย 18; ส่ง Portfolio ที่เกี่ยวข้อง",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/10/"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-computer-science",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "semesters": "4 หรือ 5"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6 แผนวิทยาศาสตร์และคณิตศาสตร์ หรือแผนวิทยาศาสตร์ หรือแผนคณิตศาสตร์",
+        "มีผลงาน/กิจกรรมที่เกี่ยวข้องกับวิทยาการคอมพิวเตอร์"
+      ],
+      "portfolio_requirements": "Portfolio กิจกรรมหรือโครงงานด้านวิทยาการคอมพิวเตอร์ พร้อมเหตุผลที่เลือกสาขาและเป้าหมายการเรียน",
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "กิจกรรมด้านวิทยาการคอมพิวเตอร์",
+        "โครงงานด้านวิทยาการคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/โครงงานที่เกี่ยวข้อง"
+      ],
+      "selection_methods": [],
+      "additional_requirements": {},
+      "criteria_summary": "GPAX ≥ 2.75; รับตามแผนการเรียนที่ประกาศกำหนด และส่ง Portfolio ที่เกี่ยวข้องกับวิทยาการคอมพิวเตอร์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/10/"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "program_code": "ku-kps-computer-science-special",
+      "min_gpax": 2.5,
+      "gpax_requirements": {
+        "semesters": "4 หรือ 5"
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6 หรือ ปวช. สาขาที่ประกาศกำหนด เช่น ช่างเทคนิคคอมพิวเตอร์ คอมพิวเตอร์ธุรกิจ ไฟฟ้า หรืออิเล็กทรอนิกส์",
+        "มีผลงาน/กิจกรรมที่เกี่ยวข้องกับวิทยาการคอมพิวเตอร์"
+      ],
+      "portfolio_requirements": "Portfolio กิจกรรมหรือโครงงานด้านวิทยาการคอมพิวเตอร์ พร้อมเหตุผลที่เลือกสาขาและเป้าหมายการเรียน",
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "กิจกรรมด้านวิทยาการคอมพิวเตอร์",
+        "โครงงานด้านวิทยาการคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/โครงงานที่เกี่ยวข้อง"
+      ],
+      "selection_methods": [],
+      "additional_requirements": {},
+      "criteria_summary": "GPAX ≥ 2.50; รับ ม.6 หรือ ปวช. ตามสาขาที่ประกาศกำหนด และส่ง Portfolio ที่เกี่ยวข้อง",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/10/"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-2",
+      "program_code": "ku-kps-computer-engineering",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "studying_semesters": "4 หรือ 5",
+        "graduated_semesters": 6
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "ม.6 หรือเทียบเท่า",
+        "แผนการเรียนวิทยาศาสตร์-คณิตศาสตร์",
+        "กำลังศึกษาอย่างน้อยตามจำนวนภาคเรียนที่ประกาศกำหนด หรือผู้จบแล้วใช้ผลการเรียน 6 ภาคเรียน",
+        "มีผลงาน โครงงาน การแข่งขัน หรือประกาศนียบัตรด้านคอมพิวเตอร์"
+      ],
+      "portfolio_requirements": "Portfolio ควรแสดงประวัติ เหตุผลที่เลือกสาขา กิจกรรม/ผลงานคอมพิวเตอร์ และแผนการเรียนตามหัวข้อที่วิทยาเขตกำแพงแสนกำหนด",
+      "portfolio_details": {
+        "portfolio_weight_percent": 70,
+        "profile_weight_percent": 10,
+        "reason_and_goal_weight_percent": 20,
+        "activities_weight_percent": 40,
+        "academic_plan_weight_percent": 30
+      },
+      "accepted_achievements": [
+        "โครงงานด้านคอมพิวเตอร์",
+        "ผลงานจากการแข่งขัน",
+        "ประกาศนียบัตรด้านคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานผลงาน/ประกาศนียบัตร"
+      ],
+      "selection_methods": [
+        "ประเมิน Portfolio 70% (ประวัติ 10% + เหตุผล 20% + กิจกรรม 40%)",
+        "ประเมินผลการเรียน/แผนการเรียน 30%",
+        "มีสอบสัมภาษณ์ (หน้าโครงการระบุสัดส่วนขั้นสัมภาษณ์ 100%)"
+      ],
+      "additional_requirements": {
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.00; แผนวิทยาศาสตร์-คณิตศาสตร์; ใช้ผลการเรียน 4 หรือ 5 หรือผู้จบแล้ว 6 ภาคเรียน; ต้องมีผลงานคอมพิวเตอร์; Portfolio 70% และมีสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/110/"
+    },
+    {
+      "project_code": "ku-sriracha-morals-1-1",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ยืนยันชื่อโครงการและสาขาแล้ว แต่รายละเอียดรูปแบบ Portfolio และเอกสารของสาขานี้ต้องตรวจในระบบรับสมัครวิทยาเขตศรีราชา",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจรายการเอกสารในระบบรับสมัครวิทยาเขตศรีราชา",
+        "ผลการเรียนและ Portfolio ตามประกาศรายสาขา"
+      ],
+      "selection_methods": [
+        "ตรวจตามเกณฑ์รายสาขาในระบบรับสมัครวิทยาเขตศรีราชา"
+      ],
+      "additional_requirements": {
+        "detail_source": "https://admissions.src.ku.ac.th/",
+        "criteria_detail_status": "หน้ารวม KU ระบุสาขาและจำนวนรับ แต่ระบบรายละเอียดรายสาขาโหลดแบบไดนามิก; ต้องตรวจประกาศล่าสุดก่อนสมัคร"
+      },
+      "criteria_summary": "มีรายการรับสมัครใน KU-TCAS70 แล้ว แต่ยังไม่พบรายละเอียดเกณฑ์รายสาขา จากหน้าที่อ่านได้อัตโนมัติ; ห้ามใช้การ์ดนี้แทนประกาศ ให้เปิดระบบศรีราชาตรวจซ้ำ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/5/"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ยืนยันชื่อโครงการและสาขาแล้ว แต่รายละเอียดรูปแบบ Portfolio และเอกสารของสาขานี้ต้องตรวจในระบบรับสมัครวิทยาเขตศรีราชา",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจรายการเอกสารในระบบรับสมัครวิทยาเขตศรีราชา",
+        "ผลการเรียนและ Portfolio ตามประกาศรายสาขา"
+      ],
+      "selection_methods": [
+        "ตรวจตามเกณฑ์รายสาขาในระบบรับสมัครวิทยาเขตศรีราชา"
+      ],
+      "additional_requirements": {
+        "detail_source": "https://admissions.src.ku.ac.th/",
+        "criteria_detail_status": "หน้ารวม KU ระบุสาขาและจำนวนรับ แต่ระบบรายละเอียดรายสาขาโหลดแบบไดนามิก; ต้องตรวจประกาศล่าสุดก่อนสมัคร"
+      },
+      "criteria_summary": "มีรายการรับสมัครใน KU-TCAS70 แล้ว แต่ยังไม่พบรายละเอียดเกณฑ์รายสาขา จากหน้าที่อ่านได้อัตโนมัติ; ห้ามใช้การ์ดนี้แทนประกาศ ให้เปิดระบบศรีราชาตรวจซ้ำ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/6/"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "program_code": "ku-sriracha-computer-science-special",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ยืนยันชื่อโครงการและสาขาแล้ว แต่รายละเอียดรูปแบบ Portfolio และเอกสารของสาขานี้ต้องตรวจในระบบรับสมัครวิทยาเขตศรีราชา",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจรายการเอกสารในระบบรับสมัครวิทยาเขตศรีราชา",
+        "ผลการเรียนและ Portfolio ตามประกาศรายสาขา"
+      ],
+      "selection_methods": [
+        "ตรวจตามเกณฑ์รายสาขาในระบบรับสมัครวิทยาเขตศรีราชา"
+      ],
+      "additional_requirements": {
+        "detail_source": "https://admissions.src.ku.ac.th/",
+        "criteria_detail_status": "หน้ารวม KU ระบุสาขาและจำนวนรับ แต่ระบบรายละเอียดรายสาขาโหลดแบบไดนามิก; ต้องตรวจประกาศล่าสุดก่อนสมัคร"
+      },
+      "criteria_summary": "มีรายการรับสมัครใน KU-TCAS70 แล้ว แต่ยังไม่พบรายละเอียดเกณฑ์รายสาขา จากหน้าที่อ่านได้อัตโนมัติ; ห้ามใช้การ์ดนี้แทนประกาศ ให้เปิดระบบศรีราชาตรวจซ้ำ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/6/"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "program_code": "ku-sriracha-computer-science",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ยืนยันชื่อโครงการและสาขาแล้ว แต่รายละเอียดรูปแบบ Portfolio และเอกสารของสาขานี้ต้องตรวจในระบบรับสมัครวิทยาเขตศรีราชา",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจรายการเอกสารในระบบรับสมัครวิทยาเขตศรีราชา",
+        "ผลการเรียนและ Portfolio ตามประกาศรายสาขา"
+      ],
+      "selection_methods": [
+        "ตรวจตามเกณฑ์รายสาขาในระบบรับสมัครวิทยาเขตศรีราชา"
+      ],
+      "additional_requirements": {
+        "detail_source": "https://admissions.src.ku.ac.th/",
+        "criteria_detail_status": "หน้ารวม KU ระบุสาขาและจำนวนรับ แต่ระบบรายละเอียดรายสาขาโหลดแบบไดนามิก; ต้องตรวจประกาศล่าสุดก่อนสมัคร"
+      },
+      "criteria_summary": "มีรายการรับสมัครใน KU-TCAS70 แล้ว แต่ยังไม่พบรายละเอียดเกณฑ์รายสาขา จากหน้าที่อ่านได้อัตโนมัติ; ห้ามใช้การ์ดนี้แทนประกาศ ให้เปิดระบบศรีราชาตรวจซ้ำ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/6/"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "มี 2 เส้นทางคุณสมบัติ: ม.6 หรือ ปวช. เทคนิคคอมพิวเตอร์/คอมพิวเตอร์ธุรกิจ",
+        "เกณฑ์ GPAX และหน่วยกิตแยกตามวุฒิในหัวข้อเงื่อนไขเพิ่มเติม"
+      ],
+      "portfolio_requirements": "Portfolio แสดงผลงาน/กิจกรรมที่เกี่ยวข้องกับวิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์ พร้อมเหตุผลที่เลือกสาขา",
+      "portfolio_details": {
+        "portfolio_weight_percent": 40,
+        "gpax_weight_percent": 20,
+        "interview_weight_percent": 40
+      },
+      "accepted_achievements": [
+        "กิจกรรมหรือโครงงานด้านคอมพิวเตอร์และสารสนเทศ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/โครงงาน",
+        "เอกสารยืนยันวุฒิ"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 40
+        },
+        {
+          "name": "GPAX",
+          "weight_percent": 20
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 40
+        }
+      ],
+      "additional_requirements": {
+        "qualification_paths": [
+          {
+            "qualification": "ม.6",
+            "min_gpax": 3.25,
+            "minimum_subject_credits": {
+              "คณิตศาสตร์": 10,
+              "วิทยาศาสตร์": 20,
+              "ภาษาต่างประเทศ": 6
+            }
+          },
+          {
+            "qualification": "ปวช. เทคนิคคอมพิวเตอร์/คอมพิวเตอร์ธุรกิจ",
+            "min_gpax": 3.0
+          }
+        ],
+        "interview_required": true
+      },
+      "criteria_summary": "รับ ม.6 หรือ ปวช. ตามสาขาที่กำหนด; ม.6 GPAX ≥ 3.25 และใช้หน่วยกิตตามประกาศ ส่วน ปวช. GPAX ≥ 3.00; Portfolio 40% GPAX 20% สัมภาษณ์ 40%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/107/"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "program_code": "ku-sriracha-computer-science",
+      "min_gpax": 3.25,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {
+        "คณิตศาสตร์": 2.75
+      },
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "หน่วยกิตคณิตศาสตร์ 10 วิทยาศาสตร์ 20 และภาษาต่างประเทศ 5"
+      ],
+      "portfolio_requirements": "Portfolio ผลงาน/กิจกรรมด้านวิทยาการคอมพิวเตอร์ พร้อมเหตุผลที่เลือกสาขา",
+      "portfolio_details": {
+        "portfolio_weight_percent": 70,
+        "gpax_weight_percent": 10,
+        "interview_weight_percent": 20
+      },
+      "accepted_achievements": [
+        "ผลงานหรือกิจกรรมด้านวิทยาการคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/ผลงาน"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 70
+        },
+        {
+          "name": "GPAX",
+          "weight_percent": 10
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 20
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 10,
+          "วิทยาศาสตร์": 20,
+          "ภาษาต่างประเทศ": 5
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.25; คณิตศาสตร์ 10 วิทยาศาสตร์ 20 ภาษาต่างประเทศ 5 หน่วยกิต และเกรดคณิตศาสตร์ ≥ 2.75; Portfolio 70% GPAX 10% สัมภาษณ์ 20%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/107/"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "program_code": "ku-sriracha-computer-science-special",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "หน่วยกิตคณิตศาสตร์ 5 วิทยาศาสตร์ 5 และภาษาต่างประเทศ 7"
+      ],
+      "portfolio_requirements": "Portfolio ผลงาน/กิจกรรมด้านวิทยาการคอมพิวเตอร์ พร้อมเหตุผลที่เลือกสาขา",
+      "portfolio_details": {
+        "portfolio_weight_percent": 80,
+        "gpax_weight_percent": 10,
+        "interview_weight_percent": 10
+      },
+      "accepted_achievements": [
+        "ผลงานหรือกิจกรรมด้านวิทยาการคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/ผลงาน"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 80
+        },
+        {
+          "name": "GPAX",
+          "weight_percent": 10
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 10
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 5,
+          "วิทยาศาสตร์": 5,
+          "ภาษาต่างประเทศ": 7
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.00; คณิตศาสตร์ 5 วิทยาศาสตร์ 5 ภาษาต่างประเทศ 7 หน่วยกิต; Portfolio 80% GPAX 10% สัมภาษณ์ 10%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/107/"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-2",
+      "program_code": "ku-sriracha-computer-engineering-information-science",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "มี 2 เส้นทางคุณสมบัติ: ม.6 หรือ ปวช. เทคนิคคอมพิวเตอร์/คอมพิวเตอร์ธุรกิจ",
+        "เกณฑ์ GPAX และหน่วยกิตแยกตามวุฒิในหัวข้อเงื่อนไขเพิ่มเติม"
+      ],
+      "portfolio_requirements": "Portfolio แสดงผลงาน/กิจกรรมที่เกี่ยวข้องกับวิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์ พร้อมเหตุผลที่เลือกสาขา",
+      "portfolio_details": {
+        "portfolio_weight_percent": 40,
+        "gpax_weight_percent": 20,
+        "interview_weight_percent": 40
+      },
+      "accepted_achievements": [
+        "กิจกรรมหรือโครงงานด้านคอมพิวเตอร์และสารสนเทศ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/โครงงาน",
+        "เอกสารยืนยันวุฒิ"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 40
+        },
+        {
+          "name": "GPAX",
+          "weight_percent": 20
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 40
+        }
+      ],
+      "additional_requirements": {
+        "qualification_paths": [
+          {
+            "qualification": "ม.6",
+            "min_gpax": 3.25,
+            "minimum_subject_credits": {
+              "คณิตศาสตร์": 12,
+              "วิทยาศาสตร์": 22,
+              "ภาษาต่างประเทศ": 6
+            }
+          },
+          {
+            "qualification": "ปวช. เทคนิคคอมพิวเตอร์/คอมพิวเตอร์ธุรกิจ",
+            "min_gpax": 3.0
+          }
+        ],
+        "interview_required": true
+      },
+      "criteria_summary": "รับ ม.6 หรือ ปวช. ตามสาขาที่กำหนด; ม.6 GPAX ≥ 3.25 และใช้หน่วยกิตตามประกาศ ส่วน ปวช. GPAX ≥ 3.00; Portfolio 40% GPAX 20% สัมภาษณ์ 40%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/207/"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-2",
+      "program_code": "ku-sriracha-computer-science",
+      "min_gpax": 3.25,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {
+        "คณิตศาสตร์": 2.75
+      },
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์ 22"
+      ],
+      "portfolio_requirements": "Portfolio ผลงาน/กิจกรรมด้านวิทยาการคอมพิวเตอร์ พร้อมเหตุผลที่เลือกสาขา",
+      "portfolio_details": {
+        "portfolio_weight_percent": 70,
+        "gpax_weight_percent": 10,
+        "interview_weight_percent": 20
+      },
+      "accepted_achievements": [
+        "ผลงานหรือกิจกรรมด้านวิทยาการคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน 5 ภาคเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/ผลงาน"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 70
+        },
+        {
+          "name": "GPAX",
+          "weight_percent": 10
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 20
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 12,
+          "วิทยาศาสตร์": 22
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.25; ใช้ผลการเรียน 5 ภาคเรียน; คณิตศาสตร์ 12 วิทยาศาสตร์ 22 หน่วยกิต และเกรดคณิตศาสตร์ ≥ 2.75; Portfolio 70% GPAX 10% สัมภาษณ์ 20%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/207/"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-2",
+      "program_code": "ku-sriracha-computer-science-special",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "semesters": 5
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "หน่วยกิตคณิตศาสตร์ 6 วิทยาศาสตร์ 6 และภาษาต่างประเทศ 9"
+      ],
+      "portfolio_requirements": "Portfolio ผลงาน/กิจกรรมด้านวิทยาการคอมพิวเตอร์ พร้อมเหตุผลที่เลือกสาขา",
+      "portfolio_details": {
+        "portfolio_weight_percent": 80,
+        "gpax_weight_percent": 10,
+        "interview_weight_percent": 10
+      },
+      "accepted_achievements": [
+        "ผลงานหรือกิจกรรมด้านวิทยาการคอมพิวเตอร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน 5 ภาคเรียน",
+        "Portfolio",
+        "หลักฐานกิจกรรม/ผลงาน"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 80
+        },
+        {
+          "name": "GPAX",
+          "weight_percent": 10
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 10
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 6,
+          "วิทยาศาสตร์": 6,
+          "ภาษาต่างประเทศ": 9
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.00; ใช้ผลการเรียน 5 ภาคเรียน; คณิตศาสตร์ 6 วิทยาศาสตร์ 6 ภาษาต่างประเทศ 9 หน่วยกิต; Portfolio 80% GPAX 10% สัมภาษณ์ 10%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/207/"
+    },
+    {
+      "project_code": "ku-bangkhen-white-elephant-1-1",
+      "program_code": "ku-bangkhen-computer-science-special",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่าในปีการศึกษา 2569",
+        "มีผลงานเขียนโปรแกรม/โครงงานที่เข้าประกวดหรือได้รับรางวัล และผู้สมัครมีบทบาทหลักอย่างน้อย 30%",
+        "หรือมีประกาศนียบัตรการอบรมด้านการเขียนโปรแกรมอย่างน้อย 3 หัวข้อ",
+        "กรณีไม่มีผลงาน ใช้ GPAX และเกรดเฉลี่ยภาษาอังกฤษ/คณิตศาสตร์ตามเส้นทางที่ประกาศกำหนด"
+      ],
+      "portfolio_requirements": "ส่งวิดีโอผลงานความยาวไม่เกิน 2 นาที นำเสนอผลงานเด่นไม่เกิน 3 รายการ อธิบายการออกแบบ การพัฒนา source code และรางวัล; หากใช้ AI ต้องระบุส่วนที่ใช้",
+      "portfolio_details": {
+        "video_max_minutes": 2,
+        "max_featured_awarded_projects": 3,
+        "minimum_primary_contribution_percent": 30,
+        "ai_usage_disclosure_required": true
+      },
+      "accepted_achievements": [
+        "ผลงานเขียนโปรแกรมหรือโครงงานที่เข้าประกวด",
+        "ผลงานเขียนโปรแกรมหรือโครงงานที่ได้รับรางวัล",
+        "ประกาศนียบัตรการอบรมด้านการเขียนโปรแกรมอย่างน้อย 3 หัวข้อ"
+      ],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "หลักฐานผลงาน/รางวัล หรือประกาศนียบัตรการอบรม",
+        "วิดีโอผลงาน"
+      ],
+      "selection_methods": [
+        "กรณีมีผลงาน: GPAX 10% + ผลงาน 70% + สัมภาษณ์ 20%",
+        "กรณีไม่มีผลงาน: GPAX 40% + ภาษาอังกฤษ 30% + คณิตศาสตร์ 30%"
+      ],
+      "additional_requirements": {
+        "interview_required": true,
+        "no_work_path": {
+          "gpax_min": 3.5,
+          "english_average_min": 3.25,
+          "mathematics_average_min": 3.0
+        }
+      },
+      "criteria_summary": "GPAX 4 ภาคเรียน ≥ 2.75; มีผลงานเขียนโปรแกรม/โครงงานที่ทำหลักอย่างน้อย 30% หรือใบอบรมเขียนโปรแกรมอย่างน้อย 3 หัวข้อ; ถ้าไม่มีผลงานต้องมี GPAX ≥ 3.50 และใช้เกรดอังกฤษ/คณิตศาสตร์ตามประกาศ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/1/"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "เป็นนักกีฬาระดับชาติหรือเยาวชนทีมชาติ ตามประเภทและหลักฐานที่ประกาศกำหนด"
+      ],
+      "portfolio_requirements": null,
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "ผลงาน/หนังสือรับรองการเป็นนักกีฬาระดับชาติหรือเยาวชนทีมชาติ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "หลักฐานสถานะนักกีฬา",
+        "Portfolio หรือหลักฐานผลงานตามประกาศ"
+      ],
+      "selection_methods": [
+        "สัมภาษณ์ 100%"
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 12,
+          "ภาษาต่างประเทศ": 9
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "รับนักกีฬาระดับชาติหรือเยาวชนทีมชาติ; ต้องมีคณิตศาสตร์อย่างน้อย 12 และภาษาต่างประเทศ 9 หน่วยกิต; คัดเลือกด้วยสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/4/"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "min_gpax": null,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษา ม.6 หรือเทียบเท่า",
+        "เป็นนักกีฬาระดับชาติหรือเยาวชนทีมชาติ ตามประเภทและหลักฐานที่ประกาศกำหนด"
+      ],
+      "portfolio_requirements": null,
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "ผลงาน/หนังสือรับรองการเป็นนักกีฬาระดับชาติหรือเยาวชนทีมชาติ"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "หลักฐานสถานะนักกีฬา",
+        "Portfolio หรือหลักฐานผลงานตามประกาศ"
+      ],
+      "selection_methods": [
+        "สัมภาษณ์ 100%"
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "วิทยาศาสตร์": 22,
+          "คณิตศาสตร์": 12,
+          "ภาษาต่างประเทศ": 9
+        },
+        "interview_required": true
+      },
+      "criteria_summary": "รับนักกีฬาระดับชาติหรือเยาวชนทีมชาติ; ต้องมีวิทยาศาสตร์ 22 คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 หน่วยกิต; คัดเลือกด้วยสัมภาษณ์",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/4/"
+    },
+    {
+      "project_code": "ku-bangkhen-psw-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "min_gpax": 3.0,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {
+        "วิทยาศาสตร์": 3.25,
+        "คณิตศาสตร์": 3.25
+      },
+      "min_english_score": {},
+      "standardized_scores": {
+        "TGAT1": 25,
+        "TGAT2": 25,
+        "TGAT3": 25,
+        "TPAT3": 35
+      },
+      "applicant_qualifications": [
+        "นักเรียนโครงการ พสวท. หรือผู้มีความสามารถพิเศษทางวิทยาศาสตร์ตามเงื่อนไขของโครงการ",
+        "มีผลการเรียนและคะแนน TGAT/TPAT3 ตามเกณฑ์หน้าโครงการ"
+      ],
+      "portfolio_requirements": "รวบรวมหลักฐานการเข้าค่าย/การแข่งขัน/โครงงานด้านวิทยาศาสตร์หรือคณิตศาสตร์ และจัดทำ Portfolio ไม่เกิน 10 หน้า",
+      "portfolio_details": {
+        "max_pages": 10
+      },
+      "accepted_achievements": [
+        "การเข้าค่ายหรือผ่านการคัดเลือกโครงการ พสวท.",
+        "โครงงาน/การแข่งขันด้านวิทยาศาสตร์หรือคณิตศาสตร์"
+      ],
+      "required_documents": [
+        "ผลการเรียน",
+        "Portfolio ไม่เกิน 10 หน้า",
+        "หลักฐานค่าย/ผลงาน",
+        "ผล TGAT และ TPAT3"
+      ],
+      "selection_methods": [
+        {
+          "name": "Portfolio",
+          "weight_percent": 10
+        },
+        {
+          "name": "ผลการเรียนวิทยาศาสตร์/คณิตศาสตร์",
+          "weight_percent": 10
+        },
+        {
+          "name": "TGAT",
+          "weight_percent": 10
+        },
+        {
+          "name": "TPAT3",
+          "weight_percent": 30
+        },
+        {
+          "name": "สัมภาษณ์",
+          "weight_percent": 40
+        }
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "วิทยาศาสตร์": 22,
+          "คณิตศาสตร์": 12
+        },
+        "minimum_tgat_each": 25,
+        "tpat3_min": 35,
+        "interview_required": true
+      },
+      "criteria_summary": "GPAX ≥ 3.00; เกรดเฉลี่ยวิทยาศาสตร์และคณิตศาสตร์ ≥ 3.25; ใช้ TGAT1/2/3 อย่างละ ≥ 25 และ TPAT3 ≥ 35; Portfolio 10% วิชา/เกรด 10% TGAT 10% TPAT3 30% สัมภาษณ์ 40%",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/8/"
+    },
+    {
+      "project_code": "ku-bangkhen-culture-soft-power-1-1",
+      "program_code": "ku-bangkhen-computer-engineering",
+      "min_gpax": 2.75,
+      "gpax_requirements": {
+        "semesters": 4
+      },
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [
+        "กำลังศึกษาอยู่ชั้นมัธยมศึกษาปีที่ 6 หรือเทียบเท่าในปีการศึกษา 2569",
+        "มีประวัติและผลงานตามประเภทศิลปวัฒนธรรมและซอฟต์พาวเวอร์ที่มหาวิทยาลัยกำหนด",
+        "หน่วยกิตกลุ่มสาระการเรียนรู้คณิตศาสตร์ไม่ต่ำกว่า 12 หน่วยกิต"
+      ],
+      "portfolio_requirements": "Portfolio และหลักฐานผลงานด้านศิลปวัฒนธรรมหรือซอฟต์พาวเวอร์ ตามประเภทที่มหาวิทยาลัยกำหนด",
+      "portfolio_details": {},
+      "accepted_achievements": [
+        "ผลงานศิลปวัฒนธรรม",
+        "ผลงานซอฟต์พาวเวอร์",
+        "รางวัลหรือหลักฐานความสามารถตามประเภทที่มหาวิทยาลัยกำหนด"
+      ],
+      "required_documents": [
+        "ผลการเรียน 4 ภาคเรียน",
+        "Portfolio และหลักฐานผลงาน",
+        "ผลคะแนนภาษาอังกฤษ (ถ้ามี/ตามประกาศ)"
+      ],
+      "selection_methods": [
+        "ผลคะแนนสอบภาษาอังกฤษ",
+        "การทดสอบความสามารถด้านศิลปวัฒนธรรมและซอฟต์พาวเวอร์",
+        "สอบสัมภาษณ์เป็นภาษาอังกฤษ"
+      ],
+      "additional_requirements": {
+        "minimum_subject_credits": {
+          "คณิตศาสตร์": 12
+        },
+        "interview_required": true,
+        "interview_language": "อังกฤษ",
+        "ability_test_weight_percent": 100
+      },
+      "criteria_summary": "GPAX 4 ภาคเรียน ≥ 2.75; คณิตศาสตร์ 12 หน่วยกิต; ต้องมีผลงานศิลปวัฒนธรรมหรือซอฟต์พาวเวอร์ตามประเภทที่กำหนด; มีผลภาษาอังกฤษ การทดสอบความสามารถ และสัมภาษณ์ภาษาอังกฤษ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/18/"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "program_code": "ku-bangkhen-computer-science",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ระบุว่ามีสาขานี้ในโครงการแล้ว แต่ไม่ได้แสดงรายละเอียด Portfolio และคุณสมบัติรายสาขาครบในหน้าที่ตรวจได้",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจประกาศ/เอกสารย่อยของโครงการก่อนสมัคร"
+      ],
+      "selection_methods": [
+        "ตรวจตามประกาศรายสาขา"
+      ],
+      "additional_requirements": {
+        "detail_status": "หน้ารายโครงการระบุวิทยาการคอมพิวเตอร์ภาคปกติเป็นจำนวนรับรวมกับเงื่อนไขอื่น และไม่แสดงเกณฑ์เฉพาะสาขาคอมพิวเตอร์ครบ"
+      },
+      "criteria_summary": "พบชื่อโครงการและสาขาจากหน้ารวม KU-TCAS70 แล้ว แต่เกณฑ์รายสาขายังไม่ครบ จึงไม่สรุป GPAX หรือสัดส่วนคะแนนแทนประกาศ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/32/"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "program_code": "ku-bangkhen-computer-science-special",
+      "min_gpax": null,
+      "gpax_requirements": {},
+      "subject_gpax": {},
+      "min_english_score": {},
+      "standardized_scores": {},
+      "applicant_qualifications": [],
+      "portfolio_requirements": "หน้ารวม KU-TCAS70 ระบุว่ามีสาขานี้ในโครงการแล้ว แต่ไม่ได้แสดงรายละเอียด Portfolio และคุณสมบัติรายสาขาครบในหน้าที่ตรวจได้",
+      "portfolio_details": {},
+      "accepted_achievements": [],
+      "required_documents": [
+        "ตรวจประกาศ/เอกสารย่อยของโครงการก่อนสมัคร"
+      ],
+      "selection_methods": [
+        "ตรวจตามประกาศรายสาขา"
+      ],
+      "additional_requirements": {
+        "detail_status": "หน้ารายโครงการระบุวิทยาการคอมพิวเตอร์ภาคพิเศษเป็นจำนวนรับรวมกับเงื่อนไขอื่น และไม่แสดงเกณฑ์เฉพาะสาขาคอมพิวเตอร์ครบ"
+      },
+      "criteria_summary": "พบชื่อโครงการและสาขาจากหน้ารวม KU-TCAS70 แล้ว แต่เกณฑ์รายสาขายังไม่ครบ จึงไม่สรุป GPAX หรือสัดส่วนคะแนนแทนประกาศ",
+      "official_announcement_url": "https://admission.ku.ac.th/majors/project/32/"
     }
   ],
   "timeline": [
@@ -17625,6 +19454,390 @@
       "end_on": null,
       "date_display": "14 มี.ค. 2570",
       "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-sports-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-psw-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-psw-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-psw-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-psw-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "event_name": "รับสมัคร",
+      "start_on": "2027-01-04",
+      "end_on": "2027-02-04",
+      "date_display": "4 ม.ค.–4 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-03-02",
+      "end_on": "2027-03-02",
+      "date_display": "2 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-olympic-1-2",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2027-03-05",
+      "end_on": "2027-03-05",
+      "date_display": "5 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-advanced-placement-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-10-01",
+      "end_on": "2026-11-05",
+      "date_display": "1 ต.ค.–5 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-advanced-placement-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-advanced-placement-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-20",
+      "end_on": "2026-11-20",
+      "date_display": "20 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-advanced-placement-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-24",
+      "end_on": "2026-11-24",
+      "date_display": "24 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-10-01",
+      "end_on": "2026-11-05",
+      "date_display": "1 ต.ค.–5 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-20",
+      "end_on": "2026-11-20",
+      "date_display": "20 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-24",
+      "end_on": "2026-11-24",
+      "date_display": "24 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-2",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-12-01",
+      "end_on": "2027-02-10",
+      "date_display": "1 ธ.ค. 2569–10 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2027-02-22",
+      "end_on": "2027-02-22",
+      "date_display": "22 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-02-25",
+      "end_on": "2027-02-26",
+      "date_display": "25–26 ก.พ. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-kps-portfolio-1-2",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2027-03-02",
+      "end_on": "2027-03-02",
+      "date_display": "2 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-morals-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-08-25",
+      "end_on": "2026-11-15",
+      "date_display": "25 ส.ค.–15 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-morals-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-04",
+      "end_on": "2026-12-04",
+      "date_display": "4 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-morals-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-13",
+      "end_on": "2026-12-13",
+      "date_display": "13 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-morals-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-12-18",
+      "end_on": "2026-12-18",
+      "date_display": "18 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-08-25",
+      "end_on": "2026-11-15",
+      "date_display": "25 ส.ค.–15 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-04",
+      "end_on": "2026-12-04",
+      "date_display": "4 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-13",
+      "end_on": "2026-12-13",
+      "date_display": "13 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-youth-leader-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-12-18",
+      "end_on": "2026-12-18",
+      "date_display": "18 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-08-25",
+      "end_on": "2026-11-15",
+      "date_display": "25 ส.ค.–15 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-04",
+      "end_on": "2026-12-04",
+      "date_display": "4 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-13",
+      "end_on": "2026-12-13",
+      "date_display": "13 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-sriracha-expansion-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-12-18",
+      "end_on": "2026-12-18",
+      "date_display": "18 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-culture-soft-power-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-culture-soft-power-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-culture-soft-power-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-culture-soft-power-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "event_name": "รับสมัคร",
+      "start_on": "2026-09-18",
+      "end_on": "2026-10-14",
+      "date_display": "18 ก.ย.–14 ต.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-11-03",
+      "end_on": "2026-11-03",
+      "date_display": "3 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-11-09",
+      "end_on": "2026-11-09",
+      "date_display": "9 พ.ย. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "ku-bangkhen-science-network-1-1",
+      "event_name": "ประกาศผลสอบสัมภาษณ์",
+      "start_on": "2026-11-16",
+      "end_on": "2026-11-16",
+      "date_display": "16 พ.ย. 2569",
+      "date_status": "confirmed"
     }
   ],
   "campuses": [
@@ -17697,6 +19910,20 @@
       "name": "วิทยาเขตบางเขน",
       "is_main": true,
       "official_url": "https://ku.ac.th/th/campus-information"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "kamphaeng-saen",
+      "name": "วิทยาเขตกำแพงแสน",
+      "is_main": false,
+      "official_url": "https://admission.kps.ku.ac.th/"
+    },
+    {
+      "university_short_name": "KU",
+      "code": "sriracha",
+      "name": "วิทยาเขตศรีราชา",
+      "is_main": false,
+      "official_url": "https://admissions.src.ku.ac.th/"
     },
     {
       "university_short_name": "KU",

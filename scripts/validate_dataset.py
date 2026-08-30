@@ -57,6 +57,8 @@ OFFICIAL_HOSTS = {
         "cpe.ku.ac.th",
         "sci.ku.ac.th",
         "www.sci.ku.ac.th",
+        "admission.kps.ku.ac.th",
+        "admissions.src.ku.ac.th",
     },
     "TU": {
         "admissions.siit.tu.ac.th",

@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-08-29T12:00:00+07:00",
+  "checked_at": "2026-08-30T12:00:00+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -684,6 +684,104 @@
       "academic_year": 2570,
       "source_checked_at": "2026-08-29T12:00:00+07:00",
       "decision": "นำเข้าเกณฑ์รายสาขา จำนวนรับ GPAX หน่วยกิต/คะแนนเฉลี่ย รูปแบบผลงาน เอกสาร และกำหนดการจากรายละเอียดแนบท้ายหน้า 12 - 179"
+    },
+    {
+      "url": "https://admission.kps.ku.ac.th/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เก็บเป็นช่องทางสมัคร/ตรวจรายละเอียดของวิทยาเขตกำแพงแสน"
+    },
+    {
+      "url": "https://admissions.src.ku.ac.th/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตศรีราชา",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "decision": "เก็บเป็นระบบรับสมัครและแหล่งตรวจเกณฑ์รายสาขาของศรีราชา; หน้าเกณฑ์โหลดแบบไดนามิกจึงไม่เดาเงื่อนไขแทน"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/4/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการรับนักกีฬาดีเด่นของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับและเงื่อนไขหลัก"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/8/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการ พสวท. ของวิทยาการคอมพิวเตอร์ พร้อมเกณฑ์ GPAX คะแนน TGAT/TPAT3 และสัดส่วนคัดเลือก; จำนวนรับเป็นจำนวนรวมตามหน้าโครงการ"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/9/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการโอลิมปิกวิชาการ 1.1 ของวิทยาการคอมพิวเตอร์และวิศวกรรมซอฟต์แวร์และความรู้"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/109/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการโอลิมปิกวิชาการ 1.2 ของวิศวกรรมคอมพิวเตอร์และรายการวิศวกรรมซอฟต์แวร์และความรู้ที่หน้าโครงการระบุ พร้อมป้ายเตือนเมื่อรายละเอียดรายสาขายังไม่ครบ"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/10/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า Portfolio 1.1 วิทยาเขตกำแพงแสน ครบรายการสายคอมพิวเตอร์/เทคโนโลยีสารสนเทศที่หน้าโครงการระบุ"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/110/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้า Portfolio 1.2 วิทยาเขตกำแพงแสนของวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับ 1 คน"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/107/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา 1.1 ของวิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์และวิทยาการคอมพิวเตอร์"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/207/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา 1.2; รายการมีจำนวนรับแล้วแต่วันสมัครรอประกาศ"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/5/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้ารายการวิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์ในโครงการคุณธรรมของศรีราชา พร้อมป้ายให้ตรวจเกณฑ์รายสาขาในระบบศรีราชา"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/6/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้ารายการสายคอมพิวเตอร์ในโครงการผู้นำเยาวชนของศรีราชา พร้อมป้ายให้ตรวจเกณฑ์รายสาขาในระบบศรีราชา"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/18/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโควตาศิลปวัฒนธรรมและซอฟต์พาวเวอร์ของวิศวกรรมคอมพิวเตอร์ พร้อม GPAX หน่วยกิตคณิตศาสตร์ และรูปแบบการทดสอบที่หน้าโครงการระบุ"
+    },
+    {
+      "url": "https://admission.ku.ac.th/majors/project/32/",
+      "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "decision": "นำเข้าโครงการพัฒนาเครือข่ายองค์กรแห่งการเรียนรู้ด้านวิทยาศาสตร์ที่ระบุวิทยาการคอมพิวเตอร์ภาคปกติ/พิเศษ; เก็บจำนวนรับเป็นยอดรวมและติดป้ายให้ตรวจเกณฑ์เฉพาะสาขา"
     }
   ]
 }

@@ -1,6 +1,294 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 2 of 7; run parts in numeric order.
+-- Supabase SQL Editor part 2 of 8; run parts in numeric order.
 begin;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmutt-sit-active-recruitment-2', 'kmutt-sit-active-recruitment', 'โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ', 2570, 1,
+    '1 Portfolio', 'ครั้งที่ 2', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://join.kmutt.ac.th/projects/c02bf829-5c3c-408d-8bd9-515baebb80dd', 'รอบที่ 1 โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ (ครั้งที่ 2) ปีการศึกษา 2570',
+    '2026-08-05', '2026-08-23T00:00:00+07:00', 'เกณฑ์รายหลักสูตรลงวันที่ 5 ส.ค. 2569; หน้าโครงการอัปเดต 17 ส.ค. 2569; 350 บาทชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก', now()
+from public.universities u
+where u.short_name = 'KMUTT'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmutt-active-recruitment-general', 'kmutt-active-recruitment-general', 'โครงการ Active Recruitment', 2570, 1,
+    '1 Portfolio', 'ทั่วไป', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://join.kmutt.ac.th/projects/b82694a9-f0a6-4a3a-b18f-0de4f1e8bbfc', 'รอบที่ 1 โครงการ Active Recruitment ปีการศึกษา 2570',
+    '2026-08-17', '2026-08-23T00:00:00+07:00', 'นำเข้าเฉพาะหลักสูตรสายคอม/IT/เกมที่มีเกณฑ์และจำนวนรับในเอกสารวันที่ 17 ส.ค. 2569', now()
+from public.universities u
+where u.short_name = 'KMUTT'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmutt-direct-good-grade', 'kmutt-direct-good-grade', 'โครงการคัดเลือกตรง ประเภทเรียนดี', 2570, 1,
+    '1 Portfolio', 'เรียนดี', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://join.kmutt.ac.th/projects/fe4b52a7-d942-4807-9b59-1527675dad89', 'รอบที่ 1 โครงการคัดเลือกตรง ประเภทเรียนดี ปีการศึกษา 2570',
+    '2026-08-20', '2026-08-23T00:00:00+07:00', 'จำนวนรับเป็นจำนวนผู้มีสิทธิ์เข้าศึกษา ไม่ใช่จำนวนเรียกสอบ; หน้าโครงการอัปเดต 20 ส.ค. 2569', now()
+from public.universities u
+where u.short_name = 'KMUTT'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'kmutt-international-admission-1', 'kmutt-international-admission', 'KMUTT International Admission', 2570, 1,
+    '1 Portfolio', 'ครั้งที่ 1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://join.kmutt.ac.th/projects/b44debb2-6551-4eca-9e65-8ed7a7a3a179', 'รอบที่ 1 โครงการ KMUTT International Admission (ครั้งที่ 1) ปีการศึกษา 2570',
+    '2026-08-20', '2026-08-23T00:00:00+07:00', 'นำเข้าเฉพาะ CPE, CS และ Game Design ที่ประกาศเกณฑ์ครบ; หน้าโครงการอัปเดต 20 ส.ค. 2569', now()
+from public.universities u
+where u.short_name = 'KMUTT'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'cmu-00410507106011-1-1', 'cmu-00410507106011', 'การรับนักเรียนพิการ', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
+    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507106011; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'cmu-00410507107010-1-1', 'cmu-00410507107010', 'โครงการสานฝันปั้นนักวิทยาศาสตร์', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
+    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107010; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'cmu-00410507107020-1-1', 'cmu-00410507107020', 'โครงการสนับสนุนการจัดตั้งห้องเรียนวิทยาศาสตร์ในโรงเรียนฯ (วมว.)', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
+    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107020; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'cmu-00410507107030-1-1', 'cmu-00410507107030', 'โครงการรับนักเรียนจากค่ายโอลิมปิกวิชาการ', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
+    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
 
 insert into public.admission_projects (
     university_id, code, group_code, name, academic_year, tcas_round,
@@ -1994,7 +2282,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/1/', 'เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70',
-    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -2030,7 +2318,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/2/', 'เกณฑ์โครงการเรียนล่วงหน้า KU-TCAS70',
-    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -2066,7 +2354,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/3/', 'เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.1 KU-TCAS70',
-    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -2102,7 +2390,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/103/', 'เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.2 KU-TCAS70',
-    null, '2026-08-29T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -3350,411 +3638,40 @@ on conflict (code) do update set
         data_notes = excluded.data_notes,
         updated_at = excluded.updated_at;
 
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
 )
-select p.id, m.id, 20, 'ศูนย์รังสิต รหัส 10050210300501A'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-engineering-computer-engineering'
-where p.code = 'tu-direct-cpe-2570'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 35, 'ศูนย์รังสิต โครงการพิเศษ รหัส 10050210301001B'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-engineering-software-engineering'
-where p.code = 'tu-direct-software-2570'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 20, 'ภาคปกติ รหัส 10050209220201A เท่านั้น; 20 ที่นั่งภาคพิเศษเป็นคนละรายการ ไม่รวมในจำนวนนี้; หลักสูตรอยู่ระหว่างปรับปรุง'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
-where p.code = 'tu-direct-cs-2570'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'คณะวิทยาศาสตร์ฯ รับรวมหลายสาขา 30 คน โดยวิทยาการคอมพิวเตอร์รับไม่เกิน 15 คน ไม่ใช่รับสาขานี้ 30 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
-where p.code = 'tu-posn-2570'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'คณะวิทยาศาสตร์ฯ รับรวมหลายสาขา 7 คน ไม่ได้จัดสรรเฉพาะวิทยาการคอมพิวเตอร์'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-science-computer-science'
-where p.code = 'tu-ipst-2570'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'คณะวิศวกรรมศาสตร์รับรวม 6 สาขา 4 คน ไม่ใช่โควตาวิศวกรรมคอมพิวเตอร์ 4 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-engineering-computer-engineering'
-where p.code = 'tu-ipst-2570'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'ตารางกลางมหิดลระบุ 60 ที่นั่งรวมของหลักสูตร ICT ในรอบ 1/1 แต่ไม่แยกจำนวนระหว่างโครงการ ICT–Portfolio และ MU–Portfolio จึงไม่ใส่ตัวเลขซ้ำรายโครงการ'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'mu-ict'
-where p.code = 'muict-ict-portfolio'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'ตารางกลางมหิดลระบุ 60 ที่นั่งรวมของหลักสูตร ICT ในรอบ 1/1 แต่ไม่แยกจำนวนระหว่างโครงการ ICT–Portfolio และ MU–Portfolio จึงไม่ใส่ตัวเลขซ้ำรายโครงการ'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'mu-ict'
-where p.code = 'muict-mu-portfolio-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'เปิดเฉพาะที่นั่งคงเหลือจากรอบ 1/1 ตามหมายเหตุ A ของตารางกลาง จึงไม่มีจำนวนคงที่'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'mu-ict'
-where p.code = 'muict-mu-portfolio-1-2'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 27, 'รหัสโครงการ 00410608108010'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cpe'
-where p.code = 'cmu-cpe-gifted-computer-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 3, 'รหัสโครงการ 00410608108010'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cpe'
-where p.code = 'cmu-cpe-gifted-computer-1-2'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 22, 'รหัสโครงการ 00410608108020'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cpe'
-where p.code = 'cmu-cpe-good-grade-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 3, 'รหัสโครงการ 00410608108020'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cpe'
-where p.code = 'cmu-cpe-good-grade-1-2'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, 'รหัสโครงการ 00410608108031'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-cpe'
-where p.code = 'cmu-cpe-engineering-ability-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 50, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-it'
-where p.code = 'kmitl-it-ability-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-dsba'
-where p.code = 'kmitl-it-ability-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-ait'
-where p.code = 'kmitl-it-ability-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-it'
-where p.code = 'kmitl-academic-it-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 2, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-dsba'
-where p.code = 'kmitl-academic-it-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 1, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-ait'
-where p.code = 'kmitl-academic-it-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-it'
-where p.code = 'kmitl-english-it-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 1, 'โครงการนี้ไม่เปิดรับ DSBA'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmitl-ait'
-where p.code = 'kmitl-english-it-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 10, 'รับ ม.6 หรือ GED จำนวน 10 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 10, 'รับ ม.6 จำนวน 8 คน และ ปวช. จำนวน 2 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-dsi'
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 28, 'รับ ม.6 หรือ ปวช. รวม 28 คน โดยประกาศไม่แยกโควตา'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-it'
-where p.code = 'kmutt-sit-active-recruitment-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 3, 'รับ ม.6 หรือ GED จำนวน 3 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 3, 'รับ ม.6 จำนวน 2 คน และ ปวช. จำนวน 1 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-dsi'
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 12, 'รับ ม.6 หรือ ปวช. รวม 12 คน โดยประกาศไม่แยกโควตา'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-it'
-where p.code = 'kmutt-sit-active-recruitment-3'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 10, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'mu-computer-engineering'
-where p.code = 'mu-computer-engineering-portfolio-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 110, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'ku-csc-computer-science'
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 80, 'GPAX 3.00 เป็นเกณฑ์เคร่งครัดสำหรับวิศวกรรมคอมพิวเตอร์'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'ku-csc-computer-engineering'
-where p.code = 'ku-csc-education-opportunity-1-1'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'รับรวมเป็นกลุ่มวิศวกรรมคอมพิวเตอร์และวิศวกรรมดิจิทัล; เลือกสาขาเมื่อจบปี 1 และประกาศไม่ระบุจำนวนรับแยก'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-siit-computer-engineering'
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, null, 'รับรวมเป็นกลุ่มวิศวกรรมคอมพิวเตอร์และวิศวกรรมดิจิทัล; เลือกสาขาเมื่อจบปี 1 และประกาศไม่ระบุจำนวนรับแยก'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-siit-digital-engineering'
-where p.code = 'tu-siit-osp-2027'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, 'รับ ม.6 หรือ GED จำนวน 5 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
-where p.code = 'kmutt-sit-active-recruitment-2'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 5, 'รับ ม.6 จำนวน 4 คน และ ปวช. จำนวน 1 คน'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-dsi'
-where p.code = 'kmutt-sit-active-recruitment-2'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 21, 'รับ ม.6 หรือ ปวช. รวม 21 คน โดยประกาศไม่แยกโควตา'
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-sit-it'
-where p.code = 'kmutt-sit-active-recruitment-2'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
-
-insert into public.admission_project_programs (
-    project_id, program_id, slots_available, program_notes
-)
-select p.id, m.id, 4, null
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'kmutt-cpe'
-where p.code = 'kmutt-active-recruitment-general'
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;
+select
+    u.id, 'ku-bangkhen-sports-1-1', 'ku-bangkhen-sports', 'โครงการรับนักกีฬาดีเด่น', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://admission.ku.ac.th/majors/project/4/', 'เกณฑ์โครงการรับนักกีฬาดีเด่น รอบ 1.1 KU-TCAS70',
+    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
 
 commit;

@@ -18,6 +18,8 @@ CAMPUSES = [
     {"university_short_name": "KMUTT", "code": "bangkhuntien", "name": "พื้นที่การศึกษาบางขุนเทียน", "is_main": False, "official_url": "https://www.kmutt.ac.th/about-kmutt/contact-us/"},
     {"university_short_name": "KMUTT", "code": "ratchaburi", "name": "พื้นที่การศึกษาราชบุรี", "is_main": False, "official_url": "https://www.kmutt.ac.th/about-kmutt/contact-us/"},
     {"university_short_name": "KU", "code": "bangkhen", "name": "วิทยาเขตบางเขน", "is_main": True, "official_url": "https://ku.ac.th/th/campus-information"},
+    {"university_short_name": "KU", "code": "kamphaeng-saen", "name": "วิทยาเขตกำแพงแสน", "is_main": False, "official_url": "https://admission.kps.ku.ac.th/"},
+    {"university_short_name": "KU", "code": "sriracha", "name": "วิทยาเขตศรีราชา", "is_main": False, "official_url": "https://admissions.src.ku.ac.th/"},
     {"university_short_name": "KU", "code": "sakon-nakhon", "name": "วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร", "is_main": False, "official_url": "https://ku.ac.th/th/campus-information"},
     {"university_short_name": "MU", "code": "salaya", "name": "วิทยาเขตศาลายา", "is_main": True, "official_url": "https://www.mahidol.ac.th/campus/"},
     {"university_short_name": "SWU", "code": "prasan-mit", "name": "ประสานมิตร", "is_main": True, "official_url": "https://admission.swu.ac.th/admissions2/"},
@@ -40,7 +42,13 @@ def campus_code_for(program):
             return "bangkhuntien"
         return "bangmod"
     if university == "KU":
-        return "bangkhen" if code.startswith("ku-bangkhen-") else "sakon-nakhon"
+        if code.startswith("ku-bangkhen-"):
+            return "bangkhen"
+        if code.startswith("ku-kps-"):
+            return "kamphaeng-saen"
+        if code.startswith("ku-sriracha-"):
+            return "sriracha"
+        return "sakon-nakhon"
     if university == "SWU":
         return "ongkharak" if code.startswith(("swu-ece-", "swu-engineering-")) else "prasan-mit"
     return {
