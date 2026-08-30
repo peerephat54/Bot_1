@@ -11,6 +11,7 @@ def event(name, start=None, end=None, status="confirmed", display=None):
 class AdmissionDateTests(unittest.TestCase):
     def test_thai_dates_and_reference_ranges(self):
         self.assertEqual(thai_date("2026-08-03"), "3 ส.ค. 2569")
+        self.assertEqual(thai_date("2026-08-03T12:00:00+07:00"), "3 ส.ค. 2569")
         self.assertIsNone(thai_date("2026-02-31"))
         samples = {
             "3-17 พ.ย. 2568 (กำหนดการของ TCAS69)": ("2025-11-03", "2025-11-17"),
@@ -29,7 +30,9 @@ class AdmissionDateTests(unittest.TestCase):
             event("รับสมัคร", "2026-08-03", "2026-08-31"),
             event("ชำระเงินค่าสมัคร", "2026-08-03", "2026-09-01"),
             event("ประกาศผู้มีสิทธิ์สัมภาษณ์", "2026-09-08"),
+            event("สอบสัมภาษณ์", "2026-09-15"),
             event("ประกาศผลข้อเขียน", "2026-09-10"),
+            event("ประกาศผลสอบสัมภาษณ์", "2026-09-20"),
             event("ประกาศผู้ผ่านการคัดเลือก", "2026-09-22"),
             event("ประกาศผู้ยืนยันสิทธิ์เข้าศึกษา", "2026-09-25"),
             event("ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา", "2027-02-10"),
@@ -38,6 +41,8 @@ class AdmissionDateTests(unittest.TestCase):
         self.assertIn("**ปิดรับสมัคร:** 31 ส.ค. 2569", text)
         self.assertIn("**ประกาศผลคัดเลือก:** 22 ก.ย. 2569", text)
         self.assertIn("**ประกาศสิทธิ์สัมภาษณ์:** 8 ก.ย. 2569", text)
+        self.assertIn("**วันสอบสัมภาษณ์:** 15 ก.ย. 2569", text)
+        self.assertIn("**ประกาศผลสัมภาษณ์:** 20 ก.ย. 2569", text)
         self.assertIn("**ประกาศผู้มีสิทธิ์เข้าศึกษา:** 10 ก.พ. 2570", text)
         self.assertNotIn("10 ก.ย. 2569", text)
         self.assertNotIn("25 ก.ย. 2569", text)
@@ -46,9 +51,36 @@ class AdmissionDateTests(unittest.TestCase):
         text = portfolio_dates([event("ประกาศผู้มีสิทธิ์สอบสัมภาษณ์", "2026-09-08")])
         self.assertIn(f"**ประกาศผลคัดเลือก:** {MISSING}", text)
         self.assertIn("**ประกาศสิทธิ์สัมภาษณ์:** 8 ก.ย. 2569", text)
+        self.assertIn(f"**วันสอบสัมภาษณ์:** {MISSING}", text)
+
+    def test_interview_date_is_separate_from_interview_announcement(self):
+        text = portfolio_dates([
+            event("ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์", "2026-11-03"),
+            event("สอบสัมภาษณ์ออนไลน์", "2026-11-09", "2026-11-10"),
+        ])
+        self.assertIn("**ประกาศสิทธิ์สัมภาษณ์:** 3 พ.ย. 2569", text)
+        self.assertIn("**วันสอบสัมภาษณ์:** 9 พ.ย. 2569 – 10 พ.ย. 2569", text)
+
+    def test_interview_requirement_is_explained_when_date_is_missing(self):
+        self.assertIn(
+            "**วันสอบสัมภาษณ์:** ไม่ใช้สอบสัมภาษณ์ตามเกณฑ์โครงการ",
+            portfolio_dates(interview_required=False),
+        )
+        self.assertIn(
+            "**วันสอบสัมภาษณ์:** มีสอบสัมภาษณ์ แต่ยังไม่ระบุวัน",
+            portfolio_dates(interview_required=True),
+        )
+
+    def test_full_timeline_uses_readable_thai_dates(self):
+        text = app.format_timeline([
+            event("ปิดรับสมัคร", "2026-10-14"),
+            event("สอบสัมภาษณ์", "2026-11-09"),
+        ])
+        self.assertIn("ปิดรับสมัคร: 14 ต.ค. 2569", text)
+        self.assertIn("สอบสัมภาษณ์: 9 พ.ย. 2569", text)
 
     def test_unknown_tentative_disputed_and_month_only(self):
-        self.assertEqual(portfolio_dates().count(MISSING), 3)
+        self.assertEqual(portfolio_dates().count(MISSING), 5)
         self.assertIn("เบื้องต้น", event_date(event("รับสมัคร", "2026-08-03", status="tentative")))
         self.assertIn("ต้องตรวจยืนยัน", event_date(event("รับสมัคร", "2026-08-03", status=None)))
         disputed = event_date(event("ประกาศผลการคัดเลือก", "2026-09-01", status="disputed"))
@@ -102,7 +134,7 @@ class AdmissionDateTests(unittest.TestCase):
         for candidate in CANDIDATES:
             card = app.build_project_embed(candidate["program"], candidate["project"])
             self.assertLessEqual(len(card), 6000)
-            self.assertTrue(any("วันรับสมัครและประกาศผล" in f.name for f in card.fields))
+            self.assertTrue(any("กำหนดการสมัคร สัมภาษณ์ และผล" in f.name for f in card.fields))
             for field in card.fields:
                 self.assertLessEqual(len(field.value), 1024)
 

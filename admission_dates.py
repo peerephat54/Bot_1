@@ -7,8 +7,11 @@ MISSING = "ยังไม่ระบุในข้อมูล"
 
 
 def thai_date(value):
+    raw = str(value or "").strip()
     try:
-        parsed = date.fromisoformat(str(value))
+        # Source-check timestamps may include time and timezone; the display
+        # only needs their calendar date.
+        parsed = date.fromisoformat(raw[:10])
     except (ValueError, TypeError):
         return None
     return f"{parsed.day} {MONTHS[parsed.month - 1]} {parsed.year + 543}"
@@ -80,7 +83,13 @@ def is_application_event(event):
     )
 
 
-def portfolio_dates(events=None, preview=None):
+def is_interview_event(event):
+    """Return actual interview events, not announcements about them."""
+    name = str(event.get("event_name") or "")
+    return "สัมภาษณ์" in name and "ประกาศ" not in name
+
+
+def portfolio_dates(events=None, preview=None, interview_required=None):
     events = list(events or [])
     raw_period = None
     if preview:
@@ -94,14 +103,17 @@ def portfolio_dates(events=None, preview=None):
         if preview.get("result_announcement_on"):
             events.append({"event_name": "ประกาศผลการคัดเลือก", "start_on": preview["result_announcement_on"], "date_status": "confirmed"})
 
-    applications, results, interview_results, admission_lists = [], [], [], []
+    applications, results, interview_eligibility, interview_results, admission_lists = [], [], [], [], []
     for event in events:
         name = str(event.get("event_name") or "")
         if is_application_event(event):
             applications.append(event)
         elif "ประกาศ" in name:
             if "สัมภาษณ์" in name:
-                interview_results.append(event)
+                if "มีสิทธิ์" in name:
+                    interview_eligibility.append(event)
+                else:
+                    interview_results.append(event)
             elif "ผู้ยืนยันสิทธิ์" in name or "สำรอง" in name:
                 continue
             elif any(term in name for term in ("ผลการคัดเลือก", "ผู้ผ่านการคัดเลือก")):
@@ -129,15 +141,27 @@ def portfolio_dates(events=None, preview=None):
     def result_values(items):
         return " / ".join(dict.fromkeys(event_date(item) for item in items)) or MISSING
 
+    interview_events = [event for event in events if is_interview_event(event)]
+    if interview_required is False:
+        interview_text = "ไม่ใช้สอบสัมภาษณ์ตามเกณฑ์โครงการ"
+    elif interview_events:
+        interview_text = result_values(interview_events)
+    elif interview_required is True:
+        interview_text = "มีสอบสัมภาษณ์ แต่ยังไม่ระบุวัน"
+    else:
+        interview_text = MISSING
+
     lines = [
         f"**เปิดรับสมัคร:** {boundary_values('start_on')}",
         f"**ปิดรับสมัคร:** {boundary_values('end_on')}",
-        f"**ประกาศผลคัดเลือก:** {result_values(results)}",
+        f"**ประกาศสิทธิ์สัมภาษณ์:** {result_values(interview_eligibility)}",
+        f"**วันสอบสัมภาษณ์:** {interview_text}",
     ]
+    if interview_results:
+        lines.append(f"**ประกาศผลสัมภาษณ์:** {result_values(interview_results)}")
+    lines.append(f"**ประกาศผลคัดเลือก:** {result_values(results)}")
     if admission_lists:
         lines.append(f"**ประกาศผู้มีสิทธิ์เข้าศึกษา:** {result_values(admission_lists)}")
-    if interview_results:
-        lines.append(f"**ประกาศสิทธิ์สัมภาษณ์:** {result_values(interview_results)}")
     if raw_period and not applications:
         lines.append(f"**ช่วงสมัครตามต้นทาง:** {raw_period}")
     for event in applications:

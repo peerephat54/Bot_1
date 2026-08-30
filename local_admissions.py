@@ -9,7 +9,7 @@ from copy import deepcopy
 import json
 from pathlib import Path
 
-from admission_dates import thai_date
+from admission_dates import MISSING, thai_date
 from scripts.validate_dataset import validate
 
 
@@ -67,15 +67,38 @@ def calendar_fields(program, data):
         if calendar.get("program_codes") and program.get("code") not in calendar["program_codes"]:
             continue
         lines = [calendar["scope_note"]]
+
+        def date_range(item, start_key, end_key):
+            start = thai_date(item.get(start_key))
+            end = thai_date(item.get(end_key))
+            if start and end and start != end:
+                return f"{start} – {end}"
+            return start or end or MISSING
+
         for period in calendar["rounds"]:
-            lines.append(f"**{period['label']}:** {thai_date(period['application_start_on'])} – {thai_date(period['application_end_on'])}")
+            lines.append(f"**{period['label']}:** {date_range(period, 'application_start_on', 'application_end_on')}")
+            if period.get("interview_eligible_on"):
+                lines.append("ประกาศสิทธิ์สัมภาษณ์: " + thai_date(period["interview_eligible_on"]))
+            if period.get("interview_on") or period.get("interview_end_on"):
+                lines.append("สอบสัมภาษณ์: " + date_range(period, "interview_on", "interview_end_on"))
             if period.get("result_announcement_on"):
                 lines.append("ผลคัดเลือก: " + thai_date(period["result_announcement_on"]))
-            elif period.get("interview_passed_on"):
+            if period.get("interview_passed_on"):
                 lines.append("ผลสัมภาษณ์: " + thai_date(period["interview_passed_on"]))
-            elif period.get("result_note"):
+            if period.get("result_note"):
                 lines.append("ผลคัดเลือก: " + period["result_note"])
-        if not any(p.get("result_announcement_on") or p.get("interview_passed_on") or p.get("result_note") for p in calendar["rounds"]):
+
+        if calendar.get("interview_eligible_on"):
+            lines.append("ประกาศสิทธิ์สัมภาษณ์: " + thai_date(calendar["interview_eligible_on"]))
+        if calendar.get("interview_on") or calendar.get("interview_end_on"):
+            lines.append("สอบสัมภาษณ์: " + date_range(calendar, "interview_on", "interview_end_on"))
+        if calendar.get("interview_passed_on"):
+            lines.append("ผลสัมภาษณ์: " + thai_date(calendar["interview_passed_on"]))
+
+        if not any(
+            p.get("result_announcement_on") or p.get("interview_passed_on") or p.get("result_note")
+            for p in calendar["rounds"]
+        ) and not calendar.get("interview_passed_on"):
             lines.append("ประกาศผล: ยังไม่ระบุในปฏิทินนี้")
         lines.append(f"[ปฏิทินทางการ]({calendar['source_url']}) • ตรวจ {thai_date(calendar['source_checked_at'])}")
         fields.append((calendar["title"] + " • TCAS70", "\n".join(lines)))

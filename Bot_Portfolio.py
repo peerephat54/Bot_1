@@ -19,7 +19,7 @@ from discord import app_commands
 from dotenv import load_dotenv
 from supabase import Client, create_client
 from screening import FIELDS as SCREENING_FIELDS, group_universities, screening_entries
-from admission_dates import portfolio_dates
+from admission_dates import event_date, portfolio_dates
 from application_cards import application_question_fields
 from local_admissions import load_catalog, local_candidates, calendar_fields
 
@@ -570,14 +570,8 @@ def format_timeline(events):
 
     lines = []
     for event in sorted(events, key=event_key):
-        display = event.get("date_display")
-        if not display:
-            start = event.get("start_on") or "ไม่ระบุ"
-            end = event.get("end_on")
-            display = f"{start} – {end}" if end and end != start else start
-        status = event.get("date_status")
-        suffix = " (ระบุเพียงเดือน)" if status == "month_only" else ""
-        lines.append(f"• {event.get('event_name', 'เหตุการณ์')}: {display}{suffix}")
+        display = event_date(event)
+        lines.append(f"• {event.get('event_name', 'เหตุการณ์')}: {display}")
     return "\n".join(lines)
 
 
@@ -594,7 +588,7 @@ def format_timeline_summary(events, max_events=4):
             ("รับสมัคร" in name or "สมัครทาง" in name or "สร้าง Portfolio" in name)
             and "ชำระ" not in name
         ),
-        lambda name: "สอบสัมภาษณ์" in name,
+        lambda name: "สัมภาษณ์" in name and "ประกาศ" not in name,
         lambda name: "ผู้ผ่านการคัดเลือก" in name,
         lambda name: "ยืนยันสิทธิ์" in name,
     ]
@@ -623,6 +617,18 @@ def format_timeline_summary(events, max_events=4):
 
     selected.sort(key=lambda event: event.get("start_on") or "9999-12-31")
     return format_timeline(selected[:max_events])
+
+
+def interview_requirement(criteria):
+    """Read an explicit no-interview rule or an interview selection method."""
+    criteria = criteria or {}
+    additional = criteria.get("additional_requirements")
+    if isinstance(additional, dict) and "interview_required" in additional:
+        return additional["interview_required"]
+    methods = criteria.get("selection_methods")
+    if "สัมภาษณ์" in json.dumps(methods, ensure_ascii=False):
+        return True
+    return None
 
 
 HUMAN_LABELS = {
@@ -1305,6 +1311,7 @@ def project_gpax_text(criteria):
 def build_project_embed(program, project, applicant_profile=None):
     """Answer the main application questions; full rules remain in detail tabs."""
     timeline = project.get("admission_timeline") or []
+    criteria = project.get("selected_criteria") or {}
 
     embed = build_project_shell(
         program, project, "สรุปที่ต้องรู้ก่อนสมัคร", 0x2ECC71
@@ -1316,8 +1323,8 @@ def build_project_embed(program, project, applicant_profile=None):
     )
 
     embed.add_field(
-        name=f"วันรับสมัครและประกาศผล • TCAS{str(project.get('academic_year') or 2570)[-2:]}",
-        value=shorten(portfolio_dates(timeline), 1000),
+        name=f"กำหนดการสมัคร สัมภาษณ์ และผล • TCAS{str(project.get('academic_year') or 2570)[-2:]}",
+        value=shorten(portfolio_dates(timeline, interview_required=interview_requirement(criteria)), 1000),
         inline=False,
     )
 
@@ -1854,7 +1861,14 @@ def build_grade_result_embed(entry, profile, index, total, section="assessment")
         dates_label += " (ปีก่อน)"
     embed.add_field(
         name=shorten(dates_label, 256),
-        value=shorten(portfolio_dates(project.get("admission_timeline"), preview=preview), 1000),
+        value=shorten(
+            portfolio_dates(
+                project.get("admission_timeline"),
+                preview=preview,
+                interview_required=interview_requirement(project.get("selected_criteria") or {}),
+            ),
+            1000,
+        ),
         inline=False,
     )
     if entry["kind"] == "reference":
