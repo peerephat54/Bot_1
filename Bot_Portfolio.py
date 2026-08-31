@@ -568,6 +568,90 @@ def shorten(value, limit=1024):
     return text[: limit - 1].rstrip() + "…"
 
 
+def source_status_text(record, current_year=2570):
+    """Explain whether a record is current, preliminary, or historical."""
+    record = record or {}
+    publication_status = record.get("publication_status")
+    if publication_status == "official":
+        return "ยืนยันแล้ว — มีประกาศโครงการ TCAS70 ทางการ"
+    if publication_status == "draft_waiting_official":
+        return "ยังไม่ยืนยัน — รอประกาศรับสมัครฉบับสมบูรณ์"
+
+    reference_year = record.get("reference_academic_year")
+    if reference_year == current_year:
+        return "ยังไม่ยืนยัน — พบข้อมูลปี 2570 แต่ยังไม่มีประกาศฉบับสมบูรณ์"
+    if reference_year:
+        return (
+            f"ข้อมูลอ้างอิง TCAS{str(reference_year)[-2:]} "
+            "— ไม่ใช้ยืนยันเกณฑ์สมัคร TCAS70"
+        )
+    if record.get("source_url"):
+        return "มีแหล่งข้อมูลทางการ — สถานะโครงการยังต้องตรวจเพิ่ม"
+    return "ยังไม่ยืนยัน — ยังไม่มีประกาศโครงการในข้อมูลนี้"
+
+
+def source_reference_line(record, fallback_url=None, fallback_title=None):
+    """Render one readable source link without exposing raw metadata."""
+    record = record or {}
+    url = record.get("source_url") or fallback_url
+    if not url:
+        return "แหล่งข้อมูล: ไม่พบลิงก์ทางการในข้อมูล"
+    title = record.get("source_title") or fallback_title or "เว็บไซต์ทางการ"
+    return f"แหล่งข้อมูล: [{shorten(title, 110)}]({url})"
+
+
+def source_provenance_text(record, fallback_url=None, fallback_title=None):
+    """Show status, source, publication date, and verification date together."""
+    record = record or {}
+    lines = [
+        f"สถานะ: {source_status_text(record)}",
+        source_reference_line(record, fallback_url, fallback_title),
+    ]
+    if record.get("source_published_at"):
+        lines.append(f"เผยแพร่: {format_checked_at(record['source_published_at'])}")
+    if record.get("source_checked_at"):
+        lines.append(f"ตรวจล่าสุด: {format_checked_at(record['source_checked_at'])}")
+    else:
+        lines.append("ตรวจล่าสุด: ไม่ระบุ")
+    return shorten("\n".join(lines), 1000)
+
+
+def program_source_status_line(program, current_previews=None, include_source=True):
+    """Summarize current-program confidence and its official source."""
+    current_previews = current_previews or []
+    if current_previews:
+        lines = []
+        seen = set()
+        for preview in current_previews:
+            url = preview.get("source_url")
+            key = url or clean_preview_title(preview)
+            if key in seen:
+                continue
+            seen.add(key)
+            checked = format_checked_at(preview.get("source_checked_at"))
+            source_line = (
+                f"\nแหล่งข้อมูล: [ประกาศ/หน้าเว็บทางการ]({url})"
+                if include_source and url
+                else "\nแหล่งข้อมูล: ไม่พบลิงก์ทางการในข้อมูล"
+                if include_source
+                else ""
+            )
+            lines.append(f"สถานะ: {source_status_text(preview)}{source_line}\nตรวจล่าสุด: {checked}")
+        return shorten("\n".join(lines), 900)
+
+    official_url = program.get("official_program_url")
+    if official_url:
+        return (
+            "สถานะ: ยังไม่ยืนยัน TCAS70\n"
+            f"แหล่งข้อมูล: [เว็บไซต์หลักสูตร]({official_url})\n"
+            f"ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
+        )
+    return (
+        "สถานะ: ยังไม่ยืนยัน TCAS70\n"
+        f"ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
+    )
+
+
 def format_json_scores(value):
     if not value:
         return "ไม่มีคะแนนสอบเพิ่มเติม"
@@ -1142,7 +1226,11 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
         )
         embed.add_field(
             name="TCAS70 • สมัครได้หรือยัง?",
-            value=f"{status}\nตรวจประกาศล่าสุดจากลิงก์คณะก่อนสมัคร",
+            value=(
+                f"{status}\n"
+                f"{program_source_status_line(program, current_previews, include_source=False)}\n"
+                "ตรวจประกาศล่าสุดจากลิงก์คณะก่อนสมัคร"
+            ),
             inline=False,
         )
         embed.add_field(
@@ -1172,6 +1260,12 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
     if section == "summary":
         for heading, value in calendar_fields(program, LOCAL_ADMISSIONS_CATALOG):
             embed.add_field(name=heading, value=shorten(value, 1024), inline=False)
+    elif section == "curriculum":
+        embed.add_field(
+            name="สถานะ TCAS70 และแหล่งข้อมูล",
+            value=shorten(program_source_status_line(program, current_previews), 1024),
+            inline=False,
+        )
     if program.get("official_program_url") and section != "references":
         embed.add_field(
             name="ข้อมูลหลักสูตรทางการ",
@@ -1192,6 +1286,11 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
 def project_choice_description(project):
     criteria = project.get("selected_criteria") or {}
     parts = []
+    parts.append(
+        "ยืนยันแล้ว"
+        if project.get("publication_status") == "official"
+        else "ยังไม่ยืนยัน"
+    )
     min_gpax = criteria.get("min_gpax")
     gpax_requirements = criteria.get("gpax_requirements") or {}
     thai_gpax_only = (
@@ -1255,6 +1354,11 @@ def build_project_shell(program, project, section_label, color):
     )
     if university.get("logo_url"):
         embed.set_thumbnail(url=university["logo_url"])
+    embed.add_field(
+        name="สถานะข้อมูลและแหล่งที่มา",
+        value=source_provenance_text(project),
+        inline=False,
+    )
     return embed
 
 
@@ -1919,6 +2023,12 @@ def build_grade_result_embed(entry, profile, index, total, section="assessment")
         ),
         color=discord.Color.blurple() if entry["kind"] == "current" else discord.Color.orange(),
     )
+    source_record = project if entry["kind"] == "current" else (preview or project)
+    embed.add_field(
+        name="สถานะข้อมูลและแหล่งที่มา",
+        value=source_provenance_text(source_record),
+        inline=False,
+    )
     meets = entry["assessment"]["status"] == "meets"
     result_label = (
         ("ผ่านขั้นต่ำ GPAX" if entry["kind"] == "current" else "ถึงขั้นต่ำ GPAX ของปีก่อน")
@@ -2009,6 +2119,12 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
             if assessment["status"] in ("ผ่าน", "ต้องตรวจเพิ่ม")
             else "ตรวจสาเหตุที่ไม่ผ่าน แล้วลองโครงการอื่น"
         )
+        source_record = project
+        source_line = (
+            f"สถานะข้อมูล: {source_status_text(source_record)}\n"
+            f"{source_reference_line(source_record)}\n"
+            f"ตรวจล่าสุด: {format_checked_at(source_record.get('source_checked_at'))}"
+        )
         embed.add_field(
             name=shorten(
                 f"{index}. {university.get('short_name', '')} — {program.get('major_name')}",
@@ -2019,6 +2135,7 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
                 f"โครงการ: {project.get('name')}\n"
                 f"{deadline_text}\n"
                 f"ทำต่อ: {next_step}\n"
+                f"{source_line}\n"
                 + render_rule_checks(assessment, max_items=2),
                 700,
             ),
@@ -2080,6 +2197,12 @@ def build_program_comparison_embed(programs):
                 if source_url
                 else "ไม่มีลิงก์ประกาศ"
             )
+            source_checked = next(
+                (item.get("source_checked_at") for item in projects if item.get("source_url")),
+                None,
+            )
+            if source_checked:
+                source_link += f" • ตรวจล่าสุด {format_checked_at(source_checked)}"
             detail_lines = [
                 f"โครงการยืนยันแล้ว: {len(projects)}",
                 f"GPAX: {gpax_text or 'ต้องดูรายประเภท'}",
@@ -2224,6 +2347,11 @@ def build_program_comparison_embed(programs):
                 if len(source_links) >= 3:
                     break
             source_link = " • ".join(source_links) or "ไม่มีลิงก์อ้างอิง"
+            if source_candidate_rows:
+                source_link += (
+                    f"\nตรวจแหล่งข้อมูลล่าสุด: "
+                    f"{format_checked_at(source_candidate_rows[0].get('source_checked_at'))}"
+                )
         else:
             status_text = "หลักสูตรเปิดสอนจริง และกำลังรอประกาศ TCAS70"
             detail_lines = [

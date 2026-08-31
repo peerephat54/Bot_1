@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-08-30T12:00:00+07:00",
+  "checked_at": "2026-08-31T23:09+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -29,7 +29,7 @@
       "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-31",
       "decision": "เพิ่มปฏิทินกลางหลักสูตรปกติ ฉบับแก้ไข 28 ส.ค. 2569 ไม่ผูกกลุ่ม 1/2 ให้สาขาโดยไม่มีประกาศ"
     },
     {
@@ -45,7 +45,7 @@
       "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-31",
       "decision": "อ่านภาพ Timeline2570_1.jpg ยืนยันปี 2570; วันที่ข่าวเก่า 6 ส.ค. 2568 ไม่ใช้เป็นวันที่เผยแพร่ภาพ; วันรายคณะอาจต่างกัน"
     },
     {
@@ -53,7 +53,7 @@
       "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-31",
       "decision": "ข่าว 24 ส.ค. แจ้งทยอยเปิดตั้งแต่ 17 ส.ค. ไม่ใช่วันเปิดทุกสาขา และแนะนำ iFolio"
     },
     {
@@ -202,7 +202,8 @@
       "publisher": "สำนักบริหารการศึกษา มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "used_primary_index",
       "academic_year": 2570,
-      "decision": "ยืนยันปฏิทิน Portfolio บางเขน รอบ 1.1 และ 1.2 และลิงก์ไปยังเกณฑ์รายโครงการ"
+      "decision": "ยืนยันปฏิทิน Portfolio บางเขน รอบ 1.1 และ 1.2 และลิงก์ไปยังเกณฑ์รายโครงการ",
+      "source_checked_at": "2026-08-31"
     },
     {
       "url": "https://admission.kmutnb.ac.th/apply/round/1",
@@ -782,6 +783,22 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการพัฒนาเครือข่ายองค์กรแห่งการเรียนรู้ด้านวิทยาศาสตร์ที่ระบุวิทยาการคอมพิวเตอร์ภาคปกติ/พิเศษ; เก็บจำนวนรับเป็นยอดรวมและติดป้ายให้ตรวจเกณฑ์เฉพาะสาขา"
+    },
+    {
+      "url": "https://www.ict.mahidol.ac.th/th/ict-round-1-ict-portfolio-academic-year-2027/",
+      "publisher": "คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-31",
+      "decision": "ตรวจซ้ำประกาศ ICT รอบ 1 ปีการศึกษา 2570; พบวันสมัคร 3–31 สิงหาคม 2569 และรายละเอียดเอกสาร/สัมภาษณ์ตามข้อมูลเดิม จึงไม่เพิ่มแถวซ้ำ"
+    },
+    {
+      "url": "https://admission.reg.cmu.ac.th/tcas/app.php",
+      "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-08-31",
+      "decision": "ตรวจซ้ำระบบรับสมัคร TCAS70; รอบ 1 ยังระบุให้ติดตามภายหลัง จึงไม่เติมวันหรือเกณฑ์ที่ยังไม่ประกาศ"
     }
   ]
 }

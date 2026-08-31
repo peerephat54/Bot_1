@@ -40,6 +40,25 @@ class ApplicationCardTests(unittest.TestCase):
         self.assertIn(candidate["project"]["source_url"], text)
         self.assertTrue(all(not f.inline for f in card.fields))
 
+    def test_status_and_source_are_explicit(self):
+        candidate = next(c for c in CANDIDATES if c["project"]["code"] == "muict-ict-portfolio")
+        card_text_value = card_text(
+            app.build_project_embed(candidate["program"], candidate["project"])
+        )
+        self.assertIn("สถานะข้อมูลและแหล่งที่มา", card_text_value)
+        self.assertIn("ยืนยันแล้ว — มีประกาศโครงการ TCAS70 ทางการ", card_text_value)
+        self.assertIn("แหล่งข้อมูล:", card_text_value)
+        self.assertIn("ตรวจล่าสุด: 31 ส.ค. 2569", card_text_value)
+
+        self.assertIn(
+            "ยังไม่ยืนยัน — รอประกาศรับสมัครฉบับสมบูรณ์",
+            app.source_status_text({"publication_status": "draft_waiting_official"}),
+        )
+        self.assertIn(
+            "ข้อมูลอ้างอิง TCAS69",
+            app.source_status_text({"reference_academic_year": 2569}),
+        )
+
     def test_unknown_is_not_free_no_test_or_no_portfolio(self):
         fields = dict(application_question_fields({"selected_criteria": {}}))
         self.assertIn(UNKNOWN, fields["ต้องใช้เอกสารอะไร?"])

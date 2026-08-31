@@ -20,7 +20,7 @@
       "academic_year": 2570,
       "source_url": "https://admission.chula.ac.th/tcas.php",
       "evidence_url": "https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png",
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "scope_note": "ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา",
       "rounds": [
         {
@@ -53,7 +53,7 @@
       "title": "ปฏิทิน มก. • บางเขน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-08-30",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "scope_note": "ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์",
       "rounds": [
         {
@@ -87,7 +87,7 @@
       "title": "ปฏิทิน มก. • สกลนคร",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "scope_note": "ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน",
       "rounds": [
         {
@@ -108,7 +108,7 @@
       "academic_year": 2570,
       "source_url": "https://www.admission.kmutnb.ac.th/news/1394",
       "evidence_url": "https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg",
-      "source_checked_at": "2026-08-28",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "scope_note": "คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ",
       "rounds": [
         {
@@ -208,7 +208,7 @@
       "title": "ปฏิทิน มก. • กำแพงแสน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-08-30",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "scope_note": "ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา",
       "rounds": [
         {
@@ -243,7 +243,7 @@
       "title": "ปฏิทิน มก. • ศรีราชา",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-08-30",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "scope_note": "ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ",
       "rounds": [
         {
@@ -259,7 +259,7 @@
       ]
     }
   ],
-  "checked_at": "2026-08-30T12:00:00+07:00",
+  "checked_at": "2026-08-31T23:09+07:00",
   "runtime_local_project_codes": [
     "tu-direct-cpe-2570",
     "tu-direct-software-2570",
@@ -2352,7 +2352,7 @@
       "source_url": "https://www.ict.mahidol.ac.th/th/ict-round-1-ict-portfolio-academic-year-2027/",
       "source_title": "ประกาศ! รอบ 1 ICT – Portfolio ปีการศึกษา 2570",
       "source_published_at": "2026-07-02",
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
+      "source_checked_at": "2026-08-31T23:09+07:00",
       "data_notes": "ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569"
     },
     {
