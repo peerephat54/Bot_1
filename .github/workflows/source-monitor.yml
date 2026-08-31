@@ -1,0 +1,55 @@
+name: ตรวจแหล่งข้อมูลทางการ
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Restore previous source baseline
+        uses: actions/cache/restore@v4
+        with:
+          path: source-monitor-baseline.json
+          key: source-monitor-baseline-${{ github.run_id }}
+          restore-keys: source-monitor-baseline-
+
+      - name: Check audited official sources
+        run: >-
+          python scripts/check_official_sources.py
+          --fail-on-error
+          --fail-on-stale
+          --fail-on-change
+          --previous-report source-monitor-baseline.json
+          --report-path source-monitor-report.json
+
+      - name: Update source baseline
+        if: always() && hashFiles('source-monitor-report.json') != ''
+        run: cp source-monitor-report.json source-monitor-baseline.json
+
+      - name: Save source baseline
+        if: always() && hashFiles('source-monitor-baseline.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: source-monitor-baseline.json
+          key: source-monitor-baseline-${{ github.run_id }}
+
+      - name: Upload source monitor report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-monitor-report
+          path: source-monitor-report.json

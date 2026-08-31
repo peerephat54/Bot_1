@@ -22,6 +22,8 @@ from screening import FIELDS as SCREENING_FIELDS, group_universities, screening_
 from admission_dates import event_date, portfolio_dates
 from application_cards import application_question_fields
 from local_admissions import load_catalog, local_candidates, calendar_fields
+from rule_engine import evaluate_application_rules, render_rule_checks
+from usage_metrics import new_flow_id, record_event
 
 load_dotenv()
 
@@ -885,82 +887,20 @@ def interest_score(profile_text, candidate_text):
 
 
 def evaluate_project_fit(profile, program, project):
-    """Evaluate only machine-checkable facts; free-text requirements remain manual."""
-    criteria = project.get("selected_criteria") or {}
-    gpax = profile["gpax"]
-    min_gpax = criteria.get("min_gpax")
-    tuition = project.get("tuition_fee_per_semester")
-    budget = profile.get("budget")
-    reasons = []
-    blockers = []
-    manual_checks = []
-    score = 0
-
-    if min_gpax is None:
-        manual_checks.append("ประกาศใช้เกณฑ์ GPAX แยกตามประเภทผู้สมัคร")
-    elif gpax + 1e-9 < float(min_gpax):
-        blockers.append(f"GPAX ต่ำกว่าเกณฑ์ {float(min_gpax):.2f}")
-    else:
-        reasons.append(f"GPAX ผ่านขั้นต่ำ {float(min_gpax):.2f}")
-        score += 6 + min(3, int((gpax - float(min_gpax)) * 4))
-
-    preference = profile.get("language", "any")
-    if not language_matches(preference, program.get("language")):
-        blockers.append("ภาษาหลักสูตรไม่ตรงกับที่เลือก")
-    elif preference != "any":
-        reasons.append("ภาษาหลักสูตรตรงกับที่เลือก")
-        score += 2
-
-    if budget is not None and tuition is not None:
-        if float(tuition) > budget:
-            blockers.append(f"ค่าเรียน {float(tuition):,.0f} บาท/ภาค เกินงบที่ระบุ")
-        else:
-            reasons.append("ค่าเรียนอยู่ในงบต่อภาค")
-            score += 2
-    elif budget is not None:
-        manual_checks.append("ประกาศไม่ได้ระบุค่าเรียน จึงยังเทียบงบไม่ได้")
-
-    requested_locations = requested_location_keys(profile.get("location_budget"))
-    university = first_relation(program.get("universities"))
-    campus = first_relation(program.get("university_campuses"))
-    candidate_location = PROGRAM_LOCATION_KEYS.get(
-        (university.get("short_name"), campus.get("code"))
-    )
-    if requested_locations and candidate_location not in requested_locations:
-        blockers.append("พื้นที่เรียนไม่ตรงกับจังหวัด/พื้นที่ที่ระบุ")
-    elif requested_locations:
-        reasons.append("พื้นที่เรียนตรงกับที่ระบุ")
-        score += 3
-
+    """Keep the old call site while delegating decisions to the rule engine."""
+    assessment = evaluate_application_rules(profile, program, project)
     candidate_text = " ".join(
         str(value or "")
         for value in (
             program.get("faculty_name"),
             program.get("major_name"),
             project.get("name"),
-            criteria.get("criteria_summary"),
-            criteria.get("accepted_achievements"),
+            (project.get("selected_criteria") or {}).get("criteria_summary"),
+            (project.get("selected_criteria") or {}).get("accepted_achievements"),
         )
     )
-    score += interest_score(profile.get("interests"), candidate_text)
-
-    if criteria.get("applicant_qualifications"):
-        manual_checks.append("วุฒิ/แผนการเรียนและคุณสมบัติเฉพาะ")
-    if criteria.get("min_english_score") or criteria.get("standardized_scores"):
-        manual_checks.append("คะแนนภาษาอังกฤษหรือคะแนนมาตรฐาน")
-    if criteria.get("additional_requirements"):
-        manual_checks.append("เงื่อนไขเพิ่มเติมของโครงการ")
-
-    status = "ไม่ตรงตัวกรอง" if blockers else (
-        "ต้องตรวจเพิ่ม" if manual_checks or min_gpax is None else "ผ่านเงื่อนไขที่ตรวจได้"
-    )
-    return {
-        "status": status,
-        "score": score,
-        "reasons": reasons,
-        "blockers": blockers,
-        "manual_checks": list(dict.fromkeys(manual_checks)),
-    }
+    assessment["score"] += interest_score(profile.get("interests"), candidate_text)
+    return assessment
 
 
 def rank_beginner_matches(profile, candidates, limit=10):
@@ -976,7 +916,7 @@ def rank_beginner_matches(profile, candidates, limit=10):
         matches.append({**candidate, "assessment": assessment})
     matches.sort(
         key=lambda item: (
-            item["assessment"]["status"] != "ผ่านเงื่อนไขที่ตรวจได้",
+            item["assessment"]["status"] != "ผ่าน",
             -item["assessment"]["score"],
             str(item["program"].get("major_name") or "").casefold(),
         )
@@ -987,22 +927,18 @@ def rank_beginner_matches(profile, candidates, limit=10):
 def applicant_assessment_text(profile, program, project):
     if not profile:
         return (
-            "ยังไม่ได้กรอกข้อมูลผู้สมัคร • ใช้ `/start` แล้วเลือก "
-            "**ฉันผ่านเกณฑ์อะไรบ้าง** เพื่อเทียบ GPAX เบื้องต้น"
+            "ยังไม่ได้กรอกข้อมูลผู้สมัคร\n"
+            "ใช้ `/grade_check` เพื่อกรอก GPAX หรือใช้ `/start` "
+            "เพื่อกรอกข้อมูลเพิ่มเติม"
         )
     assessment = evaluate_project_fit(profile, program, project)
-    if assessment["blockers"]:
-        return "❌ **ไม่ผ่านตัวกรองเบื้องต้น**\n" + "\n".join(
-            f"• {item}" for item in assessment["blockers"]
-        )
-    lines = [f"{'✅' if assessment['status'].startswith('ผ่าน') else '⚠️'} **{assessment['status']}**"]
-    lines.extend(f"• {item}" for item in assessment["reasons"])
-    if assessment["manual_checks"]:
-        lines.append(
-            "• ยังต้องตรวจ: " + ", ".join(assessment["manual_checks"])
-        )
-    lines.append("ผลนี้เป็นการคัดกรอง ไม่ใช่การรับรองสิทธิ์สมัคร")
-    return shorten("\n".join(lines), 700)
+    lines = [
+        f"**สถานะ: {assessment['status']}**",
+        "**ผลตรวจรายเงื่อนไข**",
+        render_rule_checks(assessment),
+        "ผลนี้เป็นการคัดกรองเบื้องต้น ไม่ใช่การรับรองสิทธิ์สมัคร",
+    ]
+    return shorten("\n".join(lines), 1000)
 
 
 def trim_embed_to_limit(embed, limit=5900):
@@ -1521,7 +1457,7 @@ def build_project_timeline_embed(program, project):
 
     if project.get("program_notes"):
         embed.add_field(
-            name="ℹ️ หมายเหตุจำนวนรับ",
+            name="หมายเหตุจำนวนรับ",
             value=shorten(project["program_notes"], 650),
             inline=False,
         )
@@ -1675,7 +1611,7 @@ def faculty_menu_content(
         "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
         f"**เส้นทาง:** {university_name} › {campus_name}\n\n"
         f"### ขั้นที่ {step}: เลือกคณะ\nมี {faculty_count} คณะ\n"
-        "✅ เปิดดูเกณฑ์สมัครได้  •  ⏳ ยังต้องรอประกาศฉบับสมบูรณ์\n"
+        "เปิดดูเกณฑ์สมัครได้  •  ยังต้องรอประกาศฉบับสมบูรณ์\n"
         f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
     )
 
@@ -1710,9 +1646,9 @@ def program_menu_content(
         "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
         f"**เส้นทาง:** {selection_path(university_short_name, faculty_name, campus_name=campus_name)}\n\n"
         f"### ขั้นที่ {step}: เลือกสาขา\nมี {len(matching)} สาขา\n"
-        f"✅ {announced_count} สาขาเปิดดูเกณฑ์สมัคร TCAS70 ได้\n"
-        f"⚠️ {preview_count} สาขามีเพียงข้อมูลแนวทาง ยังใช้ยืนยันการสมัครไม่ได้\n"
-        "⏳ ที่เหลือยังไม่พบประกาศรับสมัครฉบับสมบูรณ์\n"
+        f"{announced_count} สาขาเปิดดูเกณฑ์สมัคร TCAS70 ได้\n"
+        f"{preview_count} สาขามีเพียงข้อมูลแนวทาง ยังใช้ยืนยันการสมัครไม่ได้\n"
+        "ที่เหลือยังไม่พบประกาศรับสมัครฉบับสมบูรณ์\n"
         f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
     )
 
@@ -1763,6 +1699,7 @@ def start_menu_content(navigation_programs):
         "ไม่จำเป็นต้องรู้ชื่อมหาวิทยาลัยหรือศัพท์ TCAS มาก่อน เลือกทางที่ตรงกับคุณได้เลย\n\n"
         "**รู้มหาวิทยาลัยแล้ว** — เปิดค้นหาตามมหาวิทยาลัย\n"
         "**ฉันผ่านเกณฑ์อะไรบ้าง** — เลือกสายและกรอก GPAX แล้วเลือกมหาวิทยาลัยเพื่อดูเกณฑ์\n"
+        "**ยังไม่รู้ว่าจะเรียนอะไร** — กรอกข้อมูล 5 ข้อ แล้วรับรายการที่ควรตรวจต่อ\n"
         "**อยากเปรียบเทียบหลักสูตร** — เลือก 2–3 สาขาในมหาวิทยาลัยเดียวกัน\n\n"
         f"**พร้อมดูเกณฑ์:** {official_count} สาขา\n"
         f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
@@ -1772,10 +1709,12 @@ def start_menu_content(navigation_programs):
 def grade_screening_intro():
     return (
         "## ฉันผ่านเกณฑ์อะไรบ้าง\n"
-        "เลือกสายที่สนใจ แล้วกรอก **GPAX สเกล 4.00**\n\n"
+        "เลือกสายที่สนใจ แล้วกรอก **GPAX สเกล 4.00**\n"
+        "หรือเรียกหน้านี้โดยตรงด้วย `/grade_check`\n\n"
         "**เลือกสาย → ใส่เกรด → เลือกมหาวิทยาลัย → ดูผลเทียบเกณฑ์**\n\n"
         "จัดกลุ่มจากคณะและสาขาที่บอทมีข้อมูล ไม่ครอบคลุมทุกหลักสูตรในประเทศ\n"
-        "ตรวจได้เฉพาะขั้นต่ำ GPAX ส่วนวุฒิ ผลงาน และคะแนนอื่นต้องตรวจเพิ่ม"
+        "ผลแต่ละเงื่อนไขจะแสดงเป็น ผ่าน / ไม่ผ่าน / ต้องตรวจเพิ่ม / ไม่มีข้อมูล\n"
+        "ผลนี้เป็นการคัดกรอง ไม่ใช่การรับรองสิทธิ์สมัคร"
     )
 
 
@@ -1852,6 +1791,13 @@ def build_grade_result_embed(entry, profile, index, total, section="assessment")
         if meets else "ยังสรุปผล GPAX ไม่ได้"
     )
     embed.add_field(name=result_label, value=entry["assessment"]["reason"], inline=False)
+    if entry["kind"] == "current":
+        application_assessment = evaluate_project_fit(profile, program, project)
+        embed.add_field(
+            name="ผลตรวจรายเงื่อนไข",
+            value=shorten(render_rule_checks(application_assessment), 1024),
+            inline=False,
+        )
     round_label = project.get("round_label") or preview.get("round_label") or "รอบ Portfolio"
     variant = project.get("round_variant")
     if variant and str(variant) not in round_label:
@@ -1925,14 +1871,11 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
                 256,
             ),
             value=shorten(
-                f"**{assessment['status']}** • {gpax_text}\n"
+                f"**สถานะ: {assessment['status']}** • {gpax_text}\n"
                 f"{project.get('name')}\n"
-                + (
-                    "ต้องตรวจ: " + ", ".join(assessment["manual_checks"])
-                    if assessment["manual_checks"]
-                    else "ผ่านทุกเงื่อนไขที่ระบบตรวจได้"
-                ),
-                500,
+                + render_rule_checks(assessment, max_items=3)
+                + "\nเปิดรายการเพื่อดูผลตรวจครบทุกเงื่อนไข",
+                700,
             ),
             inline=False,
         )
@@ -1982,7 +1925,7 @@ def build_program_comparison_embed(programs):
             else "ไม่มีลิงก์หลักสูตร"
         )
         if projects:
-            status_text = "✅ มีประกาศ TCAS70 ยืนยันแล้ว"
+            status_text = "มีประกาศ TCAS70 ยืนยันแล้ว"
             source_url = next(
                 (item.get("source_url") for item in projects if item.get("source_url")),
                 None,
@@ -2008,9 +1951,9 @@ def build_program_comparison_embed(programs):
                 )
             ]
             status_text = (
-                "⚠️ มีข้อมูล TCAS70 รอยืนยัน"
+                "มีข้อมูล TCAS70 รอยืนยัน"
                 if current_specific
-                else "⚠️ ยังไม่มีประกาศ TCAS70 • ใช้ข้อมูลปีก่อน"
+                else "ยังไม่มีประกาศ TCAS70 • ใช้ข้อมูลปีก่อน"
             )
             detail_lines = ["โครงการยืนยันแล้ว: 0"]
             source_candidate_rows = list(current_specific[:1])
@@ -2121,7 +2064,7 @@ def build_program_comparison_embed(programs):
                     break
             source_link = " • ".join(source_links) or "ไม่มีลิงก์อ้างอิง"
         else:
-            status_text = "⏳ หลักสูตรเปิดสอนจริง และกำลังรอประกาศ TCAS70"
+            status_text = "หลักสูตรเปิดสอนจริง และกำลังรอประกาศ TCAS70"
             detail_lines = [
                 "โครงการยืนยันแล้ว: 0",
                 "ยังไม่มีข้อมูลปีก่อนที่ตรวจสอบแหล่งทางการได้",
@@ -2166,7 +2109,7 @@ class OwnedView(discord.ui.View):
         )
         if not interaction.response.is_done():
             await interaction.response.send_message(
-                "❌ เมนูเกิดข้อผิดพลาด กรุณาเรียก `/start` ใหม่",
+                "เมนูเกิดข้อผิดพลาด กรุณาเรียก `/start` ใหม่",
                 ephemeral=True,
             )
 
@@ -2182,14 +2125,17 @@ class GradeScreeningFieldSelect(discord.ui.Select):
         parent = self.view
         await interaction.response.send_modal(GradeScreeningModal(
             parent.owner_id, parent.navigation_programs, self.values[0], parent.gpax,
+            flow_id=parent.flow_id, started_at=parent.started_at,
         ))
 
 
 class GradeScreeningFieldView(OwnedView):
-    def __init__(self, owner_id, navigation_programs, gpax=None):
+    def __init__(self, owner_id, navigation_programs, gpax=None, *, flow_id=None, started_at=None):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.gpax = gpax
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
         self.add_item(GradeScreeningFieldSelect())
         self.add_item(HomeButton())
 
@@ -2200,11 +2146,13 @@ class GradeScreeningModal(discord.ui.Modal, title="กรอกเกรดเ�
         placeholder="เช่น 3.20 — ไม่ใช่เกรดเฉพาะวิชา", min_length=1, max_length=4,
     )
 
-    def __init__(self, owner_id, navigation_programs, field, gpax=None):
+    def __init__(self, owner_id, navigation_programs, field, gpax=None, *, flow_id=None, started_at=None):
         super().__init__(title=f"GPAX • {SCREENING_FIELDS[field]}", timeout=VIEW_TIMEOUT_SECONDS)
         self.owner_id = owner_id
         self.navigation_programs = navigation_programs
         self.field = field
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
         if gpax is not None:
             self.gpax_input.default = f"{gpax:.2f}"
 
@@ -2214,6 +2162,7 @@ class GradeScreeningModal(discord.ui.Modal, title="กรอกเกรดเ�
             return
         gpax = parse_gpax(self.gpax_input.value)
         if gpax is None:
+            record_event("grade_check_confusion", interaction, flow_id=self.flow_id, confusion="invalid_gpax")
             await interaction.response.send_message(
                 "GPAX ต้องเป็นตัวเลขตั้งแต่ 0.00 ถึง 4.00 เลือกสายเพื่อกรอกใหม่ได้ด้านล่าง",
                 ephemeral=True, view=GradeScreeningFieldView(self.owner_id, self.navigation_programs),
@@ -2228,7 +2177,14 @@ class GradeScreeningModal(discord.ui.Modal, title="กรอกเกรดเ�
             groups = group_universities(entries)
             await interaction.edit_original_response(
                 content=None, embeds=[build_grade_universities_embed(profile, groups, excluded)],
-                view=GradeScreeningUniversityView(self.owner_id, self.navigation_programs, profile, groups, excluded),
+                view=GradeScreeningUniversityView(
+                    self.owner_id, self.navigation_programs, profile, groups, excluded,
+                    flow_id=self.flow_id, started_at=self.started_at,
+                ),
+            )
+            record_event(
+                "grade_check_results_shown", interaction, flow_id=self.flow_id,
+                started_at=self.started_at, success=bool(groups), result_count=len(entries),
             )
         except Exception:
             # Do not log the applicant's grade or persist their profile.
@@ -2254,15 +2210,19 @@ class GradeScreeningUniversitySelect(discord.ui.Select):
         view = GradeScreeningResultView(
             parent.owner_id, parent.navigation_programs, parent.profile,
             parent.groups, parent.excluded, self.values[0],
+            flow_id=parent.flow_id, started_at=parent.started_at,
         )
+        record_event("grade_check_university_selected", interaction, flow_id=parent.flow_id, success=True)
         await interaction.response.edit_message(content=None, embeds=[view.build_embed()], view=view)
 
 
 class GradeScreeningUniversityView(OwnedView):
-    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, page=0):
+    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, page=0, *, flow_id=None, started_at=None):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.profile, self.groups, self.excluded = profile, groups, excluded
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
         self.total_pages = max(1, (len(groups) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE)
         self.page = max(0, min(page, self.total_pages - 1))
         if groups:
@@ -2276,7 +2236,10 @@ class GradeScreeningUniversityView(OwnedView):
             self.next_page.disabled = self.page == self.total_pages - 1
 
     async def show_page(self, interaction, page):
-        view = GradeScreeningUniversityView(self.owner_id, self.navigation_programs, self.profile, self.groups, self.excluded, page)
+        view = GradeScreeningUniversityView(
+            self.owner_id, self.navigation_programs, self.profile, self.groups,
+            self.excluded, page, flow_id=self.flow_id, started_at=self.started_at,
+        )
         await interaction.response.edit_message(
             content=None, embeds=[build_grade_universities_embed(self.profile, self.groups, self.excluded, view.page)], view=view,
         )
@@ -2285,7 +2248,10 @@ class GradeScreeningUniversityView(OwnedView):
     async def edit_profile(self, interaction, button):
         await interaction.response.edit_message(
             content=grade_screening_intro(), embeds=[],
-            view=GradeScreeningFieldView(self.owner_id, self.navigation_programs, self.profile["gpax"]),
+            view=GradeScreeningFieldView(
+                self.owner_id, self.navigation_programs, self.profile["gpax"],
+                flow_id=self.flow_id, started_at=self.started_at,
+            ),
         )
 
     @discord.ui.button(label="ก่อนหน้า", style=discord.ButtonStyle.secondary, row=2)
@@ -2298,10 +2264,12 @@ class GradeScreeningUniversityView(OwnedView):
 
 
 class GradeScreeningResultView(OwnedView):
-    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, university_key, index=0, section="assessment"):
+    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, university_key, index=0, section="assessment", *, flow_id=None, started_at=None):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.profile, self.groups, self.excluded = profile, groups, excluded
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
         self.university_key = university_key
         self.group = next(g for g in groups if g["key"] == university_key)
         self.entries = self.group["entries"]
@@ -2332,6 +2300,7 @@ class GradeScreeningResultView(OwnedView):
         view = GradeScreeningResultView(
             self.owner_id, self.navigation_programs, self.profile, self.groups,
             self.excluded, self.university_key, self.index if index is None else index, section,
+            flow_id=self.flow_id, started_at=self.started_at,
         )
         await interaction.response.edit_message(content=None, embeds=[view.build_embed()], view=view)
 
@@ -2364,14 +2333,20 @@ class GradeScreeningResultView(OwnedView):
         page = self.groups.index(self.group) // SELECT_PAGE_SIZE
         await interaction.response.edit_message(
             content=None, embeds=[build_grade_universities_embed(self.profile, self.groups, self.excluded, page)],
-            view=GradeScreeningUniversityView(self.owner_id, self.navigation_programs, self.profile, self.groups, self.excluded, page),
+            view=GradeScreeningUniversityView(
+                self.owner_id, self.navigation_programs, self.profile, self.groups,
+                self.excluded, page, flow_id=self.flow_id, started_at=self.started_at,
+            ),
         )
 
     @discord.ui.button(label="แก้เกรด / เปลี่ยนสาย", style=discord.ButtonStyle.secondary, row=2)
     async def edit_profile(self, interaction, button):
         await interaction.response.edit_message(
             content=grade_screening_intro(), embeds=[],
-            view=GradeScreeningFieldView(self.owner_id, self.navigation_programs, self.profile["gpax"]),
+            view=GradeScreeningFieldView(
+                self.owner_id, self.navigation_programs, self.profile["gpax"],
+                flow_id=self.flow_id, started_at=self.started_at,
+            ),
         )
 
 
@@ -2404,9 +2379,11 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
         max_length=100,
     )
 
-    def __init__(self, owner_id):
+    def __init__(self, owner_id, *, flow_id=None, started_at=None):
         super().__init__(timeout=VIEW_TIMEOUT_SECONDS)
         self.owner_id = owner_id
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
 
     async def on_submit(self, interaction: discord.Interaction):
         if interaction.user.id != self.owner_id:
@@ -2416,8 +2393,9 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
             return
         gpax = parse_gpax(self.gpax_input.value)
         if gpax is None:
+            record_event("beginner_profile_confusion", interaction, flow_id=self.flow_id, confusion="invalid_gpax")
             await interaction.response.send_message(
-                "❌ GPAX ต้องเป็นตัวเลขตั้งแต่ 0.00 ถึง 4.00 กรุณาเปิด `/start` แล้วกรอกใหม่",
+                "GPAX ต้องเป็นตัวเลขตั้งแต่ 0.00 ถึง 4.00 กรุณาเปิด `/start` แล้วกรอกใหม่",
                 ephemeral=True,
             )
             return
@@ -2461,18 +2439,27 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
                         profile, matches, total_matches, excluded_count
                     )
                 ],
-                view=BeginnerResultsView(self.owner_id, matches, profile),
+                    view=BeginnerResultsView(
+                        self.owner_id, matches, profile,
+                        flow_id=self.flow_id,
+                    ),
+            )
+            record_event(
+                "beginner_results_shown", interaction, flow_id=self.flow_id,
+                started_at=self.started_at, success=bool(matches), result_count=len(matches),
             )
         except asyncio.TimeoutError:
+            record_event("beginner_profile_confusion", interaction, flow_id=self.flow_id, confusion="timeout")
             await interaction.edit_original_response(
-                content="❌ คัดกรองนานกว่าปกติ กรุณาลอง `/start` อีกครั้ง",
+                content="คัดกรองนานกว่าปกติ กรุณาลอง `/start` อีกครั้ง",
                 embeds=[],
                 view=None,
             )
         except Exception:
             logger.exception("beginner screening failed")
+            record_event("beginner_profile_confusion", interaction, flow_id=self.flow_id, confusion="load_error")
             await interaction.edit_original_response(
-                content="❌ คัดกรองไม่สำเร็จ กรุณาลอง `/start` อีกครั้ง",
+                content="คัดกรองไม่สำเร็จ กรุณาลอง `/start` อีกครั้ง",
                 embeds=[],
                 view=None,
             )
@@ -2494,11 +2481,6 @@ class BeginnerResultSelect(discord.ui.Select):
                     ),
                     value=str(index),
                     description=shorten(project.get("name"), 100),
-                    emoji=(
-                        "✅"
-                        if match["assessment"]["status"].startswith("ผ่าน")
-                        else "⚠️"
-                    ),
                 )
             )
         super().__init__(
@@ -2548,24 +2530,33 @@ class BeginnerResultSelect(discord.ui.Select):
                     applicant_profile=parent.profile,
                 ),
             )
+            record_event(
+                "beginner_project_opened", interaction, flow_id=getattr(parent, "flow_id", None),
+                success=True, project_code=project_code,
+            )
         except Exception:
             logger.exception(
                 "could not open beginner recommendation program=%s project=%s",
                 program_code,
                 project_code,
             )
+            record_event(
+                "beginner_profile_confusion", interaction,
+                flow_id=getattr(parent, "flow_id", None), confusion="project_open_error",
+            )
             await interaction.edit_original_response(
-                content="❌ เปิดรายละเอียดไม่สำเร็จ กรุณาคัดกรองใหม่ด้วย `/start`",
+                content="เปิดรายละเอียดไม่สำเร็จ กรุณาคัดกรองใหม่ด้วย `/start`",
                 embeds=[],
                 view=None,
             )
 
 
 class BeginnerResultsView(OwnedView):
-    def __init__(self, owner_id, matches, profile):
+    def __init__(self, owner_id, matches, profile, *, flow_id=None):
         super().__init__(owner_id)
         self.matches = matches
         self.profile = profile
+        self.flow_id = flow_id or new_flow_id()
         self.add_item(BeginnerResultSelect(matches))
 
 
@@ -2675,7 +2666,7 @@ class CompareProgramSelect(discord.ui.Select):
         except Exception:
             logger.exception("program comparison failed codes=%s", self.values)
             await interaction.edit_original_response(
-                content="❌ เปรียบเทียบไม่สำเร็จ กรุณาลองเลือกใหม่",
+                content="เปรียบเทียบไม่สำเร็จ กรุณาลองเลือกใหม่",
                 embeds=[],
                 view=self.view,
             )
@@ -2714,10 +2705,26 @@ class StartView(OwnedView):
     @discord.ui.button(label="ฉันผ่านเกณฑ์อะไรบ้าง", style=discord.ButtonStyle.success)
     async def beginner_screening(self, interaction, button):
         del button
+        flow_id = new_flow_id()
+        started_at = time.monotonic()
+        record_event("grade_check_started", interaction, flow_id=flow_id)
         await interaction.response.edit_message(
             content=grade_screening_intro(),
             embeds=[],
-            view=GradeScreeningFieldView(self.owner_id, self.navigation_programs),
+            view=GradeScreeningFieldView(
+                self.owner_id, self.navigation_programs,
+                flow_id=flow_id, started_at=started_at,
+            ),
+        )
+
+    @discord.ui.button(label="ยังไม่รู้ว่าจะเรียนอะไร", style=discord.ButtonStyle.primary, row=1)
+    async def beginner_recommendation(self, interaction, button):
+        del button
+        flow_id = new_flow_id()
+        started_at = time.monotonic()
+        record_event("beginner_profile_started", interaction, flow_id=flow_id)
+        await interaction.response.send_modal(
+            BeginnerProfileModal(self.owner_id, flow_id=flow_id, started_at=started_at)
         )
 
     @discord.ui.button(label="เปรียบเทียบหลักสูตร", style=discord.ButtonStyle.secondary)
@@ -2915,7 +2922,6 @@ class FacultySelect(discord.ui.Select):
                     description=shorten(
                         f"{faculty['program_count']} สาขา • {status}", 100
                     ),
-                    emoji="✅" if announced else "⏳",
                 )
             )
         super().__init__(
@@ -3145,7 +3151,7 @@ class ProgramSelect(discord.ui.Select):
         except Exception:
             logger.exception("could not load projects for program=%s", program_code)
             await interaction.edit_original_response(
-                content="❌ โหลดโครงการไม่สำเร็จ กรุณาลองเลือกสาขาอีกครั้ง",
+                content="โหลดโครงการไม่สำเร็จ กรุณาลองเลือกสาขาอีกครั้ง",
                 embeds=[],
                 view=parent,
             )
@@ -3628,6 +3634,41 @@ class ProjectDetailView(OwnedView):
         )
 
 
+async def open_grade_screening(interaction: discord.Interaction):
+    """Open the private grade screening flow for /grade_check."""
+    await interaction.response.defer(thinking=True, ephemeral=True)
+    try:
+        navigation_programs = await bot.load_navigation_programs(timeout=15)
+        if not navigation_programs:
+            raise RuntimeError("no discoverable programs returned from Supabase")
+        flow_id = new_flow_id()
+        started_at = time.monotonic()
+        record_event("grade_check_started", interaction, flow_id=flow_id)
+        await interaction.edit_original_response(
+            content=grade_screening_intro(),
+            embeds=[],
+            view=GradeScreeningFieldView(
+                interaction.user.id, navigation_programs,
+                flow_id=flow_id, started_at=started_at,
+            ),
+        )
+    except Exception:
+        logger.exception("grade_check menu failed")
+        await interaction.edit_original_response(
+            content="เปิดระบบเทียบเกรดไม่สำเร็จ กรุณาลอง `/grade_check` อีกครั้ง",
+            embeds=[],
+            view=None,
+        )
+
+
+@bot.tree.command(
+    name="grade_check",
+    description="กรอก GPAX และเลือกสายเพื่อเทียบเกณฑ์ TCAS70",
+)
+async def grade_check(interaction: discord.Interaction):
+    await open_grade_screening(interaction)
+
+
 @bot.tree.command(
     name="start",
     description="เริ่มค้นหา คัดกรอง หรือเปรียบเทียบหลักสูตร TCAS70",
@@ -3646,7 +3687,7 @@ async def start(interaction: discord.Interaction):
     except Exception:
         logger.exception("start menu failed")
         await interaction.edit_original_response(
-            content="❌ เปิดหน้าเริ่มต้นไม่สำเร็จ กรุณาลอง `/start` อีกครั้ง",
+            content="เปิดหน้าเริ่มต้นไม่สำเร็จ กรุณาลอง `/start` อีกครั้ง",
             embeds=[],
             view=None,
         )
@@ -3669,6 +3710,7 @@ async def help_command(interaction: discord.Interaction):
         name="คำสั่งหลัก",
         value=(
             "• `/start` — จุดเริ่มสำหรับทุกคน\n"
+            "• `/grade_check` — เทียบ GPAX กับเกณฑ์ แยกจากหน้าเริ่มต้น\n"
             "• `/tcas_search` — ไปยังมหาวิทยาลัยที่รู้ชื่อแล้วทันที\n"
             "• `/help` — เปิดคำอธิบายนี้"
         ),
@@ -3677,10 +3719,10 @@ async def help_command(interaction: discord.Interaction):
     embed.add_field(
         name="เช็กว่าเกรดถึงเกณฑ์ไหน",
         value=(
-            "`/start` → **ฉันผ่านเกณฑ์อะไรบ้าง**\n"
+            "ใช้ `/grade_check` ได้โดยตรง หรือ `/start` → **ฉันผ่านเกณฑ์อะไรบ้าง**\n"
             "เลือกสายวิศวกรรมศาสตร์ / วิทยาศาสตร์ / เทคโนโลยีสารสนเทศ → กรอก GPAX\n"
             "เลือกมหาวิทยาลัย แล้วดูผลเทียบเกณฑ์ได้เลย\n"
-            "ระบบเทียบขั้นต่ำ GPAX เท่านั้น ส่วนเกณฑ์ปีก่อนใช้เตรียมตัว ไม่ใช้ยืนยันสิทธิ์ปีนี้"
+            "ผลตรวจรายเงื่อนไขจะแยกชัดเจน ส่วนเกณฑ์ปีก่อนใช้เตรียมตัว ไม่ใช้ยืนยันสิทธิ์ปีนี้"
         ),
         inline=False,
     )
@@ -3698,9 +3740,9 @@ async def help_command(interaction: discord.Interaction):
     embed.add_field(
         name="อ่านสถานะอย่างไร",
         value=(
-            "✅ **เปิดดูเกณฑ์สมัครได้** — มีประกาศ TCAS70 ทางการในฐานข้อมูล\n"
-            "⚠️ **ข้อมูลแนวทาง** — หลักสูตรจริง แต่ข้อมูลรับสมัครยังใช้ยืนยันไม่ได้\n"
-            "⏳ **รอประกาศ** — ยังไม่พบประกาศรับสมัครฉบับสมบูรณ์"
+            "**เปิดดูเกณฑ์สมัครได้** — มีประกาศ TCAS70 ทางการในฐานข้อมูล\n"
+            "**ข้อมูลแนวทาง** — หลักสูตรจริง แต่ข้อมูลรับสมัครยังใช้ยืนยันไม่ได้\n"
+            "**รอประกาศ** — ยังไม่พบประกาศรับสมัครฉบับสมบูรณ์"
         ),
         inline=False,
     )
@@ -3762,7 +3804,7 @@ async def tcas_search(interaction: discord.Interaction, university: str):
         if not selected_university:
             await interaction.edit_original_response(
                 content=(
-                    "❌ ไม่พบมหาวิทยาลัยที่เลือก\n"
+                    "ไม่พบมหาวิทยาลัยที่เลือก\n"
                     "เลือกใหม่จากเมนูด้านล่างได้เลย"
                 ),
                 embeds=[],
@@ -3812,7 +3854,7 @@ async def tcas_search(interaction: discord.Interaction, university: str):
             await asyncio.wait_for(
                 interaction.edit_original_response(
                     content=(
-                        "❌ ระบบตอบกลับช้ากว่าปกติ กรุณาลองใหม่อีกครั้ง "
+                        "ระบบตอบกลับช้ากว่าปกติ กรุณาลองใหม่อีกครั้ง "
                         "หากยังเกิดซ้ำให้ตรวจไฟล์ bot.log"
                     ),
                     embeds=[],
@@ -3826,7 +3868,7 @@ async def tcas_search(interaction: discord.Interaction, university: str):
         try:
             await asyncio.wait_for(
                 interaction.edit_original_response(
-                    content="❌ โหลดเมนูค้นหาไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
+                    content="โหลดเมนูค้นหาไม่สำเร็จ กรุณาลองใหม่อีกครั้ง",
                     embeds=[],
                     view=None,
                 ),

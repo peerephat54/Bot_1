@@ -107,6 +107,15 @@ class GradeRulesTests(unittest.TestCase):
 
 
 class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
+    async def test_direct_grade_command_opens_private_flow(self):
+        interaction = make_interaction()
+        with patch.object(app.bot, "load_navigation_programs", new=AsyncMock(return_value=NAVIGATION)):
+            await app.open_grade_screening(interaction)
+        interaction.response.defer.assert_awaited_once_with(thinking=True, ephemeral=True)
+        response = interaction.edit_original_response.call_args.kwargs
+        self.assertIn("GPAX", response["content"])
+        self.assertIsInstance(response["view"], app.GradeScreeningFieldView)
+
     async def test_start_field_grade_university_then_direct_result(self):
         interaction = make_interaction()
         interaction.response.send_modal = AsyncMock()
