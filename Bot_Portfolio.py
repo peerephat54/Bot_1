@@ -1827,13 +1827,14 @@ def start_menu_content(navigation_programs):
         1 for item in navigation_programs if item.get("has_official_projects")
     )
     return (
-        "## เริ่มวางแผน TCAS70 รอบ Portfolio\n"
-        "ไม่จำเป็นต้องรู้ชื่อมหาวิทยาลัยหรือศัพท์ TCAS มาก่อน เลือกทางที่ตรงกับคุณได้เลย\n\n"
-        "**รู้มหาวิทยาลัยแล้ว** — เปิดค้นหาตามมหาวิทยาลัย\n"
-        "**ฉันผ่านเกณฑ์อะไรบ้าง** — เลือกสายและกรอก GPAX แล้วเลือกมหาวิทยาลัยเพื่อดูเกณฑ์\n"
-        "**ยังไม่รู้ว่าจะเรียนอะไร** — กรอกข้อมูล 5 ข้อ แล้วรับรายการที่ควรตรวจต่อ\n"
-        "**อยากเปรียบเทียบหลักสูตร** — เลือก 2–3 สาขาในมหาวิทยาลัยเดียวกัน\n\n"
-        f"**พร้อมดูเกณฑ์:** {official_count} สาขา\n"
+        "## เริ่มวางแผนสมัครรอบ Portfolio\n"
+        "ไม่ต้องรู้ชื่อมหาวิทยาลัยหรือศัพท์ TCAS มาก่อน\n"
+        "เลือกเป้าหมายด้านล่าง แล้วระบบจะพาไปทีละขั้น\n\n"
+        "**ยังไม่รู้จะเรียนอะไร** → กรอกข้อมูลของคุณ แล้วดูสาขาที่ควรตรวจต่อ\n"
+        "**รู้มหาวิทยาลัยแล้ว** → ค้นหาตามมหาวิทยาลัยและโครงการ\n"
+        "**อยากเช็ก GPAX** → ดูว่าเกณฑ์ขั้นต่ำของแต่ละโครงการเป็นอย่างไร\n"
+        "**อยากเปรียบเทียบ** → เลือก 2–3 สาขาแล้วดูข้อมูลข้างกัน\n\n"
+        f"มีข้อมูลเกณฑ์ TCAS70 ที่เปิดดูได้ {official_count} สาขา\n"
         f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
     )
 
@@ -1843,7 +1844,8 @@ def grade_screening_intro():
         "## ฉันผ่านเกณฑ์อะไรบ้าง\n"
         "เลือกสายที่สนใจ แล้วกรอก **GPAX สเกล 4.00**\n"
         "หรือเรียกหน้านี้โดยตรงด้วย `/grade_check`\n\n"
-        "**เลือกสาย → ใส่เกรด → เลือกมหาวิทยาลัย → ดูผลเทียบเกณฑ์**\n\n"
+        "**เลือกสาย → ใส่เกรด → เลือกมหาวิทยาลัย → ดูผลเทียบเกณฑ์**\n"
+        "ระบบจะแสดงผลของสาขาที่ควรเปิดดูต่อก่อน\n\n"
         "จัดกลุ่มจากคณะและสาขาที่บอทมีข้อมูล ไม่ครอบคลุมทุกหลักสูตรในประเทศ\n"
         "ผลแต่ละเงื่อนไขจะแสดงเป็น ผ่าน / ไม่ผ่าน / ต้องตรวจเพิ่ม / ไม่มีข้อมูล\n"
         "ผลนี้เป็นการคัดกรอง ไม่ใช่การรับรองสิทธิ์สมัคร"
@@ -1997,6 +1999,16 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
             if min_gpax is not None
             else "GPAX ต้องตรวจตามประเภทผู้สมัคร"
         )
+        close_event = application_close_event(project)
+        deadline_text = (
+            f"ปิดรับ: {event_date(close_event, 'end_on')}"
+            if close_event else "ปิดรับ: ยังไม่ระบุในข้อมูล"
+        )
+        next_step = (
+            "เปิดดูรายละเอียด แล้วตรวจวุฒิ ผลงาน และเอกสาร"
+            if assessment["status"] in ("ผ่าน", "ต้องตรวจเพิ่ม")
+            else "ตรวจสาเหตุที่ไม่ผ่าน แล้วลองโครงการอื่น"
+        )
         embed.add_field(
             name=shorten(
                 f"{index}. {university.get('short_name', '')} — {program.get('major_name')}",
@@ -2004,9 +2016,10 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
             ),
             value=shorten(
                 f"**สถานะ: {assessment['status']}** • {gpax_text}\n"
-                f"{project.get('name')}\n"
-                + render_rule_checks(assessment, max_items=3)
-                + "\nเปิดรายการเพื่อดูผลตรวจครบทุกเงื่อนไข",
+                f"โครงการ: {project.get('name')}\n"
+                f"{deadline_text}\n"
+                f"ทำต่อ: {next_step}\n"
+                + render_rule_checks(assessment, max_items=2),
                 700,
             ),
             inline=False,
@@ -2498,7 +2511,7 @@ class GradeScreeningResultView(OwnedView):
         )
 
 
-class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS เบื้องต้น 5 ข้อ"):
+class BeginnerProfileModal(discord.ui.Modal, title="ช่วยหาหลักสูตรที่เหมาะกับคุณ"):
     gpax_input = discord.ui.TextInput(
         label="1. GPAX ปัจจุบัน",
         placeholder="เช่น 3.20",
@@ -2527,9 +2540,10 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
         max_length=100,
     )
 
-    def __init__(self, owner_id, *, flow_id=None, started_at=None):
+    def __init__(self, owner_id, navigation_programs=None, *, flow_id=None, started_at=None):
         super().__init__(timeout=VIEW_TIMEOUT_SECONDS)
         self.owner_id = owner_id
+        self.navigation_programs = navigation_programs or []
         self.flow_id = flow_id or new_flow_id()
         self.started_at = started_at or time.monotonic()
 
@@ -2572,7 +2586,7 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
                         "แต่ระบบจะไม่แนะนำให้ลด/แก้ GPAX ให้ผิดจากจริง"
                     ),
                     embeds=[],
-                    view=None,
+                    view=StartView(self.owner_id, self.navigation_programs),
                 )
                 return
             await interaction.edit_original_response(
@@ -2588,7 +2602,7 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
                     )
                 ],
                     view=BeginnerResultsView(
-                        self.owner_id, matches, profile,
+                        self.owner_id, matches, profile, self.navigation_programs,
                         flow_id=self.flow_id,
                     ),
             )
@@ -2601,7 +2615,7 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
             await interaction.edit_original_response(
                 content="คัดกรองนานกว่าปกติ กรุณาลอง `/start` อีกครั้ง",
                 embeds=[],
-                view=None,
+                view=StartView(self.owner_id, self.navigation_programs),
             )
         except Exception:
             logger.exception("beginner screening failed")
@@ -2609,7 +2623,7 @@ class BeginnerProfileModal(discord.ui.Modal, title="คัดกรอง TCAS �
             await interaction.edit_original_response(
                 content="คัดกรองไม่สำเร็จ กรุณาลอง `/start` อีกครั้ง",
                 embeds=[],
-                view=None,
+                view=StartView(self.owner_id, self.navigation_programs),
             )
 
 
@@ -2700,12 +2714,27 @@ class BeginnerResultSelect(discord.ui.Select):
 
 
 class BeginnerResultsView(OwnedView):
-    def __init__(self, owner_id, matches, profile, *, flow_id=None):
+    def __init__(self, owner_id, matches, profile, navigation_programs=None, *, flow_id=None):
         super().__init__(owner_id)
         self.matches = matches
         self.profile = profile
+        self.navigation_programs = navigation_programs or []
         self.flow_id = flow_id or new_flow_id()
         self.add_item(BeginnerResultSelect(matches))
+        self.add_item(BeginnerAgainButton())
+        if self.navigation_programs:
+            self.add_item(HomeButton())
+
+
+class BeginnerAgainButton(discord.ui.Button):
+    def __init__(self):
+        super().__init__(label="แก้ข้อมูลและค้นหาใหม่", style=discord.ButtonStyle.secondary, row=1)
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        await interaction.response.send_modal(
+            BeginnerProfileModal(parent.owner_id, parent.navigation_programs)
+        )
 
 
 class CompareUniversitySelect(discord.ui.Select):
@@ -2850,7 +2879,7 @@ class StartView(OwnedView):
             view=UniversityView(self.owner_id, self.navigation_programs),
         )
 
-    @discord.ui.button(label="ฉันผ่านเกณฑ์อะไรบ้าง", style=discord.ButtonStyle.success)
+    @discord.ui.button(label="เช็ก GPAX", style=discord.ButtonStyle.success, row=1)
     async def beginner_screening(self, interaction, button):
         del button
         flow_id = new_flow_id()
@@ -2865,17 +2894,22 @@ class StartView(OwnedView):
             ),
         )
 
-    @discord.ui.button(label="ยังไม่รู้ว่าจะเรียนอะไร", style=discord.ButtonStyle.primary, row=1)
+    @discord.ui.button(label="เริ่มจากข้อมูลของฉัน", style=discord.ButtonStyle.primary, row=0)
     async def beginner_recommendation(self, interaction, button):
         del button
         flow_id = new_flow_id()
         started_at = time.monotonic()
         record_event("beginner_profile_started", interaction, flow_id=flow_id)
         await interaction.response.send_modal(
-            BeginnerProfileModal(self.owner_id, flow_id=flow_id, started_at=started_at)
+            BeginnerProfileModal(
+                self.owner_id,
+                self.navigation_programs,
+                flow_id=flow_id,
+                started_at=started_at,
+            )
         )
 
-    @discord.ui.button(label="เปรียบเทียบหลักสูตร", style=discord.ButtonStyle.secondary)
+    @discord.ui.button(label="เปรียบเทียบ 2–3 หลักสูตร", style=discord.ButtonStyle.secondary, row=1)
     async def compare_programs(self, interaction, button):
         del button
         await interaction.response.edit_message(

@@ -32,7 +32,7 @@
 
 ฟีเจอร์ใช้งานซ้ำประกอบด้วยรายการโปรด Checklist เตือนก่อนปิดรับประมาณ 3 วัน และการเปรียบเทียบ 2–3 หลักสูตร ระบบเก็บข้อมูลผู้ใช้ไว้ใน `tmp/user_features.json` สำหรับ deployment ปัจจุบัน และมี schema สำหรับย้ายไป Supabase ใน `migrate_user_features.sql`
 
-ดูรายละเอียดได้ที่ [Architecture และ Data Flow](docs/ARCHITECTURE.md) และ [แผนทดสอบผู้ใช้](docs/USER_TEST_PLAN.md)
+ดูรายละเอียดได้ที่ [Architecture และ Data Flow](docs/ARCHITECTURE.md), [Workflow ผู้ใช้](docs/WORKFLOW.md) และ [แผนทดสอบผู้ใช้](docs/USER_TEST_PLAN.md)
 
 ## แหล่งข้อมูลและการอัปเดต
 
