@@ -19,6 +19,9 @@ flowchart LR
     O[Official university / TCAS websites]
     A[Source audit + importer review]
     V[Dataset validator]
+    T[Rule Trace และ Data Quality]
+    P[User feature store
+    favorites / checklist / reminders]
 
     U --> D
     D --> N
@@ -28,7 +31,10 @@ flowchart LR
     L --> R
     U --> R
     R --> C
+    R --> T
     C --> D
+    D --> P
+    P --> D
     O --> W
     W --> A
     A --> V
@@ -52,6 +58,8 @@ flowchart TD
     J[ไม่มีข้อมูล]
     K[การ์ดสรุปสมัครได้ไหม\nต้องทำอะไรต่อ\nวันปิดรับสมัคร]
     L[ผู้ใช้เปิดประกาศทางการ]
+    M[บันทึกรายการโปรด
+    Checklist / เตือนวันปิดรับ]
 
     A --> B --> C --> D --> E --> F
     F --> G
@@ -63,6 +71,8 @@ flowchart TD
     I --> K
     J --> K
     K --> L
+    K --> M
+    M --> P
 ```
 
 ## หลักการออกแบบ
@@ -73,6 +83,10 @@ flowchart TD
 - คำตอบที่อาจทำให้นักเรียนเสียโอกาสต้องแสดงลิงก์ประกาศต้นทางและวันที่ตรวจข้อมูล
 - ระบบตรวจเว็บตามรอบตรวจเฉพาะ link, HTTP status, อายุข้อมูล และ hash ของเนื้อหาเท่านั้น การเปลี่ยนแปลงต้องผ่านคนตรวจหรือ importer ก่อนเข้าฐานข้อมูล
 - Supabase เป็นแหล่ง runtime หลัก และ local audited dataset เป็น fallback สำหรับข้อมูลที่ยังรอ seed หรือสิทธิ์อ่านเขียนมีข้อจำกัด
+- Rule Trace แสดง rule id เหตุผล สถานะ และ source ของแต่ละเงื่อนไข เพื่อให้ตรวจย้อนกลับได้
+- Data Quality Dashboard แสดงจำนวนรายการที่มี criteria, timeline และ source พร้อมรายการที่ขาด
+- รายการโปรด Checklist และ reminder เป็นข้อมูลส่วนตัวของผู้ใช้ ปัจจุบันเก็บในไฟล์ runtime ที่ถูก ignore จาก Git และมี SQL migration สำหรับย้ายไป Supabase
+- `/ask` เป็น natural-language MVP แบบ deterministic รองรับเฉพาะหัวข้อที่ระบบมีข้อมูล ไม่สร้างเกณฑ์หรือวันที่ขึ้นเอง
 
 ## ขอบเขตและข้อจำกัด
 

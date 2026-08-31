@@ -22,8 +22,11 @@ from screening import FIELDS as SCREENING_FIELDS, group_universities, screening_
 from admission_dates import event_date, portfolio_dates
 from application_cards import application_question_fields
 from local_admissions import load_catalog, local_candidates, calendar_fields
-from rule_engine import evaluate_application_rules, render_rule_checks
+from rule_engine import evaluate_application_rules, render_rule_checks, render_rule_trace
 from usage_metrics import new_flow_id, record_event
+from user_features import UserFeatureStore, application_close_event, checklist_items_for_project, due_reminders
+from data_quality import load_quality_report
+from question_answering import answer_question
 
 load_dotenv()
 
@@ -113,6 +116,7 @@ def load_local_preview_catalog():
 
 LOCAL_PREVIEW_CATALOG = load_local_preview_catalog()
 LOCAL_ADMISSIONS_CATALOG = load_catalog()
+USER_FEATURE_STORE = UserFeatureStore(Path(__file__).with_name("tmp") / "user_features.json")
 
 
 def fetch_local_project_additions():
@@ -195,6 +199,7 @@ class MyBot(discord.Client):
         self.tree = app_commands.CommandTree(self)
         self.navigation_programs_cache = []
         self.navigation_cache_loaded_at = 0.0
+        self.reminder_task = None
 
     async def load_navigation_programs(self, *, force=False, timeout=15):
         cache_is_fresh = (
@@ -228,7 +233,30 @@ class MyBot(discord.Client):
         except Exception:
             logger.exception("could not preload navigation choices")
         await self.tree.sync()
+        self.reminder_task = self.loop.create_task(self.deadline_reminder_loop())
         print("Synced slash commands successfully!")
+
+    async def deadline_reminder_loop(self):
+        await self.wait_until_ready()
+        while not self.is_closed():
+            try:
+                for row in due_reminders(USER_FEATURE_STORE.reminders(), datetime.now().date()):
+                    try:
+                        user = self.get_user(int(row["user_id"])) or await self.fetch_user(int(row["user_id"]))
+                        days = max(0, (datetime.fromisoformat(str(row["end_on"])[:10]).date() - datetime.now().date()).days)
+                        source = f"\n[เปิดประกาศต้นทาง]({row['source_url']})" if row.get("source_url") else ""
+                        await user.send(
+                            f"เตือนกำหนดการ: {row.get('project_name', 'โครงการรับสมัคร')}\n"
+                            f"{row.get('event_name', 'ปิดรับสมัคร')} เหลือประมาณ {days} วัน{source}"
+                        )
+                        USER_FEATURE_STORE.mark_reminder_notified(row["user_id"], row.get("project_code"), row.get("event_name"))
+                    except (discord.Forbidden, discord.NotFound, ValueError):
+                        logger.info("could not deliver deadline reminder user=%s", row.get("user_id"))
+                    except Exception:
+                        logger.exception("deadline reminder delivery failed")
+            except Exception:
+                logger.exception("deadline reminder loop failed")
+            await asyncio.sleep(3600)
 
     async def on_ready(self):
         print(f"Logged in as {self.user} (ID: {self.user.id})")
@@ -1357,6 +1385,108 @@ def build_project_criteria_embed(program, project):
     return trim_embed_to_limit(embed)
 
 
+def build_rule_trace_embed(program, project, applicant_profile=None):
+    assessment = evaluate_project_fit(applicant_profile or {}, program, project)
+    embed = build_project_shell(program, project, "Rule Trace: เหตุผลของผลตรวจ", 0x1ABC9C)
+    embed.add_field(
+        name="ผลรวม",
+        value=(
+            f"**{assessment['status']}**\n"
+            "แสดงกฎที่ระบบตรวจได้ เหตุผล และแหล่งอ้างอิงของแต่ละข้อ\n"
+            "ผลนี้เป็นการคัดกรองเบื้องต้น ไม่ใช่การรับรองสิทธิ์สมัคร"
+        ),
+        inline=False,
+    )
+    embed.add_field(
+        name="รายละเอียดกฎ",
+        value=shorten(render_rule_trace(assessment), 3500),
+        inline=False,
+    )
+    embed.set_footer(
+        text=f"ตรวจข้อมูลล่าสุด {format_checked_at(project.get('source_checked_at'))}"
+    )
+    return trim_embed_to_limit(embed)
+
+
+def build_checklist_embed(program, project, user_id):
+    items = checklist_items_for_project(project)
+    states = USER_FEATURE_STORE.checklist(user_id, project.get("code"), items)
+    done = sum(item["done"] for item in states)
+    embed = build_project_shell(program, project, "Checklist เตรียมสมัคร", 0x9B59B6)
+    lines = [
+        f"ทำแล้ว **{done}/{len(states)}** รายการ",
+        "กดปุ่มด้านล่างเพื่อทำเครื่องหมายรายการที่เตรียมแล้ว",
+        "รายการสร้างจากข้อมูลที่มีในประกาศ หากไม่มีข้อมูลจะไม่เติมรายการเอง",
+        "",
+    ]
+    lines.extend(
+        f"{'[x]' if item['done'] else '[ ]'} {item['label']}"
+        for item in states
+    )
+    embed.add_field(name="รายการที่ต้องทำ", value=shorten("\n".join(lines), 3500), inline=False)
+    embed.set_footer(text=f"ตรวจข้อมูลล่าสุด {format_checked_at(project.get('source_checked_at'))}")
+    return trim_embed_to_limit(embed)
+
+
+def build_quality_embed():
+    dataset_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
+    report = load_quality_report(dataset_path)
+    coverage = (
+        f"โครงการมีเกณฑ์ {report['projects_with_criteria']}/{report['projects']}\n"
+        f"โครงการมีกำหนดการ {report['projects_with_timeline']}/{report['projects']}\n"
+        f"ระเบียนเกณฑ์ {report['criteria_rows']} • เหตุการณ์ {report['timeline_rows']}"
+    )
+    missing = (
+        f"ไม่มีเกณฑ์: {report['projects_without_criteria']} โครงการ\n"
+        f"ไม่มีกำหนดการ: {report['projects_without_timeline']} โครงการ\n"
+        f"ไม่มีลิงก์ต้นทาง: {report['projects_without_source']} โครงการ"
+    )
+    embed = discord.Embed(
+        title="Data Quality Dashboard",
+        description=(
+            "ภาพรวม dataset ที่บอทใช้อ่านแบบ snapshot ไม่ใช่การตรวจเว็บสด "
+            "รายการที่ขาดต้องตรวจจากประกาศทางการก่อนนำไปใช้งาน"
+        ),
+        color=discord.Color.blue(),
+    )
+    embed.add_field(
+        name="ขอบเขตข้อมูล",
+        value=(
+            f"มหาวิทยาลัย {report['universities']} แห่ง\n"
+            f"วิทยาเขต {report['campuses']} แห่ง\n"
+            f"หลักสูตร {report['programs']} สาขา\n"
+            f"โครงการ {report['projects']} รายการ ({report['official_projects']} ยืนยันแล้ว)"
+        ),
+        inline=True,
+    )
+    embed.add_field(name="Coverage", value=coverage, inline=True)
+    embed.add_field(name="จุดที่ต้องตรวจเพิ่ม", value=missing, inline=False)
+    embed.add_field(
+        name="Source audit",
+        value=(
+            f"ตรวจแหล่งข้อมูล {report['audited_sources']} รายการ\n"
+            f"เก่าเกิน 7 วัน: {report['stale_sources']} รายการ\n"
+            f"ตรวจล่าสุดจาก audit: {report['latest_source_check'] or 'ไม่ระบุ'}"
+        ),
+        inline=False,
+    )
+    embed.set_footer(text=f"dataset ตรวจล่าสุด {format_checked_at(report.get('checked_at'))}")
+    return trim_embed_to_limit(embed)
+
+
+def build_project_section_embed(program, project, section="summary", applicant_profile=None):
+    if section == "summary":
+        return build_project_embed(program, project, applicant_profile)
+    if section == "trace":
+        return build_rule_trace_embed(program, project, applicant_profile)
+    builders = {
+        "criteria": build_project_criteria_embed,
+        "portfolio": build_project_portfolio_embed,
+        "timeline": build_project_timeline_embed,
+    }
+    return builders.get(section, build_project_embed)(program, project)
+
+
 def build_project_portfolio_embed(program, project):
     criteria = project.get("selected_criteria") or {}
     embed = build_project_shell(
@@ -1679,6 +1809,8 @@ def project_detail_content(
         "criteria": "คุณสมบัติและคะแนน",
         "portfolio": "Portfolio และเอกสาร",
         "timeline": "กำหนดการทั้งหมด",
+        "trace": "Rule Trace เหตุผลของผลตรวจ",
+        "checklist": "Checklist เตรียมสมัคร",
     }
     major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
     section_label = section_labels.get(section, section_labels["summary"])
@@ -1940,6 +2072,22 @@ def build_program_comparison_embed(programs):
                 f"GPAX: {gpax_text or 'ต้องดูรายประเภท'}",
                 f"ค่าเรียน: {tuition_text}",
             ]
+            close_events = [application_close_event(item) for item in projects]
+            close_events = [item for item in close_events if item]
+            if close_events:
+                detail_lines.append(
+                    f"ปิดรับเร็วสุด: {event_date(min(close_events, key=lambda item: item.get('end_on') or item.get('start_on')), 'end_on')}"
+                )
+            portfolio_rows = [
+                (item.get("selected_criteria") or {}).get("accepted_achievements")
+                or (item.get("selected_criteria") or {}).get("portfolio_requirements")
+                for item in projects
+            ]
+            portfolio_rows = [str(item) for item in portfolio_rows if item]
+            detail_lines.append(
+                "ผลงาน: " + shorten(portfolio_rows[0], 180) if portfolio_rows
+                else "ผลงาน: ต้องดูประกาศแต่ละโครงการ"
+            )
         elif previews:
             current_specific = [
                 item
@@ -2740,6 +2888,39 @@ class StartView(OwnedView):
             view=CompareUniversityView(self.owner_id, self.navigation_programs),
         )
 
+    @discord.ui.button(label="รายการโปรด", style=discord.ButtonStyle.secondary, row=1)
+    async def favorites(self, interaction, button):
+        del button
+        rows = USER_FEATURE_STORE.favorites(self.owner_id)
+        if not rows:
+            await interaction.response.edit_message(
+                content=(
+                    "## รายการโปรด\nยังไม่มีโครงการที่บันทึกไว้\n"
+                    "เปิดโครงการแล้วกด `บันทึกรายการโปรด` เพื่อเก็บไว้กลับมาดูภายหลัง"
+                ),
+                embeds=[],
+                view=FavoritesView(self.owner_id, self.navigation_programs),
+            )
+            return
+        embed = discord.Embed(
+            title="รายการโปรด",
+            description="เลือกโครงการเพื่อเปิดรายละเอียดล่าสุดจากฐานข้อมูล",
+            color=discord.Color.blurple(),
+        )
+        embed.add_field(
+            name=f"บันทึกไว้ {len(rows)} โครงการ",
+            value="\n".join(
+                f"• {row.get('university')} — {row.get('project_name')}"
+                for row in rows[:20]
+            ),
+            inline=False,
+        )
+        await interaction.response.edit_message(
+            content="## รายการโปรด",
+            embeds=[embed],
+            view=FavoritesView(self.owner_id, self.navigation_programs),
+        )
+
 
 class HomeButton(discord.ui.Button):
     def __init__(self):
@@ -3493,7 +3674,182 @@ class ProjectView(OwnedView):
                 self.program_data,
                 self.page + 1,
             )
+            )
+
+
+class ChecklistItemButton(discord.ui.Button):
+    def __init__(self, item, done, row):
+        self.item_key = item["key"]
+        self.item_label = item["label"]
+        self.done = done
+        super().__init__(
+            label=("[x] " if done else "[ ] ") + shorten(item["label"], 70),
+            style=discord.ButtonStyle.success if done else discord.ButtonStyle.secondary,
+            row=row,
         )
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        self.done = USER_FEATURE_STORE.toggle_checklist(
+            parent.owner_id,
+            parent.project.get("code"),
+            self.item_key,
+            self.done,
+        )
+        await interaction.response.edit_message(
+            embeds=[build_checklist_embed(parent.program_data, parent.project, parent.owner_id)],
+            view=ChecklistView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.program_data,
+                parent.project,
+                parent.section,
+                parent.applicant_profile,
+            ),
+        )
+
+
+class ChecklistView(OwnedView):
+    def __init__(self, owner_id, navigation_programs, program_data, project, section="summary", applicant_profile=None):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.program_data = program_data
+        self.project = project
+        self.section = section
+        self.applicant_profile = applicant_profile
+        items = USER_FEATURE_STORE.checklist(owner_id, project.get("code"), checklist_items_for_project(project))[:15]
+        for index, item in enumerate(items):
+            self.add_item(ChecklistItemButton(item, item["done"], index // 5))
+        self.add_item(ChecklistBackButton())
+
+
+class ChecklistBackButton(discord.ui.Button):
+    def __init__(self):
+        super().__init__(label="กลับโครงการ", style=discord.ButtonStyle.secondary, row=3)
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        await interaction.response.edit_message(
+            content=project_detail_content(
+                parent.program_data.get("university_short_name") or parent.program_data.get("university_name"),
+                parent.program_data.get("faculty_name"),
+                parent.program_data,
+                parent.section,
+                parent.program_data.get("campus_name"),
+            ),
+            embeds=[build_project_section_embed(parent.program_data, parent.project, parent.section, parent.applicant_profile)],
+            view=ProjectDetailView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.program_data.get("university_short_name"),
+                parent.program_data.get("campus_code"),
+                parent.program_data.get("faculty_name"),
+                parent.program_data,
+                parent.project,
+                parent.section,
+                parent.applicant_profile,
+            ),
+        )
+
+
+class FavoriteToggleButton(discord.ui.Button):
+    def __init__(self, saved):
+        self.saved = saved
+        super().__init__(
+            label="ลบจากรายการโปรด" if saved else "บันทึกรายการโปรด",
+            style=discord.ButtonStyle.success if saved else discord.ButtonStyle.secondary,
+            row=2,
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        saved = USER_FEATURE_STORE.toggle_favorite(parent.owner_id, parent.project, parent.program_data)
+        await interaction.response.edit_message(
+            content=project_detail_content(
+                parent.university_short_name,
+                parent.faculty_name,
+                parent.program_data,
+                parent.section,
+                parent.campus_name,
+            ),
+            embeds=[build_project_section_embed(parent.program_data, parent.project, parent.section, parent.applicant_profile)],
+            view=ProjectDetailView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.university_short_name,
+                parent.campus_code,
+                parent.faculty_name,
+                parent.program_data,
+                parent.project,
+                parent.section,
+                parent.applicant_profile,
+            ),
+        )
+
+
+class ReminderToggleButton(discord.ui.Button):
+    def __init__(self, event):
+        self.event = event
+        super().__init__(label="เตือนก่อนปิดรับ 3 วัน", style=discord.ButtonStyle.secondary, row=2)
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        saved = USER_FEATURE_STORE.toggle_reminder(parent.owner_id, parent.project, self.event)
+        message = (
+            "ตั้งเตือนแล้ว ระบบจะส่ง DM ก่อนปิดรับประมาณ 3 วัน"
+            if saved else "ยกเลิกการเตือนของโครงการนี้แล้ว"
+        )
+        await interaction.response.send_message(message, ephemeral=True)
+
+
+class FavoriteSelect(discord.ui.Select):
+    def __init__(self, rows):
+        self.rows = rows
+        super().__init__(
+            placeholder="เลือกโครงการที่บันทึกไว้",
+            min_values=1,
+            max_values=1,
+            options=[discord.SelectOption(
+                label=shorten(f"{row.get('university')} • {row.get('project_name')}", 100),
+                value=row.get("project_code") or "",
+                description=shorten(row.get("program_name") or "", 100),
+            ) for row in rows[:25]],
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        row = next(item for item in self.rows if item.get("project_code") == self.values[0])
+        await interaction.response.defer(thinking=True, ephemeral=True)
+        try:
+            program = await asyncio.to_thread(fetch_program_projects, row.get("program_code"))
+            project = next((item for item in (program or {}).get("projects", []) if item.get("code") == row.get("project_code")), None)
+            if not program or not project:
+                raise RuntimeError("favorite project is no longer in the dataset")
+            await interaction.edit_original_response(
+                content=project_detail_content(
+                    program.get("university_short_name"), program.get("faculty_name"), program,
+                    campus_name=campus_name_for(parent.navigation_programs, program.get("university_short_name"), program.get("campus_code")),
+                ),
+                embeds=[build_project_embed(program, project)],
+                view=ProjectDetailView(
+                    parent.owner_id, parent.navigation_programs,
+                    program.get("university_short_name"), program.get("campus_code"),
+                    program.get("faculty_name"), program, project,
+                ),
+            )
+        except Exception:
+            logger.exception("favorite project could not be opened")
+            await interaction.edit_original_response(content="เปิดรายการโปรดไม่สำเร็จ ข้อมูลอาจถูกนำออกจากชุดข้อมูลแล้ว", embeds=[], view=parent)
+
+
+class FavoritesView(OwnedView):
+    def __init__(self, owner_id, navigation_programs):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        rows = USER_FEATURE_STORE.favorites(owner_id)
+        if rows:
+            self.add_item(FavoriteSelect(rows))
+        self.add_item(HomeButton())
 
 
 class ProjectDetailView(OwnedView):
@@ -3546,22 +3902,19 @@ class ProjectDetailView(OwnedView):
                     url=source_url,
                     row=1,
                 )
-            )
+                )
+        self.add_item(FavoriteToggleButton(USER_FEATURE_STORE.is_favorite(owner_id, project.get("code"))))
+        close_event = application_close_event(project)
+        if close_event:
+            self.add_item(ReminderToggleButton(close_event))
+        self.add_item(ChecklistOpenButton())
+        self.add_item(RuleTraceOpenButton())
         self.add_item(HomeButton())
 
     async def show_section(self, interaction, section):
-        builders = {
-            "summary": build_project_embed,
-            "criteria": build_project_criteria_embed,
-            "portfolio": build_project_portfolio_embed,
-            "timeline": build_project_timeline_embed,
-        }
-        if section == "summary":
-            embed = build_project_embed(
-                self.program_data, self.project, self.applicant_profile
-            )
-        else:
-            embed = builders[section](self.program_data, self.project)
+        embed = build_project_section_embed(
+            self.program_data, self.project, section, self.applicant_profile
+        )
         await interaction.response.edit_message(
             content=project_detail_content(
                 self.university_short_name,
@@ -3581,6 +3934,19 @@ class ProjectDetailView(OwnedView):
                 self.project,
                 section,
                 self.applicant_profile,
+            ),
+        )
+
+    async def show_checklist(self, interaction):
+        await interaction.response.edit_message(
+            content=project_detail_content(
+                self.university_short_name, self.faculty_name, self.program_data,
+                "checklist", self.campus_name,
+            ),
+            embeds=[build_checklist_embed(self.program_data, self.project, self.owner_id)],
+            view=ChecklistView(
+                self.owner_id, self.navigation_programs, self.program_data,
+                self.project, self.section, self.applicant_profile,
             ),
         )
 
@@ -3632,6 +3998,22 @@ class ProjectDetailView(OwnedView):
                 self.program_data,
             ),
         )
+
+
+class ChecklistOpenButton(discord.ui.Button):
+    def __init__(self):
+        super().__init__(label="Checklist", style=discord.ButtonStyle.primary, row=2)
+
+    async def callback(self, interaction: discord.Interaction):
+        await self.view.show_checklist(interaction)
+
+
+class RuleTraceOpenButton(discord.ui.Button):
+    def __init__(self):
+        super().__init__(label="Rule Trace", style=discord.ButtonStyle.secondary, row=3)
+
+    async def callback(self, interaction: discord.Interaction):
+        await self.view.show_section(interaction, "trace")
 
 
 async def open_grade_screening(interaction: discord.Interaction):
@@ -3694,6 +4076,68 @@ async def start(interaction: discord.Interaction):
 
 
 @bot.tree.command(
+    name="favorites",
+    description="เปิดรายการโครงการ Portfolio ที่บันทึกไว้",
+)
+async def favorites_command(interaction: discord.Interaction):
+    await interaction.response.defer(thinking=True, ephemeral=True)
+    try:
+        navigation_programs = await bot.load_navigation_programs(timeout=15)
+        rows = USER_FEATURE_STORE.favorites(interaction.user.id)
+        if not rows:
+            content = (
+                "## รายการโปรด\nยังไม่มีโครงการที่บันทึกไว้\n"
+                "ค้นหาโครงการแล้วกด `บันทึกรายการโปรด` เพื่อกลับมาดูภายหลัง"
+            )
+            await interaction.edit_original_response(content=content, embeds=[], view=FavoritesView(interaction.user.id, navigation_programs))
+            return
+        embed = discord.Embed(
+            title="รายการโปรด",
+            description=f"มี {len(rows)} โครงการที่บันทึกไว้",
+            color=discord.Color.blurple(),
+        )
+        embed.add_field(
+            name="โครงการ",
+            value="\n".join(f"• {row.get('university')} — {row.get('project_name')}" for row in rows[:20]),
+            inline=False,
+        )
+        await interaction.edit_original_response(content="## รายการโปรด", embeds=[embed], view=FavoritesView(interaction.user.id, navigation_programs))
+    except Exception:
+        logger.exception("favorites command failed")
+        await interaction.edit_original_response(content="เปิดรายการโปรดไม่สำเร็จ กรุณาลองใหม่", embeds=[], view=None)
+
+
+@bot.tree.command(
+    name="data_quality",
+    description="ดูคุณภาพและความครอบคลุมของ dataset รอบ Portfolio",
+)
+async def data_quality_command(interaction: discord.Interaction):
+    await interaction.response.send_message(embed=build_quality_embed(), ephemeral=True)
+
+
+@bot.tree.command(
+    name="ask",
+    description="ถามวันสมัคร พอร์ต เอกสาร GPAX ค่าเรียน หรือสัมภาษณ์",
+)
+@app_commands.describe(question="เช่น KMITL เทคโนโลยีสารสนเทศ หมดเขตวันไหน")
+async def ask_command(interaction: discord.Interaction, question: str):
+    await interaction.response.defer(thinking=True, ephemeral=True)
+    try:
+        navigation_programs = await bot.load_navigation_programs(timeout=15)
+        answer, _ = await asyncio.wait_for(
+            asyncio.to_thread(answer_question, question, navigation_programs, fetch_program_projects),
+            timeout=20,
+        )
+        await interaction.edit_original_response(content=answer, embeds=[], view=None)
+    except Exception:
+        logger.exception("ask command failed")
+        await interaction.edit_original_response(
+            content="ตอบคำถามนี้ไม่สำเร็จ ลองระบุชื่อมหาวิทยาลัยและสาขา แล้วใช้ `/tcas_search` ตรวจต่อ",
+            embeds=[], view=None,
+        )
+
+
+@bot.tree.command(
     name="help",
     description="ดูวิธีใช้และคำอธิบายศัพท์ TCAS ที่พบบ่อย",
 )
@@ -3712,6 +4156,9 @@ async def help_command(interaction: discord.Interaction):
             "• `/start` — จุดเริ่มสำหรับทุกคน\n"
             "• `/grade_check` — เทียบ GPAX กับเกณฑ์ แยกจากหน้าเริ่มต้น\n"
             "• `/tcas_search` — ไปยังมหาวิทยาลัยที่รู้ชื่อแล้วทันที\n"
+            "• `/favorites` — เปิดโครงการที่บันทึกไว้\n"
+            "• `/ask` — ถามวันสมัคร พอร์ต เอกสาร GPAX ค่าเรียน หรือสัมภาษณ์\n"
+            "• `/data_quality` — ดู coverage และจุดที่ dataset ต้องตรวจเพิ่ม\n"
             "• `/help` — เปิดคำอธิบายนี้"
         ),
         inline=False,

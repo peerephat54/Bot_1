@@ -274,6 +274,12 @@ def evaluate_application_rules(profile, program, project):
         overall = "ไม่มีข้อมูล"
     else:
         overall = "ผ่าน"
+    source_url = project.get("source_url") or (criteria.get("official_announcement_url") if isinstance(criteria, dict) else None)
+    checked_at = project.get("source_checked_at")
+    for check in checks:
+        check["rule_id"] = f"RULE-{str(check.get('key') or 'unknown').upper()}"
+        check["source_url"] = source_url
+        check["source_checked_at"] = checked_at
     return {
         "status": overall,
         "score": score,
@@ -295,3 +301,20 @@ def render_rule_checks(assessment, max_items=None):
         f"[{STATUS_LABELS.get(check.get('status'), 'ต้องตรวจ')}] {check.get('label', 'เงื่อนไข')}: {check.get('reason', '')}"
         for check in checks
     ) or "ยังไม่มีผลตรวจรายเงื่อนไข"
+
+
+def render_rule_trace(assessment, max_items=None):
+    """Render an auditable trace: rule id, result, reason, and source."""
+    checks = list((assessment or {}).get("checks") or [])
+    if max_items is not None:
+        checks = checks[:max_items]
+    lines = []
+    for check in checks:
+        status = STATUS_LABELS.get(check.get("status"), "ต้องตรวจ")
+        source = check.get("source_url")
+        source_text = f"[ประกาศต้นทาง]({source})" if source else "ยังไม่มีลิงก์ต้นทาง"
+        lines.append(
+            f"**{check.get('rule_id', 'RULE-UNKNOWN')} • {status}** {check.get('label', 'เงื่อนไข')}\n"
+            f"{check.get('reason', '')}\n{source_text}"
+        )
+    return "\n\n".join(lines) or "ยังไม่มี Rule Trace"
