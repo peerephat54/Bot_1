@@ -2496,13 +2496,26 @@ class GradeScreeningUniversitySelect(discord.ui.Select):
 
     async def callback(self, interaction):
         parent = self.view
-        view = GradeScreeningResultView(
-            parent.owner_id, parent.navigation_programs, parent.profile,
-            parent.groups, parent.excluded, self.values[0],
-            flow_id=parent.flow_id, started_at=parent.started_at,
-        )
-        record_event("grade_check_university_selected", interaction, flow_id=parent.flow_id, success=True)
-        await interaction.response.edit_message(content=None, embeds=[view.build_embed()], view=view)
+        # Component interactions have the same three-second acknowledgement
+        # window as commands. Use the component update response so the
+        # existing ephemeral message is updated instead of creating a card.
+        await interaction.response.defer()
+        try:
+            view = GradeScreeningResultView(
+                parent.owner_id, parent.navigation_programs, parent.profile,
+                parent.groups, parent.excluded, self.values[0],
+                flow_id=parent.flow_id, started_at=parent.started_at,
+            )
+            record_event("grade_check_university_selected", interaction, flow_id=parent.flow_id, success=True)
+            await interaction.edit_original_response(
+                content=None, embeds=[view.build_embed()], view=view,
+            )
+        except Exception:
+            logger.exception("grade screening university result could not be rendered")
+            await interaction.edit_original_response(
+                content="เปิดผลมหาวิทยาลัยไม่สำเร็จ กรุณาเลือกใหม่หรือลอง `/start` อีกครั้งครับ",
+                embeds=[], view=parent,
+            )
 
 
 class GradeScreeningUniversityView(OwnedView):

@@ -140,8 +140,11 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         select = next(c for c in universities.children if isinstance(c, app.GradeScreeningUniversitySelect))
         self.assertEqual(len(select.options), len(groups))
         select._values = ["CU"]
+        interaction.response.defer.reset_mock()
+        interaction.edit_original_response.reset_mock()
         await select.callback(interaction)
-        response = interaction.response.edit_message.call_args.kwargs
+        interaction.response.defer.assert_awaited_once_with()
+        response = interaction.edit_original_response.call_args.kwargs
         view = response["view"]
         self.assertIsInstance(view, app.GradeScreeningResultView)
         self.assertEqual(view.section, "assessment")
