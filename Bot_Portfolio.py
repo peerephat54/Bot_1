@@ -437,6 +437,32 @@ def fetch_recommendation_projects():
     return candidates
 
 
+def fetch_university_project_entries(university_short_name):
+    """Return current project/program pairs for the university-wide shortcut."""
+    entries = []
+    seen = set()
+    for candidate in fetch_recommendation_projects():
+        program = candidate.get("program") or {}
+        university = first_relation(program.get("universities"))
+        if university.get("short_name") != university_short_name:
+            continue
+        project = candidate.get("project") or {}
+        key = (program.get("code"), project.get("code"))
+        if not key[0] or not key[1] or key in seen:
+            continue
+        seen.add(key)
+        entries.append(candidate)
+    return sorted(
+        entries,
+        key=lambda item: (
+            str((item["program"].get("faculty_name") or "")).casefold(),
+            str((item["program"].get("major_name") or "")).casefold(),
+            str((item["project"].get("round_variant") or "")),
+            str((item["project"].get("name") or "")).casefold(),
+        ),
+    )
+
+
 def fetch_grade_screening(navigation_programs, gpax, field):
     catalog_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
@@ -588,6 +614,19 @@ def source_status_text(record, current_year=2570):
     if record.get("source_url"):
         return "มีแหล่งข้อมูลทางการ — สถานะโครงการยังต้องตรวจเพิ่ม"
     return "ยังไม่ยืนยัน — ยังไม่มีประกาศโครงการในข้อมูลนี้"
+
+
+def source_status_badge(record, current_year=2570):
+    """Return a short, scannable status label for menus and summary cards."""
+    record = record or {}
+    if record.get("publication_status") == "official":
+        return "✅ ยืนยันแล้ว"
+    if record.get("publication_status") == "draft_waiting_official":
+        return "🟡 รอประกาศ"
+    reference_year = record.get("reference_academic_year")
+    if reference_year and reference_year < current_year:
+        return f"📘 ข้อมูลปีก่อน (TCAS{str(reference_year)[-2:]})"
+    return "🔎 ต้องตรวจเพิ่ม"
 
 
 def source_reference_line(record, fallback_url=None, fallback_title=None):
@@ -1117,6 +1156,79 @@ def preview_gpax_text(preview):
     return "ไม่ระบุในข้อมูลอ้างอิง"
 
 
+PROGRAM_STUDY_OVERVIEWS = (
+    (("วิศวกรรมคอมพิวเตอร์",), "ฮาร์ดแวร์ ซอฟต์แวร์ ระบบฝังตัว และการออกแบบระบบ"),
+    (("วิศวกรรมซอฟต์แวร์",), "เรียนการวิเคราะห์ ออกแบบ พัฒนา ทดสอบ และดูแลซอฟต์แวร์เป็นระบบ"),
+    (("ปัญญาประดิษฐ์", "Artificial Intelligence"), "เรียนการจัดการข้อมูล ปัญญาประดิษฐ์ และการสร้างโมเดลเพื่อแก้ปัญหา"),
+    (("วิทยาการข้อมูล", "Data Science"), "เรียนการเก็บ เตรียม วิเคราะห์ และสื่อสารข้อมูลเพื่อช่วยตัดสินใจ"),
+    (("เทคโนโลยีสารสนเทศ", "Information Technology"), "เรียนการพัฒนาระบบสารสนเทศ ฐานข้อมูล เครือข่าย และการประยุกต์ใช้เทคโนโลยี"),
+    (("วิทยาการคอมพิวเตอร์", "Computer Science"), "เรียนพื้นฐานการคำนวณ อัลกอริทึม การเขียนโปรแกรม และการพัฒนาระบบ"),
+    (("เกม", "Game"), "เรียนการออกแบบเกม การพัฒนาเกม สื่อดิจิทัล และการทำงานร่วมกันเป็นทีม"),
+    (("ไซเบอร์", "Cyber"), "เรียนการป้องกัน วิเคราะห์ และรับมือความเสี่ยงด้านความปลอดภัยไซเบอร์"),
+)
+
+
+PROGRAM_FOCUS_AREAS = (
+    (("วิศวกรรมคอมพิวเตอร์",), "ฮาร์ดแวร์ + ซอฟต์แวร์ + ระบบฝังตัว"),
+    (("วิศวกรรมซอฟต์แวร์",), "ซอฟต์แวร์ + กระบวนการพัฒนา + ผู้ใช้"),
+    (("ปัญญาประดิษฐ์", "Artificial Intelligence"), "ข้อมูล + ซอฟต์แวร์ + โมเดล AI"),
+    (("วิทยาการข้อมูล", "Data Science"), "ข้อมูล + การวิเคราะห์ + การตัดสินใจของผู้ใช้/องค์กร"),
+    (("เทคโนโลยีสารสนเทศ", "Information Technology"), "ซอฟต์แวร์ + ระบบสารสนเทศ + ผู้ใช้/องค์กร"),
+    (("วิทยาการคอมพิวเตอร์", "Computer Science"), "อัลกอริทึม + การเขียนโปรแกรม + ซอฟต์แวร์"),
+    (("เกม", "Game"), "ผู้เล่น/UX + ซอฟต์แวร์ + สื่อดิจิทัล"),
+    (("ไซเบอร์", "Cyber"), "เครือข่าย + ซอฟต์แวร์ + ความปลอดภัย"),
+)
+
+
+def program_study_overview(program):
+    """Give a clearly labelled discipline overview without inventing university criteria."""
+    explicit = program.get("study_overview") or program.get("curriculum_summary")
+    if explicit:
+        return str(explicit)
+    name = str(program.get("major_name") or program.get("faculty_name") or "")
+    for keywords, overview in PROGRAM_STUDY_OVERVIEWS:
+        if any(keyword.casefold() in name.casefold() for keyword in keywords):
+            return overview
+    return "ยังไม่มีสรุปรายวิชาในข้อมูลนี้ ให้ดูรายละเอียดจากหลักสูตรทางการ"
+
+
+def program_focus_summary(program):
+    """Describe the broad emphasis of a discipline, separate from admission rules."""
+    explicit = program.get("focus_areas")
+    if explicit:
+        if isinstance(explicit, (list, tuple)):
+            return " + ".join(str(item) for item in explicit)
+        return str(explicit)
+    name = str(program.get("major_name") or program.get("faculty_name") or "")
+    for keywords, focus in PROGRAM_FOCUS_AREAS:
+        if any(keyword.casefold() in name.casefold() for keyword in keywords):
+            return focus
+    return "ยังไม่มีข้อมูลจุดเน้นเฉพาะสาขา"
+
+
+def program_curriculum_summary(program, compact=False):
+    """Summarize only curriculum metadata already present in the dataset."""
+    duration = program.get("duration_years")
+    credits = program.get("curriculum_credits")
+    year = program.get("curriculum_year")
+    if compact:
+        return " • ".join(
+            [
+                f"{float(duration):g} ปี" if duration is not None else "ไม่ระบุระยะเวลา",
+                f"{credits} หน่วยกิต" if credits is not None else "ไม่ระบุหน่วยกิต",
+                f"ภาษา{display_value(program.get('language'))}",
+            ]
+        )
+    parts = [
+        f"{display_value(program.get('program_type'))}",
+        f"ภาษา{display_value(program.get('language'))}",
+        f"{float(duration):g} ปี" if duration is not None else "ไม่ระบุระยะเวลา",
+        f"{credits} หน่วยกิต" if credits is not None else "ไม่ระบุหน่วยกิต",
+        f"หลักสูตร พ.ศ. {year}" if year is not None else "ไม่ระบุปีหลักสูตร",
+    ]
+    return " • ".join(parts)
+
+
 def build_program_profile_embed(program, section="summary", reference_index=0):
     """Show a short overview, with curriculum and each reference on separate pages."""
     university = first_relation(program.get("universities"))
@@ -1159,6 +1271,20 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
     )
     footer_note = "ข้อมูลที่ยังไม่ยืนยัน ไม่ใช่เกณฑ์สมัคร TCAS70"
     if section == "curriculum":
+        embed.add_field(
+            name="เรียนเกี่ยวกับอะไร",
+            value=shorten(program_study_overview(program), 900),
+            inline=False,
+        )
+        embed.add_field(
+            name="จุดเน้นของสาขา",
+            value=shorten(
+                program_focus_summary(program)
+                + "\nภาพรวมนี้ใช้ช่วยทำความเข้าใจสาขา ไม่ใช่เกณฑ์รับสมัคร",
+                900,
+            ),
+            inline=False,
+        )
         for label, value in (
             ("ชื่อปริญญา", display_value(program.get("program_type"))),
             ("ภาษาที่เรียน", display_value(program.get("language"))),
@@ -1234,10 +1360,11 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
             inline=False,
         )
         embed.add_field(
-            name="เรียนอะไร • กี่ปี",
-            value=(
-                f"{display_value(program.get('program_type'))}\n"
-                f"ภาษา{display_value(program.get('language'))} • {duration_text}"
+            name="เรียนเกี่ยวกับอะไร • หลักสูตร",
+            value=shorten(
+                f"{program_study_overview(program)}\n"
+                f"{program_curriculum_summary(program, compact=True)}",
+                900,
             ),
             inline=False,
         )
@@ -1285,12 +1412,10 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
 
 def project_choice_description(project):
     criteria = project.get("selected_criteria") or {}
-    parts = []
-    parts.append(
-        "ยืนยันแล้ว"
-        if project.get("publication_status") == "official"
-        else "ยังไม่ยืนยัน"
-    )
+    parts = [project_round_label(project), source_status_badge(project)]
+    close_event = application_close_event(project)
+    if close_event:
+        parts.append(f"ปิดรับถึง {event_date(close_event, 'end_on')}")
     min_gpax = criteria.get("min_gpax")
     gpax_requirements = criteria.get("gpax_requirements") or {}
     thai_gpax_only = (
@@ -1321,13 +1446,42 @@ def project_choice_description(project):
     return shorten(" • ".join(parts), 100)
 
 
+def project_round_label(project):
+    """Return one consistent, readable round label for project menus and cards."""
+    project = project or {}
+    variant = str(project.get("round_variant") or "").strip()
+    normalized = re.sub(r"\s*[-/]\s*", ".", variant)
+    if normalized in {"1.1", "1.2"}:
+        return f"รอบ {normalized}"
+    label = str(project.get("round_label") or "Portfolio").strip()
+    return label if label.startswith("รอบ") else f"รอบ {label}"
+
+
+def project_display_name(project, fallback="ไม่ระบุชื่อโครงการ"):
+    """Show the project name with its 1.1/1.2 round without mutating source data."""
+    project = project or {}
+    name = str(project.get("name") or fallback).strip()
+    round_label = project_round_label(project)
+    variant = str(project.get("round_variant") or "").strip()
+    normalized = re.sub(r"\s*[-/]\s*", ".", variant)
+    if normalized in {"1.1", "1.2"}:
+        token = rf"(?<!\d)1\s*[./-]\s*{normalized[-1]}(?!\d)"
+        if re.search(token, name):
+            return name
+    elif variant and variant.casefold() in name.casefold():
+        return name
+    if round_label.casefold() in name.casefold():
+        return name
+    return f"{name} • {round_label}"
+
+
 def project_header_description(program, project, section_label):
     university = first_relation(program.get("universities"))
     campus = first_relation(program.get("university_campuses"))
     program_name = program.get("major_name") or program.get("faculty_name")
     tags = [
         "TCAS70",
-        f"Portfolio {project.get('round_variant') or project.get('round_label')}",
+        project_round_label(project),
     ]
     if program.get("language"):
         tags.append(f"ภาษา {program['language']}")
@@ -1345,7 +1499,7 @@ def project_header_description(program, project, section_label):
 def build_project_shell(program, project, section_label, color):
     university = first_relation(program.get("universities"))
     embed = discord.Embed(
-        title=shorten(project.get("name"), 256),
+        title=shorten(project_display_name(project), 256),
         url=project.get("source_url") or None,
         description=project_header_description(
             program, project, section_label
@@ -1356,7 +1510,10 @@ def build_project_shell(program, project, section_label, color):
         embed.set_thumbnail(url=university["logo_url"])
     embed.add_field(
         name="สถานะข้อมูลและแหล่งที่มา",
-        value=source_provenance_text(project),
+        value=(
+            f"**ป้ายสถานะ:** {source_status_badge(project)}\n"
+            + source_provenance_text(project)
+        ),
         inline=False,
     )
     return embed
@@ -1376,6 +1533,36 @@ def project_gpax_text(criteria):
     )
 
 
+def project_quick_summary(program, project, applicant_profile=None):
+    """Put the three decisions students need first on the project card."""
+    if applicant_profile:
+        assessment = evaluate_project_fit(applicant_profile, program, project)
+        fit_text = assessment["status"]
+        if fit_text == "ผ่าน":
+            fit_text += "เบื้องต้น"
+    else:
+        fit_text = "ยังไม่ได้ตรวจ — กรอก GPAX/ข้อมูลผู้สมัคร"
+
+    close_event = application_close_event(project)
+    deadline = (
+        event_date(close_event, "end_on")
+        if close_event
+        else "ยังไม่ระบุในข้อมูล"
+    )
+    status = project.get("publication_status")
+    if status == "official":
+        next_step = "เปิดคุณสมบัติ → เตรียม Portfolio/เอกสาร → สมัครตามประกาศ"
+    elif project.get("reference_academic_year"):
+        next_step = "ใช้เตรียมตัวเท่านั้น → รอประกาศ TCAS70 ก่อนสมัคร"
+    else:
+        next_step = "เปิดประกาศทางการและตรวจเงื่อนไขฉบับเต็มก่อนสมัคร"
+    return (
+        f"**สมัครได้ไหม:** {fit_text}\n"
+        f"**ปิดรับสมัคร:** {deadline}\n"
+        f"**ต้องทำอะไรต่อ:** {next_step}"
+    )
+
+
 def build_project_embed(program, project, applicant_profile=None):
     """Answer the main application questions; full rules remain in detail tabs."""
     timeline = project.get("admission_timeline") or []
@@ -1383,6 +1570,11 @@ def build_project_embed(program, project, applicant_profile=None):
 
     embed = build_project_shell(
         program, project, "สรุปที่ต้องรู้ก่อนสมัคร", 0x2ECC71
+    )
+    embed.add_field(
+        name="สรุปเร็ว 3 อย่าง",
+        value=project_quick_summary(program, project, applicant_profile),
+        inline=False,
     )
     embed.add_field(
         name="ฉันสมัครได้ไหม?",
@@ -1560,6 +1752,17 @@ def build_quality_embed():
             f"วิทยาเขต {report['campuses']} แห่ง\n"
             f"หลักสูตร {report['programs']} สาขา\n"
             f"โครงการ {report['projects']} รายการ ({report['official_projects']} ยืนยันแล้ว)"
+        ),
+        inline=True,
+    )
+    status_counts = report.get("project_status_counts") or {}
+    embed.add_field(
+        name="สถานะโครงการ",
+        value=(
+            f"ยืนยันแล้ว: {status_counts.get('confirmed', 0)}\n"
+            f"รอตรวจประกาศ: {status_counts.get('pending', 0)}\n"
+            f"ข้อมูลอ้างอิง: {status_counts.get('reference', 0)}\n"
+            f"ต้องตรวจเพิ่ม: {status_counts.get('needs_review', 0)}"
         ),
         inline=True,
     )
@@ -1901,6 +2104,30 @@ def project_menu_content(
     )
 
 
+def university_projects_menu_content(
+    navigation_programs, university_short_name, entries, page=0
+):
+    university_name = university_name_for(navigation_programs, university_short_name)
+    status_counts = {}
+    for item in entries:
+        badge = source_status_badge(item.get("project"))
+        status_counts[badge] = status_counts.get(badge, 0) + 1
+    status_summary = " • ".join(
+        f"{label} {count}" for label, count in status_counts.items()
+    ) or "ยังไม่มีโครงการที่เปิดดูได้"
+    start = page * SELECT_PAGE_SIZE + 1
+    end = min((page + 1) * SELECT_PAGE_SIZE, len(entries))
+    page_text = f"รายการ {start}–{end}/{len(entries)}" if entries else "ไม่มีรายการ"
+    return (
+        "## โครงการ Portfolio ทั้งมหาวิทยาลัย\n"
+        f"**มหาวิทยาลัย:** {university_name}\n"
+        f"เลือกโครงการได้ทันที ไม่ต้องไล่ผ่านคณะและสาขา • {page_text}\n\n"
+        f"**สถานะข้อมูล:** {status_summary}\n"
+        "กดโครงการเพื่อดูเกณฑ์ Portfolio เอกสาร และกำหนดการ\n"
+        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+    )
+
+
 def project_detail_content(
     university_short_name,
     faculty_name,
@@ -1938,6 +2165,8 @@ def start_menu_content(navigation_programs):
         "**รู้มหาวิทยาลัยแล้ว** → ค้นหาตามมหาวิทยาลัยและโครงการ\n"
         "**อยากเช็ก GPAX** → ดูว่าเกณฑ์ขั้นต่ำของแต่ละโครงการเป็นอย่างไร\n"
         "**อยากเปรียบเทียบ** → เลือก 2–3 สาขาแล้วดูข้อมูลข้างกัน\n\n"
+        "**มีคำถามเฉพาะ** → ใช้ `/ask` แล้วพิมพ์ชื่อมหาวิทยาลัย/สาขาและสิ่งที่อยากรู้\n"
+        "ตัวอย่าง: `มจธ. การออกแบบเกม ใช้ GPAX เท่าไร`\n\n"
         f"มีข้อมูลเกณฑ์ TCAS70 ที่เปิดดูได้ {official_count} สาขา\n"
         f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
     )
@@ -1995,6 +2224,91 @@ def build_grade_universities_embed(profile, groups, excluded, page=0):
             value="ใช้ปุ่มแก้เกรด / เปลี่ยนสายเพื่อตรวจข้อมูลที่กรอก หรือเปิดค้นหามหาวิทยาลัยจากหน้าเริ่มต้น\nไม่ได้แปลว่าไม่มีสิทธิ์สมัครที่อื่น", inline=False,
         )
     embed.set_footer(text=f"จำนวนเป็นรายการ ไม่ใช่ที่นั่ง • ต่ำกว่า GPAX TCAS70 {excluded} รายการ • ตรวจข้อมูล {DATASET_CHECKED_AT_DISPLAY}")
+    return trim_embed_to_limit(embed)
+
+
+def grade_campus_groups(group):
+    """Group a university's screening entries by campus before showing projects."""
+    campuses = {}
+    for entry in group.get("entries", []):
+        program = entry["program"]
+        campus = first_relation(program.get("university_campuses"))
+        key = campus.get("code") or campus.get("name") or "ไม่ระบุวิทยาเขต"
+        item = campuses.setdefault(
+            key,
+            {
+                "key": key,
+                "name": campus.get("name") or "ไม่ระบุวิทยาเขต",
+                "entries": [],
+            },
+        )
+        item["entries"].append(entry)
+    return sorted(campuses.values(), key=lambda item: item["name"])
+
+
+def grade_project_label(entry):
+    program = entry["program"]
+    project = entry.get("project") or {}
+    preview = entry.get("preview") or {}
+    project_name = project_display_name(
+        project,
+        fallback=preview.get("title") or "รอประกาศโครงการ",
+    )
+    major = program.get("major_name") or program.get("faculty_name") or "ไม่ระบุสาขา"
+    return shorten(f"{major} • {project_name}", 100)
+
+
+def build_grade_campuses_embed(profile, group, campus_groups):
+    embed = discord.Embed(
+        title="เลือกวิทยาเขตเพื่อดูโครงการ",
+        description=(
+            f"**{group['key']} • {group['name']}**\n"
+            f"GPAX {profile['gpax']:.2f} • สาย{SCREENING_FIELDS[profile['field']]}\n\n"
+            "เลือกวิทยาเขตก่อน แล้วระบบจะแยกโครงการรับสมัครให้กดดูรายละเอียด"
+        ),
+        color=discord.Color.blurple(),
+    )
+    for campus in campus_groups:
+        current = sum(1 for entry in campus["entries"] if entry["kind"] == "current")
+        reference = sum(1 for entry in campus["entries"] if entry["kind"] == "reference")
+        embed.add_field(
+            name=shorten(campus["name"], 256),
+            value=(
+                f"{len(campus['entries'])} รายการ • โครงการปัจจุบัน {current} • "
+                f"ข้อมูลอ้างอิง {reference}\nกดเลือกเพื่อดูรายการโครงการ"
+            ),
+            inline=False,
+        )
+    embed.set_footer(text=f"เลือกวิทยาเขตแล้วจึงเลือกโครงการ • ตรวจข้อมูล {DATASET_CHECKED_AT_DISPLAY}")
+    return trim_embed_to_limit(embed)
+
+
+def build_grade_projects_embed(profile, group, campus, page=0):
+    entries = campus["entries"]
+    shown = entries[page * SELECT_PAGE_SIZE : (page + 1) * SELECT_PAGE_SIZE]
+    embed = discord.Embed(
+        title="เลือกโครงการเพื่อดูรายละเอียด",
+        description=(
+            f"**{group['key']} • {group['name']}**\n"
+            f"วิทยาเขต: **{campus['name']}**\n"
+            f"GPAX {profile['gpax']:.2f} • สาย{SCREENING_FIELDS[profile['field']]}\n\n"
+            "แต่ละตัวเลือกคือโครงการ/สาขาที่ระบบตรวจพบ กดเลือกเพื่อดูผลและเกณฑ์เต็ม"
+        ),
+        color=discord.Color.blurple(),
+    )
+    for index, entry in enumerate(shown, start=page * SELECT_PAGE_SIZE + 1):
+        assessment = entry["assessment"]
+        kind = {"current": "TCAS70", "reference": "อ้างอิงปีก่อน", "pending": "รอประกาศ"}[entry["kind"]]
+        embed.add_field(
+            name=shorten(f"{index}. {grade_project_label(entry)}", 256),
+            value=shorten(
+                f"สถานะ GPAX: **{assessment['status']}** • {kind}\n"
+                f"{assessment['reason']}\nกดตัวเลือกด้านล่างเพื่อดูรายละเอียด",
+                700,
+            ),
+            inline=False,
+        )
+    embed.set_footer(text=f"โครงการทั้งหมด {len(entries)} รายการ • ตรวจข้อมูล {DATASET_CHECKED_AT_DISPLAY}")
     return trim_embed_to_limit(embed)
 
 
@@ -2132,7 +2446,7 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
             ),
             value=shorten(
                 f"**สถานะ: {assessment['status']}** • {gpax_text}\n"
-                f"โครงการ: {project.get('name')}\n"
+                f"โครงการ: {project_display_name(project)}\n"
                 f"{deadline_text}\n"
                 f"ทำต่อ: {next_step}\n"
                 f"{source_line}\n"
@@ -2204,6 +2518,9 @@ def build_program_comparison_embed(programs):
             if source_checked:
                 source_link += f" • ตรวจล่าสุด {format_checked_at(source_checked)}"
             detail_lines = [
+                "เรียนเกี่ยวกับ: " + shorten(program_study_overview(program), 220),
+                "จุดเน้น: " + shorten(program_focus_summary(program), 180),
+                "หลักสูตร: " + shorten(program_curriculum_summary(program), 220),
                 f"โครงการยืนยันแล้ว: {len(projects)}",
                 f"GPAX: {gpax_text or 'ต้องดูรายประเภท'}",
                 f"ค่าเรียน: {tuition_text}",
@@ -2239,7 +2556,12 @@ def build_program_comparison_embed(programs):
                 if current_specific
                 else "ยังไม่มีประกาศ TCAS70 • ใช้ข้อมูลปีก่อน"
             )
-            detail_lines = ["โครงการยืนยันแล้ว: 0"]
+            detail_lines = [
+                "เรียนเกี่ยวกับ: " + shorten(program_study_overview(program), 220),
+                "จุดเน้น: " + shorten(program_focus_summary(program), 180),
+                "หลักสูตร: " + shorten(program_curriculum_summary(program), 220),
+                "โครงการยืนยันแล้ว: 0",
+            ]
             source_candidate_rows = list(current_specific[:1])
 
             slot_rows = [
@@ -2355,6 +2677,9 @@ def build_program_comparison_embed(programs):
         else:
             status_text = "หลักสูตรเปิดสอนจริง และกำลังรอประกาศ TCAS70"
             detail_lines = [
+                "เรียนเกี่ยวกับ: " + shorten(program_study_overview(program), 220),
+                "จุดเน้น: " + shorten(program_focus_summary(program), 180),
+                "หลักสูตร: " + shorten(program_curriculum_summary(program), 220),
                 "โครงการยืนยันแล้ว: 0",
                 "ยังไม่มีข้อมูลปีก่อนที่ตรวจสอบแหล่งทางการได้",
             ]
@@ -2501,14 +2826,26 @@ class GradeScreeningUniversitySelect(discord.ui.Select):
         # existing ephemeral message is updated instead of creating a card.
         await interaction.response.defer()
         try:
-            view = GradeScreeningResultView(
-                parent.owner_id, parent.navigation_programs, parent.profile,
-                parent.groups, parent.excluded, self.values[0],
-                flow_id=parent.flow_id, started_at=parent.started_at,
-            )
+            group = next(group for group in parent.groups if group["key"] == self.values[0])
+            campus_groups = grade_campus_groups(group)
+            if len(campus_groups) == 1:
+                campus = campus_groups[0]
+                view = GradeScreeningProjectView(
+                    parent.owner_id, parent.navigation_programs, parent.profile,
+                    parent.groups, parent.excluded, group, campus,
+                    flow_id=parent.flow_id, started_at=parent.started_at,
+                )
+                embed = build_grade_projects_embed(parent.profile, group, campus)
+            else:
+                view = GradeScreeningCampusView(
+                    parent.owner_id, parent.navigation_programs, parent.profile,
+                    parent.groups, parent.excluded, group, campus_groups,
+                    flow_id=parent.flow_id, started_at=parent.started_at,
+                )
+                embed = build_grade_campuses_embed(parent.profile, group, campus_groups)
             record_event("grade_check_university_selected", interaction, flow_id=parent.flow_id, success=True)
             await interaction.edit_original_response(
-                content=None, embeds=[view.build_embed()], view=view,
+                content=None, embeds=[embed], view=view,
             )
         except Exception:
             logger.exception("grade screening university result could not be rendered")
@@ -2516,6 +2853,178 @@ class GradeScreeningUniversitySelect(discord.ui.Select):
                 content="เปิดผลมหาวิทยาลัยไม่สำเร็จ กรุณาเลือกใหม่หรือลอง `/start` อีกครั้งครับ",
                 embeds=[], view=parent,
             )
+
+
+class GradeScreeningCampusSelect(discord.ui.Select):
+    def __init__(self, campus_groups):
+        self.campus_groups = campus_groups
+        super().__init__(
+            placeholder="เลือกวิทยาเขต/พื้นที่การศึกษา",
+            min_values=1,
+            max_values=1,
+            options=[
+                discord.SelectOption(
+                    label=shorten(campus["name"], 100),
+                    value=campus["key"],
+                    description=shorten(
+                        f"{len(campus['entries'])} โครงการ/สาขา • กดเพื่อดูรายละเอียด",
+                        100,
+                    ),
+                )
+                for campus in campus_groups
+            ],
+        )
+
+    async def callback(self, interaction):
+        parent = self.view
+        campus = next(item for item in parent.campus_groups if item["key"] == self.values[0])
+        view = GradeScreeningProjectView(
+            parent.owner_id, parent.navigation_programs, parent.profile,
+            parent.groups, parent.excluded, parent.group, campus,
+            flow_id=parent.flow_id, started_at=parent.started_at,
+        )
+        await interaction.response.edit_message(
+            content=None,
+            embeds=[build_grade_projects_embed(parent.profile, parent.group, campus)],
+            view=view,
+        )
+
+
+class GradeScreeningCampusView(OwnedView):
+    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, group, campus_groups, *, flow_id=None, started_at=None):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.profile, self.groups, self.excluded = profile, groups, excluded
+        self.group = group
+        self.campus_groups = campus_groups
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
+        self.add_item(GradeScreeningCampusSelect(campus_groups))
+
+    @discord.ui.button(label="← มหาวิทยาลัย", style=discord.ButtonStyle.secondary, row=1)
+    async def back_to_universities(self, interaction, button):
+        del button
+        page = self.groups.index(self.group) // SELECT_PAGE_SIZE
+        await interaction.response.edit_message(
+            content=None,
+            embeds=[build_grade_universities_embed(self.profile, self.groups, self.excluded, page)],
+            view=GradeScreeningUniversityView(
+                self.owner_id, self.navigation_programs, self.profile, self.groups,
+                self.excluded, page, flow_id=self.flow_id, started_at=self.started_at,
+            ),
+        )
+
+    @discord.ui.button(label="แก้เกรด / เปลี่ยนสาย", style=discord.ButtonStyle.secondary, row=1)
+    async def edit_profile(self, interaction, button):
+        del button
+        await interaction.response.edit_message(
+            content=grade_screening_intro(), embeds=[],
+            view=GradeScreeningFieldView(
+                self.owner_id, self.navigation_programs, self.profile["gpax"],
+                flow_id=self.flow_id, started_at=self.started_at,
+            ),
+        )
+
+
+class GradeScreeningProjectSelect(discord.ui.Select):
+    def __init__(self, entries):
+        self.entries = entries
+        super().__init__(
+            placeholder="เลือกโครงการ/สาขาเพื่อดูรายละเอียด",
+            min_values=1,
+            max_values=1,
+            options=[
+                discord.SelectOption(
+                    label=grade_project_label(entry),
+                    value=str(index),
+                    description=shorten(
+                        f"{entry['assessment']['status']} • กดเพื่อดูเกณฑ์และกำหนดการ",
+                        100,
+                    ),
+                )
+                for index, entry in enumerate(entries)
+            ],
+        )
+
+    async def callback(self, interaction):
+        parent = self.view
+        entry = parent.entries[int(self.values[0])]
+        index = parent.group["entries"].index(entry)
+        view = GradeScreeningResultView(
+            parent.owner_id, parent.navigation_programs, parent.profile,
+            parent.groups, parent.excluded, parent.group["key"], index,
+            campus_key=parent.campus["key"], flow_id=parent.flow_id, started_at=parent.started_at,
+        )
+        record_event("grade_check_project_selected", interaction, flow_id=parent.flow_id, success=True)
+        await interaction.response.edit_message(
+            content=None, embeds=[view.build_embed()], view=view,
+        )
+
+
+class GradeScreeningProjectView(OwnedView):
+    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, group, campus, page=0, *, flow_id=None, started_at=None):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.profile, self.groups, self.excluded = profile, groups, excluded
+        self.group, self.campus = group, campus
+        self.entries = campus["entries"]
+        self.flow_id = flow_id or new_flow_id()
+        self.started_at = started_at or time.monotonic()
+        self.total_pages = max(1, (len(self.entries) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE)
+        self.page = max(0, min(page, self.total_pages - 1))
+        start = self.page * SELECT_PAGE_SIZE
+        self.add_item(GradeScreeningProjectSelect(self.entries[start : start + SELECT_PAGE_SIZE]))
+        if self.total_pages == 1:
+            self.remove_item(self.previous_page)
+            self.remove_item(self.next_page)
+        else:
+            self.previous_page.disabled = self.page == 0
+            self.next_page.disabled = self.page == self.total_pages - 1
+
+    async def show_page(self, interaction, page):
+        view = GradeScreeningProjectView(
+            self.owner_id, self.navigation_programs, self.profile, self.groups,
+            self.excluded, self.group, self.campus, page,
+            flow_id=self.flow_id, started_at=self.started_at,
+        )
+        await interaction.response.edit_message(
+            content=None, embeds=[build_grade_projects_embed(self.profile, self.group, self.campus, view.page)], view=view,
+        )
+
+    @discord.ui.button(label="ก่อนหน้า", style=discord.ButtonStyle.secondary, row=1)
+    async def previous_page(self, interaction, button):
+        del button
+        await self.show_page(interaction, self.page - 1)
+
+    @discord.ui.button(label="ถัดไป", style=discord.ButtonStyle.secondary, row=1)
+    async def next_page(self, interaction, button):
+        del button
+        await self.show_page(interaction, self.page + 1)
+
+    @discord.ui.button(label="← วิทยาเขต", style=discord.ButtonStyle.secondary, row=2)
+    async def back_to_campus(self, interaction, button):
+        del button
+        campus_groups = grade_campus_groups(self.group)
+        if len(campus_groups) == 1:
+            page = self.groups.index(self.group) // SELECT_PAGE_SIZE
+            await interaction.response.edit_message(
+                content=None,
+                embeds=[build_grade_universities_embed(self.profile, self.groups, self.excluded, page)],
+                view=GradeScreeningUniversityView(
+                    self.owner_id, self.navigation_programs, self.profile, self.groups,
+                    self.excluded, page, flow_id=self.flow_id, started_at=self.started_at,
+                ),
+            )
+            return
+        await interaction.response.edit_message(
+            content=None,
+            embeds=[build_grade_campuses_embed(self.profile, self.group, campus_groups)],
+            view=GradeScreeningCampusView(
+                self.owner_id, self.navigation_programs, self.profile, self.groups,
+                self.excluded, self.group, campus_groups,
+                flow_id=self.flow_id, started_at=self.started_at,
+            ),
+        )
 
 
 class GradeScreeningUniversityView(OwnedView):
@@ -2566,7 +3075,7 @@ class GradeScreeningUniversityView(OwnedView):
 
 
 class GradeScreeningResultView(OwnedView):
-    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, university_key, index=0, section="assessment", *, flow_id=None, started_at=None):
+    def __init__(self, owner_id, navigation_programs, profile, groups, excluded, university_key, index=0, section="assessment", *, campus_key=None, flow_id=None, started_at=None):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
         self.profile, self.groups, self.excluded = profile, groups, excluded
@@ -2574,6 +3083,7 @@ class GradeScreeningResultView(OwnedView):
         self.started_at = started_at or time.monotonic()
         self.university_key = university_key
         self.group = next(g for g in groups if g["key"] == university_key)
+        self.campus_key = campus_key
         self.entries = self.group["entries"]
         self.index = max(0, min(index, len(self.entries) - 1))
         self.section = section
@@ -2602,7 +3112,7 @@ class GradeScreeningResultView(OwnedView):
         view = GradeScreeningResultView(
             self.owner_id, self.navigation_programs, self.profile, self.groups,
             self.excluded, self.university_key, self.index if index is None else index, section,
-            flow_id=self.flow_id, started_at=self.started_at,
+            campus_key=self.campus_key, flow_id=self.flow_id, started_at=self.started_at,
         )
         await interaction.response.edit_message(content=None, embeds=[view.build_embed()], view=view)
 
@@ -2630,8 +3140,24 @@ class GradeScreeningResultView(OwnedView):
     async def next_result(self, interaction, button):
         await self.render(interaction, index=self.index + 1)
 
-    @discord.ui.button(label="← มหาวิทยาลัย", style=discord.ButtonStyle.secondary, row=2)
+    @discord.ui.button(label="← วิทยาเขต", style=discord.ButtonStyle.secondary, row=2)
     async def back_to_universities(self, interaction, button):
+        del button
+        if self.campus_key:
+            campus = next(
+                item for item in grade_campus_groups(self.group)
+                if item["key"] == self.campus_key
+            )
+            await interaction.response.edit_message(
+                content=None,
+                embeds=[build_grade_projects_embed(self.profile, self.group, campus)],
+                view=GradeScreeningProjectView(
+                    self.owner_id, self.navigation_programs, self.profile, self.groups,
+                    self.excluded, self.group, campus,
+                    flow_id=self.flow_id, started_at=self.started_at,
+                ),
+            )
+            return
         page = self.groups.index(self.group) // SELECT_PAGE_SIZE
         await interaction.response.edit_message(
             content=None, embeds=[build_grade_universities_embed(self.profile, self.groups, self.excluded, page)],
@@ -2776,6 +3302,11 @@ class BeginnerResultSelect(discord.ui.Select):
             program = match["program"]
             project = match["project"]
             university = first_relation(program.get("universities"))
+            close_event = application_close_event(project)
+            deadline = (
+                f" • ปิดรับถึง {event_date(close_event, 'end_on')}"
+                if close_event else ""
+            )
             options.append(
                 discord.SelectOption(
                     label=shorten(
@@ -2783,7 +3314,9 @@ class BeginnerResultSelect(discord.ui.Select):
                         100,
                     ),
                     value=str(index),
-                    description=shorten(project.get("name"), 100),
+                    description=shorten(
+                        f"{project_display_name(project)}{deadline}", 100
+                    ),
                 )
             )
         super().__init__(
@@ -3114,6 +3647,194 @@ class HomeButton(discord.ui.Button):
         )
 
 
+async def open_university_projects(interaction, parent):
+    """Open the university-wide current-project shortcut after a defer."""
+    await interaction.response.defer()
+    try:
+        entries = await asyncio.wait_for(
+            asyncio.to_thread(
+                fetch_university_project_entries,
+                parent.university_short_name,
+            ),
+            timeout=20,
+        )
+        if not entries:
+            await interaction.edit_original_response(
+                content=(
+                    "ยังไม่พบโครงการ TCAS70 ที่เปิดดูได้ของมหาวิทยาลัยนี้\n"
+                    "ลองเลือกคณะและสาขาเพื่อตรวจข้อมูลหลักสูตรหรือข้อมูลรอประกาศ"
+                ),
+                embeds=[],
+                view=UniversityView(parent.owner_id, parent.navigation_programs),
+            )
+            return
+        await interaction.edit_original_response(
+            content=university_projects_menu_content(
+                parent.navigation_programs,
+                parent.university_short_name,
+                entries,
+            ),
+            embeds=[],
+            view=UniversityProjectsView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.university_short_name,
+                entries,
+            ),
+        )
+    except asyncio.TimeoutError:
+        await interaction.edit_original_response(
+            content="โหลดโครงการรวมไม่ทันเวลา กรุณาลองอีกครั้งหรือเลือกคณะและสาขา",
+            embeds=[],
+            view=parent,
+        )
+    except Exception:
+        logger.exception(
+            "could not load university-wide projects university=%s",
+            parent.university_short_name,
+        )
+        await interaction.edit_original_response(
+            content="โหลดโครงการรวมไม่สำเร็จ กรุณาลองอีกครั้ง",
+            embeds=[],
+            view=parent,
+        )
+
+
+class UniversityProjectSelect(discord.ui.Select):
+    def __init__(self, entries):
+        self.entries = entries
+        options = []
+        for index, entry in enumerate(entries):
+            program = entry["program"]
+            project = entry["project"]
+            options.append(
+                discord.SelectOption(
+                    label=shorten(
+                        f"{program.get('major_name') or 'ไม่ระบุสาขา'} • "
+                        f"{project.get('name') or 'ไม่ระบุโครงการ'}",
+                        100,
+                    ),
+                    value=str(index),
+                    description=shorten(
+                        f"{source_status_badge(project)} • "
+                        f"{program.get('faculty_name') or 'ไม่ระบุคณะ'}",
+                        100,
+                    ),
+                )
+            )
+        super().__init__(
+            placeholder="เลือกโครงการเพื่อดูรายละเอียด",
+            min_values=1,
+            max_values=1,
+            options=options,
+        )
+
+    async def callback(self, interaction):
+        parent = self.view
+        entry = self.entries[int(self.values[0])]
+        program = dict(entry["program"])
+        project = dict(entry["project"])
+        program["projects"] = [project]
+        campus = first_relation(program.get("university_campuses"))
+        await interaction.response.edit_message(
+            content=project_detail_content(
+                parent.university_short_name,
+                program.get("faculty_name"),
+                program,
+                campus_name=campus.get("name"),
+            ),
+            embeds=[build_project_embed(program, project)],
+            view=ProjectDetailView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.university_short_name,
+                campus.get("code") or "main",
+                program.get("faculty_name") or "ไม่ระบุคณะ",
+                program,
+                project,
+            ),
+        )
+
+
+class UniversityProjectsView(OwnedView):
+    def __init__(
+        self,
+        owner_id,
+        navigation_programs,
+        university_short_name,
+        entries,
+        page=0,
+    ):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.university_short_name = university_short_name
+        self.entries = entries
+        self.page = page
+        self.total_pages = max(
+            1, (len(entries) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE
+        )
+        start = page * SELECT_PAGE_SIZE
+        self.add_item(
+            UniversityProjectSelect(entries[start : start + SELECT_PAGE_SIZE])
+        )
+        self.add_item(HomeButton())
+        if self.total_pages == 1:
+            self.remove_item(self.previous_page)
+            self.remove_item(self.next_page)
+        else:
+            self.previous_page.disabled = page == 0
+            self.next_page.disabled = page >= self.total_pages - 1
+
+    @discord.ui.button(
+        label="← เลือกมหาวิทยาลัย", style=discord.ButtonStyle.secondary, row=1
+    )
+    async def back_to_universities(self, interaction, button):
+        del button
+        await interaction.response.edit_message(
+            content=university_menu_content(self.navigation_programs),
+            embeds=[],
+            view=UniversityView(self.owner_id, self.navigation_programs),
+        )
+
+    @discord.ui.button(label="◀ ก่อนหน้า", style=discord.ButtonStyle.secondary, row=2)
+    async def previous_page(self, interaction, button):
+        del button
+        await interaction.response.edit_message(
+            content=university_projects_menu_content(
+                self.navigation_programs,
+                self.university_short_name,
+                self.entries,
+                self.page - 1,
+            ),
+            view=UniversityProjectsView(
+                self.owner_id,
+                self.navigation_programs,
+                self.university_short_name,
+                self.entries,
+                self.page - 1,
+            ),
+        )
+
+    @discord.ui.button(label="ถัดไป ▶", style=discord.ButtonStyle.secondary, row=2)
+    async def next_page(self, interaction, button):
+        del button
+        await interaction.response.edit_message(
+            content=university_projects_menu_content(
+                self.navigation_programs,
+                self.university_short_name,
+                self.entries,
+                self.page + 1,
+            ),
+            view=UniversityProjectsView(
+                self.owner_id,
+                self.navigation_programs,
+                self.university_short_name,
+                self.entries,
+                self.page + 1,
+            ),
+        )
+
+
 class UniversitySelect(discord.ui.Select):
     def __init__(self, navigation_programs):
         universities = {}
@@ -3258,6 +3979,15 @@ class CampusView(OwnedView):
             embeds=[],
             view=UniversityView(self.owner_id, self.navigation_programs),
         )
+
+    @discord.ui.button(
+        label="ดูโครงการทั้งหมดของมหาวิทยาลัย",
+        style=discord.ButtonStyle.primary,
+        row=2,
+    )
+    async def all_university_projects(self, interaction, button):
+        del button
+        await open_university_projects(interaction, self)
 
 
 class FacultySelect(discord.ui.Select):
@@ -3415,6 +4145,15 @@ class FacultyView(OwnedView):
                 self.page + 1,
             )
         )
+
+    @discord.ui.button(
+        label="ดูโครงการทั้งหมดของมหาวิทยาลัย",
+        style=discord.ButtonStyle.primary,
+        row=2,
+    )
+    async def all_university_projects(self, interaction, button):
+        del button
+        await open_university_projects(interaction, self)
 
 
 class ProgramSelect(discord.ui.Select):
@@ -3711,10 +4450,7 @@ class ProjectSelect(discord.ui.Select):
     def __init__(self, projects, step_number=4):
         options = []
         for project in projects:
-            variant = project.get("round_variant")
-            label = project.get("name") or "ไม่ระบุชื่อโครงการ"
-            if variant and str(variant) not in label:
-                label = f"{label} • {variant}"
+            label = project_display_name(project)
             options.append(
                 discord.SelectOption(
                     label=shorten(label, 100),
@@ -4283,18 +5019,11 @@ async def favorites_command(interaction: discord.Interaction):
 
 
 @bot.tree.command(
-    name="data_quality",
-    description="ดูคุณภาพและความครอบคลุมของ dataset รอบ Portfolio",
-)
-async def data_quality_command(interaction: discord.Interaction):
-    await interaction.response.send_message(embed=build_quality_embed(), ephemeral=True)
-
-
-@bot.tree.command(
     name="ask",
     description="ถามวันสมัคร พอร์ต เอกสาร GPAX ค่าเรียน หรือสัมภาษณ์",
 )
-@app_commands.describe(question="เช่น KMITL เทคโนโลยีสารสนเทศ หมดเขตวันไหน")
+@app_commands.rename(question="คำถาม")
+@app_commands.describe(question="พิมพ์คำถามเป็นภาษาปกติ เช่น มจธ. การออกแบบเกม ใช้ GPAX เท่าไร")
 async def ask_command(interaction: discord.Interaction, question: str):
     await interaction.response.defer(thinking=True, ephemeral=True)
     try:
@@ -4310,83 +5039,6 @@ async def ask_command(interaction: discord.Interaction, question: str):
             content="ตอบคำถามนี้ไม่สำเร็จ ลองระบุชื่อมหาวิทยาลัยและสาขา แล้วใช้ `/tcas_search` ตรวจต่อ",
             embeds=[], view=None,
         )
-
-
-@bot.tree.command(
-    name="help",
-    description="ดูวิธีใช้และคำอธิบายศัพท์ TCAS ที่พบบ่อย",
-)
-async def help_command(interaction: discord.Interaction):
-    embed = discord.Embed(
-        title="วิธีใช้บอทและศัพท์ TCAS",
-        description=(
-            "เริ่มด้วย `/start` แล้วเลือกค้นหาตามมหาวิทยาลัย คัดกรองจากข้อมูลตนเอง "
-            "หรือเปรียบเทียบหลักสูตร ข้อมูลทุกหน้าจะแยกสิ่งที่ยืนยันแล้วออกจากข้อมูลแนวทาง"
-        ),
-        color=discord.Color.blurple(),
-    )
-    embed.add_field(
-        name="คำสั่งหลัก",
-        value=(
-            "• `/start` — จุดเริ่มสำหรับทุกคน\n"
-            "• `/grade_check` — เทียบ GPAX กับเกณฑ์ แยกจากหน้าเริ่มต้น\n"
-            "• `/tcas_search` — ไปยังมหาวิทยาลัยที่รู้ชื่อแล้วทันที\n"
-            "• `/favorites` — เปิดโครงการที่บันทึกไว้\n"
-            "• `/ask` — ถามวันสมัคร พอร์ต เอกสาร GPAX ค่าเรียน หรือสัมภาษณ์\n"
-            "• `/data_quality` — ดู coverage และจุดที่ dataset ต้องตรวจเพิ่ม\n"
-            "• `/help` — เปิดคำอธิบายนี้"
-        ),
-        inline=False,
-    )
-    embed.add_field(
-        name="เช็กว่าเกรดถึงเกณฑ์ไหน",
-        value=(
-            "ใช้ `/grade_check` ได้โดยตรง หรือ `/start` → **ฉันผ่านเกณฑ์อะไรบ้าง**\n"
-            "เลือกสายวิศวกรรมศาสตร์ / วิทยาศาสตร์ / เทคโนโลยีสารสนเทศ → กรอก GPAX\n"
-            "เลือกมหาวิทยาลัย แล้วดูผลเทียบเกณฑ์ได้เลย\n"
-            "ผลตรวจรายเงื่อนไขจะแยกชัดเจน ส่วนเกณฑ์ปีก่อนใช้เตรียมตัว ไม่ใช้ยืนยันสิทธิ์ปีนี้"
-        ),
-        inline=False,
-    )
-    embed.add_field(
-        name="ศัพท์ที่พบบ่อย",
-        value=(
-            "• **Portfolio / TCAS รอบ 1** — คัดเลือกจากผลงาน คุณสมบัติ และ/หรือสัมภาษณ์ตามประกาศ\n"
-            "• **1.1 / 1.2** — ช่วงย่อยของรอบ Portfolio แต่ละมหาวิทยาลัยอาจใช้ชื่อไม่เหมือนกัน\n"
-            "• **GPAX** — เกรดเฉลี่ยสะสม ไม่ใช่เกรดเฉพาะวิชา\n"
-            "• **TGAT / TPAT / A-Level** — คะแนนสอบกลางที่บางโครงการกำหนด\n"
-            "• **Clearing House** — ขั้นตอนยืนยันสิทธิ์กลางตามกำหนดของ TCAS"
-        ),
-        inline=False,
-    )
-    embed.add_field(
-        name="อ่านสถานะอย่างไร",
-        value=(
-            "**เปิดดูเกณฑ์สมัครได้** — มีประกาศ TCAS70 ทางการในฐานข้อมูล\n"
-            "**ข้อมูลแนวทาง** — หลักสูตรจริง แต่ข้อมูลรับสมัครยังใช้ยืนยันไม่ได้\n"
-            "**รอประกาศ** — ยังไม่พบประกาศรับสมัครฉบับสมบูรณ์"
-        ),
-        inline=False,
-    )
-    embed.add_field(
-        name="ข้อควรจำ",
-        value=(
-            "ผลคัดกรองเป็นตัวช่วยลดรายการ ไม่ใช่การรับรองสิทธิ์สมัคร "
-            "ให้เปิดประกาศต้นทางและตรวจวุฒิ แผนการเรียน ผลงาน คะแนนสอบ และวันสมัครทุกครั้ง"
-        ),
-        inline=False,
-    )
-    embed.set_footer(text=f"ตรวจชุดข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}")
-    await interaction.response.send_message(embed=embed, ephemeral=True)
-
-
-@bot.tree.command(name="hello", description="ทักทายกับบอทพอร์ตโฟลิโอ")
-async def hello(interaction: discord.Interaction):
-    await interaction.response.send_message(
-        f"สวัสดีครับคุณ {interaction.user.name}! "
-        "ยินดีต้อนรับสู่บอทเช็กเกณฑ์รอบพอร์ต TCAS เริ่มใช้งานด้วย `/start` ได้เลย",
-        ephemeral=True,
-    )
 
 
 @bot.tree.command(
