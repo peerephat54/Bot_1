@@ -1615,12 +1615,11 @@ def project_header_description(program, project, section_label):
         tags.append(f"ภาษา {program['language']}")
     tag_text = " • ".join(f"`{tag}`" for tag in tags)
     return (
-        f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}**\n"
+        f"🏫 **{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}** • "
         f"{campus.get('name', 'วิทยาเขตหลัก')}\n"
-        f"{program.get('faculty_name', 'ไม่ระบุคณะ')}\n"
-        f"**{program_name}**\n\n"
+        f"🎓 {program.get('faculty_name', 'ไม่ระบุคณะ')} • **{program_name}**\n\n"
         f"{tag_text}\n"
-        f"**{section_label}**"
+        f"📖 **{section_label}**"
     )
 
 
@@ -1639,7 +1638,7 @@ def build_project_shell(program, project, section_label, color):
     embed.add_field(
         name="สถานะข้อมูลและแหล่งที่มา",
         value=(
-            f"**ป้ายสถานะ:** {source_status_badge(project)}\n"
+            f"{source_status_badge(project)}\n\n"
             + source_provenance_text(project)
         ),
         inline=False,
@@ -2413,10 +2412,10 @@ def build_grade_campuses_embed(profile, group, campus_groups):
         current = sum(1 for entry in campus["entries"] if entry["kind"] == "current")
         reference = sum(1 for entry in campus["entries"] if entry["kind"] == "reference")
         embed.add_field(
-            name=shorten(campus["name"], 256),
+            name=shorten(f"📍 {campus['name']}", 256),
             value=(
-                f"{len(campus['entries'])} รายการ • โครงการปัจจุบัน {current} • "
-                f"ข้อมูลอ้างอิง {reference}\nกดเลือกเพื่อดูรายการโครงการ"
+                f"**{len(campus['entries'])} รายการ**\n"
+                f"ปัจจุบัน {current} • อ้างอิง {reference}"
             ),
             inline=False,
         )
@@ -2441,10 +2440,10 @@ def build_grade_projects_embed(profile, group, campus, page=0):
         assessment = entry["assessment"]
         kind = {"current": "TCAS70", "reference": "อ้างอิงปีก่อน", "pending": "รอประกาศ"}[entry["kind"]]
         embed.add_field(
-            name=shorten(f"{index}. {grade_project_label(entry)}", 256),
+            name=shorten(f"{index}. 📚 {grade_project_label(entry)}", 256),
             value=shorten(
-                f"สถานะ GPAX: **{assessment['status']}** • {kind}\n"
-                f"{assessment['reason']}\nกดตัวเลือกด้านล่างเพื่อดูรายละเอียด",
+                f"📌 {kind} • GPAX: **{assessment['status']}**\n"
+                f"{assessment['reason']}",
                 700,
             ),
             inline=False,
