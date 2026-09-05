@@ -104,6 +104,28 @@ class NavigationTests(unittest.IsolatedAsyncioTestCase):
     def view(self, program, section="summary", reference_index=0):
         return app.PendingProgramDetailView(42, [], program["university_short_name"], program["campus_code"], program["faculty_name"], program, section, reference_index)
 
+    async def test_university_projects_view_has_direct_project_selector(self):
+        program = copy.deepcopy(PROGRAMS["cu-engineering-cedt"])
+        entries = [{
+            "program": program,
+            "project": {
+                "code": "project-1",
+                "name": "โครงการ Portfolio",
+                "publication_status": "official",
+                "selected_criteria": {},
+            },
+        }]
+        view = app.UniversityProjectsView(
+            42, [program], program["university_short_name"], entries
+        )
+        selector = next(c for c in view.children if isinstance(c, discord.ui.Select))
+        self.assertEqual(selector.placeholder, "เลือกโครงการเพื่อดูรายละเอียด")
+        self.assertIn("✅ ยืนยันแล้ว", selector.options[0].description)
+        button_labels = [getattr(c, "label", None) for c in view.children]
+        self.assertIn("← เลือกมหาวิทยาลัย", button_labels)
+        self.assertNotIn("ก่อนหน้า", button_labels)
+        view.stop()
+
     async def test_tabs_for_all_programs_no_duplicate_selector(self):
         for program in PROGRAMS.values():
             for section in ("summary", "curriculum", "references"):
@@ -145,6 +167,65 @@ class NavigationTests(unittest.IsolatedAsyncioTestCase):
         view = self.view(PROGRAMS["cu-engineering-cedt"], "references")
         self.assertNotIn(view.previous_reference, view.children)
         self.assertNotIn(view.next_reference, view.children)
+
+    async def test_kmitl_information_group_requires_child_program_selection(self):
+        parent = PROGRAMS["kmitl-engineering-information-engineering"]
+        navigation = [{
+            "code": parent["code"],
+            "university_short_name": "KMITL",
+            "university_name": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+            "campus_code": "ladkrabang",
+            "campus_name": "ลาดกระบัง",
+            "is_main_campus": True,
+            "faculty_name": parent["faculty_name"],
+            "major_name": parent["major_name"],
+            "program_tracks": parent["program_tracks"],
+        }]
+        view = app.ProgramView(42, navigation, "KMITL", "ladkrabang", parent["faculty_name"])
+        selector = next(child for child in view.children if isinstance(child, discord.ui.Select))
+        self.assertEqual(selector.options[0].description, "เลือกหลักสูตรย่อยก่อนดูรายละเอียด")
+
+        interaction = make_interaction()
+        selector._values = [selector.options[0].value]
+        await selector.callback(interaction)
+        result = interaction.response.edit_message.call_args.kwargs
+        self.assertIsInstance(result["view"], app.ProgramTrackView)
+        track_selector = next(child for child in result["view"].children if isinstance(child, discord.ui.Select))
+        self.assertEqual(len(track_selector.options), 1)
+        self.assertEqual(
+            "วิศวกรรมไอโอทีและสารสนเทศ",
+            track_selector.options[0].label.split("(")[0].replace("วศ.บ. ", "").strip(),
+        )
+
+    async def test_child_program_opens_its_own_detail_card(self):
+        parent = PROGRAMS["kmitl-engineering-information-engineering"]
+        navigation = [{
+            "code": parent["code"],
+            "university_short_name": "KMITL",
+            "university_name": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+            "campus_code": "ladkrabang",
+            "campus_name": "ลาดกระบัง",
+            "is_main_campus": True,
+            "faculty_name": parent["faculty_name"],
+            "major_name": parent["major_name"],
+            "program_tracks": parent["program_tracks"],
+        }]
+        view = app.ProgramTrackView(
+            42, navigation, "KMITL", "ladkrabang", parent["faculty_name"],
+            parent["major_name"], parent["program_tracks"], "ลาดกระบัง",
+        )
+        interaction = make_interaction()
+        child = copy.deepcopy(PROGRAMS["kmitl-engineering-iot-information"])
+        with patch.object(app, "fetch_program_projects", return_value=child):
+            selector = next(child for child in view.children if isinstance(child, discord.ui.Select))
+            selector._values = [selector.options[0].value]
+            await selector.callback(interaction)
+        interaction.response.defer.assert_awaited_once()
+        self.assertIsInstance(
+            interaction.edit_original_response.call_args.kwargs["view"],
+            app.PendingProgramDetailView,
+        )
+        self.assertIn("วิศวกรรมไอโอทีและสารสนเทศ", interaction.edit_original_response.call_args.kwargs["embeds"][0].title)
 
     async def test_back_and_home_keep_navigation_context(self):
         program = PROGRAMS["cu-engineering-cedt"]

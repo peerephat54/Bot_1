@@ -46,6 +46,7 @@ class GradeRulesTests(unittest.TestCase):
             "cu-engineering-cedt": "engineering", "ku-csc-computer-science": "science",
             "ku-csc-computer-engineering": "engineering", "kmitl-chumphon-computer-engineering": "engineering",
             "kmutnb-fitm-information-network-engineering": "engineering", "kmitl-science-computer-science": "science",
+            "kmutt-game-design": "game", "cmu-digital-game": "game",
         }
         for code, field in expectations.items():
             self.assertEqual(study_field(PROGRAMS[code]), field, code)
@@ -116,7 +117,7 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("GPAX", response["content"])
         self.assertIsInstance(response["view"], app.GradeScreeningFieldView)
 
-    async def test_start_field_grade_university_then_direct_result(self):
+    async def test_start_field_grade_university_campus_project_then_result(self):
         interaction = make_interaction()
         interaction.response.send_modal = AsyncMock()
         start = app.StartView(42, NAVIGATION)
@@ -124,7 +125,7 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         field_view = interaction.response.edit_message.call_args.kwargs["view"]
         self.assertIsInstance(field_view, app.GradeScreeningFieldView)
         selector = next(c for c in field_view.children if isinstance(c, app.GradeScreeningFieldSelect))
-        self.assertEqual(len(selector.options), 3)
+        self.assertEqual(len(selector.options), 4)
         selector._values = ["engineering"]
         await selector.callback(interaction)
         modal = interaction.response.send_modal.call_args.args[0]
@@ -146,6 +147,20 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         interaction.response.defer.assert_awaited_once_with()
         response = interaction.edit_original_response.call_args.kwargs
         view = response["view"]
+        if isinstance(view, app.GradeScreeningCampusView):
+            campus_select = next(c for c in view.children if isinstance(c, app.GradeScreeningCampusSelect))
+            campus_select._values = [campus_select.options[0].value]
+            interaction.response.edit_message.reset_mock()
+            await campus_select.callback(interaction)
+            response = interaction.response.edit_message.call_args.kwargs
+            view = response["view"]
+        self.assertIsInstance(view, app.GradeScreeningProjectView)
+        project_select = next(c for c in view.children if isinstance(c, app.GradeScreeningProjectSelect))
+        project_select._values = [project_select.options[0].value]
+        interaction.response.edit_message.reset_mock()
+        await project_select.callback(interaction)
+        response = interaction.response.edit_message.call_args.kwargs
+        view = response["view"]
         self.assertIsInstance(view, app.GradeScreeningResultView)
         self.assertEqual(view.section, "assessment")
         self.assertIn("GPAX ของคุณ 3.20", card_text(response["embeds"][0]))
@@ -160,8 +175,11 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         self.assertEqual(next_result.section, "assessment")
         await next_result.back_to_universities.callback(interaction)
         restored = interaction.response.edit_message.call_args.kwargs["view"]
+        self.assertIsInstance(restored, app.GradeScreeningProjectView)
         self.assertEqual(restored.groups, groups)
-        await restored.edit_profile.callback(interaction)
+        await restored.back_to_campus.callback(interaction)
+        restored_parent = interaction.response.edit_message.call_args.kwargs["view"]
+        await restored_parent.edit_profile.callback(interaction)
         self.assertEqual(interaction.response.edit_message.call_args.kwargs["view"].gpax, 3.2)
 
     async def test_validation_ownership_and_retry(self):

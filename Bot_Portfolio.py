@@ -1,8 +1,10 @@
 import asyncio
+from copy import deepcopy
 import json
 import logging
 import os
 import re
+import threading
 import time
 from datetime import datetime
 from logging.handlers import RotatingFileHandler
@@ -57,6 +59,29 @@ database: Client = create_client(supabase_url, supabase_key)
 intents = discord.Intents.default()
 
 NAVIGATION_CACHE_TTL_SECONDS = 300
+PROGRAM_DETAILS_CACHE_TTL_SECONDS = 120
+RECOMMENDATION_CACHE_TTL_SECONDS = 120
+LOCAL_PROJECT_CACHE_TTL_SECONDS = 300
+
+_CACHE_LOCK = threading.RLock()
+_PROGRAM_DETAILS_CACHE = {}
+_RECOMMENDATION_CACHE = None
+_LOCAL_PROJECT_CACHE = None
+
+
+def _cache_read(cache, key, ttl_seconds):
+    if cache is None:
+        return False, None
+    with _CACHE_LOCK:
+        item = cache.get(key)
+        if not item or time.monotonic() - item[0] >= ttl_seconds:
+            return False, None
+        return True, deepcopy(item[1])
+
+
+def _cache_write(cache, key, value):
+    with _CACHE_LOCK:
+        cache[key] = (time.monotonic(), deepcopy(value))
 
 THAI_MONTHS = (
     "",
@@ -116,17 +141,43 @@ def load_local_preview_catalog():
 
 LOCAL_PREVIEW_CATALOG = load_local_preview_catalog()
 LOCAL_ADMISSIONS_CATALOG = load_catalog()
+LOCAL_PROGRAM_CATALOG = {
+    program["code"]: program
+    for program in LOCAL_ADMISSIONS_CATALOG.get("programs") or []
+    if program.get("code")
+}
+LOCAL_PROGRAM_TRACKS = {
+    program["code"]: [deepcopy(track) for track in program.get("program_tracks") or []]
+    for program in LOCAL_ADMISSIONS_CATALOG.get("programs") or []
+    if program.get("code") and program.get("program_tracks")
+}
+LOCAL_PROGRAM_CHILD_CODES = {
+    track["code"]
+    for tracks in LOCAL_PROGRAM_TRACKS.values()
+    for track in tracks
+    if track.get("code")
+}
 USER_FEATURE_STORE = UserFeatureStore(Path(__file__).with_name("tmp") / "user_features.json")
 
 
 def fetch_local_project_additions():
     """Prefer readable Supabase records, including visible closed projects."""
+    global _LOCAL_PROJECT_CACHE
+    found, cached = _cache_read(
+        _LOCAL_PROJECT_CACHE, "all", LOCAL_PROJECT_CACHE_TTL_SECONDS
+    )
+    if found:
+        return cached
     codes = LOCAL_ADMISSIONS_CATALOG.get("runtime_local_project_codes", [])
     if not codes:
         return []
     response = database.table("admission_projects").select("code").in_("code", codes).execute()
     remote_codes = {row["code"] for row in response.data or []}
-    return local_candidates(LOCAL_ADMISSIONS_CATALOG, remote_codes)
+    additions = local_candidates(LOCAL_ADMISSIONS_CATALOG, remote_codes)
+    if _LOCAL_PROJECT_CACHE is None:
+        _LOCAL_PROJECT_CACHE = {}
+    _cache_write(_LOCAL_PROJECT_CACHE, "all", additions)
+    return deepcopy(additions)
 
 
 def merge_admission_previews(remote_previews, local_previews):
@@ -150,6 +201,32 @@ def merge_admission_previews(remote_previews, local_previews):
             str(item.get("title") or "").casefold(),
         ),
     )
+
+
+def local_program_detail(program_code):
+    """Build a curriculum detail from the audited local catalog when Supabase has no row."""
+    source = LOCAL_PROGRAM_CATALOG.get(program_code)
+    if not source:
+        return None
+    program = deepcopy(source)
+    university = next(
+        (item for item in LOCAL_ADMISSIONS_CATALOG.get("universities", [])
+         if item.get("short_name") == program.get("university_short_name")),
+        {},
+    )
+    campus = next(
+        (item for item in LOCAL_ADMISSIONS_CATALOG.get("campuses", [])
+         if item.get("university_short_name") == program.get("university_short_name")
+         and item.get("code") == program.get("campus_code")),
+        {},
+    )
+    program["universities"] = deepcopy(university)
+    program["university_campuses"] = deepcopy(campus)
+    program["admission_previews"] = merge_admission_previews(
+        program.get("admission_previews"), LOCAL_PREVIEW_CATALOG.get(program_code)
+    )
+    program["projects"] = []
+    return program
 
 # Keep the complete official curriculum catalog in Supabase, but limit the
 # Discord navigation to the three IT KMITL majors requested for this bot.
@@ -291,6 +368,12 @@ def criteria_for_program(value, program_id):
 
 
 def fetch_program_projects(program_code: str):
+    found, cached = _cache_read(
+        _PROGRAM_DETAILS_CACHE, program_code, PROGRAM_DETAILS_CACHE_TTL_SECONDS
+    )
+    if found:
+        return cached
+
     program_response = (
         database.table("faculties_and_majors")
         .select(
@@ -316,7 +399,10 @@ def fetch_program_projects(program_code: str):
             if item["program"].get("code") == program_code
         ]
         if not local_items:
-            return None
+            program = local_program_detail(program_code)
+            if program:
+                _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
+            return deepcopy(program)
         program = local_items[0]["program"]
         program["admission_previews"] = merge_admission_previews(
             program.get("admission_previews"),
@@ -329,7 +415,8 @@ def fetch_program_projects(program_code: str):
                 str(item.get("name") or ""),
             )
         )
-        return program
+        _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
+        return deepcopy(program)
 
     program = program_response.data[0]
     program["admission_previews"] = merge_admission_previews(
@@ -384,11 +471,19 @@ def fetch_program_projects(program_code: str):
         )
     )
     program["projects"] = projects
-    return program
+    _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
+    return deepcopy(program)
 
 
 def fetch_recommendation_projects():
     """Return official project/program pairs for deterministic beginner filtering."""
+    global _RECOMMENDATION_CACHE
+    found, cached = _cache_read(
+        _RECOMMENDATION_CACHE, "all", RECOMMENDATION_CACHE_TTL_SECONDS
+    )
+    if found:
+        return cached
+
     response = (
         database.table("admission_project_programs")
         .select(
@@ -434,7 +529,10 @@ def fetch_recommendation_projects():
         )
         candidates.append({"program": program, "project": project})
     candidates.extend(fetch_local_project_additions())
-    return candidates
+    if _RECOMMENDATION_CACHE is None:
+        _RECOMMENDATION_CACHE = {}
+    _cache_write(_RECOMMENDATION_CACHE, "all", candidates)
+    return deepcopy(candidates)
 
 
 def fetch_university_project_entries(university_short_name):
@@ -492,7 +590,11 @@ def fetch_navigation_programs():
 
     def add_program(program, *, has_official_projects):
         code = program.get("code")
-        if not code or code in PROGRAM_CODES_EXCLUDED_FROM_BOT_SCOPE:
+        if (
+            not code
+            or code in PROGRAM_CODES_EXCLUDED_FROM_BOT_SCOPE
+            or code in LOCAL_PROGRAM_CHILD_CODES
+        ):
             return
         previews = merge_admission_previews(
             program.get("admission_previews"),
@@ -542,6 +644,7 @@ def fetch_navigation_programs():
             or None,
             "has_reference_details": has_reference_details
             or bool(existing and existing.get("has_reference_details")),
+            "program_tracks": LOCAL_PROGRAM_TRACKS.get(code, []),
         }
 
     for row in response.data or []:
@@ -561,6 +664,29 @@ def fetch_navigation_programs():
     )
     for program in catalog_response.data or []:
         add_program(program, has_official_projects=False)
+
+    # Keep newly catalogued curriculum groups visible before their admission
+    # project rows are migrated to Supabase. Child curricula stay hidden here
+    # and are reached through the parent group's second-level selector.
+    universities = {
+        item.get("short_name"): item
+        for item in LOCAL_ADMISSIONS_CATALOG.get("universities") or []
+    }
+    campuses = {
+        (item.get("university_short_name"), item.get("code")): item
+        for item in LOCAL_ADMISSIONS_CATALOG.get("campuses") or []
+    }
+    for program in LOCAL_ADMISSIONS_CATALOG.get("programs") or []:
+        if program.get("navigation_hidden") or program.get("data_status") != "official":
+            continue
+        enriched = dict(program)
+        enriched["universities"] = universities.get(
+            program.get("university_short_name"), {}
+        )
+        enriched["university_campuses"] = campuses.get(
+            (program.get("university_short_name"), program.get("campus_code")), {}
+        )
+        add_program(enriched, has_official_projects=False)
 
     for candidate in fetch_local_project_additions():
         add_program(candidate["program"], has_official_projects=True)
@@ -643,16 +769,16 @@ def source_provenance_text(record, fallback_url=None, fallback_title=None):
     """Show status, source, publication date, and verification date together."""
     record = record or {}
     lines = [
-        f"สถานะ: {source_status_text(record)}",
-        source_reference_line(record, fallback_url, fallback_title),
+        f"📌 สถานะ: {source_status_text(record)}",
+        f"🔗 {source_reference_line(record, fallback_url, fallback_title)}",
     ]
     if record.get("source_published_at"):
-        lines.append(f"เผยแพร่: {format_checked_at(record['source_published_at'])}")
+        lines.append(f"🗓️ เผยแพร่: {format_checked_at(record['source_published_at'])}")
     if record.get("source_checked_at"):
-        lines.append(f"ตรวจล่าสุด: {format_checked_at(record['source_checked_at'])}")
+        lines.append(f"🔍 ตรวจล่าสุด: {format_checked_at(record['source_checked_at'])}")
     else:
-        lines.append("ตรวจล่าสุด: ไม่ระบุ")
-    return shorten("\n".join(lines), 1000)
+        lines.append("🔍 ตรวจล่าสุด: ไม่ระบุ")
+    return shorten("\n\n".join(lines), 1000)
 
 
 def program_source_status_line(program, current_previews=None, include_source=True):
@@ -675,19 +801,19 @@ def program_source_status_line(program, current_previews=None, include_source=Tr
                 if include_source
                 else ""
             )
-            lines.append(f"สถานะ: {source_status_text(preview)}{source_line}\nตรวจล่าสุด: {checked}")
-        return shorten("\n".join(lines), 900)
+            lines.append(f"📌 สถานะ: {source_status_text(preview)}{source_line}\n🔍 ตรวจล่าสุด: {checked}")
+        return shorten("\n\n".join(lines), 900)
 
     official_url = program.get("official_program_url")
     if official_url:
         return (
-            "สถานะ: ยังไม่ยืนยัน TCAS70\n"
-            f"แหล่งข้อมูล: [เว็บไซต์หลักสูตร]({official_url})\n"
-            f"ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
+            "📌 สถานะ: ยังไม่ยืนยัน TCAS70\n\n"
+            f"🔗 แหล่งข้อมูล: [เว็บไซต์หลักสูตร]({official_url})\n"
+            f"🔍 ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
         )
     return (
-        "สถานะ: ยังไม่ยืนยัน TCAS70\n"
-        f"ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
+        "📌 สถานะ: ยังไม่ยืนยัน TCAS70\n\n"
+        f"🔍 ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -1084,12 +1210,12 @@ def applicant_assessment_text(profile, program, project):
         )
     assessment = evaluate_project_fit(profile, program, project)
     lines = [
-        f"**สถานะ: {assessment['status']}**",
-        "**ผลตรวจรายเงื่อนไข**",
+        f"📌 **สถานะ: {assessment['status']}**",
+        "\n📋 **ผลตรวจรายเงื่อนไข**",
         render_rule_checks(assessment),
-        "ผลนี้เป็นการคัดกรองเบื้องต้น ไม่ใช่การรับรองสิทธิ์สมัคร",
+        "\n⚠️ ผลนี้เป็นการคัดกรองเบื้องต้น ไม่ใช่การรับรองสิทธิ์สมัคร",
     ]
-    return shorten("\n".join(lines), 1000)
+    return shorten("\n\n".join(lines), 1000)
 
 
 def trim_embed_to_limit(embed, limit=5900):
@@ -1157,6 +1283,7 @@ def preview_gpax_text(preview):
 
 
 PROGRAM_STUDY_OVERVIEWS = (
+    (("ไอโอทีและสารสนเทศ", "IoT System and Information"), "เรียนการเชื่อมอุปกรณ์ IoT เซนเซอร์ เครือข่าย ซอฟต์แวร์ ข้อมูล และ AI เพื่อสร้างระบบอัจฉริยะ"),
     (("วิศวกรรมคอมพิวเตอร์",), "ฮาร์ดแวร์ ซอฟต์แวร์ ระบบฝังตัว และการออกแบบระบบ"),
     (("วิศวกรรมซอฟต์แวร์",), "เรียนการวิเคราะห์ ออกแบบ พัฒนา ทดสอบ และดูแลซอฟต์แวร์เป็นระบบ"),
     (("ปัญญาประดิษฐ์", "Artificial Intelligence"), "เรียนการจัดการข้อมูล ปัญญาประดิษฐ์ และการสร้างโมเดลเพื่อแก้ปัญหา"),
@@ -1169,6 +1296,7 @@ PROGRAM_STUDY_OVERVIEWS = (
 
 
 PROGRAM_FOCUS_AREAS = (
+    (("ไอโอทีและสารสนเทศ", "IoT System and Information"), "ฮาร์ดแวร์ + ซอฟต์แวร์ + เครือข่าย + Data/AI + IoT"),
     (("วิศวกรรมคอมพิวเตอร์",), "ฮาร์ดแวร์ + ซอฟต์แวร์ + ระบบฝังตัว"),
     (("วิศวกรรมซอฟต์แวร์",), "ซอฟต์แวร์ + กระบวนการพัฒนา + ผู้ใช้"),
     (("ปัญญาประดิษฐ์", "Artificial Intelligence"), "ข้อมูล + ซอฟต์แวร์ + โมเดล AI"),
@@ -1557,9 +1685,9 @@ def project_quick_summary(program, project, applicant_profile=None):
     else:
         next_step = "เปิดประกาศทางการและตรวจเงื่อนไขฉบับเต็มก่อนสมัคร"
     return (
-        f"**สมัครได้ไหม:** {fit_text}\n"
-        f"**ปิดรับสมัคร:** {deadline}\n"
-        f"**ต้องทำอะไรต่อ:** {next_step}"
+        f"✅ **สมัครได้ไหม:** {fit_text}\n\n"
+        f"🗓️ **ปิดรับสมัคร:** {deadline}\n\n"
+        f"➡️ **ต้องทำอะไรต่อ:** {next_step}"
     )
 
 
@@ -2002,13 +2130,13 @@ def university_menu_content(navigation_programs):
     )
     waiting_count = len(navigation_programs) - official_count - reference_count
     return (
-        "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
-        "เลือกตามลำดับ: **มหาวิทยาลัย → วิทยาเขต → คณะ → สาขา → โครงการ**\n"
+        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        "📍 ลำดับ: **มหาวิทยาลัย → วิทยาเขต → คณะ → สาขา → โครงการ**\n"
         "มหาวิทยาลัยที่มีวิทยาเขตเดียวจะข้ามขั้นให้อัตโนมัติ\n\n"
-        f"**ขอบเขตข้อมูล:** ดูเกณฑ์สมัครได้ {official_count} สาขา • "
+        f"📊 **ขอบเขตข้อมูล:** ดูเกณฑ์สมัครได้ {official_count} สาขา • "
         f"มีเพียงข้อมูลแนวทาง {reference_count} สาขา • รอประกาศ {waiting_count} สาขา\n"
-        f"*ตรวจชุดข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*\n\n"
-        f"### ขั้นที่ 1/5: เลือกมหาวิทยาลัย\nมี {university_count} แห่ง"
+        f"🔍 ตรวจชุดข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}\n\n"
+        f"### 1️⃣ ขั้นที่ 1/5: เลือกมหาวิทยาลัย\nมี {university_count} แห่ง"
     )
 
 
@@ -2016,11 +2144,11 @@ def campus_menu_content(navigation_programs, university_short_name):
     university_name = university_name_for(navigation_programs, university_short_name)
     campuses = campuses_for_university(navigation_programs, university_short_name)
     return (
-        "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
-        f"**มหาวิทยาลัย:** {university_name}\n\n"
-        f"### ขั้นที่ 2/5: เลือกวิทยาเขต/พื้นที่การศึกษา\n"
+        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        f"🏫 **มหาวิทยาลัย:** {university_name}\n\n"
+        f"### 2️⃣ ขั้นที่ 2/5: เลือกวิทยาเขต/พื้นที่การศึกษา\n"
         f"มี {len(campuses)} แห่ง • ตัวเลือกที่ระบุว่า “วิทยาเขตหลัก” คือพื้นที่หลัก\n"
-        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2045,11 +2173,11 @@ def faculty_menu_content(
     step = "3/5" if has_multiple_campuses else "2/4"
     faculty_count = len({program["faculty_name"] for program in matching})
     return (
-        "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
-        f"**เส้นทาง:** {university_name} › {campus_name}\n\n"
-        f"### ขั้นที่ {step}: เลือกคณะ\nมี {faculty_count} คณะ\n"
-        "เปิดดูเกณฑ์สมัครได้  •  ยังต้องรอประกาศฉบับสมบูรณ์\n"
-        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        f"📍 **เส้นทาง:** {university_name} › {campus_name}\n\n"
+        f"### {step}: เลือกคณะ\nมี {faculty_count} คณะ\n\n"
+        "✅ เปิดดูเกณฑ์สมัครได้ • 🟡 บางสาขารอประกาศฉบับสมบูรณ์\n"
+        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2080,13 +2208,13 @@ def program_menu_content(
         and program.get("has_admission_previews")
     )
     return (
-        "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
-        f"**เส้นทาง:** {selection_path(university_short_name, faculty_name, campus_name=campus_name)}\n\n"
-        f"### ขั้นที่ {step}: เลือกสาขา\nมี {len(matching)} สาขา\n"
-        f"{announced_count} สาขาเปิดดูเกณฑ์สมัคร TCAS70 ได้\n"
-        f"{preview_count} สาขามีเพียงข้อมูลแนวทาง ยังใช้ยืนยันการสมัครไม่ได้\n"
-        "ที่เหลือยังไม่พบประกาศรับสมัครฉบับสมบูรณ์\n"
-        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        f"📍 **เส้นทาง:** {selection_path(university_short_name, faculty_name, campus_name=campus_name)}\n\n"
+        f"### {step}: เลือกสาขา\nมี {len(matching)} สาขา\n\n"
+        f"✅ ยืนยันแล้ว {announced_count} สาขา\n"
+        f"🔎 ต้องตรวจเพิ่ม {preview_count} สาขา\n"
+        "🟡 ที่เหลือยังรอประกาศรับสมัครฉบับสมบูรณ์\n\n"
+        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2096,11 +2224,11 @@ def project_menu_content(
     major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
     projects = program_data.get("projects") or []
     return (
-        "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n"
-        f"**เส้นทาง:** {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n\n"
-        f"### ขั้นสุดท้าย: เลือกโครงการรับสมัคร\nมี {len(projects)} โครงการ\n"
-        "ใต้ชื่อโครงการมี GPAX จำนวนรับ และวิธีคัดเลือกแบบย่อ\n"
-        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        f"📍 **เส้นทาง:** {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n\n"
+        f"### ✅ ขั้นสุดท้าย: เลือกโครงการรับสมัคร\nมี {len(projects)} โครงการ\n"
+        "ดู GPAX จำนวนรับ และวิธีคัดเลือกแบบย่อใต้ชื่อโครงการ\n\n"
+        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2119,12 +2247,12 @@ def university_projects_menu_content(
     end = min((page + 1) * SELECT_PAGE_SIZE, len(entries))
     page_text = f"รายการ {start}–{end}/{len(entries)}" if entries else "ไม่มีรายการ"
     return (
-        "## โครงการ Portfolio ทั้งมหาวิทยาลัย\n"
-        f"**มหาวิทยาลัย:** {university_name}\n"
-        f"เลือกโครงการได้ทันที ไม่ต้องไล่ผ่านคณะและสาขา • {page_text}\n\n"
-        f"**สถานะข้อมูล:** {status_summary}\n"
-        "กดโครงการเพื่อดูเกณฑ์ Portfolio เอกสาร และกำหนดการ\n"
-        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        "## 📚 โครงการ Portfolio ทั้งมหาวิทยาลัย\n\n"
+        f"🏫 **มหาวิทยาลัย:** {university_name}\n"
+        f"เลือกโครงการได้ทันที • {page_text}\n\n"
+        f"📊 **สถานะข้อมูล:** {status_summary}\n\n"
+        "กดโครงการเพื่อดูเกณฑ์ Portfolio เอกสาร และกำหนดการ\n\n"
+        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2146,10 +2274,23 @@ def project_detail_content(
     major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
     section_label = section_labels.get(section, section_labels["summary"])
     return (
-        f"**เส้นทาง:** {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n"
-        f"## {section_label}\n"
-        "กดปุ่มด้านล่างเพื่อเปลี่ยนหมวดข้อมูล\n"
-        f"*ตรวจชุดข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        f"📍 **เส้นทาง:** {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n\n"
+        f"## 📌 {section_label}\n\n"
+        "กดปุ่มด้านล่างเพื่อเปลี่ยนหมวดข้อมูล\n\n"
+        f"🔍 ตรวจชุดข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
+    )
+
+
+def program_track_menu_content(
+    navigation_programs, university_short_name, faculty_name, parent_program, tracks, campus_name
+):
+    return (
+        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        f"📍 **เส้นทาง:** {selection_path(university_short_name, faculty_name, parent_program, campus_name)}\n\n"
+        "### 📚 เลือกหลักสูตรย่อยก่อนดูรายละเอียด\n"
+        f"มี {len(tracks)} หลักสูตรย่อย\n\n"
+        "แต่ละหลักสูตรจะแสดงเนื้อหาการเรียนและสถานะการรับสมัครแยกกัน\n\n"
+        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -4156,6 +4297,125 @@ class FacultyView(OwnedView):
         await open_university_projects(interaction, self)
 
 
+async def open_selected_program(interaction, parent, program_code):
+    """Open a selected curriculum, using the same path for direct and nested choices."""
+    await interaction.response.defer()
+    logger.info("interactive program selected code=%s", program_code)
+    try:
+        program_data = await asyncio.wait_for(
+            asyncio.to_thread(fetch_program_projects, program_code), timeout=15
+        )
+        if not program_data or not program_data.get("projects"):
+            await interaction.edit_original_response(
+                content=None if program_data else "ไม่พบข้อมูลหลักสูตร กรุณาย้อนกลับแล้วลองอีกครั้ง",
+                embeds=(
+                    [build_program_profile_embed(program_data)]
+                    if program_data
+                    else []
+                ),
+                view=PendingProgramDetailView(
+                    parent.owner_id,
+                    parent.navigation_programs,
+                    parent.university_short_name,
+                    parent.campus_code,
+                    parent.faculty_name,
+                    program_data,
+                ),
+            )
+            return
+        await interaction.edit_original_response(
+            content=project_menu_content(
+                parent.university_short_name,
+                parent.faculty_name,
+                program_data,
+                parent.campus_name,
+            ),
+            embeds=[],
+            view=ProjectView(
+                parent.owner_id,
+                parent.navigation_programs,
+                parent.university_short_name,
+                parent.campus_code,
+                parent.faculty_name,
+                program_data,
+            ),
+        )
+    except Exception:
+        logger.exception("could not load projects for program=%s", program_code)
+        await interaction.edit_original_response(
+            content="โหลดรายละเอียดไม่สำเร็จ กรุณาลองเลือกหลักสูตรอีกครั้ง",
+            embeds=[],
+            view=parent,
+        )
+
+
+class ProgramTrackSelect(discord.ui.Select):
+    def __init__(self, tracks):
+        self.tracks = tracks
+        options = [
+            discord.SelectOption(
+                label=shorten(track.get("track_label") or track.get("major_name"), 100),
+                value=track["code"],
+                description=shorten(
+                    "เน้น " + " + ".join(track.get("focus_areas") or [])
+                    if track.get("focus_areas")
+                    else "เปิดดูรายละเอียดหลักสูตรและสถานะการสมัคร",
+                    100,
+                ),
+            )
+            for track in tracks
+        ]
+        super().__init__(
+            placeholder="เลือกหลักสูตรย่อย",
+            min_values=1,
+            max_values=1,
+            options=options,
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        await open_selected_program(interaction, parent, self.values[0])
+
+
+class ProgramTrackView(OwnedView):
+    """Second-level selector for a program group that contains multiple curricula."""
+
+    def __init__(
+        self, owner_id, navigation_programs, university_short_name, campus_code,
+        faculty_name, parent_program, tracks, campus_name,
+    ):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.university_short_name = university_short_name
+        self.campus_code = campus_code
+        self.faculty_name = faculty_name
+        self.parent_program = parent_program
+        self.tracks = tracks
+        self.campus_name = campus_name
+        self.add_item(ProgramTrackSelect(tracks))
+        self.add_item(HomeButton())
+
+    @discord.ui.button(label="← เลือกสาขา", style=discord.ButtonStyle.secondary, row=1)
+    async def back_to_programs(self, interaction, button):
+        del button
+        await interaction.response.edit_message(
+            content=program_menu_content(
+                self.navigation_programs,
+                self.university_short_name,
+                self.campus_code,
+                self.faculty_name,
+            ),
+            embeds=[],
+            view=ProgramView(
+                self.owner_id,
+                self.navigation_programs,
+                self.university_short_name,
+                self.campus_code,
+                self.faculty_name,
+            ),
+        )
+
+
 class ProgramSelect(discord.ui.Select):
     def __init__(self, programs, step_number=3):
         def pending_description(program):
@@ -4175,20 +4435,20 @@ class ProgramSelect(discord.ui.Select):
                 return f"มีรายละเอียดปี {year} เป็นข้อมูลอ้างอิง"
             return "มีข้อมูลอ้างอิง • ยังไม่ยืนยัน TCAS70"
 
+        def program_description(program):
+            if program.get("program_tracks"):
+                return "เลือกหลักสูตรย่อยก่อนดูรายละเอียด"
+            if program.get("has_official_projects"):
+                return "เปิดดูเกณฑ์และโครงการได้"
+            if program.get("has_admission_previews"):
+                return pending_description(program)
+            return "มีหลักสูตร • รอประกาศ TCAS70"
+
         options = [
             discord.SelectOption(
                 label=shorten(program["major_name"], 100),
                 value=program["code"],
-                description=shorten(
-                    "เปิดดูเกณฑ์และโครงการได้"
-                    if program.get("has_official_projects")
-                    else (
-                        pending_description(program)
-                        if program.get("has_admission_previews")
-                        else "มีหลักสูตร • รอประกาศ TCAS70"
-                    ),
-                    100,
-                ),
+                description=shorten(program_description(program), 100),
             )
             for program in programs
         ]
@@ -4202,54 +4462,34 @@ class ProgramSelect(discord.ui.Select):
     async def callback(self, interaction: discord.Interaction):
         parent = self.view
         program_code = self.values[0]
-        await interaction.response.defer()
-        logger.info("interactive program selected code=%s", program_code)
-        try:
-            program_data = await asyncio.wait_for(
-                asyncio.to_thread(fetch_program_projects, program_code), timeout=15
-            )
-            if not program_data or not program_data.get("projects"):
-                await interaction.edit_original_response(
-                    content=None if program_data else "ไม่พบข้อมูลหลักสูตร กรุณาย้อนกลับแล้วลองอีกครั้ง",
-                    embeds=(
-                        [build_program_profile_embed(program_data)]
-                        if program_data
-                        else []
-                    ),
-                    view=PendingProgramDetailView(
-                        parent.owner_id,
-                        parent.navigation_programs,
-                        parent.university_short_name,
-                        parent.campus_code,
-                        parent.faculty_name,
-                        program_data,
-                    ),
-                )
-                return
-            await interaction.edit_original_response(
-                content=project_menu_content(
+        program = next(
+            item for item in parent.programs if item.get("code") == program_code
+        )
+        tracks = program.get("program_tracks") or []
+        if tracks:
+            await interaction.response.edit_message(
+                content=program_track_menu_content(
+                    parent.navigation_programs,
                     parent.university_short_name,
                     parent.faculty_name,
-                    program_data,
+                    program.get("major_name") or "ไม่ระบุสาขา",
+                    tracks,
                     parent.campus_name,
                 ),
                 embeds=[],
-                view=ProjectView(
+                view=ProgramTrackView(
                     parent.owner_id,
                     parent.navigation_programs,
                     parent.university_short_name,
                     parent.campus_code,
                     parent.faculty_name,
-                    program_data,
+                    program.get("major_name") or "ไม่ระบุสาขา",
+                    tracks,
+                    parent.campus_name,
                 ),
             )
-        except Exception:
-            logger.exception("could not load projects for program=%s", program_code)
-            await interaction.edit_original_response(
-                content="โหลดโครงการไม่สำเร็จ กรุณาลองเลือกสาขาอีกครั้ง",
-                embeds=[],
-                view=parent,
-            )
+            return
+        await open_selected_program(interaction, parent, program_code)
 
 
 class ProgramView(OwnedView):
@@ -5030,7 +5270,7 @@ async def ask_command(interaction: discord.Interaction, question: str):
         navigation_programs = await bot.load_navigation_programs(timeout=15)
         answer, _ = await asyncio.wait_for(
             asyncio.to_thread(answer_question, question, navigation_programs, fetch_program_projects),
-            timeout=20,
+            timeout=8,
         )
         await interaction.edit_original_response(content=answer, embeds=[], view=None)
     except Exception:

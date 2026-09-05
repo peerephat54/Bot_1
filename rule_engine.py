@@ -190,9 +190,15 @@ def evaluate_application_rules(profile, program, project):
             f"มีขั้นต่ำ {minimum:.2f} แต่เกณฑ์แยกตามประเภทผู้สมัคร ต้องตรวจตามวุฒิ",
         )
     elif gpax < minimum:
-        _add_check(checks, "gpax", "GPAX", STATUS_FAIL, f"GPAX {gpax:.2f} ต่ำกว่าขั้นต่ำ {minimum:.2f}")
+        reason = f"GPAX {gpax:.2f} ต่ำกว่าขั้นต่ำ {minimum:.2f}"
+        if criteria.get("gpax_role"):
+            reason += f" ({criteria['gpax_role']})"
+        _add_check(checks, "gpax", "GPAX", STATUS_FAIL, reason)
     else:
-        _add_check(checks, "gpax", "GPAX", STATUS_PASS, f"GPAX {gpax:.2f} ผ่านขั้นต่ำ {minimum:.2f}")
+        reason = f"GPAX {gpax:.2f} ผ่านขั้นต่ำ {minimum:.2f}"
+        if criteria.get("gpax_role"):
+            reason += f" ({criteria['gpax_role']})"
+        _add_check(checks, "gpax", "GPAX", STATUS_PASS, reason)
         score += 6 + min(3, int((gpax - minimum) * 4))
 
     qualifications = criteria.get("applicant_qualifications")

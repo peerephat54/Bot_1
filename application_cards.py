@@ -56,9 +56,9 @@ def application_question_fields(project=None, preview=None, detail_hint="ปุ�
     historical = bool(preview)
     fields = []
 
-    eligibility = excerpt(criteria.get("applicant_qualifications") or preview.get("qualification_summary"), 350)
+    eligibility = "👤 " + excerpt(criteria.get("applicant_qualifications") or preview.get("qualification_summary"), 350)
     if criteria.get("additional_requirements"):
-        eligibility += "\n**เงื่อนไขเฉพาะ:** " + excerpt(criteria["additional_requirements"], 180)
+        eligibility += "\n\n**เงื่อนไขเฉพาะ:** " + excerpt(criteria["additional_requirements"], 180)
     fields.append(("ใครสมัครได้?", eligibility))
 
     minimum = criteria.get("min_gpax") if project else preview.get("min_gpax")
@@ -73,7 +73,9 @@ def application_question_fields(project=None, preview=None, detail_hint="ปุ�
     semester_keys = {"semesters", "studying_semesters", "graduated_semesters", "graduated"}
     if isinstance(requirements, dict) and set(requirements) - semester_keys:
         gpax += " (ใช้ต่างกันตามวุฒิ/ประเภทผู้สมัคร)"
-    scores = [f"**GPAX:** {excerpt(gpax, 180)}"]
+    scores = [f"📊 **GPAX:** {excerpt(gpax, 180)}"]
+    if criteria.get("gpax_role"):
+        scores.append("**บทบาท GPAX:** " + excerpt(criteria["gpax_role"], 220))
     if criteria.get("gpax_requirements"):
         scores.append("**เงื่อนไขเกรด:** " + excerpt(criteria["gpax_requirements"], 160))
     if criteria.get("subject_gpax"):
@@ -88,39 +90,43 @@ def application_question_fields(project=None, preview=None, detail_hint="ปุ�
         scores.append("**คะแนนสอบอื่น:** ยังไม่ระบุครบ ไม่ได้แปลว่าไม่ต้องใช้")
     fields.append(("ใช้เกรดและคะแนนอะไร?", "\n".join(scores)))
 
-    portfolio = excerpt(criteria.get("portfolio_requirements") or preview.get("portfolio_summary"), 350)
+    portfolio = "📁 " + excerpt(criteria.get("portfolio_requirements") or preview.get("portfolio_summary"), 350)
     if criteria.get("portfolio_details"):
-        portfolio += "\n**รูปแบบไฟล์ / จำนวนหน้า:** " + excerpt(criteria["portfolio_details"], 230)
+        portfolio += "\n\n**รูปแบบไฟล์ / จำนวนหน้า:** " + excerpt(criteria["portfolio_details"], 230)
     achievements = criteria.get("accepted_achievements") or preview.get("accepted_achievements")
     if achievements:
-        portfolio += "\n**ผลงานที่ส่งได้ในรอบนี้:** " + excerpt(achievements, 220)
+        portfolio += "\n\n**ผลงานที่ส่งได้ในรอบนี้:** " + excerpt(achievements, 220)
     elif criteria.get("portfolio_requirements") or preview.get("portfolio_summary"):
-        portfolio += "\n**ผลงานที่ส่งได้ในรอบนี้:** ประกาศที่ตรวจยังไม่ได้แจกแจงประเภทผลงานเพิ่มเติม ให้ยึดเงื่อนไขพอร์ตด้านบนและรายการในประกาศ"
+        portfolio += "\n\n**ผลงานที่ส่งได้ในรอบนี้:** ประกาศที่ตรวจยังไม่ได้แจกแจงประเภทผลงานเพิ่มเติม ให้ยึดเงื่อนไขพอร์ตด้านบนและรายการในประกาศ"
     else:
         portfolio += "\nยังสรุปไม่ได้ว่าต้องมีผลงานหรือรางวัลระดับใด"
     fields.append(("พอร์ตต้องมีอะไรบ้าง?", portfolio))
 
     documents = criteria.get("required_documents") or preview.get("required_documents")
     if isinstance(documents, list):
-        document_text = "\n".join(f"• {readable(d)}" for d in documents[:4])
+        document_text = "\n".join(f"📄 {readable(d)}" for d in documents[:4])
         if len(documents) > 4:
             document_text += f"\nอีก {len(documents) - 4} รายการ — ดู {detail_hint}"
     else:
         document_text = readable(documents)
+        if document_text:
+            document_text = "📄 " + document_text
     fields.append(("ต้องใช้เอกสารอะไร?", excerpt(document_text, 380)))
 
     selection = criteria.get("selection_methods") or preview.get("selection_summary") or criteria.get("criteria_summary")
-    selection_text = excerpt(selection, 320)
-    if criteria.get("criteria_summary") and criteria["criteria_summary"] != selection:
-        selection_text += "\n**เกณฑ์หลัก:** " + excerpt(criteria["criteria_summary"], 270)
+    selection_text = "🧪 " + excerpt(selection, 320)
+    criteria_summary = str(criteria.get("criteria_summary") or "").strip()
+    selection_summary = str(selection or "").strip()
+    if criteria_summary and criteria_summary not in selection_summary and selection_summary not in criteria_summary:
+        selection_text += "\n\n**เกณฑ์หลัก:** " + excerpt(criteria_summary, 270)
     fields.append(("คัดเลือกอย่างไร / สัมภาษณ์ไหม?", selection_text))
 
     slots = facts.get("slots_available")
     slots_text = f"{slots} คน" if slots is not None else "ยังไม่ระบุจำนวนรับเฉพาะโครงการ/สาขา"
     cost_lines = [
-        f"**จำนวนรับ:** {slots_text}",
-        f"**ค่าสมัคร:** {money(facts.get('application_fee'))}",
-        f"**ค่าเรียนต่อภาค:** {money(facts.get('tuition_fee_per_semester'))}",
+        f"👥 **จำนวนรับ:** {slots_text}",
+        f"💳 **ค่าสมัคร:** {money(facts.get('application_fee'))}",
+        f"💰 **ค่าเรียนต่อภาค:** {money(facts.get('tuition_fee_per_semester'))}",
     ]
     if project.get("program_notes"):
         cost_lines.append("**หมายเหตุ:** " + excerpt(project["program_notes"], 220))

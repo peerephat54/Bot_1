@@ -5,6 +5,7 @@ FIELDS = {
     "engineering": "วิศวกรรมศาสตร์",
     "science": "วิทยาศาสตร์",
     "it": "เทคโนโลยีสารสนเทศ",
+    "game": "เกมและสื่อดิจิทัล",
 }
 SEMESTER_KEYS = {"semesters", "studying_semesters", "graduated_semesters", "graduated"}
 
@@ -17,6 +18,8 @@ def study_field(program):
     """Use the faculty first; disambiguate mixed faculties by the actual major."""
     faculty = str(program.get("faculty_name") or "")
     major = str(program.get("major_name") or "")
+    if program.get("screening_field") == "game" or "เกม" in major or "Game" in major:
+        return "game"
     if "วิทยาศาสตร์" in faculty and "วิศวกรรม" in faculty:
         return "engineering" if "วิศวกรรม" in major else "science"
     if "วิศวกรรม" in faculty:
@@ -40,7 +43,7 @@ def study_field(program):
         )
     ):
         return "science"
-    if any(word in major for word in ("สารสนเทศ", "ดิจิทัล", "เทคโนโลยีมีเดีย", "เกม")):
+    if any(word in major for word in ("สารสนเทศ", "ดิจิทัล", "เทคโนโลยีมีเดีย")):
         return "it"
     if any(word in major for word in ("วิทยาการคอมพิวเตอร์", "วิทยาการข้อมูล", "สถิติ")):
         return "science"

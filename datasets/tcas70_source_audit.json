@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-08-31T23:09+07:00",
+  "checked_at": "2026-09-05T13:09:13+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -29,7 +29,7 @@
       "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-31",
+      "source_checked_at": "2026-09-03",
       "decision": "เพิ่มปฏิทินกลางหลักสูตรปกติ ฉบับแก้ไข 28 ส.ค. 2569 ไม่ผูกกลุ่ม 1/2 ให้สาขาโดยไม่มีประกาศ"
     },
     {
@@ -104,6 +104,7 @@
       "publisher": "มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
+      "source_checked_at": "2026-09-04T18:54:56+07:00",
       "decision": "ใช้ยืนยันและนำเข้ารายการสายคอมทั้งหมดที่พบในระบบ TCAS70 พร้อมเกณฑ์เต็มรายรหัสโครงการและแบบ 1.1/1.2"
     },
     {
@@ -167,7 +168,8 @@
       "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "decision": "นำเข้า Active Recruitment เฉพาะหลักสูตรสายคอม/IT/เกมที่มีเกณฑ์ครบ"
+      "decision": "ตรวจซ้ำ Active Recruitment เกม: GPAX 2.50 เป็นคุณสมบัติขั้นต่ำ แต่ไม่คิดเป็นน้ำหนักคะแนนคัดเลือก; ใช้ Game Analysis Essay และสัมภาษณ์",
+      "source_checked_at": "2026-09-03"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/fe4b52a7-d942-4807-9b59-1527675dad89",
@@ -224,7 +226,8 @@
       "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
       "classification": "used_primary_index",
       "academic_year": 2570,
-      "decision": "ใช้ API ดัชนีประกาศรับสมัครทางการยืนยันข่าวเลขที่ 4640 ของคณะวิทยาศาสตร์ และประกาศสายวิศวกรรมคอมพิวเตอร์วิทยาเขตชุมพร"
+      "source_checked_at": "2026-09-05T13:09:13+07:00",
+      "decision": "ใช้ API ดัชนีประกาศรับสมัครทางการยืนยันข่าวเลขที่ 4640 ของคณะวิทยาศาสตร์และประกาศสายวิศวกรรมคอมพิวเตอร์วิทยาเขตชุมพร; ใช้เป็นดัชนีสำหรับหลักสูตรวิศวกรรมไอโอทีและสารสนเทศ โดยยังไม่สร้างเกณฑ์หรือวันสมัครใหม่หากไม่มีประกาศโครงการ"
     },
     {
       "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4637_2026_08_14-10-07-35_bf889.pdf",
@@ -789,16 +792,56 @@
       "publisher": "คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-31",
+      "source_checked_at": "2026-09-03",
       "decision": "ตรวจซ้ำประกาศ ICT รอบ 1 ปีการศึกษา 2570; พบวันสมัคร 3–31 สิงหาคม 2569 และรายละเอียดเอกสาร/สัมภาษณ์ตามข้อมูลเดิม จึงไม่เพิ่มแถวซ้ำ"
+    },
+    {
+      "url": "https://www.ict.mahidol.ac.th/th/ict-round-2-mu-portfolio-academic-year-2027/",
+      "publisher": "คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-05T13:09:13+07:00",
+      "decision": "ตรวจประกาศ MU–Portfolio ปีการศึกษา 2570; ประกาศเฉพาะคณะระบุรอบ 1/1 สมัคร 17 ส.ค.–10 ก.ย. 2569 และรอบ 1/2 สมัคร 15 ธ.ค. 2569–10 ม.ค. 2570 พร้อม GPAX/GPA รายสาระและเอกสารภาษาอังกฤษ"
+    },
+    {
+      "url": "https://www.ict.mahidol.ac.th/th/programs/dst/",
+      "publisher": "คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-05T13:09:13+07:00",
+      "decision": "ตรวจหน้าโปรแกรม DST ปัจจุบัน; ตารางกำหนดการระบุรอบ 1/1 17 ส.ค.–10 ก.ย. 2569 และระบุว่ารอบ 1/2 ไม่เปิดรับสมัคร ซึ่งขัดกับประกาศ MU–Portfolio จึงติดป้ายวันรอบ 1/2 เป็น disputed และไม่ฟันธงให้ผู้สมัคร"
     },
     {
       "url": "https://admission.reg.cmu.ac.th/tcas/app.php",
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-31",
-      "decision": "ตรวจซ้ำระบบรับสมัคร TCAS70; รอบ 1 ยังระบุให้ติดตามภายหลัง จึงไม่เติมวันหรือเกณฑ์ที่ยังไม่ประกาศ"
+      "source_checked_at": "2026-09-05T13:09:13+07:00",
+      "decision": "ตรวจซ้ำระบบรับสมัคร TCAS70 และเพิ่มปฏิทินกลางรอบ 1 จากเอกสารทางการ; วันสมัครของโครงการที่คณะดำเนินการยังให้ติดตามประกาศคณะ"
+    },
+    {
+      "url": "https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf",
+      "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
+      "classification": "imported_primary_supporting",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-05T13:09:13+07:00",
+      "decision": "นำเข้าปฏิทินกลาง มช. รอบ 1 Portfolio: โครงการสำนักทะเบียนสมัคร 28 ต.ค.–5 พ.ย. 2569, สัมภาษณ์ 19 ธ.ค. 2569 และประกาศผล 8 ม.ค. 2570; โครงการที่คณะดำเนินการไม่มีวันสมัครกลาง"
+    },
+    {
+      "url": "https://www.tuadmissions.in.th/img/2026090101500188.pdf",
+      "publisher": "มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-01",
+      "decision": "ประกาศรับตรง รอบ 1 Portfolio ลงวันที่ 1 ก.ย. 2569; ยืนยัน CPE 20 คน, วิศวกรรมซอฟต์แวร์ 35 คน, วิทยาการคอมพิวเตอร์ปกติ 20 คน, วิทยาการคอมพิวเตอร์โครงการพิเศษ 20 คน และคอมพิวเตอร์เครือข่าย/ความปลอดภัยไซเบอร์ 20 คน; เพิ่ม 2 หลักสูตรใหม่และอัปเดตแหล่งอ้างอิงของโครงการเดิม"
+    },
+    {
+      "url": "https://www.iote.kmitl.ac.th/",
+      "publisher": "ภาควิชาวิศวกรรมไอโอทีและสารสนเทศ สจล.",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-05T13:09:13+07:00",
+      "decision": "ตรวจโครงสร้างหลักสูตรของภาควิชา พบ วศ.บ. วิศวกรรมไอโอทีและสารสนเทศ และเส้นทางหลักสูตรอื่นของภาควิชา; ใน dataset รอบนี้นำเข้าเฉพาะหลักสูตรไทยปกติวิศวกรรมไอโอทีและสารสนเทศตามรายการที่ผู้ใช้กำหนด"
     }
   ]
 }

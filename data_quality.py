@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+from collections import Counter
 from datetime import date, datetime
 from pathlib import Path
 
@@ -22,6 +23,16 @@ def build_quality_report(payload, *, today=None):
     timeline = payload.get("timeline") or []
     sources = payload.get("source_audit", {}).get("sources") or []
     official_projects = [item for item in projects if item.get("publication_status") == "official" or item.get("data_status") == "official"]
+    status_counts = Counter()
+    for project in projects:
+        if project.get("publication_status") == "official" or project.get("data_status") == "official":
+            status_counts["confirmed"] += 1
+        elif project.get("publication_status") == "draft_waiting_official":
+            status_counts["pending"] += 1
+        elif project.get("reference_academic_year"):
+            status_counts["reference"] += 1
+        else:
+            status_counts["needs_review"] += 1
     source_dates = [_date(item.get("source_checked_at")) for item in sources]
     source_dates = [item for item in source_dates if item]
     missing_project_source = sum(not item.get("source_url") for item in projects)
@@ -35,6 +46,7 @@ def build_quality_report(payload, *, today=None):
         "programs": len(programs),
         "projects": len(projects),
         "official_projects": len(official_projects),
+        "project_status_counts": dict(status_counts),
         "criteria_rows": len(criteria),
         "timeline_rows": len(timeline),
         "projects_with_criteria": len(project_codes & criteria_project_codes),

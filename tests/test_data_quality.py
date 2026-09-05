@@ -17,6 +17,8 @@ class DataQualityTests(unittest.TestCase):
             "source_audit": {"sources": [{"url": "https://example.com", "source_checked_at": "2026-08-01"}]},
         }, today=date(2026, 8, 31))
         self.assertEqual(report["official_projects"], 1)
+        self.assertEqual(report["project_status_counts"]["confirmed"], 1)
+        self.assertEqual(report["project_status_counts"]["needs_review"], 1)
         self.assertEqual(report["projects_without_criteria"], 1)
         self.assertEqual(report["projects_without_timeline"], 1)
         self.assertEqual(report["stale_sources"], 1)
