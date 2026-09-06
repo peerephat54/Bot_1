@@ -92,7 +92,10 @@ class ApplicationCardTests(unittest.TestCase):
         self.assertIn("สถานะข้อมูลและแหล่งที่มา", card_text_value)
         self.assertIn("ยืนยันแล้ว — มีประกาศโครงการ TCAS70 ทางการ", card_text_value)
         self.assertIn("แหล่งข้อมูล:", card_text_value)
-        self.assertIn("ตรวจล่าสุด: 3 ก.ย. 2569", card_text_value)
+        checked_at = app.format_checked_at(
+            candidate["project"].get("source_checked_at")
+        )
+        self.assertIn(f"ตรวจล่าสุด: {checked_at}", card_text_value)
 
         self.assertIn(
             "ยังไม่ยืนยัน — รอประกาศรับสมัครฉบับสมบูรณ์",
