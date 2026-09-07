@@ -62,6 +62,8 @@ NAVIGATION_CACHE_TTL_SECONDS = 300
 PROGRAM_DETAILS_CACHE_TTL_SECONDS = 120
 RECOMMENDATION_CACHE_TTL_SECONDS = 120
 LOCAL_PROJECT_CACHE_TTL_SECONDS = 300
+REMINDER_DELIVERY_TIMEOUT_SECONDS = 10
+REMINDER_FAILURE_LOG_COOLDOWN_SECONDS = 300
 
 _CACHE_LOCK = threading.RLock()
 _PROGRAM_DETAILS_CACHE = {}
@@ -277,6 +279,7 @@ class MyBot(discord.Client):
         self.navigation_programs_cache = []
         self.navigation_cache_loaded_at = 0.0
         self.reminder_task = None
+        self._last_reminder_failure_log_at = 0.0
 
     async def load_navigation_programs(self, *, force=False, timeout=15):
         cache_is_fresh = (
@@ -319,18 +322,33 @@ class MyBot(discord.Client):
             try:
                 for row in due_reminders(USER_FEATURE_STORE.reminders(), datetime.now().date()):
                     try:
-                        user = self.get_user(int(row["user_id"])) or await self.fetch_user(int(row["user_id"]))
+                        user = self.get_user(int(row["user_id"]))
+                        if user is None:
+                            user = await asyncio.wait_for(
+                                self.fetch_user(int(row["user_id"])),
+                                timeout=REMINDER_DELIVERY_TIMEOUT_SECONDS,
+                            )
                         days = max(0, (datetime.fromisoformat(str(row["end_on"])[:10]).date() - datetime.now().date()).days)
                         source = f"\n[เปิดประกาศต้นทาง]({row['source_url']})" if row.get("source_url") else ""
-                        await user.send(
-                            f"เตือนกำหนดการ: {row.get('project_name', 'โครงการรับสมัคร')}\n"
-                            f"{row.get('event_name', 'ปิดรับสมัคร')} เหลือประมาณ {days} วัน{source}"
+                        await asyncio.wait_for(
+                            user.send(
+                                f"เตือนกำหนดการ: {row.get('project_name', 'โครงการรับสมัคร')}\n"
+                                f"{row.get('event_name', 'ปิดรับสมัคร')} เหลือประมาณ {days} วัน{source}"
+                            ),
+                            timeout=REMINDER_DELIVERY_TIMEOUT_SECONDS,
                         )
                         USER_FEATURE_STORE.mark_reminder_notified(row["user_id"], row.get("project_code"), row.get("event_name"))
                     except (discord.Forbidden, discord.NotFound, ValueError):
                         logger.info("could not deliver deadline reminder user=%s", row.get("user_id"))
-                    except Exception:
-                        logger.exception("deadline reminder delivery failed")
+                    except Exception as error:
+                        now = time.monotonic()
+                        if now - self._last_reminder_failure_log_at >= REMINDER_FAILURE_LOG_COOLDOWN_SECONDS:
+                            logger.warning(
+                                "deadline reminder deferred user=%s error=%s; will retry next cycle",
+                                row.get("user_id"),
+                                type(error).__name__,
+                            )
+                            self._last_reminder_failure_log_at = now
             except Exception:
                 logger.exception("deadline reminder loop failed")
             await asyncio.sleep(3600)
