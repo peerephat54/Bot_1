@@ -149,6 +149,14 @@ class LocalUpdateTests(unittest.TestCase):
         self.assertEqual(len(program['projects']), 1)
         self.assertEqual(program['projects'][0]['round_variant'], '1.2')
 
+    def test_navigation_uses_local_catalog_when_supabase_is_unavailable(self):
+        database = MagicMock()
+        database.table.side_effect = RuntimeError("temporary Supabase outage")
+        with patch.object(app, 'database', database):
+            rows = app.fetch_navigation_programs()
+        self.assertTrue(rows)
+        self.assertTrue(any(row['university_short_name'] == 'KMITL' for row in rows))
+
     def test_calendars_do_not_leak_campus_or_international_scope(self):
         bang = next(p for p in PROGRAMS.values() if p['university_short_name']=='KU' and p['campus_code']=='bangkhen')
         sakon = next(p for p in PROGRAMS.values() if p['university_short_name']=='KU' and p['campus_code']=='sakon-nakhon')

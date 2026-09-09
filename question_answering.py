@@ -44,6 +44,19 @@ STOPWORDS = {
 }
 
 CATALOG_PATH = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
+MAX_ASK_RESULTS = 3
+TOPIC_LABELS = {
+    "application_status": "สถานะการสมัคร",
+    "deadline": "กำหนดการ",
+    "portfolio": "Portfolio",
+    "documents": "เอกสาร",
+    "gpax": "GPAX",
+    "cost": "ค่าใช้จ่าย",
+    "interview": "สัมภาษณ์",
+    "qualification": "คุณสมบัติ",
+    "curriculum": "หลักสูตร",
+    "source": "แหล่งข้อมูล",
+}
 
 
 def _fold(text):
@@ -124,6 +137,33 @@ def _project_name(project):
     elif variant and variant.casefold() in name.casefold():
         return name
     return f"{name} • {round_label}"
+
+
+def _compact_value(value, limit=480):
+    """Make a stored fact short enough for a quick Discord answer."""
+    if value in (None, "", [], {}):
+        return "ยังไม่ระบุ ต้องดูประกาศต้นทาง"
+    if isinstance(value, dict):
+        value = " • ".join(
+            f"{key}: {item}" for key, item in value.items() if item not in (None, "", [], {})
+        )
+    elif isinstance(value, (list, tuple)):
+        value = " • ".join(str(item) for item in value if item not in (None, ""))
+    text = re.sub(r"\s+", " ", str(value)).strip()
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "…"
+
+
+def _source_status(project):
+    status = project.get("publication_status")
+    if status == "official":
+        return "✅ ยืนยันแล้ว"
+    if status == "draft_waiting_official":
+        return "🟡 รอประกาศฉบับสมบูรณ์"
+    if project.get("reference_academic_year"):
+        return f"📘 ข้อมูลอ้างอิง TCAS{str(project['reference_academic_year'])[-2:]}"
+    return "🔎 ต้องตรวจเพิ่ม"
 
 
 def _load_projects(program, project_loader):
@@ -227,9 +267,16 @@ def _value_for_topic(project, topic):
     if topic == "deadline":
         return portfolio_dates(project.get("admission_timeline"))
     if topic == "portfolio":
-        return str(criteria.get("accepted_achievements") or criteria.get("portfolio_requirements") or "ยังไม่ระบุประเภทผลงาน ต้องดูประกาศต้นทาง")
+        return _compact_value(
+            criteria.get("accepted_achievements")
+            or criteria.get("portfolio_requirements")
+            or "ยังไม่ระบุประเภทผลงาน ต้องดูประกาศต้นทาง"
+        )
     if topic == "documents":
-        return str(criteria.get("required_documents") or "ยังไม่ระบุรายการเอกสาร ต้องดูประกาศต้นทาง")
+        return _compact_value(
+            criteria.get("required_documents")
+            or "ยังไม่ระบุรายการเอกสาร ต้องดูประกาศต้นทาง"
+        )
     if topic == "gpax":
         value = criteria.get("min_gpax")
         return f"GPAX ขั้นต่ำ {float(value):.2f}" if value is not None else "ยังไม่ระบุขั้นต่ำที่เทียบได้"
@@ -238,14 +285,19 @@ def _value_for_topic(project, topic):
         tuition = project.get("tuition_fee_per_semester")
         return f"ค่าสมัคร {fee if fee is not None else 'ยังไม่ระบุ'} • ค่าเรียนต่อภาค {tuition if tuition is not None else 'ยังไม่ระบุ'}"
     if topic == "interview":
-        return str(criteria.get("selection_methods") or "ยังไม่ระบุวิธีสัมภาษณ์")
+        return _compact_value(criteria.get("selection_methods") or "ยังไม่ระบุวิธีสัมภาษณ์")
     if topic == "qualification":
-        return str(criteria.get("applicant_qualifications") or "ยังไม่ระบุคุณสมบัติครบถ้วน ต้องดูประกาศต้นทาง")
+        return _compact_value(
+            criteria.get("applicant_qualifications")
+            or "ยังไม่ระบุคุณสมบัติครบถ้วน ต้องดูประกาศต้นทาง"
+        )
     if topic == "curriculum":
-        return str(project.get("program_summary") or "ดูรายละเอียดหลักสูตรจากหน้าหลักสูตรทางการ")
+        return _compact_value(
+            project.get("program_summary") or "ดูรายละเอียดหลักสูตรจากหน้าหลักสูตรทางการ"
+        )
     if topic == "source":
         return (
-            f"สถานะ {project.get('publication_status') or 'ต้องตรวจเพิ่ม'} • "
+            f"สถานะ {_source_status(project)} • "
             f"ตรวจล่าสุด {project.get('source_checked_at') or 'ไม่ระบุ'}"
         )
     return "ยังไม่พบข้อมูลหัวข้อนี้ในชุดข้อมูล"
@@ -289,15 +341,21 @@ def answer_question(query, programs, project_loader):
     lines = [heading]
     if round_filter:
         lines.append(f"กรองเฉพาะ **รอบ {round_filter}**")
-    for program, project in rows[:8]:
-        value = _value_for_topic(project, primary_topic)
+    shown_rows = rows[:MAX_ASK_RESULTS]
+    for program, project in shown_rows:
+        value = _compact_value(_value_for_topic(project, primary_topic))
         source = project.get("source_url")
         program_name = program.get("major_name") or program.get("faculty_name") or "ไม่ระบุสาขา"
         lines.append(
             f"\n**{program.get('university_short_name')} • {program_name}**\n"
-            f"**{_project_name(project)}**\n{value}"
-            + (f"\n[เปิดประกาศทางการ]({source})" if source else "")
+            f"**{_project_name(project)}**\n"
+            f"{TOPIC_LABELS.get(primary_topic, 'คำตอบ')}: {value}\n"
+            f"สถานะข้อมูล: {_source_status(project)} • "
+            f"ตรวจล่าสุด: {project.get('source_checked_at') or 'ไม่ระบุ'}"
+            + (f"\n[เปิดประกาศทางการ]({source})" if source else "\nยังไม่มีลิงก์ประกาศทางการในข้อมูล")
         )
+    if len(rows) > MAX_ASK_RESULTS:
+        lines.append(f"\nยังมีอีก {len(rows) - MAX_ASK_RESULTS} รายการ กด `/tcas_search` เพื่อดูทั้งหมด")
     if len(topics) > 1 and primary_topic != "application_status":
         lines.append("\nคำถามนี้มีหลายประเด็น ระบบแสดงหัวข้อหลักก่อน; กดดูรายละเอียดโครงการเพื่อดูทุกเงื่อนไข")
     lines.append("\nข้อมูลนี้อ้างอิงชุดข้อมูลที่ตรวจแล้ว ไม่ใช่การรับรองสิทธิ์สมัคร ควรเปิดประกาศต้นทางก่อนยื่น")

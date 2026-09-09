@@ -173,9 +173,22 @@ def fetch_local_project_additions():
     codes = LOCAL_ADMISSIONS_CATALOG.get("runtime_local_project_codes", [])
     if not codes:
         return []
-    response = database.table("admission_projects").select("code").in_("code", codes).execute()
-    remote_codes = {row["code"] for row in response.data or []}
+    used_fallback = False
+    try:
+        response = database.table("admission_projects").select("code").in_("code", codes).execute()
+        remote_codes = {row["code"] for row in response.data or []}
+    except Exception as error:
+        # The local catalog is deliberately allowlisted and source-backed.
+        # Keep it usable when Supabase is temporarily unavailable.
+        logger.warning(
+            "could not check local project additions in Supabase; using local catalog error=%s",
+            type(error).__name__,
+        )
+        remote_codes = set()
+        used_fallback = True
     additions = local_candidates(LOCAL_ADMISSIONS_CATALOG, remote_codes)
+    if used_fallback:
+        return additions
     if _LOCAL_PROJECT_CACHE is None:
         _LOCAL_PROJECT_CACHE = {}
     _cache_write(_LOCAL_PROJECT_CACHE, "all", additions)
@@ -385,6 +398,34 @@ def criteria_for_program(value, program_id):
     return {}
 
 
+def local_program_projects(program_code):
+    """Build one program detail from the audited catalog without Supabase."""
+    local_items = [
+        item
+        for item in fetch_local_project_additions()
+        if item["program"].get("code") == program_code
+    ]
+    if local_items:
+        program = deepcopy(local_items[0]["program"])
+        program["admission_previews"] = merge_admission_previews(
+            program.get("admission_previews"),
+            LOCAL_PREVIEW_CATALOG.get(program_code),
+        )
+        program["projects"] = [deepcopy(item["project"]) for item in local_items]
+        program["projects"].sort(
+            key=lambda item: (
+                str(item.get("round_variant") or ""),
+                str(item.get("name") or ""),
+            )
+        )
+        return program
+
+    program = local_program_detail(program_code)
+    if program:
+        program["projects"] = []
+    return program
+
+
 def fetch_program_projects(program_code: str):
     found, cached = _cache_read(
         _PROGRAM_DETAILS_CACHE, program_code, PROGRAM_DETAILS_CACHE_TTL_SECONDS
@@ -392,47 +433,39 @@ def fetch_program_projects(program_code: str):
     if found:
         return cached
 
-    program_response = (
-        database.table("faculties_and_majors")
-        .select(
-            "id,code,faculty_name,major_name,academic_year,program_type,language,"
-            "curriculum_credits,curriculum_year,duration_years,official_program_url,"
-            "admission_previews,"
-            "universities(name,short_name,logo_url),"
-            "university_campuses(code,name,is_main,official_url)"
+    try:
+        program_response = (
+            database.table("faculties_and_majors")
+            .select(
+                "id,code,faculty_name,major_name,academic_year,program_type,language,"
+                "curriculum_credits,curriculum_year,duration_years,official_program_url,"
+                "admission_previews,"
+                "universities(name,short_name,logo_url),"
+                "university_campuses(code,name,is_main,official_url)"
+            )
+            .eq("code", program_code)
+            .eq("data_status", "official")
+            .limit(1)
+            .execute()
         )
-        .eq("code", program_code)
-        .eq("data_status", "official")
-        .limit(1)
-        .execute()
-    )
+    except Exception as error:
+        logger.warning(
+            "could not load program %s from Supabase; using local catalog error=%s",
+            program_code,
+            type(error).__name__,
+        )
+        program = local_program_projects(program_code)
+        if program:
+            _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
+        return deepcopy(program)
     if not program_response.data:
         # A newly imported university may be available from the audited local
         # fallback before its delta seed has been run in Supabase. Keep the
         # direct University -> Campus -> Faculty -> Major flow usable in that
         # state instead of showing a misleading "not found" message.
-        local_items = [
-            item
-            for item in fetch_local_project_additions()
-            if item["program"].get("code") == program_code
-        ]
-        if not local_items:
-            program = local_program_detail(program_code)
-            if program:
-                _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
-            return deepcopy(program)
-        program = local_items[0]["program"]
-        program["admission_previews"] = merge_admission_previews(
-            program.get("admission_previews"),
-            LOCAL_PREVIEW_CATALOG.get(program_code),
-        )
-        program["projects"] = [item["project"] for item in local_items]
-        program["projects"].sort(
-            key=lambda item: (
-                str(item.get("round_variant") or ""),
-                str(item.get("name") or ""),
-            )
-        )
+        program = local_program_projects(program_code)
+        if not program:
+            return None
         _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
         return deepcopy(program)
 
@@ -441,30 +474,44 @@ def fetch_program_projects(program_code: str):
         program.get("admission_previews"),
         LOCAL_PREVIEW_CATALOG.get(program_code),
     )
-    project_response = (
-        database.table("admission_project_programs")
-        .select(
-            "slots_available,program_notes,"
-            "admission_projects!inner("
-            "id,code,name,academic_year,tcas_round,round_label,round_variant,"
-            "publication_status,selection_order_limit,application_fee,"
-            "tuition_fee_per_semester,source_url,source_published_at,"
-            "source_checked_at,data_notes,"
-            "admission_criteria("
-            "faculty_id,criteria_summary,min_gpax,gpax_requirements,subject_gpax,"
-            "min_english_score,standardized_scores,applicant_qualifications,"
-            "portfolio_requirements,"
-            "portfolio_details,accepted_achievements,required_documents,"
-            "selection_methods,additional_requirements),"
-            "admission_timeline("
-            "event_name,start_on,end_on,date_display,date_status)"
-            ")"
+    try:
+        project_response = (
+            database.table("admission_project_programs")
+            .select(
+                "slots_available,program_notes,"
+                "admission_projects!inner("
+                "id,code,name,academic_year,tcas_round,round_label,round_variant,"
+                "publication_status,selection_order_limit,application_fee,"
+                "tuition_fee_per_semester,source_url,source_published_at,"
+                "source_checked_at,data_notes,"
+                "admission_criteria("
+                "faculty_id,criteria_summary,min_gpax,gpax_requirements,subject_gpax,"
+                "min_english_score,standardized_scores,applicant_qualifications,"
+                "portfolio_requirements,"
+                "portfolio_details,accepted_achievements,required_documents,"
+                "selection_methods,additional_requirements),"
+                "admission_timeline("
+                "event_name,start_on,end_on,date_display,date_status)"
+                ")"
+            )
+            .eq("program_id", program["id"])
+            .eq("admission_projects.publication_status", "official")
+            .eq("admission_projects.is_visible", True)
+            .execute()
         )
-        .eq("program_id", program["id"])
-        .eq("admission_projects.publication_status", "official")
-        .eq("admission_projects.is_visible", True)
-        .execute()
-    )
+    except Exception as error:
+        logger.warning(
+            "could not load projects for %s; using local catalog error=%s",
+            program_code,
+            type(error).__name__,
+        )
+        local_program = local_program_projects(program_code)
+        if local_program:
+            _cache_write(_PROGRAM_DETAILS_CACHE, program_code, local_program)
+            return deepcopy(local_program)
+        program["projects"] = []
+        _cache_write(_PROGRAM_DETAILS_CACHE, program_code, program)
+        return deepcopy(program)
 
     projects = []
     for link in project_response.data or []:
@@ -502,36 +549,43 @@ def fetch_recommendation_projects():
     if found:
         return cached
 
-    response = (
-        database.table("admission_project_programs")
-        .select(
-            "slots_available,program_notes,"
-            "faculties_and_majors!inner("
-            "id,code,faculty_name,major_name,academic_year,program_type,language,"
-            "curriculum_credits,curriculum_year,duration_years,official_program_url,"
-            "universities(name,short_name,logo_url),"
-            "university_campuses(code,name,is_main,official_url)),"
-            "admission_projects!inner("
-            "id,code,name,academic_year,tcas_round,round_label,round_variant,"
-            "publication_status,selection_order_limit,application_fee,"
-            "tuition_fee_per_semester,source_url,source_published_at,"
-            "source_checked_at,data_notes,"
-            "admission_criteria("
-            "faculty_id,criteria_summary,min_gpax,gpax_requirements,subject_gpax,"
-            "min_english_score,standardized_scores,applicant_qualifications,"
-            "portfolio_requirements,portfolio_details,accepted_achievements,"
-            "required_documents,selection_methods,additional_requirements),"
-            "admission_timeline("
-            "event_name,start_on,end_on,date_display,date_status))"
+    try:
+        response = (
+            database.table("admission_project_programs")
+            .select(
+                "slots_available,program_notes,"
+                "faculties_and_majors!inner("
+                "id,code,faculty_name,major_name,academic_year,program_type,language,"
+                "curriculum_credits,curriculum_year,duration_years,official_program_url,"
+                "universities(name,short_name,logo_url),"
+                "university_campuses(code,name,is_main,official_url)),"
+                "admission_projects!inner("
+                "id,code,name,academic_year,tcas_round,round_label,round_variant,"
+                "publication_status,selection_order_limit,application_fee,"
+                "tuition_fee_per_semester,source_url,source_published_at,"
+                "source_checked_at,data_notes,"
+                "admission_criteria("
+                "faculty_id,criteria_summary,min_gpax,gpax_requirements,subject_gpax,"
+                "min_english_score,standardized_scores,applicant_qualifications,"
+                "portfolio_requirements,portfolio_details,accepted_achievements,"
+                "required_documents,selection_methods,additional_requirements),"
+                "admission_timeline("
+                "event_name,start_on,end_on,date_display,date_status))"
+            )
+            .eq("admission_projects.academic_year", 2570)
+            .eq("admission_projects.publication_status", "official")
+            .eq("admission_projects.is_visible", True)
+            .execute()
         )
-        .eq("admission_projects.academic_year", 2570)
-        .eq("admission_projects.publication_status", "official")
-        .eq("admission_projects.is_visible", True)
-        .execute()
-    )
+    except Exception as error:
+        logger.warning(
+            "could not load recommendation projects from Supabase; using local catalog error=%s",
+            type(error).__name__,
+        )
+        response = None
 
     candidates = []
-    for row in response.data or []:
+    for row in response.data if response else []:
         program = first_relation(row.get("faculties_and_majors"))
         project = first_relation(row.get("admission_projects"))
         if (
@@ -589,20 +643,27 @@ def fetch_grade_screening(navigation_programs, gpax, field):
 
 def fetch_navigation_programs():
     """Return every official technology curriculum in the TCAS70 dataset."""
-    response = (
-        database.table("admission_project_programs")
-        .select(
-            "faculties_and_majors!inner("
-            "code,faculty_name,major_name,admission_previews,"
-            "university_campuses(code,name,is_main),"
-            "universities!inner(name,short_name)),"
-            "admission_projects!inner(academic_year,publication_status,is_visible)"
+    try:
+        response = (
+            database.table("admission_project_programs")
+            .select(
+                "faculties_and_majors!inner("
+                "code,faculty_name,major_name,admission_previews,"
+                "university_campuses(code,name,is_main),"
+                "universities!inner(name,short_name)),"
+                "admission_projects!inner(academic_year,publication_status,is_visible)"
+            )
+            .eq("admission_projects.academic_year", 2570)
+            .eq("admission_projects.publication_status", "official")
+            .eq("admission_projects.is_visible", True)
+            .execute()
         )
-        .eq("admission_projects.academic_year", 2570)
-        .eq("admission_projects.publication_status", "official")
-        .eq("admission_projects.is_visible", True)
-        .execute()
-    )
+    except Exception as error:
+        logger.warning(
+            "could not load navigation projects from Supabase; using local catalog error=%s",
+            type(error).__name__,
+        )
+        response = None
 
     programs = {}
 
@@ -665,22 +726,29 @@ def fetch_navigation_programs():
             "program_tracks": LOCAL_PROGRAM_TRACKS.get(code, []),
         }
 
-    for row in response.data or []:
+    for row in response.data if response else []:
         program = first_relation(row.get("faculties_and_majors"))
         add_program(program, has_official_projects=True)
 
-    catalog_response = (
-        database.table("faculties_and_majors")
-        .select(
-            "code,faculty_name,major_name,admission_previews,"
-            "university_campuses(code,name,is_main),"
-            "universities!inner(name,short_name)"
+    try:
+        catalog_response = (
+            database.table("faculties_and_majors")
+            .select(
+                "code,faculty_name,major_name,admission_previews,"
+                "university_campuses(code,name,is_main),"
+                "universities!inner(name,short_name)"
+            )
+            .eq("academic_year", 2570)
+            .eq("data_status", "official")
+            .execute()
         )
-        .eq("academic_year", 2570)
-        .eq("data_status", "official")
-        .execute()
-    )
-    for program in catalog_response.data or []:
+    except Exception as error:
+        logger.warning(
+            "could not load navigation catalog from Supabase; using local catalog error=%s",
+            type(error).__name__,
+        )
+        catalog_response = None
+    for program in catalog_response.data if catalog_response else []:
         add_program(program, has_official_projects=False)
 
     # Keep newly catalogued curriculum groups visible before their admission
@@ -5217,6 +5285,80 @@ async def open_grade_screening(interaction: discord.Interaction):
 )
 async def grade_check(interaction: discord.Interaction):
     await open_grade_screening(interaction)
+
+
+def _ping_supabase():
+    """Run a small read-only query for the health command."""
+    return database.table("faculties_and_majors").select("code").limit(1).execute()
+
+
+@bot.tree.command(
+    name="health",
+    description="ตรวจสถานะบอท dataset และ Supabase",
+)
+async def health_command(interaction: discord.Interaction):
+    await interaction.response.defer(thinking=True, ephemeral=True)
+    dataset_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
+    dataset_ok = False
+    dataset_text = "❌ อ่าน dataset ไม่สำเร็จ"
+    try:
+        report = await asyncio.wait_for(
+            asyncio.to_thread(load_quality_report, dataset_path),
+            timeout=5,
+        )
+        dataset_ok = True
+        dataset_text = (
+            f"✅ ตรวจล่าสุด {format_checked_at(report.get('checked_at'))}\n"
+            f"มหาวิทยาลัย {report['universities']} แห่ง • "
+            f"โครงการ {report['projects']} รายการ\n"
+            f"เกณฑ์ {report['projects_with_criteria']}/{report['projects']} โครงการ"
+        )
+    except Exception as error:
+        logger.warning("health dataset check failed error=%s", type(error).__name__)
+
+    supabase_ok = False
+    supabase_text = "🟡 ใช้ local fallback"
+    try:
+        await asyncio.wait_for(asyncio.to_thread(_ping_supabase), timeout=5)
+        supabase_ok = True
+        supabase_text = "✅ เชื่อมต่อได้"
+    except Exception as error:
+        logger.warning("health Supabase check failed error=%s", type(error).__name__)
+
+    ready = bot.is_ready()
+    latency_ms = bot.latency * 1000
+    latency_text = (
+        f"{latency_ms:.0f} ms"
+        if latency_ms != float("inf")
+        else "ยังวัดไม่ได้"
+    )
+    overall_ok = ready and dataset_ok
+    embed = discord.Embed(
+        title="สุขภาพระบบบอท",
+        description=(
+            "✅ พร้อมใช้งาน"
+            if overall_ok
+            else "🟡 ทำงานได้บางส่วน — ระบบจะใช้ local dataset เมื่อ Supabase สะดุด"
+        ),
+        color=discord.Color.green() if overall_ok else discord.Color.orange(),
+    )
+    embed.add_field(
+        name="🤖 บอท Discord",
+        value=f"{'✅ พร้อม' if ready else '❌ ยังไม่พร้อม'}\nLatency: {latency_text}",
+        inline=True,
+    )
+    embed.add_field(name="🗃️ Dataset", value=dataset_text, inline=True)
+    embed.add_field(name="🌐 Supabase", value=supabase_text, inline=True)
+    embed.add_field(
+        name="เมื่อ Supabase ใช้ไม่ได้",
+        value=(
+            "การค้นหาโครงการ, `/ask` และการเทียบเกรดจะพยายามใช้ข้อมูล local "
+            "ที่ตรวจสอบแล้วแทน"
+        ),
+        inline=False,
+    )
+    embed.set_footer(text=f"ตรวจสถานะเมื่อ {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+    await interaction.edit_original_response(content=None, embeds=[embed], view=None)
 
 
 @bot.tree.command(

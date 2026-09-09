@@ -64,6 +64,7 @@ class QuestionAnsweringTests(unittest.TestCase):
         self.assertIn("รอบ 1.1", answer)
         self.assertIn("ยังไม่เปิดรับสมัคร", answer)
         self.assertIn("10 ก.ย. 2642", answer)
+        self.assertIn("สถานะข้อมูล: ✅ ยืนยันแล้ว", answer)
 
     def test_local_catalog_is_used_before_project_loader(self):
         projects = _load_local_projects({"code": "mu-ict"})
