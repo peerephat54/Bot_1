@@ -4,6 +4,8 @@ import json
 import logging
 import os
 import re
+import subprocess
+import sys
 import threading
 import time
 from datetime import datetime
@@ -64,6 +66,9 @@ RECOMMENDATION_CACHE_TTL_SECONDS = 120
 LOCAL_PROJECT_CACHE_TTL_SECONDS = 300
 REMINDER_DELIVERY_TIMEOUT_SECONDS = 10
 REMINDER_FAILURE_LOG_COOLDOWN_SECONDS = 300
+BOT_ROOT = Path(__file__).resolve().parent
+BOT_WATCHDOG_SCRIPT = BOT_ROOT / "scripts" / "bot_watchdog.py"
+BOT_WATCHDOG_STATE = BOT_ROOT / "tmp" / "bot_watchdog.json"
 
 _CACHE_LOCK = threading.RLock()
 _PROGRAM_DETAILS_CACHE = {}
@@ -84,6 +89,69 @@ def _cache_read(cache, key, ttl_seconds):
 def _cache_write(cache, key, value):
     with _CACHE_LOCK:
         cache[key] = (time.monotonic(), deepcopy(value))
+
+
+def _process_is_alive(pid):
+    if not isinstance(pid, int) or pid <= 0:
+        return False
+    try:
+        os.kill(pid, 0)
+    except (OSError, ProcessLookupError):
+        return False
+    return True
+
+
+def _watchdog_state():
+    try:
+        return json.loads(BOT_WATCHDOG_STATE.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError, OSError):
+        return {}
+
+
+def start_bot_watchdog():
+    """Start one detached watchdog; it can relaunch this bot after a crash."""
+    state = _watchdog_state()
+    watchdog_pid = state.get("watchdog_pid")
+    if _process_is_alive(watchdog_pid):
+        return watchdog_pid, False
+    if not BOT_WATCHDOG_SCRIPT.exists():
+        raise FileNotFoundError(BOT_WATCHDOG_SCRIPT)
+
+    BOT_WATCHDOG_STATE.parent.mkdir(parents=True, exist_ok=True)
+    creationflags = (
+        getattr(subprocess, "DETACHED_PROCESS", 0)
+        | getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
+    )
+    process = subprocess.Popen(
+        [
+            sys.executable,
+            str(BOT_WATCHDOG_SCRIPT),
+            "--watch-pid",
+            str(os.getpid()),
+            "--bot-script",
+            str(Path(__file__).resolve()),
+            "--cwd",
+            str(BOT_ROOT),
+            "--state-file",
+            str(BOT_WATCHDOG_STATE),
+        ],
+        cwd=str(BOT_ROOT),
+        stdin=subprocess.DEVNULL,
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        creationflags=creationflags,
+    )
+    BOT_WATCHDOG_STATE.write_text(
+        json.dumps(
+            {
+                "watchdog_pid": process.pid,
+                "bot_pid": os.getpid(),
+                "updated_at": int(time.time()),
+            }
+        ),
+        encoding="utf-8",
+    )
+    return process.pid, True
 
 THAI_MONTHS = (
     "",
@@ -1896,7 +1964,7 @@ def build_project_criteria_embed(program, project):
 
 def build_rule_trace_embed(program, project, applicant_profile=None):
     assessment = evaluate_project_fit(applicant_profile or {}, program, project)
-    embed = build_project_shell(program, project, "Rule Trace: เหตุผลของผลตรวจ", 0x1ABC9C)
+    embed = build_project_shell(program, project, "เหตุผลของผลตรวจ", 0x1ABC9C)
     embed.add_field(
         name="ผลรวม",
         value=(
@@ -2353,7 +2421,7 @@ def project_detail_content(
         "criteria": "คุณสมบัติและคะแนน",
         "portfolio": "Portfolio และเอกสาร",
         "timeline": "กำหนดการทั้งหมด",
-        "trace": "Rule Trace เหตุผลของผลตรวจ",
+        "trace": "เหตุผลของผลตรวจ",
         "checklist": "Checklist เตรียมสมัคร",
     }
     major_name = program_data.get("major_name") or "ไม่ระบุสาขา"
@@ -2361,8 +2429,8 @@ def project_detail_content(
     return (
         f"📍 **เส้นทาง:** {selection_path(university_short_name, faculty_name, major_name, campus_name)}\n\n"
         f"## 📌 {section_label}\n\n"
-        "กดปุ่มด้านล่างเพื่อเปลี่ยนหมวดข้อมูล\n\n"
-        f"🔍 ตรวจชุดข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
+        "เลือกหมวดที่ต้องการดูจากปุ่มด้านล่าง\n\n"
+        f"ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2384,17 +2452,17 @@ def start_menu_content(navigation_programs):
         1 for item in navigation_programs if item.get("has_official_projects")
     )
     return (
-        "## เริ่มวางแผนสมัครรอบ Portfolio\n"
-        "ไม่ต้องรู้ชื่อมหาวิทยาลัยหรือศัพท์ TCAS มาก่อน\n"
-        "เลือกเป้าหมายด้านล่าง แล้วระบบจะพาไปทีละขั้น\n\n"
-        "**ยังไม่รู้จะเรียนอะไร** → กรอกข้อมูลของคุณ แล้วดูสาขาที่ควรตรวจต่อ\n"
-        "**รู้มหาวิทยาลัยแล้ว** → ค้นหาตามมหาวิทยาลัยและโครงการ\n"
-        "**อยากเช็ก GPAX** → ดูว่าเกณฑ์ขั้นต่ำของแต่ละโครงการเป็นอย่างไร\n"
-        "**อยากเปรียบเทียบ** → เลือก 2–3 สาขาแล้วดูข้อมูลข้างกัน\n\n"
-        "**มีคำถามเฉพาะ** → ใช้ `/ask` แล้วพิมพ์ชื่อมหาวิทยาลัย/สาขาและสิ่งที่อยากรู้\n"
-        "ตัวอย่าง: `มจธ. การออกแบบเกม ใช้ GPAX เท่าไร`\n\n"
-        f"มีข้อมูลเกณฑ์ TCAS70 ที่เปิดดูได้ {official_count} สาขา\n"
-        f"*ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}*"
+        "## ศูนย์ข้อมูลสมัคร Portfolio\n"
+        "ค้นหาหลักสูตร ดูเกณฑ์ เตรียมเอกสาร และเช็กกำหนดการ\n\n"
+        "**เริ่มจากอะไรดี?**\n"
+        "• ยังไม่แน่ใจสาขา → ค้นหาจากข้อมูลของฉัน\n"
+        "• รู้มหาวิทยาลัยแล้ว → ค้นหาตามมหาวิทยาลัย\n"
+        "• อยากเช็ก GPAX → ตรวจ GPAX ตามสายที่สนใจ\n"
+        "• มีตัวเลือกแล้ว → เปรียบเทียบหลักสูตร 2–3 รายการ\n\n"
+        "ใช้ `/ask` เมื่อต้องการค้นคำตอบสั้น ๆ เช่น\n"
+        "`มจธ. การออกแบบเกม ใช้ GPAX เท่าไร`\n\n"
+        f"ข้อมูลที่มีประกาศ TCAS70 แล้ว {official_count} สาขา\n"
+        f"ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -3770,7 +3838,7 @@ class StartView(OwnedView):
         super().__init__(owner_id)
         self.navigation_programs = navigation_programs
 
-    @discord.ui.button(label="รู้มหาวิทยาลัยแล้ว", style=discord.ButtonStyle.primary)
+    @discord.ui.button(label="ค้นหาตามมหาวิทยาลัย", style=discord.ButtonStyle.primary)
     async def known_university(self, interaction, button):
         del button
         await interaction.response.edit_message(
@@ -3779,7 +3847,7 @@ class StartView(OwnedView):
             view=UniversityView(self.owner_id, self.navigation_programs),
         )
 
-    @discord.ui.button(label="เช็ก GPAX", style=discord.ButtonStyle.success, row=1)
+    @discord.ui.button(label="ตรวจ GPAX", style=discord.ButtonStyle.success, row=1)
     async def beginner_screening(self, interaction, button):
         del button
         flow_id = new_flow_id()
@@ -3794,7 +3862,7 @@ class StartView(OwnedView):
             ),
         )
 
-    @discord.ui.button(label="เริ่มจากข้อมูลของฉัน", style=discord.ButtonStyle.primary, row=0)
+    @discord.ui.button(label="ค้นหาจากข้อมูลของฉัน", style=discord.ButtonStyle.primary, row=0)
     async def beginner_recommendation(self, interaction, button):
         del button
         flow_id = new_flow_id()
@@ -3809,7 +3877,7 @@ class StartView(OwnedView):
             )
         )
 
-    @discord.ui.button(label="เปรียบเทียบ 2–3 หลักสูตร", style=discord.ButtonStyle.secondary, row=1)
+    @discord.ui.button(label="เปรียบเทียบหลักสูตร", style=discord.ButtonStyle.secondary, row=1)
     async def compare_programs(self, interaction, button):
         del button
         await interaction.response.edit_message(
@@ -5246,7 +5314,7 @@ class ChecklistOpenButton(discord.ui.Button):
 
 class RuleTraceOpenButton(discord.ui.Button):
     def __init__(self):
-        super().__init__(label="Rule Trace", style=discord.ButtonStyle.secondary, row=3)
+        super().__init__(label="เหตุผลผลตรวจ", style=discord.ButtonStyle.secondary, row=3)
 
     async def callback(self, interaction: discord.Interaction):
         await self.view.show_section(interaction, "trace")
@@ -5359,6 +5427,39 @@ async def health_command(interaction: discord.Interaction):
     )
     embed.set_footer(text=f"ตรวจสถานะเมื่อ {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
     await interaction.edit_original_response(content=None, embeds=[embed], view=None)
+
+
+@bot.tree.command(
+    name="startbot",
+    description="เปิดระบบเฝ้าดูและรีสตาร์ตบอทเมื่อบอทหลุด",
+)
+@app_commands.default_permissions(manage_guild=True)
+async def startbot_command(interaction: discord.Interaction):
+    """Enable the detached watchdog for the currently running bot process."""
+    permissions = getattr(interaction.user, "guild_permissions", None)
+    if not getattr(permissions, "manage_guild", False):
+        await interaction.response.send_message(
+            "คำสั่งนี้ใช้ได้เฉพาะผู้ดูแลเซิร์ฟเวอร์ เพื่อป้องกันการเปิดโปรเซสซ้ำ",
+            ephemeral=True,
+        )
+        return
+
+    try:
+        watchdog_pid, started = await asyncio.to_thread(start_bot_watchdog)
+        if started:
+            message = (
+                "✅ เปิดระบบดูแลบอทแล้ว\n"
+                "ถ้าบอทหลุด ระบบจะพยายามเปิดโปรเซสใหม่ให้อัตโนมัติ"
+            )
+        else:
+            message = f"✅ ระบบดูแลบอททำงานอยู่แล้ว (PID {watchdog_pid})"
+    except Exception:
+        logger.exception("startbot command failed")
+        message = (
+            "❌ เปิดระบบดูแลบอทไม่สำเร็จ\n"
+            "ให้ผู้ดูแลเปิดจากเครื่องด้วย `python scripts/start_bot.py`"
+        )
+    await interaction.response.send_message(message, ephemeral=True)
 
 
 @bot.tree.command(

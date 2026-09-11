@@ -108,6 +108,14 @@ class GradeRulesTests(unittest.TestCase):
 
 
 class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
+    def test_start_menu_uses_plain_language_actions(self):
+        view = app.StartView(42, NAVIGATION)
+        labels = {item.label for item in view.children}
+        self.assertIn("ค้นหาตามมหาวิทยาลัย", labels)
+        self.assertIn("ค้นหาจากข้อมูลของฉัน", labels)
+        self.assertIn("ตรวจ GPAX", labels)
+        self.assertNotIn("Rule Trace", labels)
+
     async def test_direct_grade_command_opens_private_flow(self):
         interaction = make_interaction()
         with patch.object(app.bot, "load_navigation_programs", new=AsyncMock(return_value=NAVIGATION)):
