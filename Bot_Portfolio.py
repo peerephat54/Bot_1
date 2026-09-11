@@ -5433,23 +5433,15 @@ async def health_command(interaction: discord.Interaction):
     name="startbot",
     description="เปิดระบบเฝ้าดูและรีสตาร์ตบอทเมื่อบอทหลุด",
 )
-@app_commands.default_permissions(manage_guild=True)
 async def startbot_command(interaction: discord.Interaction):
-    """Enable the detached watchdog for the currently running bot process."""
-    permissions = getattr(interaction.user, "guild_permissions", None)
-    if not getattr(permissions, "manage_guild", False):
-        await interaction.response.send_message(
-            "คำสั่งนี้ใช้ได้เฉพาะผู้ดูแลเซิร์ฟเวอร์ เพื่อป้องกันการเปิดโปรเซสซ้ำ",
-            ephemeral=True,
-        )
-        return
-
+    """Let any member enable the single detached watchdog."""
     try:
         watchdog_pid, started = await asyncio.to_thread(start_bot_watchdog)
         if started:
             message = (
                 "✅ เปิดระบบดูแลบอทแล้ว\n"
-                "ถ้าบอทหลุด ระบบจะพยายามเปิดโปรเซสใหม่ให้อัตโนมัติ"
+                "ถ้าบอทหลุด ระบบจะพยายามเปิดโปรเซสใหม่ให้อัตโนมัติ\n"
+                "สมาชิกทุกคนใช้คำสั่งนี้ได้ และระบบจะไม่เปิด watchdog ซ้ำ"
             )
         else:
             message = f"✅ ระบบดูแลบอททำงานอยู่แล้ว (PID {watchdog_pid})"
@@ -5457,7 +5449,7 @@ async def startbot_command(interaction: discord.Interaction):
         logger.exception("startbot command failed")
         message = (
             "❌ เปิดระบบดูแลบอทไม่สำเร็จ\n"
-            "ให้ผู้ดูแลเปิดจากเครื่องด้วย `python scripts/start_bot.py`"
+            "หากบอทออฟไลน์สนิท ให้เปิดจากเครื่องด้วย `python scripts/start_bot.py`"
         )
     await interaction.response.send_message(message, ephemeral=True)
 
