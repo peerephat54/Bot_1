@@ -5,6 +5,331 @@ begin;
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือก', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ผ่าน myTCAS', '2027-03-10', '2027-03-11', '10 มี.ค. 2570 – 11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'tu-ipst-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-08-03', '2026-08-31', '3–31 ส.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-09-08', '2026-09-08', '8 ก.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-09-19', '2026-09-19', '19 ก.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้ผ่านการคัดเลือก', '2026-09-22', '2026-09-22', '22 ก.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ MU-TCAS', '2026-11-11', '2026-11-12', '11 พ.ย. เวลา 8.00 น.–12 พ.ย. 2569 ไม่เกิน 12.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้ยืนยันสิทธิ์ MU-TCAS', '2026-11-24', '2026-11-24', '24 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ TCAS70', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ TCAS70', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570 เวลา 8.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระค่าธรรมเนียมการศึกษา', '2027-03-20', '2027-03-22', '20–22 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-ict-portfolio'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัคร', '2026-08-17', '2026-09-10', '17 ส.ค.–10 ก.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-10-29', '2026-10-29', '29 ต.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ทดสอบระบบออนไลน์ (ถ้ามี)', '2026-10-31', '2026-10-31', '31 ต.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-11-01', '2026-11-01', '1 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผู้ผ่านการคัดเลือก', '2026-11-11', '2026-11-11', '11 พ.ย. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ MU-TCAS', '2026-11-11', '2026-11-12', '11 พ.ย. เวลา 8.00 น.–12 พ.ย. 2569 ไม่เกิน 12.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'muict-mu-portfolio-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
 select p.id, 'ช่วงติดต่อกลุ่มสำรอง', '2026-11-12', '2026-11-13', '12 พ.ย. เวลา 12.01 น.–13 พ.ย. 2569 เวลา 16.00 น.', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'muict-mu-portfolio-1-1'
@@ -83,7 +408,7 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'รับสมัคร', '2026-12-15', '2027-01-10', '15 ธ.ค. 2569–10 ม.ค. 2570 (เส้นตายเฉพาะคณะ ICT)', 'confirmed', now()
+select p.id, 'รับสมัคร', '2026-12-15', '2027-01-10', '15 ธ.ค. 2569–10 ม.ค. 2570 (ประกาศเฉพาะคณะ; หน้าโปรแกรม DST ปัจจุบันระบุว่าไม่เปิดรับสมัคร)', 'disputed', now()
 from public.admission_projects p
 where p.code = 'muict-mu-portfolio-1-2'
 on conflict (project_id, event_name) do update set
@@ -4441,318 +4766,6 @@ insert into public.admission_timeline (
 select p.id, 'สอบสัมภาษณ์', '2027-02-13', '2027-02-14', '13 - 14 ก.พ. 2570', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'swu-science-chemistry-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือก', '2027-02-23', null, '23 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบรับสมัครนิสิตใหม่ มศว', '2027-02-23', '2027-02-24', '23 - 24 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือกโดย ทปอ.', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบ ทปอ.', '2027-03-10', '2027-03-11', '10 - 11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์เข้าศึกษา', '2027-03-14', null, '14 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-12-01', '2026-12-16', '1 - 16 ธ.ค. 2569 (ปิด 15.00 น. วันที่ 16 ธ.ค.)', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้มีสิทธิ์สอบสัมภาษณ์', '2027-01-26', null, '26 ม.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2027-02-13', '2027-02-14', '13 - 14 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือก', '2027-02-23', null, '23 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบรับสมัครนิสิตใหม่ มศว', '2027-02-23', '2027-02-24', '23 - 24 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือกโดย ทปอ.', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบ ทปอ.', '2027-03-10', '2027-03-11', '10 - 11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์เข้าศึกษา', '2027-03-14', null, '14 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-chemistry-special-talent-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-08-18', '2026-09-16', '18 ส.ค. - 16 ก.ย. 2569 (ปิด 15.00 น. วันที่ 16 ก.ย.)', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้มีสิทธิ์สอบสัมภาษณ์', '2026-10-21', null, '21 ต.ค. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2026-11-07', '2026-11-08', '7 - 8 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือก', '2026-11-17', null, '17 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบรับสมัครนิสิตใหม่ มศว', '2026-11-17', '2026-11-18', '17 - 18 พ.ย. 2569', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือกโดย ทปอ.', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบ ทปอ.', '2027-03-10', '2027-03-11', '10 - 11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์เข้าศึกษา', '2027-03-14', null, '14 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-12-01', '2026-12-16', '1 - 16 ธ.ค. 2569 (ปิด 15.00 น. วันที่ 16 ธ.ค.)', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้มีสิทธิ์สอบสัมภาษณ์', '2027-01-26', null, '26 ม.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2027-02-13', '2027-02-14', '13 - 14 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-science-biology-good-student-1-2'
 on conflict (project_id, event_name) do update set
     start_on = excluded.start_on,
     end_on = excluded.end_on,

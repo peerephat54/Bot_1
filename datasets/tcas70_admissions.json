@@ -53,7 +53,7 @@
       "title": "ปฏิทิน มก. • บางเขน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-07T23:20:07+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "scope_note": "ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์",
       "rounds": [
         {
@@ -88,7 +88,7 @@
       "academic_year": 2570,
       "source_url": "https://admission.reg.cmu.ac.th/tcas/app.php",
       "evidence_url": "https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf",
-      "source_checked_at": "2026-09-07T23:20:07+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "scope_note": "ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ",
       "rounds": [
         {
@@ -113,7 +113,7 @@
       "title": "ปฏิทิน มก. • สกลนคร",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-07T23:20:07+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "scope_note": "ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน",
       "rounds": [
         {
@@ -234,7 +234,7 @@
       "title": "ปฏิทิน มก. • กำแพงแสน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-07T23:20:07+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "scope_note": "ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา",
       "rounds": [
         {
@@ -269,7 +269,7 @@
       "title": "ปฏิทิน มก. • ศรีราชา",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-07T23:20:07+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "scope_note": "ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ",
       "rounds": [
         {
@@ -285,7 +285,7 @@
       ]
     }
   ],
-  "checked_at": "2026-09-07T23:20:07+07:00",
+  "checked_at": "2026-09-12T19:20:01+07:00",
   "runtime_local_project_codes": [
     "tu-direct-cpe-2570",
     "tu-direct-software-2570",
@@ -2530,7 +2530,7 @@
       "source_url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703",
       "source_title": "รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์",
       "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท"
     },
     {
@@ -2551,7 +2551,7 @@
       "source_url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703",
       "source_title": "รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์",
       "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท"
     },
     {
@@ -2572,7 +2572,7 @@
       "source_url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704",
       "source_title": "รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์",
       "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท"
     },
     {
@@ -2593,7 +2593,7 @@
       "source_url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704",
       "source_title": "รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์",
       "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท"
     },
     {
@@ -2614,7 +2614,7 @@
       "source_url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=706",
       "source_title": "รหัสโครงการ 00410608108031 วิศวกรรมคอมพิวเตอร์",
       "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "เปิดแบบ 1.1 จำนวน 5 คน; หน้าเว็บระบุแบบ 1.2 จำนวน 0 คน"
     },
     {
@@ -4127,7 +4127,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/1/",
       "source_title": "เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {
@@ -5041,7 +5041,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/10/",
       "source_title": "เกณฑ์โครงการ Portfolio วิทยาเขตกำแพงแสน รอบ 1.1 KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {
@@ -5063,7 +5063,7 @@
       "source_url": "https://admission.ku.ac.th/majors/project/110/",
       "source_title": "เกณฑ์โครงการ Portfolio วิทยาเขตกำแพงแสน รอบ 1.2 KU-TCAS70",
       "source_published_at": null,
-      "source_checked_at": "2026-08-30T12:00:00+07:00",
+      "source_checked_at": "2026-09-12T19:20:01+07:00",
       "data_notes": "เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข"
     },
     {

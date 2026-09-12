@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-09-07T23:20:07+07:00",
+  "checked_at": "2026-09-12T19:20:01+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -104,7 +104,7 @@
       "publisher": "มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-04T18:54:56+07:00",
+      "source_checked_at": "2026-09-12",
       "decision": "ใช้ยืนยันและนำเข้ารายการสายคอมทั้งหมดที่พบในระบบ TCAS70 พร้อมเกณฑ์เต็มรายรหัสโครงการและแบบ 1.1/1.2"
     },
     {
@@ -205,7 +205,7 @@
       "classification": "used_primary_index",
       "academic_year": 2570,
       "decision": "ยืนยันปฏิทิน Portfolio บางเขน รอบ 1.1 และ 1.2 และลิงก์ไปยังเกณฑ์รายโครงการ",
-      "source_checked_at": "2026-09-07"
+      "source_checked_at": "2026-09-12"
     },
     {
       "url": "https://admission.kmutnb.ac.th/apply/round/1",
@@ -612,7 +612,8 @@
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "decision": "นำเข้าช้างเผือก 1.1 ของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับและเกณฑ์รายสาขา"
+      "decision": "นำเข้าช้างเผือก 1.1 ของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับและเกณฑ์รายสาขา",
+      "source_checked_at": "2026-09-12"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/2/",
@@ -736,14 +737,16 @@
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "decision": "นำเข้า Portfolio 1.1 วิทยาเขตกำแพงแสน ครบรายการสายคอมพิวเตอร์/เทคโนโลยีสารสนเทศที่หน้าโครงการระบุ"
+      "decision": "นำเข้า Portfolio 1.1 วิทยาเขตกำแพงแสน ครบรายการสายคอมพิวเตอร์/เทคโนโลยีสารสนเทศที่หน้าโครงการระบุ",
+      "source_checked_at": "2026-09-12"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/110/",
       "publisher": "มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "decision": "นำเข้า Portfolio 1.2 วิทยาเขตกำแพงแสนของวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับ 1 คน"
+      "decision": "นำเข้า Portfolio 1.2 วิทยาเขตกำแพงแสนของวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับ 1 คน",
+      "source_checked_at": "2026-09-12"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/107/",
@@ -816,7 +819,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-07",
+      "source_checked_at": "2026-09-12",
       "decision": "ตรวจซ้ำระบบรับสมัคร TCAS70 และเพิ่มปฏิทินกลางรอบ 1 จากเอกสารทางการ; วันสมัครของโครงการที่คณะดำเนินการยังให้ติดตามประกาศคณะ"
     },
     {
@@ -842,6 +845,30 @@
       "academic_year": 2570,
       "source_checked_at": "2026-09-05T13:09:13+07:00",
       "decision": "ตรวจโครงสร้างหลักสูตรของภาควิชา พบ วศ.บ. วิศวกรรมไอโอทีและสารสนเทศ และเส้นทางหลักสูตรอื่นของภาควิชา; ใน dataset รอบนี้นำเข้าเฉพาะหลักสูตรไทยปกติวิศวกรรมไอโอทีและสารสนเทศตามรายการที่ผู้ใช้กำหนด"
+    },
+    {
+      "url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703",
+      "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-12",
+      "decision": "ตรวจซ้ำรายละเอียดโครงการวิศวกรรมคอมพิวเตอร์ปีการศึกษา 2570; เกณฑ์ที่แสดงตรงกับข้อมูลที่นำเข้า"
+    },
+    {
+      "url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704",
+      "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-12",
+      "decision": "ตรวจซ้ำรายละเอียดโครงการวิศวกรรมคอมพิวเตอร์ปีการศึกษา 2570; เกณฑ์ที่แสดงตรงกับข้อมูลที่นำเข้า"
+    },
+    {
+      "url": "https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=706",
+      "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-12",
+      "decision": "ตรวจซ้ำรายละเอียดโครงการวิศวกรรมคอมพิวเตอร์ปีการศึกษา 2570; เกณฑ์ที่แสดงตรงกับข้อมูลที่นำเข้า"
     }
   ]
 }

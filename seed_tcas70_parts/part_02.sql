@@ -10,6 +10,78 @@ insert into public.admission_projects (
     data_notes, updated_at
 )
 select
+    u.id, 'ku-csc-education-opportunity-1-1', 'ku-csc-education-opportunity', 'โครงการขยายโอกาสทางการศึกษา วิทยาเขตเฉลิมพระเกียรติ จังหวัดสกลนคร', 2570, 1,
+    '1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, null, null,
+    null, 'https://misreg.csc.ku.ac.th/admission/?page_id=63', 'ประกาศรับสมัคร TCAS70 รอบที่ 1 โครงการขยายโอกาสทางการศึกษา',
+    '2026-08-21', '2026-08-23T00:00:00+07:00', 'นำเข้าเฉพาะสาขาสายคอมที่ประกาศจำนวนรับและเกณฑ์แล้ว; วิทยาการคอมพิวเตอร์ไม่มีสัมภาษณ์ และวิศวกรรมคอมพิวเตอร์ต้องผ่าน GPAX ขั้นต่ำตามประกาศ', now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
+    u.id, 'tu-siit-osp-2027', 'tu-siit-osp', 'Outstanding Student Program (OSP)', 2570, 1,
+    '1 Portfolio', 'OSP / Inter Portfolio 1', 'Scholarship exam + Inter Portfolio', 'official',
+    true, null, null,
+    null, 'https://admissions.siit.tu.ac.th/admission_box/outstanding-student-program-osp/', 'Outstanding Student Program (OSP) Academic Year 2027',
+    '2026-03-30', '2026-08-23T00:00:00+07:00', 'เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio', now()
+from public.universities u
+where u.short_name = 'TU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
     u.id, 'kmutt-sit-active-recruitment-2', 'kmutt-sit-active-recruitment', 'โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ', 2570, 1,
     '1 Portfolio', 'ครั้งที่ 2', 'Portfolio', 'official',
     true, null, null,
@@ -50,7 +122,7 @@ select
     '1 Portfolio', 'ทั่วไป', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/b82694a9-f0a6-4a3a-b18f-0de4f1e8bbfc', 'รอบที่ 1 โครงการ Active Recruitment ปีการศึกษา 2570',
-    '2026-08-17', '2026-08-23T00:00:00+07:00', 'นำเข้าเฉพาะหลักสูตรสายคอม/IT/เกมที่มีเกณฑ์และจำนวนรับในเอกสารวันที่ 17 ส.ค. 2569', now()
+    '2026-08-17', '2026-09-03T00:00+07:00', 'GPAX 2.50 เป็นคุณสมบัติขั้นต่ำ ไม่ใช่น้ำหนักคัดเลือก; พิจารณา Game Analysis Essay และการสัมภาษณ์ตามประกาศ', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -2282,7 +2354,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/1/', 'เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-12T19:20:01+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -3581,78 +3653,6 @@ select
     '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 176; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'swu-engineering-cybersecurity-special-talent-1-2', 'swu-engineering-cybersecurity-special-talent', 'โครงการผู้มีทักษะพิเศษ - วิศวกรรมด้านความปลอดภัยไซเบอร์ (หลักสูตรนานาชาติ) • TCAS 1.2', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 178; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
-from public.universities u
-where u.short_name = 'SWU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'ku-bangkhen-sports-1-1', 'ku-bangkhen-sports', 'โครงการรับนักกีฬาดีเด่น', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.ku.ac.th/majors/project/4/', 'เกณฑ์โครงการรับนักกีฬาดีเด่น รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
-from public.universities u
-where u.short_name = 'KU'
 on conflict (code) do update set
         university_id = excluded.university_id,
         group_code = excluded.group_code,
