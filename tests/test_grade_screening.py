@@ -125,6 +125,19 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("GPAX", response["content"])
         self.assertIsInstance(response["view"], app.GradeScreeningFieldView)
 
+    async def test_start_command_acknowledges_and_opens_navigation(self):
+        interaction = make_interaction()
+        with patch.object(
+            app.bot, "load_navigation_programs", new=AsyncMock(return_value=NAVIGATION)
+        ):
+            await app.start.callback(interaction)
+        interaction.response.defer.assert_awaited_once_with(
+            thinking=True, ephemeral=True
+        )
+        response = interaction.edit_original_response.call_args.kwargs
+        self.assertIn("ศูนย์ข้อมูลสมัคร Portfolio", response["content"])
+        self.assertIsInstance(response["view"], app.StartView)
+
     async def test_start_field_grade_university_campus_project_then_result(self):
         interaction = make_interaction()
         interaction.response.send_modal = AsyncMock()

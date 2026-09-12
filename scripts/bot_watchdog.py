@@ -12,15 +12,7 @@ import sys
 import time
 from pathlib import Path
 
-
-def process_is_alive(pid):
-    if not isinstance(pid, int) or pid <= 0:
-        return False
-    try:
-        os.kill(pid, 0)
-    except (OSError, ProcessLookupError):
-        return False
-    return True
+from process_utils import process_is_alive
 
 
 def write_state(path, watchdog_pid, bot_pid):

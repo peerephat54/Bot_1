@@ -31,6 +31,7 @@ from usage_metrics import new_flow_id, record_event
 from user_features import UserFeatureStore, application_close_event, checklist_items_for_project, due_reminders
 from data_quality import load_quality_report
 from question_answering import answer_question
+from scripts.process_utils import process_is_alive
 
 load_dotenv()
 
@@ -91,16 +92,6 @@ def _cache_write(cache, key, value):
         cache[key] = (time.monotonic(), deepcopy(value))
 
 
-def _process_is_alive(pid):
-    if not isinstance(pid, int) or pid <= 0:
-        return False
-    try:
-        os.kill(pid, 0)
-    except (OSError, ProcessLookupError):
-        return False
-    return True
-
-
 def _watchdog_state():
     try:
         return json.loads(BOT_WATCHDOG_STATE.read_text(encoding="utf-8"))
@@ -112,7 +103,7 @@ def start_bot_watchdog():
     """Start one detached watchdog; it can relaunch this bot after a crash."""
     state = _watchdog_state()
     watchdog_pid = state.get("watchdog_pid")
-    if _process_is_alive(watchdog_pid):
+    if process_is_alive(watchdog_pid):
         return watchdog_pid, False
     if not BOT_WATCHDOG_SCRIPT.exists():
         raise FileNotFoundError(BOT_WATCHDOG_SCRIPT)

@@ -5,24 +5,17 @@ offline. Discord cannot deliver /startbot while the bot process is stopped.
 """
 
 import json
-import os
 import subprocess
 import sys
 from pathlib import Path
+
+from process_utils import process_is_alive
 
 
 ROOT = Path(__file__).resolve().parents[1]
 BOT_SCRIPT = ROOT / "Bot_Portfolio.py"
 WATCHDOG_SCRIPT = ROOT / "scripts" / "bot_watchdog.py"
 STATE_FILE = ROOT / "tmp" / "bot_watchdog.json"
-
-
-def process_is_alive(pid):
-    try:
-        os.kill(int(pid), 0)
-    except (OSError, TypeError, ValueError):
-        return False
-    return True
 
 
 def main():
