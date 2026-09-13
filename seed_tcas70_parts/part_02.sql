@@ -14,7 +14,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704', 'รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-13T21:12:44+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -50,7 +50,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704', 'รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-13T21:12:44+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -86,7 +86,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=706', 'รหัสโครงการ 00410608108031 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'เปิดแบบ 1.1 จำนวน 5 คน; หน้าเว็บระบุแบบ 1.2 จำนวน 0 คน', now()
+    null, '2026-09-13T21:12:44+07:00', 'เปิดแบบ 1.1 จำนวน 5 คน; หน้าเว็บระบุแบบ 1.2 จำนวน 0 คน', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -2064,9 +2064,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-1', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-1 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 ถึง 1-5; CURRICULUM_ID 14142, PROJECT_ID 2409 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 ถึง 1-5; CURRICULUM_ID 14142, PROJECT_ID 2409 เป็นรายการรอบ 1-1 ในระบบสมัคร; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2172,9 +2172,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-potential-1-1', 'kmitl-chumphon-cpe-potential', 'โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี 1-1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14187, PROJECT_ID 2413 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14187, PROJECT_ID 2413 เป็นรายการรอบ 1-1 ในระบบสมัคร; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2208,9 +2208,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-2', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-2 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2244,9 +2244,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-3', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-3 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.3', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.3; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.3; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2280,9 +2280,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-4', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-4 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.4', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.4; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.4; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2316,9 +2316,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-5', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-5 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.5', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1.5; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.5; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2388,9 +2388,9 @@ insert into public.admission_projects (
 select
     u.id, 'kmitl-chumphon-cpe-potential-1-2', 'kmitl-chumphon-cpe-potential', 'โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี 1-2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2', now()
+    true, null, null,
+    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set

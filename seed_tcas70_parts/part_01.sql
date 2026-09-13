@@ -330,7 +330,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
-    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-13T18:33:06+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-13T21:12:44+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
     '2026-12-11', '2026-12-19', null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -3310,7 +3310,7 @@ select
     '1 Portfolio', 'ICT', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-1-ict-portfolio-academic-year-2027/', 'ประกาศ! รอบ 1 ICT – Portfolio ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-07T23:20:07+07:00', 'ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569', now()
+    '2026-07-02', '2026-09-13T21:12:44+07:00', 'ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3418,7 +3418,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703', 'รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-13T21:12:44+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3454,7 +3454,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703', 'รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-13T21:12:44+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set

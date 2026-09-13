@@ -120,7 +120,7 @@ class NavigationTests(unittest.IsolatedAsyncioTestCase):
         )
         selector = next(c for c in view.children if isinstance(c, discord.ui.Select))
         self.assertEqual(selector.placeholder, "เลือกโครงการเพื่อดูรายละเอียด")
-        self.assertIn("✅ ยืนยันแล้ว", selector.options[0].description)
+        self.assertIn("🟡 รอตรวจ", selector.options[0].description)
         button_labels = [getattr(c, "label", None) for c in view.children]
         self.assertIn("← เลือกมหาวิทยาลัย", button_labels)
         self.assertNotIn("ก่อนหน้า", button_labels)

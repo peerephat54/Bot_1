@@ -1,6 +1,7 @@
 import copy
 import copy
 import unittest
+from datetime import date
 
 from application_cards import UNKNOWN, application_question_fields, readable
 from test_grade_screening import CANDIDATES, app, card_text, results
@@ -45,10 +46,36 @@ class ApplicationCardTests(unittest.TestCase):
         self.assertIn("ต้องทำอะไรต่อ:", text)
 
     def test_status_badges_are_short_and_distinguishable(self):
-        self.assertEqual(app.source_status_badge({"publication_status": "official"}), "✅ ยืนยันแล้ว")
-        self.assertEqual(app.source_status_badge({"publication_status": "draft_waiting_official"}), "🟡 รอประกาศ")
-        self.assertIn("ข้อมูลปีก่อน", app.source_status_badge({"reference_academic_year": 2569}))
-        self.assertEqual(app.source_status_badge({}), "🔎 ต้องตรวจเพิ่ม")
+        fresh = {
+            "publication_status": "official",
+            "source_url": "https://admissions.example.edu/project",
+            "source_checked_at": "2026-08-31",
+        }
+        self.assertEqual(
+            app.source_status_badge(fresh, today=date(2026, 8, 31)),
+            "✅ ยืนยันแล้ว",
+        )
+        self.assertEqual(
+            app.source_status_badge(fresh, today=date(2026, 9, 8)),
+            "🔄 ควรตรวจซ้ำ",
+        )
+        self.assertEqual(app.source_status_badge({"publication_status": "draft_waiting_official"}), "🟡 รอตรวจ")
+        self.assertEqual(
+            app.source_status_badge({"reference_academic_year": 2569}),
+            "🟡 รอตรวจ",
+        )
+        self.assertEqual(app.source_status_badge({}), "🟡 รอตรวจ")
+
+    def test_quality_dashboard_shows_statuses_review_queue_and_source_links(self):
+        embed = app.build_quality_embed()
+        fields = {field.name: field.value for field in embed.fields}
+        status = fields["สถานะโครงการ"]
+        self.assertIn("ยืนยันแล้ว:", status)
+        self.assertIn("รอตรวจ:", status)
+        self.assertIn("ควรตรวจซ้ำ:", status)
+        self.assertIn("คิวตรวจถัดไป", fields)
+        self.assertIn("https://", fields["คิวตรวจถัดไป"])
+        self.assertIsNotNone(app.bot.tree.get_command("data_quality"))
 
     def test_structured_criteria_are_written_as_readable_text(self):
         methods = app.format_selection_methods([
@@ -104,6 +131,17 @@ class ApplicationCardTests(unittest.TestCase):
         self.assertIn(
             "ข้อมูลอ้างอิง TCAS69",
             app.source_status_text({"reference_academic_year": 2569}),
+        )
+        self.assertIn(
+            "ก่อนสมัคร",
+            app.source_status_text(
+                {
+                    "publication_status": "official",
+                    "source_url": "https://admissions.example.edu/project",
+                    "source_checked_at": "2026-08-01",
+                },
+                today=date(2026, 8, 31),
+            ),
         )
 
     def test_unknown_is_not_free_no_test_or_no_portfolio(self):

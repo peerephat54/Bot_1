@@ -138,6 +138,62 @@ class GradeFlowTests(unittest.IsolatedAsyncioTestCase):
         self.assertIn("ศูนย์ข้อมูลสมัคร Portfolio", response["content"])
         self.assertIsInstance(response["view"], app.StartView)
 
+    async def test_comparison_selector_includes_multiple_universities(self):
+        interaction = make_interaction()
+        start = app.StartView(42, NAVIGATION)
+
+        await start.compare_programs.callback(interaction)
+
+        response = interaction.response.edit_message.call_args.kwargs
+        self.assertIn("ข้ามมหาวิทยาลัย", response["content"])
+        view = response["view"]
+        self.assertIsInstance(view, app.CompareProgramView)
+        selector = next(item for item in view.children if isinstance(item, app.CompareProgramSelect))
+        option_universities = {option.label.split(" — ", 1)[0] for option in selector.options}
+        self.assertGreaterEqual(len(option_universities), 2)
+        self.assertIn("วิทยาเขต", selector.options[0].description)
+
+    async def test_select_programs_across_universities_then_compare(self):
+        view = app.CompareProgramView(42, NAVIGATION)
+        selector = next(item for item in view.children if isinstance(item, app.CompareProgramSelect))
+        first = selector.programs[0]
+        second = next(
+            program for program in view.programs[25:]
+            if program["university_short_name"] != first["university_short_name"]
+        )
+        interaction = make_interaction()
+
+        selector._values = [first["code"]]
+        await selector.callback(interaction)
+        view = interaction.response.edit_message.call_args.kwargs["view"]
+        self.assertEqual(view.selected_codes, [first["code"]])
+        self.assertTrue(view.compare_selected.disabled)
+
+        await view.next_page.callback(interaction)
+        view = interaction.response.edit_message.call_args.kwargs["view"]
+        self.assertEqual(view.page, 1)
+        self.assertEqual(view.selected_codes, [first["code"]])
+        selector = next(item for item in view.children if isinstance(item, app.CompareProgramSelect))
+        selector._values = [second["code"]]
+        interaction.response.edit_message.reset_mock()
+        await selector.callback(interaction)
+        view = interaction.response.edit_message.call_args.kwargs["view"]
+        self.assertEqual(view.selected_codes, [first["code"], second["code"]])
+        self.assertFalse(view.compare_selected.disabled)
+
+        records = {
+            program["code"]: {**program, "projects": [], "admission_previews": []}
+            for program in (first, second)
+        }
+        interaction.response.defer.reset_mock()
+        with patch.object(app, "fetch_program_projects", side_effect=records.__getitem__):
+            await view.compare_selected.callback(interaction)
+        interaction.response.defer.assert_awaited_once_with()
+        result = interaction.edit_original_response.call_args.kwargs
+        self.assertEqual(len(result["embeds"][0].fields), 2)
+        self.assertIn(first["university_short_name"], result["embeds"][0].fields[0].name)
+        self.assertIn(second["university_short_name"], result["embeds"][0].fields[1].name)
+
     async def test_start_field_grade_university_campus_project_then_result(self):
         interaction = make_interaction()
         interaction.response.send_modal = AsyncMock()

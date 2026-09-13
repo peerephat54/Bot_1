@@ -641,7 +641,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"official_curriculum_id":14142,"official_project_id":2409,"announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-1'
@@ -740,7 +740,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทุกจังหวัดทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF; ประวัติไม่เกิน 1 หน้า A4; ผลงาน/รางวัล/กิจกรรมค่ายวิชาการ ด้าน STEM วิศวกรรมศาสตร์ หรือวิทยาศาสตร์ไม่เกิน 3 ผลงาน; ประกาศนียบัตรค่ายหรือโครงการวิชาการ ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"official_curriculum_id":14187,"official_project_id":2413,"announced_variants":["1.1","1.2"],"announced_slots_across_variants":15}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 2.75; Portfolio เน้น STEM/วิศวกรรม/วิทยาศาสตร์ 50 + สัมภาษณ์ 50',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-potential-1-1'
@@ -773,7 +773,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.2","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-2'
@@ -806,7 +806,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.3","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-3'
@@ -839,7 +839,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.4","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-4'
@@ -872,7 +872,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.5","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_08_04-11-01-24_a74b5.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-5'
@@ -938,7 +938,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทุกจังหวัดทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF; ประวัติไม่เกิน 1 หน้า A4; ผลงาน/รางวัล/กิจกรรมค่ายวิชาการ ด้าน STEM วิศวกรรมศาสตร์ หรือวิทยาศาสตร์ไม่เกิน 3 ผลงาน; ประกาศนียบัตรค่ายหรือโครงการวิชาการ ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.2","announced_variants":["1.1","1.2"],"announced_slots_across_variants":15}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 2.75; Portfolio เน้น STEM/วิศวกรรม/วิทยาศาสตร์ 50 + สัมภาษณ์ 50',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_08_04-11-30-08_2461b.pdf', now()
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-potential-1-2'

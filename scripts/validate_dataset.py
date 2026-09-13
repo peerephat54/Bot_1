@@ -267,8 +267,14 @@ def validate(data):
             errors.append(f"academic year mismatch: {code}")
         source_url = project.get("source_url")
         host = urlparse(source_url or "").hostname
-        if not source_url or host not in OFFICIAL_HOSTS.get(university, set()):
+        if (
+            not source_url
+            or urlparse(source_url).scheme != "https"
+            or host not in OFFICIAL_HOSTS.get(university, set())
+        ):
             errors.append(f"unapproved source host for {code}: {host}")
+        if not project.get("source_checked_at"):
+            errors.append(f"project missing source check date: {code}")
 
     duplicate_variants = duplicate_values(variants)
     if duplicate_variants:

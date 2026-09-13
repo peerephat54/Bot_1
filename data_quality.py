@@ -4,8 +4,13 @@ from __future__ import annotations
 
 import json
 from collections import Counter
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urlparse
+
+
+SOURCE_FRESHNESS_DAYS = 7
+THAILAND_TZ = timezone(timedelta(hours=7))
 
 
 def _date(value):
@@ -15,24 +20,81 @@ def _date(value):
         return None
 
 
+def classify_project_source_status(project, *, today=None, fallback_checked_at=None):
+    """Classify source verification freshness, not whether applications are open."""
+    project = project or {}
+    if project.get("publication_status") not in {"official", "closed"}:
+        return "pending"
+
+    url = urlparse(str(project.get("source_url") or ""))
+    if url.scheme != "https" or not url.hostname:
+        return "pending"
+
+    checked = _date(project.get("source_checked_at") or fallback_checked_at)
+    if checked is None:
+        return "pending"
+
+    today = today or datetime.now(THAILAND_TZ).date()
+    age_days = (today - checked).days
+    if age_days < 0:
+        return "pending"
+    if age_days > SOURCE_FRESHNESS_DAYS:
+        return "needs_recheck"
+    return "confirmed"
+
+
 def build_quality_report(payload, *, today=None):
-    today = today or date.today()
+    today = today or datetime.now(THAILAND_TZ).date()
     programs = payload.get("programs") or []
     projects = payload.get("projects") or []
     criteria = payload.get("criteria") or []
     timeline = payload.get("timeline") or []
     sources = payload.get("source_audit", {}).get("sources") or []
     official_projects = [item for item in projects if item.get("publication_status") == "official" or item.get("data_status") == "official"]
+    today = today or date.today()
+    audit_by_url = {
+        item.get("url"): item
+        for item in sources
+        if item.get("url")
+    }
     status_counts = Counter()
+    review_projects = []
     for project in projects:
-        if project.get("publication_status") == "official" or project.get("data_status") == "official":
-            status_counts["confirmed"] += 1
-        elif project.get("publication_status") == "draft_waiting_official":
-            status_counts["pending"] += 1
-        elif project.get("reference_academic_year"):
-            status_counts["reference"] += 1
-        else:
-            status_counts["needs_review"] += 1
+        source_audit = audit_by_url.get(project.get("source_url"), {})
+        checked_at = project.get("source_checked_at") or source_audit.get("source_checked_at")
+        status = classify_project_source_status(
+            project,
+            today=today,
+            fallback_checked_at=checked_at,
+        )
+        status_counts[status] += 1
+        if status == "pending":
+            if project.get("reference_academic_year"):
+                status_counts["reference"] += 1
+            if project.get("publication_status") == "draft_waiting_official":
+                status_counts["awaiting_announcement"] += 1
+            else:
+                status_counts["needs_review"] += 1
+        if status in {"pending", "needs_recheck"}:
+            review_projects.append({
+                "code": project.get("code"),
+                "name": project.get("name") or project.get("code") or "ไม่ระบุโครงการ",
+                "university_short_name": project.get("university_short_name") or "มหาวิทยาลัย",
+                "status": status,
+                "source_url": project.get("source_url"),
+                "source_title": project.get("source_title"),
+                "source_checked_at": checked_at,
+                "_checked_date": _date(checked_at),
+            })
+    review_projects.sort(
+        key=lambda item: (
+            0 if item["status"] == "pending" else 1,
+            item["_checked_date"] or date.min,
+            item["code"] or "",
+        )
+    )
+    for item in review_projects:
+        item.pop("_checked_date", None)
     source_dates = [_date(item.get("source_checked_at")) for item in sources]
     source_dates = [item for item in source_dates if item]
     missing_project_source = sum(not item.get("source_url") for item in projects)
@@ -47,6 +109,7 @@ def build_quality_report(payload, *, today=None):
         "projects": len(projects),
         "official_projects": len(official_projects),
         "project_status_counts": dict(status_counts),
+        "projects_requiring_review": review_projects,
         "criteria_rows": len(criteria),
         "timeline_rows": len(timeline),
         "projects_with_criteria": len(project_codes & criteria_project_codes),
@@ -54,6 +117,21 @@ def build_quality_report(payload, *, today=None):
         "projects_without_criteria": len(project_codes - criteria_project_codes),
         "projects_without_timeline": len(project_codes - timeline_project_codes),
         "projects_without_source": missing_project_source,
+        "projects_without_checked_date": sum(
+            not (
+                item.get("source_checked_at")
+                or audit_by_url.get(item.get("source_url"), {}).get("source_checked_at")
+            )
+            for item in projects
+        ),
+        "projects_with_source_and_checked_date": sum(
+            bool(item.get("source_url"))
+            and bool(
+                item.get("source_checked_at")
+                or audit_by_url.get(item.get("source_url"), {}).get("source_checked_at")
+            )
+            for item in projects
+        ),
         "audited_sources": len(sources),
         "stale_sources": sum((today - item).days > 7 for item in source_dates),
         "latest_source_check": max(source_dates).isoformat() if source_dates else None,

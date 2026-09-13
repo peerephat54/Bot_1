@@ -29,7 +29,11 @@ from local_admissions import load_catalog, local_candidates, calendar_fields
 from rule_engine import evaluate_application_rules, render_rule_checks, render_rule_trace
 from usage_metrics import new_flow_id, record_event
 from user_features import UserFeatureStore, application_close_event, checklist_items_for_project, due_reminders
-from data_quality import load_quality_report
+from data_quality import (
+    SOURCE_FRESHNESS_DAYS,
+    classify_project_source_status,
+    load_quality_report,
+)
 from question_answering import answer_question
 from scripts.process_utils import process_is_alive
 
@@ -865,39 +869,47 @@ def shorten(value, limit=1024):
     return text[: limit - 1].rstrip() + "…"
 
 
-def source_status_text(record, current_year=2570):
-    """Explain whether a record is current, preliminary, or historical."""
+def source_status_text(record, current_year=2570, today=None):
+    """Explain source verification freshness without implying application status."""
     record = record or {}
     publication_status = record.get("publication_status")
-    if publication_status == "official":
+    verification_status = classify_project_source_status(record, today=today)
+    if verification_status == "confirmed":
         return "ยืนยันแล้ว — มีประกาศโครงการ TCAS70 ทางการ"
+    if verification_status == "needs_recheck":
+        checked = format_checked_at(record.get("source_checked_at"))
+        return (
+            f"ควรตรวจซ้ำ — ตรวจแหล่งข้อมูลล่าสุด {checked} เกิน {SOURCE_FRESHNESS_DAYS} วัน "
+            "ควรตรวจประกาศทางการอีกครั้งก่อนสมัคร"
+        )
     if publication_status == "draft_waiting_official":
         return "ยังไม่ยืนยัน — รอประกาศรับสมัครฉบับสมบูรณ์"
 
+    if publication_status in {"official", "closed"}:
+        return "รอตรวจ — ต้องมีลิงก์ HTTPS และวันที่ตรวจแหล่งทางการล่าสุด"
+
     reference_year = record.get("reference_academic_year")
     if reference_year == current_year:
-        return "ยังไม่ยืนยัน — พบข้อมูลปี 2570 แต่ยังไม่มีประกาศฉบับสมบูรณ์"
+        return "รอตรวจ — พบข้อมูล TCAS70 เบื้องต้น แต่ยังไม่มีประกาศฉบับสมบูรณ์"
     if reference_year:
         return (
-            f"ข้อมูลอ้างอิง TCAS{str(reference_year)[-2:]} "
-            "— ไม่ใช้ยืนยันเกณฑ์สมัคร TCAS70"
+            f"รอตรวจ — ข้อมูลอ้างอิง TCAS{str(reference_year)[-2:]} "
+            "ไม่ใช้ยืนยัน TCAS70"
         )
     if record.get("source_url"):
-        return "มีแหล่งข้อมูลทางการ — สถานะโครงการยังต้องตรวจเพิ่ม"
-    return "ยังไม่ยืนยัน — ยังไม่มีประกาศโครงการในข้อมูลนี้"
+        return "รอตรวจ — มีลิงก์ แต่สถานะโครงการยังไม่ยืนยัน"
+    return "รอตรวจ — ยังไม่มีประกาศโครงการในข้อมูลนี้"
 
 
-def source_status_badge(record, current_year=2570):
+def source_status_badge(record, current_year=2570, today=None):
     """Return a short, scannable status label for menus and summary cards."""
     record = record or {}
-    if record.get("publication_status") == "official":
+    verification_status = classify_project_source_status(record, today=today)
+    if verification_status == "confirmed":
         return "✅ ยืนยันแล้ว"
-    if record.get("publication_status") == "draft_waiting_official":
-        return "🟡 รอประกาศ"
-    reference_year = record.get("reference_academic_year")
-    if reference_year and reference_year < current_year:
-        return f"📘 ข้อมูลปีก่อน (TCAS{str(reference_year)[-2:]})"
-    return "🔎 ต้องตรวจเพิ่ม"
+    if verification_status == "needs_recheck":
+        return "🔄 ควรตรวจซ้ำ"
+    return "🟡 รอตรวจ"
 
 
 def source_reference_line(record, fallback_url=None, fallback_title=None):
@@ -1628,7 +1640,7 @@ def build_program_profile_embed(program, section="summary", reference_index=0):
             value=(
                 f"{status}\n"
                 f"{program_source_status_line(program, current_previews, include_source=False)}\n"
-                "ตรวจประกาศล่าสุดจากลิงก์คณะก่อนสมัคร"
+                "ตรวจประกาศทางการก่อนสมัคร"
             ),
             inline=False,
         )
@@ -2009,11 +2021,33 @@ def build_quality_embed():
         f"ไม่มีกำหนดการ: {report['projects_without_timeline']} โครงการ\n"
         f"ไม่มีลิงก์ต้นทาง: {report['projects_without_source']} โครงการ"
     )
+    review_projects = report.get("projects_requiring_review") or []
+    review_lines = []
+    for project in review_projects[:5]:
+        badge = "🔄 ควรตรวจซ้ำ" if project["status"] == "needs_recheck" else "🟡 รอตรวจ"
+        source_url = project.get("source_url")
+        title = shorten(
+            project.get("source_title") or project.get("name") or project.get("code"),
+            55,
+        )
+        source_link = f"[{title}]({source_url})" if source_url else "ไม่มีลิงก์ทางการ"
+        checked = format_checked_at(project.get("source_checked_at"))
+        review_lines.append(
+            f"{badge} {project.get('university_short_name')} • {source_link} • ตรวจ {checked}"
+        )
+    if review_projects:
+        review_lines.append(
+            f"แสดง {min(5, len(review_projects))}/{len(review_projects)} รายการแรกตามคิวตรวจ"
+        )
+    else:
+        review_lines.append("ไม่มีรายการค้างตรวจตามเกณฑ์ปัจจุบัน")
     embed = discord.Embed(
         title="Data Quality Dashboard",
         description=(
             "ภาพรวม dataset ที่บอทใช้อ่านแบบ snapshot ไม่ใช่การตรวจเว็บสด "
-            "รายการที่ขาดต้องตรวจจากประกาศทางการก่อนนำไปใช้งาน"
+            f"ยืนยันแล้ว = ตรวจภายใน {SOURCE_FRESHNESS_DAYS} วัน; "
+            f"ควรตรวจซ้ำ = เกิน {SOURCE_FRESHNESS_DAYS} วันนับจากวันที่ตรวจ "
+            "ไม่ได้หมายความว่าปิดรับสมัคร"
         ),
         color=discord.Color.blue(),
     )
@@ -2023,7 +2057,7 @@ def build_quality_embed():
             f"มหาวิทยาลัย {report['universities']} แห่ง\n"
             f"วิทยาเขต {report['campuses']} แห่ง\n"
             f"หลักสูตร {report['programs']} สาขา\n"
-            f"โครงการ {report['projects']} รายการ ({report['official_projects']} ยืนยันแล้ว)"
+            f"โครงการ {report['projects']} รายการ ({report['official_projects']} มีประกาศทางการ)"
         ),
         inline=True,
     )
@@ -2032,14 +2066,27 @@ def build_quality_embed():
         name="สถานะโครงการ",
         value=(
             f"ยืนยันแล้ว: {status_counts.get('confirmed', 0)}\n"
-            f"รอตรวจประกาศ: {status_counts.get('pending', 0)}\n"
-            f"ข้อมูลอ้างอิง: {status_counts.get('reference', 0)}\n"
-            f"ต้องตรวจเพิ่ม: {status_counts.get('needs_review', 0)}"
+            f"รอตรวจ: {status_counts.get('pending', 0)}\n"
+            f"ควรตรวจซ้ำ: {status_counts.get('needs_recheck', 0)}"
         ),
         inline=True,
     )
     embed.add_field(name="Coverage", value=coverage, inline=True)
     embed.add_field(name="จุดที่ต้องตรวจเพิ่ม", value=missing, inline=False)
+    embed.add_field(
+        name="ลิงก์และวันที่ตรวจ",
+        value=(
+            f"ลิงก์ + วันที่ตรวจครบ: "
+            f"{report['projects_with_source_and_checked_date']}/{report['projects']} โครงการ\n"
+            f"ไม่มีวันที่ตรวจ: {report['projects_without_checked_date']} โครงการ"
+        ),
+        inline=False,
+    )
+    embed.add_field(
+        name="คิวตรวจถัดไป",
+        value="\n".join(review_lines),
+        inline=False,
+    )
     embed.add_field(
         name="Source audit",
         value=(
@@ -2756,6 +2803,14 @@ def build_program_comparison_embed(programs):
         color=discord.Color.teal(),
     )
     for program in programs:
+        university = first_relation(program.get("universities"))
+        campus = first_relation(program.get("university_campuses"))
+        university_short_name = (
+            university.get("short_name") or program.get("university_short_name") or "มหาวิทยาลัย"
+        )
+        campus_name = campus.get("name") or program.get("campus_name") or "ไม่ระบุวิทยาเขต"
+        faculty_name = program.get("faculty_name") or "ไม่ระบุคณะ"
+        major_name = program.get("major_name") or faculty_name
         projects = program.get("projects") or []
         previews = program.get("admission_previews") or []
         criteria_rows = [item.get("selected_criteria") or {} for item in projects]
@@ -2786,7 +2841,14 @@ def build_program_comparison_embed(programs):
             else "ไม่มีลิงก์หลักสูตร"
         )
         if projects:
-            status_text = "มีประกาศ TCAS70 ยืนยันแล้ว"
+            verification_counts = {"confirmed": 0, "pending": 0, "needs_recheck": 0}
+            for project in projects:
+                verification_counts[classify_project_source_status(project)] += 1
+            status_text = (
+                f"สถานะประกาศ TCAS70: ยืนยัน {verification_counts['confirmed']} • "
+                f"รอตรวจ {verification_counts['pending']} • "
+                f"ควรตรวจซ้ำ {verification_counts['needs_recheck']}"
+            )
             source_url = next(
                 (item.get("source_url") for item in projects if item.get("source_url")),
                 None,
@@ -2806,7 +2868,7 @@ def build_program_comparison_embed(programs):
                 "เรียนเกี่ยวกับ: " + shorten(program_study_overview(program), 220),
                 "จุดเน้น: " + shorten(program_focus_summary(program), 180),
                 "หลักสูตร: " + shorten(program_curriculum_summary(program), 220),
-                f"โครงการยืนยันแล้ว: {len(projects)}",
+                f"จำนวนโครงการ: {len(projects)}",
                 f"GPAX: {gpax_text or 'ต้องดูรายประเภท'}",
                 f"ค่าเรียน: {tuition_text}",
             ]
@@ -2970,8 +3032,9 @@ def build_program_comparison_embed(programs):
             ]
             source_link = "ยังไม่มีประกาศหรือข้อมูลอ้างอิง"
         embed.add_field(
-            name=shorten(program.get("major_name") or program.get("faculty_name"), 256),
+            name=shorten(f"{university_short_name} • {major_name}", 256),
             value=(
+                f"**คณะ/วิทยาเขต:** {shorten(f'{faculty_name} • {campus_name}', 180)}\n"
                 f"**สถานะ:** {status_text}\n"
                 f"ภาษา: {display_value(program.get('language'))}\n"
                 + "\n".join(detail_lines)
@@ -3696,97 +3759,163 @@ class BeginnerAgainButton(discord.ui.Button):
         )
 
 
-class CompareUniversitySelect(discord.ui.Select):
-    def __init__(self, navigation_programs):
-        universities = sorted(
-            {
-                (item["university_short_name"], item["university_name"])
-                for item in navigation_programs
-            },
-            key=lambda item: item[1].casefold(),
-        )
-        super().__init__(
-            placeholder="เลือกมหาวิทยาลัยที่จะเปรียบเทียบ",
-            options=[
-                discord.SelectOption(
-                    label=shorten(f"{short_name} — {name}", 100),
-                    value=short_name,
-                )
-                for short_name, name in universities
-            ],
-        )
+def comparison_programs(navigation_programs):
+    """Interleave universities so each selector page can compare across them."""
+    universities = {}
+    for program in navigation_programs:
+        code = program.get("code")
+        if not code:
+            continue
+        short_name = program.get("university_short_name") or "มหาวิทยาลัย"
+        universities.setdefault(short_name, {})[code] = program
 
-    async def callback(self, interaction: discord.Interaction):
-        parent = self.view
-        university = self.values[0]
-        programs = [
-            item
-            for item in parent.navigation_programs
-            if item["university_short_name"] == university
-        ]
-        if len(programs) < 2:
-            await interaction.response.edit_message(
-                content=(
-                    f"ตอนนี้ {university} มีหลักสูตรในขอบเขตบอทไม่ถึง 2 สาขา "
-                    "จึงยังเปรียบเทียบไม่ได้ เลือกมหาวิทยาลัยอื่นได้ด้านล่าง"
-                ),
-                embeds=[],
-                view=parent,
-            )
-            return
-        await interaction.response.edit_message(
-            content=(
-                f"## เปรียบเทียบหลักสูตรใน {university}\n"
-                "เลือก 2–3 สาขา ระบบจะแสดงสถานะ ภาษา จำนวนโครงการ GPAX ต่ำสุด "
-                "ค่าเรียน และลิงก์ทางการ"
+    ordered = {
+        short_name: sorted(
+            programs.values(),
+            key=lambda item: (
+                (item.get("major_name") or item.get("faculty_name") or "").casefold(),
+                item["code"],
             ),
-            embeds=[],
-            view=CompareProgramView(parent.owner_id, parent.navigation_programs, programs),
         )
+        for short_name, programs in sorted(universities.items())
+    }
+    result = []
+    for index in range(max((len(items) for items in ordered.values()), default=0)):
+        for short_name in ordered:
+            if index < len(ordered[short_name]):
+                result.append(ordered[short_name][index])
+    return result
 
 
-class CompareUniversityView(OwnedView):
-    def __init__(self, owner_id, navigation_programs):
-        super().__init__(owner_id)
-        self.navigation_programs = navigation_programs
-        self.add_item(CompareUniversitySelect(navigation_programs))
-
-    @discord.ui.button(label="← หน้าเริ่มต้น", style=discord.ButtonStyle.secondary, row=1)
-    async def back_to_start(self, interaction, button):
-        del button
-        await interaction.response.edit_message(
-            content=start_menu_content(self.navigation_programs),
-            embeds=[],
-            view=StartView(self.owner_id, self.navigation_programs),
+def compare_selection_content(programs, selected_codes, page, total_pages):
+    by_code = {program["code"]: program for program in programs}
+    selected_lines = []
+    for index, code in enumerate(selected_codes, start=1):
+        program = by_code.get(code, {})
+        selected_lines.append(
+            f"{index}. {program.get('university_short_name', 'มหาวิทยาลัย')} — "
+            f"{program.get('major_name') or program.get('faculty_name', 'ไม่ระบุสาขา')}"
         )
+    selected_text = "\n".join(selected_lines) if selected_lines else "ยังไม่ได้เลือก"
+    return (
+        "## เปรียบเทียบหลักสูตร\n"
+        "เลือกได้ 2–3 สาขา จะเลือกจากมหาวิทยาลัยเดียวกันหรือข้ามมหาวิทยาลัยก็ได้\n"
+        "ชื่อรายการขึ้นต้นด้วยตัวย่อมหาวิทยาลัย และระบุคณะ/วิทยาเขตในคำอธิบาย\n\n"
+        f"**เลือกแล้ว {len(selected_codes)}/3:**\n{selected_text}\n\n"
+        f"หน้า {page + 1}/{total_pages} • เลือกสาขาเพิ่มจากรายการด้านล่าง"
+    )
 
 
 class CompareProgramSelect(discord.ui.Select):
     def __init__(self, programs):
         self.programs = programs
         super().__init__(
-            placeholder="เลือก 2–3 สาขา",
-            min_values=2,
-            max_values=min(3, len(programs)),
+            placeholder="เลือกสาขาได้ทั้งในและข้ามมหาวิทยาลัย",
+            min_values=1,
+            max_values=1,
             options=[
                 discord.SelectOption(
-                    label=shorten(item["major_name"], 100),
+                    label=shorten(
+                        f"{item.get('university_short_name', 'มหาวิทยาลัย')} — "
+                        f"{item.get('major_name') or item.get('faculty_name', 'ไม่ระบุสาขา')}",
+                        100,
+                    ),
                     value=item["code"],
-                    description=shorten(item["faculty_name"], 100),
+                    description=shorten(
+                        f"{item.get('faculty_name', 'ไม่ระบุคณะ')} • "
+                        f"{item.get('campus_name', 'ไม่ระบุวิทยาเขต')}",
+                        100,
+                    ),
                 )
                 for item in programs[:25]
             ],
         )
 
     async def callback(self, interaction: discord.Interaction):
+        parent = self.view
+        code = self.values[0]
+        if code in parent.selected_codes:
+            await interaction.response.send_message(
+                "เลือกหลักสูตรนี้ไว้แล้วครับ เลือกสาขาอื่นหรือเอารายการล่าสุดออกได้",
+                ephemeral=True,
+            )
+            return
+        if len(parent.selected_codes) >= 3:
+            await interaction.response.send_message(
+                "เลือกครบ 3 สาขาแล้ว กดเปรียบเทียบหรือเอารายการล่าสุดออกก่อนครับ",
+                ephemeral=True,
+            )
+            return
+        selected_codes = [*parent.selected_codes, code]
+        view = CompareProgramView(
+            parent.owner_id,
+            parent.navigation_programs,
+            page=parent.page,
+            selected_codes=selected_codes,
+        )
+        await interaction.response.edit_message(
+            content=compare_selection_content(
+                view.programs, view.selected_codes, view.page, view.total_pages
+            ),
+            embeds=[],
+            view=view,
+        )
+
+
+class CompareProgramView(OwnedView):
+    def __init__(self, owner_id, navigation_programs, page=0, selected_codes=None):
+        super().__init__(owner_id)
+        self.navigation_programs = navigation_programs
+        self.programs = comparison_programs(navigation_programs)
+        self.selected_codes = list(selected_codes or [])
+        self.total_pages = max(1, (len(self.programs) + SELECT_PAGE_SIZE - 1) // SELECT_PAGE_SIZE)
+        self.page = max(0, min(page, self.total_pages - 1))
+        start = self.page * SELECT_PAGE_SIZE
+        if self.programs:
+            self.add_item(CompareProgramSelect(self.programs[start : start + SELECT_PAGE_SIZE]))
+        else:
+            self.add_item(HomeButton())
+        if self.total_pages == 1:
+            self.remove_item(self.previous_page)
+            self.remove_item(self.next_page)
+        else:
+            self.previous_page.disabled = self.page == 0
+            self.next_page.disabled = self.page >= self.total_pages - 1
+        self.compare_selected.disabled = len(self.selected_codes) < 2
+        self.remove_last_selection.disabled = not self.selected_codes
+        if len(self.selected_codes) >= 3:
+            next(item for item in self.children if isinstance(item, CompareProgramSelect)).disabled = True
+
+    async def show_page(self, interaction, page):
+        view = CompareProgramView(
+            self.owner_id, self.navigation_programs, page, self.selected_codes
+        )
+        await interaction.response.edit_message(
+            content=compare_selection_content(
+                view.programs, view.selected_codes, view.page, view.total_pages
+            ),
+            embeds=[],
+            view=view,
+        )
+
+    @discord.ui.button(label="◀ ก่อนหน้า", style=discord.ButtonStyle.secondary, row=1)
+    async def previous_page(self, interaction, button):
+        del button
+        await self.show_page(interaction, self.page - 1)
+
+    @discord.ui.button(label="ถัดไป ▶", style=discord.ButtonStyle.secondary, row=1)
+    async def next_page(self, interaction, button):
+        del button
+        await self.show_page(interaction, self.page + 1)
+
+    @discord.ui.button(label="เปรียบเทียบ 2–3 สาขา", style=discord.ButtonStyle.primary, row=2, disabled=True)
+    async def compare_selected(self, interaction, button):
+        del button
         await interaction.response.defer()
         try:
             programs = await asyncio.wait_for(
                 asyncio.gather(
-                    *(
-                        asyncio.to_thread(fetch_program_projects, code)
-                        for code in self.values
-                    )
+                    *(asyncio.to_thread(fetch_program_projects, code) for code in self.selected_codes)
                 ),
                 timeout=20,
             )
@@ -3794,33 +3923,42 @@ class CompareProgramSelect(discord.ui.Select):
             await interaction.edit_original_response(
                 content=(
                     "## ผลเปรียบเทียบ\n"
-                    "ใช้ช่วยเลือกหลักสูตรที่จะอ่านต่อ ไม่ใช่การจัดอันดับมหาวิทยาลัย"
+                    "เลือกได้ทั้งหลักสูตรในมหาวิทยาลัยเดียวกันและข้ามมหาวิทยาลัย "
+                    "ผลนี้ใช้ช่วยเลือกหลักสูตรที่จะอ่านต่อ ไม่ใช่การจัดอันดับมหาวิทยาลัย"
                 ),
                 embeds=[build_program_comparison_embed(programs)],
-                view=self.view,
+                view=self,
             )
         except Exception:
-            logger.exception("program comparison failed codes=%s", self.values)
+            logger.exception("program comparison failed codes=%s", self.selected_codes)
             await interaction.edit_original_response(
                 content="เปรียบเทียบไม่สำเร็จ กรุณาลองเลือกใหม่",
                 embeds=[],
-                view=self.view,
+                view=self,
             )
 
+    @discord.ui.button(label="ยกเลิกอันล่าสุด", style=discord.ButtonStyle.secondary, row=2, disabled=True)
+    async def remove_last_selection(self, interaction, button):
+        del button
+        selected_codes = self.selected_codes[:-1]
+        view = CompareProgramView(
+            self.owner_id, self.navigation_programs, self.page, selected_codes
+        )
+        await interaction.response.edit_message(
+            content=compare_selection_content(
+                view.programs, view.selected_codes, view.page, view.total_pages
+            ),
+            embeds=[],
+            view=view,
+        )
 
-class CompareProgramView(OwnedView):
-    def __init__(self, owner_id, navigation_programs, programs):
-        super().__init__(owner_id)
-        self.navigation_programs = navigation_programs
-        self.add_item(CompareProgramSelect(programs))
-
-    @discord.ui.button(label="← เลือกมหาวิทยาลัย", style=discord.ButtonStyle.secondary, row=1)
-    async def back_to_university(self, interaction, button):
+    @discord.ui.button(label="← หน้าเริ่มต้น", style=discord.ButtonStyle.secondary, row=2)
+    async def back_to_start(self, interaction, button):
         del button
         await interaction.response.edit_message(
-            content="## เปรียบเทียบหลักสูตร\nเลือกมหาวิทยาลัยที่ต้องการเปรียบเทียบ 2–3 สาขา",
+            content=start_menu_content(self.navigation_programs),
             embeds=[],
-            view=CompareUniversityView(self.owner_id, self.navigation_programs),
+            view=StartView(self.owner_id, self.navigation_programs),
         )
 
 
@@ -3871,14 +4009,13 @@ class StartView(OwnedView):
     @discord.ui.button(label="เปรียบเทียบหลักสูตร", style=discord.ButtonStyle.secondary, row=1)
     async def compare_programs(self, interaction, button):
         del button
+        view = CompareProgramView(self.owner_id, self.navigation_programs)
         await interaction.response.edit_message(
-            content=(
-                "## เปรียบเทียบหลักสูตร\n"
-                "เลือกมหาวิทยาลัยก่อน แล้วเลือก 2–3 สาขา ระบบจะระบุให้ชัดว่า "
-                "สาขาใดมีประกาศ TCAS70 แล้วหรือยังรอประกาศ"
+            content=compare_selection_content(
+                view.programs, view.selected_codes, view.page, view.total_pages
             ),
             embeds=[],
-            view=CompareUniversityView(self.owner_id, self.navigation_programs),
+            view=view,
         )
 
     @discord.ui.button(label="รายการโปรด", style=discord.ButtonStyle.secondary, row=1)
@@ -5417,6 +5554,27 @@ async def health_command(interaction: discord.Interaction):
         inline=False,
     )
     embed.set_footer(text=f"ตรวจสถานะเมื่อ {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+    await interaction.edit_original_response(content=None, embeds=[embed], view=None)
+
+
+@bot.tree.command(
+    name="data_quality",
+    description="ดูสถานะ แหล่งอ้างอิง และรายการข้อมูลที่ควรตรวจซ้ำ",
+)
+async def data_quality_command(interaction: discord.Interaction):
+    await interaction.response.defer(thinking=True)
+    try:
+        embed = await asyncio.wait_for(
+            asyncio.to_thread(build_quality_embed),
+            timeout=5,
+        )
+    except Exception:
+        logger.exception("data quality dashboard failed")
+        await interaction.edit_original_response(
+            content="เปิดรายงานคุณภาพข้อมูลไม่สำเร็จ ลองใหม่อีกครั้งครับ",
+            embeds=[],
+        )
+        return
     await interaction.edit_original_response(content=None, embeds=[embed], view=None)
 
 
