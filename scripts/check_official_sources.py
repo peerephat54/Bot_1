@@ -82,6 +82,7 @@ def fetch_source(url, timeout=20):
         return {
             "status": "ok" if 200 <= status_code < 400 else "http_error",
             "http_status": status_code,
+            "final_url": response.geturl(),
             "content_type": content_type,
             "bytes_read": total,
             "truncated": truncated,

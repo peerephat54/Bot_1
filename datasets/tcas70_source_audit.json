@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-09-12T19:20:01+07:00",
+  "checked_at": "2026-09-13T18:33:06+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -204,8 +204,8 @@
       "publisher": "สำนักบริหารการศึกษา มหาวิทยาลัยเกษตรศาสตร์",
       "classification": "used_primary_index",
       "academic_year": 2570,
-      "decision": "ยืนยันปฏิทิน Portfolio บางเขน รอบ 1.1 และ 1.2 และลิงก์ไปยังเกณฑ์รายโครงการ",
-      "source_checked_at": "2026-09-12"
+      "decision": "ตรวจปฏิทิน Portfolio TCAS70 แยกวิทยาเขตบางเขน กำแพงแสน ศรีราชา และสกลนคร; ศรีราชา 1.2 ยังรอประกาศ; ใช้วันระดับวิทยาเขต ไม่แทนวันเฉพาะโครงการ",
+      "source_checked_at": "2026-09-13T18:33:06+07:00"
     },
     {
       "url": "https://admission.kmutnb.ac.th/apply/round/1",
@@ -267,9 +267,18 @@
     {
       "url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "publisher": "คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
-      "classification": "excluded_primary_not_announced",
+      "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "decision": "หน้า TCAS70 แสดงเกณฑ์เตรียมไว้แต่หัวข้อยังระบุ 'รอประกาศอย่างเป็นทางการ'; เก็บ 3 โครงการเป็น draft และไม่ให้บอทแสดง"
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
+      "decision": "หน้า TCAS70 ระบุโครงการ Portfolio 1-1 และเกณฑ์รับแล้ว; ใช้ประกาศ PDF เลขที่ 4647 เป็นแหล่งหลักในการยืนยันรายละเอียด เพราะหน้า HTML พิมพ์ปีวันประกาศผู้มีสิทธิ์สัมภาษณ์ผิด"
+    },
+    {
+      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "publisher": "สำนักทะเบียนและประมวลผล สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
+      "decision": "ยืนยันและนำเข้าโครงการ IT คณะเทคโนโลยีสารสนเทศ รอบ 1-1 ทั้ง 3 โครงการ พร้อมจำนวนรับรายหลักสูตร คุณสมบัติ เกณฑ์ SAT/ภาษาอังกฤษ และกำหนดการสมัคร-สัมภาษณ์-ประกาศผล; วันประกาศผู้มีสิทธิ์สัมภาษณ์ยึด 21 ธ.ค. 2569 ตาม PDF แทนปี 2570 ที่พิมพ์ผิดบนหน้า HTML"
     },
     {
       "url": "https://www.science.kmitl.ac.th/curriculums/bachelor/computer-science-2569",
@@ -819,7 +828,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-12",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
       "decision": "ตรวจซ้ำระบบรับสมัคร TCAS70 และเพิ่มปฏิทินกลางรอบ 1 จากเอกสารทางการ; วันสมัครของโครงการที่คณะดำเนินการยังให้ติดตามประกาศคณะ"
     },
     {

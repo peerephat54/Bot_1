@@ -2,7 +2,10 @@ import json
 import sys
 from pathlib import Path
 
-from validate_dataset import validate
+try:
+    from .validate_dataset import validate
+except ImportError:  # Running this module as a standalone script.
+    from validate_dataset import validate
 
 
 def sql_text(value):
@@ -27,7 +30,14 @@ def upsert_assignments(columns):
     return ",\n        ".join(f"{column} = excluded.{column}" for column in columns)
 
 
-def generate(data):
+def conflict_clause(target, update_existing, assignments, indent=8):
+    if not update_existing:
+        return f"on conflict ({target}) do nothing"
+    body = "\n".join(" " * indent + line.strip() for line in assignments.splitlines())
+    return f"on conflict ({target}) do update set\n{body}"
+
+
+def generate(data, *, update_existing=True):
     statements = [
         "-- Generated from datasets/tcas70_admissions.json",
         "-- Run supabase_schema.sql before this file.",
@@ -35,15 +45,36 @@ def generate(data):
     ]
 
     for item in data["universities"]:
-        statements.append(
-            """\ninsert into public.universities (name, short_name, logo_url)
-values ({name}, {short_name}, {logo_url})
-on conflict (name) do update set
-    short_name = excluded.short_name,
-    logo_url = excluded.logo_url;""".format(
+        if update_existing:
+            university_insert = "values ({name}, {short_name}, {logo_url})".format(
                 name=sql_value(item["name"]),
                 short_name=sql_value(item["short_name"]),
                 logo_url=sql_value(item.get("logo_url")),
+            )
+        else:
+            university_insert = (
+                "select {name}, {short_name}, {logo_url}\n"
+                "where not exists (\n"
+                "    select 1 from public.universities existing\n"
+                "    where existing.short_name = {short_name}\n"
+                ")"
+            ).format(
+                name=sql_value(item["name"]),
+                short_name=sql_value(item["short_name"]),
+                logo_url=sql_value(item.get("logo_url")),
+            )
+        statements.append(
+            """\ninsert into public.universities (name, short_name, logo_url)
+{university_insert}
+{conflict_clause};""".format(
+                university_insert=university_insert,
+                conflict_clause=(
+                    "on conflict (name) do update set\n"
+                    "    short_name = excluded.short_name,\n"
+                    "    logo_url = excluded.logo_url"
+                    if update_existing
+                    else "on conflict (name) do nothing"
+                ),
             )
         )
 
@@ -57,14 +88,67 @@ insert into public.university_campuses (
 select u.id, {code}, {name}, {is_main}, {official_url}, now()
 from public.universities u
 where u.short_name = {university_short_name}
-on conflict (university_id, code) do update set
-        {updates};""".format(
+{conflict_clause};""".format(
                 code=sql_value(item["code"]),
                 name=sql_value(item["name"]),
                 is_main=sql_value(item["is_main"]),
                 official_url=sql_value(item.get("official_url")),
                 university_short_name=sql_value(item["university_short_name"]),
-                updates=upsert_assignments(campus_columns),
+                conflict_clause=conflict_clause(
+                    "university_id, code", update_existing, upsert_assignments(campus_columns)
+                ),
+            )
+        )
+
+    calendar_columns = [
+        "university_id",
+        "title",
+        "academic_year",
+        "campus_codes",
+        "program_codes",
+        "source_url",
+        "evidence_url",
+        "source_checked_at",
+        "scope_note",
+        "rounds",
+        "interview_eligible_on",
+        "interview_on",
+        "interview_passed_on",
+        "confirmation_start_on",
+        "confirmation_end_on",
+        "updated_at",
+    ]
+    calendar_json_fields = {"campus_codes", "program_codes", "rounds"}
+    for item in data.get("university_admission_calendars", []):
+        values = {
+            key: sql_value(
+                (item.get(key) or []) if key in calendar_json_fields else item.get(key),
+                jsonb=key in calendar_json_fields,
+            )
+            for key in calendar_columns
+            if key not in {"university_id", "updated_at"}
+        }
+        statements.append(
+            """\ninsert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, {code}, {title}, {academic_year}, {campus_codes}, {program_codes},
+    {source_url}, {evidence_url}, {source_checked_at}, {scope_note}, {rounds},
+    {interview_eligible_on}, {interview_on}, {interview_passed_on},
+    {confirmation_start_on}, {confirmation_end_on}, now()
+from public.universities u
+where u.short_name = {university_short_name}
+{conflict_clause};""".format(
+                code=sql_value(item["code"]),
+                university_short_name=sql_value(item["university_short_name"]),
+                conflict_clause=conflict_clause(
+                    "code", update_existing, upsert_assignments(calendar_columns)
+                ),
+                **values,
             )
         )
 
@@ -100,8 +184,7 @@ from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = {campus_code}
 where u.short_name = {university_short_name}
-on conflict (code) do update set
-        {updates};""".format(
+{conflict_clause};""".format(
                 code=sql_value(item["code"]),
                 campus_code=sql_value(item["campus_code"]),
                 faculty_name=sql_value(item["faculty_name"]),
@@ -118,7 +201,9 @@ on conflict (code) do update set
                 ),
                 data_status=sql_value(item["data_status"]),
                 university_short_name=sql_value(item["university_short_name"]),
-                updates=upsert_assignments(program_columns),
+                conflict_clause=conflict_clause(
+                    "code", update_existing, upsert_assignments(program_columns)
+                ),
             )
         )
 
@@ -160,9 +245,10 @@ select
     {source_published_at}, {source_checked_at}, {data_notes}, now()
 from public.universities u
 where u.short_name = {university_short_name}
-on conflict (code) do update set
-        {updates};""".format(
-                updates=upsert_assignments(project_columns),
+{conflict_clause};""".format(
+                conflict_clause=conflict_clause(
+                    "code", update_existing, upsert_assignments(project_columns)
+                ),
                 **{key: sql_value(value) for key, value in item.items()},
             )
         )
@@ -176,13 +262,19 @@ select p.id, m.id, {slots_available}, {program_notes}
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = {program_code}
 where p.code = {project_code}
-on conflict (project_id, program_id) do update set
-    slots_available = excluded.slots_available,
-    program_notes = excluded.program_notes;""".format(
+{conflict_clause};""".format(
                 slots_available=sql_value(item.get("slots_available")),
                 program_notes=sql_value(item.get("program_notes")),
                 program_code=sql_value(item["program_code"]),
                 project_code=sql_value(item["project_code"]),
+                conflict_clause=(
+                    conflict_clause(
+                        "project_id, program_id", update_existing,
+                        "slots_available = excluded.slots_available,\n"
+                        "        program_notes = excluded.program_notes",
+                        indent=4,
+                    )
+                ),
             )
         )
 
@@ -238,11 +330,13 @@ select
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = {program_code}
 where p.code = {project_code}
-on conflict (project_id, faculty_id) do update set
-        {updates};""".format(
+{conflict_clause};""".format(
                 project_code=sql_value(item["project_code"]),
                 program_code=sql_value(item["program_code"]),
-                updates=upsert_assignments(criteria_columns),
+                conflict_clause=conflict_clause(
+                    "project_id, faculty_id", update_existing,
+                    upsert_assignments(criteria_columns),
+                ),
                 **values,
             )
         )
@@ -255,13 +349,17 @@ on conflict (project_id, faculty_id) do update set
 select p.id, {event_name}, {start_on}, {end_on}, {date_display}, {date_status}, now()
 from public.admission_projects p
 where p.code = {project_code}
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();""".format(
-                **{key: sql_value(value) for key, value in item.items()}
+{conflict_clause};""".format(
+                **{key: sql_value(value) for key, value in item.items()},
+                conflict_clause=conflict_clause(
+                    "project_id, event_name", update_existing,
+                    "start_on = excluded.start_on,\n"
+                    "        end_on = excluded.end_on,\n"
+                    "        date_display = excluded.date_display,\n"
+                    "        date_status = excluded.date_status,\n"
+                    "        updated_at = now()",
+                    indent=4,
+                )
             )
         )
 

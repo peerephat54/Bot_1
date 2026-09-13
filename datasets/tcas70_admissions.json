@@ -53,7 +53,7 @@
       "title": "ปฏิทิน มก. • บางเขน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-12T19:20:01+07:00",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
       "scope_note": "ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์",
       "rounds": [
         {
@@ -88,7 +88,7 @@
       "academic_year": 2570,
       "source_url": "https://admission.reg.cmu.ac.th/tcas/app.php",
       "evidence_url": "https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf",
-      "source_checked_at": "2026-09-12T19:20:01+07:00",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
       "scope_note": "ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ",
       "rounds": [
         {
@@ -113,7 +113,7 @@
       "title": "ปฏิทิน มก. • สกลนคร",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-12T19:20:01+07:00",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
       "scope_note": "ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน",
       "rounds": [
         {
@@ -234,7 +234,7 @@
       "title": "ปฏิทิน มก. • กำแพงแสน",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-12T19:20:01+07:00",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
       "scope_note": "ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา",
       "rounds": [
         {
@@ -269,7 +269,7 @@
       "title": "ปฏิทิน มก. • ศรีราชา",
       "academic_year": 2570,
       "source_url": "https://admission.ku.ac.th/",
-      "source_checked_at": "2026-09-12T19:20:01+07:00",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
       "scope_note": "ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ",
       "rounds": [
         {
@@ -285,7 +285,7 @@
       ]
     }
   ],
-  "checked_at": "2026-09-12T19:20:01+07:00",
+  "checked_at": "2026-09-13T18:33:06+07:00",
   "runtime_local_project_codes": [
     "tu-direct-cpe-2570",
     "tu-direct-software-2570",
@@ -2627,16 +2627,16 @@
       "round_label": "1-1 Portfolio",
       "round_variant": "1.1",
       "application_type": "Portfolio",
-      "publication_status": "draft_waiting_official",
-      "is_visible": false,
+      "publication_status": "official",
+      "is_visible": true,
       "selection_order_limit": 3,
       "application_fee": 300,
       "tuition_fee_per_semester": 32000,
-      "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
-      "source_title": "รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)",
-      "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
-      "data_notes": "ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "source_title": "ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-09-01",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
+      "data_notes": "ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก"
     },
     {
       "university_short_name": "KMITL",
@@ -2648,16 +2648,16 @@
       "round_label": "1-1 Portfolio",
       "round_variant": "1.1",
       "application_type": "Portfolio",
-      "publication_status": "draft_waiting_official",
-      "is_visible": false,
+      "publication_status": "official",
+      "is_visible": true,
       "selection_order_limit": 3,
       "application_fee": 300,
       "tuition_fee_per_semester": 32000,
-      "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
-      "source_title": "รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)",
-      "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
-      "data_notes": "ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "source_title": "ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-09-01",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
+      "data_notes": "ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก"
     },
     {
       "university_short_name": "KMITL",
@@ -2669,16 +2669,16 @@
       "round_label": "1-1 Portfolio",
       "round_variant": "1.1",
       "application_type": "Portfolio",
-      "publication_status": "draft_waiting_official",
-      "is_visible": false,
+      "publication_status": "official",
+      "is_visible": true,
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 32000,
-      "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
-      "source_title": "รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)",
-      "source_published_at": null,
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
-      "data_notes": "ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "source_title": "ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570",
+      "source_published_at": "2026-09-01",
+      "source_checked_at": "2026-09-13T18:33:06+07:00",
+      "data_notes": "ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก"
     },
     {
       "university_short_name": "KMUTT",
@@ -7026,8 +7026,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00 และมีผลงาน IT ตามรายการตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-it"
     },
     {
@@ -7070,8 +7070,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00 และมีผลงาน IT ตามรายการตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-dsba"
     },
     {
@@ -7114,8 +7114,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00 และมีผลงาน IT ตามรายการตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-ait"
     },
     {
@@ -7145,8 +7145,10 @@
         "สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม",
         "ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง",
         "การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT",
+        "การแข่งขันที่คณะ IT KMITL จัด",
         "Bebras รอบชิงทุน ≥ 60",
         "NSC รอบชิงชนะเลิศ",
+        "โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ",
         "Super AI Engineer รอบ 2 ขึ้นไป",
         "ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"
       ],
@@ -7163,8 +7165,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00, SAT ≥ 1,100 อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-it"
     },
     {
@@ -7194,8 +7196,10 @@
         "สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม",
         "ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง",
         "การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT",
+        "การแข่งขันที่คณะ IT KMITL จัด",
         "Bebras รอบชิงทุน ≥ 60",
         "NSC รอบชิงชนะเลิศ",
+        "โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ",
         "Super AI Engineer รอบ 2 ขึ้นไป",
         "ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"
       ],
@@ -7212,8 +7216,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00, SAT ≥ 1,100 อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-dsba"
     },
     {
@@ -7243,8 +7247,10 @@
         "สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม",
         "ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง",
         "การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT",
+        "การแข่งขันที่คณะ IT KMITL จัด",
         "Bebras รอบชิงทุน ≥ 60",
         "NSC รอบชิงชนะเลิศ",
+        "โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ",
         "Super AI Engineer รอบ 2 ขึ้นไป",
         "ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"
       ],
@@ -7261,8 +7267,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00, SAT ≥ 1,100 อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-ait"
     },
     {
@@ -7296,8 +7302,10 @@
         "สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม",
         "ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง",
         "การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT",
+        "การแข่งขันที่คณะ IT KMITL จัด",
         "Bebras รอบชิงทุน ≥ 60",
         "NSC รอบชิงชนะเลิศ",
+        "โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ",
         "Super AI Engineer รอบ 2 ขึ้นไป",
         "ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"
       ],
@@ -7314,8 +7322,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00, มีคะแนนภาษาอังกฤษตามเกณฑ์อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-it"
     },
     {
@@ -7349,8 +7357,10 @@
         "สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม",
         "ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง",
         "การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT",
+        "การแข่งขันที่คณะ IT KMITL จัด",
         "Bebras รอบชิงทุน ≥ 60",
         "NSC รอบชิงชนะเลิศ",
+        "โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ",
         "Super AI Engineer รอบ 2 ขึ้นไป",
         "ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"
       ],
@@ -7367,8 +7377,8 @@
         "สัมภาษณ์"
       ],
       "additional_requirements": {},
-      "criteria_summary": "ร่าง: GPAX ≥ 3.00, มีคะแนนภาษาอังกฤษตามเกณฑ์อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567",
-      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
+      "criteria_summary": "GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
       "program_code": "kmitl-ait"
     },
     {
@@ -15581,15 +15591,31 @@
       "start_on": "2026-10-01",
       "end_on": "2026-11-30",
       "date_display": "1 ต.ค.–30 พ.ย. 2569",
-      "date_status": "tentative"
+      "date_status": "confirmed"
     },
     {
       "project_code": "kmitl-it-ability-1-1",
       "event_name": "ประกาศผู้มีสิทธิ์สัมภาษณ์",
-      "start_on": null,
-      "end_on": null,
-      "date_display": "หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570",
-      "date_status": "disputed"
+      "start_on": "2026-12-21",
+      "end_on": "2026-12-21",
+      "date_display": "21 ธ.ค. 2569 (ประกาศ PDF; หน้า HTML แสดงปี 2570 ผิด)",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-it-ability-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-01-09",
+      "end_on": "2027-01-09",
+      "date_display": "9 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-it-ability-1-1",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-01-18",
+      "end_on": "2027-01-18",
+      "date_display": "18 ม.ค. 2570",
+      "date_status": "confirmed"
     },
     {
       "project_code": "kmitl-academic-it-1-1",
@@ -15597,15 +15623,31 @@
       "start_on": "2026-10-01",
       "end_on": "2026-11-30",
       "date_display": "1 ต.ค.–30 พ.ย. 2569",
-      "date_status": "tentative"
+      "date_status": "confirmed"
     },
     {
       "project_code": "kmitl-academic-it-1-1",
       "event_name": "ประกาศผู้มีสิทธิ์สัมภาษณ์",
-      "start_on": null,
-      "end_on": null,
-      "date_display": "หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570",
-      "date_status": "disputed"
+      "start_on": "2026-12-21",
+      "end_on": "2026-12-21",
+      "date_display": "21 ธ.ค. 2569 (ประกาศ PDF; หน้า HTML แสดงปี 2570 ผิด)",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-academic-it-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-01-09",
+      "end_on": "2027-01-09",
+      "date_display": "9 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-academic-it-1-1",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-01-18",
+      "end_on": "2027-01-18",
+      "date_display": "18 ม.ค. 2570",
+      "date_status": "confirmed"
     },
     {
       "project_code": "kmitl-english-it-1-1",
@@ -15613,15 +15655,31 @@
       "start_on": "2026-10-01",
       "end_on": "2026-11-30",
       "date_display": "1 ต.ค.–30 พ.ย. 2569",
-      "date_status": "tentative"
+      "date_status": "confirmed"
     },
     {
       "project_code": "kmitl-english-it-1-1",
       "event_name": "ประกาศผู้มีสิทธิ์สัมภาษณ์",
-      "start_on": null,
-      "end_on": null,
-      "date_display": "หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570",
-      "date_status": "disputed"
+      "start_on": "2026-12-21",
+      "end_on": "2026-12-21",
+      "date_display": "21 ธ.ค. 2569 (ประกาศ PDF; หน้า HTML แสดงปี 2570 ผิด)",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-english-it-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2027-01-09",
+      "end_on": "2027-01-09",
+      "date_display": "9 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "kmitl-english-it-1-1",
+      "event_name": "ประกาศรายชื่อผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House",
+      "start_on": "2027-01-18",
+      "end_on": "2027-01-18",
+      "date_display": "18 ม.ค. 2570",
+      "date_status": "confirmed"
     },
     {
       "project_code": "muict-ict-portfolio",

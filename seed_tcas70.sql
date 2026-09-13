@@ -260,6 +260,254 @@ on conflict (university_id, code) do update set
         official_url = excluded.official_url,
         updated_at = excluded.updated_at;
 
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'cu-portfolio-2570', 'ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ', 2570, '["pathum-wan"]'::jsonb, '["cu-engineering-computer-engineering","cu-engineering-cedt","cu-science-computer-science","cu-cbs-management-information-systems","cu-cbs-statistics-data-science","cu-cbs-information-technology-business"]'::jsonb,
+    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-07T23:20:07+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
+    '2027-01-11', '2027-01-15', '2027-01-28',
+    '2027-03-10', '2027-03-11', now()
+from public.universities u
+where u.short_name = 'CU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-bangkhen-portfolio-2570', 'ปฏิทิน มก. • บางเขน', 2570, '["bangkhen"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์', '[{"label":"Portfolio 1.1","application_start_on":"2026-09-18","application_end_on":"2026-10-14","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-03","interview_on":"2026-11-09","interview_passed_on":"2026-11-16"},{"label":"Portfolio 1.2","application_start_on":"2027-01-04","application_end_on":"2027-02-04","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-03-02","interview_on":"2027-03-04","interview_passed_on":"2027-03-05"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-13T18:33:06+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    '2026-12-11', '2026-12-19', null,
+    '2027-03-10', '2027-03-11', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-sakon-portfolio-2570', 'ปฏิทิน มก. • สกลนคร', 2570, '["sakon-nakhon"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน', '[{"label":"Portfolio","application_start_on":"2026-08-24","application_end_on":"2027-02-19","result_announcement_on":null,"date_status":"confirmed","result_note":"หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'kmutnb-portfolio-2570', 'ปฏิทินกลาง มจพ.', 2570, '[]'::jsonb, '[]'::jsonb,
+    'https://www.admission.kmutnb.ac.th/news/1394', 'https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg', '2026-09-07T23:20:07+07:00', 'คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ', '[{"label":"Portfolio/โควตา ครั้ง 1","application_start_on":"2026-09-01","application_end_on":"2026-11-10","result_announcement_on":null,"date_status":"confirmed"},{"label":"Portfolio/โควตา ครั้ง 2","application_start_on":"2026-11-24","application_end_on":"2027-01-05","result_announcement_on":null,"date_status":"confirmed"},{"label":"นวัตกรรม/สิ่งประดิษฐ์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"},{"label":"หุ่นยนต์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"}]'::jsonb,
+    null, null, null,
+    '2027-03-10', '2027-03-11', now()
+from public.universities u
+where u.short_name = 'KMUTNB'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'swu-portfolio-2570', 'ปฏิทิน มศว. • TCAS รอบ 1 Portfolio', 2570, '["prasan-mit","ongkharak"]'::jsonb, '["swu-ece-environmental-technology","swu-ece-climate-environment","swu-science-mathematics","swu-science-statistics","swu-science-chemistry","swu-science-microbiology","swu-science-biology","swu-science-materials","swu-engineering-chemical","swu-engineering-mechanical","swu-engineering-civil","swu-engineering-industrial","swu-engineering-biomedical","swu-engineering-computer","swu-engineering-electrical-power","swu-engineering-telecom-it","swu-engineering-logistics-bilingual","swu-engineering-environmental","swu-engineering-petroleum-renewable","swu-engineering-cybersecurity"]'::jsonb,
+    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '2026-08-29T12:00:00+07:00', 'ปฏิทินกลางของ มศว. ใช้เป็นวันสมัครและวันประกาศผลระดับมหาวิทยาลัย; เกณฑ์คุณสมบัติและจำนวนรับต้องดูรายละเอียดของแต่ละสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-18","application_end_on":"2026-09-16","result_announcement_on":"2026-11-17","date_status":"confirmed","interview_eligible_on":"2026-10-21","interview_on":"2026-11-07"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2026-12-16","result_announcement_on":"2027-02-23","date_status":"confirmed","interview_eligible_on":"2027-01-26","interview_on":"2027-02-13"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-kamphaeng-saen-portfolio-2570', 'ปฏิทิน มก. • กำแพงแสน', 2570, '["kamphaeng-saen"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-10-01","application_end_on":"2026-11-05","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-16","interview_on":"2026-11-20","interview_passed_on":"2026-11-24"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2027-02-10","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-02-22","interview_on":"2027-02-25","interview_end_on":"2027-02-26","interview_passed_on":"2027-03-02"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-sriracha-portfolio-2570', 'ปฏิทิน มก. • ศรีราชา', 2570, '["sriracha"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-25","application_end_on":"2026-11-15","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-12-04","interview_on":"2026-12-13","interview_passed_on":"2026-12-18"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
 insert into public.faculties_and_majors (
     university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
     program_type, language, curriculum_credits, curriculum_year, duration_years,
@@ -3347,10 +3595,10 @@ insert into public.admission_projects (
 )
 select
     u.id, 'kmitl-it-ability-1-1', 'kmitl-it-ability', 'โครงการนักเรียนมีความสามารถด้านเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1-1 Portfolio', '1.1', 'Portfolio', 'draft_waiting_official',
-    false, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)',
-    null, '2026-08-23T00:00:00+07:00', 'ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ', now()
+    '1-1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 3, 300,
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-09-13T18:33:06+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3383,10 +3631,10 @@ insert into public.admission_projects (
 )
 select
     u.id, 'kmitl-academic-it-1-1', 'kmitl-academic-it', 'โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1-1 Portfolio', '1.1', 'Portfolio', 'draft_waiting_official',
-    false, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)',
-    null, '2026-08-23T00:00:00+07:00', 'ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ', now()
+    '1-1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 3, 300,
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-09-13T18:33:06+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3419,10 +3667,10 @@ insert into public.admission_projects (
 )
 select
     u.id, 'kmitl-english-it-1-1', 'kmitl-english-it', 'โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1-1 Portfolio', '1.1', 'Portfolio', 'draft_waiting_official',
-    false, 2, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)',
-    null, '2026-08-23T00:00:00+07:00', 'ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ', now()
+    '1-1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 2, 300,
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-09-13T18:33:06+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -10244,8 +10492,8 @@ select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00 และมีผลงาน IT ตามรายการตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10277,8 +10525,8 @@ select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00 และมีผลงาน IT ตามรายการตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10310,8 +10558,8 @@ select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00 และมีผลงาน IT ตามรายการตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10342,9 +10590,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00, SAT ≥ 1,100 อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
+    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10375,9 +10623,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00, SAT ≥ 1,100 อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
+    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10408,9 +10656,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00, SAT ≥ 1,100 อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
+    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10441,9 +10689,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{"IELTS":6,"TOEFL iBT":79,"TOEFL PBT":550,"TOEIC":785,"CU-TEP":90,"KMITL-TEP":100}'::jsonb,
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00, มีคะแนนภาษาอังกฤษตามเกณฑ์อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
+    '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-english-it-1-1'
@@ -10474,9 +10722,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{"IELTS":6,"TOEFL iBT":79,"TOEFL PBT":550,"TOEIC":785,"CU-TEP":90,"KMITL-TEP":100}'::jsonb,
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'ร่าง: GPAX ≥ 3.00, มีคะแนนภาษาอังกฤษตามเกณฑ์อายุไม่เกิน 2 ปี และมีผลงาน IT ตั้งแต่ปี 2567',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
+    '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-english-it-1-1'
@@ -16201,7 +16449,7 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
+select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-it-ability-1-1'
 on conflict (project_id, event_name) do update set
@@ -16214,7 +16462,7 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-12-21', '2026-12-21', '21 ธ.ค. 2569 (ประกาศ PDF; หน้า HTML แสดงปี 2570 ผิด)', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-it-ability-1-1'
 on conflict (project_id, event_name) do update set
@@ -16227,7 +16475,33 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
+select p.id, 'สอบสัมภาษณ์', '2027-01-09', '2027-01-09', '9 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House', '2027-01-18', '2027-01-18', '18 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-academic-it-1-1'
 on conflict (project_id, event_name) do update set
@@ -16240,7 +16514,7 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-12-21', '2026-12-21', '21 ธ.ค. 2569 (ประกาศ PDF; หน้า HTML แสดงปี 2570 ผิด)', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-academic-it-1-1'
 on conflict (project_id, event_name) do update set
@@ -16253,7 +16527,33 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'tentative', now()
+select p.id, 'สอบสัมภาษณ์', '2027-01-09', '2027-01-09', '9 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House', '2027-01-18', '2027-01-18', '18 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'รับสมัครและสร้าง iFolio', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-english-it-1-1'
 on conflict (project_id, event_name) do update set
@@ -16266,7 +16566,33 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', null, null, 'หน้าเว็บระบุ 21 ธ.ค. 2570 ซึ่งขัดกับวันสัมภาษณ์ 9 ม.ค. 2570', 'disputed', now()
+select p.id, 'ประกาศผู้มีสิทธิ์สัมภาษณ์', '2026-12-21', '2026-12-21', '21 ธ.ค. 2569 (ประกาศ PDF; หน้า HTML แสดงปี 2570 ผิด)', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2027-01-09', '2027-01-09', '9 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้ผ่านการคัดเลือกและมีสิทธิ์ Clearing House', '2027-01-18', '2027-01-18', '18 ม.ค. 2570', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmitl-english-it-1-1'
 on conflict (project_id, event_name) do update set

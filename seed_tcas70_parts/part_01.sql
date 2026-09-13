@@ -260,6 +260,254 @@ on conflict (university_id, code) do update set
         official_url = excluded.official_url,
         updated_at = excluded.updated_at;
 
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'cu-portfolio-2570', 'ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ', 2570, '["pathum-wan"]'::jsonb, '["cu-engineering-computer-engineering","cu-engineering-cedt","cu-science-computer-science","cu-cbs-management-information-systems","cu-cbs-statistics-data-science","cu-cbs-information-technology-business"]'::jsonb,
+    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-07T23:20:07+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
+    '2027-01-11', '2027-01-15', '2027-01-28',
+    '2027-03-10', '2027-03-11', now()
+from public.universities u
+where u.short_name = 'CU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-bangkhen-portfolio-2570', 'ปฏิทิน มก. • บางเขน', 2570, '["bangkhen"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์', '[{"label":"Portfolio 1.1","application_start_on":"2026-09-18","application_end_on":"2026-10-14","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-03","interview_on":"2026-11-09","interview_passed_on":"2026-11-16"},{"label":"Portfolio 1.2","application_start_on":"2027-01-04","application_end_on":"2027-02-04","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-03-02","interview_on":"2027-03-04","interview_passed_on":"2027-03-05"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-13T18:33:06+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    '2026-12-11', '2026-12-19', null,
+    '2027-03-10', '2027-03-11', now()
+from public.universities u
+where u.short_name = 'CMU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-sakon-portfolio-2570', 'ปฏิทิน มก. • สกลนคร', 2570, '["sakon-nakhon"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน', '[{"label":"Portfolio","application_start_on":"2026-08-24","application_end_on":"2027-02-19","result_announcement_on":null,"date_status":"confirmed","result_note":"หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'kmutnb-portfolio-2570', 'ปฏิทินกลาง มจพ.', 2570, '[]'::jsonb, '[]'::jsonb,
+    'https://www.admission.kmutnb.ac.th/news/1394', 'https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg', '2026-09-07T23:20:07+07:00', 'คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ', '[{"label":"Portfolio/โควตา ครั้ง 1","application_start_on":"2026-09-01","application_end_on":"2026-11-10","result_announcement_on":null,"date_status":"confirmed"},{"label":"Portfolio/โควตา ครั้ง 2","application_start_on":"2026-11-24","application_end_on":"2027-01-05","result_announcement_on":null,"date_status":"confirmed"},{"label":"นวัตกรรม/สิ่งประดิษฐ์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"},{"label":"หุ่นยนต์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"}]'::jsonb,
+    null, null, null,
+    '2027-03-10', '2027-03-11', now()
+from public.universities u
+where u.short_name = 'KMUTNB'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'swu-portfolio-2570', 'ปฏิทิน มศว. • TCAS รอบ 1 Portfolio', 2570, '["prasan-mit","ongkharak"]'::jsonb, '["swu-ece-environmental-technology","swu-ece-climate-environment","swu-science-mathematics","swu-science-statistics","swu-science-chemistry","swu-science-microbiology","swu-science-biology","swu-science-materials","swu-engineering-chemical","swu-engineering-mechanical","swu-engineering-civil","swu-engineering-industrial","swu-engineering-biomedical","swu-engineering-computer","swu-engineering-electrical-power","swu-engineering-telecom-it","swu-engineering-logistics-bilingual","swu-engineering-environmental","swu-engineering-petroleum-renewable","swu-engineering-cybersecurity"]'::jsonb,
+    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '2026-08-29T12:00:00+07:00', 'ปฏิทินกลางของ มศว. ใช้เป็นวันสมัครและวันประกาศผลระดับมหาวิทยาลัย; เกณฑ์คุณสมบัติและจำนวนรับต้องดูรายละเอียดของแต่ละสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-18","application_end_on":"2026-09-16","result_announcement_on":"2026-11-17","date_status":"confirmed","interview_eligible_on":"2026-10-21","interview_on":"2026-11-07"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2026-12-16","result_announcement_on":"2027-02-23","date_status":"confirmed","interview_eligible_on":"2027-01-26","interview_on":"2027-02-13"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-kamphaeng-saen-portfolio-2570', 'ปฏิทิน มก. • กำแพงแสน', 2570, '["kamphaeng-saen"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-10-01","application_end_on":"2026-11-05","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-16","interview_on":"2026-11-20","interview_passed_on":"2026-11-24"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2027-02-10","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-02-22","interview_on":"2027-02-25","interview_end_on":"2027-02-26","interview_passed_on":"2027-03-02"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
+insert into public.university_admission_calendars (
+    university_id, code, title, academic_year, campus_codes, program_codes,
+    source_url, evidence_url, source_checked_at, scope_note, rounds,
+    interview_eligible_on, interview_on, interview_passed_on,
+    confirmation_start_on, confirmation_end_on, updated_at
+)
+select
+    u.id, 'ku-sriracha-portfolio-2570', 'ปฏิทิน มก. • ศรีราชา', 2570, '["sriracha"]'::jsonb, '[]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-25","application_end_on":"2026-11-15","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-12-04","interview_on":"2026-12-13","interview_passed_on":"2026-12-18"}]'::jsonb,
+    null, null, null,
+    null, null, now()
+from public.universities u
+where u.short_name = 'KU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        title = excluded.title,
+        academic_year = excluded.academic_year,
+        campus_codes = excluded.campus_codes,
+        program_codes = excluded.program_codes,
+        source_url = excluded.source_url,
+        evidence_url = excluded.evidence_url,
+        source_checked_at = excluded.source_checked_at,
+        scope_note = excluded.scope_note,
+        rounds = excluded.rounds,
+        interview_eligible_on = excluded.interview_eligible_on,
+        interview_on = excluded.interview_on,
+        interview_passed_on = excluded.interview_passed_on,
+        confirmation_start_on = excluded.confirmation_start_on,
+        confirmation_end_on = excluded.confirmation_end_on,
+        updated_at = excluded.updated_at;
+
 insert into public.faculties_and_majors (
     university_id, campus_id, code, faculty_name, major_name, tcas_round, academic_year,
     program_type, language, curriculum_credits, curriculum_year, duration_years,
@@ -3209,330 +3457,6 @@ select
     null, '2026-09-12T19:20:01+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-cpe-good-grade-1-1', 'cmu-cpe-good-grade', 'โครงการรับนักเรียนผู้มีผลการเรียนดีเด่น', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704', 'รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-cpe-good-grade-1-2', 'cmu-cpe-good-grade', 'โครงการรับนักเรียนผู้มีผลการเรียนดีเด่น', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704', 'รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'cmu-cpe-engineering-ability-1-1', 'cmu-cpe-engineering-ability', 'โครงการรับนักเรียนผู้มีความรู้ ความสามารถทางวิศวกรรม', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=706', 'รหัสโครงการ 00410608108031 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-12T19:20:01+07:00', 'เปิดแบบ 1.1 จำนวน 5 คน; หน้าเว็บระบุแบบ 1.2 จำนวน 0 คน', now()
-from public.universities u
-where u.short_name = 'CMU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'kmitl-it-ability-1-1', 'kmitl-it-ability', 'โครงการนักเรียนมีความสามารถด้านเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1-1 Portfolio', '1.1', 'Portfolio', 'draft_waiting_official',
-    false, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)',
-    null, '2026-08-23T00:00:00+07:00', 'ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ', now()
-from public.universities u
-where u.short_name = 'KMITL'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'kmitl-academic-it-1-1', 'kmitl-academic-it', 'โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1-1 Portfolio', '1.1', 'Portfolio', 'draft_waiting_official',
-    false, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)',
-    null, '2026-08-23T00:00:00+07:00', 'ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ', now()
-from public.universities u
-where u.short_name = 'KMITL'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'kmitl-english-it-1-1', 'kmitl-english-it', 'โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1-1 Portfolio', '1.1', 'Portfolio', 'draft_waiting_official',
-    false, 2, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'รอบที่ 1-1 Portfolio TCAS 2570 (รอประกาศอย่างเป็นทางการ)',
-    null, '2026-08-23T00:00:00+07:00', 'ห้ามแสดงต่อผู้ใช้จนกว่าสถานะหน้าเว็บจะเป็นประกาศอย่างเป็นทางการ', now()
-from public.universities u
-where u.short_name = 'KMITL'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'kmutt-sit-active-recruitment-1', 'kmutt-sit-active-recruitment', 'โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1 Portfolio', 'ครั้งที่ 1', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', 'รอบที่ 1 โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ (ครั้งที่ 1) ปีการศึกษา 2570',
-    '2026-08-05', '2026-08-23T00:00:00+07:00', 'ประกาศมหาวิทยาลัยและเกณฑ์รายหลักสูตรลงวันที่ 5 ส.ค. 2569; 350 บาทเป็นค่าสมัคร/ค่าสอบคัดเลือกที่ชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก ไม่ใช่ค่าธรรมเนียมตอนยื่นใบสมัคร', now()
-from public.universities u
-where u.short_name = 'KMUTT'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'kmutt-sit-active-recruitment-3', 'kmutt-sit-active-recruitment', 'โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ', 2570, 1,
-    '1 Portfolio', 'ครั้งที่ 3', 'Portfolio', 'official',
-    true, null, null,
-    null, 'https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91', 'รอบที่ 1 โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ (ครั้งที่ 3) ปีการศึกษา 2570',
-    '2026-08-17', '2026-08-23T00:00:00+07:00', 'หน้าโครงการและไฟล์เกณฑ์เฉพาะครั้งที่ 3 ประกาศแล้ว แต่สถานะระบบสมัครยังเป็นกำลังจะเปิด; 350 บาทชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก', now()
-from public.universities u
-where u.short_name = 'KMUTT'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'mu-computer-engineering-portfolio-1-1', 'mu-computer-engineering-portfolio', 'TCAS 1/1 วิศวกรรมคอมพิวเตอร์', 2570, 1,
-    '1 Portfolio', '1.1', 'Portfolio', 'official',
-    true, null, null,
-    30000, 'https://www.eg.mahidol.ac.th/egmu/admission/tcas-admission.html', 'เกณฑ์คุณสมบัติขั้นต่ำ TCAS70/1 วิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยมหิดล',
-    '2026-08-10', '2026-08-23T00:00:00+07:00', 'รับ 10 คนในรอบ 1/1; ไม่เปิดรอบ 1/2; ค่าเล่าเรียนรวมตลอดหลักสูตร 240,000 บาท', now()
-from public.universities u
-where u.short_name = 'MU'
 on conflict (code) do update set
         university_id = excluded.university_id,
         group_code = excluded.group_code,

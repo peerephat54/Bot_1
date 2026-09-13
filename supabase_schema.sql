@@ -22,6 +22,34 @@ create table if not exists public.university_campuses (
     unique (university_id, code)
 );
 
+-- University-wide admission dates, kept separate from project-specific timelines.
+create table if not exists public.university_admission_calendars (
+    id uuid primary key default gen_random_uuid(),
+    university_id uuid not null references public.universities(id) on delete cascade,
+    code varchar(120) not null unique,
+    title varchar(255) not null,
+    academic_year integer not null check (academic_year >= 2500),
+    campus_codes jsonb not null default '[]'::jsonb,
+    program_codes jsonb not null default '[]'::jsonb,
+    source_url text not null,
+    evidence_url text,
+    source_checked_at timestamptz not null,
+    scope_note text not null,
+    rounds jsonb not null default '[]'::jsonb,
+    interview_eligible_on date,
+    interview_on date,
+    interview_passed_on date,
+    confirmation_start_on date,
+    confirmation_end_on date,
+    created_at timestamptz not null default now(),
+    updated_at timestamptz not null default now(),
+    check (jsonb_typeof(campus_codes) = 'array'),
+    check (jsonb_typeof(program_codes) = 'array'),
+    check (jsonb_typeof(rounds) = 'array'),
+    check (confirmation_end_on is null or confirmation_start_on is null
+        or confirmation_end_on >= confirmation_start_on)
+);
+
 create table if not exists public.faculties_and_majors (
     id uuid primary key default gen_random_uuid(),
     university_id uuid not null references public.universities(id) on delete cascade,
@@ -253,6 +281,8 @@ create index if not exists idx_faculties_university
     on public.faculties_and_majors(university_id);
 create index if not exists idx_university_campuses_university
     on public.university_campuses(university_id);
+create index if not exists idx_university_calendars_university_year
+    on public.university_admission_calendars(university_id, academic_year);
 create index if not exists idx_faculties_campus
     on public.faculties_and_majors(campus_id);
 create index if not exists idx_projects_university_year
@@ -270,6 +300,7 @@ create index if not exists idx_timeline_end_on
 -- be safely prepared by an administrator but cannot leak through the anon key.
 alter table public.universities enable row level security;
 alter table public.university_campuses enable row level security;
+alter table public.university_admission_calendars enable row level security;
 alter table public.faculties_and_majors enable row level security;
 alter table public.admission_projects enable row level security;
 alter table public.admission_project_programs enable row level security;
@@ -284,6 +315,10 @@ create policy "Public read universities"
 drop policy if exists "Public read university campuses" on public.university_campuses;
 create policy "Public read university campuses"
     on public.university_campuses for select to anon, authenticated using (true);
+
+drop policy if exists "Public read university admission calendars" on public.university_admission_calendars;
+create policy "Public read university admission calendars"
+    on public.university_admission_calendars for select to anon, authenticated using (true);
 
 drop policy if exists "Public read faculties" on public.faculties_and_majors;
 create policy "Public read faculties"
@@ -326,6 +361,8 @@ create policy "Public read timeline"
     ));
 
 grant select on public.universities to anon, authenticated;
+grant select on public.university_campuses to anon, authenticated;
+grant select on public.university_admission_calendars to anon, authenticated;
 grant select on public.faculties_and_majors to anon, authenticated;
 grant select on public.admission_projects to anon, authenticated;
 grant select on public.admission_project_programs to anon, authenticated;
