@@ -34,7 +34,8 @@ from data_quality import (
     classify_project_source_status,
     load_quality_report,
 )
-from question_answering import answer_question
+from dataset_sync import classify_sync_status, local_sync_identity
+from question_answering import answer_question_with_candidate_loader
 from scripts.process_utils import process_is_alive
 
 load_dotenv()
@@ -76,6 +77,7 @@ BOT_WATCHDOG_SCRIPT = BOT_ROOT / "scripts" / "bot_watchdog.py"
 BOT_WATCHDOG_STATE = BOT_ROOT / "tmp" / "bot_watchdog.json"
 
 _CACHE_LOCK = threading.RLock()
+_RECOMMENDATION_LOAD_LOCK = threading.Lock()
 _PROGRAM_DETAILS_CACHE = {}
 _RECOMMENDATION_CACHE = None
 _LOCAL_PROJECT_CACHE = None
@@ -354,34 +356,43 @@ class MyBot(discord.Client):
         self.tree = app_commands.CommandTree(self)
         self.navigation_programs_cache = []
         self.navigation_cache_loaded_at = 0.0
+        self.navigation_refresh_lock = asyncio.Lock()
         self.reminder_task = None
         self._last_reminder_failure_log_at = 0.0
 
     async def load_navigation_programs(self, *, force=False, timeout=15):
-        cache_is_fresh = (
-            self.navigation_programs_cache
-            and time.monotonic() - self.navigation_cache_loaded_at
-            < NAVIGATION_CACHE_TTL_SECONDS
-        )
-        if cache_is_fresh and not force:
-            return self.navigation_programs_cache
-
-        try:
-            programs = await asyncio.wait_for(
-                asyncio.to_thread(fetch_navigation_programs),
-                timeout=timeout,
+        observed_loaded_at = self.navigation_cache_loaded_at
+        async with self.navigation_refresh_lock:
+            cache_is_fresh = (
+                self.navigation_programs_cache
+                and time.monotonic() - self.navigation_cache_loaded_at
+                < NAVIGATION_CACHE_TTL_SECONDS
             )
-        except Exception:
-            if self.navigation_programs_cache:
-                logger.exception(
-                    "could not refresh navigation cache; using stale data"
-                )
+            if cache_is_fresh and not force:
                 return self.navigation_programs_cache
-            raise
+            if (
+                force
+                and self.navigation_cache_loaded_at != observed_loaded_at
+                and self.navigation_programs_cache
+            ):
+                return self.navigation_programs_cache
 
-        self.navigation_programs_cache = programs
-        self.navigation_cache_loaded_at = time.monotonic()
-        return programs
+            try:
+                programs = await asyncio.wait_for(
+                    asyncio.to_thread(fetch_navigation_programs),
+                    timeout=timeout,
+                )
+            except Exception:
+                if self.navigation_programs_cache:
+                    logger.exception(
+                        "could not refresh navigation cache; using stale data"
+                    )
+                    return self.navigation_programs_cache
+                raise
+
+            self.navigation_programs_cache = programs
+            self.navigation_cache_loaded_at = time.monotonic()
+            return programs
 
     async def setup_hook(self):
         try:
@@ -611,6 +622,19 @@ def fetch_recommendation_projects():
     )
     if found:
         return cached
+
+    with _RECOMMENDATION_LOAD_LOCK:
+        found, cached = _cache_read(
+            _RECOMMENDATION_CACHE, "all", RECOMMENDATION_CACHE_TTL_SECONDS
+        )
+        if found:
+            return cached
+        return _fetch_recommendation_projects_uncached()
+
+
+def _fetch_recommendation_projects_uncached():
+    """Perform the single shared database read after the cache lock is held."""
+    global _RECOMMENDATION_CACHE
 
     try:
         response = (
@@ -5488,6 +5512,18 @@ def _ping_supabase():
     return database.table("faculties_and_majors").select("code").limit(1).execute()
 
 
+def _fetch_dataset_sync_manifest(academic_year):
+    """Read the importer-written fingerprint; never infer sync from row counts alone."""
+    response = (
+        database.table("dataset_sync_manifest")
+        .select("academic_year,dataset_sha256,audit_sha256,sync_mode,synced_at,record_counts")
+        .eq("academic_year", academic_year)
+        .limit(1)
+        .execute()
+    )
+    return (response.data or [None])[0]
+
+
 @bot.tree.command(
     name="health",
     description="ตรวจสถานะบอท dataset และ Supabase",
@@ -5497,9 +5533,14 @@ async def health_command(interaction: discord.Interaction):
     dataset_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
     dataset_ok = False
     dataset_text = "❌ อ่าน dataset ไม่สำเร็จ"
+    local_identity = None
     try:
         report = await asyncio.wait_for(
             asyncio.to_thread(load_quality_report, dataset_path),
+            timeout=5,
+        )
+        local_identity = await asyncio.wait_for(
+            asyncio.to_thread(local_sync_identity, dataset_path),
             timeout=5,
         )
         dataset_ok = True
@@ -5520,6 +5561,33 @@ async def health_command(interaction: discord.Interaction):
         supabase_text = "✅ เชื่อมต่อได้"
     except Exception as error:
         logger.warning("health Supabase check failed error=%s", type(error).__name__)
+
+    sync_text = "⚪ ยังตรวจความตรงกันของข้อมูลไม่ได้"
+    if dataset_ok and supabase_ok and local_identity:
+        try:
+            remote_manifest = await asyncio.wait_for(
+                asyncio.to_thread(
+                    _fetch_dataset_sync_manifest,
+                    local_identity["academic_year"],
+                ),
+                timeout=5,
+            )
+            sync_status = classify_sync_status(local_identity, remote_manifest)
+            sync_text = (
+                f"{sync_status['message']}\n"
+                f"เวอร์ชันเครื่อง {sync_status['local_version']} • "
+                f"ฐานข้อมูล {sync_status['remote_version'] or 'ไม่มีบันทึก'}"
+            )
+            if remote_manifest and remote_manifest.get("synced_at"):
+                sync_text += f"\nซิงก์ล่าสุด {format_checked_at(remote_manifest['synced_at'])}"
+        except Exception as error:
+            logger.warning("health sync manifest check failed error=%s", type(error).__name__)
+            sync_text = (
+                "🟡 อ่านบันทึกซิงก์ไม่ได้ — อาจยังไม่ได้ติดตั้ง migration "
+                "หรือยังไม่เคยนำเข้าผ่านเครื่องมือรุ่นนี้"
+            )
+    elif not supabase_ok:
+        sync_text = "🟡 ตรวจฐานข้อมูลไม่ได้ขณะนี้; บอทยังคงใช้ local fallback"
 
     ready = bot.is_ready()
     latency_ms = bot.latency * 1000
@@ -5545,6 +5613,7 @@ async def health_command(interaction: discord.Interaction):
     )
     embed.add_field(name="🗃️ Dataset", value=dataset_text, inline=True)
     embed.add_field(name="🌐 Supabase", value=supabase_text, inline=True)
+    embed.add_field(name="🔄 ความตรงกันของข้อมูล", value=sync_text, inline=False)
     embed.add_field(
         name="เมื่อ Supabase ใช้ไม่ได้",
         value=(
@@ -5670,7 +5739,11 @@ async def ask_command(interaction: discord.Interaction, question: str):
     try:
         navigation_programs = await bot.load_navigation_programs(timeout=15)
         answer, _ = await asyncio.wait_for(
-            asyncio.to_thread(answer_question, question, navigation_programs, fetch_program_projects),
+            asyncio.to_thread(
+                answer_question_from_recommendations,
+                question,
+                navigation_programs,
+            ),
             timeout=8,
         )
         await interaction.edit_original_response(content=answer, embeds=[], view=None)
@@ -5680,6 +5753,15 @@ async def ask_command(interaction: discord.Interaction, question: str):
             content="ตอบคำถามนี้ไม่สำเร็จ ลองระบุชื่อมหาวิทยาลัยและสาขา แล้วใช้ `/tcas_search` ตรวจต่อ",
             embeds=[], view=None,
         )
+
+
+def answer_question_from_recommendations(question, navigation_programs):
+    """Use local facts first, then share one recommendation snapshot if needed."""
+    return answer_question_with_candidate_loader(
+        question,
+        navigation_programs,
+        fetch_recommendation_projects,
+    )
 
 
 @bot.tree.command(

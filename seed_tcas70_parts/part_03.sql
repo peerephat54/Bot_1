@@ -10,6 +10,42 @@ insert into public.admission_projects (
     data_notes, updated_at
 )
 select
+    u.id, 'swu-engineering-mechanical-good-student-1-2', 'swu-engineering-mechanical-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมเครื่องกล • TCAS 1.2', 2570, 1,
+    '1 Portfolio', '1.2', 'Portfolio', 'official',
+    true, null, 600,
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 166; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 24 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+from public.universities u
+where u.short_name = 'SWU'
+on conflict (code) do update set
+        university_id = excluded.university_id,
+        group_code = excluded.group_code,
+        name = excluded.name,
+        academic_year = excluded.academic_year,
+        tcas_round = excluded.tcas_round,
+        round_label = excluded.round_label,
+        round_variant = excluded.round_variant,
+        application_type = excluded.application_type,
+        publication_status = excluded.publication_status,
+        is_visible = excluded.is_visible,
+        selection_order_limit = excluded.selection_order_limit,
+        application_fee = excluded.application_fee,
+        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
+        source_url = excluded.source_url,
+        source_title = excluded.source_title,
+        source_published_at = excluded.source_published_at,
+        source_checked_at = excluded.source_checked_at,
+        data_notes = excluded.data_notes,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_projects (
+    university_id, code, group_code, name, academic_year, tcas_round,
+    round_label, round_variant, application_type, publication_status, is_visible,
+    selection_order_limit, application_fee, tuition_fee_per_semester,
+    source_url, source_title, source_published_at, source_checked_at,
+    data_notes, updated_at
+)
+select
     u.id, 'swu-engineering-civil-good-student-1-2', 'swu-engineering-civil-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมโยธา • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,

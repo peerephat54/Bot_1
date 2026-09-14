@@ -38,7 +38,7 @@
 
 ฟีเจอร์ใช้งานซ้ำประกอบด้วยรายการโปรด Checklist เตือนก่อนปิดรับประมาณ 3 วัน และการเปรียบเทียบ 2–3 หลักสูตร ระบบเก็บข้อมูลผู้ใช้ไว้ใน `tmp/user_features.json` สำหรับ deployment ปัจจุบัน และมี schema สำหรับย้ายไป Supabase ใน `migrate_user_features.sql`
 
-ดูรายละเอียดได้ที่ [Architecture และ Data Flow](docs/ARCHITECTURE.md), [Workflow ผู้ใช้](docs/WORKFLOW.md) และ [แผนทดสอบผู้ใช้](docs/USER_TEST_PLAN.md)
+ดูรายละเอียดได้ที่ [Architecture และ Data Flow](docs/ARCHITECTURE.md), [Workflow ผู้ใช้](docs/WORKFLOW.md), [ขั้นตอนตรวจและนำเข้า Supabase](docs/SUPABASE_DATASET_IMPORT.md) และ [แผนทดสอบผู้ใช้](docs/USER_TEST_PLAN.md)
 
 ## แหล่งข้อมูลและการอัปเดต
 
@@ -57,6 +57,8 @@ GitHub Actions จะเรียกตรวจทุกวันและแ�
 ```powershell
 python scripts/validate_dataset.py
 ```
+
+ใน Discord ใช้ `/data_quality` ดู coverage และคิวตรวจแหล่งข้อมูล; ใช้ `/health` แยกสถานะบอท, Supabase และ fingerprint ของชุดข้อมูลที่ซิงก์ล่าสุด การตรวจ hash ไม่ใช่การรับรองว่าเนื้อหาประกาศไม่เปลี่ยนหลังเวลาตรวจ
 
 ## ติดตั้งและรันในเครื่อง
 

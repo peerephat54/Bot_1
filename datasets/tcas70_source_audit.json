@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-09-13T21:12:44+07:00",
+  "checked_at": "2026-09-14T21:03:22+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -61,8 +61,8 @@
       "publisher": "คณะวิทยาศาสตร์ สจล.",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-08-28",
-      "decision": "ข่าว 25 ส.ค. สนับสนุนกำหนด Portfolio 1-1/1-2 ที่มีใน dataset แล้ว ไม่เพิ่มโครงการซ้ำ"
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "decision": "ตรวจหน้าประกาศคณะวิทยาศาสตร์ TCAS70 และไฟล์แนบท้ายทางการเลขที่ 4648 เมื่อ 14 ก.ย. 2569; ยืนยันหน้าคณะเชื่อมประกาศฉบับล่าสุด"
     },
     {
       "url": "https://www.admissionpremium.com/content/8429",
@@ -161,7 +161,8 @@
       "publisher": "SIIT มหาวิทยาลัยธรรมศาสตร์",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "decision": "นำเข้า OSP ปี 2027 สำหรับกลุ่มวิศวกรรมคอมพิวเตอร์/วิศวกรรมดิจิทัล โดยระบุขั้น Inter Portfolio 1 ตามประกาศ"
+      "decision": "ตรวจหน้าโครงการ OSP ปีการศึกษา 2027 และ PDF กำหนดการเฉพาะโครงการ; สมัคร 15 ก.ค.–15 ก.ย. 2569; ใช้วันที่ Inter Portfolio 1 ตาม PDF เฉพาะ OSP และบันทึกความต่างกับหน้ารวม Undergraduate เพื่อทบทวน",
+      "source_checked_at": "2026-09-14T21:03:22+07:00"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/b82694a9-f0a6-4a3a-b18f-0de4f1e8bbfc",
@@ -402,11 +403,12 @@
       "decision": "ยืนยันรายการหลักสูตร IT และวิศวกรรมสารสนเทศและเครือข่าย; เกณฑ์รับสมัครใช้ PDF TCAS70 โดยตรง"
     },
     {
-      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "decision": "นำเข้าวิทยาการคอมพิวเตอร์ 7 โครงการย่อยใน Portfolio 1-1 และ 1-2 พร้อม GPAX น้ำหนักคัดเลือก กำหนดการ ค่าใช้จ่าย และหมายเหตุจำนวนรับรวมรอบละ 25 คน โดยไม่แต่งจำนวนรายโครงการ"
+      "decision": "ตรวจ PDF ประกาศทางการเลขที่ 4648 ซึ่งลงวันที่ 21 ส.ค. 2569 และเชื่อมจากหน้าคณะ; แทนไฟล์เดิมเลขที่ 4640 ที่ตอบ 404; ยืนยัน 7 โครงการย่อยของวิทยาการคอมพิวเตอร์ รอบ 1.1/1.2 กำหนดการ ค่าธรรมเนียม และสัดส่วนคัดเลือก โดยจำนวนรับรวม 25 คนต่อรอบ ไม่แยกรายโครงการ",
+      "source_checked_at": "2026-09-14T21:03:22+07:00"
     },
     {
       "url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1",
@@ -880,6 +882,22 @@
       "academic_year": 2570,
       "source_checked_at": "2026-09-13T21:12:44+07:00",
       "decision": "เทียบหน้าโครงการความรู้ความสามารถทางวิศวกรรม วิศวกรรมคอมพิวเตอร์ มช. ปัจจุบันกับข้อมูล: รับ ม.6 วิทย์-คณิตหรือเทียบเท่าและเงื่อนไขโรงเรียนความร่วมมือ/Entaneer Academy; Portfolio 15 หน้า น้ำหนัก 80/20; เปิด 1.1 จำนวน 5 และ 1.2 จำนวน 0; หน้าโครงการไม่ระบุวันสมัคร จึงคงวันว่างรอประกาศคณะ"
+    },
+    {
+      "url": "https://admissions.siit.tu.ac.th/wp-content/uploads/2026/03/Admission-Schedule-OSP-2027-Ver-TH-I.pdf",
+      "publisher": "SIIT มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "imported_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "decision": "PDF กำหนดการทางการเฉพาะ OSP 2027; ยืนยันสมัคร 15 ก.ค.–15 ก.ย. 2569 และผู้ได้รับสิทธิ์สมัคร Inter Portfolio 1 วันที่ 3 พ.ย.–3 ธ.ค. 2569; หน้า Undergraduate ทั่วไปแสดง 2 พ.ย.–2 ธ.ค. จึงคงกำหนดเฉพาะ OSP และติดตามข้อแตกต่าง"
+    },
+    {
+      "url": "https://admissions.siit.tu.ac.th/undergraduate/",
+      "publisher": "SIIT มหาวิทยาลัยธรรมศาสตร์",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "decision": "หน้ารวมกำหนดการ Undergraduate แสดง Inter Portfolio 1 วันที่ 2 พ.ย.–2 ธ.ค. 2569 ซึ่งต่างจาก PDF OSP เฉพาะโครงการที่ระบุ 3 พ.ย.–3 ธ.ค.; ไม่ใช้แทนวันในโครงการ OSP"
     }
   ]
 }

@@ -2,6 +2,8 @@ import unittest
 
 from question_answering import (
     answer_question,
+    answer_question_from_candidates,
+    answer_question_with_candidate_loader,
     classify_question,
     extract_round_filter,
     find_programs,
@@ -70,6 +72,81 @@ class QuestionAnsweringTests(unittest.TestCase):
         projects = _load_local_projects({"code": "mu-ict"})
         self.assertTrue(projects)
         self.assertTrue(any(item.get("code") == "muict-ict-portfolio" for item in projects))
+
+    def test_preloaded_candidates_answer_without_per_program_loader_calls(self):
+        candidate = {
+            "program": {"code": "m1"},
+            "project": {
+                "code": "p1",
+                "name": "โครงการ Portfolio",
+                "publication_status": "official",
+                "source_url": "https://example.com/official",
+                "selected_criteria": {"required_documents": ["ใบแสดงผลการเรียน"]},
+            },
+        }
+        answer, matches = answer_question_from_candidates(
+            "KMITL เทคโนโลยีสารสนเทศ ต้องใช้เอกสารอะไร",
+            PROGRAMS,
+            [candidate, candidate],
+        )
+
+        self.assertEqual([item["code"] for item in matches], ["m1"])
+        self.assertIn("ใบแสดงผลการเรียน", answer)
+        self.assertIn("https://example.com/official", answer)
+        self.assertEqual(answer.count("[เปิดประกาศทางการ]"), 1)
+
+    def test_candidate_loader_is_skipped_when_local_catalog_has_the_answer(self):
+        program = {
+            "code": "mu-ict",
+            "university_short_name": "MU",
+            "university_name": "มหาวิทยาลัยมหิดล",
+            "major_name": "เทคโนโลยีสารสนเทศ",
+        }
+
+        def unexpected_remote_load():
+            raise AssertionError("remote candidates should not load for local facts")
+
+        answer, matches = answer_question_with_candidate_loader(
+            "MU เทคโนโลยีสารสนเทศ portfolio",
+            [program],
+            unexpected_remote_load,
+        )
+
+        self.assertTrue(matches)
+        self.assertIn("สถานะข้อมูล", answer)
+
+    def test_candidate_loader_fetches_one_snapshot_for_all_uncovered_programs(self):
+        programs = [
+            {"code": "x1", "major_name": "วิศวกรรมคอมพิวเตอร์", "university_short_name": "A"},
+            {"code": "x2", "major_name": "วิศวกรรมคอมพิวเตอร์", "university_short_name": "B"},
+        ]
+        calls = []
+
+        def load_candidates():
+            calls.append(True)
+            return [
+                {
+                    "program": {"code": code},
+                    "project": {
+                        "code": f"{code}-p",
+                        "name": "รอบ Portfolio",
+                        "publication_status": "official",
+                        "source_url": "https://example.com/official",
+                        "selected_criteria": {"min_gpax": 2.5},
+                    },
+                }
+                for code in ("x1", "x2")
+            ]
+
+        answer, matches = answer_question_with_candidate_loader(
+            "วิศวกรรมคอมพิวเตอร์ GPAX เท่าไร",
+            programs,
+            load_candidates,
+        )
+
+        self.assertEqual(len(calls), 1)
+        self.assertEqual([item["code"] for item in matches], ["x1", "x2"])
+        self.assertIn("GPAX ขั้นต่ำ 2.50", answer)
 
 
 if __name__ == "__main__":

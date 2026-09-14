@@ -285,7 +285,7 @@
       ]
     }
   ],
-  "checked_at": "2026-09-13T21:12:44+07:00",
+  "checked_at": "2026-09-14T21:03:22+07:00",
   "runtime_local_project_codes": [
     "tu-direct-cpe-2570",
     "tu-direct-software-2570",
@@ -2782,8 +2782,8 @@
       "source_url": "https://admissions.siit.tu.ac.th/admission_box/outstanding-student-program-osp/",
       "source_title": "Outstanding Student Program (OSP) Academic Year 2027",
       "source_published_at": "2026-03-30",
-      "source_checked_at": "2026-08-23T00:00:00+07:00",
-      "data_notes": "เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio"
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio; ตรวจประกาศกำหนดการเฉพาะ OSP 2027 เมื่อ 14 ก.ย. 2569: สมัครถึง 15 ก.ย. 2569; PDF เฉพาะ OSP ระบุ Inter Portfolio 1 วันที่ 3 พ.ย.–3 ธ.ค. 2569 ขณะที่หน้ารวม Undergraduate แสดง 2 พ.ย.–2 ธ.ค.; คงวันที่ตามประกาศเฉพาะโครงการและติดตามความต่างนี้"
     },
     {
       "university_short_name": "KMUTT",
@@ -3976,11 +3976,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KMITL",
@@ -3997,11 +3997,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KMITL",
@@ -4018,11 +4018,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KMITL",
@@ -4039,11 +4039,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KMITL",
@@ -4060,11 +4060,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KMITL",
@@ -4081,11 +4081,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KMITL",
@@ -4102,11 +4102,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 19000,
-      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
-      "source_title": "ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570",
-      "source_published_at": "2026-08-23",
-      "source_checked_at": "2026-08-23T23:37:03+07:00",
-      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ"
+      "source_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
+      "source_title": "ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570",
+      "source_published_at": "2026-08-21",
+      "source_checked_at": "2026-09-14T21:03:22+07:00",
+      "data_notes": "ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ"
     },
     {
       "university_short_name": "KU",
@@ -11656,10 +11656,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 3.50 และ GPAX กลุ่มคณิตศาสตร์/วิทยาศาสตร์ อย่างละ 3.00; Portfolio 60% + สัมภาษณ์ 25% + ผลการเรียน 15%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {
@@ -11703,10 +11703,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 3.50 และ GPAX กลุ่มคณิตศาสตร์/วิทยาศาสตร์ อย่างละ 3.00; Portfolio 60% + สัมภาษณ์ 25% + ผลการเรียน 15%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {
@@ -11753,10 +11753,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {
@@ -11803,10 +11803,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {
@@ -11849,10 +11849,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {
@@ -11895,10 +11895,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {
@@ -11940,10 +11940,10 @@
         "จำนวนรับ": "วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ",
         "การเลือก": "เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา",
         "ระบบ Portfolio": "KMITL Student iFolio",
-        "ข่าวประกาศทางการ": "news_id 4640"
+        "ข่าวประกาศทางการ": "news_id 4648"
       },
       "criteria_summary": "เฉพาะผู้ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ สจล.; Portfolio 75% + สัมภาษณ์ 25%",
-      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf",
+      "official_announcement_url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf",
       "program_code": "kmitl-science-computer-science"
     },
     {

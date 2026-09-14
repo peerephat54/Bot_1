@@ -2,6 +2,7 @@ import unittest
 
 from scripts.import_supabase_dataset import (
     ImportCheckError,
+    _record_sync_manifest,
     _import_report,
     load_import_bundle,
     strip_seed_transaction_wrappers,
@@ -19,6 +20,33 @@ class SupabaseDatasetImporterTests(unittest.TestCase):
         self.assertEqual(len(bundle["university_codes"]), 9)
         self.assertIn("do nothing", bundle["insert_missing_sql"].lower())
         self.assertNotIn("do update set", bundle["insert_missing_sql"].lower())
+        self.assertIn("do update set", bundle["sql"].lower())
+        self.assertEqual(len(bundle["dataset_sha256"]), 64)
+        self.assertEqual(len(bundle["audit_sha256"]), 64)
+        self.assertIn("dataset_sync_manifest", bundle["sync_manifest_migration_sql"])
+
+    def test_sync_manifest_is_parameterized_and_keeps_exact_import_counts(self):
+        class FakeConnection:
+            def __init__(self):
+                self.call = None
+
+            def execute(self, sql, params):
+                self.call = (sql, params)
+
+        connection = FakeConnection()
+        report = {"projects": {"expected": 2, "present_after": 2}}
+        bundle = {
+            "academic_year": 2570,
+            "dataset_sha256": "a" * 64,
+            "audit_sha256": "b" * 64,
+        }
+        _record_sync_manifest(connection, bundle, report, "reviewed_upsert")
+
+        sql, params = connection.call
+        self.assertIn("on conflict (academic_year) do update", sql.lower())
+        self.assertIn("%s::jsonb", sql)
+        self.assertEqual(params[:4], (2570, "a" * 64, "b" * 64, "reviewed_upsert"))
+        self.assertIn('"present_after":2', params[4])
 
     def test_import_report_separates_existing_rows_from_newly_added_rows(self):
         keys = (

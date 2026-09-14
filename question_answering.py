@@ -360,3 +360,50 @@ def answer_question(query, programs, project_loader):
         lines.append("\nคำถามนี้มีหลายประเด็น ระบบแสดงหัวข้อหลักก่อน; กดดูรายละเอียดโครงการเพื่อดูทุกเงื่อนไข")
     lines.append("\nข้อมูลนี้อ้างอิงชุดข้อมูลที่ตรวจแล้ว ไม่ใช่การรับรองสิทธิ์สมัคร ควรเปิดประกาศต้นทางก่อนยื่น")
     return "\n".join(lines), [program for program, _ in rows]
+
+
+def answer_question_from_candidates(query, programs, candidates):
+    """Answer using one preloaded candidate set instead of per-program I/O."""
+    projects_by_program = _index_candidate_projects(candidates)
+
+    return answer_question(
+        query,
+        programs,
+        lambda program_code: projects_by_program.get(program_code, []),
+    )
+
+
+def _index_candidate_projects(candidates):
+    projects_by_program = {}
+    seen_by_program = {}
+    for candidate in candidates or []:
+        program = candidate.get("program") or {}
+        project = candidate.get("project") or {}
+        program_code = program.get("code")
+        project_code = project.get("code")
+        if not program_code or not project:
+            continue
+        seen = seen_by_program.setdefault(program_code, set())
+        if project_code and project_code in seen:
+            continue
+        if project_code:
+            seen.add(project_code)
+        projects_by_program.setdefault(program_code, []).append(project)
+    return projects_by_program
+
+
+def answer_question_with_candidate_loader(query, programs, candidates_loader):
+    """Load one shared candidate snapshot only if local facts cannot answer."""
+    projects_by_program = None
+
+    def load_for_program(program_code):
+        nonlocal projects_by_program
+        if projects_by_program is None:
+            projects_by_program = _index_candidate_projects(candidates_loader())
+        return projects_by_program.get(program_code, [])
+
+    return answer_question(
+        query,
+        programs,
+        load_for_program,
+    )

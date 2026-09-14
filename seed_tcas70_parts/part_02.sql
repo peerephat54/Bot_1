@@ -374,7 +374,7 @@ select
     '1 Portfolio', 'OSP / Inter Portfolio 1', 'Scholarship exam + Inter Portfolio', 'official',
     true, null, null,
     null, 'https://admissions.siit.tu.ac.th/admission_box/outstanding-student-program-osp/', 'Outstanding Student Program (OSP) Academic Year 2027',
-    '2026-03-30', '2026-08-23T00:00:00+07:00', 'เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio', now()
+    '2026-03-30', '2026-09-14T21:03:22+07:00', 'เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio; ตรวจประกาศกำหนดการเฉพาะ OSP 2027 เมื่อ 14 ก.ย. 2569: สมัครถึง 15 ก.ย. 2569; PDF เฉพาะ OSP ระบุ Inter Portfolio 1 วันที่ 3 พ.ย.–3 ธ.ค. 2569 ขณะที่หน้ารวม Undergraduate แสดง 2 พ.ย.–2 ธ.ค.; คงวันที่ตามประกาศเฉพาะโครงการและติดตามความต่างนี้', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -2425,8 +2425,8 @@ select
     u.id, 'kmitl-science-cs-good-student-1-1', 'kmitl-science-cs-good-student', 'โครงการเรียนดี 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2461,8 +2461,8 @@ select
     u.id, 'kmitl-science-cs-good-student-1-2', 'kmitl-science-cs-good-student', 'โครงการเรียนดี 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2497,8 +2497,8 @@ select
     u.id, 'kmitl-science-cs-science-talent-1-1', 'kmitl-science-cs-science-talent', 'โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2533,8 +2533,8 @@ select
     u.id, 'kmitl-science-cs-science-talent-1-2', 'kmitl-science-cs-science-talent', 'โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2569,8 +2569,8 @@ select
     u.id, 'kmitl-science-cs-staff-child-1-1', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2605,8 +2605,8 @@ select
     u.id, 'kmitl-science-cs-staff-child-1-2', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2641,8 +2641,8 @@ select
     u.id, 'kmitl-science-cs-professional-developer-1-2', 'kmitl-science-cs-professional-developer', 'โครงการนักพัฒนามืออาชีพ 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4640_2026_08_23-19-39-43_c47b2.pdf', 'ประกาศรับสมัครรอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ประจำปีการศึกษา 2570',
-    '2026-08-23', '2026-08-23T23:37:03+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ', now()
+    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3615,42 +3615,6 @@ select
     true, null, 600,
     null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
     '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 165; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
-from public.universities u
-where u.short_name = 'SWU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'swu-engineering-mechanical-good-student-1-2', 'swu-engineering-mechanical-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมเครื่องกล • TCAS 1.2', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 166; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 24 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set

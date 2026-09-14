@@ -10,11 +10,27 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
+# `python scripts/import_supabase_dataset.py` sets sys.path to scripts/ only.
+# Put the project root first so both package and direct-script execution work.
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 try:
+    from dataset_sync import (
+        SYNC_MODE_INSERT_MISSING,
+        SYNC_MODE_REVIEWED_UPSERT,
+        file_sha256,
+    )
     from scripts.generate_seed_sql import generate
     from scripts.validate_dataset import validate, validate_source_audit
     from scripts.verify_import_truth import require_ready_report
 except ImportError:  # Running this file directly from the scripts directory.
+    from dataset_sync import (
+        SYNC_MODE_INSERT_MISSING,
+        SYNC_MODE_REVIEWED_UPSERT,
+        file_sha256,
+    )
     from generate_seed_sql import generate
     from validate_dataset import validate, validate_source_audit
     from verify_import_truth import require_ready_report
@@ -23,6 +39,7 @@ except ImportError:  # Running this file directly from the scripts directory.
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_DATASET = ROOT / "datasets" / "tcas70_admissions.json"
 MIGRATION_PATH = ROOT / "supabase_admission_calendar_migration.sql"
+SYNC_MANIFEST_MIGRATION_PATH = ROOT / "migrate_dataset_sync_manifest.sql"
 GENERATED_SEED_PATH = ROOT / "seed_tcas70.sql"
 APPLICATION_NAME = "tcas70_dataset_import"
 
@@ -92,6 +109,8 @@ def load_import_bundle(dataset_path: Path = DEFAULT_DATASET) -> dict:
 
     if not MIGRATION_PATH.is_file():
         errors.append(f"calendar migration is missing: {MIGRATION_PATH.name}")
+    if not SYNC_MANIFEST_MIGRATION_PATH.is_file():
+        errors.append(f"sync manifest migration is missing: {SYNC_MANIFEST_MIGRATION_PATH.name}")
 
     sql = generate(data)
     if GENERATED_SEED_PATH.is_file():
@@ -112,7 +131,11 @@ def load_import_bundle(dataset_path: Path = DEFAULT_DATASET) -> dict:
         "sql": sql,
         "insert_missing_sql": generate(data, update_existing=False),
         "migration_sql": MIGRATION_PATH.read_text(encoding="utf-8"),
+        "sync_manifest_migration_sql": SYNC_MANIFEST_MIGRATION_PATH.read_text(encoding="utf-8"),
+        "dataset_sha256": file_sha256(dataset_path),
+        "audit_sha256": file_sha256(audit_path),
         "dataset_path": dataset_path,
+        "audit_path": audit_path,
     }
 
 
@@ -327,6 +350,28 @@ def _verify_database_presence(connection, bundle: dict, before: dict) -> dict:
     return _import_report(before, after, expected)
 
 
+def _record_sync_manifest(connection, bundle: dict, report: dict, sync_mode: str) -> None:
+    """Store sync provenance in the same transaction as the dataset write."""
+    connection.execute(
+        """insert into public.dataset_sync_manifest (
+               academic_year, dataset_sha256, audit_sha256, sync_mode, record_counts, synced_at
+           ) values (%s, %s, %s, %s, %s::jsonb, now())
+           on conflict (academic_year) do update set
+               dataset_sha256 = excluded.dataset_sha256,
+               audit_sha256 = excluded.audit_sha256,
+               sync_mode = excluded.sync_mode,
+               record_counts = excluded.record_counts,
+               synced_at = excluded.synced_at""",
+        (
+            bundle["academic_year"],
+            bundle["dataset_sha256"],
+            bundle["audit_sha256"],
+            sync_mode,
+            json.dumps(report, ensure_ascii=False, separators=(",", ":")),
+        ),
+    )
+
+
 def print_dataset_summary(bundle: dict) -> None:
     counts = bundle["counts"]
     print(f"Dataset structure/consistency validation: PASSED (TCAS{bundle['academic_year']})")
@@ -339,7 +384,8 @@ def print_dataset_summary(bundle: dict) -> None:
         f"{counts['timeline_events']} timeline events, "
         f"{counts['university_calendars']} admission calendars"
     )
-    print("Import mode: insert only missing records; existing records are left unchanged.")
+    print("Default import mode: insert only missing records; existing records are left unchanged.")
+    print("Reviewed sync mode: update matching rows only after every evidence check passes.")
 
 
 def check_connection(project_ref: str) -> None:
@@ -356,7 +402,10 @@ def check_connection(project_ref: str) -> None:
                     )
                 connection.execute("select current_database(), current_user").fetchone()
         print(f"Connection and target check: PASSED ({project_ref}); database was not changed.")
-        print("Core tables and columns are ready. The importer will add/update the calendar table during apply.")
+        print(
+            "Core tables and columns are ready. The importer will install the calendar and sync-manifest "
+            "tables during apply."
+        )
     except ImportCheckError:
         raise
     except Exception as error:  # Do not print the exception: drivers may include connection details.
@@ -365,7 +414,7 @@ def check_connection(project_ref: str) -> None:
         ) from None
 
 
-def apply_import(project_ref: str, bundle: dict) -> dict:
+def apply_import(project_ref: str, bundle: dict, *, update_reviewed: bool = False) -> dict:
     connection_string = getpass.getpass("Paste Supabase PostgreSQL URI (hidden): ").strip()
     validate_connection_target(connection_string, project_ref)
     try:
@@ -380,21 +429,37 @@ def apply_import(project_ref: str, bundle: dict) -> dict:
             expected = expected_database_counts(bundle["counts"])
             print(f"Target verified: Supabase project {project_ref}")
             print("The import runs in one transaction. Any SQL or count error rolls everything back.")
-            print("Existing dataset keys found; only the remainder will be added:")
+            print(
+                "Reviewed sync will update matching rows; insert-only mode will leave them unchanged:"
+                if update_reviewed
+                else "Existing dataset keys found; only the remainder will be added:"
+            )
             for key in IMPORT_COUNT_KEYS:
                 print(f"  {key}: {before[key]} already present, {expected[key] - before[key]} to add")
-            confirmation = input(f"Type APPLY {project_ref} to write these records: ").strip()
-            if confirmation != f"APPLY {project_ref}":
+            confirmation_phrase = (
+                f"SYNC-VERIFIED {project_ref}" if update_reviewed else f"APPLY {project_ref}"
+            )
+            confirmation = input(f"Type {confirmation_phrase} to write these records: ").strip()
+            if confirmation != confirmation_phrase:
                 print("Cancelled; database was not changed.")
                 return {}
 
             migration_sql = bundle["migration_sql"]
-            seed_sql = strip_seed_transaction_wrappers(bundle["insert_missing_sql"])
+            seed_key = "sql" if update_reviewed else "insert_missing_sql"
+            seed_sql = strip_seed_transaction_wrappers(bundle[seed_key])
             with connection.transaction():
                 # Recheck under the write transaction so concurrent imports remain safe.
                 transaction_before = _presence_counts(connection, bundle)
-                connection.execute(migration_sql + "\n" + seed_sql)
+                connection.execute(
+                    migration_sql + "\n" + bundle["sync_manifest_migration_sql"] + "\n" + seed_sql
+                )
                 actual = _verify_database_presence(connection, bundle, transaction_before)
+                _record_sync_manifest(
+                    connection,
+                    bundle,
+                    actual,
+                    SYNC_MODE_REVIEWED_UPSERT if update_reviewed else SYNC_MODE_INSERT_MISSING,
+                )
             return actual
     except ImportCheckError:
         raise
@@ -411,6 +476,11 @@ def main(argv: list[str] | None = None) -> int:
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--check-connection", action="store_true", help="Connect read-only and check the existing schema")
     mode.add_argument("--apply", action="store_true", help="Insert only missing validated records after typed confirmation")
+    mode.add_argument(
+        "--apply-reviewed",
+        action="store_true",
+        help="Upsert reviewed dataset records; requires a fresh, fully passing evidence report",
+    )
     parser.add_argument("--project-ref", help="20-character Supabase project ref; never a password")
     parser.add_argument(
         "--evidence-report",
@@ -424,7 +494,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         bundle = load_import_bundle(args.dataset)
         print_dataset_summary(bundle)
-        if not args.check_connection and not args.apply:
+        if not args.check_connection and not args.apply and not args.apply_reviewed:
             print("Dry run only: no Supabase connection was opened and no data was changed.")
             print("These checks do not prove admission facts; run scripts/verify_import_truth.py before importing.")
             print("Next: run with --check-connection --project-ref YOUR_PROJECT_REF.")
@@ -451,10 +521,14 @@ def main(argv: list[str] | None = None) -> int:
             f"({report['record_status_counts'].get('automated_checks_passed', 0)} records; "
             "exact dataset and audit fingerprints match)"
         )
-        actual = apply_import(args.project_ref, bundle)
+        actual = apply_import(args.project_ref, bundle, update_reviewed=args.apply_reviewed)
         if actual:
             print("Import and database count verification: PASSED")
-            print("Import summary (existing rows were not modified):")
+            print(
+                "Import summary (reviewed existing rows were updated):"
+                if args.apply_reviewed
+                else "Import summary (existing rows were not modified):"
+            )
             print(json.dumps(actual, ensure_ascii=False, indent=2))
         return 0
     except (ImportCheckError, OSError, json.JSONDecodeError) as error:
