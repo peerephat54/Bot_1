@@ -110,6 +110,25 @@ class QuestionAnsweringTests(unittest.TestCase):
         self.assertIn("🟡 รอตรวจ (ยังไม่มีวันที่ตรวจล่าสุด)", answer)
         self.assertIn("เปิดประกาศทางการและตรวจข้อมูลล่าสุด", answer)
 
+    def test_answer_stays_within_discord_message_limit(self):
+        projects = [{
+            "code": f"p{index}",
+            "name": "โครงการ Portfolio " + ("ข้อมูลยาว " * 80),
+            "round_label": "1 Portfolio",
+            "round_variant": "1.1",
+            "publication_status": "official",
+            "source_url": "https://example.com/official",
+            "source_checked_at": date.today().isoformat(),
+            "selected_criteria": {"required_documents": ["เอกสาร"] * 10},
+        } for index in range(8)]
+        answer, _ = answer_question(
+            "KMITL วิทยาการคอมพิวเตอร์ ต้องใช้เอกสารอะไร",
+            PROGRAMS,
+            lambda code: {"projects": projects},
+        )
+        self.assertLessEqual(len(answer), 1900)
+        self.assertIn("กด `/tcas_search`", answer)
+
     def test_local_catalog_is_used_before_project_loader(self):
         projects = _load_local_projects({"code": "mu-ict"})
         self.assertTrue(projects)

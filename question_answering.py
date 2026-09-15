@@ -47,6 +47,7 @@ STOPWORDS = {
 CATALOG_PATH = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
 MAX_ASK_RESULTS = 3
 MAX_ASK_EXTRA_TOPICS = 2
+MAX_ASK_MESSAGE_LENGTH = 1900
 TOPIC_LABELS = {
     "application_status": "สถานะการสมัคร",
     "deadline": "กำหนดการ",
@@ -361,6 +362,7 @@ def answer_question(query, programs, project_loader):
     if round_filter:
         lines.append(f"กรองเฉพาะ **รอบ {round_filter}**")
     shown_rows = rows[:MAX_ASK_RESULTS]
+    answer_rows = []
     for program, project in shown_rows:
         value = _compact_value(_value_for_topic(project, primary_topic))
         extra_topics = [topic for topic in topics[1:] if topic != primary_topic][:MAX_ASK_EXTRA_TOPICS]
@@ -376,7 +378,7 @@ def answer_question(query, programs, project_loader):
             f"ตรวจล่าสุด: {project.get('source_checked_at') or 'ไม่ระบุ'}"
         )
         next_step = _next_step(project, topics)
-        lines.append(
+        answer_rows.append(
             f"\n**{program.get('university_short_name')} • {program_name}**\n"
             f"**{_project_name(project)}**\n"
             f"{TOPIC_LABELS.get(primary_topic, 'คำตอบ')}: {value}\n"
@@ -385,12 +387,23 @@ def answer_question(query, programs, project_loader):
             + f"\n{next_step}"
             + (f"\n[เปิดประกาศทางการ]({source})" if source else "\nยังไม่มีลิงก์ประกาศทางการในข้อมูล")
         )
+    footer = []
     if len(rows) > MAX_ASK_RESULTS:
-        lines.append(f"\nยังมีอีก {len(rows) - MAX_ASK_RESULTS} รายการ กด `/tcas_search` เพื่อดูทั้งหมด")
+        footer.append(f"ยังมีอีก {len(rows) - MAX_ASK_RESULTS} รายการ กด `/tcas_search` เพื่อดูทั้งหมด")
     if len(topics) > 1 and primary_topic != "application_status":
-        lines.append("\nคำถามนี้มีหลายประเด็น ระบบแสดงหัวข้อหลักก่อน; กดดูรายละเอียดโครงการเพื่อดูทุกเงื่อนไข")
-    lines.append("\nข้อมูลนี้อ้างอิงชุดข้อมูลที่ตรวจแล้ว ไม่ใช่การรับรองสิทธิ์สมัคร ควรเปิดประกาศต้นทางก่อนยื่น")
-    return "\n".join(lines), [program for program, _ in rows]
+        footer.append("คำถามนี้มีหลายประเด็น; กดดูรายละเอียดโครงการเพื่อดูทุกเงื่อนไข")
+    footer.append("ข้อมูลนี้อ้างอิงชุดข้อมูลที่ตรวจแล้ว ไม่ใช่การรับรองสิทธิ์สมัคร ควรเปิดประกาศต้นทางก่อนยื่น")
+
+    omitted = 0
+    while answer_rows and len("\n".join(lines + answer_rows + footer)) > MAX_ASK_MESSAGE_LENGTH:
+        answer_rows.pop()
+        omitted += 1
+    if omitted:
+        footer.insert(0, f"ตัดผลลัพธ์ท้าย {omitted} รายการเพื่อให้ข้อความอ่านง่าย กด `/tcas_search` เพื่อดูทั้งหมด")
+    answer = "\n".join(lines + answer_rows + footer)
+    if len(answer) > MAX_ASK_MESSAGE_LENGTH:
+        answer = answer[:MAX_ASK_MESSAGE_LENGTH - 1].rstrip() + "…"
+    return answer, [program for program, _ in rows]
 
 
 def answer_question_from_candidates(query, programs, candidates):
