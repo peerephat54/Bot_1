@@ -173,6 +173,18 @@ def _source_status(project):
     return "🔎 ต้องตรวจเพิ่ม"
 
 
+def _next_step(project, topics):
+    """Give one safe next action without claiming eligibility."""
+    verification_status = classify_project_source_status(project)
+    if verification_status != "confirmed":
+        return "ต่อไป: เปิดประกาศทางการและตรวจข้อมูลล่าสุดก่อนสมัคร"
+    if any(topic in topics for topic in ("application_status", "deadline")):
+        return "ต่อไป: ตรวจคุณสมบัติและเอกสารในประกาศเต็ม แล้วค่อยกดสมัคร"
+    if any(topic in topics for topic in ("documents", "portfolio", "gpax", "qualification")):
+        return "ต่อไป: เตรียมหลักฐานตามรายการ แล้วตรวจประกาศเต็มอีกครั้ง"
+    return "ต่อไป: ใช้ /tcas_search เพื่อดูเกณฑ์และ Checklist ของโครงการ"
+
+
 def _load_projects(program, project_loader):
     local_projects = _load_local_projects(program)
     if local_projects:
@@ -363,12 +375,14 @@ def answer_question(query, programs, project_loader):
             f"สถานะข้อมูล: {_source_status(project)} • "
             f"ตรวจล่าสุด: {project.get('source_checked_at') or 'ไม่ระบุ'}"
         )
+        next_step = _next_step(project, topics)
         lines.append(
             f"\n**{program.get('university_short_name')} • {program_name}**\n"
             f"**{_project_name(project)}**\n"
             f"{TOPIC_LABELS.get(primary_topic, 'คำตอบ')}: {value}\n"
             + extra_text
             + status_text
+            + f"\n{next_step}"
             + (f"\n[เปิดประกาศทางการ]({source})" if source else "\nยังไม่มีลิงก์ประกาศทางการในข้อมูล")
         )
     if len(rows) > MAX_ASK_RESULTS:

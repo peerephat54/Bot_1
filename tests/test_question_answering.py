@@ -69,6 +69,7 @@ class QuestionAnsweringTests(unittest.TestCase):
         self.assertIn("ยังไม่เปิดรับสมัคร", answer)
         self.assertIn("10 ก.ย. 2642", answer)
         self.assertIn("สถานะข้อมูล: ✅ ยืนยันแล้ว", answer)
+        self.assertIn("ต่อไป: ตรวจคุณสมบัติและเอกสาร", answer)
 
     def test_mixed_question_answers_primary_and_secondary_topics(self):
         project = {
@@ -107,6 +108,7 @@ class QuestionAnsweringTests(unittest.TestCase):
             }]},
         )
         self.assertIn("🟡 รอตรวจ (ยังไม่มีวันที่ตรวจล่าสุด)", answer)
+        self.assertIn("เปิดประกาศทางการและตรวจข้อมูลล่าสุด", answer)
 
     def test_local_catalog_is_used_before_project_loader(self):
         projects = _load_local_projects({"code": "mu-ict"})
