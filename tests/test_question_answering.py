@@ -1,4 +1,5 @@
 import unittest
+from datetime import date
 
 from question_answering import (
     answer_question,
@@ -47,6 +48,7 @@ class QuestionAnsweringTests(unittest.TestCase):
             "round_variant": "1.1",
             "publication_status": "official",
             "source_url": "https://example.com/ku",
+            "source_checked_at": date.today().isoformat(),
             "admission_timeline": [{
                 "event_name": "รับสมัคร",
                 "start_on": "2099-09-01",
@@ -67,6 +69,44 @@ class QuestionAnsweringTests(unittest.TestCase):
         self.assertIn("ยังไม่เปิดรับสมัคร", answer)
         self.assertIn("10 ก.ย. 2642", answer)
         self.assertIn("สถานะข้อมูล: ✅ ยืนยันแล้ว", answer)
+
+    def test_mixed_question_answers_primary_and_secondary_topics(self):
+        project = {
+            "name": "โครงการ Portfolio",
+            "round_label": "1 Portfolio",
+            "round_variant": "1.1",
+            "publication_status": "official",
+            "source_url": "https://example.com/ku",
+            "source_checked_at": "2099-08-31",
+            "selected_criteria": {"required_documents": ["ใบแสดงผลการเรียน"]},
+            "admission_timeline": [{
+                "event_name": "รับสมัคร",
+                "start_on": "2099-09-01",
+                "end_on": "2099-09-10",
+                "date_status": "confirmed",
+            }],
+        }
+        answer, _ = answer_question(
+            "KU วิทยาการคอมพิวเตอร์ สมัครได้ไหม หมดเขตวันไหน ต้องใช้เอกสารอะไร",
+            [{**PROGRAMS[0], "university_short_name": "KU", "major_name": "วิทยาการคอมพิวเตอร์"}],
+            lambda code: {"projects": [project]},
+        )
+        self.assertIn("สถานะการสมัคร:", answer)
+        self.assertIn("กำหนดการ:", answer)
+        self.assertIn("เอกสาร:", answer)
+
+    def test_official_project_without_checked_date_is_not_marked_confirmed(self):
+        answer, _ = answer_question(
+            "KMITL เทคโนโลยีสารสนเทศ ต้องใช้เอกสารอะไร",
+            PROGRAMS,
+            lambda code: {"projects": [{
+                "name": "Portfolio",
+                "publication_status": "official",
+                "source_url": "https://example.com",
+                "selected_criteria": {},
+            }]},
+        )
+        self.assertIn("🟡 รอตรวจ (ยังไม่มีวันที่ตรวจล่าสุด)", answer)
 
     def test_local_catalog_is_used_before_project_loader(self):
         projects = _load_local_projects({"code": "mu-ict"})

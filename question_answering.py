@@ -7,6 +7,7 @@ from functools import lru_cache
 from pathlib import Path
 
 from admission_dates import event_date, portfolio_dates
+from data_quality import SOURCE_FRESHNESS_DAYS, classify_project_source_status
 from user_features import application_close_event
 
 
@@ -45,6 +46,7 @@ STOPWORDS = {
 
 CATALOG_PATH = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
 MAX_ASK_RESULTS = 3
+MAX_ASK_EXTRA_TOPICS = 2
 TOPIC_LABELS = {
     "application_status": "สถานะการสมัคร",
     "deadline": "กำหนดการ",
@@ -157,12 +159,17 @@ def _compact_value(value, limit=480):
 
 def _source_status(project):
     status = project.get("publication_status")
-    if status == "official":
+    verification_status = classify_project_source_status(project)
+    if verification_status == "confirmed":
         return "✅ ยืนยันแล้ว"
+    if verification_status == "needs_recheck":
+        return f"🔄 ควรตรวจซ้ำ (เกิน {SOURCE_FRESHNESS_DAYS} วัน)"
     if status == "draft_waiting_official":
         return "🟡 รอประกาศฉบับสมบูรณ์"
     if project.get("reference_academic_year"):
         return f"📘 ข้อมูลอ้างอิง TCAS{str(project['reference_academic_year'])[-2:]}"
+    if status in {"official", "closed"}:
+        return "🟡 รอตรวจ (ยังไม่มีวันที่ตรวจล่าสุด)"
     return "🔎 ต้องตรวจเพิ่ม"
 
 
@@ -344,14 +351,24 @@ def answer_question(query, programs, project_loader):
     shown_rows = rows[:MAX_ASK_RESULTS]
     for program, project in shown_rows:
         value = _compact_value(_value_for_topic(project, primary_topic))
+        extra_topics = [topic for topic in topics[1:] if topic != primary_topic][:MAX_ASK_EXTRA_TOPICS]
+        extra_lines = []
+        for topic in extra_topics:
+            extra_value = _compact_value(_value_for_topic(project, topic), 220)
+            extra_lines.append(f"{TOPIC_LABELS.get(topic, 'ข้อมูลเพิ่มเติม')}: {extra_value}")
+        extra_text = "เพิ่มเติม: " + " • ".join(extra_lines) + "\n" if extra_lines else ""
         source = project.get("source_url")
         program_name = program.get("major_name") or program.get("faculty_name") or "ไม่ระบุสาขา"
+        status_text = (
+            f"สถานะข้อมูล: {_source_status(project)} • "
+            f"ตรวจล่าสุด: {project.get('source_checked_at') or 'ไม่ระบุ'}"
+        )
         lines.append(
             f"\n**{program.get('university_short_name')} • {program_name}**\n"
             f"**{_project_name(project)}**\n"
             f"{TOPIC_LABELS.get(primary_topic, 'คำตอบ')}: {value}\n"
-            f"สถานะข้อมูล: {_source_status(project)} • "
-            f"ตรวจล่าสุด: {project.get('source_checked_at') or 'ไม่ระบุ'}"
+            + extra_text
+            + status_text
             + (f"\n[เปิดประกาศทางการ]({source})" if source else "\nยังไม่มีลิงก์ประกาศทางการในข้อมูล")
         )
     if len(rows) > MAX_ASK_RESULTS:
