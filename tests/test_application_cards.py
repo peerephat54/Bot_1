@@ -75,6 +75,7 @@ class ApplicationCardTests(unittest.TestCase):
         self.assertIn("ควรตรวจซ้ำ:", status)
         self.assertIn("คิวตรวจถัดไป", fields)
         self.assertIn("https://", fields["คิวตรวจถัดไป"])
+        self.assertTrue(any("Source Trust" in name for name in fields))
         self.assertIsNotNone(app.bot.tree.get_command("data_quality"))
 
     def test_structured_criteria_are_written_as_readable_text(self):

@@ -10,7 +10,63 @@ from urllib.parse import urlparse
 
 
 SOURCE_FRESHNESS_DAYS = 7
+TRUTH_REPORT_GLOB = "import_truth_report*.json"
 THAILAND_TZ = timezone(timedelta(hours=7))
+
+
+def load_latest_truth_report(project_root):
+    """Load the newest local evidence-gate report without trusting its records."""
+    root = Path(project_root)
+    candidates = sorted(
+        (root / "tmp").glob(TRUTH_REPORT_GLOB),
+        key=lambda path: path.stat().st_mtime,
+        reverse=True,
+    )
+    for path in candidates:
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, TypeError, json.JSONDecodeError):
+            continue
+        if isinstance(payload, dict) and payload.get("generated_at"):
+            return payload
+    return None
+
+
+def source_truth_summary(report):
+    """Return bounded, display-ready evidence-gate metrics for the bot UI."""
+    if not report:
+        return {
+            "label": "⚪ ยังไม่มีรายงานตรวจเว็บสด",
+            "generated_at": None,
+            "source_count": 0,
+            "ok_count": 0,
+            "error_count": 0,
+            "stale_count": 0,
+            "changed_count": 0,
+            "baseline_missing_count": 0,
+            "needs_review": 0,
+            "automated_checks_passed": 0,
+        }
+
+    status_labels = {
+        "passed": "✅ ผ่านด่านหลักฐาน",
+        "needs_review": "🟡 ต้องตรวจโดยคน",
+        "error": "❌ ตรวจหลักฐานไม่สำเร็จ",
+    }
+    monitor = report.get("source_monitor") or {}
+    record_counts = report.get("record_status_counts") or {}
+    return {
+        "label": status_labels.get(report.get("status"), "🟡 สถานะหลักฐานไม่ทราบ"),
+        "generated_at": report.get("generated_at"),
+        "source_count": int(monitor.get("source_count") or 0),
+        "ok_count": int(monitor.get("ok_count") or 0),
+        "error_count": int(monitor.get("error_count") or 0),
+        "stale_count": int(monitor.get("stale_count") or 0),
+        "changed_count": int(monitor.get("changed_count") or 0),
+        "baseline_missing_count": int(monitor.get("baseline_missing_count") or 0),
+        "needs_review": int(record_counts.get("needs_review") or 0),
+        "automated_checks_passed": int(record_counts.get("automated_checks_passed") or 0),
+    }
 
 
 def _date(value):

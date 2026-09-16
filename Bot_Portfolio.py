@@ -33,6 +33,8 @@ from data_quality import (
     SOURCE_FRESHNESS_DAYS,
     classify_project_source_status,
     load_quality_report,
+    load_latest_truth_report,
+    source_truth_summary,
 )
 from dataset_sync import classify_sync_status, local_sync_identity
 from question_answering import answer_question_with_candidate_loader
@@ -2032,6 +2034,24 @@ def build_checklist_embed(program, project, user_id):
     return trim_embed_to_limit(embed)
 
 
+def source_truth_text(project_root):
+    """Render the latest live evidence-gate result for user-facing status views."""
+    summary = source_truth_summary(load_latest_truth_report(project_root))
+    if not summary["generated_at"]:
+        return summary["label"]
+    return (
+        f"{summary['label']}\n"
+        f"ตรวจเว็บล่าสุด: {format_checked_at(summary['generated_at'])}\n"
+        f"แหล่งที่เปิดได้: {summary['ok_count']}/{summary['source_count']} "
+        f"• ผิดพลาด {summary['error_count']}\n"
+        f"เกิน 7 วัน: {summary['stale_count']} "
+        f"• เนื้อหาเปลี่ยน: {summary['changed_count']} "
+        f"• ยังไม่มี baseline: {summary['baseline_missing_count']}\n"
+        f"รายการรอตรวจคน: {summary['needs_review']} "
+        f"• ผ่านอัตโนมัติ: {summary['automated_checks_passed']}"
+    )
+
+
 def build_quality_embed():
     dataset_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
     report = load_quality_report(dataset_path)
@@ -2118,6 +2138,11 @@ def build_quality_embed():
             f"เก่าเกิน 7 วัน: {report['stale_sources']} รายการ\n"
             f"ตรวจล่าสุดจาก audit: {report['latest_source_check'] or 'ไม่ระบุ'}"
         ),
+        inline=False,
+    )
+    embed.add_field(
+        name="🔎 Source Trust",
+        value=source_truth_text(dataset_path.parent),
         inline=False,
     )
     embed.set_footer(text=f"dataset ตรวจล่าสุด {format_checked_at(report.get('checked_at'))}")
@@ -5614,6 +5639,11 @@ async def health_command(interaction: discord.Interaction):
     embed.add_field(name="🗃️ Dataset", value=dataset_text, inline=True)
     embed.add_field(name="🌐 Supabase", value=supabase_text, inline=True)
     embed.add_field(name="🔄 ความตรงกันของข้อมูล", value=sync_text, inline=False)
+    embed.add_field(
+        name="🔎 Source Trust",
+        value=source_truth_text(dataset_path.parent),
+        inline=False,
+    )
     embed.add_field(
         name="เมื่อ Supabase ใช้ไม่ได้",
         value=(

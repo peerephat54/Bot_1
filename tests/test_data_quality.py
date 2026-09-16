@@ -1,7 +1,10 @@
+import json
+import tempfile
 import unittest
 from datetime import date
+from pathlib import Path
 
-from data_quality import build_quality_report
+from data_quality import build_quality_report, load_latest_truth_report, source_truth_summary
 
 
 class DataQualityTests(unittest.TestCase):
@@ -72,6 +75,36 @@ class DataQualityTests(unittest.TestCase):
 
         self.assertEqual(report["project_status_counts"]["confirmed"], 1)
         self.assertEqual(report["projects_with_source_and_checked_date"], 1)
+
+    def test_truth_report_summary_exposes_gate_and_live_source_counts(self):
+        report = {
+            "generated_at": "2026-09-16T22:50:04+07:00",
+            "status": "needs_review",
+            "record_status_counts": {"needs_review": 4, "automated_checks_passed": 2},
+            "source_monitor": {
+                "source_count": 6,
+                "ok_count": 5,
+                "error_count": 1,
+                "stale_count": 3,
+                "changed_count": 2,
+                "baseline_missing_count": 1,
+            },
+        }
+        summary = source_truth_summary(report)
+        self.assertEqual(summary["label"], "🟡 ต้องตรวจโดยคน")
+        self.assertEqual(summary["ok_count"], 5)
+        self.assertEqual(summary["needs_review"], 4)
+
+    def test_latest_truth_report_ignores_invalid_files(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "tmp").mkdir()
+            (root / "tmp" / "import_truth_report_bad.json").write_text("{}", encoding="utf-8")
+            expected = {"generated_at": "2026-09-16T22:50:04+07:00", "status": "passed"}
+            (root / "tmp" / "import_truth_report_good.json").write_text(
+                json.dumps(expected), encoding="utf-8"
+            )
+            self.assertEqual(load_latest_truth_report(root), expected)
 
 
 if __name__ == "__main__":
