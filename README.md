@@ -60,7 +60,7 @@ GitHub Actions จะเรียกตรวจทุกวันและแ�
 python scripts/validate_dataset.py
 ```
 
-ใน Discord ใช้ `/data_quality` ดู coverage, คิวตรวจ และ Source Trust; ใช้ `/health` แยกสถานะบอท, Supabase, Source Trust และ fingerprint ของชุดข้อมูลที่ซิงก์ล่าสุด การตรวจ hash ไม่ใช่การรับรองว่าเนื้อหาประกาศไม่เปลี่ยนหลังเวลาตรวจ
+ใน Discord ใช้ `/data_quality` ดู coverage, คิวตรวจ และ Source Trust; ใน Evidence Review Queue เลือกดูเฉพาะเนื้อหาที่เปลี่ยน ข้อมูลเกิน 7 วัน หรือรายการที่ไม่มี baseline ได้ ใช้ `/health` แยกสถานะบอท, Supabase, Source Trust และ fingerprint ของชุดข้อมูลที่ซิงก์ล่าสุด การตรวจ hash ไม่ใช่การรับรองว่าเนื้อหาประกาศไม่เปลี่ยนหลังเวลาตรวจ
 
 Source Trust แสดงผลตรวจเว็บสดล่าสุดแยกจาก dataset snapshot: จำนวนแหล่งที่เปิดได้ แหล่งที่ผิดพลาด แหล่งที่เกิน 7 วัน แหล่งที่เนื้อหาเปลี่ยน และรายการที่ต้องให้คนตรวจ ก่อนนำข้อมูลใหม่เข้า Supabase
 

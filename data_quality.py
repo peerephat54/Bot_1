@@ -69,6 +69,63 @@ def source_truth_summary(report):
     }
 
 
+def source_review_queue(report, *, category="all", limit=8):
+    """Build a deterministic review queue from unresolved records and live flags."""
+    if not report:
+        return []
+    monitor_results = (report.get("source_monitor") or {}).get("results") or []
+    def canonical(value):
+        return str(value or "").split("#", 1)[0]
+
+    by_url = {
+        canonical(item.get("url")): item
+        for item in monitor_results
+        if item.get("url")
+    }
+    labels = {
+        "changed": "เนื้อหาเปลี่ยน",
+        "stale": "เกิน 7 วัน",
+        "baseline": "ไม่มี baseline",
+        "review": "รอตรวจหลักฐาน",
+    }
+    queue = []
+    for record in report.get("unresolved_records") or []:
+        source_url = record.get("source_url")
+        canonical_url = record.get("canonical_url")
+        url = source_url or canonical_url
+        live = by_url.get(canonical(source_url)) or by_url.get(canonical(canonical_url)) or {}
+        flags = set()
+        if live.get("changed"):
+            flags.add("changed")
+        if live.get("stale"):
+            flags.add("stale")
+        if live.get("baseline_missing"):
+            flags.add("baseline")
+        if not flags:
+            flags.add("review")
+        if category != "all" and category not in flags:
+            continue
+        ordered_flags = [key for key in ("changed", "stale", "baseline", "review") if key in flags]
+        queue.append({
+            "record_type": record.get("record_type") or "record",
+            "code": record.get("code") or "ไม่ระบุรหัส",
+            "university": record.get("university") or "ไม่ระบุมหาวิทยาลัย",
+            "source_url": url,
+            "source_checked_at": live.get("source_checked_at") or (record.get("audit_entry") or {}).get("source_checked_at"),
+            "reasons": [labels[key] for key in ordered_flags],
+        })
+    queue.sort(
+        key=lambda item: (
+            0 if "เนื้อหาเปลี่ยน" in item["reasons"] else
+            1 if "ไม่มี baseline" in item["reasons"] else
+            2 if "เกิน 7 วัน" in item["reasons"] else 3,
+            item["university"],
+            item["code"],
+        )
+    )
+    return queue[: max(0, int(limit))]
+
+
 def _date(value):
     try:
         return date.fromisoformat(str(value)[:10])

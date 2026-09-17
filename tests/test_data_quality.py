@@ -4,7 +4,12 @@ import unittest
 from datetime import date
 from pathlib import Path
 
-from data_quality import build_quality_report, load_latest_truth_report, source_truth_summary
+from data_quality import (
+    build_quality_report,
+    load_latest_truth_report,
+    source_review_queue,
+    source_truth_summary,
+)
 
 
 class DataQualityTests(unittest.TestCase):
@@ -105,6 +110,23 @@ class DataQualityTests(unittest.TestCase):
                 json.dumps(expected), encoding="utf-8"
             )
             self.assertEqual(load_latest_truth_report(root), expected)
+
+    def test_review_queue_classifies_changed_stale_and_baseline_records(self):
+        report = {
+            "unresolved_records": [
+                {"record_type": "project", "code": "changed", "university": "A", "source_url": "https://example.com/a"},
+                {"record_type": "criterion", "code": "stale", "university": "B", "source_url": "https://example.com/b"},
+                {"record_type": "project", "code": "baseline", "university": "C", "source_url": "https://example.com/c#page=2"},
+            ],
+            "source_monitor": {"results": [
+                {"url": "https://example.com/a", "changed": True, "stale": False, "baseline_missing": False, "source_checked_at": "2026-09-16"},
+                {"url": "https://example.com/b", "changed": False, "stale": True, "baseline_missing": False, "source_checked_at": "2026-09-01"},
+                {"url": "https://example.com/c", "changed": False, "stale": False, "baseline_missing": True},
+            ]},
+        }
+        self.assertEqual(source_review_queue(report, category="changed")[0]["reasons"], ["เนื้อหาเปลี่ยน"])
+        self.assertEqual(source_review_queue(report, category="stale")[0]["code"], "stale")
+        self.assertEqual(source_review_queue(report, category="baseline")[0]["code"], "baseline")
 
 
 if __name__ == "__main__":

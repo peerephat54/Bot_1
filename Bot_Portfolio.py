@@ -34,6 +34,7 @@ from data_quality import (
     classify_project_source_status,
     load_quality_report,
     load_latest_truth_report,
+    source_review_queue,
     source_truth_summary,
 )
 from dataset_sync import classify_sync_status, local_sync_identity
@@ -2052,9 +2053,19 @@ def source_truth_text(project_root):
     )
 
 
-def build_quality_embed():
+SOURCE_REVIEW_FILTER_LABELS = {
+    "all": "ทั้งหมด",
+    "changed": "เนื้อหาเปลี่ยน",
+    "stale": "เกิน 7 วัน",
+    "baseline": "ไม่มี baseline",
+    "review": "รอตรวจหลักฐาน",
+}
+
+
+def build_quality_embed(queue_filter="all"):
     dataset_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
     report = load_quality_report(dataset_path)
+    truth_report = load_latest_truth_report(dataset_path.parent.parent)
     coverage = (
         f"โครงการมีเกณฑ์ {report['projects_with_criteria']}/{report['projects']}\n"
         f"โครงการมีกำหนดการ {report['projects_with_timeline']}/{report['projects']}\n"
@@ -2142,7 +2153,38 @@ def build_quality_embed():
     )
     embed.add_field(
         name="🔎 Source Trust",
-        value=source_truth_text(dataset_path.parent),
+        value=source_truth_text(dataset_path.parent.parent),
+        inline=False,
+    )
+    queue = source_review_queue(truth_report, category=queue_filter, limit=8)
+    queue_label = SOURCE_REVIEW_FILTER_LABELS.get(queue_filter, SOURCE_REVIEW_FILTER_LABELS["all"])
+    queue_lines = [
+        f"ตัวกรอง: **{queue_label}**",
+        "คิวนี้ใช้สำหรับทบทวนหลักฐานเท่านั้น ยังไม่ถือว่าอนุมัตินำเข้า",
+    ]
+    if queue:
+        displayed = 0
+        for item in queue:
+            source_url = item.get("source_url")
+            source_link = f"[เปิดเว็บทางการ]({source_url})" if source_url else "ไม่มีลิงก์ทางการ"
+            checked = format_checked_at(item.get("source_checked_at"))
+            entry = (
+                f"• **{item['university']}** • `{shorten(item['code'], 60)}`\n"
+                f"  {', '.join(item['reasons'])} • ตรวจ {checked} • {source_link}"
+            )
+            if len("\n".join(queue_lines + [entry, "…"])) > 1000:
+                break
+            queue_lines.append(entry)
+            displayed += 1
+        if displayed < len(queue):
+            queue_lines.append("มีรายการต่อ เลือกตัวกรองด้านล่างเพื่อดูคิวที่ต้องการ")
+        else:
+            queue_lines.append(f"แสดง {displayed} รายการ")
+    else:
+        queue_lines.append("ไม่มีรายการในตัวกรองนี้ หรือยังไม่มีรายงานตรวจเว็บสด")
+    embed.add_field(
+        name="🧾 Evidence Review Queue",
+        value="\n".join(queue_lines),
         inline=False,
     )
     embed.set_footer(text=f"dataset ตรวจล่าสุด {format_checked_at(report.get('checked_at'))}")
@@ -5641,7 +5683,7 @@ async def health_command(interaction: discord.Interaction):
     embed.add_field(name="🔄 ความตรงกันของข้อมูล", value=sync_text, inline=False)
     embed.add_field(
         name="🔎 Source Trust",
-        value=source_truth_text(dataset_path.parent),
+        value=source_truth_text(dataset_path.parent.parent),
         inline=False,
     )
     embed.add_field(
@@ -5654,6 +5696,40 @@ async def health_command(interaction: discord.Interaction):
     )
     embed.set_footer(text=f"ตรวจสถานะเมื่อ {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
     await interaction.edit_original_response(content=None, embeds=[embed], view=None)
+
+
+class SourceReviewFilterSelect(discord.ui.Select):
+    def __init__(self):
+        super().__init__(
+            placeholder="กรองคิวตรวจหลักฐาน",
+            min_values=1,
+            max_values=1,
+            options=[
+                discord.SelectOption(label=label, value=value)
+                for value, label in SOURCE_REVIEW_FILTER_LABELS.items()
+            ],
+        )
+
+    async def callback(self, interaction: discord.Interaction):
+        try:
+            embed = await asyncio.wait_for(
+                asyncio.to_thread(build_quality_embed, self.values[0]),
+                timeout=5,
+            )
+            await interaction.response.edit_message(embed=embed, view=self.view)
+        except Exception:
+            logger.exception("source review queue filter failed")
+            if not interaction.response.is_done():
+                await interaction.response.send_message(
+                    "กรองคิวตรวจไม่สำเร็จ กรุณาเรียก `/data_quality` ใหม่ครับ",
+                    ephemeral=True,
+                )
+
+
+class SourceReviewQueueView(discord.ui.View):
+    def __init__(self):
+        super().__init__(timeout=VIEW_TIMEOUT_SECONDS)
+        self.add_item(SourceReviewFilterSelect())
 
 
 @bot.tree.command(
@@ -5674,7 +5750,11 @@ async def data_quality_command(interaction: discord.Interaction):
             embeds=[],
         )
         return
-    await interaction.edit_original_response(content=None, embeds=[embed], view=None)
+    await interaction.edit_original_response(
+        content=None,
+        embeds=[embed],
+        view=SourceReviewQueueView(),
+    )
 
 
 @bot.tree.command(
