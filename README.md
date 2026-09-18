@@ -64,6 +64,14 @@ python scripts/validate_dataset.py
 
 Source Trust แสดงผลตรวจเว็บสดล่าสุดแยกจาก dataset snapshot: จำนวนแหล่งที่เปิดได้ แหล่งที่ผิดพลาด แหล่งที่เกิน 7 วัน แหล่งที่เนื้อหาเปลี่ยน และรายการที่ต้องให้คนตรวจ ก่อนนำข้อมูลใหม่เข้า Supabase
 
+### Workflow อัปเดตข้อมูลรายวัน
+
+1. สร้างรายงานตรวจเว็บสดด้วย `python scripts/verify_import_truth.py --output tmp/import_truth_report.json`
+2. เปิด `/data_quality` แล้วใช้ Evidence Review Queue ดูรายการที่เนื้อหาเปลี่ยน เกิน 7 วัน หรือไม่มี baseline
+3. เปิดเว็บทางการเทียบวันสมัคร เกณฑ์ และจำนวนรับด้วยคน ก่อนแก้ `datasets/tcas70_admissions.json` หรือ `tcas70_source_audit.json`
+4. รัน `python scripts/validate_dataset.py` และ `python scripts/import_supabase_dataset.py` แบบ dry run
+5. นำเข้า Supabase ได้ต่อเมื่อ evidence gate ผ่านเท่านั้น หากยังเป็น `needs_review` ให้คงข้อมูลเดิมและรอตรวจต่อ
+
 ## ติดตั้งและรันในเครื่อง
 
 ต้องมี Python และค่าต่อไปนี้ใน `.env`:
