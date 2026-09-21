@@ -39,6 +39,9 @@ from data_quality import (
 )
 from dataset_sync import classify_sync_status, local_sync_identity
 from question_answering import answer_question_with_candidate_loader
+from deadline_digest import upcoming_deadlines
+from plan_digest import build_plan_rows
+from feedback_store import FeedbackStore
 from scripts.process_utils import process_is_alive
 
 load_dotenv()
@@ -228,6 +231,7 @@ LOCAL_PROGRAM_CHILD_CODES = {
     if track.get("code")
 }
 USER_FEATURE_STORE = UserFeatureStore(Path(__file__).with_name("tmp") / "user_features.json")
+FEEDBACK_STORE = FeedbackStore(Path(__file__).with_name("tmp") / "feedback.json")
 
 
 def fetch_local_project_additions():
@@ -949,11 +953,11 @@ def source_reference_line(record, fallback_url=None, fallback_title=None):
     return f"แหล่งข้อมูล: [{shorten(title, 110)}]({url})"
 
 
-def source_provenance_text(record, fallback_url=None, fallback_title=None):
+def source_provenance_text(record, fallback_url=None, fallback_title=None, today=None):
     """Show status, source, publication date, and verification date together."""
     record = record or {}
     lines = [
-        f"📌 สถานะ: {source_status_text(record)}",
+        f"📌 สถานะ: {source_status_text(record, today=today)}",
         f"🔗 {source_reference_line(record, fallback_url, fallback_title)}",
     ]
     if record.get("source_published_at"):
@@ -1807,7 +1811,7 @@ def project_header_description(program, project, section_label):
     )
 
 
-def build_project_shell(program, project, section_label, color):
+def build_project_shell(program, project, section_label, color, today=None):
     university = first_relation(program.get("universities"))
     embed = discord.Embed(
         title=shorten(project_display_name(project), 256),
@@ -1822,8 +1826,8 @@ def build_project_shell(program, project, section_label, color):
     embed.add_field(
         name="สถานะข้อมูลและแหล่งที่มา",
         value=(
-            f"{source_status_badge(project)}\n\n"
-            + source_provenance_text(project)
+            f"{source_status_badge(project, today=today)}\n\n"
+            + source_provenance_text(project, today=today)
         ),
         inline=False,
     )
@@ -1874,13 +1878,13 @@ def project_quick_summary(program, project, applicant_profile=None):
     )
 
 
-def build_project_embed(program, project, applicant_profile=None):
+def build_project_embed(program, project, applicant_profile=None, today=None):
     """Answer the main application questions; full rules remain in detail tabs."""
     timeline = project.get("admission_timeline") or []
     criteria = project.get("selected_criteria") or {}
 
     embed = build_project_shell(
-        program, project, "สรุปที่ต้องรู้ก่อนสมัคร", 0x2ECC71
+        program, project, "สรุปที่ต้องรู้ก่อนสมัคร", 0x2ECC71, today=today
     )
     embed.add_field(
         name="สรุปเร็ว 3 อย่าง",
@@ -5836,6 +5840,147 @@ async def favorites_command(interaction: discord.Interaction):
     except Exception:
         logger.exception("favorites command failed")
         await interaction.edit_original_response(content="เปิดรายการโปรดไม่สำเร็จ กรุณาลองใหม่", embeds=[], view=None)
+
+
+@bot.tree.command(
+    name="deadlines",
+    description="ดูกำหนดการสมัครและสัมภาษณ์ที่ใกล้ถึง",
+)
+@app_commands.describe(days="จำนวนวันที่ต้องการดูข้างหน้า (1-180 วัน)")
+async def deadlines_command(interaction: discord.Interaction, days: int = 30):
+    await interaction.response.defer(thinking=True, ephemeral=True)
+    days = max(1, min(int(days), 180))
+    try:
+        navigation_programs = await bot.load_navigation_programs(timeout=15)
+        deadlines = await asyncio.wait_for(
+            asyncio.to_thread(
+                upcoming_deadlines,
+                navigation_programs,
+                datetime.now().date(),
+                days,
+                15,
+            ),
+            timeout=5,
+        )
+        if not deadlines:
+            await interaction.edit_original_response(
+                content=(
+                    f"## กำหนดการใน {days} วันข้างหน้า\n"
+                    "ยังไม่พบวันสมัครหรือวันสัมภาษณ์ที่ระบุเป็นวันที่ชัดเจน\n"
+                    "ข้อมูลที่ระบุเพียงเดือนหรือยังขัดแย้งจะไม่ถูกนำมาเดาเป็นวัน"
+                ),
+                embeds=[],
+                view=None,
+            )
+            return
+
+        embed = discord.Embed(
+            title=f"กำหนดการใกล้ถึงใน {days} วัน",
+            description="แสดงเฉพาะวันที่มีในข้อมูลที่ตรวจสอบได้; กดลิงก์ต้นทางเพื่อตรวจซ้ำก่อนสมัคร",
+            color=discord.Color.orange(),
+        )
+        for item in deadlines:
+            status = {
+                "confirmed": "ยืนยันแล้ว",
+                "tentative": "เบื้องต้น",
+            }.get(item["date_status"], "ต้องตรวจเพิ่ม")
+            remaining = "วันนี้" if item["days_left"] == 0 else f"อีก {item['days_left']} วัน"
+            source = f"\n[ประกาศทางการ]({item['source_url']})" if item.get("source_url") else ""
+            value = (
+                f"**{item['event_name']}** — {item['date_display']} ({remaining})\n"
+                f"{item['university']} • {item['major']}\n"
+                f"สถานะข้อมูล: {status}{source}"
+            )
+            embed.add_field(name=project_display_name({"name": item["project_name"], "round_label": "Portfolio"}), value=shorten(value, 950), inline=False)
+        embed.set_footer(text=f"ข้อมูลจาก dataset ตรวจล่าสุด {DATASET_CHECKED_AT_DISPLAY}")
+        await interaction.edit_original_response(content=None, embeds=[embed], view=None)
+    except Exception:
+        logger.exception("deadlines command failed")
+        await interaction.edit_original_response(
+            content="เปิดกำหนดการใกล้ถึงไม่สำเร็จ กรุณาลอง `/deadlines` อีกครั้ง",
+            embeds=[],
+            view=None,
+        )
+
+
+@bot.tree.command(
+    name="my_plan",
+    description="ดูแผนสมัครจากโครงการที่บันทึกไว้",
+)
+async def my_plan_command(interaction: discord.Interaction):
+    await interaction.response.defer(thinking=True, ephemeral=True)
+    try:
+        favorites = USER_FEATURE_STORE.favorites(interaction.user.id)
+        if not favorites:
+            await interaction.edit_original_response(
+                content="## แผนสมัครของฉัน\nยังไม่มีรายการโปรด เปิดโครงการแล้วกด `บันทึกรายการโปรด` ก่อนครับ",
+                embeds=[],
+                view=None,
+            )
+            return
+        navigation_programs = await bot.load_navigation_programs(timeout=15)
+        rows = build_plan_rows(
+            favorites,
+            navigation_programs,
+            lambda project: USER_FEATURE_STORE.checklist(
+                interaction.user.id,
+                project.get("code"),
+                checklist_items_for_project(project),
+            ),
+            datetime.now().date(),
+        )
+        embed = discord.Embed(
+            title="แผนสมัครของฉัน",
+            description="รวมโครงการโปรด ความคืบหน้า Checklist และวันปิดรับที่มีข้อมูลชัดเจน",
+            color=discord.Color.blurple(),
+        )
+        for row in rows[:10]:
+            if not row["available"]:
+                value = "ข้อมูลโครงการไม่อยู่ใน dataset ปัจจุบัน — เปิดรายละเอียดไม่ได้"
+            else:
+                deadline = "ยังไม่ระบุวันปิดรับ"
+                if row["days_left"] is not None:
+                    deadline = "ปิดรับวันนี้" if row["days_left"] == 0 else f"ปิดรับในอีก {row['days_left']} วัน"
+                value = f"{row['university']} • {row['major']}\nChecklist: {row['done']}/{row['total']} รายการ\n{deadline}"
+                if row.get("source_url"):
+                    value += f"\n[ประกาศทางการ]({row['source_url']})"
+            embed.add_field(name=shorten(row["project_name"], 240), value=shorten(value, 950), inline=False)
+        embed.set_footer(text="กด Checklist จากการ์ดโครงการเพื่ออัปเดตความคืบหน้า")
+        await interaction.edit_original_response(content=None, embeds=[embed], view=None)
+    except Exception:
+        logger.exception("my_plan command failed")
+        await interaction.edit_original_response(
+            content="เปิดแผนสมัครไม่สำเร็จ กรุณาลอง `/my_plan` อีกครั้ง",
+            embeds=[],
+            view=None,
+        )
+
+
+FEEDBACK_CATEGORY_CHOICES = [
+    app_commands.Choice(name="ข้อผิดพลาดของระบบ", value="bug"),
+    app_commands.Choice(name="ข้อมูลรับสมัคร", value="data"),
+    app_commands.Choice(name="ข้อเสนอแนะ", value="idea"),
+]
+
+
+@bot.tree.command(
+    name="feedback",
+    description="ส่งข้อเสนอแนะสั้น ๆ เพื่อช่วยปรับปรุงบอท",
+)
+@app_commands.describe(category="ประเภทข้อเสนอแนะ", message="เขียนสิ่งที่พบหรือสิ่งที่อยากให้เพิ่ม")
+@app_commands.choices(category=FEEDBACK_CATEGORY_CHOICES)
+async def feedback_command(interaction: discord.Interaction, category: str, message: str):
+    try:
+        await asyncio.to_thread(FEEDBACK_STORE.submit, interaction.user.id, category, message)
+        await interaction.response.send_message(
+            "✅ รับข้อเสนอแนะแล้ว ขอบคุณที่ช่วยทำให้บอทใช้งานง่ายขึ้นครับ",
+            ephemeral=True,
+        )
+    except ValueError:
+        await interaction.response.send_message("กรุณาเขียนข้อเสนอแนะอย่างน้อย 1 ข้อความครับ", ephemeral=True)
+    except Exception:
+        logger.exception("feedback command failed")
+        await interaction.response.send_message("บันทึกข้อเสนอแนะไม่สำเร็จ ลองใหม่อีกครั้งครับ", ephemeral=True)
 
 
 @bot.tree.command(
