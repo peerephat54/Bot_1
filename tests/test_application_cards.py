@@ -117,7 +117,10 @@ class ApplicationCardTests(unittest.TestCase):
     def test_status_and_source_are_explicit(self):
         candidate = next(c for c in CANDIDATES if c["project"]["code"] == "muict-ict-portfolio")
         card_text_value = card_text(
-            app.build_project_embed(candidate["program"], candidate["project"])
+            app.build_project_embed(
+                candidate["program"], candidate["project"],
+                today=date(2026, 9, 13),
+            )
         )
         self.assertIn("สถานะข้อมูลและแหล่งที่มา", card_text_value)
         self.assertIn("ยืนยันแล้ว — มีประกาศโครงการ TCAS70 ทางการ", card_text_value)
