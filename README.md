@@ -65,6 +65,14 @@ GitHub Actions จะเรียกตรวจทุกวันและแ�
 python scripts/validate_dataset.py
 ```
 
+ถ้าต้องการตรวจเว็บและ validate พร้อมกันโดยไม่ import ข้อมูลอัตโนมัติ ใช้:
+
+```powershell
+python scripts/daily_update.py
+```
+
+คำสั่งนี้จะหยุดที่ evidence gate เมื่อพบแหล่งข้อมูลเก่า เปลี่ยน หรืออ่านไม่ได้ เพื่อให้คนเปิดประกาศตรวจเองก่อนนำเข้า
+
 ใน Discord ใช้ `/data_quality` ดู coverage, คิวตรวจ และ Source Trust; ใน Evidence Review Queue เลือกดูเฉพาะเนื้อหาที่เปลี่ยน ข้อมูลเกิน 7 วัน หรือรายการที่ไม่มี baseline ได้ ใช้ `/health` แยกสถานะบอท, Supabase, Source Trust และ fingerprint ของชุดข้อมูลที่ซิงก์ล่าสุด การตรวจ hash ไม่ใช่การรับรองว่าเนื้อหาประกาศไม่เปลี่ยนหลังเวลาตรวจ
 
 Source Trust แสดงผลตรวจเว็บสดล่าสุดแยกจาก dataset snapshot: จำนวนแหล่งที่เปิดได้ แหล่งที่ผิดพลาด แหล่งที่เกิน 7 วัน แหล่งที่เนื้อหาเปลี่ยน และรายการที่ต้องให้คนตรวจ ก่อนนำข้อมูลใหม่เข้า Supabase
