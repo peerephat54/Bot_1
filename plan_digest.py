@@ -44,4 +44,13 @@ def build_plan_rows(favorites, navigation_programs, checklist_loader, today=None
             "days_left": (close_day - today).days if close_day else None,
             "source_url": project.get("source_url") or favorite.get("source_url"),
         })
-    return rows
+    return sorted(
+        rows,
+        key=lambda row: (
+            not row["available"],
+            row["days_left"] is None,
+            row["days_left"] if row["days_left"] is not None else 10**6,
+            row["done"] / row["total"] if row["total"] else 0,
+            str(row.get("project_name") or "").casefold(),
+        ),
+    )
