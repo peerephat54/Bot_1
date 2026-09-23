@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import date, datetime
 
 from admission_dates import is_application_event, is_interview_event, thai_date
+from data_quality import classify_project_source_status
 
 
 def _event_day(event):
@@ -53,6 +54,8 @@ def upcoming_deadlines(rows, today=None, horizon_days=30, limit=15):
             result.append({
                 "project_code": project.get("code"),
                 "project_name": project.get("name") or "ไม่ระบุชื่อโครงการ",
+                "round_label": project.get("round_label") or "Portfolio",
+                "round_variant": project.get("round_variant"),
                 "university": university,
                 "major": major,
                 "event_name": event_name,
@@ -61,6 +64,7 @@ def upcoming_deadlines(rows, today=None, horizon_days=30, limit=15):
                 "days_left": days_left,
                 "date_status": event.get("date_status") or "confirmed",
                 "source_url": project.get("source_url") or project.get("application_url"),
+                "source_status": classify_project_source_status(project, today=today),
             })
     return sorted(
         result,

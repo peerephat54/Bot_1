@@ -11,7 +11,11 @@ class DeadlineDigestTests(unittest.TestCase):
             "project": {
                 "code": "p1",
                 "name": "Portfolio",
+                "round_label": "1 Portfolio",
+                "round_variant": "1.1",
                 "source_url": "https://example.com/p1",
+                "publication_status": "official",
+                "source_checked_at": "2026-09-20",
                 "admission_timeline": [
                     {"event_name": "รับสมัคร 1.1", "end_on": "2026-09-25", "date_status": "confirmed"},
                     {"event_name": "สอบสัมภาษณ์", "start_on": "2026-10-01", "date_status": "confirmed"},
@@ -22,6 +26,8 @@ class DeadlineDigestTests(unittest.TestCase):
         result = upcoming_deadlines(rows, date(2026, 9, 21), horizon_days=10)
         self.assertEqual([item["event_name"] for item in result], ["รับสมัคร 1.1", "สอบสัมภาษณ์"])
         self.assertEqual(result[0]["days_left"], 4)
+        self.assertEqual(result[0]["round_variant"], "1.1")
+        self.assertEqual(result[0]["source_status"], "confirmed")
 
 
 if __name__ == "__main__":
