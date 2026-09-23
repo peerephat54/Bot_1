@@ -42,6 +42,7 @@ from question_answering import answer_question_with_candidate_loader
 from deadline_digest import upcoming_deadlines
 from plan_digest import build_plan_rows
 from feedback_store import FeedbackStore
+from runtime_status import supervisor_status
 from scripts.process_utils import process_is_alive
 
 load_dotenv()
@@ -5682,6 +5683,13 @@ async def health_command(interaction: discord.Interaction):
         value=f"{'✅ พร้อม' if ready else '❌ ยังไม่พร้อม'}\nLatency: {latency_text}",
         inline=True,
     )
+    supervisor = supervisor_status(_watchdog_state(), process_is_alive)
+    supervisor_value = (
+        f"{supervisor['label']}\n"
+        f"Bot PID: {supervisor['bot_pid'] or 'ไม่ระบุ'} • "
+        f"Watchdog PID: {supervisor['watchdog_pid'] or 'ไม่ระบุ'}"
+    )
+    embed.add_field(name="🛡️ การดูแลโปรเซส", value=supervisor_value, inline=True)
     embed.add_field(name="🗃️ Dataset", value=dataset_text, inline=True)
     embed.add_field(name="🌐 Supabase", value=supabase_text, inline=True)
     embed.add_field(name="🔄 ความตรงกันของข้อมูล", value=sync_text, inline=False)
@@ -5886,12 +5894,26 @@ async def deadlines_command(interaction: discord.Interaction, days: int = 30):
             }.get(item["date_status"], "ต้องตรวจเพิ่ม")
             remaining = "วันนี้" if item["days_left"] == 0 else f"อีก {item['days_left']} วัน"
             source = f"\n[ประกาศทางการ]({item['source_url']})" if item.get("source_url") else ""
+            source_status = {
+                "confirmed": "✅ ยืนยันแล้ว",
+                "needs_recheck": "🔄 ควรตรวจซ้ำ",
+                "pending": "🟡 รอตรวจ",
+            }.get(item.get("source_status"), "🟡 รอตรวจ")
             value = (
                 f"**{item['event_name']}** — {item['date_display']} ({remaining})\n"
                 f"{item['university']} • {item['major']}\n"
-                f"สถานะข้อมูล: {status}{source}"
+                f"รอบ: {item.get('round_variant') or item.get('round_label') or 'Portfolio'}\n"
+                f"สถานะวัน: {status} • Source Trust: {source_status}{source}"
             )
-            embed.add_field(name=project_display_name({"name": item["project_name"], "round_label": "Portfolio"}), value=shorten(value, 950), inline=False)
+            embed.add_field(
+                name=project_display_name({
+                    "name": item["project_name"],
+                    "round_label": item.get("round_label") or "Portfolio",
+                    "round_variant": item.get("round_variant"),
+                }),
+                value=shorten(value, 950),
+                inline=False,
+            )
         embed.set_footer(text=f"ข้อมูลจาก dataset ตรวจล่าสุด {DATASET_CHECKED_AT_DISPLAY}")
         await interaction.edit_original_response(content=None, embeds=[embed], view=None)
     except Exception:
