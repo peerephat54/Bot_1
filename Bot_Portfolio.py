@@ -962,11 +962,11 @@ def source_provenance_text(record, fallback_url=None, fallback_title=None, today
         f"🔗 {source_reference_line(record, fallback_url, fallback_title)}",
     ]
     if record.get("source_published_at"):
-        lines.append(f"🗓️ เผยแพร่: {format_checked_at(record['source_published_at'])}")
+        lines.append(f"📢 ประกาศล่าสุด: {format_checked_at(record['source_published_at'])}")
     if record.get("source_checked_at"):
-        lines.append(f"🔍 ตรวจล่าสุด: {format_checked_at(record['source_checked_at'])}")
+        lines.append(f"🔍 เราตรวจล่าสุดวันที่: {format_checked_at(record['source_checked_at'])}")
     else:
-        lines.append("🔍 ตรวจล่าสุด: ไม่ระบุ")
+        lines.append("🔍 เราตรวจล่าสุดวันที่: ไม่ระบุ")
     return shorten("\n\n".join(lines), 1000)
 
 
@@ -990,7 +990,7 @@ def program_source_status_line(program, current_previews=None, include_source=Tr
                 if include_source
                 else ""
             )
-            lines.append(f"📌 สถานะ: {source_status_text(preview)}{source_line}\n🔍 ตรวจล่าสุด: {checked}")
+            lines.append(f"📌 สถานะ: {source_status_text(preview)}{source_line}\n🔍 เราตรวจล่าสุดวันที่: {checked}")
         return shorten("\n\n".join(lines), 900)
 
     official_url = program.get("official_program_url")
@@ -998,11 +998,11 @@ def program_source_status_line(program, current_previews=None, include_source=Tr
         return (
             "📌 สถานะ: ยังไม่ยืนยัน TCAS70\n\n"
             f"🔗 แหล่งข้อมูล: [เว็บไซต์หลักสูตร]({official_url})\n"
-            f"🔍 ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
+            f"🔍 เราตรวจล่าสุดวันที่: {DATASET_CHECKED_AT_DISPLAY}"
         )
     return (
         "📌 สถานะ: ยังไม่ยืนยัน TCAS70\n\n"
-        f"🔍 ตรวจล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
+        f"🔍 เราตรวจล่าสุดวันที่: {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
@@ -2316,9 +2316,9 @@ def build_project_timeline_embed(program, project):
 
     source_details = []
     if project.get("source_published_at"):
-        source_details.append(f"เผยแพร่: {project['source_published_at']}")
+        source_details.append(f"📢 ประกาศล่าสุด: {project['source_published_at']}")
     if project.get("source_checked_at"):
-        source_details.append(f"ตรวจล่าสุด: {project['source_checked_at']}")
+        source_details.append(f"🔍 เราตรวจล่าสุดวันที่: {project['source_checked_at']}")
     if project.get("source_url"):
         source_details.append(f"[เปิดประกาศฉบับเต็ม]({project['source_url']})")
     embed.add_field(
@@ -2865,7 +2865,7 @@ def build_beginner_results_embed(profile, matches, total_matches, excluded_count
         source_line = (
             f"สถานะข้อมูล: {source_status_text(source_record)}\n"
             f"{source_reference_line(source_record)}\n"
-            f"ตรวจล่าสุด: {format_checked_at(source_record.get('source_checked_at'))}"
+            f"เราตรวจล่าสุดวันที่: {format_checked_at(source_record.get('source_checked_at'))}"
         )
         embed.add_field(
             name=shorten(
@@ -2959,7 +2959,7 @@ def build_program_comparison_embed(programs):
                 None,
             )
             if source_checked:
-                source_link += f" • ตรวจล่าสุด {format_checked_at(source_checked)}"
+                source_link += f" • เราตรวจล่าสุดวันที่ {format_checked_at(source_checked)}"
             detail_lines = [
                 "เรียนเกี่ยวกับ: " + shorten(program_study_overview(program), 220),
                 "จุดเน้น: " + shorten(program_focus_summary(program), 180),
