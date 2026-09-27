@@ -268,7 +268,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cu-portfolio-2570', 'ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ', 2570, '["pathum-wan"]'::jsonb, '["cu-engineering-computer-engineering","cu-engineering-cedt","cu-science-computer-science","cu-cbs-management-information-systems","cu-cbs-statistics-data-science","cu-cbs-information-technology-business"]'::jsonb,
-    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-07T23:20:07+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
+    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-25T17:54+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
     '2027-01-11', '2027-01-15', '2027-01-28',
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -299,7 +299,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-bangkhen-portfolio-2570', 'ปฏิทิน มก. • บางเขน', 2570, '["bangkhen"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์', '[{"label":"Portfolio 1.1","application_start_on":"2026-09-18","application_end_on":"2026-10-14","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-03","interview_on":"2026-11-09","interview_passed_on":"2026-11-16"},{"label":"Portfolio 1.2","application_start_on":"2027-01-04","application_end_on":"2027-02-04","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-03-02","interview_on":"2027-03-04","interview_passed_on":"2027-03-05"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์', '[{"label":"Portfolio 1.1","application_start_on":"2026-09-18","application_end_on":"2026-10-14","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-03","interview_on":"2026-11-09","interview_passed_on":"2026-11-16"},{"label":"Portfolio 1.2","application_start_on":"2027-01-04","application_end_on":"2027-02-04","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-03-02","interview_on":"2027-03-04","interview_passed_on":"2027-03-05"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -330,7 +330,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
-    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-13T21:12:44+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-25T17:54+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
     '2026-12-11', '2026-12-19', null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -361,7 +361,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-sakon-portfolio-2570', 'ปฏิทิน มก. • สกลนคร', 2570, '["sakon-nakhon"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน', '[{"label":"Portfolio","application_start_on":"2026-08-24","application_end_on":"2027-02-19","result_announcement_on":null,"date_status":"confirmed","result_note":"หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน', '[{"label":"Portfolio","application_start_on":"2026-08-24","application_end_on":"2027-02-19","result_announcement_on":null,"date_status":"confirmed","result_note":"หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -392,7 +392,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'kmutnb-portfolio-2570', 'ปฏิทินกลาง มจพ.', 2570, '[]'::jsonb, '[]'::jsonb,
-    'https://www.admission.kmutnb.ac.th/news/1394', 'https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg', '2026-09-07T23:20:07+07:00', 'คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ', '[{"label":"Portfolio/โควตา ครั้ง 1","application_start_on":"2026-09-01","application_end_on":"2026-11-10","result_announcement_on":null,"date_status":"confirmed"},{"label":"Portfolio/โควตา ครั้ง 2","application_start_on":"2026-11-24","application_end_on":"2027-01-05","result_announcement_on":null,"date_status":"confirmed"},{"label":"นวัตกรรม/สิ่งประดิษฐ์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"},{"label":"หุ่นยนต์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"}]'::jsonb,
+    'https://www.admission.kmutnb.ac.th/news/1394', 'https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg', '2026-09-25T17:54+07:00', 'คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ', '[{"label":"Portfolio/โควตา ครั้ง 1","application_start_on":"2026-09-01","application_end_on":"2026-11-10","result_announcement_on":null,"date_status":"confirmed"},{"label":"Portfolio/โควตา ครั้ง 2","application_start_on":"2026-11-24","application_end_on":"2027-01-05","result_announcement_on":null,"date_status":"confirmed"},{"label":"นวัตกรรม/สิ่งประดิษฐ์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"},{"label":"หุ่นยนต์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"}]'::jsonb,
     null, null, null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -423,7 +423,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'swu-portfolio-2570', 'ปฏิทิน มศว. • TCAS รอบ 1 Portfolio', 2570, '["prasan-mit","ongkharak"]'::jsonb, '["swu-ece-environmental-technology","swu-ece-climate-environment","swu-science-mathematics","swu-science-statistics","swu-science-chemistry","swu-science-microbiology","swu-science-biology","swu-science-materials","swu-engineering-chemical","swu-engineering-mechanical","swu-engineering-civil","swu-engineering-industrial","swu-engineering-biomedical","swu-engineering-computer","swu-engineering-electrical-power","swu-engineering-telecom-it","swu-engineering-logistics-bilingual","swu-engineering-environmental","swu-engineering-petroleum-renewable","swu-engineering-cybersecurity"]'::jsonb,
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '2026-08-29T12:00:00+07:00', 'ปฏิทินกลางของ มศว. ใช้เป็นวันสมัครและวันประกาศผลระดับมหาวิทยาลัย; เกณฑ์คุณสมบัติและจำนวนรับต้องดูรายละเอียดของแต่ละสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-18","application_end_on":"2026-09-16","result_announcement_on":"2026-11-17","date_status":"confirmed","interview_eligible_on":"2026-10-21","interview_on":"2026-11-07"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2026-12-16","result_announcement_on":"2027-02-23","date_status":"confirmed","interview_eligible_on":"2027-01-26","interview_on":"2027-02-13"}]'::jsonb,
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '2026-09-25T17:54+07:00', 'ปฏิทินกลางของ มศว. ใช้เป็นวันสมัครและวันประกาศผลระดับมหาวิทยาลัย; เกณฑ์คุณสมบัติและจำนวนรับต้องดูรายละเอียดของแต่ละสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-18","application_end_on":"2026-09-16","result_announcement_on":"2026-11-17","date_status":"confirmed","interview_eligible_on":"2026-10-21","interview_on":"2026-11-07"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2026-12-16","result_announcement_on":"2027-02-23","date_status":"confirmed","interview_eligible_on":"2027-01-26","interview_on":"2027-02-13"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -454,7 +454,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-kamphaeng-saen-portfolio-2570', 'ปฏิทิน มก. • กำแพงแสน', 2570, '["kamphaeng-saen"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-10-01","application_end_on":"2026-11-05","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-16","interview_on":"2026-11-20","interview_passed_on":"2026-11-24"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2027-02-10","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-02-22","interview_on":"2027-02-25","interview_end_on":"2027-02-26","interview_passed_on":"2027-03-02"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-10-01","application_end_on":"2026-11-05","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-16","interview_on":"2026-11-20","interview_passed_on":"2026-11-24"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2027-02-10","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-02-22","interview_on":"2027-02-25","interview_end_on":"2027-02-26","interview_passed_on":"2027-03-02"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -485,7 +485,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-sriracha-portfolio-2570', 'ปฏิทิน มก. • ศรีราชา', 2570, '["sriracha"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-13T18:33:06+07:00', 'ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-25","application_end_on":"2026-11-15","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-12-04","interview_on":"2026-12-13","interview_passed_on":"2026-12-18"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-25","application_end_on":"2026-11-15","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-12-04","interview_on":"2026-12-13","interview_passed_on":"2026-12-18"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -516,7 +516,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-it', 'คณะเทคโนโลยีสารสนเทศ', 'เทคโนโลยีสารสนเทศ', 1, 2570,
     'ปริญญาตรี', 'ไทยและอังกฤษ', 129, 2565,
-    4, 'https://www.it.kmitl.ac.th/en/programs/it-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":50,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":115,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT เช่น รางวัล ผลงานใช้งานจริง NSC YSC สิทธิบัตร หรือ Super AI Engineer ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":5,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT2 30 + TPAT3 30 + Portfolio 20 + สัมภาษณ์ 20","qualification_summary":"มีผลงานวิชาการ/คอมพิวเตอร์ และคะแนนภาษาอังกฤษที่ยังไม่หมดอายุตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf","english_score_summary":"IELTS 6.0 / TOEFL iBT 78 / TOEFL PBT 598 / TOEIC 825"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/it-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":50,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":115,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT เช่น รางวัล ผลงานใช้งานจริง NSC YSC สิทธิบัตร หรือ Super AI Engineer ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":5,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT2 30 + TPAT3 30 + Portfolio 20 + สัมภาษณ์ 20","qualification_summary":"มีผลงานวิชาการ/คอมพิวเตอร์ และคะแนนภาษาอังกฤษที่ยังไม่หมดอายุตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf","english_score_summary":"IELTS 6.0 / TOEFL iBT 78 / TOEFL PBT 598 / TOEIC 825"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -546,7 +546,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-dsba', 'คณะเทคโนโลยีสารสนเทศ', 'วิทยาการข้อมูลและการวิเคราะห์เชิงธุรกิจ', 1, 2570,
     'ปริญญาตรี', 'ไทยและอังกฤษ', 132, 2565,
-    4, 'https://www.it.kmitl.ac.th/en/programs/datasci-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":2,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/datasci-program-2565', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":2,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -576,7 +576,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-ait', 'คณะเทคโนโลยีสารสนเทศ', 'เทคโนโลยีปัญญาประดิษฐ์', 1, 2570,
     'ปริญญาตรี', 'ไทยและอังกฤษ', 120, 2566,
-    4, 'https://www.it.kmitl.ac.th/en/programs/ait-program', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"หน้าเตรียมข้อมูลระบุว่าโครงการนี้ไม่เปิดรับ DSBA","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"}]'::jsonb, 'official', now()
+    4, 'https://www.it.kmitl.ac.th/en/programs/ait-program', '[{"title":"โครงการนักเรียนที่มีความสามารถด้านเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":5,"status":"unconfirmed","note":"พบในหน้าข้อมูลเตรียมประกาศของคณะ แต่ยังระบุว่ารอประกาศอย่างเป็นทางการ","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"ชื่อโครงการและจำนวนรับยังไม่ใช่ประกาศรับสมัครฉบับสมบูรณ์","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ","reference_academic_year":2570,"round_label":"Portfolio 1.1","slots_available":1,"status":"unconfirmed","note":"หน้าเตรียมข้อมูลระบุว่าโครงการนี้ไม่เปิดรับ DSBA","source_url":"https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1"},{"title":"โครงการนักเรียนเรียนดีและมีความสนใจทางเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":20,"status":"unconfirmed","min_gpax":3.0,"gpax_summary":"GPAX ไม่น้อยกว่า 3.00","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 40 + Portfolio 10 + สัมภาษณ์ 10","qualification_summary":"ม.6/เทียบเท่า และมีผลงานหรือกิจกรรมวิชาการ/คอมพิวเตอร์ตามประกาศ","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"},{"title":"โครงการนักเรียนที่มีความสามารถทางด้านเทคโนโลยีสารสนเทศ - TCAS69 (ข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","min_gpax":2.75,"gpax_summary":"GPAX ไม่น้อยกว่า 2.75","tuition_fee_per_semester":32000,"application_fee":300,"selection_summary":"TGAT1 20 + TGAT2 20 + TPAT3 30 + Portfolio 15 + สัมภาษณ์ 15","qualification_summary":"ต้องมีผลงานคอมพิวเตอร์/IT ตามรายการที่ประกาศกำหนด","portfolio_summary":"ยื่น KMITL Student iFolio และเลือกผลงานเด่น 3 รายการ","application_period":"1 ต.ค. - 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นประกาศ TCAS69 ใช้เตรียมตัวได้ แต่ห้ามใช้ยืนยันคุณสมบัติ จำนวนรับ หรือวันสมัคร TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4088_2025_09_25-14-42-31_e436c.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1806,7 +1806,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-computer-engineering', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมคอมพิวเตอร์', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'ไทย', null, null,
-    4, 'https://www.ce.kmitl.ac.th/', '[{"title":"สถานะ TCAS70 รอบ 1 ของวิศวกรรมคอมพิวเตอร์","reference_academic_year":2570,"round_label":"Portfolio","slots_available":null,"status":"unconfirmed","note":"มีชื่อหลักสูตรในหน้ารอบ 1 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะวิศวกรรมศาสตร์ฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"},{"title":"ประกาศคณะวิศวกรรมศาสตร์ TCAS69 (ใช้เป็นข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":40,"status":"unconfirmed","tuition_fee_per_semester":25000,"selection_summary":"Portfolio/ผลงาน และบางโครงการใช้ TGAT กับ TPAT3 ก่อนสัมภาษณ์","note":"ปี 2569 เปิด 5 โครงการ รับวิศวกรรมคอมพิวเตอร์ 40 คน ข้อมูลนี้ใช้ดูแนวทางเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"}]'::jsonb, 'official', now()
+    4, 'https://www.ce.kmitl.ac.th/', '[{"title":"สถานะ TCAS70 รอบ 1 ของวิศวกรรมคอมพิวเตอร์","reference_academic_year":2570,"round_label":"Portfolio","slots_available":null,"status":"unconfirmed","note":"มีชื่อหลักสูตรในหน้ารอบ 1 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะวิศวกรรมศาสตร์ฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"},{"title":"ประกาศคณะวิศวกรรมศาสตร์ TCAS69 (ใช้เป็นข้อมูลอ้างอิง)","reference_academic_year":2569,"round_label":"Portfolio","slots_available":40,"status":"unconfirmed","tuition_fee_per_semester":25000,"selection_summary":"Portfolio/ผลงาน และบางโครงการใช้ TGAT กับ TPAT3 ก่อนสัมภาษณ์","note":"ปี 2569 เปิด 5 โครงการ รับวิศวกรรมคอมพิวเตอร์ 40 คน ข้อมูลนี้ใช้ดูแนวทางเท่านั้น ไม่ใช่เกณฑ์หรือจำนวนรับ TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1836,7 +1836,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-software-international', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมซอฟต์แวร์ (หลักสูตรนานาชาติ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, 2567,
-    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมซอฟต์แวร์นานาชาติ","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","tuition_fee_per_semester":90000,"application_fee":300,"selection_summary":"เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์","portfolio_summary":"สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน","application_period":"ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"},{"title":"Direct Admission ปี 2568 (ใช้เป็นข้อมูลอ้างอิง)","reference_academic_year":2568,"round_label":"Direct Admission","slots_available":50,"status":"unconfirmed","gpax_summary":"ไม่กำหนด GPAX รวม; GPA คณิตศาสตร์ 3.00 เป็นหนึ่งในทางเลือกของเกณฑ์คณิตศาสตร์","application_fee":1000,"selection_summary":"ผลการเรียน/คะแนนมาตรฐาน เอกสารประกอบ และสัมภาษณ์","note":"เป็น Direct Admission ปี 2568 ไม่ใช่เกณฑ์ TCAS70 และรูปแบบรอบอาจเปลี่ยนได้","source_url":"https://www.eng.kmitl.ac.th/direct-admission/"},{"title":"ประกาศค่าธรรมเนียมปีการศึกษา 2569","reference_academic_year":2569,"round_label":"ข้อมูลค่าเล่าเรียน","slots_available":null,"status":"unconfirmed","tuition_fee_per_semester":90000,"note":"เป็นอัตราค่าธรรมเนียมปี 2569 ใช้อ้างอิงงบประมาณเท่านั้น ต้องตรวจอัตราปีเข้าเรียนอีกครั้ง","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4381_2026_03_18-09-14-13_b207a.pdf"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมซอฟต์แวร์นานาชาติ","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","tuition_fee_per_semester":90000,"application_fee":300,"selection_summary":"เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์","portfolio_summary":"สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน","application_period":"ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"},{"title":"Direct Admission ปี 2568 (ใช้เป็นข้อมูลอ้างอิง)","reference_academic_year":2568,"round_label":"Direct Admission","slots_available":50,"status":"unconfirmed","gpax_summary":"ไม่กำหนด GPAX รวม; GPA คณิตศาสตร์ 3.00 เป็นหนึ่งในทางเลือกของเกณฑ์คณิตศาสตร์","application_fee":1000,"selection_summary":"ผลการเรียน/คะแนนมาตรฐาน เอกสารประกอบ และสัมภาษณ์","note":"เป็น Direct Admission ปี 2568 ไม่ใช่เกณฑ์ TCAS70 และรูปแบบรอบอาจเปลี่ยนได้","source_url":"https://www.eng.kmitl.ac.th/direct-admission/"},{"title":"ประกาศค่าธรรมเนียมปีการศึกษา 2569","reference_academic_year":2569,"round_label":"ข้อมูลค่าเล่าเรียน","slots_available":null,"status":"unconfirmed","tuition_fee_per_semester":90000,"note":"เป็นอัตราค่าธรรมเนียมปี 2569 ใช้อ้างอิงงบประมาณเท่านั้น ต้องตรวจอัตราปีเข้าเรียนอีกครั้ง","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4381_2026_03_18-09-14-13_b207a.pdf"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -1956,7 +1956,7 @@ insert into public.faculties_and_majors (
 select
     u.id, campus.id, 'kmitl-engineering-robotics-ai-international', 'คณะวิศวกรรมศาสตร์', 'วิศวกรรมหุ่นยนต์และปัญญาประดิษฐ์ (หลักสูตรนานาชาติ)', 1, 2570,
     'วิศวกรรมศาสตรบัณฑิต', 'อังกฤษ', null, null,
-    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมหุ่นยนต์และ AI นานาชาติ","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","tuition_fee_per_semester":105000,"application_fee":300,"selection_summary":"เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์","portfolio_summary":"สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน","application_period":"ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70","source_url":"https://www.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
+    4, 'https://office.kmitl.ac.th/oaq/curriculum/', '[{"title":"คณะวิศวกรรมศาสตร์ TCAS69 - วิศวกรรมหุ่นยนต์และ AI นานาชาติ","reference_academic_year":2569,"round_label":"Portfolio","slots_available":10,"status":"unconfirmed","tuition_fee_per_semester":105000,"application_fee":300,"selection_summary":"เลือก 1 ใน 5 โครงการหลัก; ใช้ผลงาน หรือ TGAT/TPAT3 ตามประเภทโครงการ แล้วสอบสัมภาษณ์","portfolio_summary":"สร้าง iFolio และส่งผลงานเด่น 1 ผลงาน","application_period":"ถึง 22 ธ.ค. 2568 (กำหนดการของ TCAS69)","note":"เป็นจำนวนรับและค่าเรียน TCAS69 ไม่ใช่ประกาศ TCAS70","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2569_1_news1_4112_2025_11_11-12-54-28_46fcd.pdf"},{"title":"หน้ารับสมัคร TCAS70 รอบ Portfolio","reference_academic_year":2570,"round_label":"สถานะล่าสุด","slots_available":null,"status":"unconfirmed","note":"พบชื่อหลักสูตรในหน้ารอบ 1 TCAS70 แล้ว แต่วันปิดรับสมัครยังเป็น ''-'' และยังไม่พบประกาศคณะหรือโครงการฉบับรายละเอียด จึงยังยืนยันว่าเปิดยื่นไม่ได้","source_url":"https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1"}]'::jsonb, 'official', now()
 from public.universities u
 join public.university_campuses campus
   on campus.university_id = u.id and campus.code = 'ladkrabang'
@@ -3130,7 +3130,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-01T20:53+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3166,7 +3166,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-01T20:53+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3202,7 +3202,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-01T20:53+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3238,7 +3238,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, 1, 200,
     null, 'https://www.tuadmissions.in.th/img/2026082706504458.pdf', 'ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570',
-    '2026-08-27', '2026-08-28', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
+    '2026-08-27', '2026-09-25T17:54+07:00', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3274,7 +3274,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, 1, 200,
     null, 'https://www.tuadmissions.in.th/img/2026082706504458.pdf', 'ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570',
-    '2026-08-27', '2026-08-28', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
+    '2026-08-27', '2026-09-25T17:54+07:00', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3310,7 +3310,7 @@ select
     '1 Portfolio', 'ICT', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-1-ict-portfolio-academic-year-2027/', 'ประกาศ! รอบ 1 ICT – Portfolio ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-13T21:12:44+07:00', 'ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569', now()
+    '2026-07-02', '2026-09-25T17:54+07:00', 'ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3346,7 +3346,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-2-mu-portfolio-academic-year-2027/', 'ประกาศ! รอบ 2 MU – PORTFOLIO (TCAS 1) ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-05T13:09:13+07:00', 'เกณฑ์เฉพาะคณะ ICT และปฏิทิน MU-TCAS รอบ 1/1 ตรวจจากประกาศคณะและหน้าโปรแกรมทางการล่าสุด 5 ก.ย. 2569', now()
+    '2026-07-02', '2026-09-25T17:54+07:00', 'เกณฑ์เฉพาะคณะ ICT และปฏิทิน MU-TCAS รอบ 1/1 ตรวจจากประกาศคณะและหน้าโปรแกรมทางการล่าสุด 5 ก.ย. 2569', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3382,7 +3382,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-2-mu-portfolio-academic-year-2027/', 'ประกาศ! รอบ 2 MU – PORTFOLIO (TCAS 1) ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-05T13:09:13+07:00', 'ประกาศเฉพาะคณะระบุรอบ 1/2 สมัคร 15 ธ.ค. 2569–10 ม.ค. 2570 แต่หน้าโปรแกรม DST ปัจจุบันระบุว่าไม่เปิดรับสมัคร จึงคงข้อมูลไว้เป็นข้อขัดแย้งและต้องตรวจประกาศก่อนแนะนำผู้สมัคร', now()
+    '2026-07-02', '2026-09-25T17:54+07:00', 'ประกาศเฉพาะคณะระบุรอบ 1/2 สมัคร 15 ธ.ค. 2569–10 ม.ค. 2570 แต่หน้าโปรแกรม DST ปัจจุบันระบุว่าไม่เปิดรับสมัคร จึงคงข้อมูลไว้เป็นข้อขัดแย้งและต้องตรวจประกาศก่อนแนะนำผู้สมัคร', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3418,7 +3418,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703', 'รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-13T21:12:44+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-25T17:54+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3454,7 +3454,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703', 'รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-13T21:12:44+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-25T17:54+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3490,7 +3490,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704', 'รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-13T21:12:44+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-25T17:54+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3526,7 +3526,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=704', 'รหัสโครงการ 00410608108020 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-13T21:12:44+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-25T17:54+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3562,7 +3562,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=706', 'รหัสโครงการ 00410608108031 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-13T21:12:44+07:00', 'เปิดแบบ 1.1 จำนวน 5 คน; หน้าเว็บระบุแบบ 1.2 จำนวน 0 คน', now()
+    null, '2026-09-25T17:54+07:00', 'เปิดแบบ 1.1 จำนวน 5 คน; หน้าเว็บระบุแบบ 1.2 จำนวน 0 คน', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3597,8 +3597,8 @@ select
     u.id, 'kmitl-it-ability-1-1', 'kmitl-it-ability', 'โครงการนักเรียนมีความสามารถด้านเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-09-13T18:33:06+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
+    32000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3633,8 +3633,8 @@ select
     u.id, 'kmitl-academic-it-1-1', 'kmitl-academic-it', 'โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-09-13T18:33:06+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
+    32000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3669,8 +3669,8 @@ select
     u.id, 'kmitl-english-it-1-1', 'kmitl-english-it', 'โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-09-13T18:33:06+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
+    32000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3706,7 +3706,7 @@ select
     '1 Portfolio', 'ครั้งที่ 1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', 'รอบที่ 1 โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ (ครั้งที่ 1) ปีการศึกษา 2570',
-    '2026-08-05', '2026-08-23T00:00:00+07:00', 'ประกาศมหาวิทยาลัยและเกณฑ์รายหลักสูตรลงวันที่ 5 ส.ค. 2569; 350 บาทเป็นค่าสมัคร/ค่าสอบคัดเลือกที่ชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก ไม่ใช่ค่าธรรมเนียมตอนยื่นใบสมัคร', now()
+    '2026-08-05', '2026-09-25T17:54+07:00', 'ประกาศมหาวิทยาลัยและเกณฑ์รายหลักสูตรลงวันที่ 5 ส.ค. 2569; 350 บาทเป็นค่าสมัคร/ค่าสอบคัดเลือกที่ชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก ไม่ใช่ค่าธรรมเนียมตอนยื่นใบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -3742,7 +3742,7 @@ select
     '1 Portfolio', 'ครั้งที่ 3', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91', 'รอบที่ 1 โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ (ครั้งที่ 3) ปีการศึกษา 2570',
-    '2026-08-17', '2026-08-23T00:00:00+07:00', 'หน้าโครงการและไฟล์เกณฑ์เฉพาะครั้งที่ 3 ประกาศแล้ว แต่สถานะระบบสมัครยังเป็นกำลังจะเปิด; 350 บาทชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก', now()
+    '2026-08-17', '2026-09-25T17:54+07:00', 'หน้าโครงการและไฟล์เกณฑ์เฉพาะครั้งที่ 3 ประกาศแล้ว แต่สถานะระบบสมัครยังเป็นกำลังจะเปิด; 350 บาทชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -3814,7 +3814,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://misreg.csc.ku.ac.th/admission/?page_id=63', 'ประกาศรับสมัคร TCAS70 รอบที่ 1 โครงการขยายโอกาสทางการศึกษา',
-    '2026-08-21', '2026-08-23T00:00:00+07:00', 'นำเข้าเฉพาะสาขาสายคอมที่ประกาศจำนวนรับและเกณฑ์แล้ว; วิทยาการคอมพิวเตอร์ไม่มีสัมภาษณ์ และวิศวกรรมคอมพิวเตอร์ต้องผ่าน GPAX ขั้นต่ำตามประกาศ', now()
+    '2026-08-21', '2026-09-25T17:54+07:00', 'นำเข้าเฉพาะสาขาสายคอมที่ประกาศจำนวนรับและเกณฑ์แล้ว; วิทยาการคอมพิวเตอร์ไม่มีสัมภาษณ์ และวิศวกรรมคอมพิวเตอร์ต้องผ่าน GPAX ขั้นต่ำตามประกาศ', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -3850,7 +3850,7 @@ select
     '1 Portfolio', 'OSP / Inter Portfolio 1', 'Scholarship exam + Inter Portfolio', 'official',
     true, null, null,
     null, 'https://admissions.siit.tu.ac.th/admission_box/outstanding-student-program-osp/', 'Outstanding Student Program (OSP) Academic Year 2027',
-    '2026-03-30', '2026-09-14T21:03:22+07:00', 'เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio; ตรวจประกาศกำหนดการเฉพาะ OSP 2027 เมื่อ 14 ก.ย. 2569: สมัครถึง 15 ก.ย. 2569; PDF เฉพาะ OSP ระบุ Inter Portfolio 1 วันที่ 3 พ.ย.–3 ธ.ค. 2569 ขณะที่หน้ารวม Undergraduate แสดง 2 พ.ย.–2 ธ.ค.; คงวันที่ตามประกาศเฉพาะโครงการและติดตามความต่างนี้', now()
+    '2026-03-30', '2026-09-25T17:54+07:00', 'เป็นเส้นทางสอบชิงทุนและรับเข้าศึกษา; ผู้ผ่าน OSP ทุกคนต้องสมัคร Inter Portfolio 1 ต่อ โดยประกาศระบุว่าไม่ต้องทำ Portfolio; ตรวจประกาศกำหนดการเฉพาะ OSP 2027 เมื่อ 14 ก.ย. 2569: สมัครถึง 15 ก.ย. 2569; PDF เฉพาะ OSP ระบุ Inter Portfolio 1 วันที่ 3 พ.ย.–3 ธ.ค. 2569 ขณะที่หน้ารวม Undergraduate แสดง 2 พ.ย.–2 ธ.ค.; คงวันที่ตามประกาศเฉพาะโครงการและติดตามความต่างนี้', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3886,7 +3886,7 @@ select
     '1 Portfolio', 'ครั้งที่ 2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/c02bf829-5c3c-408d-8bd9-515baebb80dd', 'รอบที่ 1 โครงการ Active Recruitment คณะเทคโนโลยีสารสนเทศ (ครั้งที่ 2) ปีการศึกษา 2570',
-    '2026-08-05', '2026-08-23T00:00:00+07:00', 'เกณฑ์รายหลักสูตรลงวันที่ 5 ส.ค. 2569; หน้าโครงการอัปเดต 17 ส.ค. 2569; 350 บาทชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก', now()
+    '2026-08-05', '2026-09-25T17:54+07:00', 'เกณฑ์รายหลักสูตรลงวันที่ 5 ส.ค. 2569; หน้าโครงการอัปเดต 17 ส.ค. 2569; 350 บาทชำระภายหลังเฉพาะผู้ผ่านการคัดเลือก', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -3922,7 +3922,7 @@ select
     '1 Portfolio', 'ทั่วไป', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/b82694a9-f0a6-4a3a-b18f-0de4f1e8bbfc', 'รอบที่ 1 โครงการ Active Recruitment ปีการศึกษา 2570',
-    '2026-08-17', '2026-09-03T00:00+07:00', 'GPAX 2.50 เป็นคุณสมบัติขั้นต่ำ ไม่ใช่น้ำหนักคัดเลือก; พิจารณา Game Analysis Essay และการสัมภาษณ์ตามประกาศ', now()
+    '2026-08-17', '2026-09-25T17:54+07:00', 'GPAX 2.50 เป็นคุณสมบัติขั้นต่ำ ไม่ใช่น้ำหนักคัดเลือก; พิจารณา Game Analysis Essay และการสัมภาษณ์ตามประกาศ', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -3958,7 +3958,7 @@ select
     '1 Portfolio', 'เรียนดี', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/fe4b52a7-d942-4807-9b59-1527675dad89', 'รอบที่ 1 โครงการคัดเลือกตรง ประเภทเรียนดี ปีการศึกษา 2570',
-    '2026-08-20', '2026-08-23T00:00:00+07:00', 'จำนวนรับเป็นจำนวนผู้มีสิทธิ์เข้าศึกษา ไม่ใช่จำนวนเรียกสอบ; หน้าโครงการอัปเดต 20 ส.ค. 2569', now()
+    '2026-08-20', '2026-09-25T17:54+07:00', 'จำนวนรับเป็นจำนวนผู้มีสิทธิ์เข้าศึกษา ไม่ใช่จำนวนเรียกสอบ; หน้าโครงการอัปเดต 20 ส.ค. 2569', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -3994,7 +3994,7 @@ select
     '1 Portfolio', 'ครั้งที่ 1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://join.kmutt.ac.th/projects/b44debb2-6551-4eca-9e65-8ed7a7a3a179', 'รอบที่ 1 โครงการ KMUTT International Admission (ครั้งที่ 1) ปีการศึกษา 2570',
-    '2026-08-20', '2026-08-23T00:00:00+07:00', 'นำเข้าเฉพาะ CPE, CS และ Game Design ที่ประกาศเกณฑ์ครบ; หน้าโครงการอัปเดต 20 ส.ค. 2569', now()
+    '2026-08-20', '2026-09-25T17:54+07:00', 'นำเข้าเฉพาะ CPE, CS และ Game Design ที่ประกาศเกณฑ์ครบ; หน้าโครงการอัปเดต 20 ส.ค. 2569', now()
 from public.universities u
 where u.short_name = 'KMUTT'
 on conflict (code) do update set
@@ -4030,7 +4030,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507106011; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410507106011; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4066,7 +4066,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107010; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410507107010; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4102,7 +4102,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107020; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410507107020; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4138,7 +4138,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410507107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4174,7 +4174,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107040; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410507107040; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4210,7 +4210,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410507107050; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410507107050; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4246,7 +4246,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508106011; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410508106011; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4282,7 +4282,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107010; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410508107010; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4318,7 +4318,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107020; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410508107020; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4354,7 +4354,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410508107030; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4390,7 +4390,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410508107040; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410508107040; ค่าธรรมเนียมภาคการศึกษาแรก 18,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4426,7 +4426,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410608108040; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410608108040; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4462,7 +4462,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108010; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108010; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4498,7 +4498,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108010; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108010; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4534,7 +4534,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108020; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108020; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4570,7 +4570,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108020; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108020; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4606,7 +4606,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108030; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108030; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4642,7 +4642,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108030; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108030; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4678,7 +4678,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108041; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108041; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4714,7 +4714,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108041; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108041; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4750,7 +4750,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00410666108050; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00410666108050; ค่าธรรมเนียมภาคการศึกษาแรก 80,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4786,7 +4786,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412102102010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412102102010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4822,7 +4822,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412102103010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412102103010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4858,7 +4858,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412102108010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412102108010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4894,7 +4894,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412102108020; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412102108020; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4930,7 +4930,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412102108030; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412102108030; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -4966,7 +4966,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412104103010; ค่าธรรมเนียมภาคการศึกษาแรก 38,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412104103010; ค่าธรรมเนียมภาคการศึกษาแรก 38,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5002,7 +5002,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412104108010; ค่าธรรมเนียมภาคการศึกษาแรก 38,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412104108010; ค่าธรรมเนียมภาคการศึกษาแรก 38,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5038,7 +5038,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412104108020; ค่าธรรมเนียมภาคการศึกษาแรก 38,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412104108020; ค่าธรรมเนียมภาคการศึกษาแรก 38,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5074,7 +5074,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412105107010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412105107010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5110,7 +5110,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412105108010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412105108010; ค่าธรรมเนียมภาคการศึกษาแรก 33,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5146,7 +5146,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412171103011; ค่าธรรมเนียมภาคการศึกษาแรก 40,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412171103011; ค่าธรรมเนียมภาคการศึกษาแรก 40,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5182,7 +5182,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412171108011; ค่าธรรมเนียมภาคการศึกษาแรก 40,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412171108011; ค่าธรรมเนียมภาคการศึกษาแรก 40,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5218,7 +5218,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412171108020; ค่าธรรมเนียมภาคการศึกษาแรก 40,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412171108020; ค่าธรรมเนียมภาคการศึกษาแรก 40,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5254,7 +5254,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401101010; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401101010; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5290,7 +5290,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401101010; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401101010; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5326,7 +5326,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401101020; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401101020; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5362,7 +5362,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401101020; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401101020; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5398,7 +5398,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401108010; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401108010; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5434,7 +5434,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401108020; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401108020; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5470,7 +5470,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401108030; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401108030; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5506,7 +5506,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', 'ระบบค้นหาคณะ/สาขา มช. TCAS70 รอบ 1 Portfolio',
-    '2026-07-31', '2026-08-23T00:00:00+07:00', 'รหัสโครงการทางการ 00412401108040; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
+    '2026-07-31', '2026-09-25T17:54+07:00', 'รหัสโครงการทางการ 00412401108040; ค่าธรรมเนียมภาคการศึกษาแรก 55,000 บาท; เกณฑ์เต็มเก็บใน additional_requirements.official_criteria_text', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -5541,8 +5541,8 @@ select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-1', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-1 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 ถึง 1-5; CURRICULUM_ID 14142, PROJECT_ID 2409 เป็นรายการรอบ 1-1 ในระบบสมัคร; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 ถึง 1-5; CURRICULUM_ID 14142, PROJECT_ID 2409 เป็นรายการรอบ 1-1 ในระบบสมัคร; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5577,8 +5577,8 @@ select
     u.id, 'kmitl-chumphon-cpe-good-student-14plus-1-1', 'kmitl-chumphon-cpe-good-student-14plus', 'โครงการเรียนดี 14 จังหวัดพลัส 1-1 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_08_04-11-03-46_94eee.pdf', 'ประกาศโครงการเรียนดี 14 จังหวัดพลัส วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'รายการทางการในระบบรับสมัคร: CURRICULUM_ID 14157, PROJECT_ID 2410', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_09_01-14-51-12_745e8.pdf', 'ประกาศโครงการเรียนดี 14 จังหวัดพลัส วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'รายการทางการในระบบรับสมัคร: CURRICULUM_ID 14157, PROJECT_ID 2410', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5613,8 +5613,8 @@ select
     u.id, 'kmitl-chumphon-cpe-network-1-1', 'kmitl-chumphon-cpe-network', 'โครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร 1-1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf', 'ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14171, PROJECT_ID 2411 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_09_01-15-05-04_62a8a.pdf', 'ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14171, PROJECT_ID 2411 เป็นรายการรอบ 1-1 ในระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5649,8 +5649,8 @@ select
     u.id, 'kmitl-chumphon-cpe-potential-1-1', 'kmitl-chumphon-cpe-potential', 'โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี 1-1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14187, PROJECT_ID 2413 เป็นรายการรอบ 1-1 ในระบบสมัคร; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการครอบคลุมรอบ 1-1 และ 1-2; CURRICULUM_ID 14187, PROJECT_ID 2413 เป็นรายการรอบ 1-1 ในระบบสมัคร; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5685,8 +5685,8 @@ select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-2', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-2 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการระบุรอบ 1.2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5721,8 +5721,8 @@ select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-3', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-3 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.3', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.3; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการระบุรอบ 1.3; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5757,8 +5757,8 @@ select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-4', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-4 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.4', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.4; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการระบุรอบ 1.4; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5793,8 +5793,8 @@ select
     u.id, 'kmitl-chumphon-cpe-portfolio-1-5', 'kmitl-chumphon-cpe-portfolio', 'แฟ้มสะสมผลงาน 1-5 (วิทยาเขตชุมพรเขตรอุดมศักดิ์)', 2570, 1,
     '1 Portfolio', '1.5', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1.5; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', 'ประกาศ Portfolio รอบ 1-1 ถึง 1-5 วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการระบุรอบ 1.5; จำนวนรับวิศวกรรมคอมพิวเตอร์ 40 คนเป็นยอดรวมรอบ 1-1 ถึง 1-5; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5829,8 +5829,8 @@ select
     u.id, 'kmitl-chumphon-cpe-network-1-2', 'kmitl-chumphon-cpe-network', 'โครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร 1-2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 300,
-    20000, 'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf', 'ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70',
-    '2026-08-03', '2026-08-23T23:37:03+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_09_01-15-05-04_62a8a.pdf', 'ประกาศโครงการโรงเรียนหรือวิทยาลัยในเครือข่าย สจล.-ชุมพร TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5865,8 +5865,8 @@ select
     u.id, 'kmitl-chumphon-cpe-potential-1-2', 'kmitl-chumphon-cpe-potential', 'โครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี 1-2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
-    20000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
-    '2026-08-03', '2026-09-13T21:08:00+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
+    20000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', 'ประกาศโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี วิทยาเขตชุมพรเขตรอุดมศักดิ์ TCAS70',
+    '2026-08-03', '2026-09-25T17:54+07:00', 'ประกาศทางการระบุรอบ 1-2; จำนวนรับวิศวกรรมคอมพิวเตอร์ 15 คนเป็นยอดรวมรอบ 1-1 และ 1-2; ประกาศรอบปัจจุบันไม่ระบุค่าสมัคร; ยังไม่ยืนยันจำนวนจากระบบสมัคร', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5901,8 +5901,8 @@ select
     u.id, 'kmitl-science-cs-good-student-1-1', 'kmitl-science-cs-good-student', 'โครงการเรียนดี 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5937,8 +5937,8 @@ select
     u.id, 'kmitl-science-cs-good-student-1-2', 'kmitl-science-cs-good-student', 'โครงการเรียนดี 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -5973,8 +5973,8 @@ select
     u.id, 'kmitl-science-cs-science-talent-1-1', 'kmitl-science-cs-science-talent', 'โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -6009,8 +6009,8 @@ select
     u.id, 'kmitl-science-cs-science-talent-1-2', 'kmitl-science-cs-science-talent', 'โครงการความสามารถพิเศษทางวิทยาศาสตร์ 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -6045,8 +6045,8 @@ select
     u.id, 'kmitl-science-cs-staff-child-1-1', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.1 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -6081,8 +6081,8 @@ select
     u.id, 'kmitl-science-cs-staff-child-1-2', 'kmitl-science-cs-staff-child', 'โครงการบุตรบุคลากร สจล. 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -6117,8 +6117,8 @@ select
     u.id, 'kmitl-science-cs-professional-developer-1-2', 'kmitl-science-cs-professional-developer', 'โครงการนักพัฒนามืออาชีพ 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, 2, 300,
-    19000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
-    '2026-08-21', '2026-09-14T21:03:22+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
+    19000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', 'ประกาศรับสมัครและคัดเลือกบุคคลเข้าศึกษาระดับปริญญาตรี รอบที่ 1 Portfolio คณะวิทยาศาสตร์ สจล. ปีการศึกษา 2570',
+    '2026-08-21', '2026-09-25T17:54+07:00', 'ประกาศลงวันที่ 21 สิงหาคม 2569; รอบ 1.2 รับวิทยาการคอมพิวเตอร์รวม 25 คนทุกโครงการ และไม่ได้แยกจำนวนรับรายโครงการ; ตรวจ PDF ทางการเลขที่ 4648 ซึ่งหน้า faculty เชื่อมไว้ (ประกาศลงวันที่ 21 ส.ค. 2569; ไฟล์แนบลงวันที่ 8 ก.ย.) เมื่อ 14 ก.ย. 2569; กำหนดการ จำนวนรับรวม และสัดส่วนคัดเลือกของวิทยาการคอมพิวเตอร์ที่ตรวจเทียบตรงกับประกาศ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -6154,7 +6154,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/1/', 'เกณฑ์โครงการช้างเผือก รอบ 1.1 KU-TCAS70',
-    null, '2026-09-12T19:20:01+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -6190,7 +6190,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/2/', 'เกณฑ์โครงการเรียนล่วงหน้า KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -6226,7 +6226,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/3/', 'เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -6262,7 +6262,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/103/', 'เกณฑ์หลักสูตรนานาชาติและหลักสูตรภาษาอังกฤษ รอบ 1.2 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -6298,7 +6298,7 @@ select
     '1 Portfolio', '1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf', 'ประกาศโควตา Portfolio (ม.6) คณะวิทยาศาสตร์ประยุกต์ ปีการศึกษา 2570',
-    '2026-08-27', '2026-08-29T12:00:00+07:00', 'นำเข้าเฉพาะวิทยาการคอมพิวเตอร์หลักสูตรสองภาษา รหัส 04111; ประกาศระบุค่าเทอม 45,000 บาทต่อภาค', now()
+    '2026-08-27', '2026-09-25T17:54+07:00', 'นำเข้าเฉพาะวิทยาการคอมพิวเตอร์หลักสูตรสองภาษา รหัส 04111; ประกาศระบุค่าเทอม 45,000 บาทต่อภาค', now()
 from public.universities u
 where u.short_name = 'KMUTNB'
 on conflict (code) do update set
@@ -6334,7 +6334,7 @@ select
     '1 Portfolio', '1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf', 'ประกาศ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม ปีการศึกษา 2570',
-    null, '2026-08-29T12:00:00+07:00', 'ไม่มีสอบข้อเขียน ใช้ Portfolio และสัมภาษณ์ออนไลน์; ค่าเทอมแตกต่างรายหลักสูตรจึงแสดงในหมายเหตุรายสาขา', now()
+    null, '2026-09-25T17:54+07:00', 'ไม่มีสอบข้อเขียน ใช้ Portfolio และสัมภาษณ์ออนไลน์; ค่าเทอมแตกต่างรายหลักสูตรจึงแสดงในหมายเหตุรายสาขา', now()
 from public.universities u
 where u.short_name = 'KMUTNB'
 on conflict (code) do update set
@@ -6369,8 +6369,8 @@ select
     u.id, 'swu-ece-environmental-technology-good-student-1-1', 'swu-ece-environmental-technology-good-student', 'โครงการเด็กดีมีที่เรียน - เทคโนโลยีสิ่งแวดล้อมและทรัพยากร • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 112; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 112; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6405,8 +6405,8 @@ select
     u.id, 'swu-ece-environmental-technology-special-talent-1-1', 'swu-ece-environmental-technology-special-talent', 'โครงการผู้มีทักษะพิเศษ - เทคโนโลยีสิ่งแวดล้อมและทรัพยากร • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 114; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 114; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6441,8 +6441,8 @@ select
     u.id, 'swu-ece-environmental-technology-good-student-1-2', 'swu-ece-environmental-technology-good-student', 'โครงการเด็กดีมีที่เรียน - เทคโนโลยีสิ่งแวดล้อมและทรัพยากร • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 129; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 129; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6477,8 +6477,8 @@ select
     u.id, 'swu-ece-environmental-technology-special-talent-1-2', 'swu-ece-environmental-technology-special-talent', 'โครงการผู้มีทักษะพิเศษ - เทคโนโลยีสิ่งแวดล้อมและทรัพยากร • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 131; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 131; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6513,8 +6513,8 @@ select
     u.id, 'swu-ece-climate-environment-good-student-1-1', 'swu-ece-climate-environment-good-student', 'โครงการเด็กดีมีที่เรียน - วิทยาการการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 126; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 126; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6549,8 +6549,8 @@ select
     u.id, 'swu-ece-climate-environment-special-talent-1-1', 'swu-ece-climate-environment-special-talent', 'โครงการผู้มีทักษะพิเศษ - วิทยาการการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 127; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 127; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6585,8 +6585,8 @@ select
     u.id, 'swu-ece-climate-environment-good-student-1-2', 'swu-ece-climate-environment-good-student', 'โครงการเด็กดีมีที่เรียน - วิทยาการการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 141; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 141; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6621,8 +6621,8 @@ select
     u.id, 'swu-ece-climate-environment-special-talent-1-2', 'swu-ece-climate-environment-special-talent', 'โครงการผู้มีทักษะพิเศษ - วิทยาการการเปลี่ยนแปลงสภาพภูมิอากาศและสิ่งแวดล้อม • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 143; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 143; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 5 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6657,8 +6657,8 @@ select
     u.id, 'swu-science-mathematics-good-student-1-2', 'swu-science-mathematics-good-student', 'โครงการเด็กดีมีที่เรียน - คณิตศาสตร์ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 151; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 20 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 151; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 20 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6693,8 +6693,8 @@ select
     u.id, 'swu-science-statistics-good-student-1-2', 'swu-science-statistics-good-student', 'โครงการเด็กดีมีที่เรียน - สถิติ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 152; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 152; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6729,8 +6729,8 @@ select
     u.id, 'swu-science-chemistry-good-student-1-1', 'swu-science-chemistry-good-student', 'โครงการเด็กดีมีที่เรียน - เคมี • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 145; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 8 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 145; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 8 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6765,8 +6765,8 @@ select
     u.id, 'swu-science-chemistry-special-talent-1-1', 'swu-science-chemistry-special-talent', 'โครงการผู้มีทักษะพิเศษ - เคมี • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 147; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 147; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6801,8 +6801,8 @@ select
     u.id, 'swu-science-chemistry-good-student-1-2', 'swu-science-chemistry-good-student', 'โครงการเด็กดีมีที่เรียน - เคมี • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 154; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 20 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 154; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 20 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6837,8 +6837,8 @@ select
     u.id, 'swu-science-chemistry-special-talent-1-2', 'swu-science-chemistry-special-talent', 'โครงการผู้มีทักษะพิเศษ - เคมี • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 156; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 156; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6873,8 +6873,8 @@ select
     u.id, 'swu-science-biology-good-student-1-1', 'swu-science-biology-good-student', 'โครงการเด็กดีมีที่เรียน - ชีววิทยา • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 149; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 149; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6909,8 +6909,8 @@ select
     u.id, 'swu-science-biology-good-student-1-2', 'swu-science-biology-good-student', 'โครงการเด็กดีมีที่เรียน - ชีววิทยา • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 162; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 60 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 162; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 60 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6945,8 +6945,8 @@ select
     u.id, 'swu-science-materials-good-student-1-1', 'swu-science-materials-good-student', 'โครงการเด็กดีมีที่เรียน - วัสดุศาสตร์ • TCAS 1.1', 2570, 1,
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 150; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 150; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -6981,8 +6981,8 @@ select
     u.id, 'swu-science-materials-good-student-1-2', 'swu-science-materials-good-student', 'โครงการเด็กดีมีที่เรียน - วัสดุศาสตร์ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 163; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 163; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7017,8 +7017,8 @@ select
     u.id, 'swu-science-microbiology-good-student-1-2', 'swu-science-microbiology-good-student', 'โครงการเด็กดีมีที่เรียน - จุลชีววิทยา • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 158; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 38 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 158; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 38 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7053,8 +7053,8 @@ select
     u.id, 'swu-science-microbiology-special-talent-1-2', 'swu-science-microbiology-special-talent', 'โครงการผู้มีทักษะพิเศษ - จุลชีววิทยา • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 160; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 160; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7089,8 +7089,8 @@ select
     u.id, 'swu-engineering-chemical-good-student-1-2', 'swu-engineering-chemical-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมเคมี • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 165; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 165; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7125,8 +7125,8 @@ select
     u.id, 'swu-engineering-mechanical-good-student-1-2', 'swu-engineering-mechanical-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมเครื่องกล • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 166; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 24 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 166; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 24 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7161,8 +7161,8 @@ select
     u.id, 'swu-engineering-civil-good-student-1-2', 'swu-engineering-civil-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมโยธา • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 167; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 167; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7197,8 +7197,8 @@ select
     u.id, 'swu-engineering-industrial-good-student-1-2', 'swu-engineering-industrial-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมอุตสาหการ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 168; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 168; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7233,8 +7233,8 @@ select
     u.id, 'swu-engineering-biomedical-good-student-1-2', 'swu-engineering-biomedical-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมชีวการแพทย์ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 169; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 18 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 169; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 18 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7269,8 +7269,8 @@ select
     u.id, 'swu-engineering-computer-good-student-1-2', 'swu-engineering-computer-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมคอมพิวเตอร์ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 170; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 170; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7305,8 +7305,8 @@ select
     u.id, 'swu-engineering-electrical-power-good-student-1-2', 'swu-engineering-electrical-power-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมไฟฟ้า - วิชาเอกวิศวกรรมไฟฟ้ากำลัง • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 171; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 12 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 171; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 12 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7341,8 +7341,8 @@ select
     u.id, 'swu-engineering-telecom-it-good-student-1-2', 'swu-engineering-telecom-it-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมไฟฟ้า - วิชาเอกวิศวกรรมโทรคมนาคมและเทคโนโลยีสารสนเทศ • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 172; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 12 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 172; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 12 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7377,8 +7377,8 @@ select
     u.id, 'swu-engineering-logistics-bilingual-good-student-1-2', 'swu-engineering-logistics-bilingual-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมโลจิสติกส์ (หลักสูตร 2 ภาษา) • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 173; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 173; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7413,8 +7413,8 @@ select
     u.id, 'swu-engineering-environmental-good-student-1-2', 'swu-engineering-environmental-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมสิ่งแวดล้อม • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 175; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 175; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 10 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7449,8 +7449,8 @@ select
     u.id, 'swu-engineering-petroleum-renewable-special-talent-1-2', 'swu-engineering-petroleum-renewable-special-talent', 'โครงการผู้มีทักษะพิเศษ - วิศวกรรมปิโตรเลียมและพลังงานหมุนเวียน (หลักสูตรนานาชาติ) • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 176; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 176; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7485,8 +7485,8 @@ select
     u.id, 'swu-engineering-cybersecurity-special-talent-1-2', 'swu-engineering-cybersecurity-special-talent', 'โครงการผู้มีทักษะพิเศษ - วิศวกรรมด้านความปลอดภัยไซเบอร์ (หลักสูตรนานาชาติ) • TCAS 1.2', 2570, 1,
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-08-29T12:00:00+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 178; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
+    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
+    '2026-08-07', '2026-09-25T17:54+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 178; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 6 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
@@ -7522,7 +7522,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/4/', 'เกณฑ์โครงการรับนักกีฬาดีเด่น รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7558,7 +7558,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/8/', 'เกณฑ์โครงการ พสวท. รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารวม KU-TCAS70 ระบุสาขาและเงื่อนไขหลัก แต่จำนวนรับของวิทยาการคอมพิวเตอร์ เป็นจำนวนรวมกับเงื่อนไขอื่น จึงไม่แสดงเป็นจำนวนรับเฉพาะโครงการนี้', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารวม KU-TCAS70 ระบุสาขาและเงื่อนไขหลัก แต่จำนวนรับของวิทยาการคอมพิวเตอร์ เป็นจำนวนรวมกับเงื่อนไขอื่น จึงไม่แสดงเป็นจำนวนรับเฉพาะโครงการนี้', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7594,7 +7594,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/9/', 'เกณฑ์โครงการโอลิมปิกวิชาการ รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7630,7 +7630,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/109/', 'เกณฑ์โครงการโอลิมปิกวิชาการ รอบ 1.2 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารวม KU-TCAS70 ระบุสาขาและจำนวนรับแล้ว; เกณฑ์ของบางสาขา ต้องตรวจเอกสาร/ประกาศย่อยก่อนสมัคร', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารวม KU-TCAS70 ระบุสาขาและจำนวนรับแล้ว; เกณฑ์ของบางสาขา ต้องตรวจเอกสาร/ประกาศย่อยก่อนสมัคร', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7666,7 +7666,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/2/', 'เกณฑ์โครงการเรียนล่วงหน้า วิทยาเขตกำแพงแสน KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7702,7 +7702,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/10/', 'เกณฑ์โครงการ Portfolio วิทยาเขตกำแพงแสน รอบ 1.1 KU-TCAS70',
-    null, '2026-09-12T19:20:01+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7738,7 +7738,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/110/', 'เกณฑ์โครงการ Portfolio วิทยาเขตกำแพงแสน รอบ 1.2 KU-TCAS70',
-    null, '2026-09-12T19:20:01+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7774,7 +7774,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/5/', 'เกณฑ์โครงการส่งเสริมคุณธรรมและจริยธรรม วิทยาเขตศรีราชา KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารวม KU-TCAS70 ยืนยันชื่อสาขาและจำนวนรับ; รายละเอียดเกณฑ์รายสาขา อยู่ในระบบรับสมัครวิทยาเขตศรีราชาและต้องตรวจซ้ำก่อนสมัคร', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารวม KU-TCAS70 ยืนยันชื่อสาขาและจำนวนรับ; รายละเอียดเกณฑ์รายสาขา อยู่ในระบบรับสมัครวิทยาเขตศรีราชาและต้องตรวจซ้ำก่อนสมัคร', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7810,7 +7810,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/6/', 'เกณฑ์โครงการผู้นำเยาวชน วิทยาเขตศรีราชา KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารวม KU-TCAS70 ยืนยันชื่อสาขาและจำนวนรับ; รายละเอียดเกณฑ์รายสาขา อยู่ในระบบรับสมัครวิทยาเขตศรีราชาและต้องตรวจซ้ำก่อนสมัคร', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารวม KU-TCAS70 ยืนยันชื่อสาขาและจำนวนรับ; รายละเอียดเกณฑ์รายสาขา อยู่ในระบบรับสมัครวิทยาเขตศรีราชาและต้องตรวจซ้ำก่อนสมัคร', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7846,7 +7846,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/107/', 'เกณฑ์โครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
+    null, '2026-09-25T17:54+07:00', 'เกณฑ์และจำนวนรับมาจากหน้ารวมเกณฑ์ KU-TCAS70 โดยตรง; ค่าสมัครและค่าเทอมเว้นว่างเพราะหน้าที่ตรวจไม่ได้ระบุตัวเลข', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7882,7 +7882,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/207/', 'เกณฑ์โครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา รอบ 1.2 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารวม KU-TCAS70 ระบุสาขาแล้ว แต่ปฏิทินรอบ 1.2 ของวิทยาเขตศรีราชา ยังรอประกาศ จึงยังไม่แสดงวันสมัครเป็นวันที่ยืนยัน', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารวม KU-TCAS70 ระบุสาขาแล้ว แต่ปฏิทินรอบ 1.2 ของวิทยาเขตศรีราชา ยังรอประกาศ จึงยังไม่แสดงวันสมัครเป็นวันที่ยืนยัน', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7918,7 +7918,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/18/', 'เกณฑ์โควตาศิลปวัฒนธรรมและซอฟต์พาวเวอร์ รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารวม KU-TCAS70 ระบุวิศวกรรมคอมพิวเตอร์และจำนวนรับ 2 คน; รายละเอียดการทดสอบและสัมภาษณ์ยังควรตรวจประกาศต้นทางก่อนสมัคร', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารวม KU-TCAS70 ระบุวิศวกรรมคอมพิวเตอร์และจำนวนรับ 2 คน; รายละเอียดการทดสอบและสัมภาษณ์ยังควรตรวจประกาศต้นทางก่อนสมัคร', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7954,7 +7954,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.ku.ac.th/majors/project/32/', 'เกณฑ์โครงการพัฒนาเครือข่ายองค์กรแห่งการเรียนรู้ด้านวิทยาศาสตร์ รอบ 1.1 KU-TCAS70',
-    null, '2026-08-30T12:00:00+07:00', 'หน้ารายโครงการระบุวิทยาการคอมพิวเตอร์ภาคปกติและภาคพิเศษ แต่จำนวนรับเป็นยอดรวม และไม่ได้แจกแจงเกณฑ์เฉพาะสาขาคอมพิวเตอร์ จึงต้องตรวจประกาศต้นทางก่อนสมัคร', now()
+    null, '2026-09-25T17:54+07:00', 'หน้ารายโครงการระบุวิทยาการคอมพิวเตอร์ภาคปกติและภาคพิเศษ แต่จำนวนรับเป็นยอดรวม และไม่ได้แจกแจงเกณฑ์เฉพาะสาขาคอมพิวเตอร์ จึงต้องตรวจประกาศต้นทางก่อนสมัคร', now()
 from public.universities u
 where u.short_name = 'KU'
 on conflict (code) do update set
@@ -7990,7 +7990,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-01T20:53+07:00', 'ประกาศทางการลงวันที่ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศทางการลงวันที่ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -8026,7 +8026,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-01T20:53+07:00', 'ประกาศทางการลงวันที่ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศทางการลงวันที่ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -10493,7 +10493,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10526,7 +10526,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10559,7 +10559,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10592,7 +10592,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10625,7 +10625,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10658,7 +10658,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10691,7 +10691,7 @@ select
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-english-it-1-1'
@@ -10724,7 +10724,7 @@ select
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-english-it-1-1'
@@ -10757,7 +10757,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือใช้ผล GED","มีหน่วยกิตคณิตศาสตร์อย่างน้อย 12 และวิทยาศาสตร์อย่างน้อย 20"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
     '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
     '[{"name":"GPAX","weight_percent":25},{"name":"สัมภาษณ์","weight_percent":50},{"name":"Portfolio","weight_percent":25}]'::jsonb, '{"minimum_subject_credits":{"คณิตศาสตร์":12,"วิทยาศาสตร์":20},"missing_subject_grade_is_ineligible":true}'::jsonb, 'GPAX ≥ 3.00, GPA คณิตศาสตร์ ≥ 3.00 และภาษาต่างประเทศ ≥ 3.00; คัดเลือกจาก GPAX 25% สัมภาษณ์ 50% และ Portfolio 25%',
-    'https://drive.google.com/file/d/1FpJICeKrwjegPy6tF_XWDoWKPGg135yn/view?usp=sharing', now()
+    'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
 where p.code = 'kmutt-sit-active-recruitment-1'
@@ -10790,7 +10790,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช.","มีหน่วยกิตคณิตศาสตร์อย่างน้อย 5 และภาษาต่างประเทศอย่างน้อย 6"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
     '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
     '[{"name":"สัมภาษณ์","weight_percent":60},{"name":"Portfolio","weight_percent":40}]'::jsonb, '{"minimum_subject_credits":{"คณิตศาสตร์":5,"ภาษาต่างประเทศ":6},"optional_intro_video_max_minutes":2,"portfolio_focus":"IT/ดิจิทัล หรือบุคลิกภาพและการสื่อสาร"}'::jsonb, 'GPAX ≥ 2.50, GPA คณิตศาสตร์ ≥ 2.75 และภาษาต่างประเทศ ≥ 2.50; สัมภาษณ์ 60% และ Portfolio 40%',
-    'https://drive.google.com/file/d/1FpJICeKrwjegPy6tF_XWDoWKPGg135yn/view?usp=sharing', now()
+    'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmutt-sit-dsi'
 where p.code = 'kmutt-sit-active-recruitment-1'
@@ -10823,7 +10823,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช.","ไม่กำหนดหน่วยกิตขั้นต่ำ แต่ต้องมีผลการเรียนในกลุ่มวิชาที่กำหนด"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
     '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
     '[{"name":"สัมภาษณ์","weight_percent":50},{"name":"Portfolio","weight_percent":50}]'::jsonb, '{"intro_video_max_minutes":3,"video_access_must_not_require_permission":true,"interview_requires_it_work_presentation":true}'::jsonb, 'GPAX ≥ 2.75, GPA คณิตศาสตร์ ≥ 2.75 และภาษาต่างประเทศ ≥ 2.75; สัมภาษณ์ 50% และ Portfolio 50% พร้อมคลิปแนะนำตัว/ผลงานไม่เกิน 3 นาที',
-    'https://drive.google.com/file/d/1FpJICeKrwjegPy6tF_XWDoWKPGg135yn/view?usp=sharing', now()
+    'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmutt-sit-it'
 where p.code = 'kmutt-sit-active-recruitment-1'
@@ -10856,7 +10856,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือใช้ผล GED","มีหน่วยกิตคณิตศาสตร์อย่างน้อย 12 และวิทยาศาสตร์อย่างน้อย 20"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
     '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
     '[{"name":"GPAX","weight_percent":25},{"name":"สัมภาษณ์","weight_percent":50},{"name":"Portfolio","weight_percent":25}]'::jsonb, '{"minimum_subject_credits":{"คณิตศาสตร์":12,"วิทยาศาสตร์":20},"missing_subject_grade_is_ineligible":true}'::jsonb, 'GPAX ≥ 3.00, GPA คณิตศาสตร์ ≥ 3.00 และภาษาต่างประเทศ ≥ 3.00; คัดเลือกจาก GPAX 25% สัมภาษณ์ 50% และ Portfolio 25%',
-    'https://drive.google.com/file/d/1XUI1Z93eBOYS9zURjDInmfYAR3V2ytg4/view?usp=sharing', now()
+    'https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
 where p.code = 'kmutt-sit-active-recruitment-3'
@@ -10889,7 +10889,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช.","มีหน่วยกิตคณิตศาสตร์อย่างน้อย 5 และภาษาต่างประเทศอย่างน้อย 6"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
     '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
     '[{"name":"สัมภาษณ์","weight_percent":60},{"name":"Portfolio","weight_percent":40}]'::jsonb, '{"minimum_subject_credits":{"คณิตศาสตร์":5,"ภาษาต่างประเทศ":6},"optional_intro_video_max_minutes":2,"portfolio_focus":"IT/ดิจิทัล หรือบุคลิกภาพและการสื่อสาร"}'::jsonb, 'GPAX ≥ 2.50, GPA คณิตศาสตร์ ≥ 2.75 และภาษาต่างประเทศ ≥ 2.50; สัมภาษณ์ 60% และ Portfolio 40%',
-    'https://drive.google.com/file/d/1XUI1Z93eBOYS9zURjDInmfYAR3V2ytg4/view?usp=sharing', now()
+    'https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmutt-sit-dsi'
 where p.code = 'kmutt-sit-active-recruitment-3'
@@ -10922,7 +10922,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช.","ไม่กำหนดหน่วยกิตขั้นต่ำ แต่ต้องมีผลการเรียนในกลุ่มวิชาที่กำหนด"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
     '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
     '[{"name":"สัมภาษณ์","weight_percent":50},{"name":"Portfolio","weight_percent":50}]'::jsonb, '{"intro_video_max_minutes":3,"video_access_must_not_require_permission":true,"interview_requires_it_work_presentation":true}'::jsonb, 'GPAX ≥ 2.75, GPA คณิตศาสตร์ ≥ 2.75 และภาษาต่างประเทศ ≥ 2.75; สัมภาษณ์ 50% และ Portfolio 50% พร้อมคลิปแนะนำตัว/ผลงานไม่เกิน 3 นาที',
-    'https://drive.google.com/file/d/1XUI1Z93eBOYS9zURjDInmfYAR3V2ytg4/view?usp=sharing', now()
+    'https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmutt-sit-it'
 where p.code = 'kmutt-sit-active-recruitment-3'
@@ -13034,7 +13034,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"official_curriculum_id":14142,"official_project_id":2409,"announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-1'
@@ -13067,7 +13067,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","กำลังศึกษาหรือสำเร็จจากสถานศึกษาใน ชุมพร สุราษฎร์ธานี ระนอง กระบี่ พังงา ภูเก็ต ตรัง นครศรีธรรมราช พัทลุง สงขลา สตูล ปัตตานี ยะลา นราธิวาส ประจวบคีรีขันธ์ เพชรบุรี ราชบุรี นครปฐม หรือกรุงเทพมหานคร"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"official_curriculum_id":14157,"official_project_id":2410}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.50; ต้องอยู่ในพื้นที่ 14 จังหวัดภาคใต้และจังหวัดใกล้เคียงตามรายชื่อประกาศ; Portfolio 50 + สัมภาษณ์ 50',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_08_04-11-03-46_94eee.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_09_01-14-51-12_745e8.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-good-student-14plus-1-1'
@@ -13100,7 +13100,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","ต้องสังกัดสถานศึกษาที่มีข้อตกลงกับ สจล. วิทยาเขตชุมพร และได้รับการเสนอชื่อจากสถานศึกษา"]'::jsonb, 'ส่ง TCASFolio เป็น PDF; ประวัติไม่เกิน 1 หน้า A4; สำเนาหนังสือเสนอชื่อจากสถานศึกษา; หลักฐานผลงาน/รางวัล/กิจกรรมไม่เกิน 3 ผลงาน; ประกาศนียบัตรค่ายหรือโครงการวิชาการ ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF","สำเนาหนังสือเสนอชื่อผู้สมัครจากสถานศึกษาต้นสังกัด"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"official_curriculum_id":14171,"official_project_id":2411,"school_nomination_required":true,"announced_variants":["1.1","1.2"],"announced_slots_across_variants":15}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; ต้องมาจากสถานศึกษาเครือข่ายและได้รับการเสนอชื่อ; Portfolio 50 + สัมภาษณ์ 50',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_09_01-15-05-04_62a8a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-network-1-1'
@@ -13133,7 +13133,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทุกจังหวัดทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF; ประวัติไม่เกิน 1 หน้า A4; ผลงาน/รางวัล/กิจกรรมค่ายวิชาการ ด้าน STEM วิศวกรรมศาสตร์ หรือวิทยาศาสตร์ไม่เกิน 3 ผลงาน; ประกาศนียบัตรค่ายหรือโครงการวิชาการ ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"official_curriculum_id":14187,"official_project_id":2413,"announced_variants":["1.1","1.2"],"announced_slots_across_variants":15}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 2.75; Portfolio เน้น STEM/วิศวกรรม/วิทยาศาสตร์ 50 + สัมภาษณ์ 50',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-potential-1-1'
@@ -13166,7 +13166,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.2","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-2'
@@ -13199,7 +13199,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.3","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-3'
@@ -13232,7 +13232,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.4","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-4'
@@ -13265,7 +13265,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF ผ่านระบบสมัคร; ประวัติไม่เกิน 1 หน้า A4; หลักฐานผลงาน/รางวัล/กิจกรรม; ประกาศนียบัตรค่ายหรือโครงการวิชาการ (ถ้ามี) ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.5","announced_variants":["1.1","1.2","1.3","1.4","1.5"],"announced_slots_across_variants":40}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; Portfolio 50 + สัมภาษณ์ 50; ผลงานคอมพิวเตอร์/IoT/AI ได้รับการพิจารณาเป็นกรณีพิเศษ',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4629_2026_09_01-14-49-21_3fb32.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-portfolio-1-5'
@@ -13298,7 +13298,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","ต้องสังกัดสถานศึกษาที่มีข้อตกลงกับ สจล. วิทยาเขตชุมพร และได้รับการเสนอชื่อจากสถานศึกษา"]'::jsonb, 'ส่ง TCASFolio เป็น PDF; ประวัติไม่เกิน 1 หน้า A4; สำเนาหนังสือเสนอชื่อจากสถานศึกษา; หลักฐานผลงาน/รางวัล/กิจกรรมไม่เกิน 3 ผลงาน; ประกาศนียบัตรค่ายหรือโครงการวิชาการ ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF","สำเนาหนังสือเสนอชื่อผู้สมัครจากสถานศึกษาต้นสังกัด"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"school_nomination_required":true,"announced_variant":"1.2","announced_variants":["1.1","1.2"],"announced_slots_across_variants":15}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 3.25; ต้องมาจากสถานศึกษาเครือข่ายและได้รับการเสนอชื่อ; Portfolio 50 + สัมภาษณ์ 50',
-    'https://reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_08_04-11-33-47_8fcf4.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_09_01-15-05-04_62a8a.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-network-1-2'
@@ -13331,7 +13331,7 @@ select
     '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 แผนวิทย์-คณิต หรือ ปวช. สาขาที่เกี่ยวกับวิศวกรรมคอมพิวเตอร์ เช่น อิเล็กทรอนิกส์หรือสารสนเทศ","รับผู้สมัครจากสถานศึกษาทุกจังหวัดทั่วประเทศ"]'::jsonb, 'ส่ง TCASFolio เป็น PDF; ประวัติไม่เกิน 1 หน้า A4; ผลงาน/รางวัล/กิจกรรมค่ายวิชาการ ด้าน STEM วิศวกรรมศาสตร์ หรือวิทยาศาสตร์ไม่เกิน 3 ผลงาน; ประกาศนียบัตรค่ายหรือโครงการวิชาการ ไม่เกิน 2 ใบ; และข้อความแสดงความสนใจหรือความรู้ในสาขาไม่เกิน 1 หน้า A4',
     '{"portfolio_required":true,"portfolio_weight_percent":50,"interview_weight_percent":50}'::jsonb, '["ผ่านการอบรมเขียนโปรแกรมจาก 42 Bangkok และได้ประกาศนียบัตรแบบ completion","ผ่านการอบรมเกี่ยวกับ IoT หรือ AI และได้รับประกาศนียบัตร","ทำโครงงานคอมพิวเตอร์เกี่ยวกับเว็บไซต์หรือโมบายแอปพลิเคชันร่วมกับฐานข้อมูล","แข่งขันทักษะด้านคอมพิวเตอร์ IoT หรือ AI และได้รับรางวัล","ได้รับรางวัลโครงงานหรือสิ่งประดิษฐ์ที่เกี่ยวกับคอมพิวเตอร์ IoT หรือ AI"]'::jsonb, '["TCASFolio ไฟล์ PDF"]'::jsonb,
     '["แฟ้มสะสมผลงาน (TCASFolio) 50 คะแนน","สัมภาษณ์ 50 คะแนน โดยพิจารณาความเข้าใจในสาขา บุคลิกภาพ และความพร้อมเข้าศึกษา"]'::jsonb, '{"announced_variant":"1.2","announced_variants":["1.1","1.2"],"announced_slots_across_variants":15}'::jsonb, 'GPAX 4 ภาคเรียนหรือตลอดหลักสูตรอย่างน้อย 2.75; Portfolio เน้น STEM/วิศวกรรม/วิทยาศาสตร์ 50 + สัมภาษณ์ 50',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-chumphon-computer-engineering'
 where p.code = 'kmitl-chumphon-cpe-potential-1-2'
@@ -13364,7 +13364,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์"]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":60,"interview_weight_percent":25,"transcript_weight_percent":15}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 60%","ผลการเรียน 15%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 3.50 และ GPAX กลุ่มคณิตศาสตร์/วิทยาศาสตร์ อย่างละ 3.00; Portfolio 60% + สัมภาษณ์ 25% + ผลการเรียน 15%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-good-student-1-1'
@@ -13397,7 +13397,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์"]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":60,"interview_weight_percent":25,"transcript_weight_percent":15}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 60%","ผลการเรียน 15%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 3.50 และ GPAX กลุ่มคณิตศาสตร์/วิทยาศาสตร์ อย่างละ 3.00; Portfolio 60% + สัมภาษณ์ 25% + ผลการเรียน 15%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-good-student-1-2'
@@ -13430,7 +13430,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)"]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '["ผ่านการคัดเลือกโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชนของ สวทช. หรือสมาคมวิทยาศาสตร์แห่งประเทศไทย","ผ่านการคัดเลือกการแข่งขันคณิตศาสตร์และวิทยาศาสตร์โอลิมปิกของ สสวท.","ผ่านการสอบและการอบรมโอลิมปิกวิชาการของ สอวน.","มีผลงานหรือรางวัลวิชาการด้านวิทยาศาสตร์-คณิตศาสตร์อย่างน้อย 1 รายการ; สำหรับวิทยาการคอมพิวเตอร์ต้องเป็นระดับจังหวัด ภูมิภาค ชาติ หรือนานาชาติ","ได้รับรางวัลหรือเกียรติบัตรจากงานที่คณะวิทยาศาสตร์ สจล. เป็นเจ้าภาพหรือเจ้าภาพร่วม ยกเว้น Esports","ได้รับรางวัลโครงการแข่งขันเพชรยอดมงกุฎ วิชาคณิตศาสตร์หรือวิทยาศาสตร์"]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-science-talent-1-1'
@@ -13463,7 +13463,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)"]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '["ผ่านการคัดเลือกโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชนของ สวทช. หรือสมาคมวิทยาศาสตร์แห่งประเทศไทย","ผ่านการคัดเลือกการแข่งขันคณิตศาสตร์และวิทยาศาสตร์โอลิมปิกของ สสวท.","ผ่านการสอบและการอบรมโอลิมปิกวิชาการของ สอวน.","มีผลงานหรือรางวัลวิชาการด้านวิทยาศาสตร์-คณิตศาสตร์อย่างน้อย 1 รายการ; สำหรับวิทยาการคอมพิวเตอร์ต้องเป็นระดับจังหวัด ภูมิภาค ชาติ หรือนานาชาติ","ได้รับรางวัลหรือเกียรติบัตรจากงานที่คณะวิทยาศาสตร์ สจล. เป็นเจ้าภาพหรือเจ้าภาพร่วม ยกเว้น Esports","ได้รับรางวัลโครงการแข่งขันเพชรยอดมงกุฎ วิชาคณิตศาสตร์หรือวิทยาศาสตร์"]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-science-talent-1-2'
@@ -13496,7 +13496,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์","ต้องเป็นบุตรบุคลากร สจล."]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 4 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร","สำเนาทะเบียนบ้านของผู้สมัคร","สำเนาบัตรข้าราชการหรือบัตรพนักงานของผู้ปกครอง"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.1 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-staff-child-1-1'
@@ -13529,7 +13529,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","แผนการเรียนที่รับ: วิทย์-คณิต, ศิลป์-คำนวณ, แผนการเรียนเกี่ยวกับคอมพิวเตอร์","ต้องเป็นบุตรบุคลากร สจล."]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร","สำเนาทะเบียนบ้านของผู้สมัคร","สำเนาบัตรข้าราชการหรือบัตรพนักงานของผู้ปกครอง"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และเป็นบุตรบุคลากร สจล.; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-staff-child-1-2'
@@ -13562,7 +13562,7 @@ select
     '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)","ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์ สจล."]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
     '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '[]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร","เกียรติบัตรผ่านการอบรมโครงการนักพัฒนามืออาชีพ"]'::jsonb,
     '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'เฉพาะผู้ผ่านการอบรมโครงการนักพัฒนามืออาชีพของภาควิชาวิทยาการคอมพิวเตอร์ สจล.; Portfolio 75% + สัมภาษณ์ 25%',
-    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
 where p.code = 'kmitl-science-cs-professional-developer-1-2'
@@ -13892,7 +13892,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, กศน. สายวิทย์-คณิต หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 6 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 12 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":30,"interview_weight_percent":70}'::jsonb, '["กิจกรรมหรือผลงานทางวิทยาศาสตร์ที่แสดงความสนใจด้านสิ่งแวดล้อมและทรัพยากร","คำตอบคำถามเพิ่มเติมของสาขาเกี่ยวกับปัญหาสิ่งแวดล้อม"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 30%","สอบสัมภาษณ์ 70%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 1000 ตัวอักษร ตามหน้ารายละเอียดของสาขา","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":6,"วิทยาศาสตร์และเทคโนโลยี":12}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 6 และวิทยาศาสตร์/เทคโนโลยี 12 หน่วยกิต; Portfolio 30% + สัมภาษณ์ 70%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-environmental-technology'
 where p.code = 'swu-ece-environmental-technology-good-student-1-1'
@@ -13925,7 +13925,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, กศน. สายวิทย์-คณิต หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 6 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 12 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":30,"interview_weight_percent":70}'::jsonb, '["ผ่านค่ายสิ่งแวดล้อม/ค่ายอนุรักษ์สิ่งแวดล้อมและทรัพยากรอย่างน้อย 1 ค่าย","หรือมีรางวัล/ใบประกาศจากการแข่งขันที่สัมพันธ์กับสาขา","กิจกรรมหรือผลงานทางวิทยาศาสตร์ด้านสิ่งแวดล้อมและทรัพยากร"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 30%","สอบสัมภาษณ์ 70%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 1000 ตัวอักษร ตามหน้ารายละเอียดของสาขา","เงื่อนไขผลงาน":"ต้องมีค่ายสิ่งแวดล้อม/กิจกรรมที่เกี่ยวข้อง หรือรางวัลตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":6,"วิทยาศาสตร์และเทคโนโลยี":12}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 6 และวิทยาศาสตร์/เทคโนโลยี 12 หน่วยกิต; ต้องมีค่าย/กิจกรรมหรือรางวัลด้านสิ่งแวดล้อม; Portfolio 30% + สัมภาษณ์ 70%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-environmental-technology'
 where p.code = 'swu-ece-environmental-technology-special-talent-1-1'
@@ -13958,7 +13958,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, กศน. สายวิทย์-คณิต หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 6 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":30,"interview_weight_percent":70}'::jsonb, '["กิจกรรมหรือผลงานทางวิทยาศาสตร์ที่แสดงความสนใจด้านสิ่งแวดล้อมและทรัพยากร","คำตอบคำถามเพิ่มเติมของสาขาเกี่ยวกับปัญหาสิ่งแวดล้อม"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 30%","สอบสัมภาษณ์ 70%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 1000 ตัวอักษร ตามหน้ารายละเอียดของสาขา","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":6,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 6 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; Portfolio 30% + สัมภาษณ์ 70%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-environmental-technology'
 where p.code = 'swu-ece-environmental-technology-good-student-1-2'
@@ -13991,7 +13991,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, กศน. สายวิทย์-คณิต หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 6 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":30,"interview_weight_percent":70}'::jsonb, '["ผ่านค่ายสิ่งแวดล้อม/ค่ายอนุรักษ์สิ่งแวดล้อมและทรัพยากรอย่างน้อย 1 ค่าย","หรือมีรางวัล/ใบประกาศจากการแข่งขันที่สัมพันธ์กับสาขา","กิจกรรมหรือผลงานทางวิทยาศาสตร์ด้านสิ่งแวดล้อมและทรัพยากร"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 30%","สอบสัมภาษณ์ 70%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 1000 ตัวอักษร ตามหน้ารายละเอียดของสาขา","เงื่อนไขผลงาน":"ต้องมีค่ายสิ่งแวดล้อม/กิจกรรมที่เกี่ยวข้อง หรือรางวัลตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":6,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 6 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; ต้องมีค่าย/กิจกรรมหรือรางวัลด้านสิ่งแวดล้อม; Portfolio 30% + สัมภาษณ์ 70%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-environmental-technology'
 where p.code = 'swu-ece-environmental-technology-special-talent-1-2'
@@ -14024,7 +14024,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช., กศน. หรือ GED ตามประกาศ"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":70,"interview_weight_percent":30}'::jsonb, '["ผลงานที่แสดงการประยุกต์ใช้เทคโนโลยีสิ่งแวดล้อมกับความสามารถพิเศษ","คำตอบคำถามเพิ่มเติมเกี่ยวกับความสนใจและผลงานด้านสิ่งแวดล้อม"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 70%","สอบสัมภาษณ์ 30%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 2000 ตัวอักษร/รูป ตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน"}'::jsonb, 'GPAX อย่างน้อย 2.00; Portfolio 70% + สัมภาษณ์ 30%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-climate-environment'
 where p.code = 'swu-ece-climate-environment-good-student-1-1'
@@ -14057,7 +14057,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช., กศน. หรือ GED ตามประกาศ"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":70,"interview_weight_percent":30}'::jsonb, '["ผ่านค่ายสิ่งแวดล้อม/ค่ายอนุรักษ์สิ่งแวดล้อมและทรัพยากรอย่างน้อย 1 ค่าย","หรือมีรางวัล/ใบประกาศจากการแข่งขันที่สัมพันธ์กับสาขา","ผลงานที่แสดงการประยุกต์ใช้เทคโนโลยีสิ่งแวดล้อมกับความสามารถพิเศษ"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 70%","สอบสัมภาษณ์ 30%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 2000 ตัวอักษร/รูป ตามประกาศ","เงื่อนไขผลงาน":"ต้องมีค่าย/กิจกรรมหรือรางวัลด้านสิ่งแวดล้อมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน"}'::jsonb, 'GPAX อย่างน้อย 2.50; ต้องมีค่าย/กิจกรรมหรือรางวัลด้านสิ่งแวดล้อม; Portfolio 70% + สัมภาษณ์ 30%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-climate-environment'
 where p.code = 'swu-ece-climate-environment-special-talent-1-1'
@@ -14090,7 +14090,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช., กศน. หรือ GED ตามประกาศ"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":70,"interview_weight_percent":30}'::jsonb, '["ผลงานที่แสดงการประยุกต์ใช้เทคโนโลยีสิ่งแวดล้อมกับความสามารถพิเศษ","คำตอบคำถามเพิ่มเติมเกี่ยวกับความสนใจและผลงานด้านสิ่งแวดล้อม"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 70%","สอบสัมภาษณ์ 30%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 2000 ตัวอักษร/รูป ตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน"}'::jsonb, 'GPAX อย่างน้อย 2.00; Portfolio 70% + สัมภาษณ์ 30%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-climate-environment'
 where p.code = 'swu-ece-climate-environment-good-student-1-2'
@@ -14123,7 +14123,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช., กศน. หรือ GED ตามประกาศ"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น จำนวนหน้ารวมไม่เกิน 15 หน้า และคัดเลือกผลงานที่ดีที่สุดตามรายละเอียดของสาขา',
     '{"portfolio_required":true,"max_pages":15,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":70,"interview_weight_percent":30}'::jsonb, '["ผ่านค่ายสิ่งแวดล้อม/ค่ายอนุรักษ์สิ่งแวดล้อมและทรัพยากรอย่างน้อย 1 ค่าย","หรือมีรางวัล/ใบประกาศจากการแข่งขันที่สัมพันธ์กับสาขา","ผลงานที่แสดงการประยุกต์ใช้เทคโนโลยีสิ่งแวดล้อมกับความสามารถพิเศษ"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 70%","สอบสัมภาษณ์ 30%"]'::jsonb, '{"คำถามเพิ่มเติม":"3 ข้อ ข้อละไม่เกิน 2000 ตัวอักษร/รูป ตามประกาศ","เงื่อนไขผลงาน":"ต้องมีค่าย/กิจกรรมหรือรางวัลด้านสิ่งแวดล้อมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน"}'::jsonb, 'GPAX อย่างน้อย 2.50; ต้องมีค่าย/กิจกรรมหรือรางวัลด้านสิ่งแวดล้อม; Portfolio 70% + สัมภาษณ์ 30%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-ece-climate-environment'
 where p.code = 'swu-ece-climate-environment-special-talent-1-2'
@@ -14156,7 +14156,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต, ภาษาต่างประเทศ 9 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น แนบประวัติส่วนตัว ผลการเรียน หนังสือรับรอง กิจกรรม และผลงานตามที่สาขากำหนด ไม่กำหนดจำนวนหน้า',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานการแข่งขันวิชาการด้านคณิตศาสตร์หรือวิทยาศาสตร์","กิจกรรมวิชาการ ผู้นำนักเรียน หรือกิจกรรมจิตอาสา","โครงงาน/ความสามารถโดดเด่น/ความสนใจด้านคณิตศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 50%","สัมภาษณ์ 50%"]'::jsonb, '{"คำถามเพิ่มเติม":"แสดงกิจกรรม/ผลงานและหลักฐานการเข้าร่วมตามหัวข้อของสาขา","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22,"ภาษาต่างประเทศ":9}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตคณิตศาสตร์ 12, วิทยาศาสตร์/เทคโนโลยี 22 และภาษาต่างประเทศ 9 หน่วยกิต; Portfolio 50% + สัมภาษณ์ 50%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-mathematics'
 where p.code = 'swu-science-mathematics-good-student-1-2'
@@ -14189,7 +14189,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง และรับเฉพาะนักเรียนชั้นปีล่าสุด","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น แนบประวัติส่วนตัว ผลการเรียน หนังสือรับรอง กิจกรรม และผลงานตามที่สาขากำหนด ไม่กำหนดจำนวนหน้า',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือกิจกรรมทางสถิติ คณิตศาสตร์ หรือวิทยาการข้อมูล","กิจกรรมวิชาการ ผู้นำนักเรียน หรือกิจกรรมจิตอาสา"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 50%","สัมภาษณ์ 50%"]'::jsonb, '{"คำถามเพิ่มเติม":"ระบุความสามารถพิเศษที่เกี่ยวข้องกับสถิติ คณิตศาสตร์ หรือวิทยาการข้อมูล","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":3.0}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตคณิตศาสตร์ 12 หน่วยกิต; คะแนนเฉลี่ยคณิตศาสตร์อย่างน้อย 3.00; Portfolio 50% + สัมภาษณ์ 50%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-statistics'
 where p.code = 'swu-science-statistics-good-student-1-2'
@@ -14222,7 +14222,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 6 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 15 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น แนบประวัติส่วนตัว ผลการเรียน หนังสือรับรอง กิจกรรม และผลงานตามที่สาขากำหนด ไม่กำหนดจำนวนหน้า; ผลงานแต่ละด้านไม่เกิน 4 ผลงาน',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":80,"academic_record_weight_percent":10,"essay_weight_percent":10}'::jsonb, '["ผลงานวิชาการด้านวิทยาศาสตร์ คณิตศาสตร์ หรือคอมพิวเตอร์","กิจกรรมผู้นำ/การบริหารจัดการ และกิจกรรมจิตสาธารณะ","รางวัลหรือเกียรติบัตรด้านวิทยาศาสตร์ตามประกาศ","คลิปวิดีโอไม่เกิน 5 นาทีหรือเรียงความ ออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 80%","ผลการเรียน 10%","เรียงความ 10%"]'::jsonb, '{"คำถามเพิ่มเติม":"ตอบโจทย์การออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":6,"วิทยาศาสตร์และเทคโนโลยี":15},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.75,"วิทยาศาสตร์และเทคโนโลยี":2.75}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตคณิตศาสตร์ 6 และวิทยาศาสตร์/เทคโนโลยี 15 หน่วยกิต; Portfolio 80% + ผลการเรียน 10% + เรียงความ 10%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-chemistry'
 where p.code = 'swu-science-chemistry-good-student-1-1'
@@ -14255,7 +14255,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 6 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 15 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น แนบประวัติส่วนตัว ผลการเรียน หนังสือรับรอง กิจกรรม และผลงานตามที่สาขากำหนด ไม่กำหนดจำนวนหน้า; ผลงานแต่ละด้านไม่เกิน 4 ผลงาน',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":80,"academic_record_weight_percent":10,"essay_weight_percent":10}'::jsonb, '["ผลงานวิชาการด้านวิทยาศาสตร์ คณิตศาสตร์ หรือคอมพิวเตอร์","กิจกรรมผู้นำ/การบริหารจัดการ และกิจกรรมจิตสาธารณะ","รางวัลหรือเกียรติบัตรด้านวิทยาศาสตร์ตามประกาศ","คลิปวิดีโอไม่เกิน 5 นาทีหรือเรียงความ ออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์","ผ่าน สอวน. อย่างน้อย 1 ค่าย หรือได้รับรางวัลระดับชาติ/นานาชาติด้านวิทยาศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 80%","ผลการเรียน 10%","เรียงความ 10%"]'::jsonb, '{"คำถามเพิ่มเติม":"ตอบโจทย์การออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์","เงื่อนไขผู้มีทักษะพิเศษ":"ผ่าน สอวน. อย่างน้อย 1 ค่าย หรือมีรางวัลวิทยาศาสตร์ระดับชาติ/นานาชาติ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":6,"วิทยาศาสตร์และเทคโนโลยี":15},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.75,"วิทยาศาสตร์และเทคโนโลยี":2.75}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตคณิตศาสตร์ 6 และวิทยาศาสตร์/เทคโนโลยี 15 หน่วยกิต; ต้องมี สอวน. หรือรางวัลวิทยาศาสตร์ตามประกาศ; Portfolio 80% + ผลการเรียน 10% + เรียงความ 10%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-chemistry'
 where p.code = 'swu-science-chemistry-special-talent-1-1'
@@ -14288,7 +14288,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น แนบประวัติส่วนตัว ผลการเรียน หนังสือรับรอง กิจกรรม และผลงานตามที่สาขากำหนด ไม่กำหนดจำนวนหน้า; ผลงานแต่ละด้านไม่เกิน 4 ผลงาน',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":80,"academic_record_weight_percent":10,"essay_weight_percent":10}'::jsonb, '["ผลงานวิชาการด้านวิทยาศาสตร์ คณิตศาสตร์ หรือคอมพิวเตอร์","กิจกรรมผู้นำ/การบริหารจัดการ และกิจกรรมจิตสาธารณะ","รางวัลหรือเกียรติบัตรด้านวิทยาศาสตร์ตามประกาศ","คลิปวิดีโอไม่เกิน 5 นาทีหรือเรียงความ ออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 80%","ผลการเรียน 10%","เรียงความ 10%"]'::jsonb, '{"คำถามเพิ่มเติม":"ตอบโจทย์การออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.75,"วิทยาศาสตร์และเทคโนโลยี":2.75}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; Portfolio 80% + ผลการเรียน 10% + เรียงความ 10%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-chemistry'
 where p.code = 'swu-science-chemistry-good-student-1-2'
@@ -14321,7 +14321,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น แนบประวัติส่วนตัว ผลการเรียน หนังสือรับรอง กิจกรรม และผลงานตามที่สาขากำหนด ไม่กำหนดจำนวนหน้า; ผลงานแต่ละด้านไม่เกิน 4 ผลงาน',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":80,"academic_record_weight_percent":10,"essay_weight_percent":10}'::jsonb, '["ผลงานวิชาการด้านวิทยาศาสตร์ คณิตศาสตร์ หรือคอมพิวเตอร์","กิจกรรมผู้นำ/การบริหารจัดการ และกิจกรรมจิตสาธารณะ","รางวัลหรือเกียรติบัตรด้านวิทยาศาสตร์ตามประกาศ","คลิปวิดีโอไม่เกิน 5 นาทีหรือเรียงความ ออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์","ผ่าน สอวน. อย่างน้อย 1 ค่าย หรือได้รับรางวัลระดับชาติ/นานาชาติด้านวิทยาศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 80%","ผลการเรียน 10%","เรียงความ 10%"]'::jsonb, '{"คำถามเพิ่มเติม":"ตอบโจทย์การออกแบบการแก้ปัญหาด้วยกระบวนการทางวิทยาศาสตร์","เงื่อนไขผู้มีทักษะพิเศษ":"ผ่าน สอวน. อย่างน้อย 1 ค่าย หรือมีรางวัลวิทยาศาสตร์ระดับชาติ/นานาชาติ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.75,"วิทยาศาสตร์และเทคโนโลยี":2.75}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; ต้องมี สอวน. หรือรางวัลวิทยาศาสตร์ตามประกาศ; Portfolio 80% + ผลการเรียน 10% + เรียงความ 10%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-chemistry'
 where p.code = 'swu-science-chemistry-special-talent-1-2'
@@ -14354,7 +14354,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง และรับเฉพาะนักเรียนชั้นปีล่าสุด","หน่วยกิตกลุ่มสาระขั้นต่ำ: วิทยาศาสตร์และเทคโนโลยี 24 หน่วยกิต"]'::jsonb, 'ส่ง TCASFolio เท่านั้น จำนวนรวมไม่เกิน 10 หน้า; เรียงความความตั้งใจเรียนและเป้าหมายชีวิต 250 - 300 คำ',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":70,"academic_record_weight_percent":30}'::jsonb, '["โครงงานวิทยาศาสตร์ (ถ้ามี) พร้อมสรุปเนื้อหา 150 - 200 คำ","กิจกรรมและผลงานที่แสดงความสนใจด้านชีววิทยา/วิทยาศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 70%","ผลการเรียน 30%"]'::jsonb, '{"คำถามเพิ่มเติม":"สรุปโครงงานวิทยาศาสตร์ (ถ้ามี) และเขียนเรียงความความตั้งใจเรียน/เป้าหมายชีวิต","หนังสือรับรอง":"ไม่จำเป็นต้องแนบหนังสือรับรอง","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"วิทยาศาสตร์และเทคโนโลยี":24}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตวิทยาศาสตร์และเทคโนโลยี 24 หน่วยกิต; Portfolio 70% + ผลการเรียน 30%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-biology'
 where p.code = 'swu-science-biology-good-student-1-1'
@@ -14387,7 +14387,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง และรับเฉพาะนักเรียนชั้นปีล่าสุด","หน่วยกิตกลุ่มสาระขั้นต่ำ: วิทยาศาสตร์และเทคโนโลยี 28 หน่วยกิต"]'::jsonb, 'ส่ง TCASFolio เท่านั้น จำนวนรวมไม่เกิน 10 หน้า; เรียงความความตั้งใจเรียนและเป้าหมายชีวิต 250 - 300 คำ',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น","portfolio_weight_percent":70,"academic_record_weight_percent":30}'::jsonb, '["โครงงานวิทยาศาสตร์ (ถ้ามี) พร้อมสรุปเนื้อหา 150 - 200 คำ","กิจกรรมและผลงานที่แสดงความสนใจด้านชีววิทยา/วิทยาศาสตร์"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน 70%","ผลการเรียน 30%"]'::jsonb, '{"คำถามเพิ่มเติม":"สรุปโครงงานวิทยาศาสตร์ (ถ้ามี) และเขียนเรียงความความตั้งใจเรียน/เป้าหมายชีวิต","หนังสือรับรอง":"ไม่จำเป็นต้องแนบหนังสือรับรอง","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"วิทยาศาสตร์และเทคโนโลยี":28}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตวิทยาศาสตร์และเทคโนโลยี 28 หน่วยกิต; Portfolio 70% + ผลการเรียน 30%',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-biology'
 where p.code = 'swu-science-biology-good-student-1-2'
@@ -14420,7 +14420,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 4 ภาคการศึกษาในรอบ 1.1; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช., กศน. หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 10 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 20 หน่วยกิต"]'::jsonb, 'ส่ง TCASFolio เท่านั้น ไม่กำหนดจำนวนหน้า; รวมประวัติส่วนตัว ผลการเรียน หนังสือรับรอง โครงงาน กิจกรรม การอบรม และรางวัลตามรายละเอียดสาขา',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["โครงงานวิทยาศาสตร์และกิจกรรมในโรงเรียน/จิตอาสา","การอบรมพัฒนาตนเองและเกียรติบัตร/รางวัลที่ดีที่สุด","เรียงความแสดงความตั้งใจและเหตุผลในการสมัคร"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน","ผลการเรียน","เรียงความ ทัศนคติ และบุคลิกภาพ"]'::jsonb, '{"คำถามเพิ่มเติม":"เขียนเรียงความแสดงความตั้งใจและเหตุผลในการสมัคร","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":10,"วิทยาศาสตร์และเทคโนโลยี":20}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 10 และวิทยาศาสตร์/เทคโนโลยี 20 หน่วยกิต; พิจารณา Portfolio ผลการเรียน เรียงความ ทัศนคติ และบุคลิกภาพ',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-materials'
 where p.code = 'swu-science-materials-good-student-1-1'
@@ -14453,7 +14453,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช., กศน. หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 20 หน่วยกิต"]'::jsonb, 'ส่ง TCASFolio เท่านั้น ไม่กำหนดจำนวนหน้า; รวมประวัติส่วนตัว ผลการเรียน หนังสือรับรอง โครงงาน กิจกรรม การอบรม และรางวัลตามรายละเอียดสาขา',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["โครงงานวิทยาศาสตร์และกิจกรรมในโรงเรียน/จิตอาสา","การอบรมพัฒนาตนเองและเกียรติบัตร/รางวัลที่ดีที่สุด","เรียงความแสดงความตั้งใจและเหตุผลในการสมัคร"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน","ผลการเรียน","เรียงความ ทัศนคติ และบุคลิกภาพ"]'::jsonb, '{"คำถามเพิ่มเติม":"เขียนเรียงความแสดงความตั้งใจและเหตุผลในการสมัคร","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":20}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 20 หน่วยกิต; พิจารณา Portfolio ผลการเรียน เรียงความ ทัศนคติ และบุคลิกภาพ',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-materials'
 where p.code = 'swu-science-materials-good-student-1-2'
@@ -14486,7 +14486,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, กศน. หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่ง TCASFolio เท่านั้น ไม่จำกัดจำนวนหน้า; ผลงานที่ดีที่สุดไม่เกิน 10 ผลงาน; แนบโปสเตอร์โครงงานวิจัยทางวิทยาศาสตร์ JPG 1 หน้า',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น และโปสเตอร์โครงงานเป็น JPG 1 หน้า"}'::jsonb, '["โครงงานวิจัยทางวิทยาศาสตร์และโปสเตอร์สรุปโครงงาน","ค่ายหรือโครงการพัฒนาทักษะพิเศษ/วิชาการ เช่น ค่าย สอวน.","ผลงานหรือกิจกรรมที่เกี่ยวข้องกับวิทยาศาสตร์"]'::jsonb, '["TCASFolio","หนังสือรับรองจากผู้อำนวยการ (JPG)","ใบ ปพ. รวม 5 ภาคการศึกษา (JPG)","โปสเตอร์โครงงานวิจัยทางวิทยาศาสตร์ 1 หน้า (JPG)"]'::jsonb,
     '["แฟ้มสะสมผลงาน 25%","ผลการเรียนและคะแนนพื้นฐาน 25%","โครงงานวิทยาศาสตร์ 50%"]'::jsonb, '{"คำถามเพิ่มเติม":"อธิบายโครงงาน ที่มาและความสำคัญ; ระบุค่าย/โครงการที่เคยเข้าร่วม","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":3.0,"วิทยาศาสตร์และเทคโนโลยี":3.0}}'::jsonb, 'GPAX อย่างน้อย 3.25; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; โครงงานวิทยาศาสตร์เป็นองค์ประกอบหลักตามสัดส่วนประกาศ',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-microbiology'
 where p.code = 'swu-science-microbiology-good-student-1-2'
@@ -14519,7 +14519,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, กศน. หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่ง TCASFolio เท่านั้น ไม่จำกัดจำนวนหน้า; ผลงานที่ดีที่สุดไม่เกิน 10 ผลงาน; แนบโปสเตอร์โครงงานวิจัยทางวิทยาศาสตร์ JPG 1 หน้า',
     '{"portfolio_required":true,"portfolio_format":"TCASFolio PDF เท่านั้น และโปสเตอร์โครงงานเป็น JPG 1 หน้า"}'::jsonb, '["โครงงานวิจัยทางวิทยาศาสตร์และโปสเตอร์สรุปโครงงาน","ค่ายหรือโครงการพัฒนาทักษะพิเศษ/วิชาการ เช่น ค่าย สอวน.","ผลงานหรือกิจกรรมที่เกี่ยวข้องกับวิทยาศาสตร์"]'::jsonb, '["TCASFolio","หนังสือรับรองจากผู้อำนวยการ (JPG)","ใบ ปพ. รวม 5 ภาคการศึกษา (JPG)","โปสเตอร์โครงงานวิจัยทางวิทยาศาสตร์ 1 หน้า (JPG)"]'::jsonb,
     '["แฟ้มสะสมผลงาน 20%","ผลการเรียนและคะแนนพื้นฐาน 20%","โครงงานวิทยาศาสตร์ 40%","เกณฑ์การผ่านค่ายทักษะพิเศษ 20%"]'::jsonb, '{"คำถามเพิ่มเติม":"อธิบายโครงงาน ที่มาและความสำคัญ; ระบุค่าย/โครงการที่เคยเข้าร่วม","เงื่อนไขผู้มีทักษะพิเศษ":"ระบุค่าย/โครงการพัฒนาทักษะพิเศษหรือวิชาการ และระดับที่ผ่าน","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":3.0,"วิทยาศาสตร์และเทคโนโลยี":3.0}}'::jsonb, 'GPAX อย่างน้อย 3.25; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; ต้องแสดงเกณฑ์ผ่านค่ายทักษะพิเศษ; โครงงานวิทยาศาสตร์เป็นองค์ประกอบหลักตามสัดส่วนประกาศ',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-science-microbiology'
 where p.code = 'swu-science-microbiology-special-talent-1-2'
@@ -14552,7 +14552,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-chemical'
 where p.code = 'swu-engineering-chemical-good-student-1-2'
@@ -14585,7 +14585,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-mechanical'
 where p.code = 'swu-engineering-mechanical-good-student-1-2'
@@ -14618,7 +14618,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-civil'
 where p.code = 'swu-engineering-civil-good-student-1-2'
@@ -14651,7 +14651,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-industrial'
 where p.code = 'swu-engineering-industrial-good-student-1-2'
@@ -14684,7 +14684,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลางหรือหลักสูตรนานาชาติ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":3.0,"วิทยาศาสตร์และเทคโนโลยี":3.0}}'::jsonb, 'GPAX อย่างน้อย 3.00; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-biomedical'
 where p.code = 'swu-engineering-biomedical-good-student-1-2'
@@ -14717,7 +14717,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22}}'::jsonb, 'GPAX อย่างน้อย 2.75; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-computer'
 where p.code = 'swu-engineering-computer-good-student-1-2'
@@ -14750,7 +14750,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 10 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 18 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":10,"วิทยาศาสตร์และเทคโนโลยี":18}}'::jsonb, 'GPAX อย่างน้อย 3.00; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-electrical-power'
 where p.code = 'swu-engineering-electrical-power-good-student-1-2'
@@ -14783,7 +14783,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 10 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 18 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":10,"วิทยาศาสตร์และเทคโนโลยี":18}}'::jsonb, 'GPAX อย่างน้อย 3.00; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-telecom-it'
 where p.code = 'swu-engineering-telecom-it-good-student-1-2'
@@ -14816,7 +14816,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.5,"วิทยาศาสตร์และเทคโนโลยี":2.5}}'::jsonb, 'GPAX อย่างน้อย 3.00; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-logistics-bilingual'
 where p.code = 'swu-engineering-logistics-bilingual-good-student-1-2'
@@ -14849,7 +14849,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.5,"วิทยาศาสตร์และเทคโนโลยี":2.5}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตตามประกาศของสาขา; Portfolio ต้องแสดงผลงาน/กิจกรรมที่เกี่ยวข้อง และมีการสอบสัมภาษณ์',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-environmental'
 where p.code = 'swu-engineering-environmental-good-student-1-2'
@@ -14882,7 +14882,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช. หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ภาษาอังกฤษ":"IELTS อย่างน้อย 5.0 หรือ CU-TEP/TU-GET/SWU-SET ระดับ B2","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.5,"วิทยาศาสตร์และเทคโนโลยี":2.5}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; คะแนนเฉลี่ยกลุ่มสาระอย่างน้อย 2.50; มีคะแนนภาษาอังกฤษตามประกาศ; ส่ง TCASFolio ไม่เกิน 10 หน้า',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-petroleum-renewable'
 where p.code = 'swu-engineering-petroleum-renewable-special-talent-1-2'
@@ -14915,7 +14915,7 @@ select
     '{}'::jsonb, '["ผู้กำลังศึกษาใช้ผลการเรียน ม.4 - ม.5 รวม 5 ภาคการศึกษาในรอบ 1.2; ผู้สำเร็จการศึกษาใช้ผลการเรียน 6 ภาคการศึกษา","กลุ่มวุฒิ/สถานศึกษาที่รับ: หลักสูตรแกนกลาง, หลักสูตรนานาชาติ, ปวช. หรือ GED ตามประกาศ","หน่วยกิตกลุ่มสาระขั้นต่ำ: คณิตศาสตร์ 12 หน่วยกิต, วิทยาศาสตร์และเทคโนโลยี 22 หน่วยกิต"]'::jsonb, 'ส่งไฟล์ TCASFolio เท่านั้น ไม่รับ Portfolio รูปแบบอื่น คัดเลือกผลงานที่ดีที่สุด รวมประวัติส่วนตัว ผลการเรียน และกิจกรรมที่เข้าร่วม จำนวนหน้ารวมไม่เกิน 10 หน้า',
     '{"portfolio_required":true,"max_pages":10,"portfolio_format":"TCASFolio PDF เท่านั้น"}'::jsonb, '["ผลงานหรือรางวัลทางวิชาการที่เกี่ยวข้องกับสาขา","โครงงานวิจัยหรือโครงงานที่เกี่ยวข้องกับวิทยาศาสตร์ เทคโนโลยี หรือวิศวกรรม","กิจกรรม ค่าย หรือการอบรมที่เกี่ยวข้องกับสาขา","เกียรติบัตรหรือหลักฐานการเข้าร่วมแข่งขันที่เกี่ยวข้อง"]'::jsonb, '["TCASFolio ไฟล์ PDF","ผลการเรียนตามจำนวนภาคเรียนที่โครงการกำหนด"]'::jsonb,
     '["แฟ้มสะสมผลงาน: ด้านวิชาการและกิจกรรมที่เกี่ยวข้องกับสาขา","สอบสัมภาษณ์ตามกำหนดการของประกาศ"]'::jsonb, '{"เงื่อนไขผลงาน":"ต้องมีโครงงาน/ค่าย/การอบรม/รางวัล หรือพื้นฐานการเรียนด้านวิทยาศาสตร์หรือวิศวกรรมตามประกาศ","ภาษาอังกฤษ":"IELTS อย่างน้อย 5.0 หรือ CU-TEP/TU-GET/SWU-SET ระดับ B2","ค่าสมัคร":"600 บาท","การส่งแฟ้ม":"อัปโหลด TCASFolio ในระบบรับสมัคร มศว.; ตรวจรายละเอียดสาขาก่อนยืนยัน","หน่วยกิตกลุ่มสาระ":{"คณิตศาสตร์":12,"วิทยาศาสตร์และเทคโนโลยี":22},"คะแนนเฉลี่ยกลุ่มสาระ":{"คณิตศาสตร์":2.5,"วิทยาศาสตร์และเทคโนโลยี":2.5}}'::jsonb, 'GPAX อย่างน้อย 2.50; หน่วยกิตคณิตศาสตร์ 12 และวิทยาศาสตร์/เทคโนโลยี 22 หน่วยกิต; คะแนนเฉลี่ยกลุ่มสาระอย่างน้อย 2.50; มีคะแนนภาษาอังกฤษตามประกาศ; ส่ง TCASFolio ไม่เกิน 10 หน้า',
-    'https://admission.swu.ac.th/file_staff_upload/file_news/3820260824050404.pdf', now()
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'swu-engineering-cybersecurity'
 where p.code = 'swu-engineering-cybersecurity-special-talent-1-2'
