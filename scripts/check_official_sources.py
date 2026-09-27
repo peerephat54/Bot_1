@@ -7,6 +7,7 @@ importer must review a changed source before admission criteria are updated.
 import argparse
 import hashlib
 import json
+import ssl
 import sys
 from datetime import date, datetime, timezone
 from pathlib import Path
@@ -66,7 +67,20 @@ def fetch_source(url, timeout=20):
     truncated = False
     content_type = ""
     try:
-        with urlopen(request, timeout=timeout) as response:
+        try:
+            response_context = urlopen(request, timeout=timeout)
+        except URLError as error:
+            # Some official legacy servers still negotiate a small DH key.
+            # Retry only that specific TLS compatibility failure; do not weaken
+            # TLS checks for ordinary network or certificate errors.
+            if "DH_KEY_TOO_SMALL" not in str(error):
+                raise
+            compatibility_context = ssl.create_default_context()
+            compatibility_context.set_ciphers("DEFAULT:@SECLEVEL=1")
+            response_context = urlopen(
+                request, timeout=timeout, context=compatibility_context
+            )
+        with response_context as response:
             content_type = response.headers.get("Content-Type", "")
             status_code = getattr(response, "status", None) or response.getcode()
             chunks = []
