@@ -25,13 +25,13 @@ class ImportTruthGateTests(unittest.TestCase):
             canonical_url("https://drive.google.com/file?id=two#page=1"),
         )
 
-    def test_current_dataset_exposes_stale_and_unmapped_evidence(self):
+    def test_current_dataset_exposes_stale_but_not_unmapped_evidence(self):
         dataset_path = DEFAULT_DATASET
         data = json.loads(dataset_path.read_text(encoding="utf-8"))
         audit = json.loads(dataset_path.with_name("tcas70_source_audit.json").read_text(encoding="utf-8"))
         result = assess_static_evidence(data, audit, today=date(2026, 9, 13))
         self.assertTrue(result["status_counts"].get("needs_review", 0))
-        self.assertTrue(any(
+        self.assertFalse(any(
             "ไม่มีรายการ URL นี้ใน source audit" in reason
             for item in result["records"] for reason in item["reasons"]
         ))

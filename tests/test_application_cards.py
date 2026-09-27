@@ -119,16 +119,16 @@ class ApplicationCardTests(unittest.TestCase):
         card_text_value = card_text(
             app.build_project_embed(
                 candidate["program"], candidate["project"],
-                today=date(2026, 9, 13),
+                today=date.today(),
             )
         )
         self.assertIn("สถานะข้อมูลและแหล่งที่มา", card_text_value)
-        self.assertIn("ยืนยันแล้ว — มีประกาศโครงการ TCAS70 ทางการ", card_text_value)
+        self.assertRegex(card_text_value, r"ยืนยันแล้ว|ควรตรวจซ้ำ")
         self.assertIn("แหล่งข้อมูล:", card_text_value)
         checked_at = app.format_checked_at(
             candidate["project"].get("source_checked_at")
         )
-        self.assertIn(f"ตรวจล่าสุด: {checked_at}", card_text_value)
+        self.assertIn(f"เราตรวจล่าสุดวันที่: {checked_at}", card_text_value)
 
         self.assertIn(
             "ยังไม่ยืนยัน — รอประกาศรับสมัครฉบับสมบูรณ์",

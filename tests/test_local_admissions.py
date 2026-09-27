@@ -4,6 +4,7 @@ from types import SimpleNamespace
 import unittest
 from unittest.mock import MagicMock, patch
 
+from admission_dates import thai_date
 from local_admissions import calendar_fields, local_candidates
 from scripts.validate_dataset import validate
 from screening import screening_entries, study_field
@@ -165,7 +166,14 @@ class LocalUpdateTests(unittest.TestCase):
         self.assertIn('สอบสัมภาษณ์: 4 มี.ค. 2570', calendar_fields(bang, DATA)[0][1])
         self.assertNotIn('18 ก.ย. 2569', calendar_fields(sakon, DATA)[0][1])
         swu = next(p for p in PROGRAMS.values() if p['university_short_name']=='SWU')
-        self.assertIn('ตรวจ 29 ส.ค. 2569', calendar_fields(swu, DATA)[0][1])
+        swu_calendar = next(
+            item for item in DATA['university_admission_calendars']
+            if item['university_short_name'] == 'SWU'
+        )
+        self.assertIn(
+            f"ตรวจ {thai_date(swu_calendar['source_checked_at'])}",
+            calendar_fields(swu, DATA)[0][1],
+        )
         self.assertEqual(calendar_fields(PROGRAMS['cu-engineering-ice'], DATA), [])
         self.assertIn('ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด', calendar_fields(PROGRAMS['cu-engineering-cedt'], DATA)[0][1])
         for p in PROGRAMS.values():
