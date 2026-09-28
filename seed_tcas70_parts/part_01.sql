@@ -268,7 +268,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cu-portfolio-2570', 'ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ', 2570, '["pathum-wan"]'::jsonb, '["cu-engineering-computer-engineering","cu-engineering-cedt","cu-science-computer-science","cu-cbs-management-information-systems","cu-cbs-statistics-data-science","cu-cbs-information-technology-business"]'::jsonb,
-    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-25T17:54+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
+    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-27T12:48:48+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
     '2027-01-11', '2027-01-15', '2027-01-28',
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -299,7 +299,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-bangkhen-portfolio-2570', 'ปฏิทิน มก. • บางเขน', 2570, '["bangkhen"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์', '[{"label":"Portfolio 1.1","application_start_on":"2026-09-18","application_end_on":"2026-10-14","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-03","interview_on":"2026-11-09","interview_passed_on":"2026-11-16"},{"label":"Portfolio 1.2","application_start_on":"2027-01-04","application_end_on":"2027-02-04","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-03-02","interview_on":"2027-03-04","interview_passed_on":"2027-03-05"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-27T12:48:48+07:00', 'ปฏิทินวิทยาเขต ไม่ยืนยันว่าทุกสาขาเปิดทั้งสองครั้ง; วันด้านล่างเป็นผลสัมภาษณ์ ไม่ใช่วันยืนยันสิทธิ์', '[{"label":"Portfolio 1.1","application_start_on":"2026-09-18","application_end_on":"2026-10-14","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-03","interview_on":"2026-11-09","interview_passed_on":"2026-11-16"},{"label":"Portfolio 1.2","application_start_on":"2027-01-04","application_end_on":"2027-02-04","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-03-02","interview_on":"2027-03-04","interview_passed_on":"2027-03-05"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -330,7 +330,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
-    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-25T17:54+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-27T12:48:48+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
     '2026-12-11', '2026-12-19', null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -361,7 +361,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-sakon-portfolio-2570', 'ปฏิทิน มก. • สกลนคร', 2570, '["sakon-nakhon"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน', '[{"label":"Portfolio","application_start_on":"2026-08-24","application_end_on":"2027-02-19","result_announcement_on":null,"date_status":"confirmed","result_note":"หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-27T12:48:48+07:00', 'ปฏิทินวิทยาเขต; ให้ยึดประกาศเฉพาะโครงการก่อน และไม่ใช้กำหนดการของบางเขน', '[{"label":"Portfolio","application_start_on":"2026-08-24","application_end_on":"2027-02-19","result_announcement_on":null,"date_status":"confirmed","result_note":"หลังชำระเงิน 1 วันทำการ ยกเว้นวิศวกรรมโยธา"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -392,7 +392,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'kmutnb-portfolio-2570', 'ปฏิทินกลาง มจพ.', 2570, '[]'::jsonb, '[]'::jsonb,
-    'https://www.admission.kmutnb.ac.th/news/1394', 'https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg', '2026-09-25T17:54+07:00', 'คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ', '[{"label":"Portfolio/โควตา ครั้ง 1","application_start_on":"2026-09-01","application_end_on":"2026-11-10","result_announcement_on":null,"date_status":"confirmed"},{"label":"Portfolio/โควตา ครั้ง 2","application_start_on":"2026-11-24","application_end_on":"2027-01-05","result_announcement_on":null,"date_status":"confirmed"},{"label":"นวัตกรรม/สิ่งประดิษฐ์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"},{"label":"หุ่นยนต์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"}]'::jsonb,
+    'https://www.admission.kmutnb.ac.th/news/1394', 'https://www.admission.kmutnb.ac.th/sites/default/files/inline-images/Timeline2570_1.jpg', '2026-09-27T12:48:48+07:00', 'คณะอาจใช้วันสมัครต่างจากปฏิทินกลาง ต้องตรวจประกาศเฉพาะสาขา; ยังไม่ใช่เกณฑ์รายโครงการ', '[{"label":"Portfolio/โควตา ครั้ง 1","application_start_on":"2026-09-01","application_end_on":"2026-11-10","result_announcement_on":null,"date_status":"confirmed"},{"label":"Portfolio/โควตา ครั้ง 2","application_start_on":"2026-11-24","application_end_on":"2027-01-05","result_announcement_on":null,"date_status":"confirmed"},{"label":"นวัตกรรม/สิ่งประดิษฐ์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"},{"label":"หุ่นยนต์","application_start_on":"2026-10-01","application_end_on":"2027-01-11","result_announcement_on":null,"date_status":"confirmed"}]'::jsonb,
     null, null, null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -423,7 +423,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'swu-portfolio-2570', 'ปฏิทิน มศว. • TCAS รอบ 1 Portfolio', 2570, '["prasan-mit","ongkharak"]'::jsonb, '["swu-ece-environmental-technology","swu-ece-climate-environment","swu-science-mathematics","swu-science-statistics","swu-science-chemistry","swu-science-microbiology","swu-science-biology","swu-science-materials","swu-engineering-chemical","swu-engineering-mechanical","swu-engineering-civil","swu-engineering-industrial","swu-engineering-biomedical","swu-engineering-computer","swu-engineering-electrical-power","swu-engineering-telecom-it","swu-engineering-logistics-bilingual","swu-engineering-environmental","swu-engineering-petroleum-renewable","swu-engineering-cybersecurity"]'::jsonb,
-    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '2026-09-25T17:54+07:00', 'ปฏิทินกลางของ มศว. ใช้เป็นวันสมัครและวันประกาศผลระดับมหาวิทยาลัย; เกณฑ์คุณสมบัติและจำนวนรับต้องดูรายละเอียดของแต่ละสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-18","application_end_on":"2026-09-16","result_announcement_on":"2026-11-17","date_status":"confirmed","interview_eligible_on":"2026-10-21","interview_on":"2026-11-07"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2026-12-16","result_announcement_on":"2027-02-23","date_status":"confirmed","interview_eligible_on":"2027-01-26","interview_on":"2027-02-13"}]'::jsonb,
+    'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'https://admission.swu.ac.th/admissions2/news_content.php?nid=1200', '2026-09-27T12:48:48+07:00', 'ปฏิทินกลางของ มศว. ใช้เป็นวันสมัครและวันประกาศผลระดับมหาวิทยาลัย; เกณฑ์คุณสมบัติและจำนวนรับต้องดูรายละเอียดของแต่ละสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-18","application_end_on":"2026-09-16","result_announcement_on":"2026-11-17","date_status":"confirmed","interview_eligible_on":"2026-10-21","interview_on":"2026-11-07"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2026-12-16","result_announcement_on":"2027-02-23","date_status":"confirmed","interview_eligible_on":"2027-01-26","interview_on":"2027-02-13"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -454,7 +454,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-kamphaeng-saen-portfolio-2570', 'ปฏิทิน มก. • กำแพงแสน', 2570, '["kamphaeng-saen"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-10-01","application_end_on":"2026-11-05","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-16","interview_on":"2026-11-20","interview_passed_on":"2026-11-24"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2027-02-10","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-02-22","interview_on":"2027-02-25","interview_end_on":"2027-02-26","interview_passed_on":"2027-03-02"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-27T12:48:48+07:00', 'ปฏิทินกลาง มก. สำหรับวิทยาเขตกำแพงแสน; วันสมัครและผลเป็นกำหนดการกลาง ไม่แทนเกณฑ์รายสาขา', '[{"label":"Portfolio 1.1","application_start_on":"2026-10-01","application_end_on":"2026-11-05","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-11-16","interview_on":"2026-11-20","interview_passed_on":"2026-11-24"},{"label":"Portfolio 1.2","application_start_on":"2026-12-01","application_end_on":"2027-02-10","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2027-02-22","interview_on":"2027-02-25","interview_end_on":"2027-02-26","interview_passed_on":"2027-03-02"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -485,7 +485,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'ku-sriracha-portfolio-2570', 'ปฏิทิน มก. • ศรีราชา', 2570, '["sriracha"]'::jsonb, '[]'::jsonb,
-    'https://admission.ku.ac.th/', null, '2026-09-25T17:54+07:00', 'ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-25","application_end_on":"2026-11-15","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-12-04","interview_on":"2026-12-13","interview_passed_on":"2026-12-18"}]'::jsonb,
+    'https://admission.ku.ac.th/', null, '2026-09-27T12:48:48+07:00', 'ปฏิทินวิทยาเขตศรีราชา; รอบ 1.2 ยังรอประกาศ จึงไม่แสดงวันสมัครแทนการประกาศ', '[{"label":"Portfolio 1.1","application_start_on":"2026-08-25","application_end_on":"2026-11-15","result_announcement_on":null,"date_status":"confirmed","interview_eligible_on":"2026-12-04","interview_on":"2026-12-13","interview_passed_on":"2026-12-18"}]'::jsonb,
     null, null, null,
     null, null, now()
 from public.universities u
@@ -3130,7 +3130,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-27T12:48:48+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3166,7 +3166,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-27T12:48:48+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3202,7 +3202,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, null, 200,
     null, 'https://www.tuadmissions.in.th/img/2026090101500188.pdf', 'ประกาศรับตรง รอบ 1 Portfolio ปีการศึกษา 2570 (1 ก.ย. 2569)',
-    '2026-09-01', '2026-09-25T17:54+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
+    '2026-09-01', '2026-09-27T12:48:48+07:00', 'ประกาศฉบับ 1 ก.ย. 2569; เปิดระบบรับสมัคร 14 ก.ย. 2569 ถึง 16 ธ.ค. 2569 และยื่น/แก้ไข Portfolio ได้ถึง 22 ธ.ค. 2569', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3238,7 +3238,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, 1, 200,
     null, 'https://www.tuadmissions.in.th/img/2026082706504458.pdf', 'ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570',
-    '2026-08-27', '2026-09-25T17:54+07:00', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
+    '2026-08-27', '2026-09-27T12:48:48+07:00', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3274,7 +3274,7 @@ select
     'Portfolio', '1', 'portfolio', 'official',
     true, 1, 200,
     null, 'https://www.tuadmissions.in.th/img/2026082706504458.pdf', 'ประกาศโครงการ สอวน. และ สสวท. รอบ 1 Portfolio ปีการศึกษา 2570',
-    '2026-08-27', '2026-09-25T17:54+07:00', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
+    '2026-08-27', '2026-09-27T12:48:48+07:00', 'โควตาบางคณะใช้ร่วมหลายสาขา ไม่ใช่จำนวนรับสาขาเดียว; เลือกได้ 1 กลุ่ม 1 คณะ/หลักสูตร/สาขา และตรวจข้อห้ามสมัครซ้ำในประกาศหน้า 2', now()
 from public.universities u
 where u.short_name = 'TU'
 on conflict (code) do update set
@@ -3310,7 +3310,7 @@ select
     '1 Portfolio', 'ICT', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-1-ict-portfolio-academic-year-2027/', 'ประกาศ! รอบ 1 ICT – Portfolio ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-25T17:54+07:00', 'ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569', now()
+    '2026-07-02', '2026-09-27T12:48:48+07:00', 'ประกาศเฉพาะคณะ ICT; กิจกรรมหลังประกาศผลใช้ปฏิทินกลาง MU-TCAS รอบ 1/1 ที่ประกาศ 10 ส.ค. 2569', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3346,7 +3346,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-2-mu-portfolio-academic-year-2027/', 'ประกาศ! รอบ 2 MU – PORTFOLIO (TCAS 1) ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-25T17:54+07:00', 'เกณฑ์เฉพาะคณะ ICT และปฏิทิน MU-TCAS รอบ 1/1 ตรวจจากประกาศคณะและหน้าโปรแกรมทางการล่าสุด 5 ก.ย. 2569', now()
+    '2026-07-02', '2026-09-27T12:48:48+07:00', 'เกณฑ์เฉพาะคณะ ICT และปฏิทิน MU-TCAS รอบ 1/1 ตรวจจากประกาศคณะและหน้าโปรแกรมทางการล่าสุด 5 ก.ย. 2569', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3382,7 +3382,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://www.ict.mahidol.ac.th/th/ict-round-2-mu-portfolio-academic-year-2027/', 'ประกาศ! รอบ 2 MU – PORTFOLIO (TCAS 1) ปีการศึกษา 2570',
-    '2026-07-02', '2026-09-25T17:54+07:00', 'ประกาศเฉพาะคณะระบุรอบ 1/2 สมัคร 15 ธ.ค. 2569–10 ม.ค. 2570 แต่หน้าโปรแกรม DST ปัจจุบันระบุว่าไม่เปิดรับสมัคร จึงคงข้อมูลไว้เป็นข้อขัดแย้งและต้องตรวจประกาศก่อนแนะนำผู้สมัคร', now()
+    '2026-07-02', '2026-09-27T12:48:48+07:00', 'ประกาศเฉพาะคณะระบุรอบ 1/2 สมัคร 15 ธ.ค. 2569–10 ม.ค. 2570 แต่หน้าโปรแกรม DST ปัจจุบันระบุว่าไม่เปิดรับสมัคร จึงคงข้อมูลไว้เป็นข้อขัดแย้งและต้องตรวจประกาศก่อนแนะนำผู้สมัคร', now()
 from public.universities u
 where u.short_name = 'MU'
 on conflict (code) do update set
@@ -3418,7 +3418,7 @@ select
     '1 Portfolio', '1.1', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703', 'รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-25T17:54+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-27T12:48:48+07:00', 'ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
@@ -3454,7 +3454,7 @@ select
     '1 Portfolio', '1.2', 'Portfolio', 'official',
     true, null, null,
     null, 'https://admission.reg.cmu.ac.th/tcas/findfacultybyid.php?fid=703', 'รหัสโครงการ 00410608108010 วิศวกรรมคอมพิวเตอร์',
-    null, '2026-09-25T17:54+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
+    null, '2026-09-27T12:48:48+07:00', 'แบบ 1.2 เพิ่มเกณฑ์ TGAT/TPAT; ค่าธรรมเนียมภาคการศึกษาแรก 23,000 บาท', now()
 from public.universities u
 where u.short_name = 'CMU'
 on conflict (code) do update set
