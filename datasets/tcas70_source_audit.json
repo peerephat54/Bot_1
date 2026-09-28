@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-09-25T17:54+07:00",
+  "checked_at": "2026-09-27T12:48:48+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -21,7 +21,7 @@
       "publisher": "มหาวิทยาลัยธรรมศาสตร์",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "เพิ่ม สอวน. สำหรับ CS และ สสวท. สำหรับ CS/CPE; โควตาคณะรวมเก็บ null รายสาขา; SIIT เป็นรับรวม/เลือกสาขาภายหลัง ยังไม่เพิ่มในการอัปเดตนี้"
     },
     {
@@ -29,7 +29,7 @@
       "publisher": "จุฬาลงกรณ์มหาวิทยาลัย",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "เพิ่มปฏิทินกลางหลักสูตรปกติ ฉบับแก้ไข 28 ส.ค. 2569 ไม่ผูกกลุ่ม 1/2 ให้สาขาโดยไม่มีประกาศ"
     },
     {
@@ -45,7 +45,7 @@
       "publisher": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "อ่านภาพ Timeline2570_1.jpg ยืนยันปี 2570; วันที่ข่าวเก่า 6 ส.ค. 2568 ไม่ใช้เป็นวันที่เผยแพร่ภาพ; วันรายคณะอาจต่างกัน"
     },
     {
@@ -53,7 +53,7 @@
       "publisher": "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
       "classification": "imported_primary_supporting",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ข่าว 24 ส.ค. แจ้งทยอยเปิดตั้งแต่ 17 ส.ค. ไม่ใช่วันเปิดทุกสาขา และแนะนำ iFolio"
     },
     {
@@ -104,7 +104,7 @@
       "publisher": "มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ใช้ยืนยันและนำเข้ารายการสายคอมทั้งหมดที่พบในระบบ TCAS70 พร้อมเกณฑ์เต็มรายรหัสโครงการและแบบ 1.1/1.2"
     },
     {
@@ -127,7 +127,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้า Active Recruitment คณะเทคโนโลยีสารสนเทศ ครั้งที่ 1 พร้อม 3 หลักสูตร เกณฑ์รายหลักสูตร และกำหนดการ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/59adc3a3-b38c-4527-85e0-690a4cf14b91",
@@ -135,7 +135,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้า Active Recruitment คณะเทคโนโลยีสารสนเทศ ครั้งที่ 3 ซึ่งประกาศเกณฑ์แล้วแต่ยังไม่เปิดระบบสมัคร",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www.canva.com/design/DAHSpFHhOR8/2xHBc9Pb6oQZKQB4nmAYkQ/edit",
@@ -157,7 +157,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์จากประกาศ TCAS70 รอบ 1 ทางการ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admissions.siit.tu.ac.th/admission_box/outstanding-student-program-osp/",
@@ -165,7 +165,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "ตรวจหน้าโครงการ OSP ปีการศึกษา 2027 และ PDF กำหนดการเฉพาะโครงการ; สมัคร 15 ก.ค.–15 ก.ย. 2569; ใช้วันที่ Inter Portfolio 1 ตาม PDF เฉพาะ OSP และบันทึกความต่างกับหน้ารวม Undergraduate เพื่อทบทวน",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/b82694a9-f0a6-4a3a-b18f-0de4f1e8bbfc",
@@ -173,7 +173,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "ตรวจซ้ำ Active Recruitment เกม: GPAX 2.50 เป็นคุณสมบัติขั้นต่ำ แต่ไม่คิดเป็นน้ำหนักคะแนนคัดเลือก; ใช้ Game Analysis Essay และสัมภาษณ์",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/fe4b52a7-d942-4807-9b59-1527675dad89",
@@ -181,7 +181,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการคัดเลือกตรงประเภทเรียนดี แยกเกณฑ์รายหลักสูตร",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/b44debb2-6551-4eca-9e65-8ed7a7a3a179",
@@ -189,7 +189,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้า International Admission ครั้งที่ 1 เฉพาะ CPE, CS และ Game Design",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://join.kmutt.ac.th/projects/c02bf829-5c3c-408d-8bd9-515baebb80dd",
@@ -197,7 +197,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้า SIT Active Recruitment ครั้งที่ 2 พร้อมจำนวนรับและเกณฑ์ CS/DSI/IT",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www.cp.eng.chula.ac.th/cp-tcas1",
@@ -212,7 +212,7 @@
       "classification": "used_primary_index",
       "academic_year": 2570,
       "decision": "ตรวจปฏิทิน Portfolio TCAS70 แยกวิทยาเขตบางเขน กำแพงแสน ศรีราชา และสกลนคร; ศรีราชา 1.2 ยังรอประกาศ; ใช้วันระดับวิทยาเขต ไม่แทนวันเฉพาะโครงการ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.kmutnb.ac.th/apply/round/1",
@@ -249,7 +249,7 @@
       "classification": "verified_existing_primary",
       "academic_year": 2570,
       "decision": "ตรวจประกาศทางการรอบ 1-1 ถึง 1-5 ฉบับที่เผยแพร่ 1 ก.ย. 2569: เกณฑ์วิศวกรรมคอมพิวเตอร์ GPAX 3.25, คุณสมบัติวุฒิ/แผน, TCASFolio, 50 คะแนน Portfolio + 50 สัมภาษณ์ และกำหนดการทั้งห้ารอบตรงกับข้อมูล; ประกาศไม่ระบุค่าสมัคร จึงตั้งค่าเป็นไม่ระบุ รอตรวจระบบสมัคร",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4630_2026_09_01-14-51-12_745e8.pdf",
@@ -257,7 +257,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ โครงการเรียนดี 14 จังหวัดพลัส รอบ 1-1 จำนวน 5 คน",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4633_2026_09_01-15-05-04_62a8a.pdf",
@@ -265,7 +265,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าวิศวกรรมคอมพิวเตอร์ โครงการสถานศึกษาเครือข่าย รอบ 1-1 และ 1-2; เก็บเงื่อนไขเสนอชื่อและไม่กระจายจำนวนรับรวม 15 คนเป็นจำนวนต่อรอบ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4632_2026_09_01-14-59-49_60a0e.pdf",
@@ -273,7 +273,7 @@
       "classification": "verified_existing_primary",
       "academic_year": 2570,
       "decision": "ตรวจประกาศทางการโครงการผู้มีศักยภาพด้านวิศวกรรมและเทคโนโลยี ฉบับ 1 ก.ย. 2569: GPAX 2.75, คุณสมบัติวิศวกรรมคอมพิวเตอร์, TCASFolio เน้น STEM/วิศวกรรม, 50 คะแนน Portfolio + 50 สัมภาษณ์ และกำหนดการรอบ 1-1/1-2 ตรงกับข้อมูล; ประกาศไม่ระบุค่าสมัคร จึงตั้งค่าเป็นไม่ระบุ รอตรวจระบบสมัคร",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
@@ -288,7 +288,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ยืนยันและนำเข้าโครงการ IT คณะเทคโนโลยีสารสนเทศ รอบ 1-1 ทั้ง 3 โครงการ พร้อมจำนวนรับรายหลักสูตร คุณสมบัติ เกณฑ์ SAT/ภาษาอังกฤษ และกำหนดการสมัคร-สัมภาษณ์-ประกาศผล; วันประกาศผู้มีสิทธิ์สัมภาษณ์ยึด 21 ธ.ค. 2569 ตาม PDF แทนปี 2570 ที่พิมพ์ผิดบนหน้า HTML"
     },
     {
@@ -416,7 +416,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "ตรวจ PDF ประกาศทางการเลขที่ 4648 ซึ่งลงวันที่ 21 ส.ค. 2569 และเชื่อมจากหน้าคณะ; แทนไฟล์เดิมเลขที่ 4640 ที่ตอบ 404; ยืนยัน 7 โครงการย่อยของวิทยาการคอมพิวเตอร์ รอบ 1.1/1.2 กำหนดการ ค่าธรรมเนียม และสัดส่วนคัดเลือก โดยจำนวนรับรวม 25 คนต่อรอบ ไม่แยกรายโครงการ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www1.reg.kmitl.ac.th/TCAS_old/home.php?round=1",
@@ -634,7 +634,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าช้างเผือก 1.1 ของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับและเกณฑ์รายสาขา",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/2/",
@@ -642,7 +642,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการเรียนล่วงหน้าของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/3/",
@@ -650,7 +650,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าหลักสูตรวิศวกรรมซอฟต์แวร์และความรู้ รอบ 1.1 พร้อมทางเลือกคะแนนและสัดส่วนคัดเลือก",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/103/",
@@ -658,7 +658,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าหลักสูตรวิศวกรรมซอฟต์แวร์และความรู้ รอบ 1.2 พร้อมทางเลือก TGAT1",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Port-M6.pdf",
@@ -666,7 +666,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าวิทยาการคอมพิวเตอร์หลักสูตรสองภาษา รหัส 04111 จำนวน 10 คน GPAX 3.50 พร้อมกำหนดการและค่าเทอม",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf",
@@ -674,7 +674,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าเทคโนโลยีสารสนเทศ 15 คนและวิศวกรรมสารสนเทศและเครือข่าย 5 คน พร้อมกำหนดการและค่าเทอมรายหลักสูตร",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.swu.ac.th/admissions2/",
@@ -713,7 +713,7 @@
       "publisher": "มหาวิทยาลัยศรีนครินทรวิโรฒ",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "นำเข้าเกณฑ์รายสาขา จำนวนรับ GPAX หน่วยกิต/คะแนนเฉลี่ย รูปแบบผลงาน เอกสาร และกำหนดการจากรายละเอียดแนบท้ายหน้า 12 - 179"
     },
     {
@@ -736,7 +736,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการรับนักกีฬาดีเด่นของวิทยาการคอมพิวเตอร์และวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับและเงื่อนไขหลัก",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/8/",
@@ -744,7 +744,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการ พสวท. ของวิทยาการคอมพิวเตอร์ พร้อมเกณฑ์ GPAX คะแนน TGAT/TPAT3 และสัดส่วนคัดเลือก; จำนวนรับเป็นจำนวนรวมตามหน้าโครงการ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/9/",
@@ -752,7 +752,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการโอลิมปิกวิชาการ 1.1 ของวิทยาการคอมพิวเตอร์และวิศวกรรมซอฟต์แวร์และความรู้",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/109/",
@@ -760,7 +760,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการโอลิมปิกวิชาการ 1.2 ของวิศวกรรมคอมพิวเตอร์และรายการวิศวกรรมซอฟต์แวร์และความรู้ที่หน้าโครงการระบุ พร้อมป้ายเตือนเมื่อรายละเอียดรายสาขายังไม่ครบ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/10/",
@@ -768,7 +768,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้า Portfolio 1.1 วิทยาเขตกำแพงแสน ครบรายการสายคอมพิวเตอร์/เทคโนโลยีสารสนเทศที่หน้าโครงการระบุ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/110/",
@@ -776,7 +776,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้า Portfolio 1.2 วิทยาเขตกำแพงแสนของวิศวกรรมคอมพิวเตอร์ พร้อมจำนวนรับ 1 คน",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/107/",
@@ -784,7 +784,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา 1.1 ของวิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์และวิทยาการคอมพิวเตอร์",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/207/",
@@ -792,7 +792,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการขยายโอกาสทางการศึกษา วิทยาเขตศรีราชา 1.2; รายการมีจำนวนรับแล้วแต่วันสมัครรอประกาศ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/5/",
@@ -800,7 +800,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้ารายการวิศวกรรมคอมพิวเตอร์และสารสนเทศศาสตร์ในโครงการคุณธรรมของศรีราชา พร้อมป้ายให้ตรวจเกณฑ์รายสาขาในระบบศรีราชา",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/6/",
@@ -808,7 +808,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้ารายการสายคอมพิวเตอร์ในโครงการผู้นำเยาวชนของศรีราชา พร้อมป้ายให้ตรวจเกณฑ์รายสาขาในระบบศรีราชา",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/18/",
@@ -816,7 +816,7 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโควตาศิลปวัฒนธรรมและซอฟต์พาวเวอร์ของวิศวกรรมคอมพิวเตอร์ พร้อม GPAX หน่วยกิตคณิตศาสตร์ และรูปแบบการทดสอบที่หน้าโครงการระบุ",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://admission.ku.ac.th/majors/project/32/",
@@ -824,14 +824,14 @@
       "classification": "imported_primary",
       "academic_year": 2570,
       "decision": "นำเข้าโครงการพัฒนาเครือข่ายองค์กรแห่งการเรียนรู้ด้านวิทยาศาสตร์ที่ระบุวิทยาการคอมพิวเตอร์ภาคปกติ/พิเศษ; เก็บจำนวนรับเป็นยอดรวมและติดป้ายให้ตรวจเกณฑ์เฉพาะสาขา",
-      "source_checked_at": "2026-09-25"
+      "source_checked_at": "2026-09-27"
     },
     {
       "url": "https://www.ict.mahidol.ac.th/th/ict-round-1-ict-portfolio-academic-year-2027/",
       "publisher": "คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ตรวจประกาศ ICT รอบ 1 ปีการศึกษา 2570 จากหน้าเว็บปัจจุบัน: สมัคร 3–31 ส.ค. 2569; วันประกาศ/สัมภาษณ์และเกณฑ์ GPAX 2.50, เอกสาร Portfolio เรียงความ วิดีโอ และสัมภาษณ์ตรงกับข้อมูลเดิม; ไม่เพิ่มแถวซ้ำ"
     },
     {
@@ -839,7 +839,7 @@
       "publisher": "คณะเทคโนโลยีสารสนเทศและการสื่อสาร มหาวิทยาลัยมหิดล",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ตรวจประกาศ MU–Portfolio ปีการศึกษา 2570; ประกาศเฉพาะคณะระบุรอบ 1/1 สมัคร 17 ส.ค.–10 ก.ย. 2569 และรอบ 1/2 สมัคร 15 ธ.ค. 2569–10 ม.ค. 2570 พร้อม GPAX/GPA รายสาระและเอกสารภาษาอังกฤษ"
     },
     {
@@ -855,7 +855,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ตรวจหน้า TCAS70 และประกาศปฏิทินรอบ 1 ปัจจุบัน: สมัครโครงการสำนักทะเบียน 28 ต.ค.–5 พ.ย. 2569; ชำระเงิน/ส่งเอกสารบางรายการได้ถึง 6 พ.ย.; สัมภาษณ์ 19 ธ.ค. 2569 และประกาศผล 8 ม.ค. 2570; หน้าเว็บยังให้รอประกาศโครงการที่คณะดำเนินการ จึงไม่กำหนดวันแทนคณะ"
     },
     {
@@ -871,7 +871,7 @@
       "publisher": "มหาวิทยาลัยธรรมศาสตร์",
       "classification": "imported_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "ประกาศรับตรง รอบ 1 Portfolio ลงวันที่ 1 ก.ย. 2569; ยืนยัน CPE 20 คน, วิศวกรรมซอฟต์แวร์ 35 คน, วิทยาการคอมพิวเตอร์ปกติ 20 คน, วิทยาการคอมพิวเตอร์โครงการพิเศษ 20 คน และคอมพิวเตอร์เครือข่าย/ความปลอดภัยไซเบอร์ 20 คน; เพิ่ม 2 หลักสูตรใหม่และอัปเดตแหล่งอ้างอิงของโครงการเดิม"
     },
     {
@@ -887,7 +887,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "เทียบหน้าโครงการอัจฉริยภาพคอมพิวเตอร์ มช. ปัจจุบันกับข้อมูล 1.1/1.2: GPAX/เกรดรายวิชา คุณสมบัติรางวัล Portfolio ไม่เกิน 15 หน้า น้ำหนัก 80/20 และเกณฑ์ TPAT3 ของ 1.2 ตรงกัน; หน้าโครงการไม่ระบุวันสมัคร จึงคงวันว่างรอประกาศคณะ"
     },
     {
@@ -895,7 +895,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "เทียบหน้าโครงการผลการเรียนดีเด่น วิศวกรรมคอมพิวเตอร์ มช. ปัจจุบันกับข้อมูล 1.1/1.2: GPAX/เกรดรายวิชา คุณสมบัติ Portfolio ไม่เกิน 15 หน้า น้ำหนัก 80/20 และเกณฑ์ TPAT3 ของ 1.2 ตรงกัน; หน้าโครงการไม่ระบุวันสมัคร จึงคงวันว่างรอประกาศคณะ"
     },
     {
@@ -903,7 +903,7 @@
       "publisher": "สำนักทะเบียนและประมวลผล มหาวิทยาลัยเชียงใหม่",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-09-25",
+      "source_checked_at": "2026-09-27",
       "decision": "เทียบหน้าโครงการความรู้ความสามารถทางวิศวกรรม วิศวกรรมคอมพิวเตอร์ มช. ปัจจุบันกับข้อมูล: รับ ม.6 วิทย์-คณิตหรือเทียบเท่าและเงื่อนไขโรงเรียนความร่วมมือ/Entaneer Academy; Portfolio 15 หน้า น้ำหนัก 80/20; เปิด 1.1 จำนวน 5 และ 1.2 จำนวน 0; หน้าโครงการไม่ระบุวันสมัคร จึงคงวันว่างรอประกาศคณะ"
     },
     {
