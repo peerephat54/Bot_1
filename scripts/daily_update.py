@@ -66,6 +66,7 @@ def main(argv=None):
     if verify.returncode or validate.returncode:
         return 1
     if not import_is_allowed(report):
+        print("Dataset facts were not changed; no import was authorized.")
         print("Evidence gate is not passed; keep current dataset and review the queue before import.")
         return 2
     print("Evidence gate passed; review the report once more before running the importer.")
