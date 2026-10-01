@@ -9,7 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from process_utils import process_is_alive
+from process_utils import is_python_process, process_is_alive
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,7 +21,8 @@ STATE_FILE = ROOT / "tmp" / "bot_watchdog.json"
 def main():
     try:
         state = json.loads(STATE_FILE.read_text(encoding="utf-8"))
-        if process_is_alive(state.get("watchdog_pid")):
+        watchdog_pid = state.get("watchdog_pid")
+        if process_is_alive(watchdog_pid) and is_python_process(watchdog_pid):
             print("Bot watchdog is already running.")
             return 0
     except (FileNotFoundError, json.JSONDecodeError, OSError):
