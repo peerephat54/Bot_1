@@ -7,6 +7,7 @@ from pathlib import Path
 from data_quality import (
     build_quality_report,
     load_latest_truth_report,
+    review_queue_summary,
     source_review_queue,
     source_truth_summary,
 )
@@ -127,6 +128,22 @@ class DataQualityTests(unittest.TestCase):
         self.assertEqual(source_review_queue(report, category="changed")[0]["reasons"], ["เนื้อหาเปลี่ยน"])
         self.assertEqual(source_review_queue(report, category="stale")[0]["code"], "stale")
         self.assertEqual(source_review_queue(report, category="baseline")[0]["code"], "baseline")
+
+    def test_review_queue_summary_groups_universities_and_reasons(self):
+        report = {
+            "unresolved_records": [
+                {"code": "a", "university": "KMITL", "source_url": "https://example.com/a"},
+                {"code": "b", "university": "KMITL", "source_url": "https://example.com/b"},
+            ],
+            "source_monitor": {"results": [
+                {"url": "https://example.com/a", "changed": True},
+                {"url": "https://example.com/b", "stale": True},
+            ]},
+        }
+        summary = review_queue_summary(report)
+        self.assertEqual(summary["total"], 2)
+        self.assertEqual(summary["by_university"], {"KMITL": 2})
+        self.assertEqual(summary["by_reason"], {"เกิน 7 วัน": 1, "เนื้อหาเปลี่ยน": 1})
 
 
 if __name__ == "__main__":
