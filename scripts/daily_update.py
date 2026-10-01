@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def import_is_allowed(report):
     """Only a fully passed evidence report may proceed to an importer."""
-    return (report or {}).get("status") == "passed"
+    return (report or {}).get("status") == "ready"
 
 
 def main(argv=None):

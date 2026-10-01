@@ -8,8 +8,9 @@ class DailyUpdateTests(unittest.TestCase):
         self.assertFalse(import_is_allowed({"status": "needs_review"}))
         self.assertFalse(import_is_allowed({}))
 
-    def test_allows_only_passed_report(self):
-        self.assertTrue(import_is_allowed({"status": "passed"}))
+    def test_allows_only_ready_report(self):
+        self.assertTrue(import_is_allowed({"status": "ready"}))
+        self.assertFalse(import_is_allowed({"status": "passed"}))
 
 
 if __name__ == "__main__":
