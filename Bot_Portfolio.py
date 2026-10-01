@@ -43,7 +43,7 @@ from deadline_digest import upcoming_deadlines
 from plan_digest import build_plan_rows
 from feedback_store import FeedbackStore
 from runtime_status import supervisor_status
-from scripts.process_utils import process_is_alive
+from scripts.process_utils import is_python_process, process_is_alive
 
 load_dotenv()
 
@@ -116,7 +116,7 @@ def start_bot_watchdog():
     """Start one detached watchdog; it can relaunch this bot after a crash."""
     state = _watchdog_state()
     watchdog_pid = state.get("watchdog_pid")
-    if process_is_alive(watchdog_pid):
+    if process_is_alive(watchdog_pid) and is_python_process(watchdog_pid):
         return watchdog_pid, False
     if not BOT_WATCHDOG_SCRIPT.exists():
         raise FileNotFoundError(BOT_WATCHDOG_SCRIPT)
@@ -403,6 +403,9 @@ class MyBot(discord.Client):
             return programs
 
     async def setup_hook(self):
+        from market_bot import register_market_commands
+
+        register_market_commands(self.tree)
         try:
             await self.load_navigation_programs(timeout=15)
         except Exception:
