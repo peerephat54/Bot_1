@@ -233,6 +233,19 @@ TCAS70 หรือใช้เป็นเกณฑ์รับสมัคร�
 
 ## วิธีตรวจและนำเข้า
 
+### อัปเดตประจำวัน
+
+```powershell
+$today = Get-Date -Format yyyy-MM-dd
+python scripts/daily_update.py `
+  --review-output "datasets/SOURCE_REVIEW_$today.md"
+```
+
+คำสั่งนี้ตรวจเว็บทางการและสร้าง snapshot คิวตรวจให้ตรวจสอบย้อนหลังได้
+ถ้าผลเป็น `needs_review` ให้คงข้อมูลเดิมไว้ก่อน ห้ามเลื่อนวันที่ตรวจหรือเติม
+กำหนดการจากการคาดเดา รายการที่ผ่านด่านหลักฐานจึงค่อยนำไปใช้กับ importer
+และต้องตรวจยอดใน Supabase หลัง import ทุกครั้ง
+
 ```powershell
 python scripts/validate_dataset.py
 python scripts/generate_seed_sql.py
