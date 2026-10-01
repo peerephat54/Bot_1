@@ -126,6 +126,22 @@ def source_review_queue(report, *, category="all", limit=8):
     return queue[: max(0, int(limit))]
 
 
+def review_queue_summary(report):
+    """Return deterministic counts for the evidence review dashboard."""
+    queue = source_review_queue(report, limit=10**9)
+    by_university = Counter(item["university"] for item in queue)
+    by_reason = Counter(
+        reason
+        for item in queue
+        for reason in item.get("reasons") or ["รอตรวจหลักฐาน"]
+    )
+    return {
+        "total": len(queue),
+        "by_university": dict(sorted(by_university.items())),
+        "by_reason": dict(sorted(by_reason.items())),
+    }
+
+
 def _date(value):
     try:
         return date.fromisoformat(str(value)[:10])
