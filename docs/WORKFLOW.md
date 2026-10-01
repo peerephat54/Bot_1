@@ -37,3 +37,21 @@ flowchart TD
 ## ขอบเขตคำถาม
 
 `/ask` รองรับคำถามเรื่องวันสมัคร Portfolio เอกสาร GPAX ค่าเรียน และสัมภาษณ์ โดยจับคู่กับชื่อมหาวิทยาลัย/สาขาและตอบจาก project ที่มี source เท่านั้น หากจับคู่ไม่ได้ ระบบจะให้กลับไปใช้ `/tcas_search` แทนการเดาคำตอบ
+## Daily evidence review
+
+Run the daily gate before changing admission facts:
+
+```powershell
+python scripts/daily_update.py `
+  --review-output datasets/SOURCE_REVIEW_YYYY-MM-DD.md
+```
+
+The command checks official sources, validates the local dataset, and can write
+a Markdown snapshot of the review queue. A `needs_review` result is expected
+when an official page returns an error or a source needs a human check. Do not
+update `source_checked_at`, deadlines, or criteria only because a URL is
+reachable. Review the official announcement first, then import only the facts
+that are supported by that announcement.
+
+The generated snapshot records the check date and explains why each item is
+waiting. It is an evidence log, not an approval to import.
