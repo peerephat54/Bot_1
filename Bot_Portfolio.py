@@ -34,6 +34,7 @@ from data_quality import (
     classify_project_source_status,
     load_quality_report,
     load_latest_truth_report,
+    review_queue_summary,
     source_review_queue,
     source_truth_summary,
 )
@@ -2045,9 +2046,15 @@ def build_checklist_embed(program, project, user_id):
 
 def source_truth_text(project_root):
     """Render the latest live evidence-gate result for user-facing status views."""
-    summary = source_truth_summary(load_latest_truth_report(project_root))
+    truth_report = load_latest_truth_report(project_root)
+    summary = source_truth_summary(truth_report)
     if not summary["generated_at"]:
         return summary["label"]
+    queue_summary = review_queue_summary(truth_report)
+    university_counts = queue_summary["by_university"]
+    queue_by_university = " • ".join(
+        f"{name} {count}" for name, count in university_counts.items()
+    ) or "ไม่มี"
     return (
         f"{summary['label']}\n"
         f"ตรวจเว็บล่าสุด: {format_checked_at(summary['generated_at'])}\n"
@@ -2057,7 +2064,8 @@ def source_truth_text(project_root):
         f"• เนื้อหาเปลี่ยน: {summary['changed_count']} "
         f"• ยังไม่มี baseline: {summary['baseline_missing_count']}\n"
         f"รายการรอตรวจคน: {summary['needs_review']} "
-        f"• ผ่านอัตโนมัติ: {summary['automated_checks_passed']}"
+        f"• ผ่านอัตโนมัติ: {summary['automated_checks_passed']}\n"
+        f"คิวแยกตามมหาวิทยาลัย: {queue_by_university}"
     )
 
 
