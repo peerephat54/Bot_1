@@ -9,6 +9,11 @@ import sys
 from datetime import date
 from pathlib import Path
 
+try:
+    from scripts.write_review_report import render_report
+except ImportError:  # Running the file directly from the scripts directory.
+    from write_review_report import render_report
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -24,6 +29,11 @@ def main(argv=None):
     parser.add_argument("--output", type=Path, default=default_output)
     parser.add_argument("--timeout", type=int, default=12)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument(
+        "--review-output",
+        type=Path,
+        help="optionally write the evidence-gate result as a Markdown review snapshot",
+    )
     args = parser.parse_args(argv)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
@@ -47,6 +57,11 @@ def main(argv=None):
         report = json.loads(args.output.read_text(encoding="utf-8"))
     except (FileNotFoundError, OSError, json.JSONDecodeError):
         report = {}
+
+    if args.review_output and report:
+        args.review_output.parent.mkdir(parents=True, exist_ok=True)
+        args.review_output.write_text(render_report(report), encoding="utf-8")
+        print(f"Review snapshot saved: {args.review_output}")
 
     if verify.returncode or validate.returncode:
         return 1
