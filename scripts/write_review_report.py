@@ -32,6 +32,8 @@ def render_report(report: dict) -> str:
         f"- ตรวจแหล่งข้อมูล: {monitor.get('source_count', 0)} แห่ง "
         f"(เปิดได้ {monitor.get('ok_count', 0)}, ผิดพลาด {monitor.get('error_count', 0)})",
         f"- เนื้อหาเปลี่ยนจาก baseline: {monitor.get('changed_count', 0)} แห่ง",
+        f"- แหล่งข้อมูลเกินรอบตรวจ: {monitor.get('stale_count', 0)} แห่ง",
+        f"- แหล่งข้อมูลยังไม่มี baseline: {monitor.get('baseline_missing_count', 0)} แห่ง",
         f"- ตรวจอัตโนมัติผ่าน: {counts.get('automated_checks_passed', 0)} รายการ",
         f"- รอตรวจโดยคน: {counts.get('needs_review', 0)} รายการ",
         "",
