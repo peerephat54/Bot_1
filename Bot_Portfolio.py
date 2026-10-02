@@ -5694,7 +5694,11 @@ async def health_command(interaction: discord.Interaction):
         value=f"{'✅ พร้อม' if ready else '❌ ยังไม่พร้อม'}\nLatency: {latency_text}",
         inline=True,
     )
-    supervisor = supervisor_status(_watchdog_state(), process_is_alive)
+    supervisor = supervisor_status(
+        _watchdog_state(),
+        process_is_alive,
+        is_python_process,
+    )
     supervisor_value = (
         f"{supervisor['label']}\n"
         f"Bot PID: {supervisor['bot_pid'] or 'ไม่ระบุ'} • "
