@@ -11,6 +11,12 @@ SYNC_MODE_INSERT_MISSING = "insert_missing"
 SYNC_MODE_REVIEWED_UPSERT = "reviewed_upsert"
 
 
+def short_hash(value, length=10):
+    """Return a safe short fingerprint for user-facing sync status."""
+    value = str(value or "")
+    return value[:max(1, int(length))] if value else "ไม่ทราบ"
+
+
 def file_sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with Path(path).open("rb") as stream:
@@ -32,7 +38,7 @@ def local_sync_identity(dataset_path: Path, audit_path: Path | None = None) -> d
 
 def classify_sync_status(local: dict, remote: dict | None) -> dict:
     """Describe sync evidence without equating row presence with data parity."""
-    local_version = str(local.get("dataset_sha256") or "")[:10] or "ไม่ทราบ"
+    local_version = short_hash(local.get("dataset_sha256"))
     if not remote:
         return {
             "status": "not_recorded",
@@ -41,7 +47,7 @@ def classify_sync_status(local: dict, remote: dict | None) -> dict:
             "message": "ยังไม่มีบันทึกการซิงก์จากตัวนำเข้าที่ตรวจสอบได้",
         }
 
-    remote_version = str(remote.get("dataset_sha256") or "")[:10] or "ไม่ทราบ"
+    remote_version = short_hash(remote.get("dataset_sha256"))
     if remote.get("sync_mode") != SYNC_MODE_REVIEWED_UPSERT:
         return {
             "status": "insert_only",
