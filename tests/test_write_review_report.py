@@ -14,6 +14,8 @@ class ReviewReportTests(unittest.TestCase):
                 "ok_count": 1,
                 "error_count": 1,
                 "changed_count": 0,
+                "stale_count": 1,
+                "baseline_missing_count": 0,
             },
             "record_status_counts": {
                 "automated_checks_passed": 3,
@@ -33,6 +35,7 @@ class ReviewReportTests(unittest.TestCase):
         self.assertIn("TCAS2570", output)
         self.assertIn("ตรวจแหล่งข้อมูล: 2 แห่ง", output)
         self.assertIn("รอตรวจโดยคน: 1 รายการ", output)
+        self.assertIn("แหล่งข้อมูลเกินรอบตรวจ: 1 แห่ง", output)
         self.assertIn("ยังไม่มีการแก้ข้อเท็จจริง", output)
         self.assertIn("example-1-1", output)
 
