@@ -7,10 +7,15 @@ from dataset_sync import (
     SYNC_MODE_REVIEWED_UPSERT,
     classify_sync_status,
     local_sync_identity,
+    short_hash,
 )
 
 
 class DatasetSyncTests(unittest.TestCase):
+    def test_short_hash_is_bounded_and_safe_for_empty_values(self):
+        self.assertEqual(short_hash("abcdef", 4), "abcd")
+        self.assertEqual(short_hash(None), "ไม่ทราบ")
+
     def test_local_identity_fingerprints_both_dataset_and_audit(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
