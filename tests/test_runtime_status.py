@@ -14,6 +14,15 @@ class RuntimeStatusTests(unittest.TestCase):
         result = supervisor_status({"watchdog_pid": 10, "bot_pid": 20}, lambda pid: True)
         self.assertEqual(result["label"], "✅ บอทและ watchdog ทำงานอยู่")
 
+    def test_expected_process_check_rejects_reused_pid(self):
+        result = supervisor_status(
+            {"watchdog_pid": 10, "bot_pid": 20},
+            lambda pid: True,
+            lambda pid: pid == 20,
+        )
+        self.assertFalse(result["watchdog_alive"])
+        self.assertTrue(result["bot_alive"])
+
 
 if __name__ == "__main__":
     unittest.main()
