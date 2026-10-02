@@ -1,10 +1,13 @@
 """Small, testable status formatting helpers for the bot supervisor."""
 
 
-def supervisor_status(state, is_alive):
+def supervisor_status(state, is_alive, is_expected=None):
     state = state or {}
-    watchdog_alive = bool(is_alive(state.get("watchdog_pid")))
-    bot_alive = bool(is_alive(state.get("bot_pid")))
+    def active(pid):
+        return bool(is_alive(pid)) and (is_expected is None or bool(is_expected(pid)))
+
+    watchdog_alive = active(state.get("watchdog_pid"))
+    bot_alive = active(state.get("bot_pid"))
     if watchdog_alive and bot_alive:
         label = "✅ บอทและ watchdog ทำงานอยู่"
     elif bot_alive:
