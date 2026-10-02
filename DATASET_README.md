@@ -235,6 +235,8 @@ TCAS70 หรือใช้เป็นเกณฑ์รับสมัคร�
 
 ### อัปเดตประจำวัน
 
+รายงานตรวจล่าสุด: [SOURCE_REVIEW_2026-10-03.md](datasets/SOURCE_REVIEW_2026-10-03.md)
+
 ```powershell
 $today = Get-Date -Format yyyy-MM-dd
 python scripts/daily_update.py `
