@@ -19,8 +19,8 @@
       "title": "ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ",
       "academic_year": 2570,
       "source_url": "https://admission.chula.ac.th/tcas.php",
-      "evidence_url": "https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png",
-      "source_checked_at": "2026-09-27T12:48:48+07:00",
+      "evidence_url": "https://www.chula.ac.th/academics/admissions/undergraduate-admission/",
+      "source_checked_at": "2026-10-03T00:00:00+07:00",
       "scope_note": "ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา",
       "rounds": [
         {
@@ -88,7 +88,7 @@
       "academic_year": 2570,
       "source_url": "https://admission.reg.cmu.ac.th/tcas/app.php",
       "evidence_url": "https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf",
-      "source_checked_at": "2026-09-27T12:48:48+07:00",
+      "source_checked_at": "2026-10-03T00:00:00+07:00",
       "scope_note": "ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ",
       "rounds": [
         {
@@ -2632,11 +2632,11 @@
       "selection_order_limit": 3,
       "application_fee": 300,
       "tuition_fee_per_semester": 32000,
-      "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "source_title": "ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570",
       "source_published_at": "2026-09-01",
-      "source_checked_at": "2026-09-27T12:48:48+07:00",
-      "data_notes": "ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก"
+      "source_checked_at": "2026-10-03T00:00:00+07:00",
+      "data_notes": "ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ"
     },
     {
       "university_short_name": "KMITL",
@@ -2653,11 +2653,11 @@
       "selection_order_limit": 3,
       "application_fee": 300,
       "tuition_fee_per_semester": 32000,
-      "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "source_title": "ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570",
       "source_published_at": "2026-09-01",
-      "source_checked_at": "2026-09-27T12:48:48+07:00",
-      "data_notes": "ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก"
+      "source_checked_at": "2026-10-03T00:00:00+07:00",
+      "data_notes": "ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ"
     },
     {
       "university_short_name": "KMITL",
@@ -2674,11 +2674,11 @@
       "selection_order_limit": 2,
       "application_fee": 300,
       "tuition_fee_per_semester": 32000,
-      "source_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "source_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "source_title": "ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570",
       "source_published_at": "2026-09-01",
-      "source_checked_at": "2026-09-27T12:48:48+07:00",
-      "data_notes": "ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก"
+      "source_checked_at": "2026-10-03T00:00:00+07:00",
+      "data_notes": "ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ"
     },
     {
       "university_short_name": "KMUTT",
@@ -7027,7 +7027,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-it"
     },
     {
@@ -7071,7 +7071,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-dsba"
     },
     {
@@ -7115,7 +7115,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-ait"
     },
     {
@@ -7166,7 +7166,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-it"
     },
     {
@@ -7217,7 +7217,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-dsba"
     },
     {
@@ -7268,7 +7268,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-ait"
     },
     {
@@ -7323,7 +7323,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-it"
     },
     {
@@ -7378,7 +7378,7 @@
       ],
       "additional_requirements": {},
       "criteria_summary": "GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน",
-      "official_announcement_url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
+      "official_announcement_url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
       "program_code": "kmitl-ait"
     },
     {
@@ -20311,6 +20311,3766 @@
       "start_on": "2027-03-22",
       "end_on": null,
       "date_display": "22 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-gifted-computer-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-good-grade-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-cpe-engineering-ability-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507106011-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107030-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107040-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410507107050-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508106011-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107030-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410508107040-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410608108040-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108010-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108020-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108030-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108041-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00410666108050-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102102010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102103010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412102108030-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104103010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412104108020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105107010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412105108010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171103011-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108011-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412171108020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101010-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401101020-1-2",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108010-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108020-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108030-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์",
+      "start_on": "2026-12-11",
+      "end_on": "2026-12-11",
+      "date_display": "11 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "สอบสัมภาษณ์",
+      "start_on": "2026-12-19",
+      "end_on": "2026-12-19",
+      "date_display": "19 ธ.ค. 2569",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-08",
+      "date_display": "8 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1",
+      "start_on": "2027-01-08",
+      "end_on": "2027-01-12",
+      "date_display": "8–12 ม.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-04",
+      "date_display": "4 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์",
+      "start_on": "2027-03-04",
+      "end_on": "2027-03-06",
+      "date_display": "4–6 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-10",
+      "date_display": "10 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS",
+      "start_on": "2027-03-10",
+      "end_on": "2027-03-11",
+      "date_display": "10–11 มี.ค. 2570",
+      "date_status": "confirmed"
+    },
+    {
+      "project_code": "cmu-00412401108040-1-1",
+      "event_name": "สละสิทธิ์ในระบบ myTCAS",
+      "start_on": "2027-03-12",
+      "end_on": "2027-03-12",
+      "date_display": "12 มี.ค. 2570",
       "date_status": "confirmed"
     }
   ],
