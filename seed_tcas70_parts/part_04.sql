@@ -1,5 +1,5 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 4 of 8; run parts in numeric order.
+-- Supabase SQL Editor part 4 of 9; run parts in numeric order.
 begin;
 
 insert into public.admission_criteria (

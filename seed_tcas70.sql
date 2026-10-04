@@ -268,7 +268,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cu-portfolio-2570', 'ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ', 2570, '["pathum-wan"]'::jsonb, '["cu-engineering-computer-engineering","cu-engineering-cedt","cu-science-computer-science","cu-cbs-management-information-systems","cu-cbs-statistics-data-science","cu-cbs-information-technology-business"]'::jsonb,
-    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-27T12:48:48+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
+    'https://admission.chula.ac.th/tcas.php', 'https://www.chula.ac.th/academics/admissions/undergraduate-admission/', '2026-10-03T00:00:00+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
     '2027-01-11', '2027-01-15', '2027-01-28',
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -330,7 +330,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
-    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-27T12:48:48+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-10-03T00:00:00+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
     '2026-12-11', '2026-12-19', null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -3597,8 +3597,8 @@ select
     u.id, 'kmitl-it-ability-1-1', 'kmitl-it-ability', 'โครงการนักเรียนมีความสามารถด้านเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-09-27T12:48:48+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
+    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3633,8 +3633,8 @@ select
     u.id, 'kmitl-academic-it-1-1', 'kmitl-academic-it', 'โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-09-27T12:48:48+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
+    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3669,8 +3669,8 @@ select
     u.id, 'kmitl-english-it-1-1', 'kmitl-english-it', 'โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    32000, 'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-09-27T12:48:48+07:00', 'ยืนยันจากประกาศทางการเลขที่ 4647 ลงวันที่ 1 ก.ย. 2569; หน้าเว็บ HTML แสดงปีผู้มีสิทธิ์สัมภาษณ์ผิดเป็น 2570 จึงใช้ 21 ธ.ค. 2569 ตามประกาศ PDF; ยังไม่เติม Clearing House ที่ต้องยืนยันแยก', now()
+    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -10493,7 +10493,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10526,7 +10526,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10559,7 +10559,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10592,7 +10592,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10625,7 +10625,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10658,7 +10658,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10691,7 +10691,7 @@ select
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-english-it-1-1'
@@ -10724,7 +10724,7 @@ select
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-english-it-1-1'
@@ -24122,6 +24122,6116 @@ insert into public.admission_timeline (
 select p.id, 'ประกาศรายชื่อผู้ยืนยันสิทธิ์เข้าศึกษา', '2027-03-22', null, '22 มี.ค. 2570', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'tu-direct-network-cybersecurity-2570'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-gifted-computer-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-good-grade-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-cpe-engineering-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410507107050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508106011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410508107040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410608108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108030-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108041-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00410666108050-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102102010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412102108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104103010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412104108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105107010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412105108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171103011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108011-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412171108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101010-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401101020-1-2'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108010-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108020-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108030-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์สอบสัมภาษณ์', '2026-12-11', '2026-12-11', '11 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สอบสัมภาษณ์', '2026-12-19', '2026-12-19', '19 ธ.ค. 2569', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 1 (แบบ 1.1)', '2027-01-08', '2027-01-08', '8 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 1', '2027-01-08', '2027-01-12', '8–12 ม.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือกรอบ 1 ครั้งที่ 3 (แบบ 1.2)', '2027-03-04', '2027-03-04', '4 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์/สละสิทธิ์ในระบบรับสมัคร มช. รอบ 1 ครั้งที่ 3', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์รอบ 1 หลังยืนยันสิทธิ์', '2027-03-04', '2027-03-06', '4–6 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศผลคัดเลือก TCAS รอบ 1 โดย ทปอ.', '2027-03-10', '2027-03-10', '10 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์เข้าศึกษาในระบบ myTCAS', '2027-03-10', '2027-03-11', '10–11 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'cmu-00412401108040-1-1'
 on conflict (project_id, event_name) do update set
     start_on = excluded.start_on,
     end_on = excluded.end_on,

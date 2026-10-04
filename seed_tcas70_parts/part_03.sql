@@ -1,5 +1,5 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 3 of 8; run parts in numeric order.
+-- Supabase SQL Editor part 3 of 9; run parts in numeric order.
 begin;
 
 insert into public.admission_projects (
@@ -3381,7 +3381,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-it-ability-1-1'
@@ -3414,7 +3414,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-it-ability-1-1'
@@ -3447,7 +3447,7 @@ select
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-it-ability-1-1'
@@ -3480,7 +3480,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-academic-it-1-1'
@@ -3513,7 +3513,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-academic-it-1-1'
@@ -3546,7 +3546,7 @@ select
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-academic-it-1-1'
@@ -3579,7 +3579,7 @@ select
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-english-it-1-1'
@@ -3612,7 +3612,7 @@ select
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
     '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
     '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf', now()
+    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-english-it-1-1'

@@ -1,5 +1,5 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 1 of 8; run parts in numeric order.
+-- Supabase SQL Editor part 1 of 9; run parts in numeric order.
 begin;
 
 insert into public.universities (name, short_name, logo_url)
@@ -268,7 +268,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cu-portfolio-2570', 'ปฏิทินกลางจุฬาฯ • หลักสูตรปกติ', 2570, '["pathum-wan"]'::jsonb, '["cu-engineering-computer-engineering","cu-engineering-cedt","cu-science-computer-science","cu-cbs-management-information-systems","cu-cbs-statistics-data-science","cu-cbs-information-technology-business"]'::jsonb,
-    'https://admission.chula.ac.th/tcas.php', 'https://admission.chula.ac.th/upload/adm_tcas/tcas_img_18_1703.png', '2026-09-27T12:48:48+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
+    'https://admission.chula.ac.th/tcas.php', 'https://www.chula.ac.th/academics/admissions/undergraduate-admission/', '2026-10-03T00:00:00+07:00', 'ยังไม่ระบุว่าสาขานี้อยู่กลุ่มใด; ข่าวมหาวิทยาลัยระบุจะอัปเดตประกาศรับสมัครใน ต.ค. 2569 ไม่ใช่เกณฑ์รายสาขา', '[{"label":"Portfolio กลุ่ม 1","application_start_on":"2026-11-03","application_end_on":"2026-11-12","result_announcement_on":"2027-03-10","date_status":"confirmed"},{"label":"Portfolio กลุ่ม 2","application_start_on":"2026-11-26","application_end_on":"2026-12-01","result_announcement_on":"2027-03-10","date_status":"confirmed"}]'::jsonb,
     '2027-01-11', '2027-01-15', '2027-01-28',
     '2027-03-10', '2027-03-11', now()
 from public.universities u
@@ -330,7 +330,7 @@ insert into public.university_admission_calendars (
 )
 select
     u.id, 'cmu-portfolio-2570', 'ปฏิทินกลาง มช. • TCAS รอบ 1 Portfolio', 2570, '["main"]'::jsonb, '[]'::jsonb,
-    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-09-27T12:48:48+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
+    'https://admission.reg.cmu.ac.th/tcas/app.php', 'https://admission.reg.cmu.ac.th/tcas/files_download/93a32864d014dc7b8410ea79b84cb42c.pdf', '2026-10-03T00:00:00+07:00', 'ปฏิทินกลางยืนยันวันของโครงการที่สำนักทะเบียนดำเนินการ; โครงการที่คณะดำเนินการให้ยึดประกาศคณะและยังไม่เติมวันสมัครแทนคณะ', '[{"label":"Portfolio 1.1 • โครงการสำนักทะเบียน","application_start_on":"2026-10-28","application_end_on":"2026-11-05","result_announcement_on":"2027-01-08","date_status":"confirmed"}]'::jsonb,
     '2026-12-11', '2026-12-19', null,
     '2027-03-10', '2027-03-11', now()
 from public.universities u
