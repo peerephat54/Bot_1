@@ -69,6 +69,7 @@ OFFICIAL_HOSTS = {
     },
     "CU": {
         "admission.chula.ac.th",
+        "www.chula.ac.th",
         "www.reg.chula.ac.th",
         "reg.chula.ac.th",
         "www.cp.eng.chula.ac.th",
