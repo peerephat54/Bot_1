@@ -1,6 +1,105 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 4 of 9; run parts in numeric order.
+-- Supabase SQL Editor part 4 of 10; run parts in numeric order.
 begin;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{"semesters":"4–6","must_have_subject_grades":true}'::jsonb, '{"คณิตศาสตร์":3,"ภาษาต่างประเทศ":3}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือใช้ผล GED","มีหน่วยกิตคณิตศาสตร์อย่างน้อย 12 และวิทยาศาสตร์อย่างน้อย 20"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
+    '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
+    '[{"name":"GPAX","weight_percent":25},{"name":"สัมภาษณ์","weight_percent":50},{"name":"Portfolio","weight_percent":25}]'::jsonb, '{"minimum_subject_credits":{"คณิตศาสตร์":12,"วิทยาศาสตร์":20},"missing_subject_grade_is_ineligible":true}'::jsonb, 'GPAX ≥ 3.00, GPA คณิตศาสตร์ ≥ 3.00 และภาษาต่างประเทศ ≥ 3.00; คัดเลือกจาก GPAX 25% สัมภาษณ์ 50% และ Portfolio 25%',
+    'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutt-sit-cs'
+where p.code = 'kmutt-sit-active-recruitment-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.5, '{"semesters":"4–6","must_have_subject_grades":true}'::jsonb, '{"คณิตศาสตร์":2.75,"ภาษาต่างประเทศ":2.5}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช.","มีหน่วยกิตคณิตศาสตร์อย่างน้อย 5 และภาษาต่างประเทศอย่างน้อย 6"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
+    '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
+    '[{"name":"สัมภาษณ์","weight_percent":60},{"name":"Portfolio","weight_percent":40}]'::jsonb, '{"minimum_subject_credits":{"คณิตศาสตร์":5,"ภาษาต่างประเทศ":6},"optional_intro_video_max_minutes":2,"portfolio_focus":"IT/ดิจิทัล หรือบุคลิกภาพและการสื่อสาร"}'::jsonb, 'GPAX ≥ 2.50, GPA คณิตศาสตร์ ≥ 2.75 และภาษาต่างประเทศ ≥ 2.50; สัมภาษณ์ 60% และ Portfolio 40%',
+    'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutt-sit-dsi'
+where p.code = 'kmutt-sit-active-recruitment-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"semesters":"4–6","must_have_subject_grades":true,"semester_5_if_missing_submit_by":"วันสัมภาษณ์"}'::jsonb, '{"คณิตศาสตร์":2.75,"ภาษาต่างประเทศ":2.75}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["กำลังศึกษาหรือสำเร็จ ม.6 หรือ ปวช.","ไม่กำหนดหน่วยกิตขั้นต่ำ แต่ต้องมีผลการเรียนในกลุ่มวิชาที่กำหนด"]'::jsonb, 'Portfolio จาก TCASfolio หรือจัดทำเองเป็น PDF ไม่เกิน 12 หน้า (รวมปกหน้า-หลัง) และไม่เกิน 10 MB; เนื้อหาหลักประกอบด้วยประวัติส่วนตัว ประวัติการศึกษา ผลงาน รางวัล และกิจกรรมที่เกี่ยวข้องกับหลักสูตร',
+    '{"language":"ไม่กำหนด","max_pages":12,"max_file_mb":10,"includes_cover_and_back_cover":true,"extra_work_via_qr_or_link":true}'::jsonb, '[]'::jsonb, '["รูปถ่ายสุภาพที่ถ่ายไว้ไม่เกิน 6 เดือน","ระเบียนผลการเรียน 4–6 ภาคการศึกษา หรือฉบับสมบูรณ์","Portfolio PDF","ผลคะแนนภาษาอังกฤษ (ถ้ามี)","เอกสารเพิ่มเติมตามที่หลักสูตรกำหนด"]'::jsonb,
+    '[{"name":"สัมภาษณ์","weight_percent":50},{"name":"Portfolio","weight_percent":50}]'::jsonb, '{"intro_video_max_minutes":3,"video_access_must_not_require_permission":true,"interview_requires_it_work_presentation":true}'::jsonb, 'GPAX ≥ 2.75, GPA คณิตศาสตร์ ≥ 2.75 และภาษาต่างประเทศ ≥ 2.75; สัมภาษณ์ 50% และ Portfolio 50% พร้อมคลิปแนะนำตัว/ผลงานไม่เกิน 3 นาที',
+    'https://join.kmutt.ac.th/projects/d3746263-568f-4250-bd7d-0ff9dc0d8210', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmutt-sit-it'
+where p.code = 'kmutt-sit-active-recruitment-1'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
 
 insert into public.admission_criteria (
     project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
@@ -1503,39 +1602,6 @@ select
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'cmu-modern-it'
 where p.code = 'cmu-00412102102010-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 3.0, '{"studying_semesters":5,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{}'::jsonb, '["เป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00","เป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00","รับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า","รับเฉพาะแผนการเรียนศิลปศาสตร์หรือเทียบเท่า เฉพาะศิลป์-คำนวณ","รับแผนการเรียนอย่างใดอย่างหนึ่ง","สำหรับหลักสูตรอาชีวศึกษา","สาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง","เป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3 มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (5 เทอม) ไม่น้อยกว่า 3.00","สาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง","เป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (6 เทอม) ไม่น้อยกว่า 3.00"]'::jsonb, 'Portfolio ไม่เกิน 10 หน้า ตามโครงสร้างที่ประกาศ',
-    '{"max_pages":10}'::jsonb, '[]'::jsonb, '["ใบสมัคร","บัตรประชาชน","ใบแสดงผลการเรียน","หลักฐานการชำระเงิน","Portfolio และเอกสารเฉพาะโครงการตามประกาศ"]'::jsonb,
-    '[{"name":"Portfolio","weight_percent":30},{"name":"สัมภาษณ์","weight_percent":70}]'::jsonb, '{"official_project_code":"00412102103010","official_criteria_text":"คณะ/สาขาวิชา รอบ จำนวนรับตาม ประกาศ(คน) เกณฑ์การรับ จำนวนผู้สมัคร\nรหัสโครงการ 00412102103010\nวิทยาลัยศิลปะ สื่อ และเทคโนโลยี สาขา การจัดการสมัยใหม่และเทคโนโลยีสารสนเทศ\nหลักสูตร สองภาษา รูปแบบของหลักสูตร ปกติ\nประเภทโครงการ การรับนักเรียนที่มีผลการเรียนดี\nค่าธรรมเนียมการศึกษา ภาคการศึกษาแรก 33,000 บาท\nแนวทางการประกอบอาชีพ\nผู้ดูแลระบบฐานข้อมูลธุรกิจ (Database Business Administrator), นักปฏิบัติงานสายสนับสนุนด้านเทคโนโลยีสารสนเทศ (IT Support), นักพัฒนาโปรแกรมประยุกต์เว็บไซต์ (Web Application Developer), นักพัฒนาระบบอัตโนมัติ (RPA Developer), นักวิเคราะห์ธุรกิจ (Business Analyst), รอบที่ 1 Portfolio แบบ 1.1: 20\nแบบ 1.2: 0 คุณสมบัติผู้สมัคร\nสำหรับหลักสูตรแกนกลางการศึกษาขั้นพื้นฐานฯ\nเป็นผู้กำลังศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (5 เทอม) ไม่น้อยกว่า 3.00\nเป็นผู้สำเร็จการศึกษาชั้นมัธยมศึกษาปีที่ 6 มีผลการเรียนเฉลี่ยสะสมชั้นมัธยมศึกษาปีที่ 4-6 (6 เทอม) ไม่น้อยกว่า 3.00\nรับเฉพาะแผนการเรียนวิทยาศาสตร์-คณิตศาสตร์หรือเทียบเท่า\nรับเฉพาะแผนการเรียนศิลปศาสตร์หรือเทียบเท่า เฉพาะศิลป์-คำนวณ\nรับแผนการเรียนอย่างใดอย่างหนึ่ง\nสำหรับหลักสูตรอาชีวศึกษา\nสาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง\nเป็นผู้กำลังศึกษาระดับประกาศนียบัตรวิชาชีพ ชั้นปีที่ 3 มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (5 เทอม) ไม่น้อยกว่า 3.00\nสาขาวิชาคอมพิวเตอร์หรือสาขาที่เกี่ยวข้อง\nเป็นผู้สำเร็จการศึกษาระดับประกาศนียบัตรวิชาชีพ มีผลการเรียนระดับประกาศนียบัตรวิชาชีพ 1-3 (6 เทอม) ไม่น้อยกว่า 3.00\nเอกสารประกอบการสมัคร\nส่งเอกสารทางออนไลน์เท่านั้น\nใบสมัคร\nสำเนาบัตรประจำตัวประชาชน\nใบแสดงผลการเรียน\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหลักฐานการชำระเงิน\nแฟ้มสะสมผลงาน (Portfolio) จำนวนหน้าไม่เกิน 10 หน้า\nค่าน้ำหนักแฟ้มสะสมผลงาน ร้อยละ 30 และ การสัมภาษณ์ ร้อยละ 70\nจัดทำผลงานผ่าน TCASFolio และส่ง URL TCASFolio หรือ ไฟล์ PDF หรือ จัดทำผลงานด้วยตนเอง และส่งแบบไฟล์ PDF หรือ URL สำหรับเข้าถึงผลงาน\nหมวดที่ 1 : ข้อมูลพื้นฐาน ข้อมูลส่วนตัว/คะแนนสอบ\nข้อมูลประวัติส่วนตัว\nหมวดที่ 2 : เรียงความ/คำนำ/Statement of purpose\nการบริหารธุรกิจและปัญญาประดิษฐ์ ไม่เกิน 300 คำ\nหมวดที่ 3 : หนังสือรับรอง (Recommendation letter)\nใบแสดงผลการเรียน ปพ.1 (ทั้งด้านหน้าและด้านหลัง)\nหมวดที่ 4 : กิจกรรม/รางวัล\nผลงานของผู้สมัครทางด้านที่เกี่ยวข้องกับการประยุกต์ใช้เทคโนโลยีสารสนเทศ เช่น การประยุกต์ใช้ AI ผลงาน Infographic การทำ Website Application การเขียนโปรแกรม การทำสื่อ Multimedia ฯลฯ ที่เป็นประโยชน์ต่อการพิจารณา และเตรียมผลงานเพื่อแสดงต่อคณะกรรมการในวันสัมภาษณ์\nหมวดที่่ 5 : ข้อคำถาม\nไม่มี\nเอกสารประกอบการสัมภาษณ์\nบัตรประจำตัวประชาชน\nผู้เข้ารับการสัมภาษณ์ ต้องแสดงบัตรประจำตัวประชาชน หรือ บัตรประจำตัวนักเรียน เพื่อแสดงว่า เป็นตัวจริง ที่เข้ารับการสัมภาษณ์\nอื่น ๆ\nผู้เข้ารับการสัมภาษณ์ต้องเตรียมความพร้อม เพื่อแสดงผลงานในรูปแบบเต็มหรือตัวอย่างโปรแกรม ของตนเองทางด้านที่เกี่ยวข้องกับการประยุกต์ใช้เทคโนโลยีสารสนเทศ เช่น การประยุกต์ใช้ AI ผลงาน Infographic การทำ Website Application การเขียนโปรแกรม การทำสื่อ Multimedia ฯลฯ เพื่อแสดงต่อคณะกรรมการประกอบการพิจารณาในวันสัมภาษณ์\n0"}'::jsonb, 'GPAX ≥ 3.00; Portfolio ไม่เกิน 10 หน้า; Portfolio 30% และสัมภาษณ์ 70%',
-    'https://admission.reg.cmu.ac.th/tcas/findfaculty.php?ro=1&tsearch=&tsearch_occ=&tfac=&tcur=&pgroup=&grouptype=TCAS', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'cmu-modern-it'
-where p.code = 'cmu-00412102103010-1-1'
 on conflict (project_id, faculty_id) do update set
         min_gpax = excluded.min_gpax,
         gpax_requirements = excluded.gpax_requirements,

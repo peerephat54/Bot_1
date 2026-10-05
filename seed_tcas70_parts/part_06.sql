@@ -1,6 +1,39 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 6 of 9; run parts in numeric order.
+-- Supabase SQL Editor part 6 of 10; run parts in numeric order.
 begin;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 2.75, '{"วุฒิไทย-กำลังศึกษา":"อย่างน้อย 5 ภาคการศึกษา","วุฒิไทย-สำเร็จแล้ว":"6 ภาคการศึกษา","Grade 12 / Year 13 / GED":"ประกาศไม่กำหนดผลการเรียน"}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{}'::jsonb, '["วุฒิไทยใช้ผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา","รับ Grade 12 ระบบอเมริกัน, Year 13 ระบบอังกฤษ หรือ GED; ตารางประกาศไม่กำหนดแผนการเรียนและผลการเรียนสำหรับวุฒิเหล่านี้","ไม่กำหนดแผนการเรียน (สายสามัญเท่านั้น)"]'::jsonb, 'คณะกรรมการพิจารณาเฉพาะ Portfolio ที่อยู่ในระบบ KMITL Student iFolio เท่านั้น',
+    '{"portfolio_required":true,"portfolio_weight_percent":75,"interview_weight_percent":25,"transcript_weight_percent":0}'::jsonb, '["ผ่านการคัดเลือกโครงการพัฒนาอัจฉริยภาพทางวิทยาศาสตร์สำหรับเด็กและเยาวชนของ สวทช. หรือสมาคมวิทยาศาสตร์แห่งประเทศไทย","ผ่านการคัดเลือกการแข่งขันคณิตศาสตร์และวิทยาศาสตร์โอลิมปิกของ สสวท.","ผ่านการสอบและการอบรมโอลิมปิกวิชาการของ สอวน.","มีผลงานหรือรางวัลวิชาการด้านวิทยาศาสตร์-คณิตศาสตร์อย่างน้อย 1 รายการ; สำหรับวิทยาการคอมพิวเตอร์ต้องเป็นระดับจังหวัด ภูมิภาค ชาติ หรือนานาชาติ","ได้รับรางวัลหรือเกียรติบัตรจากงานที่คณะวิทยาศาสตร์ สจล. เป็นเจ้าภาพหรือเจ้าภาพร่วม ยกเว้น Esports","ได้รับรางวัลโครงการแข่งขันเพชรยอดมงกุฎ วิชาคณิตศาสตร์หรือวิทยาศาสตร์"]'::jsonb, '["ใบสมัครที่พิมพ์จากระบบ admission.reg.kmitl.ac.th","ใบแสดงผลการเรียนอย่างน้อย 5 ภาคการศึกษา หรือ 6 ภาคการศึกษาสำหรับผู้สำเร็จการศึกษา หรือหลักฐาน Grade 12 / Year 13 / GED","บัตรประจำตัวประชาชนของผู้สมัคร"]'::jsonb,
+    '["สอบสัมภาษณ์ 25%","Portfolio 75%"]'::jsonb, '{"จำนวนรับ":"วิทยาการคอมพิวเตอร์รวม 25 คนในรอบ 1.2 ทุกโครงการ; ประกาศไม่แยกจำนวนรายโครงการ","การเลือก":"เลือกได้ 1 โครงการ และเลือกอันดับสาขาวิชาได้สูงสุด 2 สาขา","ระบบ Portfolio":"KMITL Student iFolio","ข่าวประกาศทางการ":"news_id 4648"}'::jsonb, 'วุฒิไทย GPAX อย่างน้อย 2.75 และมีผลงานวิทยาศาสตร์-คณิตศาสตร์ตามประกาศ; Portfolio 75% + สัมภาษณ์ 25%',
+    'https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4648_2026_09_08-14-30-32_47f3b.pdf', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'kmitl-science-computer-science'
+where p.code = 'kmitl-science-cs-science-talent-1-2'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
 
 insert into public.admission_criteria (
     project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
@@ -2361,39 +2394,6 @@ select
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'ku-bangkhen-computer-science-special'
 where p.code = 'ku-bangkhen-science-network-1-1'
-on conflict (project_id, faculty_id) do update set
-        min_gpax = excluded.min_gpax,
-        gpax_requirements = excluded.gpax_requirements,
-        subject_gpax = excluded.subject_gpax,
-        min_english_score = excluded.min_english_score,
-        standardized_scores = excluded.standardized_scores,
-        applicant_qualifications = excluded.applicant_qualifications,
-        portfolio_requirements = excluded.portfolio_requirements,
-        portfolio_details = excluded.portfolio_details,
-        accepted_achievements = excluded.accepted_achievements,
-        required_documents = excluded.required_documents,
-        selection_methods = excluded.selection_methods,
-        additional_requirements = excluded.additional_requirements,
-        criteria_summary = excluded.criteria_summary,
-        official_announcement_url = excluded.official_announcement_url,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_criteria (
-    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
-    standardized_scores, applicant_qualifications, portfolio_requirements,
-    portfolio_details, accepted_achievements, required_documents,
-    selection_methods, additional_requirements, criteria_summary,
-    official_announcement_url, updated_at
-)
-select
-    p.id, m.id, 3, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
-    '{"TGAT1":{"ค่าน้ำหนัก":"15%"},"TGAT2":{"ค่าน้ำหนัก":"15%"},"TGAT3":{"ค่าน้ำหนัก":"5%"},"TPAT3":{"ค่าน้ำหนัก":"15%"}}'::jsonb, '["กำลังเรียนหรือจบ ม.6; ตารางไม่รับ ปวช., กศน. และวุฒิเทียบต่างประเทศ/นานาชาติ","หน่วยกิตข้อ 2.1: วิทยาศาสตร์ 22 และคณิตศาสตร์ 12; ข้อ 2.2: คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 — ไม่ระบุว่าเลือกข้อใดข้อหนึ่ง จึงต้องสอบถามคณะก่อนสรุปสิทธิ์"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''ตอบวิชาในวิทยาการคอมพิวเตอร์ที่สนใจพร้อมเหตุผล ไม่เกิน 200 ตัวอักษร'']',
-    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน หน้า–หลังพร้อมตราโรงเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","คะแนนภาษาอังกฤษ (ถ้ามี)"]'::jsonb,
-    '["Portfolio 50%","TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%","ต้องผ่านสัมภาษณ์"]'::jsonb, '["ตรวจหน่วยกิตกับคณะก่อนยืนยันสิทธิ์สมัคร; หลักสูตรอยู่ระหว่างปรับปรุง"]'::jsonb, 'GPAX อย่างน้อย 3.00; Portfolio 50%; TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%; ต้องผ่านสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
-    'https://www.tuadmissions.in.th/img/2026090101500188.pdf#page=61', now()
-from public.admission_projects p
-join public.faculties_and_majors m on m.code = 'tu-science-computer-science-special'
-where p.code = 'tu-direct-cs-special-2570'
 on conflict (project_id, faculty_id) do update set
         min_gpax = excluded.min_gpax,
         gpax_requirements = excluded.gpax_requirements,

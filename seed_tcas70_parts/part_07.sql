@@ -1,6 +1,39 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 7 of 9; run parts in numeric order.
+-- Supabase SQL Editor part 7 of 10; run parts in numeric order.
 begin;
+
+insert into public.admission_criteria (
+    project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
+    standardized_scores, applicant_qualifications, portfolio_requirements,
+    portfolio_details, accepted_achievements, required_documents,
+    selection_methods, additional_requirements, criteria_summary,
+    official_announcement_url, updated_at
+)
+select
+    p.id, m.id, 3, '{}'::jsonb, '{}'::jsonb, '{}'::jsonb,
+    '{"TGAT1":{"ค่าน้ำหนัก":"15%"},"TGAT2":{"ค่าน้ำหนัก":"15%"},"TGAT3":{"ค่าน้ำหนัก":"5%"},"TPAT3":{"ค่าน้ำหนัก":"15%"}}'::jsonb, '["กำลังเรียนหรือจบ ม.6; ตารางไม่รับ ปวช., กศน. และวุฒิเทียบต่างประเทศ/นานาชาติ","หน่วยกิตข้อ 2.1: วิทยาศาสตร์ 22 และคณิตศาสตร์ 12; ข้อ 2.2: คณิตศาสตร์ 12 และภาษาต่างประเทศ 9 — ไม่ระบุว่าเลือกข้อใดข้อหนึ่ง จึงต้องสอบถามคณะก่อนสรุปสิทธิ์"]'::jsonb, '[''ประวัติส่วนตัว/การศึกษา และ Statement of Purpose'', ''หลักฐานผลงาน กิจกรรม หรือรางวัลที่เกี่ยวข้อง'', ''ตอบวิชาในวิทยาการคอมพิวเตอร์ที่สนใจพร้อมเหตุผล ไม่เกิน 200 ตัวอักษร'']',
+    '{"max_pages":10,"max_file_mb":20,"รูปแบบ":"PDF รวม 1 ไฟล์","การนับหน้า":"ไม่เกิน 10 หน้า ไม่ระบุยกเว้นปก"}'::jsonb, '["หลักฐานผลงาน/รางวัล/กิจกรรมที่สัมพันธ์กับสาขา ตามหัวข้อ Portfolio ในประกาศ"]'::jsonb, '["ปพ.1/ระเบียนผลการเรียน หน้า–หลังพร้อมตราโรงเรียน","TCASFolio หรือ Portfolio พร้อมประวัติและ Statement of Purpose","หลักฐานผลงาน/รางวัล/กิจกรรมที่เกี่ยวข้อง","คะแนนภาษาอังกฤษ (ถ้ามี)"]'::jsonb,
+    '["Portfolio 50%","TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%","ต้องผ่านสัมภาษณ์"]'::jsonb, '["ตรวจหน่วยกิตกับคณะก่อนยืนยันสิทธิ์สมัคร; หลักสูตรอยู่ระหว่างปรับปรุง"]'::jsonb, 'GPAX อย่างน้อย 3.00; Portfolio 50%; TGAT1 15% + TGAT2 15% + TGAT3 5% + TPAT3 15%; ต้องผ่านสัมภาษณ์; GPAX อย่างเดียวไม่รับรองสิทธิ์สมัคร',
+    'https://www.tuadmissions.in.th/img/2026090101500188.pdf#page=61', now()
+from public.admission_projects p
+join public.faculties_and_majors m on m.code = 'tu-science-computer-science-special'
+where p.code = 'tu-direct-cs-special-2570'
+on conflict (project_id, faculty_id) do update set
+        min_gpax = excluded.min_gpax,
+        gpax_requirements = excluded.gpax_requirements,
+        subject_gpax = excluded.subject_gpax,
+        min_english_score = excluded.min_english_score,
+        standardized_scores = excluded.standardized_scores,
+        applicant_qualifications = excluded.applicant_qualifications,
+        portfolio_requirements = excluded.portfolio_requirements,
+        portfolio_details = excluded.portfolio_details,
+        accepted_achievements = excluded.accepted_achievements,
+        required_documents = excluded.required_documents,
+        selection_methods = excluded.selection_methods,
+        additional_requirements = excluded.additional_requirements,
+        criteria_summary = excluded.criteria_summary,
+        official_announcement_url = excluded.official_announcement_url,
+        updated_at = excluded.updated_at;
 
 insert into public.admission_criteria (
     project_id, faculty_id, min_gpax, gpax_requirements, subject_gpax, min_english_score,
@@ -4016,7 +4049,7 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'ส่งเอกสารให้ครบ', '2026-11-19', '2026-11-25', 'ภายใน 25 พ.ย. 2569', 'confirmed', now()
+select p.id, 'ส่งเอกสารให้ครบ', '2026-11-25', '2026-11-25', 'ส่งหลังสมัครและชำระเงินได้ ภายใน 25 พ.ย. 2569 (วันสุดท้าย)', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmutnb-fitm-portfolio-1'
 on conflict (project_id, event_name) do update set
@@ -4656,84 +4689,6 @@ insert into public.admission_timeline (
 select p.id, 'ยืนยันสิทธิ์ในระบบรับสมัครนิสิตใหม่ มศว', '2026-11-17', '2026-11-18', '17 - 18 พ.ย. 2569', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'swu-ece-climate-environment-special-talent-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้ผ่านการคัดเลือกโดย ทปอ.', '2027-03-10', null, '10 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-ece-climate-environment-special-talent-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ยืนยันสิทธิ์ในระบบ ทปอ.', '2027-03-10', '2027-03-11', '10 - 11 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-ece-climate-environment-special-talent-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผู้มีสิทธิ์เข้าศึกษา', '2027-03-14', null, '14 มี.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-ece-climate-environment-special-talent-1-1'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'รับสมัคร', '2026-12-01', '2026-12-16', '1 - 16 ธ.ค. 2569 (ปิด 15.00 น. วันที่ 16 ธ.ค.)', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-ece-climate-environment-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'ประกาศผลผู้มีสิทธิ์สอบสัมภาษณ์', '2027-01-26', null, '26 ม.ค. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-ece-climate-environment-good-student-1-2'
-on conflict (project_id, event_name) do update set
-    start_on = excluded.start_on,
-    end_on = excluded.end_on,
-    date_display = excluded.date_display,
-    date_status = excluded.date_status,
-    updated_at = now();
-
-insert into public.admission_timeline (
-    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
-)
-select p.id, 'สอบสัมภาษณ์', '2027-02-13', '2027-02-14', '13 - 14 ก.พ. 2570', 'confirmed', now()
-from public.admission_projects p
-where p.code = 'swu-ece-climate-environment-good-student-1-2'
 on conflict (project_id, event_name) do update set
     start_on = excluded.start_on,
     end_on = excluded.end_on,

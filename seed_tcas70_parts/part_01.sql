@@ -1,5 +1,5 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 1 of 9; run parts in numeric order.
+-- Supabase SQL Editor part 1 of 10; run parts in numeric order.
 begin;
 
 insert into public.universities (name, short_name, logo_url)

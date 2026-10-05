@@ -1,5 +1,5 @@
 -- Generated from datasets/tcas70_admissions.json
--- Supabase SQL Editor part 2 of 9; run parts in numeric order.
+-- Supabase SQL Editor part 2 of 10; run parts in numeric order.
 begin;
 
 insert into public.admission_projects (
@@ -121,8 +121,8 @@ select
     u.id, 'kmitl-it-ability-1-1', 'kmitl-it-ability', 'โครงการนักเรียนมีความสามารถด้านเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-08-31', '2026-10-05T20:07:55+07:00', 'ตรวจ PDF ทางการ 8 หน้าและหน้าเว็บคณะวันที่ 5 ต.ค. 2569: จำนวนรับ GPAX ผลงาน ค่าเรียน และสัดส่วนคะแนน; ตารางหน้า 5 ระบุสิทธิ์สัมภาษณ์ 21 ธ.ค. 2569 ต่างจาก HTML ที่แสดง 2570; Clearing House ตารางหน้า 5 ระบุ 10–11 มี.ค. แต่ข้อ 7 หน้า 8 ระบุ 25–31 มี.ค. จึงต้องตรวจยืนยันกับคณะ; GED หน้า 2 ระบุรายวิชา 145 ต่างจาก HTML 140', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -157,8 +157,8 @@ select
     u.id, 'kmitl-academic-it-1-1', 'kmitl-academic-it', 'โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-08-31', '2026-10-05T20:07:55+07:00', 'ตรวจ PDF ทางการ 8 หน้าและหน้าเว็บคณะวันที่ 5 ต.ค. 2569: จำนวนรับ GPAX ผลงาน ค่าเรียน และสัดส่วนคะแนน; ตารางหน้า 5 ระบุสิทธิ์สัมภาษณ์ 21 ธ.ค. 2569 ต่างจาก HTML ที่แสดง 2570; Clearing House ตารางหน้า 5 ระบุ 10–11 มี.ค. แต่ข้อ 7 หน้า 8 ระบุ 25–31 มี.ค. จึงต้องตรวจยืนยันกับคณะ; GED หน้า 2 ระบุรายวิชา 145 ต่างจาก HTML 140', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -193,8 +193,8 @@ select
     u.id, 'kmitl-english-it-1-1', 'kmitl-english-it', 'โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-08-31', '2026-10-05T20:07:55+07:00', 'ตรวจ PDF ทางการ 8 หน้าและหน้าเว็บคณะวันที่ 5 ต.ค. 2569: จำนวนรับ GPAX ผลงาน ค่าเรียน และสัดส่วนคะแนน; ตารางหน้า 5 ระบุสิทธิ์สัมภาษณ์ 21 ธ.ค. 2569 ต่างจาก HTML ที่แสดง 2570; Clearing House ตารางหน้า 5 ระบุ 10–11 มี.ค. แต่ข้อ 7 หน้า 8 ระบุ 25–31 มี.ค. จึงต้องตรวจยืนยันกับคณะ; GED หน้า 2 ระบุรายวิชา 145 ต่างจาก HTML 140', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -2855,10 +2855,10 @@ insert into public.admission_projects (
 )
 select
     u.id, 'kmutnb-fitm-portfolio-1', 'kmutnb-fitm-portfolio', 'โครงการ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม', 2570, 1,
-    '1 Portfolio', '1', 'Portfolio', 'official',
-    true, null, null,
+    '1.1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 4, null,
     null, 'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf', 'ประกาศ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม ปีการศึกษา 2570',
-    null, '2026-09-27T12:48:48+07:00', 'ไม่มีสอบข้อเขียน ใช้ Portfolio และสัมภาษณ์ออนไลน์; ค่าเทอมแตกต่างรายหลักสูตรจึงแสดงในหมายเหตุรายสาขา', now()
+    null, '2026-10-05T20:07:55+07:00', 'ตรวจประกาศ PDF ทางการวันที่ 5 ต.ค. 2569: TCAS 1.1 เลือกได้ไม่เกิน 4 อันดับ; IT 15 คน INE 5 คน; ไม่มีข้อเขียนและไม่ระบุ GPAX ขั้นต่ำ; ตรวจวันสมัคร สัมภาษณ์ ค่าเรียน และยืนยันสิทธิ์ตรงกับประกาศ; กำหนดส่งเอกสารเป็นวันสุดท้าย ไม่ใช่ช่วงเริ่ม 19 พ.ย.', now()
 from public.universities u
 where u.short_name = 'KMUTNB'
 on conflict (code) do update set
@@ -3579,42 +3579,6 @@ select
     true, null, 600,
     null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
     '2026-08-07', '2026-09-27T12:48:48+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 160; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 2 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
-from public.universities u
-where u.short_name = 'SWU'
-on conflict (code) do update set
-        university_id = excluded.university_id,
-        group_code = excluded.group_code,
-        name = excluded.name,
-        academic_year = excluded.academic_year,
-        tcas_round = excluded.tcas_round,
-        round_label = excluded.round_label,
-        round_variant = excluded.round_variant,
-        application_type = excluded.application_type,
-        publication_status = excluded.publication_status,
-        is_visible = excluded.is_visible,
-        selection_order_limit = excluded.selection_order_limit,
-        application_fee = excluded.application_fee,
-        tuition_fee_per_semester = excluded.tuition_fee_per_semester,
-        source_url = excluded.source_url,
-        source_title = excluded.source_title,
-        source_published_at = excluded.source_published_at,
-        source_checked_at = excluded.source_checked_at,
-        data_notes = excluded.data_notes,
-        updated_at = excluded.updated_at;
-
-insert into public.admission_projects (
-    university_id, code, group_code, name, academic_year, tcas_round,
-    round_label, round_variant, application_type, publication_status, is_visible,
-    selection_order_limit, application_fee, tuition_fee_per_semester,
-    source_url, source_title, source_published_at, source_checked_at,
-    data_notes, updated_at
-)
-select
-    u.id, 'swu-engineering-chemical-good-student-1-2', 'swu-engineering-chemical-good-student', 'โครงการเด็กดีมีที่เรียน - วิศวกรรมเคมี • TCAS 1.2', 2570, 1,
-    '1 Portfolio', '1.2', 'Portfolio', 'official',
-    true, null, 600,
-    null, 'https://admission.swu.ac.th/file_staff_upload/file_news/1720260925041014.pdf', 'ประกาศรับสมัครเข้าเป็นนิสิตระดับปริญญาตรี TCAS รอบที่ 1 Portfolio ประจำปีการศึกษา 2570',
-    '2026-08-07', '2026-09-27T12:48:48+07:00', 'ประกาศทางการ มศว. TCAS70 หน้า 165; ตารางแผนการรับนิสิตหน้า 12 ระบุจำนวนรับของโครงการ/สาขานี้ 15 คน; ค่าสมัคร 600 บาท ค่าเล่าเรียนไม่ระบุในประกาศฉบับนี้', now()
 from public.universities u
 where u.short_name = 'SWU'
 on conflict (code) do update set
