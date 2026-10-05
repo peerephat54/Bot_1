@@ -367,6 +367,27 @@ where p.code = {project_code}
     return "\n".join(statements)
 
 
+def _seed_statements(body):
+    """Split generated INSERT statements outside sql_text() single-quoted values."""
+    statements = []
+    quoted = False
+    start = index = 0
+    while index < len(body):
+        char = body[index]
+        if char == "'":
+            if quoted and index + 1 < len(body) and body[index + 1] == "'":
+                index += 2
+                continue
+            quoted = not quoted
+        elif char == ";" and not quoted:
+            statements.append(body[start:index + 1].strip())
+            start = index + 1
+        index += 1
+    if quoted or body[start:].strip():
+        raise ValueError("generated SQL contains an incomplete statement")
+    return statements
+
+
 def split_for_sql_editor(sql, max_chars=200_000):
     """Split the generated SQL at statement boundaries for Supabase SQL Editor."""
     try:
@@ -374,13 +395,26 @@ def split_for_sql_editor(sql, max_chars=200_000):
     except IndexError as error:
         raise ValueError("generated SQL is missing begin/commit markers") from error
 
-    statements = body.split("\n\n") if body else []
+    statements = _seed_statements(body)
+    def wrap(group, index, total):
+        return "\n".join([
+            "-- Generated from datasets/tcas70_admissions.json",
+            f"-- Supabase SQL Editor part {index} of {total}; run parts in numeric order.",
+            "begin;", "", "\n\n".join(group), "", "commit;", "",
+        ])
+
+    # Reserve the wrapper, including the longest possible part number.
+    budget = max_chars - len(wrap([], len(statements), len(statements)))
+    if budget <= 0:
+        raise ValueError("SQL Editor limit is too small for the transaction wrapper")
     groups = []
     current = []
     current_size = 0
     for statement in statements:
         statement_size = len(statement) + 2
-        if current and current_size + statement_size > max_chars:
+        if len(statement) > budget:
+            raise ValueError("a single SQL statement exceeds the SQL Editor limit")
+        if current and current_size + statement_size > budget:
             groups.append(current)
             current = []
             current_size = 0
@@ -392,30 +426,17 @@ def split_for_sql_editor(sql, max_chars=200_000):
     chunks = []
     total = len(groups)
     for index, group in enumerate(groups, start=1):
-        chunks.append(
-            "\n".join(
-                [
-                    "-- Generated from datasets/tcas70_admissions.json",
-                    f"-- Supabase SQL Editor part {index} of {total}; run parts in numeric order.",
-                    "begin;",
-                    "",
-                    "\n\n".join(group),
-                    "",
-                    "commit;",
-                    "",
-                ]
-            )
-        )
+        chunks.append(wrap(group, index, total))
     return chunks
 
 
 def write_sql_editor_parts(sql, output_path):
+    chunks = split_for_sql_editor(sql)
     parts_directory = output_path.with_name(output_path.stem + "_parts")
     parts_directory.mkdir(parents=True, exist_ok=True)
     for stale in parts_directory.glob("part_*.sql"):
         stale.unlink()
 
-    chunks = split_for_sql_editor(sql)
     for index, chunk in enumerate(chunks, start=1):
         (parts_directory / f"part_{index:02d}.sql").write_text(
             chunk, encoding="utf-8", newline="\n"
