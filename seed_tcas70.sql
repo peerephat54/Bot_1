@@ -3597,8 +3597,8 @@ select
     u.id, 'kmitl-it-ability-1-1', 'kmitl-it-ability', 'โครงการนักเรียนมีความสามารถด้านเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-08-31', '2026-10-05T20:07:55+07:00', 'ตรวจ PDF ทางการ 8 หน้าและหน้าเว็บคณะวันที่ 5 ต.ค. 2569: จำนวนรับ GPAX ผลงาน ค่าเรียน และสัดส่วนคะแนน; ตารางหน้า 5 ระบุสิทธิ์สัมภาษณ์ 21 ธ.ค. 2569 ต่างจาก HTML ที่แสดง 2570; Clearing House ตารางหน้า 5 ระบุ 10–11 มี.ค. แต่ข้อ 7 หน้า 8 ระบุ 25–31 มี.ค. จึงต้องตรวจยืนยันกับคณะ; GED หน้า 2 ระบุรายวิชา 145 ต่างจาก HTML 140', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3633,8 +3633,8 @@ select
     u.id, 'kmitl-academic-it-1-1', 'kmitl-academic-it', 'โครงการนักเรียนที่มีศักยภาพทางวิชาการและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 3, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-08-31', '2026-10-05T20:07:55+07:00', 'ตรวจ PDF ทางการ 8 หน้าและหน้าเว็บคณะวันที่ 5 ต.ค. 2569: จำนวนรับ GPAX ผลงาน ค่าเรียน และสัดส่วนคะแนน; ตารางหน้า 5 ระบุสิทธิ์สัมภาษณ์ 21 ธ.ค. 2569 ต่างจาก HTML ที่แสดง 2570; Clearing House ตารางหน้า 5 ระบุ 10–11 มี.ค. แต่ข้อ 7 หน้า 8 ระบุ 25–31 มี.ค. จึงต้องตรวจยืนยันกับคณะ; GED หน้า 2 ระบุรายวิชา 145 ต่างจาก HTML 140', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -3669,8 +3669,8 @@ select
     u.id, 'kmitl-english-it-1-1', 'kmitl-english-it', 'โครงการนักเรียนที่มีความสามารถด้านภาษาอังกฤษและเทคโนโลยีสารสนเทศ', 2570, 1,
     '1-1 Portfolio', '1.1', 'Portfolio', 'official',
     true, 2, 300,
-    32000, 'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
-    '2026-09-01', '2026-10-03T00:00:00+07:00', 'ตรวจซ้ำจากหน้าเว็บคณะ IT KMITL TCAS70 ที่เข้าถึงได้เมื่อ 3 ต.ค. 2569; รายละเอียดโครงการ จำนวนรับ คุณสมบัติ และกำหนดการตรงกับข้อมูลเดิม; ใช้ประกาศทางการเป็นหลักฐานประกอบ', now()
+    32000, 'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', 'ประกาศรับสมัครคัดเลือกบุคคลเข้าศึกษาต่อหลักสูตรวิทยาศาสตรบัณฑิต รอบที่ 1-1 Portfolio คณะเทคโนโลยีสารสนเทศ ประจำปีการศึกษา 2570',
+    '2026-08-31', '2026-10-05T20:07:55+07:00', 'ตรวจ PDF ทางการ 8 หน้าและหน้าเว็บคณะวันที่ 5 ต.ค. 2569: จำนวนรับ GPAX ผลงาน ค่าเรียน และสัดส่วนคะแนน; ตารางหน้า 5 ระบุสิทธิ์สัมภาษณ์ 21 ธ.ค. 2569 ต่างจาก HTML ที่แสดง 2570; Clearing House ตารางหน้า 5 ระบุ 10–11 มี.ค. แต่ข้อ 7 หน้า 8 ระบุ 25–31 มี.ค. จึงต้องตรวจยืนยันกับคณะ; GED หน้า 2 ระบุรายวิชา 145 ต่างจาก HTML 140', now()
 from public.universities u
 where u.short_name = 'KMITL'
 on conflict (code) do update set
@@ -6331,10 +6331,10 @@ insert into public.admission_projects (
 )
 select
     u.id, 'kmutnb-fitm-portfolio-1', 'kmutnb-fitm-portfolio', 'โครงการ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม', 2570, 1,
-    '1 Portfolio', '1', 'Portfolio', 'official',
-    true, null, null,
+    '1.1 Portfolio', '1.1', 'Portfolio', 'official',
+    true, 4, null,
     null, 'https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf', 'ประกาศ Portfolio คณะเทคโนโลยีและการจัดการอุตสาหกรรม ปีการศึกษา 2570',
-    null, '2026-09-27T12:48:48+07:00', 'ไม่มีสอบข้อเขียน ใช้ Portfolio และสัมภาษณ์ออนไลน์; ค่าเทอมแตกต่างรายหลักสูตรจึงแสดงในหมายเหตุรายสาขา', now()
+    null, '2026-10-05T20:07:55+07:00', 'ตรวจประกาศ PDF ทางการวันที่ 5 ต.ค. 2569: TCAS 1.1 เลือกได้ไม่เกิน 4 อันดับ; IT 15 คน INE 5 คน; ไม่มีข้อเขียนและไม่ระบุ GPAX ขั้นต่ำ; ตรวจวันสมัคร สัมภาษณ์ ค่าเรียน และยืนยันสิทธิ์ตรงกับประกาศ; กำหนดส่งเอกสารเป็นวันสุดท้าย ไม่ใช่ช่วงเริ่ม 19 พ.ย.', now()
 from public.universities u
 where u.short_name = 'KMUTNB'
 on conflict (code) do update set
@@ -10491,9 +10491,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10524,9 +10524,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10557,9 +10557,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":60},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00 และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-it-ability-1-1'
@@ -10590,9 +10590,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":40},{"name":"SAT","weight_percent":20},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10623,9 +10623,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":40},{"name":"SAT","weight_percent":20},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-dsba'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10656,9 +10656,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{}'::jsonb,
     '{"SAT":{"minimum":1100,"max_age_years":2}}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","SAT","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผล SAT","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":40},{"name":"SAT","weight_percent":20},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00, SAT ≥ 1,100 (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-academic-it-1-1'
@@ -10689,9 +10689,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{"IELTS":6,"TOEFL iBT":79,"TOEFL PBT":550,"TOEIC":785,"CU-TEP":90,"KMITL-TEP":100}'::jsonb,
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":40},{"name":"คะแนนภาษาอังกฤษ","weight_percent":20},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-it'
 where p.code = 'kmitl-english-it-1-1'
@@ -10722,9 +10722,9 @@ insert into public.admission_criteria (
 select
     p.id, m.id, 3, '{"studying_semesters":4,"graduated_semesters":6}'::jsonb, '{}'::jsonb, '{"IELTS":6,"TOEFL iBT":79,"TOEFL PBT":550,"TOEIC":785,"CU-TEP":90,"KMITL-TEP":100}'::jsonb,
     '{"english_score_max_age_years":2}'::jsonb, '["กำลังศึกษา ม.6 สำเร็จ ม.6 หรือเทียบเท่า","ผลงานต้องเกิดตั้งแต่ปี 2567 ถึงปัจจุบัน"]'::jsonb, 'Portfolio และหลักฐานผลงานด้านคอมพิวเตอร์/IT; เลือก Highlight ใน iFolio 3 รายการ',
-    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน"]'::jsonb,
-    '["Portfolio","คะแนนภาษาอังกฤษ","สัมภาษณ์"]'::jsonb, '{}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
-    'https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1', now()
+    '{"ifolio_highlights":3}'::jsonb, '["สิทธิบัตร อนุสิทธิบัตร หรือรางวัลนวัตกรรม","ซอฟต์แวร์หรือระบบใช้งานจริงพร้อมใบรับรอง","การแข่งขันคณิตศาสตร์ คอมพิวเตอร์ หรือ IT","การแข่งขันที่คณะ IT KMITL จัด","Bebras รอบชิงทุน ≥ 60","NSC รอบชิงชนะเลิศ","โครงงานนักวิทยาศาสตร์รุ่นเยาว์ตั้งแต่รอบนำเสนอ","Super AI Engineer รอบ 2 ขึ้นไป","ค่ายหรืออบรมที่เกี่ยวข้องพร้อมหลักฐาน"]'::jsonb, '["ปพ.1","บัตรประชาชนหรือหนังสือเดินทาง","Portfolio","ผลคะแนนภาษาอังกฤษ","หลักฐานผลงาน","สำเนาใบเปลี่ยนชื่อ-สกุลพร้อมรับรองสำเนา (เฉพาะชื่อในเอกสารไม่ตรงกัน)","Equivalence Certificate และ GPAX Equivalence Certificate (เฉพาะผู้ใช้วุฒิ GED)"]'::jsonb,
+    '[{"name":"Portfolio","weight_percent":40},{"name":"คะแนนภาษาอังกฤษ","weight_percent":20},{"name":"สัมภาษณ์","weight_percent":40}]'::jsonb, '{"minimum_total_selection_score":65,"ged_note":"ต้องสอบ GED ครบแล้ว; คะแนนรายวิชาหลัง 1 พ.ค. 2560: PDF ทางการระบุ 145 แต่หน้า HTML ระบุ 140 ต้องตรวจยืนยันกับคณะก่อนใช้คัดสิทธิ์","clearing_house_note":"กำหนดการในตาราง PDF และ HTML: 10–11 มี.ค. 2570; ข้อ 7 ใน PDF: 25–31 มี.ค. 2570 ข้อมูลขัดกัน ต้องตรวจยืนยันกับคณะ"}'::jsonb, 'GPAX ≥ 3.00, คะแนนภาษาอังกฤษตามเกณฑ์ (อายุไม่เกิน 2 ปี) และมีผลงานด้านคอมพิวเตอร์หรือเทคโนโลยีสารสนเทศตามรายการ ตั้งแต่ปี 2567 ถึงปัจจุบัน',
+    'https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf', now()
 from public.admission_projects p
 join public.faculties_and_majors m on m.code = 'kmitl-ait'
 where p.code = 'kmitl-english-it-1-1'
@@ -19907,7 +19907,7 @@ on conflict (project_id, event_name) do update set
 insert into public.admission_timeline (
     project_id, event_name, start_on, end_on, date_display, date_status, updated_at
 )
-select p.id, 'ส่งเอกสารให้ครบ', '2026-11-19', '2026-11-25', 'ภายใน 25 พ.ย. 2569', 'confirmed', now()
+select p.id, 'ส่งเอกสารให้ครบ', '2026-11-25', '2026-11-25', 'ส่งหลังสมัครและชำระเงินได้ ภายใน 25 พ.ย. 2569 (วันสุดท้าย)', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'kmutnb-fitm-portfolio-1'
 on conflict (project_id, event_name) do update set
@@ -30232,6 +30232,162 @@ insert into public.admission_timeline (
 select p.id, 'สละสิทธิ์ในระบบ myTCAS', '2027-03-12', '2027-03-12', '12 มี.ค. 2570', 'confirmed', now()
 from public.admission_projects p
 where p.code = 'cmu-00412401108040-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินค่าสมัคร', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569 ภายใน 23.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ Clearing House', null, null, 'ต้องตรวจยืนยัน: ตาราง PDF/HTML 10–11 มี.ค. 2570; ข้อ 7 PDF 25–31 มี.ค. 2570', 'disputed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินค่ายืนยันสิทธิ์เข้าศึกษา', '2027-03-25', '2027-03-31', '25–31 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-academic-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินค่าสมัคร', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569 ภายใน 23.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ Clearing House', null, null, 'ต้องตรวจยืนยัน: ตาราง PDF/HTML 10–11 มี.ค. 2570; ข้อ 7 PDF 25–31 มี.ค. 2570', 'disputed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินค่ายืนยันสิทธิ์เข้าศึกษา', '2027-03-25', '2027-03-31', '25–31 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-english-it-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินค่าสมัคร', '2026-10-01', '2026-11-30', '1 ต.ค.–30 พ.ย. 2569 ภายใน 23.00 น.', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ยืนยันสิทธิ์ Clearing House', null, null, 'ต้องตรวจยืนยัน: ตาราง PDF/HTML 10–11 มี.ค. 2570; ข้อ 7 PDF 25–31 มี.ค. 2570', 'disputed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ประกาศรายชื่อผู้มีสิทธิ์เข้าศึกษา', '2027-03-19', '2027-03-19', '19 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
+on conflict (project_id, event_name) do update set
+    start_on = excluded.start_on,
+    end_on = excluded.end_on,
+    date_display = excluded.date_display,
+    date_status = excluded.date_status,
+    updated_at = now();
+
+insert into public.admission_timeline (
+    project_id, event_name, start_on, end_on, date_display, date_status, updated_at
+)
+select p.id, 'ชำระเงินค่ายืนยันสิทธิ์เข้าศึกษา', '2027-03-25', '2027-03-31', '25–31 มี.ค. 2570', 'confirmed', now()
+from public.admission_projects p
+where p.code = 'kmitl-it-ability-1-1'
 on conflict (project_id, event_name) do update set
     start_on = excluded.start_on,
     end_on = excluded.end_on,
