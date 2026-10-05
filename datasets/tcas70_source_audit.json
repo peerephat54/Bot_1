@@ -1,6 +1,6 @@
 {
   "academic_year": 2570,
-  "checked_at": "2026-09-27T12:48:48+07:00",
+  "checked_at": "2026-10-05T20:07:55+07:00",
   "policy": {
     "primary_source_required": true,
     "official_domain_required_for_visible_records": true,
@@ -278,11 +278,11 @@
     },
     {
       "url": "https://www.it.kmitl.ac.th/th/admission/bachelor/portfolio1-1",
-      "publisher": "คณะเทคโนโลยีสารสนเทศ สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง",
+      "publisher": "คณะเทคโนโลยีสารสนเทศ สจล.",
       "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "source_checked_at": "2026-10-03T00:00:00+07:00",
-      "decision": "ตรวจซ้ำหน้า TCAS70 ของคณะ IT เมื่อ 3 ต.ค. 2569: พบ 3 ประเภทโครงการ จำนวนรับรายสาขา GPAX ผลงาน คะแนน SAT/ภาษาอังกฤษ เอกสาร และกำหนดการ; ใช้หน้าเว็บทางการปัจจุบันแทนลิงก์ PDF เดิมที่ตอบ 404"
+      "source_checked_at": "2026-10-05T20:07:55+07:00",
+      "decision": "เทียบกับ PDF ต้นฉบับวันที่ 5 ต.ค. 2569; ปีสิทธิ์สัมภาษณ์และ GED ใน HTML ไม่ตรง PDF; บันทึกข้อขัดแย้ง ไม่ใช้ HTML เป็นเกณฑ์เดี่ยว"
     },
     {
       "url": "https://www1.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_01-16-08-48_acc4a.pdf",
@@ -671,11 +671,11 @@
     },
     {
       "url": "https://admission.kmutnb.ac.th/sites/default/files/2026-08/Portfolio-R1.pdf",
-      "publisher": "คณะเทคโนโลยีและการจัดการอุตสาหกรรม มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ",
-      "classification": "imported_primary",
+      "publisher": "คณะเทคโนโลยีและการจัดการอุตสาหกรรม มจพ.",
+      "classification": "verified_existing_primary",
       "academic_year": 2570,
-      "decision": "นำเข้าเทคโนโลยีสารสนเทศ 15 คนและวิศวกรรมสารสนเทศและเครือข่าย 5 คน พร้อมกำหนดการและค่าเทอมรายหลักสูตร",
-      "source_checked_at": "2026-09-27"
+      "decision": "อ่าน PDF ทางการ 5 หน้าวันที่ 5 ต.ค. 2569; ตรวจ TCAS 1.1 เลือกได้ 4 อันดับ จำนวนรับ IT/INE ค่าเรียน เอกสาร สัมภาษณ์ และวันยืนยันสิทธิ์",
+      "source_checked_at": "2026-10-05T20:07:55+07:00"
     },
     {
       "url": "https://admission.swu.ac.th/admissions2/",
@@ -922,6 +922,14 @@
       "academic_year": 2570,
       "source_checked_at": "2026-09-14T21:03:22+07:00",
       "decision": "หน้ารวมกำหนดการ Undergraduate แสดง Inter Portfolio 1 วันที่ 2 พ.ย.–2 ธ.ค. 2569 ซึ่งต่างจาก PDF OSP เฉพาะโครงการที่ระบุ 3 พ.ย.–3 ธ.ค.; ไม่ใช้แทนวันในโครงการ OSP"
+    },
+    {
+      "url": "https://www.reg.kmitl.ac.th/TCAS_old/news/files/2570_1_news1_4647_2026_09_30-18-59-12_aed0e.pdf",
+      "publisher": "สำนักทะเบียนและประมวลผล สจล.",
+      "classification": "verified_existing_primary",
+      "academic_year": 2570,
+      "source_checked_at": "2026-10-05T20:07:55+07:00",
+      "decision": "อ่าน PDF 8 หน้าและตรวจภาพตารางหน้า 5/ข้อ 7 หน้า 8 วันที่ 5 ต.ค. 2569; ใช้เกณฑ์คัดเลือกและเอกสารจาก PDF; ไม่ฟันธง Clearing House/GED ที่ขัดกับข้อความหรือ HTML; SHA256 8e9173b93990311e6f08af63ebebef648f8c3f293bce34fc9f9e092068477a34"
     }
   ]
 }
