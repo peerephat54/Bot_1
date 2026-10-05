@@ -339,6 +339,9 @@ def validate(data):
 
     for event in timeline:
         project_code = event.get("project_code")
+        event_name = event.get("event_name")
+        if not isinstance(event_name, str) or not event_name.strip():
+            errors.append(f"timeline event missing name: {project_code}")
         if project_code not in project_codes:
             errors.append(f"unknown project in timeline: {project_code}")
         if event.get("date_status") not in ALLOWED_DATE_STATUSES:
@@ -349,11 +352,15 @@ def validate(data):
         start_on = event.get("start_on")
         end_on = event.get("end_on")
         try:
-            start_date = date.fromisoformat(start_on) if start_on else None
-            end_date = date.fromisoformat(end_on) if end_on else None
-        except ValueError as error:
+            start_date = date.fromisoformat(start_on) if start_on is not None else None
+            end_date = date.fromisoformat(end_on) if end_on is not None else None
+        except (ValueError, TypeError) as error:
             errors.append(f"invalid date for {project_code}: {error}")
             continue
+        if event.get("date_status") == "confirmed" and not start_date:
+            errors.append(f"confirmed timeline missing start date: {project_code}/{event_name}")
+        if end_date and not start_date:
+            errors.append(f"timeline end without start date: {project_code}/{event_name}")
         if start_date and end_date and end_date < start_date:
             errors.append(f"timeline ends before it starts: {project_code}")
 

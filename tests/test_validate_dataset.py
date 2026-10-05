@@ -74,6 +74,28 @@ class DatasetValidationTests(unittest.TestCase):
             data["project_programs"][0]["slots_available"] = value
             self.assertEqual(validate(data)[0], [])
 
+    def test_confirmed_dates_cannot_be_missing_or_malformed(self):
+        for value in [None, "", 20261001, ["2026-10-01"], "2026-02-30"]:
+            with self.subTest(value=value):
+                data = sample_dataset()
+                data["timeline"][0]["start_on"] = value
+                self.assertTrue(validate(data)[0])
+
+    def test_unknown_dates_and_single_day_events_remain_valid(self):
+        data = sample_dataset()
+        data["timeline"][0].update(start_on=None, end_on=None, date_status="unknown")
+        self.assertEqual(validate(data)[0], [])
+        data["timeline"][0].update(start_on="2026-10-01", date_status="confirmed")
+        self.assertEqual(validate(data)[0], [])
+
+    def test_timeline_requires_name_and_ordered_range(self):
+        for overrides in [{"event_name": " "}, {"end_on": "2026-09-30"},
+                          {"start_on": None, "date_status": "unknown"}]:
+            with self.subTest(overrides=overrides):
+                data = sample_dataset()
+                data["timeline"][0].update(overrides)
+                self.assertTrue(validate(data)[0])
+
 
 if __name__ == "__main__":
     unittest.main()
