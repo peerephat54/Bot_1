@@ -138,6 +138,8 @@ def validate(data):
             errors.append(f"university must have one main campus: {university_code}")
     program_codes = {item.get("code") for item in programs}
     project_codes = {item.get("code") for item in projects}
+    programs_by_code = {item.get("code"): item for item in programs}
+    projects_by_code = {item.get("code"): item for item in projects}
     if duplicate_values(local_codes):
         errors.append("duplicate local runtime project code")
     for code in local_codes:
@@ -292,6 +294,12 @@ def validate(data):
             errors.append(f"unknown project in link: {project_code}")
         if program_code not in program_codes:
             errors.append(f"unknown program in link: {program_code}")
+        project = projects_by_code.get(project_code)
+        program = programs_by_code.get(program_code)
+        if project and program and (
+            project.get("university_short_name") != program.get("university_short_name")
+        ):
+            errors.append(f"project/program university mismatch: {project_code}/{program_code}")
         slots = link.get("slots_available")
         if slots is not None and (not isinstance(slots, int) or slots < 0):
             errors.append(f"invalid slots for {project_code}/{program_code}: {slots}")
