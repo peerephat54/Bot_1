@@ -301,7 +301,7 @@ def validate(data):
         ):
             errors.append(f"project/program university mismatch: {project_code}/{program_code}")
         slots = link.get("slots_available")
-        if slots is not None and (not isinstance(slots, int) or slots < 0):
+        if slots is not None and (type(slots) is not int or slots < 0):
             errors.append(f"invalid slots for {project_code}/{program_code}: {slots}")
 
     criteria_projects = set()
@@ -322,7 +322,9 @@ def validate(data):
                 f"criteria has no project/program link: {project_code}/{program_code}"
             )
         min_gpax = item.get("min_gpax")
-        if min_gpax is not None and not (0 <= min_gpax <= 4):
+        if min_gpax is not None and not (
+            type(min_gpax) in (int, float) and 0 <= min_gpax <= 4
+        ):
             errors.append(f"invalid min_gpax for {project_code}: {min_gpax}")
 
     missing_criteria = sorted(link_pairs - criteria_pairs)

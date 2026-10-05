@@ -46,6 +46,34 @@ class DatasetValidationTests(unittest.TestCase):
         errors, _ = validate(data)
         self.assertIn("project/program university mismatch: it-portfolio/ku-cs", errors)
 
+    def test_malformed_gpax_returns_errors_without_crashing(self):
+        for value in ["3.0", True, [], {}, -0.1, 4.1, float("nan"), float("inf")]:
+            with self.subTest(value=value):
+                data = sample_dataset()
+                data["criteria"][0]["min_gpax"] = value
+                errors, _ = validate(data)
+                self.assertTrue(any("invalid min_gpax" in error for error in errors))
+
+    def test_unknown_and_boundary_gpax_remain_valid(self):
+        for value in [None, 0, 4, 2.75]:
+            with self.subTest(value=value):
+                data = sample_dataset()
+                data["criteria"][0]["min_gpax"] = value
+                self.assertEqual(validate(data)[0], [])
+
+    def test_boolean_and_fractional_slots_are_not_seat_counts(self):
+        for value in [True, False, 1.5, "20", -1]:
+            with self.subTest(value=value):
+                data = sample_dataset()
+                data["project_programs"][0]["slots_available"] = value
+                self.assertTrue(any("invalid slots" in e for e in validate(data)[0]))
+
+    def test_unknown_and_zero_seats_are_valid(self):
+        for value in [None, 0]:
+            data = sample_dataset()
+            data["project_programs"][0]["slots_available"] = value
+            self.assertEqual(validate(data)[0], [])
+
 
 if __name__ == "__main__":
     unittest.main()
