@@ -6,7 +6,8 @@ import argparse
 import json
 import subprocess
 import sys
-from datetime import date
+import tempfile
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 try:
@@ -25,7 +26,8 @@ def import_is_allowed(report):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    default_output = ROOT / "tmp" / f"import_truth_report_{date.today().isoformat()}.json"
+    today = datetime.now(timezone(timedelta(hours=7))).date()
+    default_output = ROOT / "tmp" / f"import_truth_report_{today.isoformat()}.json"
     parser.add_argument("--output", type=Path, default=default_output)
     parser.add_argument("--timeout", type=int, default=12)
     parser.add_argument("--workers", type=int, default=8)
@@ -37,34 +39,45 @@ def main(argv=None):
     args = parser.parse_args(argv)
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    verify = subprocess.run(
-        [
-            sys.executable,
-            str(ROOT / "scripts" / "verify_import_truth.py"),
-            "--output", str(args.output),
-            "--timeout", str(args.timeout),
-            "--workers", str(args.workers),
-        ],
-        cwd=str(ROOT),
-        check=False,
-    )
-    validate = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "validate_dataset.py")],
-        cwd=str(ROOT),
-        check=False,
-    )
-    try:
-        report = json.loads(args.output.read_text(encoding="utf-8"))
-    except (FileNotFoundError, OSError, json.JSONDecodeError):
-        report = {}
+    # Each run owns a new report path; a failed verifier cannot reuse yesterday's ready report.
+    with tempfile.TemporaryDirectory(prefix="evidence-", dir=args.output.parent) as folder:
+        fresh_output = Path(folder) / "report.json"
+        verify = subprocess.run(
+            [
+                sys.executable,
+                str(ROOT / "scripts" / "verify_import_truth.py"),
+                "--output", str(fresh_output),
+                "--timeout", str(args.timeout),
+                "--workers", str(args.workers),
+            ],
+            cwd=str(ROOT),
+            check=False,
+        )
+        validation = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "validate_dataset.py")],
+            cwd=str(ROOT),
+            check=False,
+        )
+        try:
+            report = json.loads(fresh_output.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            print("No readable evidence report was created by this run; previous report was preserved.")
+            return 1
+        expected_status = {0: "ready", 2: "needs_review"}.get(verify.returncode)
+        if (
+            validation.returncode or not isinstance(report, dict)
+            or expected_status is None or report.get("status") != expected_status
+        ):
+            print("Evidence verification or dataset validation failed; previous report was preserved.")
+            return 1
+        fresh_output.replace(args.output)
+    print(f"Evidence report saved: {args.output}")
 
     if args.review_output and report:
         args.review_output.parent.mkdir(parents=True, exist_ok=True)
         args.review_output.write_text(render_report(report), encoding="utf-8")
         print(f"Review snapshot saved: {args.review_output}")
 
-    if verify.returncode or validate.returncode:
-        return 1
     if not import_is_allowed(report):
         print("Dataset facts were not changed; no import was authorized.")
         print("Evidence gate is not passed; keep current dataset and review the queue before import.")
