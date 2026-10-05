@@ -32,12 +32,32 @@ class ReviewReportTests(unittest.TestCase):
 
         output = render_report(report)
 
-        self.assertIn("TCAS2570", output)
+        self.assertIn("TCAS70 · ปีการศึกษา 2570", output)
         self.assertIn("ตรวจแหล่งข้อมูล: 2 แห่ง", output)
         self.assertIn("รอตรวจโดยคน: 1 รายการ", output)
         self.assertIn("แหล่งข้อมูลเกินรอบตรวจ: 1 แห่ง", output)
         self.assertIn("ยังไม่มีการแก้ข้อเท็จจริง", output)
         self.assertIn("example-1-1", output)
+
+    def test_multiline_and_pipe_text_cannot_break_review_table(self):
+        report = {"unresolved_records": [{
+            "record_type": "criteria", "code": "program|one\ntwo",
+            "reasons": ["ตรวจเอกสาร | GPAX\r\n<script>"],
+            "source_url": "https://example.ac.th/notice?a=1&b=2",
+        }]}
+        output = render_report(report)
+        self.assertIn("program\\|one<br>two", output)
+        self.assertIn("ตรวจเอกสาร \\| GPAX<br>&lt;script&gt;", output)
+        self.assertNotIn("<script>", output)
+
+    def test_reason_summary_counts_affected_records_once(self):
+        output = render_report({"unresolved_records": [
+            {"code": "one", "reasons": ["403", "403", "ต้องตรวจซ้ำ"]},
+            {"code": "two", "reasons": ["403"]},
+        ]})
+        self.assertIn("| 403 | 2 |", output)
+        self.assertIn("| ต้องตรวจซ้ำ | 1 |", output)
+        self.assertIn("| project", render_report({"unresolved_records": [{"record_type": "project"}]}))
 
 
 if __name__ == "__main__":

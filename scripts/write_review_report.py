@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 from collections import Counter
 from pathlib import Path
@@ -16,6 +17,13 @@ def _text(value, fallback="ไม่ระบุ"):
     return value or fallback
 
 
+def _table_text(value):
+    """Keep source text on one Markdown row, including multiline reasons and pipes."""
+    return html.escape(_text(value)).replace("\\", "\\\\").replace("|", "\\|").replace(
+        "\r\n", "\n"
+    ).replace("\r", "\n").replace("\n", "<br>")
+
+
 def render_report(report: dict) -> str:
     """Return a bounded, human-readable report without importing any facts."""
     report = report or {}
@@ -23,9 +31,15 @@ def render_report(report: dict) -> str:
     counts = report.get("record_status_counts") or {}
     unresolved = report.get("unresolved_records") or []
     universities = Counter(item.get("university") or "ไม่ระบุ" for item in unresolved)
+    reason_counts = Counter(
+        _text(reason)
+        for item in unresolved for reason in set(item.get("reasons") or ["ต้องตรวจหลักฐาน"])
+    )
+    year = report.get("academic_year")
+    cycle = f"{year % 100:02d}" if type(year) is int and year >= 2500 else _text(year)
 
     lines = [
-        f"# Source review — TCAS{_text(report.get('academic_year'))}",
+        f"# Source review — TCAS{cycle} · ปีการศึกษา {_text(year)}",
         "",
         f"- ตรวจรายงานเมื่อ: {_text(report.get('generated_at'))}",
         f"- สถานะด่านหลักฐาน: **{_text(report.get('status'))}**",
@@ -53,13 +67,20 @@ def render_report(report: dict) -> str:
     else:
         lines.append("- ไม่มีรายการค้างตรวจ")
 
+    if reason_counts:
+        lines.extend(["", "### สาเหตุที่ต้องตรวจ", "", "| สาเหตุ | จำนวนรายการ |", "|---|---|"])
+        lines.extend(
+            f"| {_table_text(reason)} | {count} |"
+            for reason, count in sorted(reason_counts.items(), key=lambda pair: (-pair[1], pair[0]))
+        )
+
     lines.extend(["", "| ประเภท | รหัส | เหตุผล | แหล่งข้อมูล |", "|---|---|---|---|"])
     for item in unresolved:
         reasons = "; ".join(item.get("reasons") or ["ต้องตรวจหลักฐาน"])
         url = item.get("source_url") or "ไม่มี URL"
         lines.append(
-            f"| {_text(item.get('record_type'))} | {_text(item.get('code'))} | "
-            f"{reasons} | {url} |"
+            f"| {_table_text(item.get('record_type'))} | {_table_text(item.get('code'))} | "
+            f"{_table_text(reasons)} | {_table_text(url)} |"
         )
     lines.extend([
         "",
