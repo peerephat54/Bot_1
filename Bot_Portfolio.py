@@ -403,14 +403,27 @@ class MyBot(discord.Client):
             self.navigation_cache_loaded_at = time.monotonic()
             return programs
 
+    async def preload_runtime_caches(self):
+        """Warm the two cold-start datasets concurrently before commands arrive."""
+        navigation, recommendations = await asyncio.gather(
+            self.load_navigation_programs(timeout=15),
+            asyncio.wait_for(
+                asyncio.to_thread(fetch_recommendation_projects),
+                timeout=15,
+            ),
+            return_exceptions=True,
+        )
+        if isinstance(navigation, Exception):
+            logger.warning("navigation cache preload failed error=%s", type(navigation).__name__)
+        if isinstance(recommendations, Exception):
+            logger.warning("recommendation cache preload failed error=%s", type(recommendations).__name__)
+        return navigation, recommendations
+
     async def setup_hook(self):
         from market_bot import register_market_commands
 
         register_market_commands(self.tree)
-        try:
-            await self.load_navigation_programs(timeout=15)
-        except Exception:
-            logger.exception("could not preload navigation choices")
+        await self.preload_runtime_caches()
         await self.tree.sync()
         self.reminder_task = self.loop.create_task(self.deadline_reminder_loop())
         print("Synced slash commands successfully!")

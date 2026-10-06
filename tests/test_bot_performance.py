@@ -2,12 +2,23 @@ import asyncio
 import time
 import unittest
 from concurrent.futures import ThreadPoolExecutor
-from unittest.mock import patch
+from unittest.mock import AsyncMock, patch
 
 from test_grade_screening import app
 
 
 class BotNavigationCacheTests(unittest.IsolatedAsyncioTestCase):
+    async def test_cold_start_preloads_navigation_and_recommendations(self):
+        bot = app.MyBot()
+        try:
+            with patch.object(bot, "load_navigation_programs", new=AsyncMock(return_value=[])) as navigation:
+                with patch.object(app, "fetch_recommendation_projects", return_value=[]) as recommendations:
+                    await bot.preload_runtime_caches()
+            navigation.assert_awaited_once_with(timeout=15)
+            recommendations.assert_called_once_with()
+        finally:
+            await bot.close()
+
     async def test_simultaneous_navigation_refreshes_share_one_database_load(self):
         bot = app.MyBot()
         calls = []
