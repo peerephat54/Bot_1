@@ -1,5 +1,7 @@
 import unittest
 from datetime import date
+from unittest.mock import patch
+import question_answering
 
 from question_answering import (
     answer_question,
@@ -9,6 +11,7 @@ from question_answering import (
     extract_round_filter,
     find_programs,
     _load_local_projects,
+    _local_projects_index,
 )
 
 
@@ -133,6 +136,15 @@ class QuestionAnsweringTests(unittest.TestCase):
         projects = _load_local_projects({"code": "mu-ict"})
         self.assertTrue(projects)
         self.assertTrue(any(item.get("code") == "muict-ict-portfolio" for item in projects))
+
+    def test_local_project_join_is_built_once(self):
+        _local_projects_index.cache_clear()
+        with patch.object(question_answering, "_read_catalog", wraps=question_answering._read_catalog) as reader:
+            first = _load_local_projects({"code": "mu-ict"})
+            second = _load_local_projects({"code": "mu-ict"})
+        self.assertEqual(len(first), len(second))
+        self.assertEqual(reader.call_count, 1)
+        _local_projects_index.cache_clear()
 
     def test_preloaded_candidates_answer_without_per_program_loader_calls(self):
         candidate = {

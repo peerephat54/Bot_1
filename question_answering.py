@@ -1,6 +1,7 @@
 """Fast, deterministic, source-backed answers for natural-language TCAS questions."""
 
 from datetime import date
+from copy import deepcopy
 import json
 import re
 from functools import lru_cache
@@ -204,17 +205,23 @@ def _read_catalog():
         return {}
 
 
-def _load_local_projects(program):
-    """Load joined project facts locally so common questions avoid network I/O."""
+@lru_cache(maxsize=1)
+def _local_projects_index():
+    """Build the local project join once for fast /ask fallback answers."""
     catalog = _read_catalog()
-    program_code = str(program.get("code") or "")
-    project_codes = [
-        row.get("project_code")
-        for row in catalog.get("project_programs") or []
-        if row.get("program_code") == program_code and row.get("project_code")
-    ]
-    if not project_codes:
-        return []
+    project_programs = catalog.get("project_programs") or []
+    project_codes_by_program = {}
+    for row in project_programs:
+        program_code = row.get("program_code")
+        project_code = row.get("project_code")
+        if program_code and project_code:
+            project_codes_by_program.setdefault(program_code, []).append(project_code)
+
+    project_codes = {
+        project_code
+        for codes in project_codes_by_program.values()
+        for project_code in codes
+    }
     projects = {
         item.get("code"): dict(item)
         for item in catalog.get("projects") or []
@@ -230,24 +237,34 @@ def _load_local_projects(program):
     for item in catalog.get("timeline") or []:
         if item.get("project_code") in projects:
             timeline_by_project.setdefault(item["project_code"], []).append(item)
-    links = {
-        row.get("project_code"): row
-        for row in catalog.get("project_programs") or []
-        if row.get("program_code") == program_code
-    }
-    result = []
-    for code in project_codes:
-        project = projects.get(code)
-        if not project:
-            continue
-        project["selected_criteria"] = dict(criteria_by_project.get(code) or {})
-        project["admission_timeline"] = timeline_by_project.get(code) or []
-        project.update({
-            "slots_available": links.get(code, {}).get("slots_available"),
-            "program_notes": links.get(code, {}).get("program_notes"),
-        })
-        result.append(project)
-    return result
+
+    indexed = {}
+    for program_code, codes in project_codes_by_program.items():
+        links = {
+            row.get("project_code"): row
+            for row in project_programs
+            if row.get("program_code") == program_code
+        }
+        rows = []
+        for code in codes:
+            project = projects.get(code)
+            if not project:
+                continue
+            project["selected_criteria"] = dict(criteria_by_project.get(code) or {})
+            project["admission_timeline"] = timeline_by_project.get(code) or []
+            project.update({
+                "slots_available": links.get(code, {}).get("slots_available"),
+                "program_notes": links.get(code, {}).get("program_notes"),
+            })
+            rows.append(project)
+        indexed[program_code] = rows
+    return indexed
+
+
+def _load_local_projects(program):
+    """Load joined project facts locally so common questions avoid network I/O."""
+    program_code = str(program.get("code") or "")
+    return deepcopy(_local_projects_index().get(program_code, []))
 
 
 def _round_matches(project, round_filter):
