@@ -77,6 +77,13 @@ class GradeRulesTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 screening_entries(CANDIDATES, DATA, NAVIGATION, grade, field)
 
+    def test_grade_screening_uses_preloaded_catalog(self):
+        with patch.object(app, "fetch_recommendation_projects", return_value=[]), \
+             patch.object(app, "screening_entries", return_value=([], 0)) as screen:
+            result = app.fetch_grade_screening(NAVIGATION, 3.0, "engineering")
+        self.assertEqual(result, ([], 0))
+        self.assertIs(screen.call_args.args[1], app.LOCAL_ADMISSIONS_CATALOG)
+
     def test_old_cutoff_never_disqualifies_current_year(self):
         entries, _, _ = results(2.0, "engineering")
         cedt = next(e for e in entries if e["program"]["code"] == "cu-engineering-cedt")

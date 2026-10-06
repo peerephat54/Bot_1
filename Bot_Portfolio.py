@@ -216,6 +216,14 @@ def load_local_preview_catalog():
 
 LOCAL_PREVIEW_CATALOG = load_local_preview_catalog()
 LOCAL_ADMISSIONS_CATALOG = load_catalog()
+LOCAL_RUNTIME_PROJECT_CODES = frozenset(
+    LOCAL_ADMISSIONS_CATALOG.get("runtime_local_project_codes") or []
+)
+LOCAL_RUNTIME_PROGRAM_CODES = frozenset(
+    row.get("program_code")
+    for row in LOCAL_ADMISSIONS_CATALOG.get("project_programs") or []
+    if row.get("project_code") in LOCAL_RUNTIME_PROJECT_CODES and row.get("program_code")
+)
 LOCAL_PROGRAM_CATALOG = {
     program["code"]: program
     for program in LOCAL_ADMISSIONS_CATALOG.get("programs") or []
@@ -624,10 +632,11 @@ def fetch_program_projects(program_code: str):
         )
         projects.append(project)
 
-    projects.extend(
-        item["project"] for item in fetch_local_project_additions()
-        if item["program"]["code"] == program_code
-    )
+    if program_code in LOCAL_RUNTIME_PROGRAM_CODES:
+        projects.extend(
+            item["project"] for item in fetch_local_project_additions()
+            if item["program"]["code"] == program_code
+        )
     projects.sort(
         key=lambda item: (
             str(item.get("round_variant") or ""),
@@ -746,11 +755,11 @@ def fetch_university_project_entries(university_short_name):
 
 
 def fetch_grade_screening(navigation_programs, gpax, field):
-    catalog_path = Path(__file__).with_name("datasets") / "tcas70_admissions.json"
-    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
     # A failed live query must not masquerade as an absence of current criteria.
     candidates = fetch_recommendation_projects()
-    return screening_entries(candidates, catalog, navigation_programs, gpax, field)
+    return screening_entries(
+        candidates, LOCAL_ADMISSIONS_CATALOG, navigation_programs, gpax, field
+    )
 
 
 def fetch_navigation_programs():
