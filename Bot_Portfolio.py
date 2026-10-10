@@ -1899,9 +1899,9 @@ def project_quick_summary(program, project, applicant_profile=None):
     else:
         next_step = "เปิดประกาศทางการและตรวจเงื่อนไขฉบับเต็มก่อนสมัคร"
     return (
-        f"✅ **สมัครได้ไหม:** {fit_text}\n\n"
-        f"🗓️ **ปิดรับสมัคร:** {deadline}\n\n"
-        f"➡️ **ต้องทำอะไรต่อ:** {next_step}"
+        f"**สมัครได้ไหม:** {fit_text}\n\n"
+        f"**ปิดรับสมัคร:** {deadline}\n\n"
+        f"**ต้องทำอะไรต่อ:** {next_step}"
     )
 
 
