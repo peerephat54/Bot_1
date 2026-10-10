@@ -984,15 +984,15 @@ def source_provenance_text(record, fallback_url=None, fallback_title=None, today
     """Show status, source, publication date, and verification date together."""
     record = record or {}
     lines = [
-        f"📌 สถานะ: {source_status_text(record, today=today)}",
-        f"🔗 {source_reference_line(record, fallback_url, fallback_title)}",
+        f"สถานะ: {source_status_text(record, today=today)}",
+        source_reference_line(record, fallback_url, fallback_title),
     ]
     if record.get("source_published_at"):
-        lines.append(f"📢 ประกาศล่าสุด: {format_checked_at(record['source_published_at'])}")
+        lines.append(f"ประกาศล่าสุด: {format_checked_at(record['source_published_at'])}")
     if record.get("source_checked_at"):
-        lines.append(f"🔍 เราตรวจล่าสุดวันที่: {format_checked_at(record['source_checked_at'])}")
+        lines.append(f"เราตรวจล่าสุดวันที่: {format_checked_at(record['source_checked_at'])}")
     else:
-        lines.append("🔍 เราตรวจล่าสุดวันที่: ไม่ระบุ")
+        lines.append("เราตรวจล่าสุดวันที่: ไม่ระบุ")
     return shorten("\n\n".join(lines), 1000)
 
 
