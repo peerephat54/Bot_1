@@ -2493,11 +2493,14 @@ def faculty_menu_content(
     step = "3/5" if has_multiple_campuses else "2/4"
     faculty_count = len({program["faculty_name"] for program in matching})
     return (
-        "## 🔍 ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
-        f"📍 **เส้นทาง:** {university_name} › {campus_name}\n\n"
-        f"### {step}: เลือกคณะ\nมี {faculty_count} คณะ\n\n"
-        "✅ เปิดดูเกณฑ์สมัครได้ • 🟡 บางสาขารอประกาศฉบับสมบูรณ์\n"
-        f"🔍 ตรวจข้อมูลล่าสุด {DATASET_CHECKED_AT_DISPLAY}"
+        "## ค้นหาเกณฑ์ TCAS70 รอบ Portfolio\n\n"
+        f"เส้นทาง: **{university_name} › {campus_name}**\n\n"
+        f"### {step}: เลือกคณะ\n"
+        f"คณะที่พบ: **{faculty_count} คณะ**\n\n"
+        "สถานะข้อมูล\n"
+        "✅ เปิดดูเกณฑ์ได้\n"
+        "🟡 บางสาขายังรอประกาศฉบับสมบูรณ์\n\n"
+        f"ตรวจข้อมูลล่าสุด: {DATASET_CHECKED_AT_DISPLAY}"
     )
 
 
