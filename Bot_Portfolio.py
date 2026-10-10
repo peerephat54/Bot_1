@@ -1830,11 +1830,11 @@ def project_header_description(program, project, section_label):
         tags.append(f"ภาษา {program['language']}")
     tag_text = " • ".join(f"`{tag}`" for tag in tags)
     return (
-        f"🏫 **{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}** • "
+        f"**{university.get('name', 'ไม่ระบุมหาวิทยาลัย')}** • "
         f"{campus.get('name', 'วิทยาเขตหลัก')}\n"
-        f"🎓 {program.get('faculty_name', 'ไม่ระบุคณะ')} • **{program_name}**\n\n"
+        f"{program.get('faculty_name', 'ไม่ระบุคณะ')} • **{program_name}**\n\n"
         f"{tag_text}\n"
-        f"📖 **{section_label}**"
+        f"**{section_label}**"
     )
 
 
